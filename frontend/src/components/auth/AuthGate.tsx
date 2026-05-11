@@ -1,39 +1,32 @@
 import { useMemo, useState } from 'react';
 
 interface AuthGateProps {
-  onSignIn?: (token: string, email?: string) => void | Promise<void>;
   onEmailPasswordSignIn?: (credentials: { email: string; password: string }) => void | Promise<void>;
   onEmailPasswordSignUp?: (credentials: { email: string; password: string }) => void | Promise<void>;
   onGoogleSignIn?: () => void | Promise<void>;
-  onDevLogin?: (credentials: { email: string; password: string }) => void | Promise<void>;
-  devAuthEnabled?: boolean;
 }
 
 type AuthMode = 'signin' | 'signup';
 
+function logAuthGate(message: string, details?: unknown) {
+  if (details === undefined) {
+    console.log(`[AuthGate] ${message}`);
+    return;
+  }
+  console.log(`[AuthGate] ${message}`, details);
+}
+
 export function AuthGate({
-  onSignIn,
   onEmailPasswordSignIn,
   onEmailPasswordSignUp,
   onGoogleSignIn,
-  onDevLogin,
-  devAuthEnabled,
 }: AuthGateProps) {
   const [mode, setMode] = useState<AuthMode>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [activeAction, setActiveAction] = useState<'email' | 'google' | 'dev' | null>(null);
-  const [isDevOpen, setIsDevOpen] = useState(false);
-
-  const isDevAuthEnabled = useMemo(() => {
-    if (typeof devAuthEnabled === 'boolean') {
-      return devAuthEnabled;
-    }
-
-    return String(import.meta.env.VITE_ENABLE_DEV_AUTH ?? '').toLowerCase() === 'true';
-  }, [devAuthEnabled]);
+  const [activeAction, setActiveAction] = useState<'email' | 'google' | null>(null);
 
   const emailError = useMemo(() => {
     if (!email.trim()) {
@@ -82,8 +75,19 @@ export function AuthGate({
   async function handleEmailSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setErrorMessage(null);
+    logAuthGate('Email auth submit triggered', {
+      mode,
+      emailLength: email.trim().length,
+      hasPassword: Boolean(password),
+      hasConfirmPassword: Boolean(confirmPassword),
+    });
 
     if (!canSubmitEmail) {
+      logAuthGate('Email auth submit blocked by validation', {
+        emailError,
+        passwordError,
+        confirmPasswordError,
+      });
       setErrorMessage('Please correct the highlighted fields.');
       return;
     }
@@ -92,18 +96,27 @@ export function AuthGate({
     try {
       if (mode === 'signup') {
         if (onEmailPasswordSignUp) {
+          logAuthGate('Calling signup handler');
           await onEmailPasswordSignUp({ email: email.trim(), password });
-        } else if (onSignIn) {
-          await onSignIn(password, email.trim());
+          logAuthGate('Signup handler resolved');
         }
       } else if (onEmailPasswordSignIn) {
+        logAuthGate('Calling signin handler');
         await onEmailPasswordSignIn({ email: email.trim(), password });
-      } else if (onSignIn) {
-        await onSignIn(password, email.trim());
+        logAuthGate('Signin handler resolved');
       }
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'Authentication failed.');
+      logAuthGate('Email auth submit failed', error);
+      const rawMessage = error instanceof Error ? error.message : 'Authentication failed.';
+      const normalized = rawMessage.toLowerCase();
+      if (mode === 'signup' && normalized.includes('too many sign-up attempts')) {
+        setMode('signin');
+        setErrorMessage('An account may already exist for this email. Please sign in to continue.');
+      } else {
+        setErrorMessage(rawMessage);
+      }
     } finally {
+      logAuthGate('Email auth submit finished');
       setActiveAction(null);
     }
   }
@@ -111,36 +124,17 @@ export function AuthGate({
   async function handleGoogleAction() {
     setErrorMessage(null);
     setActiveAction('google');
+    logAuthGate('Google auth flow triggered');
     try {
       if (onGoogleSignIn) {
         await onGoogleSignIn();
-      } else if (onSignIn) {
-        await onSignIn(`google:${mode}`, email.trim() || undefined);
+        logAuthGate('Google auth handler resolved');
       }
     } catch (error) {
+      logAuthGate('Google auth failed', error);
       setErrorMessage(error instanceof Error ? error.message : 'Google authentication failed.');
     } finally {
-      setActiveAction(null);
-    }
-  }
-
-  async function handleDevAccess() {
-    if (!email.trim() || !password) {
-      setErrorMessage('Dev email and password are required.');
-      return;
-    }
-
-    setErrorMessage(null);
-    setActiveAction('dev');
-    try {
-      if (onDevLogin) {
-        await onDevLogin({ email: email.trim(), password });
-      } else if (onSignIn) {
-        await onSignIn(password, email.trim() || undefined);
-      }
-    } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'Dev access failed.');
-    } finally {
+      logAuthGate('Google auth flow finished');
       setActiveAction(null);
     }
   }
@@ -268,24 +262,6 @@ export function AuthGate({
           </button>
         </form>
 
-        {isDevAuthEnabled && (
-          <details
-            className="mt-5 rounded-2xl border border-neutral-200 bg-white/70 p-4"
-            open={isDevOpen}
-            onToggle={(event) => setIsDevOpen((event.target as HTMLDetailsElement).open)}
-          >
-            <summary className="cursor-pointer text-sm font-medium text-neutral-700">Dev access</summary>
-            <p className="mt-2 text-xs text-neutral-500">Use dev superuser email/password for local development only.</p>
-            <button
-              type="button"
-              className="mt-3 rounded-xl border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-900 transition hover:border-neutral-500 disabled:cursor-not-allowed disabled:opacity-60"
-              onClick={handleDevAccess}
-              disabled={isBusy}
-            >
-              {activeAction === 'dev' ? 'Authorizing...' : 'Continue with Dev Access'}
-            </button>
-          </details>
-        )}
       </div>
     </div>
   );

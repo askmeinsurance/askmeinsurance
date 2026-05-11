@@ -9,13 +9,11 @@ import type { AppView, DiagramTab, FormAnswerMap, FormRequest, Message } from '.
 import type { AuthSession, EmailPasswordCredentials } from './types/auth';
 import {
   clearAuthSession,
-  isDevAuthEnabled,
-  loginWithDevApi,
   readAuthSession,
   saveAuthSession,
   toAuthSessionFromSupabaseSession,
 } from './lib/auth';
-import { getSupabaseClient, hasSupabaseConfig } from './lib/supabase';
+import { getSupabaseClient } from './lib/supabase';
 import {
   getConversationMessages,
   listConversations,
@@ -40,6 +38,38 @@ function logApp(message: string, details?: unknown) {
   console.log(`[App] ${message}`, details);
 }
 
+function toFriendlySignUpError(error: unknown): Error {
+  const fallback = new Error('Unable to create your account. Please try again.');
+  if (!(error instanceof Error)) return fallback;
+
+  const message = error.message.toLowerCase();
+  if (
+    message.includes('already registered') ||
+    message.includes('already exists') ||
+    message.includes('user already') ||
+    message.includes('email address is already')
+  ) {
+    return new Error('An account already exists for this email address. Please sign in instead.');
+  }
+  if (message.includes('rate limit') || message.includes('too many requests')) {
+    return new Error('Too many sign-up attempts right now. Please wait a moment and try again.');
+  }
+
+  return error;
+}
+
+function toFriendlySignInError(error: unknown): Error {
+  const fallback = new Error('Unable to sign in. Please try again.');
+  if (!(error instanceof Error)) return fallback;
+
+  const message = error.message.toLowerCase();
+  if (message.includes('email not confirmed') || message.includes('not confirmed')) {
+    return new Error('This account is not confirmed yet. Please verify the email or ask an admin to confirm your user.');
+  }
+
+  return error;
+}
+
 export default function App() {
   const [session, setSession] = useState<AuthSession | null>(null);
   const [view, setView] = useState<AppView>('start');
@@ -53,6 +83,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeFormRequest, setActiveFormRequest] = useState<FormRequest | null>(null);
   const [formSubmitError, setFormSubmitError] = useState<string | null>(null);
+  const [authWarning, setAuthWarning] = useState<string | null>(null);
   const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
   const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
 
@@ -67,15 +98,26 @@ export default function App() {
 
   useEffect(() => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase) {
+      logApp('Supabase client unavailable during auth bootstrap');
+      return;
+    }
 
     let isMounted = true;
 
     void supabase.auth.getSession().then((result) => {
       const data = result?.data;
       const error = result?.error;
-      if (!isMounted || error) return;
+      if (!isMounted) return;
+      if (error) {
+        logApp('supabase.auth.getSession returned error', error);
+        return;
+      }
       const supabaseSession = data.session;
+      logApp('supabase.auth.getSession resolved', {
+        hasSession: Boolean(supabaseSession),
+        hasUser: Boolean(supabaseSession?.user?.id),
+      });
 
       if (supabaseSession) {
         const nextSession = toAuthSessionFromSupabaseSession(supabaseSession);
@@ -95,6 +137,11 @@ export default function App() {
 
     const { data } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, supabaseSession: Session | null) => {
       if (!isMounted) return;
+      logApp('Supabase auth state changed', {
+        event: _event,
+        hasSession: Boolean(supabaseSession),
+        hasUser: Boolean(supabaseSession?.user?.id),
+      });
 
       if (supabaseSession) {
         const nextSession = toAuthSessionFromSupabaseSession(supabaseSession);
@@ -148,11 +195,15 @@ export default function App() {
     try {
       const items = await listConversations(accessToken);
       setConversations(items);
+      setAuthWarning(null);
     } catch (error) {
       const status = (error as { status?: number }).status;
       if (status === 401) {
-        handleUnauthorized();
+        logApp('Conversations refresh returned 401 after sign-in; keeping session and showing warning');
+        setAuthWarning('Signed in, but backend auth verification failed. Check backend Supabase JWT settings.');
+        return;
       }
+      setAuthWarning('Unable to load conversations right now.');
     }
   }
 
@@ -176,37 +227,25 @@ export default function App() {
     }
   }
 
-  function handleSignIn(token: string, email?: string) {
-    logApp('Signing in', {
-      hasEmail: Boolean(email),
-      tokenLength: token.length,
-    });
-    const nextSession: AuthSession = { accessToken: token, email, source: 'manual' };
-    saveAuthSession(nextSession);
-    setSession(nextSession);
-  }
-
   async function handleEmailPasswordSignIn(credentials: EmailPasswordCredentials) {
     const supabase = getSupabaseClient();
     if (!supabase) {
-      if (!isDevAuthEnabled()) {
-        throw new Error('Supabase auth is not configured and dev auth fallback is disabled.');
-      }
-      const devSession = await loginWithDevApi(credentials);
-      saveAuthSession(devSession);
-      setSession(devSession);
-      return;
+      throw new Error('Supabase auth is not configured.');
     }
+    logApp('Sign in requested', {
+      email: credentials.email,
+      passwordLength: credentials.password.length,
+    });
 
     const { data, error } = await supabase.auth.signInWithPassword(credentials);
+    logApp('supabase.auth.signInWithPassword resolved', {
+      hasError: Boolean(error),
+      hasSession: Boolean(data.session),
+      hasUser: Boolean(data.user?.id),
+    });
     if (error || !data.session) {
-      if (isDevAuthEnabled()) {
-        const devSession = await loginWithDevApi(credentials);
-        saveAuthSession(devSession);
-        setSession(devSession);
-        return;
-      }
-      throw error ?? new Error('Sign in failed.');
+      logApp('Sign in failed', error ?? 'No session returned');
+      throw toFriendlySignInError(error ?? new Error('Sign in failed.'));
     }
 
     const nextSession = toAuthSessionFromSupabaseSession(data.session);
@@ -217,25 +256,63 @@ export default function App() {
   async function handleEmailPasswordSignUp(credentials: EmailPasswordCredentials) {
     const supabase = getSupabaseClient();
     if (!supabase) {
-      if (!isDevAuthEnabled()) {
-        throw new Error('Supabase auth is not configured and dev auth fallback is disabled.');
-      }
-      const devSession = await loginWithDevApi(credentials);
-      saveAuthSession(devSession);
-      setSession(devSession);
-      return;
+      throw new Error('Supabase auth is not configured.');
     }
+    logApp('Sign up requested', {
+      email: credentials.email,
+      passwordLength: credentials.password.length,
+    });
 
     const { data, error } = await supabase.auth.signUp(credentials);
+    logApp('supabase.auth.signUp resolved', {
+      hasError: Boolean(error),
+      hasSession: Boolean(data.session),
+      hasUser: Boolean(data.user?.id),
+      userId: data.user?.id ?? null,
+      emailConfirmedAt: data.user?.email_confirmed_at ?? null,
+    });
     if (error) {
-      throw error;
+      logApp('Sign up failed', error);
+      throw toFriendlySignUpError(error);
+    }
+
+    // Supabase can return a user with zero identities and no explicit error for existing emails.
+    const identities = data.user?.identities ?? [];
+    if (data.user && identities.length === 0) {
+      logApp('Sign up indicates existing account via empty identities response', {
+        userId: data.user.id,
+        email: data.user.email,
+      });
+      throw new Error('An account already exists for this email address. Please sign in instead.');
     }
 
     if (data.session) {
       const nextSession = toAuthSessionFromSupabaseSession(data.session);
       saveAuthSession(nextSession);
       setSession(nextSession);
+      logApp('Sign up completed with active session');
+      return;
     }
+
+    logApp('Sign up completed without session; attempting immediate sign-in');
+    const signInResult = await supabase.auth.signInWithPassword(credentials);
+    logApp('Post-signup signInWithPassword resolved', {
+      hasError: Boolean(signInResult.error),
+      hasSession: Boolean(signInResult.data.session),
+      hasUser: Boolean(signInResult.data.user?.id),
+    });
+
+    if (signInResult.error || !signInResult.data.session) {
+      throw (
+        toFriendlySignUpError(signInResult.error) ??
+        new Error('Account created, but sign-in requires email verification before continuing.')
+      );
+    }
+
+    const nextSession = toAuthSessionFromSupabaseSession(signInResult.data.session);
+    saveAuthSession(nextSession);
+    setSession(nextSession);
+    logApp('Post-signup sign-in completed with active session');
   }
 
   async function handleGoogleSignIn() {
@@ -458,14 +535,9 @@ export default function App() {
   if (!session) {
     return (
       <AuthGate
-        onSignIn={handleSignIn}
         onEmailPasswordSignIn={handleEmailPasswordSignIn}
         onEmailPasswordSignUp={handleEmailPasswordSignUp}
         onGoogleSignIn={handleGoogleSignIn}
-        onDevLogin={async (credentials) => {
-          await loginWithDevApi(credentials);
-        }}
-        devAuthEnabled={isDevAuthEnabled() || !hasSupabaseConfig()}
       />
     );
   }
@@ -501,6 +573,11 @@ export default function App() {
       {formSubmitError && (
         <div className="absolute bottom-4 right-4 z-20 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-md">
           {formSubmitError}
+        </div>
+      )}
+      {authWarning && (
+        <div className="absolute bottom-4 left-4 z-20 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 shadow-md">
+          {authWarning}
         </div>
       )}
       <PaginatedFormModal

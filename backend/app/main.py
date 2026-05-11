@@ -13,7 +13,6 @@ from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
 from app.api.v1.chat import router as chat_router
 from app.api.v1.conversations import router as conversations_router
 from app.api.v1.forms import router as forms_router
-from app.api.v1.auth import router as auth_router
 from app.core.config import get_settings
 from app.schemas.common import ErrorEnvelope
 
@@ -43,6 +42,12 @@ def create_app() -> FastAPI:
     settings = get_settings()
     app = FastAPI(title="AskMeInsurance API", version="0.1.0")
     print("[BOOT] AskMeInsurance backend app created", flush=True)
+    logger.info(
+        "Boot auth settings: app_env=%s auth_enabled=%s has_supabase_jwt_secret=%s",
+        settings.app_env,
+        settings.auth_enabled,
+        bool(settings.supabase_jwt_secret),
+    )
 
     allowed_origins = [origin.strip() for origin in settings.cors_allowed_origins.split(",") if origin.strip()]
     app.add_middleware(
@@ -60,12 +65,22 @@ def create_app() -> FastAPI:
         request_id = str(uuid4())
         start = time.perf_counter()
         request.state.request_id = request_id
+        auth_header = request.headers.get("authorization")
+        auth_scheme = "none"
+        token_preview = None
+        if auth_header:
+            parts = auth_header.split(" ", 1)
+            auth_scheme = parts[0].lower()
+            if len(parts) > 1 and parts[1]:
+                token_preview = parts[1][:8] + "..."
         print(f"[REQ:{request_id}] {request.method} {request.url.path} started", flush=True)
         logger.info(
-            "[%s] request started: %s %s",
+            "[%s] request started: %s %s auth_scheme=%s token_prefix=%s",
             request_id,
             request.method,
             request.url.path,
+            auth_scheme,
+            token_preview,
         )
         try:
             response = await call_next(request)
@@ -154,7 +169,6 @@ def create_app() -> FastAPI:
     app.include_router(chat_router, prefix="/api/v1")
     app.include_router(conversations_router, prefix="/api/v1")
     app.include_router(forms_router, prefix="/api/v1")
-    app.include_router(auth_router, prefix="/api/v1")
     return app
 
 
