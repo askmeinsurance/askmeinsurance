@@ -43,9 +43,18 @@ class ChatService:
             value = value[:80].rstrip()
         return value or ChatService._fallback_title(first_message)
 
-    async def _resolve_conversation(self, message: str, conversation_id: UUID | None) -> UUID:
+    async def _resolve_conversation_for_user(
+        self,
+        *,
+        message: str,
+        conversation_id: UUID | None,
+        user_id: str,
+    ) -> UUID:
         if conversation_id:
-            touched = await self._conversation_store.touch_conversation(conversation_id)
+            touched = await self._conversation_store.touch_conversation(
+                conversation_id,
+                user_id=user_id,
+            )
             if touched is not None:
                 return touched.id
         try:
@@ -53,7 +62,10 @@ class ChatService:
         except Exception:  # noqa: BLE001
             suggested = ""
         title = self._sanitize_title(suggested, message)
-        created = await self._conversation_store.create_conversation(ConversationCreate(title=title))
+        created = await self._conversation_store.create_conversation(
+            ConversationCreate(title=title),
+            user_id=user_id,
+        )
         return created.id
 
     async def stream_chat(
@@ -63,13 +75,18 @@ class ChatService:
         conversation_id: UUID | None,
         user: Any,
     ) -> AsyncGenerator[ChatEvent, None]:
-        resolved_conversation_id = await self._resolve_conversation(message, conversation_id)
+        resolved_conversation_id = await self._resolve_conversation_for_user(
+            message=message,
+            conversation_id=conversation_id,
+            user_id=user.user_id,
+        )
         await self._message_store.add_message(
             ConversationMessage(
                 conversation_id=resolved_conversation_id,
                 role="user",
                 content=message,
-            )
+            ),
+            user_id=user.user_id,
         )
 
         bot_text = ""
@@ -90,5 +107,6 @@ class ChatService:
                     conversation_id=resolved_conversation_id,
                     role="bot",
                     content=bot_text,
-                )
+                ),
+                user_id=user.user_id,
             )

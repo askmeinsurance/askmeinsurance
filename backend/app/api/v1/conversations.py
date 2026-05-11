@@ -13,25 +13,25 @@ router = APIRouter(prefix="/conversations", tags=["conversations"])
 
 @router.get("", response_model=list[Conversation])
 async def list_conversations(
-    _: UserContext = Depends(require_auth),
+    user: UserContext = Depends(require_auth),
 ) -> list[Conversation]:
-    return await conversation_service.list_conversations()
+    return await conversation_service.list_conversations(user_id=user.user_id)
 
 
 @router.post("", response_model=Conversation, status_code=status.HTTP_201_CREATED)
 async def create_conversation(
     payload: ConversationCreate,
-    _: UserContext = Depends(require_auth),
+    user: UserContext = Depends(require_auth),
 ) -> Conversation:
-    return await conversation_service.create_conversation(payload)
+    return await conversation_service.create_conversation(payload, user_id=user.user_id)
 
 
 @router.get("/{conversation_id}", response_model=Conversation)
 async def get_conversation(
     conversation_id: UUID,
-    _: UserContext = Depends(require_auth),
+    user: UserContext = Depends(require_auth),
 ) -> Conversation:
-    conversation = await conversation_service.get_conversation(conversation_id)
+    conversation = await conversation_service.get_conversation(conversation_id, user_id=user.user_id)
     if conversation is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Conversation not found")
     return conversation
@@ -40,9 +40,9 @@ async def get_conversation(
 @router.delete("/{conversation_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_conversation(
     conversation_id: UUID,
-    _: UserContext = Depends(require_auth),
+    user: UserContext = Depends(require_auth),
 ) -> None:
-    deleted = await conversation_service.delete_conversation(conversation_id)
+    deleted = await conversation_service.delete_conversation(conversation_id, user_id=user.user_id)
     if not deleted:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Conversation not found")
 
@@ -50,9 +50,9 @@ async def delete_conversation(
 @router.get("/{conversation_id}/messages", response_model=list[ConversationMessage])
 async def list_conversation_messages(
     conversation_id: UUID,
-    _: UserContext = Depends(require_auth),
+    user: UserContext = Depends(require_auth),
 ) -> list[ConversationMessage]:
-    conversation = await conversation_service.get_conversation(conversation_id)
+    conversation = await conversation_service.get_conversation(conversation_id, user_id=user.user_id)
     if conversation is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Conversation not found")
-    return await message_service.list_messages(conversation_id)
+    return await message_service.list_messages(conversation_id, user_id=user.user_id)
