@@ -1,0 +1,333 @@
+import { useState } from 'react';
+import { MainLayout } from './components/layout/MainLayout';
+import { ChatStartScreen } from './components/chat/ChatStartScreen';
+import { ChatPanel } from './components/chat/ChatPanel';
+import { PaginatedFormModal } from './components/forms/PaginatedFormModal';
+import { textOnlyMessages, canvasMessages } from './mocks/messages';
+import type { AppView, DiagramPayload, DiagramTab, FormAnswerMap, FormRequest, Message } from './types';
+import configuredFormRequest from './config/llm-form-request.json';
+import './index.css';
+
+const DEFAULT_DIAGRAM_FILE = '/financial_planning_diagram.excalidraw';
+const DEFAULT_DIAGRAM_TITLE = 'Financial Planning Diagram';
+
+function makeTabId() {
+  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    return crypto.randomUUID();
+  }
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function createDemoFormRequest(): FormRequest {
+  return {
+    id: `insurance-intake-${Date.now()}`,
+    title: 'Insurance Planning Intake',
+    description: 'Answer these short questions so I can tailor the recommendation.',
+    submitLabel: 'Submit Details',
+    pages: [
+      {
+        id: 'profile',
+        title: 'Profile Basics',
+        description: 'Tell me who this plan is for.',
+        fields: [
+          { id: 'fullName', type: 'text', label: 'Full Name', required: true, placeholder: 'e.g. Alex Tan' },
+          { id: 'age', type: 'text', label: 'Age', required: true, placeholder: 'e.g. 35' },
+          {
+            id: 'smoker',
+            type: 'radio',
+            label: 'Smoking Status',
+            required: true,
+            options: [
+              { label: 'Non-smoker', value: 'non-smoker' },
+              { label: 'Smoker', value: 'smoker' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'coverage',
+        title: 'Coverage Preference',
+        description: 'Set the initial plan preference.',
+        fields: [
+          {
+            id: 'goal',
+            type: 'select',
+            label: 'Primary Goal',
+            required: true,
+            options: [
+              { label: 'Income protection', value: 'income' },
+              { label: 'Legacy planning', value: 'legacy' },
+              { label: 'Hospitalization buffer', value: 'medical' },
+            ],
+          },
+          {
+            id: 'notes',
+            type: 'textarea',
+            label: 'Anything else I should consider?',
+            placeholder: 'Optional context...',
+          },
+          {
+            id: 'consent',
+            type: 'checkbox',
+            label: 'I confirm this information is accurate.',
+            required: true,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+function getConfiguredFormRequest(): FormRequest {
+  const config = configuredFormRequest as Partial<FormRequest>;
+  if (!config || !config.id || !config.title || !Array.isArray(config.pages) || !config.pages.length) {
+    return createDemoFormRequest();
+  }
+  return config as FormRequest;
+}
+
+export default function App() {
+  const [view, setView] = useState<AppView>('start');
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [diagramState, setDiagramState] = useState({ tabs: [] as DiagramTab[], activeTabId: null as string | null });
+  const [isCanvasHidden, setIsCanvasHidden] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [activeFormRequest, setActiveFormRequest] = useState<FormRequest | null>(null);
+  const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
+  const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
+
+  async function openDiagramFromPublicFile() {
+    try {
+      const response = await fetch(DEFAULT_DIAGRAM_FILE);
+      if (!response.ok) return;
+      const parsed = (await response.json()) as DiagramPayload;
+      if (!Array.isArray(parsed?.elements)) return;
+
+      const now = Date.now();
+      const tabId = makeTabId();
+      setDiagramState({
+        tabs: [
+          {
+            id: tabId,
+            title: DEFAULT_DIAGRAM_TITLE,
+            createdAt: now,
+            updatedAt: now,
+            diagram: {
+              elements: parsed.elements,
+              appState: parsed.appState,
+              files: parsed.files,
+            },
+          },
+        ],
+        activeTabId: tabId,
+      });
+      setIsCanvasHidden(false);
+      setSidebarCollapsed(true);
+    } catch {
+      // Intentionally no-op: app should still work without the default diagram file.
+    }
+  }
+
+  function saveDiagramState(nextTabs: DiagramTab[], nextActiveTabId: string | null) {
+    setDiagramState({ tabs: nextTabs, activeTabId: nextActiveTabId });
+  }
+
+  function appendDiagramTabs(entries: Array<{ title?: string; data: DiagramPayload }>) {
+    if (!entries.length) return;
+
+    const now = Date.now();
+    const nextTabs = [...diagramTabs];
+    let activeId: string | null = activeDiagramTabId;
+    entries.forEach((entry) => {
+      const newTab: DiagramTab = {
+        id: makeTabId(),
+        title: entry.title || `Diagram ${nextTabs.length + 1}`,
+        createdAt: now,
+        updatedAt: now,
+        diagram: entry.data,
+      };
+      nextTabs.push(newTab);
+      activeId = newTab.id;
+    });
+    saveDiagramState(nextTabs, activeId);
+  }
+
+  function applyBotDiagrams(nextMessages: Message[]) {
+    const botMessages = nextMessages.filter((message) => message.role === 'bot');
+    const diagramMessages = botMessages.filter((message) => message.hasDiagram && message.diagramData);
+
+    if (diagramMessages.length) {
+      appendDiagramTabs(
+        diagramMessages.map((message) => ({
+          title: message.diagramTitle,
+          data: message.diagramData as DiagramPayload,
+        }))
+      );
+      setIsCanvasHidden(false);
+      setSidebarCollapsed(true);
+    }
+
+    const latestFormRequest = [...botMessages]
+      .reverse()
+      .find((message) => message.formRequest)?.formRequest;
+    if (latestFormRequest) {
+      setActiveFormRequest(latestFormRequest);
+    }
+  }
+
+  function handleSubmit(message: string) {
+    const isCanvasRequest = message.toLowerCase().includes('canvas') ||
+      message.toLowerCase().includes('illustrate') ||
+      message.toLowerCase().includes('visuali');
+    const isFormRequest = message.toLowerCase().includes('form');
+
+    const nextMessages = isCanvasRequest
+      ? canvasMessages
+      : isFormRequest
+        ? [
+            {
+              id: '1',
+              role: 'user' as const,
+              content: message,
+            },
+            {
+              id: '2',
+              role: 'bot' as const,
+              content: 'I need a few details from you before I proceed. Please complete the form.',
+              formRequest: getConfiguredFormRequest(),
+            },
+          ]
+        : textOnlyMessages;
+    setMessages(nextMessages);
+    applyBotDiagrams(nextMessages);
+    setView('chat');
+    if (isCanvasRequest) {
+      void openDiagramFromPublicFile();
+    }
+  }
+
+  function handleSend(text: string) {
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: text,
+    };
+
+    const isCanvasRequest = text.toLowerCase().includes('canvas') ||
+      text.toLowerCase().includes('illustrate') ||
+      text.toLowerCase().includes('visuali');
+    const isFormRequest = text.toLowerCase().includes('form');
+
+    if (isCanvasRequest) {
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'bot',
+        content: canvasMessages[1].content,
+      };
+      setMessages((prev) => [...prev, userMessage, botMessage]);
+      void openDiagramFromPublicFile();
+    } else if (isFormRequest) {
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'bot',
+        content: 'I need a few details from you before I proceed. Please complete the form.',
+        formRequest: getConfiguredFormRequest(),
+      };
+      setMessages((prev) => {
+        const next = [...prev, userMessage, botMessage];
+        applyBotDiagrams(next);
+        return next;
+      });
+    } else {
+      setMessages((prev) => [...prev, userMessage]);
+    }
+  }
+
+  function handleFormClose() {
+    setActiveFormRequest(null);
+  }
+
+  function handleFormSubmit(formId: string, answers: FormAnswerMap) {
+    const payload = { formId, answers };
+    fetch('/api/form-submissions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed with status ${response.status}`);
+        }
+      })
+      .catch(() => {
+        const fallbackKey = 'form_submissions_fallback';
+        const raw = window.localStorage.getItem(fallbackKey);
+        const existing = raw ? (JSON.parse(raw) as Array<{ formId: string; answers: FormAnswerMap; submittedAt: string }>) : [];
+        existing.push({ formId, answers, submittedAt: new Date().toISOString() });
+        window.localStorage.setItem(fallbackKey, JSON.stringify(existing));
+      });
+    setActiveFormRequest(null);
+  }
+
+  function handleDiagramTabSelect(id: string) {
+    saveDiagramState(diagramTabs, id);
+  }
+
+  function handleDiagramTabClose(id: string) {
+    const nextTabs = diagramTabs.filter((tab) => tab.id !== id);
+    const nextActiveTabId =
+      activeDiagramTabId === id ? nextTabs[nextTabs.length - 1]?.id ?? null : activeDiagramTabId;
+    saveDiagramState(nextTabs, nextActiveTabId);
+    if (!nextTabs.length) {
+      setIsCanvasHidden(false);
+      setSidebarCollapsed(false);
+    }
+  }
+
+  function handleCloseAllDiagrams() {
+    saveDiagramState([], null);
+    setIsCanvasHidden(false);
+    setSidebarCollapsed(false);
+  }
+
+  function handleSidebarToggle() {
+    setSidebarCollapsed((prev) => !prev);
+  }
+
+  function handleHideCanvas() {
+    setIsCanvasHidden(true);
+  }
+
+  function handleShowCanvas() {
+    setIsCanvasHidden(false);
+  }
+
+  return (
+    <MainLayout
+      sidebarCollapsed={sidebarCollapsed}
+      onSidebarToggle={handleSidebarToggle}
+      diagramTabs={diagramTabs}
+      activeDiagramTabId={activeDiagramTabId}
+      isCanvasHidden={isCanvasHidden}
+      onDiagramTabSelect={handleDiagramTabSelect}
+      onDiagramTabClose={handleDiagramTabClose}
+      onShowCanvas={handleShowCanvas}
+      onHideCanvas={handleHideCanvas}
+      onCloseAllDiagrams={handleCloseAllDiagrams}
+    >
+      {view === 'start' && <ChatStartScreen onSubmit={handleSubmit} />}
+      {view === 'chat' && (
+        <ChatPanel messages={messages} onSend={handleSend} hasDiagramPanel={hasVisibleCanvas} />
+      )}
+      <PaginatedFormModal
+        key={activeFormRequest?.id ?? 'no-form'}
+        isOpen={Boolean(activeFormRequest)}
+        request={activeFormRequest}
+        onClose={handleFormClose}
+        onSubmit={handleFormSubmit}
+      />
+    </MainLayout>
+  );
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "submittedAt": "2026-05-09T04:51:33.904Z",
+    "formId": "insurance-intake-001",
+    "answers": {
+      "fullName": "joel",
+      "age": "30",
+      "gender": "male",
+      "marital_status": "single",
+      "employment_status": "full_time",
+      "monthly_income_range": "between_5001_and_7500",
+      "type_of_work_pass": "not_applicable",
+      "other_source_of_income": "",
+      "existing_insurance_1_type": "health_shield_insurance",
+      "existing_insurance_1_benefit_amount": "200000",
+      "existing_insurance_1_annual_premium": "5000",
+      "existing_insurance_2_type": "whole_life_insurance",
+      "existing_insurance_2_benefit_amount": "200000",
+      "existing_insurance_2_annual_premium": "5000",
+      "existing_insurance_3_type": "ci_coverage",
+      "existing_insurance_3_benefit_amount": "50000",
+      "existing_insurance_3_annual_premium": "0",
+      "existing_insurance_4_type": "",
+      "existing_insurance_4_benefit_amount": "",
+      "existing_insurance_4_annual_premium": "",
+      "monthly_insurance_premium_budget": "1000",
+      "personal_use_asset": "50000",
+      "investment": "50000",
+      "cpf": "50000",
+      "loans": "",
+      "liabilities": "",
+      "notes": "",
+      "consent": true
+    }
+  }
+]

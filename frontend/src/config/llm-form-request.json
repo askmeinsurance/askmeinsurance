@@ -1,0 +1,483 @@
+{
+    "id": "insurance-intake-001",
+    "title": "Financial Planning",
+    "description": "Answer these short questions so I can tailor the recommendation.",
+    "submitLabel": "Submit Details",
+    "pages": [
+        {
+            "id": "profile",
+            "title": "Profile Basics",
+            "description": "Tell me who this plan is for.",
+            "fields": [
+                {
+                    "id": "fullName",
+                    "label": "Full Name",
+                    "type": "text",
+                    "required": true,
+                    "placeholder": "e.g. Alex Tan"
+                },
+                {
+                    "id": "age",
+                    "label": "Age",
+                    "type": "text",
+                    "required": true,
+                    "placeholder": "e.g. 35"
+                },
+                {
+                    "id": "gender",
+                    "label": "gender",
+                    "type": "radio",
+                    "required": true,
+                    "options": [
+                        {
+                            "value": "Male",
+                            "label": "male"
+                        },
+                        {
+                            "value": "Female",
+                            "label": "female"
+                        }
+                    ]
+                },
+                {
+                    "id": "marital_status",
+                    "label": "Marital Status",
+                    "type": "radio",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "Single",
+                            "value": "single"
+                        },
+                        {
+                            "label": "Married",
+                            "value": "married"
+                        },
+                        {
+                            "label": "Divorced",
+                            "value": "divorced"
+                        },
+                        {
+                            "label": "Separated",
+                            "value": "separated"
+                        },
+                        {
+                            "label": "Widowed",
+                            "value": "widowed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "employment_details",
+            "title": "Employment Details",
+            "description": "",
+            "fields": [
+                {
+                    "id": "employment_status",
+                    "label": "Employment Status",
+                    "type": "radio",
+                    "required": true,
+                    "options": [
+                        {
+                            "value": "full_time",
+                            "label": "Full-time"
+                        },
+                        {
+                            "value": "part_time",
+                            "label": "Part-time"
+                        },
+                        {
+                            "value": "self_employed",
+                            "label": "Self Employed"
+                        },
+                        {
+                            "value": "not_employed",
+                            "label": "Not Employed"
+                        },
+                        {
+                            "value": "retired",
+                            "label": "Retired"
+                        }
+                    ]
+                },
+                {
+                    "id": "monthly_income_range",
+                    "label": "Monthly Income Range",
+                    "type": "radio",
+                    "required": true,
+                    "options": [
+                       {
+                            "value": "below_2500",
+                            "label": "Below $2,500"
+                        },
+                        {
+                            "value": "between_2501_and_5000",
+                            "label": "$2,501 to $5000"
+                        },
+                        {
+                            "value": "between_5001_and_7500",
+                            "label": "$5,001 to $7,500"
+                        },
+                        {
+                            "value": "between_7501_and_10000",
+                            "label": "$7,501 to $10,000"
+                        },
+                        {
+                            "value": "10001_and_above",
+                            "label": "$10,001 and above"
+                        }
+                    ]
+                },
+                {
+                    "id": "type_of_work_pass",
+                    "label": "Type of Work Pass",
+                    "type": "radio",
+                    "required": true,
+                    "options": [
+                        {
+                            "value": "employment_pass",
+                            "label": "Employment Pass"
+                        },
+                        {
+                            "value": "s_pass",
+                            "label": "S-Pass"
+                        },
+                        {
+                            "value": "work_permit",
+                            "label": "Work Permit"
+                        },
+                        {
+                            "value": "not_applicable",
+                            "label": "Not Applicable"
+                        }
+                    ]
+                },
+                {
+                    "id": "other_source_of_income",
+                    "label": "Other Source of income",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$10,000"
+                }
+            ]
+        },
+        {
+            "id": "existing_insurance_portfolio_1",
+            "title": "Existing Insurance Portfolio (1)",
+            "description": "",
+            "fields": [
+                {
+                    "id": "existing_insurance_1_type",
+                    "label": "Type of Insurance",
+                    "type": "select",
+                    "required": false,
+                    "options": [
+                        {
+                            "value": "health_shield_insurance",
+                            "label": "Personal Health Shield Insurance"
+                        },
+                        {
+                            "value": "group_health_insurance",
+                            "label": "Company Health Insurance"
+                        },
+                        {
+                            "value": "term_life_insurance",
+                            "label": "Term Life Insurance"
+                        },
+                        {
+                            "value": "whole_life_insurance",
+                            "label": "Whole Life Insurance"
+                        },
+                        {
+                            "value": "endowment_life_insurance",
+                            "label": "Endowment Insurance"
+                        },
+                        {
+                            "value": "tpd_coverage",
+                            "label": "Total Permanent Disability Coverage"
+                        },
+                        {
+                            "value": "ci_coverage",
+                            "label": "Critical Illness Coverage"
+                        }
+                    ]
+                },
+                {
+                    "id": "existing_insurance_1_benefit_amount",
+                    "label": "Total Benefit Amount (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100,000"
+                },
+                {
+                    "id": "existing_insurance_1_annual_premium",
+                    "label": "Annual Premium (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100,000"
+                }
+            ]
+        },
+        {
+            "id": "existing_insurance_portfolio_2",
+            "title": "Existing Insurance Portfolio (2)",
+            "description": "",
+            "fields": [
+                {
+                    "id": "existing_insurance_2_type",
+                    "label": "Type of Insurance",
+                    "type": "select",
+                    "required": false,
+                    "options": [
+                        {
+                            "value": "health_shield_insurance",
+                            "label": "Personal Health Shield Insurance"
+                        },
+                        {
+                            "value": "group_health_insurance",
+                            "label": "Company Health Insurance"
+                        },
+                        {
+                            "value": "term_life_insurance",
+                            "label": "Term Life Insurance"
+                        },
+                        {
+                            "value": "whole_life_insurance",
+                            "label": "Whole Life Insurance"
+                        },
+                        {
+                            "value": "endowment_life_insurance",
+                            "label": "Endowment Insurance"
+                        },
+                        {
+                            "value": "tpd_coverage",
+                            "label": "Total Permanent Disability Coverage"
+                        },
+                        {
+                            "value": "ci_coverage",
+                            "label": "Critical Illness Coverage"
+                        }
+                    ]
+                },
+                {
+                    "id": "existing_insurance_2_benefit_amount",
+                    "label": "Total Benefit Amount (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$200,000"
+                },
+                {
+                    "id": "existing_insurance_2_annual_premium",
+                    "label": "Annual Premium (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$200,000"
+                }
+            ]
+        },
+        {
+            "id": "existing_insurance_portfolio_3",
+            "title": "Existing Insurance Portfolio (3)",
+            "description": "",
+            "fields": [
+                {
+                    "id": "existing_insurance_3_type",
+                    "label": "Type of Insurance",
+                    "type": "select",
+                    "required": false,
+                    "options": [
+                        {
+                            "value": "health_shield_insurance",
+                            "label": "Personal Health Shield Insurance"
+                        },
+                        {
+                            "value": "group_health_insurance",
+                            "label": "Company Health Insurance"
+                        },
+                        {
+                            "value": "term_life_insurance",
+                            "label": "Term Life Insurance"
+                        },
+                        {
+                            "value": "whole_life_insurance",
+                            "label": "Whole Life Insurance"
+                        },
+                        {
+                            "value": "endowment_life_insurance",
+                            "label": "Endowment Insurance"
+                        },
+                        {
+                            "value": "tpd_coverage",
+                            "label": "Total Permanent Disability Coverage"
+                        },
+                        {
+                            "value": "ci_coverage",
+                            "label": "Critical Illness Coverage"
+                        }
+                    ]
+                },
+                {
+                    "id": "existing_insurance_3_benefit_amount",
+                    "label": "Total Benefit Amount (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$300,000"
+                },
+                {
+                    "id": "existing_insurance_3_annual_premium",
+                    "label": "Annual Premium (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$300,000"
+                }
+            ]
+        },
+        {
+            "id": "existing_insurance_portfolio_4",
+            "title": "Existing Insurance Portfolio (4)",
+            "description": "",
+            "fields": [
+                {
+                    "id": "existing_insurance_4_type",
+                    "label": "Type of Insurance",
+                    "type": "select",
+                    "required": false,
+                    "options": [
+                        {
+                            "value": "health_shield_insurance",
+                            "label": "Personal Health Shield Insurance"
+                        },
+                        {
+                            "value": "group_health_insurance",
+                            "label": "Company Health Insurance"
+                        },
+                        {
+                            "value": "term_life_insurance",
+                            "label": "Term Life Insurance"
+                        },
+                        {
+                            "value": "whole_life_insurance",
+                            "label": "Whole Life Insurance"
+                        },
+                        {
+                            "value": "endowment_life_insurance",
+                            "label": "Endowment Insurance"
+                        },
+                        {
+                            "value": "tpd_coverage",
+                            "label": "Total Permanent Disability Coverage"
+                        },
+                        {
+                            "value": "ci_coverage",
+                            "label": "Critical Illness Coverage"
+                        }
+                    ]
+                },
+                {
+                    "id": "existing_insurance_4_benefit_amount",
+                    "label": "Total Benefit Amount (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$400,000"
+                },
+                {
+                    "id": "existing_insurance_4_annual_premium",
+                    "label": "Annual Premium (S$)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$400,000"
+                }
+            ]
+        },
+        {
+            "id": "budget",
+            "title": "Budget for Insurance premium",
+            "description": "Set the initial plan preference.",
+            "fields": [
+                {
+                    "id": "monthly_insurance_premium_budget",
+                    "label": "Monthly Budget for Insurance Premium",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$1000"
+                }
+            ]
+        },
+        {
+            "id": "assets_and_liabilities",
+            "title": "Assets and Liabilities",
+            "description": "Set the initial plan preference.",
+            "fields": [
+                {
+                    "id": "personal_use_asset",
+                    "label": "Personal Use asset (E.g. family home, home contents, real estate, motor vehicle)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "investment",
+                    "label": "Investment (E.g. shares, bonds, debentures, insurance, managed investments)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "cpf_ordinary_account",
+                    "label": "CPF Ordinary account",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "cpf_medisave_account",
+                    "label": "CPF Medisave account",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "cpf_special_account",
+                    "label": "CPF Special account",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "loans",
+                    "label": "Loans (E.g. home mortgage, investment loan, car loan, personal loan)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                },
+                {
+                    "id": "liabilities",
+                    "label": "Liabilities (E.g. credit card, annual tax liability)",
+                    "type": "text",
+                    "required": false,
+                    "placeholder": "$100000"
+                }
+            ]
+        },
+        {
+            "id": "assets_and_liabilities",
+            "title": "Assets and Liabilities",
+            "description": "Set the initial plan preference.",
+            "fields": [
+                {
+                    "id": "notes",
+                    "label": "Any other information??",
+                    "type": "textarea",
+                    "placeholder": "Optional context..."
+                },
+                {
+                    "id": "consent",
+                    "label": "I confirm this information is accurate and consent to allow this platform to use these information for financial planning",
+                    "type": "checkbox",
+                    "required": true
+                }]
+        }
+    ]
+}

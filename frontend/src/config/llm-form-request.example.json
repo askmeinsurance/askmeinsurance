@@ -1,0 +1,69 @@
+{
+  "id": "insurance-intake-001",
+  "title": "Insurance Planning Intake",
+  "description": "Answer these short questions so I can tailor the recommendation.",
+  "submitLabel": "Submit Details",
+  "pages": [
+    {
+      "id": "profile",
+      "title": "Profile Basics",
+      "description": "Tell me who this plan is for.",
+      "fields": [
+        {
+          "id": "fullName",
+          "label": "Full Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. Alex Tan"
+        },
+        {
+          "id": "age",
+          "label": "Age",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g. 35"
+        },
+        {
+          "id": "smoker",
+          "label": "Smoking Status",
+          "type": "radio",
+          "required": true,
+          "options": [
+            { "label": "Non-smoker", "value": "non-smoker" },
+            { "label": "Smoker", "value": "smoker" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coverage",
+      "title": "Coverage Preference",
+      "description": "Set the initial plan preference.",
+      "fields": [
+        {
+          "id": "goal",
+          "label": "Primary Goal",
+          "type": "select",
+          "required": true,
+          "options": [
+            { "label": "Income protection", "value": "income" },
+            { "label": "Legacy planning", "value": "legacy" },
+            { "label": "Hospitalization buffer", "value": "medical" }
+          ]
+        },
+        {
+          "id": "notes",
+          "label": "Anything else I should consider?",
+          "type": "textarea",
+          "placeholder": "Optional context..."
+        },
+        {
+          "id": "consent",
+          "label": "I confirm this information is accurate.",
+          "type": "checkbox",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
