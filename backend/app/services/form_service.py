@@ -5,8 +5,10 @@ from app.schemas.form import Form
 
 
 class FormService:
+    _shared_store: dict[UUID, Form] = {}
+
     def __init__(self) -> None:
-        self._store: dict[UUID, Form] = {}
+        self._store = self._shared_store
 
     async def list_forms(self, conversation_id: UUID | None = None) -> list[Form]:
         if conversation_id is None:
@@ -30,3 +32,7 @@ class FormService:
         form.updated_at = datetime.utcnow()
         self._store[form_id] = form
         return form
+
+    @classmethod
+    def clear_store(cls) -> None:
+        cls._shared_store.clear()

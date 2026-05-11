@@ -36,6 +36,7 @@ class Settings(BaseSettings):
     llm_provider: Literal["openai", "gemini", "openrouter", "mock"] = Field(default="mock")
     openai_api_key: str | None = Field(default=None)
     gemini_api_key: str | None = Field(default=None)
+    gemini_model: str = Field(default="gemini-2.0-flash-lite")
     openrouter_api_key: str | None = Field(default=None)
 
     # Observability

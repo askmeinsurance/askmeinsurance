@@ -10,6 +10,10 @@ class APIError(BaseModel):
     detail: Any | None = None
 
 
+class ErrorEnvelope(BaseModel):
+    error: APIError
+
+
 class HealthResponse(BaseModel):
     status: str = "ok"
     timestamp: datetime

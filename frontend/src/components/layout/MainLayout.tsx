@@ -7,6 +7,8 @@ import type { DiagramTab } from '../../types';
 interface MainLayoutProps {
   sidebarCollapsed: boolean;
   onSidebarToggle: () => void;
+  onSignOut?: () => void;
+  signedInEmail?: string;
   diagramTabs: DiagramTab[];
   activeDiagramTabId: string | null;
   isCanvasHidden: boolean;
@@ -21,6 +23,8 @@ interface MainLayoutProps {
 export function MainLayout({
   sidebarCollapsed,
   onSidebarToggle,
+  onSignOut,
+  signedInEmail,
   diagramTabs,
   activeDiagramTabId,
   isCanvasHidden,
@@ -36,7 +40,12 @@ export function MainLayout({
 
   return (
     <div className="flex h-screen w-full overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
-      <Sidebar collapsed={sidebarCollapsed} onToggle={onSidebarToggle} />
+      <Sidebar
+        collapsed={sidebarCollapsed}
+        onToggle={onSidebarToggle}
+        onSignOut={onSignOut}
+        signedInEmail={signedInEmail}
+      />
       <div className="relative flex flex-1 overflow-hidden">
         {children}
         {shouldShowCanvasButton && (

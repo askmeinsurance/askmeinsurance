@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MainLayout } from './components/layout/MainLayout';
 import { ChatStartScreen } from './components/chat/ChatStartScreen';
 import { ChatPanel } from './components/chat/ChatPanel';
 import { PaginatedFormModal } from './components/forms/PaginatedFormModal';
 import { textOnlyMessages, canvasMessages } from './mocks/messages';
 import type { AppView, DiagramPayload, DiagramTab, FormAnswerMap, FormRequest, Message } from './types';
+import type { AuthSession } from './types/auth';
 import configuredFormRequest from './config/llm-form-request.json';
+import { clearAuthSession, readAuthSession } from './lib/auth';
+import { streamChatMessage, submitFormAnswers } from './lib/chatApi';
 import './index.css';
 
 const DEFAULT_DIAGRAM_FILE = '/financial_planning_diagram.excalidraw';
@@ -87,14 +90,33 @@ function getConfiguredFormRequest(): FormRequest {
 }
 
 export default function App() {
+  const [session, setSession] = useState<AuthSession | null>(null);
   const [view, setView] = useState<AppView>('start');
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isSending, setIsSending] = useState(false);
   const [diagramState, setDiagramState] = useState({ tabs: [] as DiagramTab[], activeTabId: null as string | null });
   const [isCanvasHidden, setIsCanvasHidden] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeFormRequest, setActiveFormRequest] = useState<FormRequest | null>(null);
   const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
   const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
+
+  useEffect(() => {
+    const persistedSession = readAuthSession();
+    setSession(persistedSession);
+  }, []);
+
+  function handleSignOut() {
+    clearAuthSession();
+    setSession(null);
+    setMessages([]);
+    setView('start');
+    setActiveFormRequest(null);
+  }
+
+  function handleUnauthorized() {
+    handleSignOut();
+  }
 
   async function openDiagramFromPublicFile() {
     try {
@@ -206,7 +228,7 @@ export default function App() {
     }
   }
 
-  function handleSend(text: string) {
+  async function handleSend(text: string) {
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
@@ -226,7 +248,10 @@ export default function App() {
       };
       setMessages((prev) => [...prev, userMessage, botMessage]);
       void openDiagramFromPublicFile();
-    } else if (isFormRequest) {
+      return;
+    }
+
+    if (isFormRequest) {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'bot',
@@ -238,8 +263,59 @@ export default function App() {
         applyBotDiagrams(next);
         return next;
       });
-    } else {
-      setMessages((prev) => [...prev, userMessage]);
+      return;
+    }
+
+    setMessages((prev) => [...prev, userMessage]);
+
+    if (!session) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: 'bot',
+          content: textOnlyMessages[1]?.content || 'How can I help with your insurance planning today?',
+        },
+      ]);
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      const result = await streamChatMessage({
+        message: text,
+        accessToken: session.accessToken,
+      });
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'bot',
+        content: result.text,
+        formRequest: result.formRequest,
+      };
+
+      setMessages((prev) => {
+        const next = [...prev, botMessage];
+        applyBotDiagrams(next);
+        return next;
+      });
+    } catch (error) {
+      const status = (error as { status?: number }).status;
+      if (status === 401) {
+        handleUnauthorized();
+        return;
+      }
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: 'bot',
+          content: 'I hit a connection issue while contacting the backend. Please try again.',
+        },
+      ]);
+    } finally {
+      setIsSending(false);
     }
   }
 
@@ -248,20 +324,28 @@ export default function App() {
   }
 
   function handleFormSubmit(formId: string, answers: FormAnswerMap) {
-    const payload = { formId, answers };
-    fetch('/api/form-submissions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
+    if (!session) {
+      const fallbackKey = 'form_submissions_fallback';
+      const raw = window.localStorage.getItem(fallbackKey);
+      const existing = raw ? (JSON.parse(raw) as Array<{ formId: string; answers: FormAnswerMap; submittedAt: string }>) : [];
+      existing.push({ formId, answers, submittedAt: new Date().toISOString() });
+      window.localStorage.setItem(fallbackKey, JSON.stringify(existing));
+      setActiveFormRequest(null);
+      return;
+    }
+
+    submitFormAnswers({
+      formId,
+      answers,
+      accessToken: session.accessToken,
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed with status ${response.status}`);
+      .catch((error) => {
+        const status = (error as { status?: number }).status;
+        if (status === 401) {
+          handleUnauthorized();
+          return;
         }
-      })
-      .catch(() => {
+
         const fallbackKey = 'form_submissions_fallback';
         const raw = window.localStorage.getItem(fallbackKey);
         const existing = raw ? (JSON.parse(raw) as Array<{ formId: string; answers: FormAnswerMap; submittedAt: string }>) : [];
@@ -304,10 +388,14 @@ export default function App() {
     setIsCanvasHidden(false);
   }
 
+  // Auth gate temporarily disabled.
+
   return (
     <MainLayout
       sidebarCollapsed={sidebarCollapsed}
       onSidebarToggle={handleSidebarToggle}
+      onSignOut={handleSignOut}
+      signedInEmail={session?.email}
       diagramTabs={diagramTabs}
       activeDiagramTabId={activeDiagramTabId}
       isCanvasHidden={isCanvasHidden}
@@ -319,7 +407,7 @@ export default function App() {
     >
       {view === 'start' && <ChatStartScreen onSubmit={handleSubmit} />}
       {view === 'chat' && (
-        <ChatPanel messages={messages} onSend={handleSend} hasDiagramPanel={hasVisibleCanvas} />
+        <ChatPanel messages={messages} onSend={handleSend} hasDiagramPanel={hasVisibleCanvas} isSending={isSending} />
       )}
       <PaginatedFormModal
         key={activeFormRequest?.id ?? 'no-form'}

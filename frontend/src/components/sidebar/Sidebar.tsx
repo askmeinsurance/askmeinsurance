@@ -6,7 +6,9 @@ import {
   Settings,
   HelpCircle,
   ChevronRight,
+  LogOut,
 } from "lucide-react";
+import type { ReactNode } from "react";
 import { IconButton } from "../ui/IconButton";
 
 interface ChatHistoryItem {
@@ -23,13 +25,14 @@ const MOCK_HISTORY: ChatHistoryItem[] = [
 ];
 
 interface NavItemProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   label: string;
   collapsed: boolean;
   active?: boolean;
+  onClick?: () => void;
 }
 
-function NavItem({ icon, label, collapsed, active = false }: NavItemProps) {
+function NavItem({ icon, label, collapsed, active = false, onClick }: NavItemProps) {
   const activeClass = active
     ? "bg-blue-50 text-blue-600"
     : "text-gray-600 hover:bg-gray-100 hover:text-gray-800";
@@ -37,6 +40,7 @@ function NavItem({ icon, label, collapsed, active = false }: NavItemProps) {
   return (
     <button
       type="button"
+      onClick={onClick}
       className={`flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${activeClass} ${collapsed ? "justify-center" : ""}`}
     >
       <span className="shrink-0">{icon}</span>
@@ -48,14 +52,15 @@ function NavItem({ icon, label, collapsed, active = false }: NavItemProps) {
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
+  onSignOut?: () => void;
+  signedInEmail?: string;
 }
 
-export function Sidebar({ collapsed, onToggle }: SidebarProps) {
+export function Sidebar({ collapsed, onToggle, onSignOut, signedInEmail }: SidebarProps) {
   return (
     <aside
       className={`flex h-full flex-col border-r border-gray-200 bg-white transition-all duration-200 ${collapsed ? "w-14" : "w-64"}`}
     >
-      {/* Header */}
       <div
         className={`flex items-center border-b border-gray-100 px-3 py-3 ${collapsed ? "justify-center" : "gap-3"}`}
       >
@@ -69,7 +74,6 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         )}
       </div>
 
-      {/* New Chat */}
       <div className={`px-3 py-3 ${collapsed ? "flex justify-center" : ""}`}>
         {collapsed ? (
           <IconButton label="New chat" variant="solid" size="md">
@@ -86,7 +90,6 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         )}
       </div>
 
-      {/* Nav */}
       <nav className="flex flex-col gap-1 px-2">
         <NavItem
           icon={<MessageSquare size={18} />}
@@ -100,7 +103,6 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         />
       </nav>
 
-      {/* Chat History */}
       {!collapsed && (
         <div className="mt-4 flex flex-1 flex-col overflow-hidden px-2">
           <div className="mb-1 flex items-center justify-between px-2">
@@ -129,8 +131,18 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         </div>
       )}
 
-      {/* Footer */}
       <div className="mt-auto border-t border-gray-100 px-2 py-3">
+        {!collapsed && signedInEmail && (
+          <p className="mb-2 truncate px-3 text-xs text-gray-400">Signed in as {signedInEmail}</p>
+        )}
+        {onSignOut && (
+          <NavItem
+            icon={<LogOut size={18} />}
+            label="Sign out"
+            collapsed={collapsed}
+            onClick={onSignOut}
+          />
+        )}
         <NavItem
           icon={<Settings size={18} />}
           label="Settings"
