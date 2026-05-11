@@ -17,8 +17,6 @@ interface ChatHistoryItem {
   active?: boolean;
 }
 
-const CHAT_HISTORY: ChatHistoryItem[] = [];
-
 interface NavItemProps {
   icon: ReactNode;
   label: string;
@@ -47,11 +45,22 @@ function NavItem({ icon, label, collapsed, active = false, onClick }: NavItemPro
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
+  conversations?: ChatHistoryItem[];
+  onConversationSelect?: (id: string) => void;
+  onNewChat?: () => void;
   onSignOut?: () => void;
   signedInEmail?: string;
 }
 
-export function Sidebar({ collapsed, onToggle, onSignOut, signedInEmail }: SidebarProps) {
+export function Sidebar({
+  collapsed,
+  onToggle,
+  conversations = [],
+  onConversationSelect,
+  onNewChat,
+  onSignOut,
+  signedInEmail,
+}: SidebarProps) {
   return (
     <aside
       className={`flex h-full flex-col border-r border-gray-200 bg-white transition-all duration-200 ${collapsed ? "w-14" : "w-64"}`}
@@ -71,12 +80,13 @@ export function Sidebar({ collapsed, onToggle, onSignOut, signedInEmail }: Sideb
 
       <div className={`px-3 py-3 ${collapsed ? "flex justify-center" : ""}`}>
         {collapsed ? (
-          <IconButton label="New chat" variant="solid" size="md">
+          <IconButton label="New chat" variant="solid" size="md" onClick={onNewChat}>
             <Plus size={18} />
           </IconButton>
         ) : (
           <button
             type="button"
+            onClick={onNewChat}
             className="flex w-full items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
           >
             <Plus size={16} />
@@ -106,14 +116,15 @@ export function Sidebar({ collapsed, onToggle, onSignOut, signedInEmail }: Sideb
             </span>
             <ChevronRight size={14} className="text-gray-400" />
           </div>
-          {CHAT_HISTORY.length === 0 ? (
+          {conversations.length === 0 ? (
             <p className="px-2 py-2 text-sm text-gray-500">No conversations yet.</p>
           ) : (
             <ul className="flex flex-col gap-0.5 overflow-y-auto">
-              {CHAT_HISTORY.map((item) => (
+              {conversations.map((item) => (
                 <li key={item.id}>
                   <button
                     type="button"
+                    onClick={() => onConversationSelect?.(item.id)}
                     className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${
                       item.active
                         ? "bg-blue-50 text-blue-600"

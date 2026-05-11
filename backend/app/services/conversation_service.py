@@ -9,7 +9,7 @@ class ConversationService:
         self._store: dict[UUID, Conversation] = {}
 
     async def list_conversations(self) -> list[Conversation]:
-        return list(self._store.values())
+        return sorted(self._store.values(), key=lambda item: item.updated_at, reverse=True)
 
     async def create_conversation(self, payload: ConversationCreate) -> Conversation:
         conversation = Conversation(title=payload.title)
@@ -29,3 +29,6 @@ class ConversationService:
         conversation.updated_at = datetime.utcnow()
         self._store[conversation_id] = conversation
         return conversation
+
+
+conversation_service = ConversationService()

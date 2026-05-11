@@ -88,6 +88,29 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 
+  /conversations/{conversation_id}/messages:
+    parameters:
+      - $ref: '#/components/parameters/ConversationId'
+    get:
+      tags: [conversations]
+      summary: List conversation messages
+      operationId: listConversationMessages
+      responses:
+        '200':
+          description: Conversation messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConversationMessage'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
   /chat/stream:
     post:
       tags: [chat]
@@ -275,6 +298,31 @@ components:
           type: string
           format: date-time
         updated_at:
+          type: string
+          format: date-time
+
+    ConversationMessage:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - conversation_id
+        - role
+        - content
+        - created_at
+      properties:
+        id:
+          type: string
+          format: uuid
+        conversation_id:
+          type: string
+          format: uuid
+        role:
+          type: string
+          enum: [user, bot]
+        content:
+          type: string
+        created_at:
           type: string
           format: date-time
 

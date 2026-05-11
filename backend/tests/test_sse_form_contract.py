@@ -59,3 +59,26 @@ def test_sse_emits_chunk_text_without_form_requested_event() -> None:
         app.dependency_overrides.clear()
 
     asyncio.run(_run())
+
+
+def test_sse_auto_creates_conversation_and_meta_contains_conversation_id() -> None:
+    async def _run() -> None:
+        app = create_app()
+        app.dependency_overrides[require_auth] = _fake_auth
+
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url="http://testserver") as client:
+            response = await client.post(
+                "/api/v1/chat/stream",
+                json={"message": "Need life insurance for young family"},
+            )
+            assert response.status_code == 200
+            events = _parse_sse_events(response.text)
+            by_type = {event["event"]: event["data"] for event in events}
+            assert "meta" in by_type
+            assert isinstance(by_type["meta"].get("conversation_id"), str)
+            assert by_type["meta"]["conversation_id"]
+
+        app.dependency_overrides.clear()
+
+    asyncio.run(_run())

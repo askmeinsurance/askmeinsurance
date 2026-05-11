@@ -7,7 +7,13 @@ import { AuthGate } from './components/auth/AuthGate';
 import type { AppView, DiagramTab, FormAnswerMap, FormRequest, Message } from './types';
 import type { AuthSession } from './types/auth';
 import { clearAuthSession, readAuthSession, saveAuthSession } from './lib/auth';
-import { streamChatMessage, submitFormAnswers } from './lib/chatApi';
+import {
+  getConversationMessages,
+  listConversations,
+  streamChatMessage,
+  submitFormAnswers,
+  type ConversationSummary,
+} from './lib/chatApi';
 import {
   appendChunkToBotMessage,
   appendUserAndBotPlaceholder,
@@ -29,6 +35,9 @@ export default function App() {
   const [session, setSession] = useState<AuthSession | null>(null);
   const [view, setView] = useState<AppView>('start');
   const [messages, setMessages] = useState<Message[]>([]);
+  const [activeConversationId, setActiveConversationId] = useState<string | null>(null);
+  const [messagesByConversation, setMessagesByConversation] = useState<Record<string, Message[]>>({});
+  const [conversations, setConversations] = useState<ConversationSummary[]>([]);
   const [isSending, setIsSending] = useState(false);
   const [diagramState, setDiagramState] = useState({ tabs: [] as DiagramTab[], activeTabId: null as string | null });
   const [isCanvasHidden, setIsCanvasHidden] = useState(true);
@@ -47,13 +56,38 @@ export default function App() {
     });
   }, []);
 
+  useEffect(() => {
+    if (!session) return;
+    void refreshConversations(session.accessToken);
+  }, [session]);
+
   function handleSignOut() {
     logApp('Signing out');
     clearAuthSession();
     setSession(null);
     setMessages([]);
+    setMessagesByConversation({});
+    setConversations([]);
+    setActiveConversationId(null);
     setView('start');
     setActiveFormRequest(null);
+  }
+
+  function fallbackTitle(firstMessage: string): string {
+    const cleaned = firstMessage.trim().replace(/\s+/g, ' ');
+    return cleaned.length > 60 ? `${cleaned.slice(0, 60)}...` : cleaned || 'New conversation';
+  }
+
+  async function refreshConversations(accessToken: string) {
+    try {
+      const items = await listConversations(accessToken);
+      setConversations(items);
+    } catch (error) {
+      const status = (error as { status?: number }).status;
+      if (status === 401) {
+        handleUnauthorized();
+      }
+    }
   }
 
   function handleUnauthorized() {
@@ -89,6 +123,7 @@ export default function App() {
   async function handleSubmit(message: string) {
     logApp('Start screen submit', { messageLength: message.length });
     setView('chat');
+    setActiveConversationId(null);
     await handleSend(message);
   }
 
@@ -102,6 +137,7 @@ export default function App() {
     logApp('Sending message', {
       messageLength: text.length,
       currentView: view,
+      activeConversationId,
     });
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -116,6 +152,7 @@ export default function App() {
       const result = await streamChatMessage({
         message: text,
         accessToken: session.accessToken,
+        conversationId: activeConversationId,
         onChunk: (textChunk) => {
           setMessages((prev) => appendChunkToBotMessage(prev, botMessageId, textChunk));
         },
@@ -132,8 +169,28 @@ export default function App() {
       setMessages((prev) => {
         const next = finalizeBotMessage(prev, botMessageId, result.text, result.formRequest);
         applyBotDiagrams(next);
+        const resolvedConversationId = result.conversationId ?? activeConversationId;
+        if (resolvedConversationId) {
+          setMessagesByConversation((existing) => ({
+            ...existing,
+            [resolvedConversationId]: next,
+          }));
+        }
         return next;
       });
+      if (result.conversationId && !activeConversationId) {
+        setActiveConversationId(result.conversationId);
+        setConversations((prev) => [
+          {
+            id: result.conversationId as string,
+            title: fallbackTitle(text),
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          },
+          ...prev.filter((item) => item.id !== result.conversationId),
+        ]);
+      }
+      await refreshConversations(session.accessToken);
     } catch (error) {
       const status = (error as { status?: number }).status;
       logApp('Chat send failed', {
@@ -152,6 +209,42 @@ export default function App() {
     } finally {
       setIsSending(false);
     }
+  }
+
+  async function handleConversationSelect(conversationId: string) {
+    if (!session) return;
+    setView('chat');
+    setActiveConversationId(conversationId);
+
+    const cached = messagesByConversation[conversationId];
+    if (cached) {
+      setMessages(cached);
+      return;
+    }
+
+    try {
+      const conversationMessages = await getConversationMessages(conversationId, session.accessToken);
+      const hydrated: Message[] = conversationMessages.map((item) => ({
+        id: item.id,
+        role: item.role,
+        content: item.content,
+      }));
+      setMessages(hydrated);
+      setMessagesByConversation((prev) => ({ ...prev, [conversationId]: hydrated }));
+    } catch (error) {
+      const status = (error as { status?: number }).status;
+      if (status === 401) {
+        handleUnauthorized();
+      }
+    }
+  }
+
+  function handleNewChat() {
+    setView('chat');
+    setMessages([]);
+    setActiveConversationId(null);
+    setActiveFormRequest(null);
+    setFormSubmitError(null);
   }
 
   function handleFormClose() {
@@ -230,10 +323,19 @@ export default function App() {
     return <AuthGate onSignIn={handleSignIn} />;
   }
 
+  const sidebarConversations = conversations.map((conversation) => ({
+    id: conversation.id,
+    title: conversation.title,
+    active: conversation.id === activeConversationId,
+  }));
+
   return (
     <MainLayout
       sidebarCollapsed={sidebarCollapsed}
       onSidebarToggle={handleSidebarToggle}
+      conversations={sidebarConversations}
+      onConversationSelect={handleConversationSelect}
+      onNewChat={handleNewChat}
       onSignOut={handleSignOut}
       signedInEmail={session?.email}
       diagramTabs={diagramTabs}

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { afterEach, describe, it, mock } from 'node:test';
-import { streamChatMessage, submitFormAnswers } from './chatApi.ts';
+import { getConversationMessages, listConversations, streamChatMessage, submitFormAnswers } from './chatApi.ts';
 
 function sseResponse(events) {
   const sseBody = events
@@ -22,6 +22,7 @@ describe('streamChatMessage', () => {
     const onChunkCalls = [];
     mock.method(globalThis, 'fetch', async () =>
       sseResponse([
+        { event: 'meta', data: { conversation_id: 'f1a9f6de-4d4d-42d5-b893-c783f6f32641' } },
         { event: 'chunk', data: { text: 'Hello ' } },
         { event: 'chunk', data: { text: 'world' } },
         { event: 'done', data: { reason: 'completed' } },
@@ -35,6 +36,7 @@ describe('streamChatMessage', () => {
     });
 
     assert.equal(result.text, 'Hello world');
+    assert.equal(result.conversationId, 'f1a9f6de-4d4d-42d5-b893-c783f6f32641');
     assert.deepEqual(onChunkCalls, ['Hello ', 'world']);
   });
 
@@ -124,6 +126,32 @@ describe('streamChatMessage', () => {
     });
     assert.equal(onFormRequestCalls.length, 1);
     assert.deepEqual(onFormRequestCalls[0], result.formRequest);
+  });
+});
+
+describe('conversation APIs', () => {
+  it('lists conversations', async () => {
+    mock.method(globalThis, 'fetch', async () =>
+      new Response(
+        JSON.stringify([{ id: 'c1', title: 'Life Insurance', created_at: '2026-01-01', updated_at: '2026-01-01' }]),
+        { status: 200, headers: { 'Content-Type': 'application/json' } },
+      ),
+    );
+    const result = await listConversations('token');
+    assert.equal(result.length, 1);
+    assert.equal(result[0].title, 'Life Insurance');
+  });
+
+  it('gets conversation messages', async () => {
+    mock.method(globalThis, 'fetch', async () =>
+      new Response(
+        JSON.stringify([{ id: 'm1', conversation_id: 'f1a9f6de-4d4d-42d5-b893-c783f6f32641', role: 'user', content: 'hi' }]),
+        { status: 200, headers: { 'Content-Type': 'application/json' } },
+      ),
+    );
+    const result = await getConversationMessages('f1a9f6de-4d4d-42d5-b893-c783f6f32641', 'token');
+    assert.equal(result.length, 1);
+    assert.equal(result[0].role, 'user');
   });
 });
 

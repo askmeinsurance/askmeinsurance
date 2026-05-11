@@ -7,6 +7,9 @@ import type { DiagramTab } from '../../types';
 interface MainLayoutProps {
   sidebarCollapsed: boolean;
   onSidebarToggle: () => void;
+  conversations?: { id: string; title: string; active?: boolean }[];
+  onConversationSelect?: (id: string) => void;
+  onNewChat?: () => void;
   onSignOut?: () => void;
   signedInEmail?: string;
   diagramTabs: DiagramTab[];
@@ -23,6 +26,9 @@ interface MainLayoutProps {
 export function MainLayout({
   sidebarCollapsed,
   onSidebarToggle,
+  conversations,
+  onConversationSelect,
+  onNewChat,
   onSignOut,
   signedInEmail,
   diagramTabs,
@@ -43,6 +49,9 @@ export function MainLayout({
       <Sidebar
         collapsed={sidebarCollapsed}
         onToggle={onSidebarToggle}
+        conversations={conversations}
+        onConversationSelect={onConversationSelect}
+        onNewChat={onNewChat}
         onSignOut={onSignOut}
         signedInEmail={signedInEmail}
       />

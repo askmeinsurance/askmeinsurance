@@ -4,11 +4,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.dependencies.auth import require_auth
 from app.schemas.common import UserContext
-from app.schemas.conversation import Conversation, ConversationCreate
-from app.services.conversation_service import ConversationService
+from app.schemas.conversation import Conversation, ConversationCreate, ConversationMessage
+from app.services.conversation_service import conversation_service
+from app.services.message_service import message_service
 
 router = APIRouter(prefix="/conversations", tags=["conversations"])
-conversation_service = ConversationService()
 
 
 @router.get("", response_model=list[Conversation])
@@ -45,3 +45,14 @@ async def delete_conversation(
     deleted = await conversation_service.delete_conversation(conversation_id)
     if not deleted:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Conversation not found")
+
+
+@router.get("/{conversation_id}/messages", response_model=list[ConversationMessage])
+async def list_conversation_messages(
+    conversation_id: UUID,
+    _: UserContext = Depends(require_auth),
+) -> list[ConversationMessage]:
+    conversation = await conversation_service.get_conversation(conversation_id)
+    if conversation is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Conversation not found")
+    return await message_service.list_messages(conversation_id)

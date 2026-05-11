@@ -44,6 +44,16 @@ class LangGraphService:
             raise RuntimeError("Gemini response did not contain text output")
         return text
 
+    async def generate_conversation_title(self, first_message: str) -> str:
+        prompt = (
+            "Create a concise chat title (max 7 words) for this first user message. "
+            "Return only the title, no quotes, no punctuation at the end.\n\n"
+            f"Message: {first_message}"
+        )
+        if self._settings.llm_provider == "gemini":
+            return await self._call_gemini_once(prompt)
+        return ""
+
     @staticmethod
     def _chunk_text(text: str, size: int = 180) -> list[str]:
         return [text[i : i + size] for i in range(0, len(text), size)] or [""]

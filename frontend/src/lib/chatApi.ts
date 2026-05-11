@@ -2,7 +2,23 @@ import type { FormAnswerMap, FormFieldType, FormOption, FormRequest } from '../t
 
 export interface ChatStreamResult {
   text: string;
+  conversationId?: string;
   formRequest?: FormRequest;
+}
+
+export interface ConversationSummary {
+  id: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ConversationMessage {
+  id: string;
+  conversation_id: string;
+  role: 'user' | 'bot';
+  content: string;
+  created_at: string;
 }
 
 function resolveApiBase(): string {
@@ -22,6 +38,7 @@ function resolveApiBase(): string {
 
 const API_BASE = resolveApiBase();
 const CHAT_ENDPOINT = `${API_BASE}/chat/stream`;
+const CONVERSATIONS_ENDPOINT = `${API_BASE}/conversations`;
 
 function logDebug(message: string, details?: unknown) {
   if (details === undefined) {
@@ -195,6 +212,7 @@ export async function streamChatMessage(opts: {
 
   let buffer = '';
   let messageText = '';
+  let conversationId: string | undefined;
   let latestFormRequest: FormRequest | undefined;
   let eventCount = 0;
 
@@ -227,6 +245,13 @@ export async function streamChatMessage(opts: {
           }
         }
 
+        if (eventType === 'meta') {
+          const metaConversationId = parsed.conversation_id;
+          if (typeof metaConversationId === 'string' && metaConversationId.length > 0) {
+            conversationId = metaConversationId;
+          }
+        }
+
         if (eventType === 'form_requested') {
           const mapped = mapFormRequestWireToUi(parsed);
           if (mapped) {
@@ -255,8 +280,49 @@ export async function streamChatMessage(opts: {
 
   return {
     text: messageText,
+    conversationId,
     formRequest: latestFormRequest,
   };
+}
+
+export async function listConversations(accessToken: string): Promise<ConversationSummary[]> {
+  const response = await fetch(CONVERSATIONS_ENDPOINT, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!response.ok) {
+    const err = new Error(`List conversations failed with status ${response.status}`);
+    (err as Error & { status?: number }).status = response.status;
+    throw err;
+  }
+  return (await response.json()) as ConversationSummary[];
+}
+
+export async function getConversationMessages(
+  conversationId: string,
+  accessToken: string,
+): Promise<ConversationMessage[]> {
+  const normalizedConversationId = parsePossibleUuid(conversationId);
+  if (!normalizedConversationId) {
+    throw new Error('Conversation ID is not a valid UUID');
+  }
+
+  const response = await fetch(`${CONVERSATIONS_ENDPOINT}/${normalizedConversationId}/messages`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!response.ok) {
+    const err = new Error(`Get conversation messages failed with status ${response.status}`);
+    (err as Error & { status?: number }).status = response.status;
+    throw err;
+  }
+  return (await response.json()) as ConversationMessage[];
 }
 
 export async function submitFormAnswers(opts: {
