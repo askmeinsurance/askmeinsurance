@@ -5,8 +5,31 @@ export interface ChatStreamResult {
   formRequest?: FormRequest;
 }
 
-const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL?.trim().replace(/\/+$/, '') || '';
-const API_BASE = BACKEND_BASE_URL ? `${BACKEND_BASE_URL}/api/v1` : '/api/v1';
+function resolveApiBase(): string {
+  const configured = import.meta.env.VITE_BACKEND_BASE_URL?.trim().replace(/\/+$/, '');
+  if (configured) {
+    return `${configured}/api/v1`;
+  }
+
+  // Dev-safe default: Vite runs on 5173 while backend runs on 8000.
+  if (import.meta.env.DEV && typeof window !== 'undefined') {
+    return `http://${window.location.hostname}:8000/api/v1`;
+  }
+
+  // Production fallback for same-origin deployments.
+  return '/api/v1';
+}
+
+const API_BASE = resolveApiBase();
+const CHAT_ENDPOINT = `${API_BASE}/chat/stream`;
+
+function logDebug(message: string, details?: unknown) {
+  if (details === undefined) {
+    console.log(`[chatApi] ${message}`);
+    return;
+  }
+  console.log(`[chatApi] ${message}`, details);
+}
 
 interface FormOptionWire {
   label?: unknown;
@@ -135,7 +158,13 @@ export async function streamChatMessage(opts: {
     payload.conversation_id = normalizedConversationId;
   }
 
-  const response = await fetch(`${API_BASE}/chat/stream`, {
+  logDebug('Sending stream request', {
+    endpoint: CHAT_ENDPOINT,
+    hasConversationId: Boolean(normalizedConversationId),
+    messageLength: opts.message.length,
+  });
+
+  const response = await fetch(CHAT_ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -143,6 +172,14 @@ export async function streamChatMessage(opts: {
     },
     body: JSON.stringify(payload),
     signal: opts.signal,
+  });
+
+  const requestId = response.headers.get('x-request-id');
+  logDebug('Stream response received', {
+    status: response.status,
+    ok: response.ok,
+    hasBody: Boolean(response.body),
+    requestId,
   });
 
   if (!response.ok || !response.body) {
@@ -157,6 +194,7 @@ export async function streamChatMessage(opts: {
   let buffer = '';
   let messageText = '';
   let latestFormRequest: FormRequest | undefined;
+  let eventCount = 0;
 
   while (true) {
     const { done, value } = await reader.read();
@@ -167,6 +205,7 @@ export async function streamChatMessage(opts: {
     buffer = events.pop() ?? '';
 
     for (const eventBlock of events) {
+      eventCount += 1;
       const lines = eventBlock.split('\n');
       const eventType = lines.find((line) => line.startsWith('event:'))?.replace('event:', '').trim();
       const dataLine = lines.find((line) => line.startsWith('data:'));
@@ -189,13 +228,22 @@ export async function streamChatMessage(opts: {
           const mapped = mapFormRequestWireToUi(parsed);
           if (mapped) {
             latestFormRequest = mapped;
+            logDebug('Received form_requested event');
           }
         }
       } catch {
+        logDebug('Skipping malformed SSE event block');
         continue;
       }
     }
   }
+
+  logDebug('Stream parsing complete', {
+    requestId,
+    eventCount,
+    responseTextLength: messageText.length,
+    hasFormRequest: Boolean(latestFormRequest),
+  });
 
   if (!messageText.trim()) {
     messageText = 'I could not generate a response right now. Please try again.';
@@ -217,13 +265,26 @@ export async function submitFormAnswers(opts: {
     throw new Error('Form ID is not a valid UUID for backend submission');
   }
 
-  const response = await fetch(`${API_BASE}/forms/${uuid}/submit`, {
+  const endpoint = `${API_BASE}/forms/${uuid}/submit`;
+  logDebug('Submitting form answers', {
+    endpoint,
+    formId: uuid,
+    fieldCount: Object.keys(opts.answers).length,
+  });
+
+  const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${opts.accessToken}`,
     },
     body: JSON.stringify({ fields: opts.answers }),
+  });
+
+  logDebug('Form submit response', {
+    status: response.status,
+    ok: response.ok,
+    requestId: response.headers.get('x-request-id'),
   });
 
   if (!response.ok) {

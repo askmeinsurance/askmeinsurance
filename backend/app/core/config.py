@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     app_name: str = Field(default="askmeinsurance-backend")
     app_env: Literal["local", "dev", "staging", "prod"] = Field(default="local")
     app_debug: bool = Field(default=False)
+    cors_allowed_origins: str = Field(default="http://localhost:5173,http://127.0.0.1:5173")
 
     # Auth
     auth_enabled: bool = Field(default=True)
@@ -25,6 +26,7 @@ class Settings(BaseSettings):
     jwt_audience: str | None = Field(default=None)
     jwt_issuer: str | None = Field(default=None)
     jwt_public_key: str | None = Field(default=None)
+    auth_dev_bearer_token: str | None = Field(default=None)
 
     # Supabase
     supabase_url: str | None = Field(default=None)

@@ -1,22 +1,16 @@
 from collections.abc import AsyncGenerator
 from typing import Any
-from uuid import UUID, uuid4
+from uuid import UUID
 
 import httpx
 
 from app.core.config import Settings, get_settings
 from app.schemas.chat import ChatEvent
-from app.schemas.form import Form
-from app.services.form_service import FormService
-
-
 class LangGraphService:
     def __init__(
         self,
-        form_service: FormService | None = None,
         settings: Settings | None = None,
     ) -> None:
-        self._form_service = form_service or FormService()
         self._settings = settings or get_settings()
 
     async def _call_gemini_once(self, message: str) -> str:
@@ -61,8 +55,6 @@ class LangGraphService:
         conversation_id: UUID | None,
         user: Any,
     ) -> AsyncGenerator[ChatEvent, None]:
-        form_conversation_id = conversation_id or uuid4()
-        form = await self._form_service.upsert_form(Form(conversation_id=form_conversation_id))
         using_gemini = self._settings.llm_provider == "gemini"
 
         yield ChatEvent(
@@ -86,47 +78,4 @@ class LangGraphService:
         else:
             yield ChatEvent(event="chunk", data={"text": f"Echo: {message[:80]}"})
 
-        yield ChatEvent(
-            event="form_requested",
-            data={
-                "form_id": str(form.id),
-                "conversation_id": str(form.conversation_id),
-                "title": "Insurance Planning Intake",
-                "description": "Answer these short questions so I can tailor the recommendation.",
-                "submit_label": "Submit Details",
-                "pages": [
-                    {
-                        "id": "profile",
-                        "title": "Profile Basics",
-                        "description": "Tell me who this plan is for.",
-                        "fields": [
-                            {
-                                "id": "full_name",
-                                "label": "Full Name",
-                                "type": "text",
-                                "required": True,
-                                "placeholder": "e.g. Alex Tan",
-                                "options": [],
-                            },
-                            {
-                                "id": "date_of_birth",
-                                "label": "Date of Birth",
-                                "type": "text",
-                                "required": True,
-                                "placeholder": "YYYY-MM-DD",
-                                "options": [],
-                            },
-                            {
-                                "id": "coverage_goal",
-                                "label": "Coverage Goal",
-                                "type": "text",
-                                "required": True,
-                                "placeholder": "e.g. 500000",
-                                "options": [],
-                            },
-                        ],
-                    }
-                ],
-            },
-        )
         yield ChatEvent(event="done", data={"reason": "completed"})

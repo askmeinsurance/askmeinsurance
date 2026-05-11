@@ -1,3 +1,4 @@
+import hmac
 from typing import Any
 
 from app.core.config import Settings
@@ -21,12 +22,29 @@ class AuthService:
         if not token or not token.strip():
             raise ValueError("Missing bearer token")
 
-        # Placeholder coherent claims shape until real verifier is wired.
+        # Development bypass: when AUTH_ENABLED=false, accept any non-empty bearer token.
+        if not self.settings.auth_enabled:
+            return {
+                "sub": "dev-auth-disabled-user-id",
+                "email": "dev-auth-disabled@example.com",
+                "role": "super_user",
+                "is_super_user": True,
+            }
+
+        expected_token = self.settings.auth_dev_bearer_token
+        if not expected_token:
+            raise ValueError("AUTH_DEV_BEARER_TOKEN is not configured")
+
+        # Temporary development-only behavior:
+        # accept only a single bearer token from environment configuration.
+        if not hmac.compare_digest(token.strip(), expected_token.strip()):
+            raise ValueError("Invalid bearer token")
+
         return {
-            "sub": "placeholder-user-id",
-            "email": "user@example.com",
-            "role": "user",
-            "is_super_user": False,
+            "sub": "dev-super-user-id",
+            "email": "dev-super-user@example.com",
+            "role": "super_user",
+            "is_super_user": True,
         }
 
     async def build_user_context(self, claims: dict[str, Any]) -> UserContext:

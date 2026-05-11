@@ -17,12 +17,7 @@ interface ChatHistoryItem {
   active?: boolean;
 }
 
-const MOCK_HISTORY: ChatHistoryItem[] = [
-  { id: "1", title: "Understanding life insurance", active: true },
-  { id: "2", title: "Term vs whole life policy" },
-  { id: "3", title: "Critical illness coverage" },
-  { id: "4", title: "Medishield Life top-ups" },
-];
+const CHAT_HISTORY: ChatHistoryItem[] = [];
 
 interface NavItemProps {
   icon: ReactNode;
@@ -111,23 +106,27 @@ export function Sidebar({ collapsed, onToggle, onSignOut, signedInEmail }: Sideb
             </span>
             <ChevronRight size={14} className="text-gray-400" />
           </div>
-          <ul className="flex flex-col gap-0.5 overflow-y-auto">
-            {MOCK_HISTORY.map((item) => (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${
-                    item.active
-                      ? "bg-blue-50 text-blue-600"
-                      : "text-gray-600 hover:bg-gray-100 hover:text-gray-800"
-                  }`}
-                >
-                  <MessageSquare size={14} className="shrink-0" />
-                  <span className="truncate">{item.title}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
+          {CHAT_HISTORY.length === 0 ? (
+            <p className="px-2 py-2 text-sm text-gray-500">No conversations yet.</p>
+          ) : (
+            <ul className="flex flex-col gap-0.5 overflow-y-auto">
+              {CHAT_HISTORY.map((item) => (
+                <li key={item.id}>
+                  <button
+                    type="button"
+                    className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${
+                      item.active
+                        ? "bg-blue-50 text-blue-600"
+                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-800"
+                    }`}
+                  >
+                    <MessageSquare size={14} className="shrink-0" />
+                    <span className="truncate">{item.title}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
 

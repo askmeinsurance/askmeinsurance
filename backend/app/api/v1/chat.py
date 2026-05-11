@@ -1,4 +1,5 @@
 from collections.abc import AsyncGenerator
+import logging
 
 from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
@@ -11,6 +12,7 @@ from app.services.chat_service import ChatService
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 chat_service = ChatService()
+logger = logging.getLogger("askmeinsurance.chat")
 
 
 @router.post("/stream")
@@ -18,12 +20,27 @@ async def stream_chat(
     payload: ChatRequest,
     current_user: UserContext = Depends(require_auth),
 ) -> StreamingResponse:
+    logger.info(
+        "chat stream requested: user_id=%s conversation_id=%s message_len=%s",
+        current_user.user_id,
+        payload.conversation_id,
+        len(payload.message),
+    )
+
     async def event_stream() -> AsyncGenerator[str, None]:
-        async for event in chat_service.stream_chat(
-            message=payload.message,
-            conversation_id=payload.conversation_id,
-            user=current_user,
-        ):
-            yield format_sse(event.event, event.data)
+        event_count = 0
+        try:
+            async for event in chat_service.stream_chat(
+                message=payload.message,
+                conversation_id=payload.conversation_id,
+                user=current_user,
+            ):
+                event_count += 1
+                logger.debug("chat stream event: type=%s", event.event)
+                yield format_sse(event.event, event.data)
+            logger.info("chat stream completed: events=%s", event_count)
+        except Exception:  # noqa: BLE001
+            logger.exception("chat stream failed")
+            raise
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
