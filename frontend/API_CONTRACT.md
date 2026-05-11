@@ -29,20 +29,6 @@ This document is the single source of truth for the `frontend` and `backend` API
 - Attach bearer header on all protected `/api/v1` requests.
 - If backend returns `401`, frontend should treat the session/token as invalid or expired and prompt re-authentication.
 
-### Development-Only Login Endpoint
-
-- Endpoint: `POST /api/v1/auth/dev-login`
-- Use only for local/dev workflows where explicit development access is needed.
-- Must be considered unavailable in `staging`/`prod`.
-- Expected `200` response:
-
-```json
-{
-  "access_token": "string",
-  "token_type": "bearer"
-}
-```
-
 ## Error Contract
 
 `4xx/5xx` responses use:
@@ -63,24 +49,9 @@ Notes:
 
 ## Canonical Endpoints
 
-### Auth
-
-1. `POST /api/v1/auth/dev-login`
-- Development-only endpoint.
-- Response `200`:
-
-```json
-{
-  "access_token": "string",
-  "token_type": "bearer"
-}
-```
-
-- Response `4xx`: when blocked by environment gating or when dev-token configuration is unavailable.
-
 ### Conversations
 
-2. `GET /api/v1/conversations`
+1. `GET /api/v1/conversations`
 - Response `200`:
 
 ```json
@@ -94,7 +65,7 @@ Notes:
 ]
 ```
 
-3. `POST /api/v1/conversations`
+2. `POST /api/v1/conversations`
 - Request:
 
 ```json
@@ -105,17 +76,17 @@ Notes:
 
 - Response `201`: `Conversation` object (same shape as above)
 
-4. `GET /api/v1/conversations/{conversation_id}`
+3. `GET /api/v1/conversations/{conversation_id}`
 - Response `200`: `Conversation`
 - Response `404`: error
 
-5. `DELETE /api/v1/conversations/{conversation_id}`
+4. `DELETE /api/v1/conversations/{conversation_id}`
 - Response `204`
 - Response `404`: error
 
 ### Chat Stream (SSE)
 
-6. `POST /api/v1/chat/stream`
+5. `POST /api/v1/chat/stream`
 - Request:
 
 ```json

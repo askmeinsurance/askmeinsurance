@@ -1,15 +1,18 @@
+from pathlib import Path
 from functools import lru_cache
 from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+ENV_FILE_PATH = Path(__file__).resolve().parents[2] / ".env"
+
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(ENV_FILE_PATH),
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
@@ -26,12 +29,6 @@ class Settings(BaseSettings):
     jwt_audience: str | None = Field(default=None)
     jwt_issuer: str | None = Field(default=None)
     jwt_public_key: str | None = Field(default=None)
-    auth_dev_bearer_token: str | None = Field(default=None)
-    dev_auth_enabled: bool = Field(default=False)
-    dev_superuser_email: str | None = Field(default=None)
-    dev_superuser_password: str | None = Field(default=None)
-    dev_jwt_signing_secret: str | None = Field(default=None)
-    dev_jwt_expires_minutes: int = Field(default=60)
 
     # Supabase
     supabase_url: str | None = Field(default=None)

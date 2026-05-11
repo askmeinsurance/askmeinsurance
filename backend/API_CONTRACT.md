@@ -22,28 +22,12 @@ This document is the single source of truth for the `frontend` and `backend` API
 1. Frontend authenticates with Supabase Auth (email/password, magic link, OAuth, etc.).
 2. Frontend receives a Supabase access token (JWT).
 3. Frontend sends `Authorization: Bearer <supabase_access_token>` to backend protected endpoints.
-4. Backend verifies bearer token and resolves user context (`user_id`, `email`, `role`, `is_super_user`).
+4. Backend verifies bearer token and resolves user context (`user_id`, `email`, `role`).
 
 ### Protected Endpoints
 
 - All business endpoints in this document require bearer auth unless explicitly marked otherwise.
 - Missing/invalid bearer token returns `401` with `WWW-Authenticate: Bearer`.
-
-### Development-Only Login Endpoint
-
-- Endpoint: `POST /api/v1/auth/dev-login`
-- Purpose: local/dev convenience endpoint to return a development bearer token.
-- Environment gating: must be disabled outside dev-like environments (for example `staging`/`prod`).
-- Configuration dependency: requires `AUTH_DEV_BEARER_TOKEN` to be configured.
-- Production safety requirement: never expose or enable this endpoint in production traffic paths.
-- Response shape (`200`):
-
-```json
-{
-  "access_token": "string",
-  "token_type": "bearer"
-}
-```
 
 ## Error Contract
 
@@ -65,24 +49,9 @@ Notes:
 
 ## Canonical Endpoints
 
-### Auth
-
-1. `POST /api/v1/auth/dev-login`
-- Development-only endpoint.
-- Response `200`:
-
-```json
-{
-  "access_token": "string",
-  "token_type": "bearer"
-}
-```
-
-- Response `4xx`: when endpoint is blocked by environment gating or missing required dev-token configuration.
-
 ### Conversations
 
-2. `GET /api/v1/conversations`
+1. `GET /api/v1/conversations`
 - Response `200`:
 
 ```json
@@ -96,7 +65,7 @@ Notes:
 ]
 ```
 
-3. `POST /api/v1/conversations`
+2. `POST /api/v1/conversations`
 - Request:
 
 ```json
@@ -107,17 +76,17 @@ Notes:
 
 - Response `201`: `Conversation` object (same shape as above)
 
-4. `GET /api/v1/conversations/{conversation_id}`
+3. `GET /api/v1/conversations/{conversation_id}`
 - Response `200`: `Conversation`
 - Response `404`: error
 
-5. `DELETE /api/v1/conversations/{conversation_id}`
+4. `DELETE /api/v1/conversations/{conversation_id}`
 - Response `204`
 - Response `404`: error
 
 ### Chat Stream (SSE)
 
-6. `POST /api/v1/chat/stream`
+5. `POST /api/v1/chat/stream`
 - Request:
 
 ```json

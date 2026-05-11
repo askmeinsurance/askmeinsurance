@@ -1,4 +1,4 @@
-export type AuthSource = 'manual' | 'supabase' | 'dev-login';
+export type AuthSource = 'supabase';
 
 export interface AuthSession {
   accessToken: string;
