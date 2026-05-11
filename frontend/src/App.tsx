@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
+import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { MainLayout } from './components/layout/MainLayout';
 import { ChatStartScreen } from './components/chat/ChatStartScreen';
 import { ChatPanel } from './components/chat/ChatPanel';
 import { PaginatedFormModal } from './components/forms/PaginatedFormModal';
 import { AuthGate } from './components/auth/AuthGate';
 import type { AppView, DiagramTab, FormAnswerMap, FormRequest, Message } from './types';
-import type { AuthSession } from './types/auth';
-import { clearAuthSession, readAuthSession, saveAuthSession } from './lib/auth';
+import type { AuthSession, EmailPasswordCredentials } from './types/auth';
+import {
+  clearAuthSession,
+  isDevAuthEnabled,
+  loginWithDevApi,
+  readAuthSession,
+  saveAuthSession,
+  toAuthSessionFromSupabaseSession,
+} from './lib/auth';
+import { getSupabaseClient, hasSupabaseConfig } from './lib/supabase';
 import {
   getConversationMessages,
   listConversations,
@@ -57,12 +66,69 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+
+    let isMounted = true;
+
+    void supabase.auth.getSession().then((result) => {
+      const data = result?.data;
+      const error = result?.error;
+      if (!isMounted || error) return;
+      const supabaseSession = data.session;
+
+      if (supabaseSession) {
+        const nextSession = toAuthSessionFromSupabaseSession(supabaseSession);
+        saveAuthSession(nextSession);
+        setSession(nextSession);
+        return;
+      }
+
+      setSession((current) => {
+        if (current?.source === 'supabase') {
+          clearAuthSession();
+          return null;
+        }
+        return current;
+      });
+    });
+
+    const { data } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, supabaseSession: Session | null) => {
+      if (!isMounted) return;
+
+      if (supabaseSession) {
+        const nextSession = toAuthSessionFromSupabaseSession(supabaseSession);
+        saveAuthSession(nextSession);
+        setSession(nextSession);
+        return;
+      }
+
+      setSession((current) => {
+        if (current?.source === 'supabase') {
+          clearAuthSession();
+          return null;
+        }
+        return current;
+      });
+    });
+
+    return () => {
+      isMounted = false;
+      data.subscription.unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
     if (!session) return;
     void refreshConversations(session.accessToken);
   }, [session]);
 
   function handleSignOut() {
     logApp('Signing out');
+    const supabase = getSupabaseClient();
+    if (supabase) {
+      void supabase.auth.signOut();
+    }
     clearAuthSession();
     setSession(null);
     setMessages([]);
@@ -115,9 +181,79 @@ export default function App() {
       hasEmail: Boolean(email),
       tokenLength: token.length,
     });
-    const nextSession: AuthSession = { accessToken: token, email };
+    const nextSession: AuthSession = { accessToken: token, email, source: 'manual' };
     saveAuthSession(nextSession);
     setSession(nextSession);
+  }
+
+  async function handleEmailPasswordSignIn(credentials: EmailPasswordCredentials) {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      if (!isDevAuthEnabled()) {
+        throw new Error('Supabase auth is not configured and dev auth fallback is disabled.');
+      }
+      const devSession = await loginWithDevApi(credentials);
+      saveAuthSession(devSession);
+      setSession(devSession);
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signInWithPassword(credentials);
+    if (error || !data.session) {
+      if (isDevAuthEnabled()) {
+        const devSession = await loginWithDevApi(credentials);
+        saveAuthSession(devSession);
+        setSession(devSession);
+        return;
+      }
+      throw error ?? new Error('Sign in failed.');
+    }
+
+    const nextSession = toAuthSessionFromSupabaseSession(data.session);
+    saveAuthSession(nextSession);
+    setSession(nextSession);
+  }
+
+  async function handleEmailPasswordSignUp(credentials: EmailPasswordCredentials) {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      if (!isDevAuthEnabled()) {
+        throw new Error('Supabase auth is not configured and dev auth fallback is disabled.');
+      }
+      const devSession = await loginWithDevApi(credentials);
+      saveAuthSession(devSession);
+      setSession(devSession);
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signUp(credentials);
+    if (error) {
+      throw error;
+    }
+
+    if (data.session) {
+      const nextSession = toAuthSessionFromSupabaseSession(data.session);
+      saveAuthSession(nextSession);
+      setSession(nextSession);
+    }
+  }
+
+  async function handleGoogleSignIn() {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      throw new Error('Supabase auth is not configured.');
+    }
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.href,
+      },
+    });
+
+    if (error) {
+      throw error;
+    }
   }
 
   async function handleSubmit(message: string) {
@@ -320,7 +456,18 @@ export default function App() {
   }
 
   if (!session) {
-    return <AuthGate onSignIn={handleSignIn} />;
+    return (
+      <AuthGate
+        onSignIn={handleSignIn}
+        onEmailPasswordSignIn={handleEmailPasswordSignIn}
+        onEmailPasswordSignUp={handleEmailPasswordSignUp}
+        onGoogleSignIn={handleGoogleSignIn}
+        onDevLogin={async (credentials) => {
+          await loginWithDevApi(credentials);
+        }}
+        devAuthEnabled={isDevAuthEnabled() || !hasSupabaseConfig()}
+      />
+    );
   }
 
   const sidebarConversations = conversations.map((conversation) => ({

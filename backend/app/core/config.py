@@ -27,6 +27,11 @@ class Settings(BaseSettings):
     jwt_issuer: str | None = Field(default=None)
     jwt_public_key: str | None = Field(default=None)
     auth_dev_bearer_token: str | None = Field(default=None)
+    dev_auth_enabled: bool = Field(default=False)
+    dev_superuser_email: str | None = Field(default=None)
+    dev_superuser_password: str | None = Field(default=None)
+    dev_jwt_signing_secret: str | None = Field(default=None)
+    dev_jwt_expires_minutes: int = Field(default=60)
 
     # Supabase
     supabase_url: str | None = Field(default=None)

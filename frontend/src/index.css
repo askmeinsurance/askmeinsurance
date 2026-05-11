@@ -17,9 +17,12 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  background-color: #f8f9fa;
-  color: #111827;
+  font-family: "Avenir Next", "Avenir", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(251, 191, 36, 0.22), transparent 36%),
+    radial-gradient(circle at 84% 86%, rgba(56, 189, 248, 0.18), transparent 40%),
+    #f6f5f0;
+  color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -28,4 +31,36 @@ body {
   height: 100vh;
   display: flex;
   overflow: hidden;
+}
+
+.auth-shell {
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.55)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.02) 0,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+}
+
+.auth-card {
+  border: 1px solid rgba(13, 13, 13, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(7px);
+}
+
+.auth-kicker {
+  color: #6b6459;
+}
+
+.auth-headline {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  color: #1b1a17;
+}
+
+.auth-subhead {
+  color: #5f5a4f;
+  max-width: 56ch;
 }

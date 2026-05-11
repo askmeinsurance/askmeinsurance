@@ -5,7 +5,7 @@ This document is the single source of truth for the `frontend` and `backend` API
 - Contract version: `v1`
 - Base path: `/api/v1`
 - Content type: `application/json` (except SSE stream endpoint)
-- Auth: `Authorization: Bearer <access_token>` required for all endpoints below
+- Auth: Supabase user JWT bearer auth (see "Authentication" section)
 - ID format: UUID string
 - Timestamp format: ISO-8601 UTC (example: `2026-05-11T10:00:00Z`)
 
@@ -14,6 +14,34 @@ This document is the single source of truth for the `frontend` and `backend` API
 - Wire payloads use `snake_case`.
 - Backend returns `snake_case` fields.
 - Frontend maps `snake_case` <-> app-level camelCase types where needed.
+
+## Authentication
+
+### Supabase Bearer Flow
+
+1. Frontend signs in with Supabase Auth and obtains session tokens.
+2. Frontend reads the Supabase `access_token` from the active session.
+3. Frontend includes `Authorization: Bearer <supabase_access_token>` on backend API calls.
+4. Backend verifies bearer token and derives user context used for authorization.
+
+### Frontend Requirements
+
+- Attach bearer header on all protected `/api/v1` requests.
+- If backend returns `401`, frontend should treat the session/token as invalid or expired and prompt re-authentication.
+
+### Development-Only Login Endpoint
+
+- Endpoint: `POST /api/v1/auth/dev-login`
+- Use only for local/dev workflows where explicit development access is needed.
+- Must be considered unavailable in `staging`/`prod`.
+- Expected `200` response:
+
+```json
+{
+  "access_token": "string",
+  "token_type": "bearer"
+}
+```
 
 ## Error Contract
 
@@ -35,9 +63,24 @@ Notes:
 
 ## Canonical Endpoints
 
+### Auth
+
+1. `POST /api/v1/auth/dev-login`
+- Development-only endpoint.
+- Response `200`:
+
+```json
+{
+  "access_token": "string",
+  "token_type": "bearer"
+}
+```
+
+- Response `4xx`: when blocked by environment gating or when dev-token configuration is unavailable.
+
 ### Conversations
 
-1. `GET /api/v1/conversations`
+2. `GET /api/v1/conversations`
 - Response `200`:
 
 ```json
@@ -51,7 +94,7 @@ Notes:
 ]
 ```
 
-2. `POST /api/v1/conversations`
+3. `POST /api/v1/conversations`
 - Request:
 
 ```json
@@ -62,17 +105,17 @@ Notes:
 
 - Response `201`: `Conversation` object (same shape as above)
 
-3. `GET /api/v1/conversations/{conversation_id}`
+4. `GET /api/v1/conversations/{conversation_id}`
 - Response `200`: `Conversation`
 - Response `404`: error
 
-4. `DELETE /api/v1/conversations/{conversation_id}`
+5. `DELETE /api/v1/conversations/{conversation_id}`
 - Response `204`
 - Response `404`: error
 
 ### Chat Stream (SSE)
 
-5. `POST /api/v1/chat/stream`
+6. `POST /api/v1/chat/stream`
 - Request:
 
 ```json
@@ -148,7 +191,7 @@ SSE event schema:
 
 ### Forms
 
-6. `GET /api/v1/forms?conversation_id={uuid}`
+7. `GET /api/v1/forms?conversation_id={uuid}`
 - Query `conversation_id` optional
 - Response `200`:
 
@@ -165,11 +208,11 @@ SSE event schema:
 ]
 ```
 
-7. `GET /api/v1/forms/{form_id}`
+8. `GET /api/v1/forms/{form_id}`
 - Response `200`: `Form`
 - Response `404`: error
 
-8. `POST /api/v1/forms/{form_id}/submit`
+9. `POST /api/v1/forms/{form_id}/submit`
 - Request:
 
 ```json
@@ -296,4 +339,3 @@ SSE event schema:
 5. Contract tests
 - Backend API tests for endpoint and SSE event schemas
 - Frontend integration tests for stream parsing and form submission path
-
