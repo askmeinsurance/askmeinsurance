@@ -8,6 +8,13 @@ import type { AppView, DiagramTab, FormAnswerMap, FormRequest, Message } from '.
 import type { AuthSession } from './types/auth';
 import { clearAuthSession, readAuthSession, saveAuthSession } from './lib/auth';
 import { streamChatMessage, submitFormAnswers } from './lib/chatApi';
+import {
+  appendChunkToBotMessage,
+  appendUserAndBotPlaceholder,
+  attachFormRequestToBotMessage,
+  failBotMessage,
+  finalizeBotMessage,
+} from './lib/streamingMessageState';
 import './index.css';
 
 function logApp(message: string, details?: unknown) {
@@ -101,28 +108,29 @@ export default function App() {
       role: 'user',
       content: text,
     };
-
-    setMessages((prev) => [...prev, userMessage]);
+    const botMessageId = (Date.now() + 1).toString();
+    setMessages((prev) => appendUserAndBotPlaceholder(prev, userMessage, botMessageId));
     setIsSending(true);
 
     try {
       const result = await streamChatMessage({
         message: text,
         accessToken: session.accessToken,
+        onChunk: (textChunk) => {
+          setMessages((prev) => appendChunkToBotMessage(prev, botMessageId, textChunk));
+        },
+        onFormRequest: (formRequest) => {
+          setMessages((prev) => attachFormRequestToBotMessage(prev, botMessageId, formRequest));
+          setActiveFormRequest(formRequest);
+          setFormSubmitError(null);
+        },
       });
       logApp('Received chat stream result', {
         textLength: result.text.length,
         hasFormRequest: Boolean(result.formRequest),
       });
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: 'bot',
-        content: result.text,
-        formRequest: result.formRequest,
-      };
-
       setMessages((prev) => {
-        const next = [...prev, botMessage];
+        const next = finalizeBotMessage(prev, botMessageId, result.text, result.formRequest);
         applyBotDiagrams(next);
         return next;
       });
@@ -138,14 +146,9 @@ export default function App() {
         return;
       }
 
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: (Date.now() + 1).toString(),
-          role: 'bot',
-          content: 'I hit a connection issue while contacting the backend. Please try again.',
-        },
-      ]);
+      setMessages((prev) =>
+        failBotMessage(prev, botMessageId, 'I hit a connection issue while contacting the backend. Please try again.')
+      );
     } finally {
       setIsSending(false);
     }

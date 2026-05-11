@@ -19,6 +19,7 @@ afterEach(() => {
 
 describe('streamChatMessage', () => {
   it('reads chunk text from data.text', async () => {
+    const onChunkCalls = [];
     mock.method(globalThis, 'fetch', async () =>
       sseResponse([
         { event: 'chunk', data: { text: 'Hello ' } },
@@ -30,12 +31,15 @@ describe('streamChatMessage', () => {
     const result = await streamChatMessage({
       message: 'hi',
       accessToken: 'token',
+      onChunk: (chunk) => onChunkCalls.push(chunk),
     });
 
     assert.equal(result.text, 'Hello world');
+    assert.deepEqual(onChunkCalls, ['Hello ', 'world']);
   });
 
   it('maps form_requested payload directly from data into UI formRequest', async () => {
+    const onFormRequestCalls = [];
     mock.method(globalThis, 'fetch', async () =>
       sseResponse([
         { event: 'chunk', data: { text: 'Please fill this form.' } },
@@ -81,6 +85,7 @@ describe('streamChatMessage', () => {
     const result = await streamChatMessage({
       message: 'help',
       accessToken: 'token',
+      onFormRequest: (request) => onFormRequestCalls.push(request),
     });
 
     assert.deepEqual(result.formRequest, {
@@ -117,6 +122,8 @@ describe('streamChatMessage', () => {
         },
       ],
     });
+    assert.equal(onFormRequestCalls.length, 1);
+    assert.deepEqual(onFormRequestCalls[0], result.formRequest);
   });
 });
 

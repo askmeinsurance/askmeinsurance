@@ -148,6 +148,8 @@ export async function streamChatMessage(opts: {
   accessToken: string;
   conversationId?: string | null;
   signal?: AbortSignal;
+  onChunk?: (textChunk: string) => void;
+  onFormRequest?: (formRequest: FormRequest) => void;
 }): Promise<ChatStreamResult> {
   const payload: { message: string; conversation_id?: string } = {
     message: opts.message,
@@ -221,6 +223,7 @@ export async function streamChatMessage(opts: {
           const chunkText = parsed.text;
           if (typeof chunkText === 'string') {
             messageText += chunkText;
+            opts.onChunk?.(chunkText);
           }
         }
 
@@ -228,6 +231,7 @@ export async function streamChatMessage(opts: {
           const mapped = mapFormRequestWireToUi(parsed);
           if (mapped) {
             latestFormRequest = mapped;
+            opts.onFormRequest?.(mapped);
             logDebug('Received form_requested event');
           }
         }
