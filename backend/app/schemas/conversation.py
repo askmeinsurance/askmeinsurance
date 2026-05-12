@@ -13,3 +13,11 @@ class Conversation(BaseModel):
 
 class ConversationCreate(BaseModel):
     title: str = Field(min_length=1)
+
+
+class ConversationMessage(BaseModel):
+    id: UUID = Field(default_factory=uuid4)
+    conversation_id: UUID
+    role: str = Field(pattern="^(user|bot)$")
+    content: str = Field(min_length=1)
+    created_at: datetime = Field(default_factory=datetime.utcnow)

@@ -6,9 +6,16 @@ interface ChatInputProps {
   onChange?: (value: string) => void;
   onSubmit: (message: string) => void;
   placeholder?: string;
+  disabled?: boolean;
 }
 
-export function ChatInput({ value, onChange, onSubmit, placeholder = 'Ask InsureBot' }: ChatInputProps) {
+export function ChatInput({
+  value,
+  onChange,
+  onSubmit,
+  placeholder = 'Ask InsureBot',
+  disabled = false,
+}: ChatInputProps) {
   const [internalValue, setInternalValue] = useState('');
 
   const isControlled = value !== undefined && onChange !== undefined;
@@ -23,6 +30,7 @@ export function ChatInput({ value, onChange, onSubmit, placeholder = 'Ask Insure
   }
 
   function handleSubmit() {
+    if (disabled) return;
     const trimmed = inputValue.trim();
     if (!trimmed) return;
     onSubmit(trimmed);
@@ -38,13 +46,14 @@ export function ChatInput({ value, onChange, onSubmit, placeholder = 'Ask Insure
     }
   }
 
-  const canSubmit = inputValue.trim().length > 0;
+  const canSubmit = !disabled && inputValue.trim().length > 0;
 
   return (
     <div className="flex items-center gap-2 w-full rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
       <button
         type="button"
-        className="flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+        disabled={disabled}
+        className="flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
         aria-label="Attach file"
       >
         <Plus size={18} />
@@ -55,7 +64,8 @@ export function ChatInput({ value, onChange, onSubmit, placeholder = 'Ask Insure
         onChange={(e) => handleChange(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
-        className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none"
+        disabled={disabled}
+        className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none disabled:cursor-not-allowed"
       />
       <button
         type="button"

@@ -1,15 +1,18 @@
+from pathlib import Path
 from functools import lru_cache
 from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+ENV_FILE_PATH = Path(__file__).resolve().parents[2] / ".env"
+
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(ENV_FILE_PATH),
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
@@ -18,6 +21,7 @@ class Settings(BaseSettings):
     app_name: str = Field(default="askmeinsurance-backend")
     app_env: Literal["local", "dev", "staging", "prod"] = Field(default="local")
     app_debug: bool = Field(default=False)
+    cors_allowed_origins: str = Field(default="http://localhost:5173,http://127.0.0.1:5173")
 
     # Auth
     auth_enabled: bool = Field(default=True)
@@ -36,6 +40,7 @@ class Settings(BaseSettings):
     llm_provider: Literal["openai", "gemini", "openrouter", "mock"] = Field(default="mock")
     openai_api_key: str | None = Field(default=None)
     gemini_api_key: str | None = Field(default=None)
+    gemini_model: str = Field(default="gemini-2.0-flash-lite")
     openrouter_api_key: str | None = Field(default=None)
 
     # Observability
