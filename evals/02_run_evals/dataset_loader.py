@@ -13,6 +13,7 @@ class EvalCase:
     expected_output: Optional[str]
     source: str
     context: list[str] = field(default_factory=list)
+    retrieval_context: list[str] = field(default_factory=list)
 
 
 def load_manual_evals() -> list[EvalCase]:

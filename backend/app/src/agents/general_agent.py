@@ -43,6 +43,7 @@ class GeneralAgentStateInput(BaseModel):
 class GeneralAgentStateOutput(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
     conversation_history: Annotated[list[BaseMessage], operator.add]
+    execution_results: list = Field(default_factory=list)
 
 
 class GeneralAgentStateReact(BaseModel):

@@ -31,7 +31,7 @@ from langfuse import get_client
 from langfuse._client.propagation import propagate_attributes
 from langfuse.langchain import CallbackHandler
 
-from chatbot_invoker import get_graph
+from chatbot_invoker import extract_retrieval_context, get_graph
 from dataset_loader import EvalCase, load_all_evals, load_manual_evals, load_textbook_evals
 from langfuse_reporter import (
     ensure_dataset,
@@ -75,14 +75,17 @@ async def _eval_case(
 
     messages = result.get("messages", [])
     answer = messages[-1].content if messages else ""
+    retrieval_context = extract_retrieval_context(result.get("execution_results", []))
 
     test_case = LLMTestCase(
         input=case.question,
         actual_output=answer,
         expected_output=case.expected_output,
+        retrieval_context=retrieval_context or None,
     )
 
-    # Run metrics; faithfulness only when ground-truth is available
+    # Run metrics; faithfulness only when ground-truth is available;
+    # contextual metrics only when both ground-truth and retrieval context are available
     active_metrics = [
         metrics_map["answer_relevancy"],
         metrics_map["completeness"],
@@ -90,6 +93,9 @@ async def _eval_case(
     ]
     if case.expected_output:
         active_metrics.append(metrics_map["faithfulness"])
+    if case.expected_output and retrieval_context:
+        active_metrics.append(metrics_map["contextual_precision"])
+        active_metrics.append(metrics_map["contextual_recall"])
 
     await asyncio.gather(*[m.a_measure(test_case) for m in active_metrics])
 

@@ -1,7 +1,7 @@
 """DeepEval metric configurations for the insurance chatbot."""
 import os
 
-from deepeval.metrics import AnswerRelevancyMetric, GEval
+from deepeval.metrics import AnswerRelevancyMetric, ContextualPrecisionMetric, ContextualRecallMetric, GEval
 from deepeval.models.base_model import DeepEvalBaseLLM
 from deepeval.test_case import LLMTestCaseParams
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -60,6 +60,16 @@ def build_metrics(judge: GeminiJudge | None = None) -> dict:
             evaluation_params=[LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT],
             threshold=0.7,
             model=judge,
+        ),
+        "contextual_precision": ContextualPrecisionMetric(
+            threshold=0.7,
+            model=judge,
+            include_reason=True,
+        ),
+        "contextual_recall": ContextualRecallMetric(
+            threshold=0.7,
+            model=judge,
+            include_reason=True,
         ),
         "faithfulness": GEval(
             name="faithfulness",
