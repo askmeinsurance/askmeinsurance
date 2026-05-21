@@ -1,81 +1,12 @@
 import { Bot } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import rehypeSanitize from 'rehype-sanitize';
+import remarkGfm from 'remark-gfm';
 import { ThinkingSection } from './ThinkingSection';
 import type { Message } from '../../types';
 
 interface MessageBubbleProps {
   message: Message;
-}
-
-function formatContent(text: string) {
-  const lines = text.split('\n');
-  const elements: React.ReactNode[] = [];
-  let listItems: string[] = [];
-  let key = 0;
-
-  function flushList() {
-    if (listItems.length > 0) {
-      elements.push(
-        <ul key={key++} className="list-disc list-inside my-1 space-y-0.5">
-          {listItems.map((item, i) => (
-            <li key={i} className="text-sm text-gray-800">
-              {renderInline(item)}
-            </li>
-          ))}
-        </ul>
-      );
-      listItems = [];
-    }
-  }
-
-  function renderInline(raw: string): React.ReactNode {
-    const parts = raw.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map((part, i) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <span key={i} className="font-medium">{part.slice(2, -2)}</span>;
-      }
-      return part;
-    });
-  }
-
-  for (const line of lines) {
-    if (line.startsWith('- ') || line.startsWith('* ')) {
-      listItems.push(line.slice(2));
-      continue;
-    }
-
-    flushList();
-
-    if (!line.trim()) {
-      elements.push(<div key={key++} className="h-2" />);
-    } else if (line.startsWith('### ')) {
-      elements.push(
-        <p key={key++} className="text-sm font-semibold text-gray-900 mt-2">
-          {renderInline(line.slice(4))}
-        </p>
-      );
-    } else if (line.startsWith('## ')) {
-      elements.push(
-        <p key={key++} className="text-sm font-semibold text-gray-900 mt-2">
-          {renderInline(line.slice(3))}
-        </p>
-      );
-    } else if (line.startsWith('# ')) {
-      elements.push(
-        <p key={key++} className="text-sm font-semibold text-gray-900 mt-2">
-          {renderInline(line.slice(2))}
-        </p>
-      );
-    } else {
-      elements.push(
-        <p key={key++} className="text-sm text-gray-800 leading-relaxed">
-          {renderInline(line)}
-        </p>
-      );
-    }
-  }
-
-  flushList();
-  return elements;
 }
 
 export function MessageBubble({ message }: MessageBubbleProps) {
@@ -96,7 +27,24 @@ export function MessageBubble({ message }: MessageBubbleProps) {
       </div>
       <div className="flex-1 min-w-0">
         {message.thinking && <ThinkingSection content={message.thinking} />}
-        <div>{formatContent(message.content)}</div>
+        <div className="text-sm text-gray-800 leading-relaxed space-y-2 [&_h1]:text-base [&_h1]:font-semibold [&_h1]:text-gray-900 [&_h2]:text-base [&_h2]:font-semibold [&_h2]:text-gray-900 [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-gray-900 [&_ul]:list-disc [&_ul]:list-inside [&_ol]:list-decimal [&_ol]:list-inside [&_blockquote]:border-l-2 [&_blockquote]:border-gray-300 [&_blockquote]:pl-3 [&_blockquote]:italic [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-gray-100 [&_pre]:p-3 [&_code]:rounded [&_code]:bg-gray-100 [&_code]:px-1 [&_code]:py-0.5 [&_a]:text-blue-700 [&_a]:underline [&_table]:my-3 [&_table]:w-full [&_table]:border-collapse [&_table]:overflow-hidden [&_table]:rounded-md [&_table]:border [&_table]:border-gray-300 [&_thead]:bg-gray-100 [&_th]:border [&_th]:border-gray-300 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_td]:border [&_td]:border-gray-300 [&_td]:px-3 [&_td]:py-2 [&_td]:align-top [&_tr:nth-child(even)]:bg-gray-50/40">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeSanitize]}
+            components={{
+              a: ({ node: _node, ...props }) => (
+                <a {...props} target="_blank" rel="noopener noreferrer" />
+              ),
+              table: ({ node: _node, ...props }) => (
+                <div className="overflow-x-auto">
+                  <table {...props} />
+                </div>
+              ),
+            }}
+          >
+            {message.content}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );
