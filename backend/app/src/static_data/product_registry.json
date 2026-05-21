@@ -1,0 +1,3743 @@
+[
+  {
+    "policy_name": "Retirement Saver Iv Limited Pay",
+    "policy_id": "aia_endow_retirement_saver_iv_limited_pay",
+    "file": "aia_endow_retirement_saver_iv_limited_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Retirement Saver (IV) – Limited-Pay",
+        "product_type": "Endowment insurance policy",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals planning for retirement income"
+        ],
+        "main_objective": [
+          "Provide a monthly retirement income over a chosen Income Payout Period, starting from a chosen Retirement Age, with coverage against death.",
+          "It is a participating policy allowing participation in the performance of the participating fund via dividends."
+        ],
+        "key_value_proposition": "Designed to provide a stream of monthly retirement income and death benefit coverage."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking a regular monthly income during retirement.",
+          "Those looking for an endowment policy to supplement retirement savings.",
+          "Clients who want to participate in the performance of a participating fund for potential dividends.",
+          "Individuals who value death benefit coverage."
+        ],
+        "not_ideal_for": [
+          "Clients seeking immediate cash value accumulation.",
+          "Clients requiring short-term savings plans.",
+          "Clients who cannot commit to long-term premium payments."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Retirement income",
+          "Supplement retirement savings"
+        ],
+        "risk_appetite": "Moderate (willing to accept some investment risk for potential dividends)"
+      },
+      "core_features": {
+        "coverage_duration": "Policy continues until the end of the Income Payout Period or the death of the Insured.",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Limited-Pay",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": [
+          "Premium Pass Option (Involuntary retrenchment)"
+        ]
+      },
+      "key_selling_points": [
+        "Retirement Income Stream",
+        "Death Benefit Protection",
+        "Potential for Growth (via dividends)",
+        "Premium Pass Option for retrenchment"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Retirement Planning",
+          "positioning": "For individuals nearing retirement or planning for their later years who want a guaranteed income stream."
+        },
+        {
+          "scenario": "Supplementing Retirement Savings",
+          "positioning": "As a component of a broader retirement portfolio."
+        },
+        {
+          "scenario": "Legacy Planning (Limited)",
+          "positioning": "While primarily for retirement income, the death benefit provides a form of legacy."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed dividends (MD & TD)",
+        "Early surrender costs can be significant.",
+        "Limited death benefit (not high multiple of premiums).",
+        "Strict criteria for Premium Pass Option.",
+        "Monthly Dividends only available from policy year 6.",
+        "Investment risk linked to participating fund performance."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [
+        {
+          "this_product_better_for": "Providing a regular monthly retirement income stream with a participating component.",
+          "competitor_better_for": "Pure protection plans with higher sum assured multiples, or investment-linked plans with potentially higher, but also riskier, returns.",
+          "competitor_product": ""
+        }
+      ],
+      "compliance_advisory_notes": [
+        "Must clearly explain that dividends (MD & TD) are not guaranteed and depend on the participating fund's performance.",
+        "Emphasize long-term commitment and early surrender costs.",
+        "Recommend appropriate risk profiling.",
+        "Refer to Policy Illustration for benefit projections.",
+        "Clients have a 14-day free-look period."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Retirement Saver (IV) – Limited-Pay Product Summary",
+        "summary_version": "4a3de339745e825438a8493df25b460a9f3d7fdb002dbe7624d0898edd96599c",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_retirement_saver_iv_limited_pay.json"
+    }
+  },
+  {
+    "policy_name": "Retirement Saver Iv Single Premium",
+    "policy_id": "aia_endow_retirement_saver_iv_single_premium",
+    "file": "aia_endow_retirement_saver_iv_single_premium.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Retirement Saver (IV) - Single Premium",
+        "product_type": "Endowment insurance policy",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals planning for retirement income."
+        ],
+        "main_objective": [
+          "To provide a monthly retirement income over a chosen Income Payout Period and coverage against death."
+        ],
+        "key_value_proposition": "A participating endowment policy designed to provide a stream of monthly income during retirement, with the potential to participate in the performance of the participating fund."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to secure a predictable monthly income during retirement.",
+          "Those who want to supplement their retirement savings with a life insurance component.",
+          "Clients looking for a long-term savings and income solution."
+        ],
+        "not_ideal_for": [
+          "Clients requiring immediate access to significant cash value.",
+          "Those seeking investment-focused products with potential for high capital growth.",
+          "Individuals with short-term financial goals."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Retirement income",
+          "Supplement retirement savings",
+          "Long-term savings"
+        ],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating Policy",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Single Premium",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Retirement Income Stream",
+        "Participating Benefits",
+        "Death Benefit Protection",
+        "Long-Term Savings"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Retirement Planning",
+          "positioning": "Individuals planning for their retirement income needs."
+        },
+        {
+          "scenario": "Supplementing Pension",
+          "positioning": "To add an additional income stream to existing retirement plans."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "For those wishing to leave a financial benefit for beneficiaries."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Dividends",
+        "Investment Risk",
+        "Early Surrender Costs",
+        "Limited Past Experience for MD"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Explaining the non-guaranteed nature of dividends is critical.",
+        "The policy is a long-term commitment; advise clients against early termination due to potential costs.",
+        "Policies are subject to underwriting and acceptance by AIA Singapore.",
+        "The product summary is a simplified description and not a contract. Refer to the actual policy contract for full terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Retirement Saver (IV) - Single Premium Product Summary",
+        "summary_version": "ee8c9155517d78921a263bd847bbe2f0709e7a0bfb868bb9019cb425f7d2efe5",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_retirement_saver_iv_single_premium.json"
+    }
+  },
+  {
+    "policy_name": "Smart Flexi Growth",
+    "policy_id": "aia_endow_smart_flexi_growth",
+    "file": "aia_endow_smart_flexi_growth.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Flexi Growth",
+        "product_type": "Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking customizable savings horizons"
+        ],
+        "main_objective": [
+          "Savings and wealth accumulation with flexible terms"
+        ],
+        "key_value_proposition": "An endowment plan with flexible premium payment terms and policy terms to customize savings horizons."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals looking to customize their savings horizon",
+          "Clients interested in a participating life insurance plan with potential for bonuses",
+          "Those who understand that bonuses are not guaranteed and can fluctuate"
+        ],
+        "not_ideal_for": [
+          "Clients seeking guaranteed, fixed returns",
+          "Individuals who are uncomfortable with investment risk",
+          "Those needing immediate cash value or short-term savings vehicles"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": "Moderate to High (due to non-guaranteed bonuses)"
+      },
+      "core_features": {
+        "coverage_duration": "15-30 years, depending on plan option",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Flexible; 5-Pay, 10-Pay, Regular-Pay",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Flexible Terms: Customizable premium payment terms and policy terms allow for tailored savings horizons.",
+        "Participating Plan: Potential to earn bonuses based on the performance of the participating fund.",
+        "Guaranteed Maturity Amount: Provides a baseline of assured value at maturity.",
+        "Guaranteed Premium Rates: Premiums are guaranteed and will not increase."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Savings Goal",
+          "positioning": "For individuals planning for long-term savings objectives like retirement or future large purchases, where flexibility in term is desired."
+        },
+        {
+          "scenario": "Wealth Accumulation",
+          "positioning": "For those looking to grow their wealth over a defined period, with the added benefit of potential bonus payouts."
+        },
+        {
+          "scenario": "Long-Term Financial Planning",
+          "positioning": "As a component of a broader financial strategy aiming for capital growth over an extended timeframe."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Bonuses: Terminal Bonuses and Reversionary Bonuses (before being credited) are not guaranteed and can fluctuate based on fund performance.",
+        "Investment Risk: The value of the policy is linked to the performance of the participating fund, meaning investment returns can be volatile.",
+        "Early Surrender Impact: Early termination of the policy can result in high costs and a surrender value that may be zero or less than premiums paid.",
+        "Limited Death Benefit Definition: The Insured Amount is not the death benefit itself but is used to determine the Guaranteed Maturity Amount and bonuses. The death benefit is the higher of a calculated premium/cash value and accumulated bonuses.",
+        "Exclusions Apply: Certain conditions are excluded from coverage (e.g., suicide within one year of issue/reinstatement)."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "All applications are subject to underwriting and acceptance."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Non-Guaranteed Returns: Must explain that bonuses are not guaranteed and actual benefits may vary.",
+        "Long-Term Commitment: This is a long-term savings plan, and early termination may lead to disadvantages.",
+        "Policy Illustration: Refer to the Policy Illustration for detailed projections of surrender values and maturity benefits.",
+        "Review Policy Contract: The product summary is a simplified description; refer to the actual policy contract for full terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "15-30 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Flexi Growth Product Summary",
+        "summary_version": "51e61e5f939ea658ec08a9f8ae0e569fc76c63a95b6b7c0065eed5a83f500e7a",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_flexi_growth.json"
+    }
+  },
+  {
+    "policy_name": "Smart Flexi Rewards Ii 10Pay",
+    "policy_id": "aia_endow_smart_flexi_rewards_ii_10pay",
+    "file": "aia_endow_smart_flexi_rewards_ii_10pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Flexi Rewards (II) (10-Pay)",
+        "product_type": "Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings with a customizable savings horizon"
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan designed for savings with yearly coupon payouts and flexible policy terms. Premiums are payable for 10 years."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals looking to maximize savings",
+          "Those who want to customize their savings horizon",
+          "Clients who prefer a plan with yearly coupon payouts"
+        ],
+        "not_ideal_for": [
+          "Clients primarily seeking life protection",
+          "Individuals with very short-term savings goals",
+          "Those who want guaranteed fixed returns with no exposure to participating fund performance"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Long-Term Savings",
+          "Wealth Accumulation",
+          "Retirement Income Supplementation"
+        ],
+        "risk_appetite": "Moderate (willing to accept some risk for potential higher returns through participating fund)"
+      },
+      "core_features": {
+        "coverage_duration": "Customizable, ranging from 20 to 30 years",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Premiums are payable for 10 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Customizable Savings Horizon (20-30 years)",
+        "Guaranteed Yearly Coupon (30% of Insured Amount from 4th anniversary)",
+        "Potential for growth through Reversionary and Terminal Bonuses",
+        "Guaranteed Maturity Amounts (270%-570% of Insured Amount based on policy term)",
+        "Flexible coupon payout/accumulation option"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Savings Goal",
+          "positioning": "For individuals planning for future financial needs such as retirement or future education expenses."
+        },
+        {
+          "scenario": "Wealth Accumulation",
+          "positioning": "To grow savings over a defined period with the potential for additional returns through bonuses."
+        },
+        {
+          "scenario": "Supplementing Retirement Income",
+          "positioning": "The yearly coupon payout can provide additional income during retirement years."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses (Reversionary and Terminal Bonuses depend on fund performance)",
+        "Potential for loss on early surrender",
+        "Investment risk inherent in participating plans",
+        "Limited death benefit in the first year in case of suicide"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Must explain that bonuses are not guaranteed and actual benefits may vary based on the participating fund's performance.",
+        "The plan is designed as a long-term savings instrument; early termination involves costs.",
+        "The actual policy contract contains the full terms and conditions, including exclusions.",
+        "A 14-day free-look period is provided from the date of policy document receipt for review."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "20 to 30 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Flexi Rewards (II) (10-Pay) - Product Summary",
+        "summary_version": "d1a670119280a244c06256833911c4ae5449cafbbac4f2838e0e264a51bcaeb2",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_flexi_rewards_ii_10pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Flexi Rewards Ii 5Pay",
+    "policy_id": "aia_endow_smart_flexi_rewards_ii_5pay",
+    "file": "aia_endow_smart_flexi_rewards_ii_5pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Flexi Rewards (II) (5-Pay)",
+        "product_type": "Endowment plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings with a customizable savings horizon"
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan with guaranteed yearly coupon payouts designed to help maximize savings over a customizable policy term."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to save for the medium to long term.",
+          "Those who can commit to premiums for 5 years.",
+          "Individuals looking for potential growth through participating fund performance."
+        ],
+        "not_ideal_for": [
+          "Clients seeking pure protection or short-term savings.",
+          "Clients with a very low risk appetite who are uncomfortable with non-guaranteed bonuses.",
+          "Clients who require immediate liquidity and cannot afford potential early surrender penalties."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Saving for medium to long term",
+          "Potential growth through participating fund performance"
+        ],
+        "risk_appetite": "Moderate to High (comfortable with non-guaranteed bonuses and investment risks)"
+      },
+      "core_features": {
+        "coverage_duration": "Customizable, ranging from 15 to 30 years",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Premiums payable for 5 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Guaranteed Yearly Coupons: Provides a predictable income stream throughout a significant portion of the policy term.",
+        "Customizable Savings Horizon: Policy terms can be tailored from 15 to 30 years to align with individual financial goals.",
+        "Participating Plan: Offers potential for growth through non-guaranteed bonuses linked to the performance of the participating fund.",
+        "Premium Payment Flexibility: Premiums are payable for a fixed 5-year period, allowing for long-term savings commitment with a defined premium payment window."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-term savings goal",
+          "positioning": "Accumulate wealth for future needs, such as retirement or education."
+        },
+        {
+          "scenario": "Desire for supplementary income",
+          "positioning": "Utilize the guaranteed yearly coupon benefit for additional cash flow."
+        },
+        {
+          "scenario": "Planning for future liquidity",
+          "positioning": "Use accumulated bonuses and coupons for future financial needs."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed Bonuses: Reversionary and Terminal Bonuses are discretionary and depend on the participating fund's performance, meaning actual benefits may vary.",
+        "Early Surrender Penalties: Early termination of the policy can result in a surrender value that is zero or less than total premiums paid.",
+        "Investment Risks: Policy value is subject to investment performance of the participating fund, which can be volatile.",
+        "Limited Death Benefit: The death benefit is the higher of premiums/cash value or accumulated bonuses/coupons, not necessarily a high sum assured for protection purposes."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Policyholders must be informed that non-guaranteed returns (bonuses) depend on the participating fund's performance.",
+        "Past investment returns and expense ratios are not indicative of future performance.",
+        "This is a long-term commitment; early termination can incur significant costs.",
+        "Refer to the Policy Illustration for detailed benefit illustrations and surrender values.",
+        "The policy is underwritten by AIA Singapore and subject to their underwriting and acceptance."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "15 to 30 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Flexi Rewards (II) (5-Pay) Product Summary",
+        "summary_version": "f5d6864a2b3d02c7f718d9112a9e83edc39bb307250786db131fd77e43bebefa",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_flexi_rewards_ii_5pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Flexi Rewards Ii Regular Premium",
+    "policy_id": "aia_endow_smart_flexi_rewards_ii_regular_premium",
+    "file": "aia_endow_smart_flexi_rewards_ii_regular_premium.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Flexi Rewards (II) (Regular Pay)",
+        "product_type": "Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals looking to maximize savings and customize their savings horizon."
+        ],
+        "main_objective": [
+          "Savings maximization."
+        ],
+        "key_value_proposition": "A participating endowment plan with yearly coupon payouts, allowing policyholders to customize their savings horizon with flexible policy terms. Premiums are payable until policy maturity."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to maximize their savings.",
+          "Those wanting to customize their savings horizon.",
+          "Policy terms ranging from 15 to 30 years.",
+          "Individuals comfortable with long-term savings commitment."
+        ],
+        "not_ideal_for": [
+          "Clients requiring immediate death benefit coverage.",
+          "Individuals not comfortable with participating funds."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating Life Insurance",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Premiums are payable until the policy matures. Premium rates are guaranteed.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Customizable Savings Horizon: Policy terms range from 15 to 30 years, allowing clients to align with their financial goals.",
+        "Guaranteed Yearly Coupon Payouts: Provides a consistent 40% of Insured Amount yearly from the 4th policy anniversary.",
+        "Participation in Fund Performance: Opportunity to benefit from the performance of the participating fund through Reversionary and Terminal Bonuses.",
+        "Guaranteed Maturity Amounts: Significant guaranteed maturity benefit based on policy term."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-term savings goal",
+          "positioning": "Maximizing savings over a chosen horizon (15-30 years)."
+        },
+        {
+          "scenario": "Supplementing retirement income",
+          "positioning": "Accumulating funds for future use, with potential bonus payouts."
+        },
+        {
+          "scenario": "Building an endowment fund",
+          "positioning": "A structured approach to saving with guaranteed and non-guaranteed benefits."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Bonuses: Reversionary and Terminal Bonuses are discretionary and depend on the participating fund's performance, which can be volatile.",
+        "Early Surrender Costs: Early termination of the policy can result in high costs, with the surrender value potentially being zero or less than total premiums paid.",
+        "Limited Death Benefit: The death benefit is primarily based on premiums paid and guaranteed cash value, not a high multiple of premiums.",
+        "Insured Amount Definition: The \"Insured Amount\" is the Annual Premium (before large case size discount) and is used for calculations, not the death benefit itself.",
+        "TB Availability: Terminal Bonus is only available from policy year 17 onwards for longer terms or at maturity for shorter terms."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Policyholders are advised to refer to \"Your Guide To Participating Policies\" (YGTPP) for a better understanding of participating life insurance policies.",
+        "Past performance of the participating fund is not indicative of future performance.",
+        "The illustrated Investment Rate of Return is not guaranteed. Actual benefits payable may vary.",
+        "All guaranteed benefits are provided regardless of future fund performance.",
+        "Future bonuses are not guaranteed and depend on the participating fund's experience.",
+        "All expenses, except commissions, are shared and charged to the assets backing the policy. Commissions are charged to individual policies.",
+        "This product summary is a simplified description and not exhaustive. Refer to the actual policy contract for full terms and conditions.",
+        "A 14-day free-look period is provided upon receiving policy documents."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "15 to 30 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_endow_smart_flexi_rewards_ii_regular_premium.pdf",
+        "summary_version": "9669c09bbb6df9708eb894bae34c1e7fbe11f2aabf2d2fd28ddd820c9d2597f0",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_flexi_rewards_ii_regular_premium.json"
+    }
+  },
+  {
+    "policy_name": "Smart Goal 10",
+    "policy_id": "aia_endow_smart_goal_10",
+    "file": "aia_endow_smart_goal_10.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Goal 10",
+        "product_type": "Limited premium payment, participating endowment plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings with a defined policy term."
+        ],
+        "main_objective": [
+          "Savings maximization."
+        ],
+        "key_value_proposition": "Pay premiums for 3 years to enjoy coverage for a policy term of 10 years, participating in the performance of a participating fund."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to maximize savings.",
+          "Those who prefer to pay premiums over a shorter period (3 years) for a longer coverage term (10 years)."
+        ],
+        "not_ideal_for": [],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Short-term savings goal with a defined endpoint."
+        ],
+        "risk_appetite": "Moderate"
+      },
+      "core_features": {
+        "coverage_duration": "10 years",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating plan, policyholder participates in the performance of the participating fund through bonuses.",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Limited premium payment for 3 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Limited Premium Payment: Pay premiums for only 3 years.",
+        "Defined Policy Term: Enjoy coverage for a full 10-year term.",
+        "Participation in Fund Performance: Potential to benefit from bonuses based on the participating fund's experience.",
+        "Guaranteed Maturity Amount: Receives 300% of the Insured Amount at maturity, plus bonuses."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Short-term savings goal with a defined endpoint.",
+          "positioning": "A disciplined savings plan for individuals who want to set aside funds for 3 years and have them grow for a total of 10 years."
+        },
+        {
+          "scenario": "Desire for a guaranteed return component combined with potential upside.",
+          "positioning": "Offers a guaranteed maturity amount and the possibility of additional returns through bonuses."
+        }
+      ],
+      "key_limitations_objections": [
+        "Early Surrender Costs: Early termination may involve high costs, with surrender value potentially being zero or less than premiums paid.",
+        "Non-Guaranteed Bonuses: Terminal Bonuses are discretionary and not guaranteed. Reversionary Bonuses, while guaranteed once declared, may be affected by the fund's performance, and their surrender value is a proportion.",
+        "Investment Risk: Policyholder shares in the experience of the participating fund. The investment rate of return is not guaranteed.",
+        "Exclusions: Certain conditions are excluded from benefits, and policyholders should refer to the policy contract for a full list. (e.g., suicide within one year of policy issue/reinstatement limits death benefit to return of premiums paid)."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "All insurance applications are subject to underwriting and acceptance by AIA Singapore.",
+          "AIA Singapore reserves the right to withdraw the plan or reject applications."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Refer to the Policy Illustration for details on surrender values and projected benefits.",
+        "Bonuses (RB and TB) are not guaranteed and depend on the participating fund's performance.",
+        "Life insurance is a long-term commitment; early termination can lead to disadvantages.",
+        "This product summary is a simplified description and not exhaustive. The actual policy contract contains the binding terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "10 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_endow_smart_goal_10.pdf",
+        "summary_version": "d2197a903bdd4172f99566ec7ef5d356ba053ddf21ce11fa46a5d6012eeb536b",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_goal_10.json"
+    }
+  },
+  {
+    "policy_name": "Smart Wealth Builder Ii 10 Pay",
+    "policy_id": "aia_endow_smart_wealth_builder_ii_10_pay",
+    "file": "aia_endow_smart_wealth_builder_ii_10_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Wealth Builder (II) (10-pay)",
+        "product_type": "Participating endowment plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings and accumulate wealth."
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth accumulation"
+        ],
+        "key_value_proposition": "A participating life insurance plan designed to maximize savings with flexible premium payment options and long-term accumulation potential."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals looking to save and accumulate wealth.",
+          "Those who prefer to pay premiums over a fixed term (5, 10, 15, or 20 years) or a single premium.",
+          "Individuals comfortable with participating in the performance of a participating fund, with non-guaranteed bonuses.",
+          "Those who want a policy that accumulates until age 125."
+        ],
+        "not_ideal_for": [
+          "Clients seeking short-term savings.",
+          "Clients who require guaranteed principal protection without any investment risk."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Retirement planning",
+          "Future financial needs",
+          "Growing savings",
+          "Estate planning",
+          "Supplementing retirement income"
+        ],
+        "risk_appetite": "Moderate (comfortable with participating in the performance of a participating fund, with non-guaranteed bonuses)"
+      },
+      "core_features": {
+        "coverage_duration": "Until policy anniversary on or after the Insured turns 125 years old",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Single Premium, 5, 10, 15, or 20 years",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Long-Term Wealth Accumulation",
+        "Flexible Premium Payment",
+        "Participating Benefits",
+        "Accelerated Benefits (TPD and Terminal Illness)",
+        "Secondary Insured Continuity"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-term savings goal",
+          "positioning": "For individuals planning for retirement or future financial needs over several decades."
+        },
+        {
+          "scenario": "Wealth accumulation",
+          "positioning": "To grow savings with the potential for investment returns."
+        },
+        {
+          "scenario": "Estate planning",
+          "positioning": "To provide a capital sum for beneficiaries, enhanced by potential bonuses."
+        },
+        {
+          "scenario": "Supplementing retirement income",
+          "positioning": "Through maturity benefit and accumulated bonuses."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses (Reversionary and Terminal Bonuses)",
+        "Investment risk associated with participating fund performance",
+        "Potential for zero or negative surrender value in early years",
+        "Specific exclusions in coverage",
+        "Premium rates are guaranteed, but bonuses are not"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Underwriting and acceptance are subject to AIA Singapore's assessment.",
+          "Submission of application and premium payment does not guarantee acceptance.",
+          "AIA Singapore reserves the right to withdraw the plan or reject applications at any time."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Bonuses are not guaranteed and depend on the participating fund's experience (investment returns, mortality, morbidity, lapse, surrender, business, and expense experience).",
+        "Past performance of the participating fund is not indicative of future performance.",
+        "Policyholders share in the experience of the participating fund, meaning expenses incurred by the fund are charged to the policy.",
+        "Refer to the Policy Illustration for surrender values.",
+        "Early termination typically involves high costs, and surrender value may be zero or less than premiums paid.",
+        "Advisors should refer to the actual policy contract for all terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "Single Premium: $20,000 (Cash) / $15,000 (SRS); 5 years: $4,800; 10 years: $3,600; 15 years: $2,400; 20 years: $1,500",
+        "policy_term_range": "Single Premium, 5, 10, 15, or 20 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Wealth Builder (II) (10-pay) - Product Summary",
+        "summary_version": "14e6ebd72f6262b7f9907c624ad95a4d5b2bd4ca29052a7bbb004b36074787b1",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_wealth_builder_ii_10_pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Wealth Builder Ii 15 Pay",
+    "policy_id": "aia_endow_smart_wealth_builder_ii_15_pay",
+    "file": "aia_endow_smart_wealth_builder_ii_15_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Wealth Builder (II) (15-pay)",
+        "product_type": "Participating Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking savings maximization",
+          "long-term wealth accumulation"
+        ],
+        "main_objective": [
+          "Savings",
+          "long-term wealth accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan designed for savings maximization with flexible premium payment options and potential for bonuses."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals looking to grow their savings over the long term",
+          "Those who prefer a participating endowment plan",
+          "Clients with a 15-year premium payment commitment",
+          "Individuals who understand and accept non-guaranteed bonus elements"
+        ],
+        "not_ideal_for": [
+          "Clients seeking only pure protection",
+          "Individuals requiring guaranteed returns on their savings",
+          "Clients who need to access their funds in the short term"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Retirement",
+          "Children's education"
+        ],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Policy matures on the anniversary when the Insured turns 125 years old",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating Plan",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Flexible premium payment options: Single Premium, 5, 10, 15, or 20 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Long-Term Savings Growth",
+        "Flexible Premium Payment Terms",
+        "Death, TPD, and Terminal Illness Benefits",
+        "Secondary Insured Option",
+        "Participating Nature"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Savings Goal",
+          "positioning": "For individuals planning for future financial needs like retirement or children's education."
+        },
+        {
+          "scenario": "Wealth Accumulation",
+          "positioning": "To build capital over a significant period."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "To leave a financial benefit for beneficiaries."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses",
+        "Early surrender penalties",
+        "Limited coverage duration (matures at 125)",
+        "TPD definition change at age 65",
+        "Exclusions (pre-existing illnesses, specific causes of death/disability)"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Explain that bonuses are non-guaranteed.",
+        "Emphasize that past performance of the participating fund is not indicative of future performance.",
+        "Advise clients to refer to the Policy Illustration for detailed projections and the policy contract for full terms and conditions.",
+        "Highlight the long-term nature of the policy and the disadvantages of early surrender."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "Single Premium: $20,000 (Cash), $15,000 (SRS); 5 years: $4,800; 10 years: $3,600; 15 years: $2,400; 20 years: $1,500",
+        "policy_term_range": "Maturity at age 125",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Wealth Builder (II) (15-pay) - Product Summary",
+        "summary_version": "9b402e1f89024ce1c8a065ac0f2143238f0df84476785afc50dc7d3160f564d8",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_wealth_builder_ii_15_pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Wealth Builder Ii 20 Pay",
+    "policy_id": "aia_endow_smart_wealth_builder_ii_20_pay",
+    "file": "aia_endow_smart_wealth_builder_ii_20_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Wealth Builder (II) (20-pay)",
+        "product_type": "Participating Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings and accumulate wealth"
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth Accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan designed to maximize savings with flexible premium payment options and long-term accumulation potential."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking a long-term savings vehicle",
+          "Those who want to accumulate wealth over time",
+          "Clients comfortable with a participating life insurance plan structure",
+          "Individuals looking for a policy with a long accumulation period"
+        ],
+        "not_ideal_for": [
+          "Clients seeking pure protection only",
+          "Those requiring guaranteed returns on their premiums",
+          "Individuals with very short-term financial goals"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Long-term savings",
+          "Wealth accumulation",
+          "Retirement planning",
+          "Future financial milestones"
+        ],
+        "risk_appetite": "Moderate to High (due to non-guaranteed bonuses and investment risk)"
+      },
+      "core_features": {
+        "coverage_duration": "Until the policy anniversary on or after the Insured turns 125 years old.",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Flexible premium payment options: Single Premium, 5, 10, 15, or 20 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Flexible Premium Payment: Options from Single Premium up to 20 years to suit individual cash flow.",
+        "Long-Term Accumulation: Policy can accumulate value until age 125, offering extended wealth growth potential.",
+        "Dual Benefits: Combines savings and wealth accumulation with life protection.",
+        "Participating Plan: Potential to receive bonuses based on the performance of the participating fund."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Savings Goal",
+          "positioning": "For individuals planning for retirement or future financial milestones."
+        },
+        {
+          "scenario": "Wealth Accumulation",
+          "positioning": "To grow savings over an extended period."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "To provide a financial benefit for beneficiaries."
+        },
+        {
+          "scenario": "Complementary to Protection",
+          "positioning": "For individuals who have sufficient life insurance but want a savings component."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed Bonuses: Reversionary and Terminal Bonuses are not guaranteed and depend on the participating fund's performance.",
+        "Early Surrender Costs: Early termination can incur high costs, potentially resulting in a surrender value less than premiums paid.",
+        "Investment Risk: As a participating plan, investment returns can be volatile, affecting bonus declarations.",
+        "Limited Death Benefit Components: Death benefit is based on premiums paid and cash value/bonuses, not a fixed sum assured for protection purposes alone.",
+        "Exclusions Apply: Certain conditions (e.g., suicide within 1 year, specific disabilities, HIV/AIDS related terminal illness) are excluded from benefit payouts."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Not specified in document."
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "",
+          "available": null,
+          "notes": "Not specified in document."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [
+        {
+          "this_product_better_for": "",
+          "competitor_better_for": "",
+          "competitor_product": ""
+        }
+      ],
+      "compliance_advisory_notes": [
+        "Bonuses (annual and terminal) are not guaranteed and are adjusted based on participating fund experience.",
+        "Past performance of the participating fund is not necessarily indicative of future performance.",
+        "Investment returns of the participating fund are not guaranteed.",
+        "Actual benefits payable may vary according to the future experience of the participating fund.",
+        "Clients should refer to the Policy Illustration for surrender values.",
+        "Early termination of the policy may involve high costs and a surrender value that may be zero or less than total premiums paid.",
+        "All fees and charges are included in the premium calculation and not charged separately."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "Single Premium: $20,000 (Cash) / $15,000 (SRS); 5 years: $4,800; 10 years: $3,600; 15 years: $2,400; 20 years: $1,500",
+        "policy_term_range": "Single Premium, 5, 10, 15, 20 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Wealth Builder (II) (20-pay) Product Summary",
+        "summary_version": "08aa40b5152783199b89af1272ca4c04704e0c8aab94cccb43c90aa4e56d4dec",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_wealth_builder_ii_20_pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Wealth Builder Ii 5 Pay",
+    "policy_id": "aia_endow_smart_wealth_builder_ii_5_pay",
+    "file": "aia_endow_smart_wealth_builder_ii_5_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Wealth Builder (II) (5-pay)",
+        "product_type": "Participating endowment plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings and accumulate wealth."
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan designed to help maximize savings through flexible premium payment options and participation in the performance of the participating fund."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to grow savings.",
+          "Those who can commit to a long-term savings plan.",
+          "Individuals comfortable with non-guaranteed bonuses."
+        ],
+        "not_ideal_for": [
+          "Clients needing guaranteed cash value growth.",
+          "Clients requiring immediate liquidity.",
+          "Clients with a very low-risk appetite for investments."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": "Moderate to high, comfortable with non-guaranteed returns."
+      },
+      "core_features": {
+        "coverage_duration": "Until maturity on the policy anniversary on or after the Insured turns 125 years old.",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Single Premium, or payment over 5, 10, 15, or 20 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Flexible Premium Payment Options",
+        "Long-Term Accumulation until age 125",
+        "Dual Accelerated Benefits (TPD and Terminal Illness)",
+        "Secondary Insured Feature for policy continuity",
+        "Participation in AIA's participating fund performance via bonuses"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Savings Accumulation",
+          "positioning": "For individuals looking to build wealth over the long term."
+        },
+        {
+          "scenario": "Retirement Planning",
+          "positioning": "As a component of a long-term savings strategy for retirement."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "To pass on accumulated wealth to beneficiaries."
+        },
+        {
+          "scenario": "Long-Term Protection",
+          "positioning": "Provides a death benefit alongside savings accumulation."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses (Reversionary and Terminal)",
+        "Investment risk associated with non-guaranteed benefits",
+        "Potential costs and lower surrender value for early termination",
+        "Benefit exclusions apply (e.g., suicide, specific conditions)",
+        "Overall growth depends on declared bonuses, not solely guaranteed cash value"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Secondary Insured Appointment Age Limit: Cannot exceed age 70 at point of appointment."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Must explain that future bonuses are not guaranteed and depend on the participating fund's performance.",
+        "Emphasize that life insurance policies are long-term commitments, and early termination may be disadvantageous.",
+        "Refer to the Policy Illustration for detailed projected benefits and surrender values.",
+        "The policy contract contains the definitive terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "Single Premium: $20,000 (Cash), $15,000 (SRS); 5-pay: $4,800; 10-pay: $3,600; 15-pay: $2,400; 20-pay: $1,500",
+        "policy_term_range": "Until maturity on or after the Insured turns 125 years old",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Smart Wealth Builder (II) (5-pay) - Product Summary",
+        "summary_version": "784533175d86a76ad28861a4ec9c4005c68e4099d4ab3b01507e0ad432f7bec8",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_wealth_builder_ii_5_pay.json"
+    }
+  },
+  {
+    "policy_name": "Smart Wealth Builder Ii Single Premium",
+    "policy_id": "aia_endow_smart_wealth_builder_ii_single_premium.pdf",
+    "file": "aia_endow_smart_wealth_builder_ii_single_premium.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "endowment",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Smart Wealth Builder (II) (SP)",
+        "product_type": "Participating Endowment Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking to maximize savings and build wealth"
+        ],
+        "main_objective": [
+          "Savings",
+          "Wealth accumulation"
+        ],
+        "key_value_proposition": "A participating endowment plan designed to maximize savings with flexible premium payment options and potential for bonuses."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals looking for a savings-oriented plan",
+          "Those who wish to pay premiums over a fixed term (5, 10, 15, or 20 years) or a single premium",
+          "Clients who want to participate in the performance of a participating fund",
+          "Individuals planning for long-term wealth accumulation"
+        ],
+        "not_ideal_for": [
+          "Clients seeking pure protection",
+          "Clients requiring guaranteed returns on their premiums",
+          "Clients who need immediate access to substantial cash value"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Long-term wealth accumulation",
+          "Retirement planning",
+          "Legacy planning"
+        ],
+        "risk_appetite": "Moderate to High (due to non-guaranteed bonuses and investment risk)"
+      },
+      "core_features": {
+        "coverage_duration": "Policy continues to accumulate until the policy anniversary on or after the Insured turns 125 years old.",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating Plan",
+        "guaranteed_cash_value": true,
+        "premium_structure": "Single Premium, 5 years, 10 years, 15 years, or 20 years.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Savings Maximization",
+        "Flexible Premium Payment",
+        "Participating Benefits",
+        "Long-Term Accumulation",
+        "Death, TPD, and Terminal Illness Benefits"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Savings Goal",
+          "positioning": "For individuals looking to grow their savings over an extended period."
+        },
+        {
+          "scenario": "Wealth Accumulation",
+          "positioning": "To build wealth for future needs like retirement or legacy planning."
+        },
+        {
+          "scenario": "Supplementing Retirement Income",
+          "positioning": "The maturity benefit can provide a lump sum to supplement retirement funds."
+        },
+        {
+          "scenario": "Planned Premiums",
+          "positioning": "For individuals who prefer structured premium payments over a set term."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses (RB and TB) depend on participating fund's performance.",
+        "Early termination can result in a surrender value that is zero or less than total premiums paid.",
+        "Investment risk: Policy value is linked to the performance of the participating fund, which can be volatile.",
+        "Exclusions apply (e.g., suicide within 1 year, pre-existing illnesses not declared).",
+        "Secondary Insured appointment has specific eligibility criteria and potential conflicts with beneficiary nominations or trusts.",
+        "Maturity benefits are paid at the policy anniversary on or after age 125."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Not specified in document."
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "",
+          "available": null,
+          "notes": "Not specified in document."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [
+        {
+          "this_product_better_for": "",
+          "competitor_better_for": "",
+          "competitor_product": ""
+        }
+      ],
+      "compliance_advisory_notes": [
+        "Explain that bonuses are not guaranteed and illustrated returns are for illustrative purposes only.",
+        "Advise clients to refer to the Policy Illustration for detailed benefit illustrations.",
+        "Emphasize that past performance of the participating fund is not indicative of future performance.",
+        "Highlight that investment returns can be volatile and may affect bonus levels.",
+        "Advise clients to read the full policy contract for complete terms, conditions, and exclusions.",
+        "If purchased using SRS funds, SRS terms and conditions will overrule in case of conflict."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "Single Premium: $20,000 (Cash) or $15,000 (SRS); 5 years: $4,800; 10 years: $3,600; 15 years: $2,400; 20 years: $1,500",
+        "policy_term_range": "Policy continues to accumulate until the policy anniversary on or after the Insured turns 125 years old. Premium payment terms are 5, 10, 15, or 20 years, or Single Premium.",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_endow_smart_wealth_builder_ii_single_premium.pdf",
+        "summary_version": "24236e3a78de3f1483fa7a896cc2b9fc13857665f88eb13b8c3c052215f0ef73",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_endow_smart_wealth_builder_ii_single_premium.json"
+    }
+  },
+  {
+    "policy_name": "CI For Term Cover",
+    "policy_id": "aia_term_ci_for_term_cover",
+    "file": "aia_term_ci_for_term_cover.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "DIRECT - CI for Term Cover",
+        "product_type": "Supplementary Critical Illness benefit for Term Cover",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals with existing AIA Term Cover policies"
+        ],
+        "main_objective": [
+          "Provides Critical Illness coverage"
+        ],
+        "key_value_proposition": "Accelerates the payment of the basic policy's Insured Amount upon diagnosis of a covered Critical Illness."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Existing AIA Term Cover policyholders",
+          "Individuals seeking additional financial protection against critical illnesses",
+          "Those who want their basic sum assured to be paid out early upon critical illness diagnosis"
+        ],
+        "not_ideal_for": [
+          "Individuals without an existing AIA Term Cover policy",
+          "Clients seeking a standalone critical illness policy"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Duration of the basic policy or up to the policy anniversary immediately following the Insured's 65th birthday, whichever is earlier.",
+        "renewable": true,
+        "convertible": null,
+        "participating_status": "",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Follows the premium paying term of the attached basic AIA Term Cover policy.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "Severe stage"
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerated Benefit: Pays out the basic sum assured early upon diagnosis of a critical illness.",
+        "Integrated Coverage: Supplements existing AIA Term Cover policies for enhanced protection.",
+        "Continuity of Protection: Coverage duration aligns with or extends up to age 65, mirroring the basic policy.",
+        "Renewal Option: Offers a renewal privilege without further underwriting for 5-year term options."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Existing AIA Term Cover policyholder wants enhanced critical illness protection.",
+          "positioning": "Add this supplementary benefit to receive the basic sum assured early upon diagnosis, providing immediate financial support for treatment and recovery."
+        },
+        {
+          "scenario": "Client is nearing age 65 and wants continued critical illness coverage.",
+          "positioning": "This benefit can provide coverage up to the policy anniversary immediately following age 65."
+        }
+      ],
+      "key_limitations_objections": [
+        "Not Standalone: Cannot be purchased without an existing AIA Term Cover policy.",
+        "Premium Revision: Premium rates are not guaranteed and may be revised.",
+        "Benefit Reduction: Payment of critical illness benefit reduces the basic policy's sum assured.",
+        "Waiting Period: 90-day waiting period for specific critical illnesses.",
+        "Exclusions: Subject to general and specific exclusions outlined in the supplementary agreement.",
+        "Termination: Terminates upon diagnosis of most critical illnesses (except Angioplasty), if basic policy terminates, or at age 65."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premium rates are not guaranteed.",
+        "Advisors should ensure clients understand that premium rates may be revised due to future experience and changes in laws/regulations.",
+        "Clients should refer to the supplementary agreement for full terms, conditions, and exclusions.",
+        "Buying a life insurance policy is a long-term commitment; consider carefully before terminating or switching."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Up to policy anniversary immediately following the Insured's 65th birthday",
+        "maximum_coverage": "S$3,000,000 per life (aggregated)",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "DIRECT - CI for Term Cover Product Summary",
+        "summary_version": "4bd7c6044da5067d0f32de9bcbfe1d3bd48a337e2523bd36511c38121ae2feb2",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_ci_for_term_cover.json"
+    }
+  },
+  {
+    "policy_name": "Critical Cover On Secure Flexi Term R And C",
+    "policy_id": "aia_term_critical_cover_on_secure_flexi_term_r_and_c",
+    "file": "aia_term_critical_cover_on_secure_flexi_term_r_and_c.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "Critical Cover on Secure Flexi Term (R&C)",
+        "product_type": "Critical Illness Supplementary Benefit",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking supplementary critical illness coverage to an existing basic policy"
+        ],
+        "main_objective": [
+          "To provide critical illness coverage that accelerates the payment of the basic policy's Insured Amount."
+        ],
+        "key_value_proposition": "Provides critical illness coverage that reduces the Insured Amount of the basic policy, offering financial support upon diagnosis of a covered critical illness. Can be integrated with AIA Vitality for potential premium discounts."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Existing AIA basic policyholders seeking to add critical illness protection.",
+          "Individuals who want their basic policy's sum assured to be paid out upon critical illness diagnosis.",
+          "Clients who may benefit from AIA Vitality integration for potential premium adjustments."
+        ],
+        "not_ideal_for": [
+          "Individuals seeking a standalone critical illness policy.",
+          "Clients looking for a policy with guaranteed premium rates."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Same as the basic policy",
+        "renewable": true,
+        "convertible": true,
+        "participating_status": "",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Premiums are not guaranteed and may be revised. Premium term is the same as the basic policy.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "43 Critical Illnesses including LIA standard definitions for 37 severe-stage Critical Illnesses (Version 2024)"
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerated Benefit: Pays out the critical illness sum assured, which reduces the basic policy's sum assured, providing immediate financial relief.",
+        "AIA Vitality Integration: Potential for premium discounts through AIA Vitality membership and status.",
+        "Automatic Renewal: Offers continuous coverage without the need for further medical underwriting at renewal.",
+        "Conversion Option: Flexibility to convert to other supplementary benefits before age 65."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "New policyholders of basic plans",
+          "positioning": "Adding critical illness protection as a supplementary benefit to their existing life insurance."
+        },
+        {
+          "scenario": "Existing AIA policyholders",
+          "positioning": "Enhancing their current coverage with critical illness benefits."
+        },
+        {
+          "scenario": "Health-conscious individuals",
+          "positioning": "Leveraging AIA Vitality to potentially reduce premium costs."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Premiums: Premium rates are not guaranteed and may be revised.",
+        "Waiting Period: Benefits are not payable for certain critical illnesses if diagnosed within 90 days from the policy issue or reinstatement date.",
+        "Exclusions: Certain conditions and occurrences are excluded from coverage.",
+        "Reduced Basic Policy Coverage: Payment of a critical illness benefit reduces the Insured Amount of the basic policy.",
+        "Termination: The benefit automatically terminates upon diagnosis of certain critical illnesses (except Angioplasty & Other Invasive Treatment for Coronary Artery), non-payment of premiums, or termination of the basic policy."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Advisable to read the supplementary agreement for full definitions and exclusions.",
+        "Premiums are subject to revision.",
+        "Life insurance is a long-term commitment; early termination may result in significant costs and low or no surrender value."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Critical Cover on Secure Flexi Term (R&C) - Product Summary",
+        "summary_version": "f453bf312c4cdf9ca1ea8a55417ed287a0d857048f267fa94b1ad82ac81f9b51",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_critical_cover_on_secure_flexi_term_r_and_c.json"
+    }
+  },
+  {
+    "policy_name": "Critical Cover On Secure Flexi Term To Age",
+    "policy_id": "aia_term_critical_cover_on_secure_flexi_term_to_age",
+    "file": "aia_term_critical_cover_on_secure_flexi_term_to_age.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "Critical Cover on Secure Flexi Term (To Age)",
+        "product_type": "Supplementary Critical Illness Benefit",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking critical illness coverage to supplement their basic life insurance policy."
+        ],
+        "main_objective": [
+          "To provide a lump sum payment upon diagnosis of a covered critical illness, which accelerates the Insured Amount of the basic policy."
+        ],
+        "key_value_proposition": "Provides critical illness coverage that reduces the Insured Amount of the basic policy, with the option to integrate with AIA Vitality for premium discounts."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals who have an existing AIA basic life insurance policy and wish to add critical illness coverage.",
+          "Clients seeking financial protection against the diagnosis of a critical illness.",
+          "Those who want their basic policy's Insured Amount to be available for critical illness needs, reducing it accordingly.",
+          "Clients interested in potential premium discounts through AIA Vitality integration."
+        ],
+        "not_ideal_for": [
+          "Individuals who do not have or do not intend to have a basic AIA life insurance policy.",
+          "Clients seeking critical illness coverage as a standalone product without a linked basic policy."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Same as the basic policy",
+        "renewable": null,
+        "convertible": true,
+        "participating_status": "Non-Participating",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Premiums are not guaranteed and may be revised by the company.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "43 covered Critical Illnesses, with specific definitions as per LIA Version 2024 or the company's definitions.",
+          "Angioplasty & Other Invasive Treatment for Coronary Artery: 10% of Insured Amount (up to S$25,000) payable once."
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerates Basic Policy Coverage: Provides a critical illness payout by reducing the basic policy's sum assured, ensuring funds are available when most needed.",
+        "AIA Vitality Integration: Offers potential for premium savings through participation in the AIA Vitality program.",
+        "Comprehensive List of Critical Illnesses: Covers a broad range of 43 critical illnesses as defined by LIA or the insurer.",
+        "Conversion Option: Allows for conversion to another supplementary benefit without medical underwriting, providing flexibility for future needs."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Existing AIA Policyholders",
+          "positioning": "To add critical illness protection to their current life insurance policy."
+        },
+        {
+          "scenario": "Financial Planning for Health Emergencies",
+          "positioning": "To ensure access to funds for medical treatment and recovery costs associated with critical illnesses."
+        },
+        {
+          "scenario": "Supplementing Existing Coverage",
+          "positioning": "For individuals who have basic critical illness coverage but want an additional layer of protection linked to their life insurance."
+        }
+      ],
+      "key_limitations_objections": [
+        "Not a Standalone Product: Requires an existing AIA basic life insurance policy.",
+        "Basic Policy Reduction: The payout reduces the basic policy's sum assured, which may impact future death benefits or other linked benefits.",
+        "Premiums Not Guaranteed: Premiums can be revised by the insurer.",
+        "Waiting Period: Certain critical illnesses have a 90-day waiting period.",
+        "Exclusions: Specific conditions and occurrences are excluded from coverage.",
+        "Early Termination Costs: Early termination of the policy may result in zero or less than total premiums paid in surrender value."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Subject to underwriting and acceptance by AIA Singapore.",
+          "The product benefits are subject to underwriting limits, including a Critical Illness per life limit of S$3,000,000 (aggregated with other policies or supplementary benefits)."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premiums are not guaranteed.",
+        "The product summary is a simplified description and not exhaustive; refer to the actual supplementary agreement for full terms and conditions.",
+        "Buying a life insurance policy is a long-term commitment; early termination can be costly.",
+        "All applications are subject to underwriting and acceptance."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Same as the basic policy",
+        "maximum_coverage": "Limited by the Insured Amount of the basic policy, and subject to a Critical Illness per life limit of S$3,000,000.",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_term_critical_cover_on_secure_flexi_term_to_age.pdf",
+        "summary_version": "a2e0b3f7864cf766b1c0b1a136c2299c7f4e5093a819af3dda5548a2f50e8be9",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_critical_cover_on_secure_flexi_term_to_age.json"
+    }
+  },
+  {
+    "policy_name": "Direct Term Cover",
+    "policy_id": "aia_term_direct_term_cover",
+    "file": "aia_term_direct_term_cover.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Ci For Term Cover",
+        "file": "aia_term_ci_for_term_cover.pdf"
+      }
+    ],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "DIRECT - AIA Term Cover",
+        "product_type": "Level Term",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking affordable protection"
+        ],
+        "main_objective": [
+          "Death",
+          "Terminal Illness",
+          "Total & Permanent Disability (TPD) protection"
+        ],
+        "key_value_proposition": "Provides death and Terminal Illness benefits throughout the policy term, and TPD benefit up to age 65 at affordable premiums."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking financial protection for their dependents",
+          "Those needing coverage for specific periods (e.g., mortgage protection)",
+          "Budget-conscious clients looking for essential coverage"
+        ],
+        "not_ideal_for": [
+          "Clients seeking cash value or investment features",
+          "Individuals requiring coverage beyond age 65 for TPD"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Offers three policy terms: 5-year (renewable), 20-year, and term to age 65.",
+        "renewable": true,
+        "convertible": null,
+        "participating_status": "non-participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Regular premium term plan. Premiums are guaranteed for the duration of the 20-year term and term to age 65 policies. For the 5-year term, premiums are guaranteed for each 5-year term but are subject to change upon renewal.",
+        "riders_available": [
+          "DIRECT - CI for Term Cover (optional non-participating accelerating Critical Illness supplementary benefit)"
+        ],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Affordable Protection",
+        "Flexible Term Options",
+        "Accelerated Benefits"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "New Parents",
+          "positioning": "Income replacement to protect family financial stability."
+        },
+        {
+          "scenario": "Property Buyers",
+          "positioning": "Mortgage protection to ensure the loan is covered."
+        },
+        {
+          "scenario": "Individuals with Dependents",
+          "positioning": "Providing financial security for loved ones."
+        }
+      ],
+      "key_limitations_objections": [
+        "No cash value or savings/investment feature.",
+        "Renewal premiums for the 5-year term are not guaranteed and based on attained age.",
+        "Benefits are not payable under certain conditions (e.g., suicide within one year, self-inflicted injury, pre-existing conditions, AIDS/HIV).",
+        "TPD benefit has a per life limit of S$7,500,000 (aggregated)."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "All applications are subject to underwriting and acceptance by AIA Singapore."
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "DIRECT - CI for Term Cover",
+          "available": true,
+          "notes": "Optional non-participating accelerating Critical Illness supplementary benefit."
+        },
+        {
+          "rider_name": "Early CI rider",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Hospital rider",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Disability waiver",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Payor benefit",
+          "available": false,
+          "notes": "Not specified in document."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "This product summary is a simplified description and not a contract of insurance. The actual policy contract's terms and conditions are binding.",
+        "No savings or investment feature.",
+        "Consider carefully before terminating or switching policies as new policies may be more expensive or offer fewer benefits for the same cost."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "5-year (renewable), 20-year, term to age 65",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_term_direct_term_cover.pdf",
+        "summary_version": "a51b5ce11608c535020fe367f63ef3982960b75657a1d78a62cd2bf49ed02a8d",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_direct_term_cover.json"
+    }
+  },
+  {
+    "policy_name": "Mortgage Reducing Term Assurance",
+    "policy_id": "aia_term_mortgage_reducing_term_assurance",
+    "file": "aia_term_mortgage_reducing_term_assurance.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Mortgage Reducing Term Assurance (MRTA)",
+        "product_type": "Decreasing Term Assurance",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals with outstanding property mortgages"
+        ],
+        "main_objective": [
+          "To provide coverage to pay off any outstanding property mortgage in the event of death, total and permanent disability (TPD), or terminal illness"
+        ],
+        "key_value_proposition": "Affordable protection to clear mortgage debt, safeguarding family from financial burden."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals who have taken out a mortgage for property purchase",
+          "Those who want to ensure their mortgage is fully paid off in case of death, TPD, or terminal illness",
+          "Clients seeking protection for a specific financial obligation (the mortgage)"
+        ],
+        "not_ideal_for": [
+          "Clients seeking cash value or investment components",
+          "Individuals without outstanding mortgage debt"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Mortgage repayment"
+        ],
+        "risk_appetite": "Low to moderate (focused on protection, not investment)"
+      },
+      "core_features": {
+        "coverage_duration": "Decreasing term, designed to match the decreasing balance of a mortgage.",
+        "renewable": true,
+        "convertible": false,
+        "participating_status": "Non-participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Premiums are payable for only ¼ of the term of the policy. Premium rates are not guaranteed.",
+        "riders_available": [
+          "Waiver of Premium upon Critical Illness (WPCI)",
+          "Advance Payment & Waiver of Premium (APWP)"
+        ],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": [
+          "Waiver of Premium upon Critical Illness (WPCI)",
+          "Waiver of Premium upon TPD (part of APWP)"
+        ]
+      },
+      "key_selling_points": [
+        "Mortgage Protection: Specifically designed to clear outstanding mortgage debt, providing peace of mind for homeowners and their families.",
+        "Comprehensive Benefits: Covers death, total and permanent disability, and terminal illness, offering significant financial protection.",
+        "Waiver of Premium Option: The supplementary Waiver of Premium upon Critical Illness (WPCI) ensures that premiums continue to be paid by the insurer if a critical illness occurs, maintaining the coverage without further financial burden on the insured.",
+        "Affordable Premiums: Designed to be cost-effective for mortgage protection."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "New mortgage borrower.",
+          "positioning": "Ensure that the home loan will be fully paid off if the borrower passes away or becomes totally and permanently disabled or terminally ill, protecting the family from losing their home."
+        },
+        {
+          "scenario": "Individuals seeking to safeguard family finances from mortgage liabilities.",
+          "positioning": "Provides a financial safety net specifically for the mortgage, preventing inherited debt."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Premiums: Premium rates can be increased at the insurer's discretion.",
+        "Decreasing Coverage: The sum assured reduces over time, matching the mortgage balance. It is not intended for wealth accumulation or legacy planning.",
+        "Exclusions: Specific conditions and circumstances are excluded from coverage (e.g., pre-existing conditions, certain high-risk activities).",
+        "No Cash Value: This is a pure protection plan and does not build cash value.",
+        "Limited Term: Coverage is for a specific term, typically aligned with the mortgage tenure."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "Waiver of Premium upon Critical Illness (WPCI)",
+          "available": true,
+          "notes": "Waives premiums for the basic MRTA policy upon diagnosis of a covered Critical Illness."
+        },
+        {
+          "rider_name": "Advance Payment & Waiver of Premium (APWP)",
+          "available": true,
+          "notes": "Provides TPD and Terminal Illness benefits with premium waiver."
+        },
+        {
+          "rider_name": "Decreasing Term supplementary benefit",
+          "available": true,
+          "notes": "Mentioned in conjunction with WPCI and APWP, suggesting it is a component or related product."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premiums are not guaranteed.",
+        "This is a long-term commitment; early termination may incur high costs and surrender values may be zero or less than premiums paid.",
+        "Clients should consider carefully before terminating or switching policies.",
+        "The product summary is a simplified description and not exhaustive; refer to the actual policy contract for full terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Designed to match mortgage tenure",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Mortgage Reducing Term Assurance (MRTA) Summary",
+        "summary_version": "06f0883218f5ab3bfe840fd066ec84d1dc72f57ab3c2fa85e0bcf3d206b527a2",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_mortgage_reducing_term_assurance.json"
+    }
+  },
+  {
+    "policy_name": "Secure Flexi Term R And C",
+    "policy_id": "aia_term_secure_flexi_term_r_and_c",
+    "file": "aia_term_secure_flexi_term_r_and_c.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Tpd On Secure Flexi Term R And C",
+        "file": "aia_term_tpd_on_secure_flexi_term_r_and_c.pdf"
+      },
+      {
+        "policy_name": "Critical Cover On Secure Flexi Term R And C",
+        "file": "aia_term_critical_cover_on_secure_flexi_term_r_and_c.pdf"
+      }
+    ],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Secure Flexi Term (R&C)",
+        "product_type": "Non-participating term policy",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking affordable protection with flexible terms"
+        ],
+        "main_objective": [
+          "Protection"
+        ],
+        "key_value_proposition": "Renewable and convertible term policy offering protection at affordable premiums with various policy terms and renewal options up to age 101."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking death benefit coverage",
+          "Individuals seeking terminal illness coverage",
+          "Individuals seeking terminal cancer coverage",
+          "Individuals who may benefit from integration with AIA Vitality for premium discounts"
+        ],
+        "not_ideal_for": [
+          "Clients prioritizing savings or cash value accumulation",
+          "Clients seeking immediate coverage without underwriting"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "5-year, 10-year, 20-year, and 30-year terms",
+        "renewable": true,
+        "convertible": true,
+        "participating_status": "Non-participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Regular premium, non-participating. Premium rates are guaranteed and remain unchanged for the duration of the policy term. Renewal premiums are based on the Insured's attained age at renewal and are not guaranteed, subject to potential adjustments.",
+        "riders_available": [
+          "Total and Permanent Disability Benefit",
+          "Critical Illness Benefit"
+        ],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "Terminal Illness",
+          "Terminal Cancer"
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Flexible Policy Terms: Choice of 5, 10, 20, or 30-year terms.",
+        "Renewable Up to Age 101: Continuous protection available through successive renewals.",
+        "Convertible Option: Flexibility to switch to other policy types without medical underwriting.",
+        "Affordable Premiums: Designed to provide protection at affordable rates.",
+        "AIA Vitality Integration: Potential for upfront and ongoing premium discounts through AIA Vitality."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Need for life protection for a specific period (e.g., while raising children, covering a mortgage).",
+          "positioning": "Provides affordable death benefit coverage for the chosen term."
+        },
+        {
+          "scenario": "Desire for flexibility to change coverage later.",
+          "positioning": "The conversion privilege allows for a change to other policy types without medical underwriting."
+        },
+        {
+          "scenario": "Interest in health and wellness incentives.",
+          "positioning": "Integration with AIA Vitality offers premium discounts for maintaining healthy habits."
+        }
+      ],
+      "key_limitations_objections": [
+        "No Surrender Value: The policy has no surrender value.",
+        "Non-Guaranteed Renewal Premiums: Renewal premiums are not guaranteed and can be adjusted based on attained age and future experience.",
+        "Exclusions: Terminal illness and terminal cancer benefits have specific exclusions (e.g., symptoms prior to issue/reinstatement date, diagnosis within 30 days of issue/reinstatement, conditions related to AIDS/HIV, pre-existing conditions not declared and accepted).",
+        "Suicide Clause: Death benefit limited to refund of premiums paid (without interest) if death by suicide occurs within one year of issue or reinstatement.",
+        "Conversion Age Limit: Conversion must occur on or prior to the policy anniversary before the Insured's 70th birthday."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Standard underwriting applies.",
+          "Policy can be issued on a non-Standard Life basis with potential extra premiums.",
+          "An Insured is considered juvenile until age 16 if gainfully employed or self-employed, or until age 21, whichever is earlier.",
+          "Terminal Illness Benefit Subject to a Terminal Illness per life limit of S$20,000,000 (aggregated).",
+          "Terminal Cancer Benefit Subject to a Terminal Cancer per life limit of S$1,000,000 (or S$500,000 for juvenile) (aggregated)."
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "Total and Permanent Disability Benefit",
+          "available": true,
+          "notes": "Available (as a supplementary benefit)."
+        },
+        {
+          "rider_name": "Critical Illness Benefit",
+          "available": true,
+          "notes": "Available (as a supplementary benefit)."
+        },
+        {
+          "rider_name": "Early CI rider",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Hospital rider",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Disability waiver",
+          "available": false,
+          "notes": "Not specified in document."
+        },
+        {
+          "rider_name": "Payor benefit",
+          "available": false,
+          "notes": "Not specified in document."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Renewal premiums are not guaranteed and may be revised.",
+        "If issued on a non-Standard Life basis, renewal premiums and converted policy premiums will also be on this basis.",
+        "Life insurance is a long-term commitment; early termination may result in zero or low surrender value.",
+        "The actual policy contract contains the full terms and conditions and should be referred to for definitive details."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "5, 10, 20, 30 years",
+        "maximum_coverage": "Insured Amount ( Death Benefit), Terminal Illness Benefit, Terminal Cancer Benefit.",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_term_secure_flexi_term_r_and_c.pdf",
+        "summary_version": "5829942f8b72f57a85f450a4055c5ab82de36c26be3fe5c0ca78700fefcf1abd",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_secure_flexi_term_r_and_c.json"
+    }
+  },
+  {
+    "policy_name": "Secure Flexi Term To Age",
+    "policy_id": "aia_term_secure_flexi_term_to_age",
+    "file": "aia_term_secure_flexi_term_to_age.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Critical Cover On Secure Flexi Term To Age",
+        "file": "aia_term_critical_cover_on_secure_flexi_term_to_age.pdf"
+      },
+      {
+        "policy_name": "Tpd On Secure Flexi Term To Age",
+        "file": "aia_term_tpd_on_secure_flexi_term_to_age.pdf"
+      }
+    ],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Secure Flexi Term (To Age)",
+        "product_type": "Regular Premium Non-Participating Term Policy",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking financial protection against death, terminal illness, and terminal cancer"
+        ],
+        "main_objective": [
+          "Financial protection"
+        ],
+        "key_value_proposition": "Provides financial protection against death, terminal illness, and terminal cancer with flexible coverage duration options up to age 65 or 75."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking financial protection for a defined period",
+          "Those looking to complement existing policies with specific riders",
+          "Clients who may wish to integrate with AIA Vitality for potential premium discounts"
+        ],
+        "not_ideal_for": [
+          "Clients seeking savings or investment components within the policy",
+          "Individuals who require cash value accumulation",
+          "Clients who may need to surrender the policy early, as it has no surrender value"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Option to be covered to age 65 or 75",
+        "renewable": false,
+        "convertible": true,
+        "participating_status": "Non-Participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Regular premium. Premiums are guaranteed and remain unchanged for the policy term, provided premiums are paid on time.",
+        "riders_available": [
+          "Optional Total and Permanent Disability Benefit",
+          "Optional Critical Illness Benefit (for To Age 65 and To Age 75 plans)"
+        ],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Comprehensive Protection: Offers financial protection against Death, Terminal Illness, and Terminal Cancer.",
+        "Flexible Coverage Terms: Choice of coverage up to age 65 or 75.",
+        "Guaranteed Premiums: Premiums are guaranteed for the policy term.",
+        "Conversion Option: Ability to convert to other policy types without medical underwriting (subject to conditions).",
+        "AIA Vitality Integration: Potential for premium discounts through participation in the AIA Vitality program."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "New Parents",
+          "positioning": "Income replacement in case of death or terminal illness."
+        },
+        {
+          "scenario": "Property Purchase",
+          "positioning": "Mortgage protection to cover outstanding home loans."
+        },
+        {
+          "scenario": "Individuals Seeking Basic Protection",
+          "positioning": "Cost-effective way to secure financial protection for a specific period."
+        },
+        {
+          "scenario": "Clients Engaged with AIA Vitality",
+          "positioning": "Leveraging the program for potential premium savings."
+        }
+      ],
+      "key_limitations_objections": [
+        "No Surrender Value: Policyholders will not receive any payout if they surrender the policy.",
+        "Exclusions Apply: Specific conditions are excluded for Terminal Illness and Terminal Cancer benefits (e.g., pre-existing conditions not declared, diagnosis within 30 days of policy issue, AIDS/HIV related conditions).",
+        "No Cash Value: This is a pure protection policy, not an investment or savings plan.",
+        "Limited Rider Options: Only TPD and CI benefits are mentioned as optional supplementary benefits.",
+        "Early Termination Costs: Early termination may result in high costs, and any payable surrender value may be zero or less than total premiums paid."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [
+          "Not specified in document regarding simplified underwriting or specific health condition acceptance."
+        ],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "Optional Total and Permanent Disability Benefit",
+          "available": true,
+          "notes": ""
+        },
+        {
+          "rider_name": "Optional Critical Illness Benefit",
+          "available": true,
+          "notes": "Available for To Age 65 and To Age 75 plans."
+        },
+        {
+          "rider_name": "Other Supplementary Benefits",
+          "available": true,
+          "notes": "May be attached."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Long-Term Commitment: Life insurance is a long-term commitment.",
+        "Early Termination: Early termination usually involves high costs and may result in zero or less than total premiums paid for surrender value.",
+        "Policy Contract is Binding: This summary is a simplified description; refer to the actual policy contract for full terms and conditions.",
+        "Underwriting Acceptance: Submission of application and payment does not constitute acceptance; AIA reserves the right to withdraw or reject applications."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Coverage to Age 65 or 75",
+        "maximum_coverage": "Terminal Illness per life limit S$20,000,000; Terminal Cancer per life limit S$1,000,000 (S$500,000 for juvenile).",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Secure Flexi Term (To Age) - Product Summary",
+        "summary_version": "6d04d1c67a8ef0fa97e2756cce031253cfec6ff09aade5a98f30f0e165736c78",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_secure_flexi_term_to_age.json"
+    }
+  },
+  {
+    "policy_name": "Tpd On Secure Flexi Term R And C",
+    "policy_id": "aia_term_tpd_on_secure_flexi_term_r_and_c",
+    "file": "aia_term_tpd_on_secure_flexi_term_r_and_c.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "TPD on Secure Flexi Term (R&C)",
+        "product_type": "Supplementary benefit for Total and Permanent Disability (TPD)",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking financial protection against total and permanent disability before age 70"
+        ],
+        "main_objective": [
+          "Financial protection in the event of total and permanent disability"
+        ],
+        "key_value_proposition": "Accelerates the death benefit of the basic policy upon diagnosis of TPD, providing a lump sum payment."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking to supplement their existing life insurance policy with TPD coverage",
+          "Individuals who want financial protection if they become totally and permanently disabled before age 70",
+          "Juveniles requiring TPD coverage with specific conditions recognized"
+        ],
+        "not_ideal_for": [],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "The shorter of the basic policy term or the years until the policy anniversary following the Insured's 70th birthday.",
+        "renewable": true,
+        "convertible": true,
+        "participating_status": "",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Premiums are guaranteed and unchanged for the policy term (5, 10, 20, or 30 years) if paid on time. However, premium rates at renewal are based on the Insured's attained age and are not guaranteed; they may be adjusted based on future experience, obligations under the basic policy, or Singapore laws and regulations.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerated Death Benefit: Provides financial support by paying out the death benefit early upon total and permanent disability.",
+        "Coverage Up to Age 70: Offers protection against TPD until the policy anniversary following the Insured's 70th birthday.",
+        "Renewal Privilege: Automatic renewal without further medical underwriting ensures continued coverage.",
+        "Integration with AIA Vitality: Potential for premium discounts based on health and lifestyle choices."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Individuals with existing life insurance seeking comprehensive disability protection.",
+          "positioning": "Enhances existing coverage by adding a critical layer of financial security for disability."
+        },
+        {
+          "scenario": "Individuals concerned about long-term income replacement due to severe disability.",
+          "positioning": "Provides a lump sum payment that can help replace lost income and cover expenses."
+        },
+        {
+          "scenario": "Parents planning for the financial future of their children.",
+          "positioning": "Offers protection for juvenile TPD under specific recognized conditions."
+        }
+      ],
+      "key_limitations_objections": [
+        "TPD Definition Change: The definition of TPD changes at age 65, shifting from inability to work to inability to perform ADLs.",
+        "Non-Guaranteed Renewal Premiums: Premium rates at renewal are not guaranteed and may increase.",
+        "Exclusions Apply: Benefits are not payable for TPD caused directly or indirectly by deliberate acts endangering oneself, military or naval service in wartime, or certain aerial device activities.",
+        "Early Termination Costs: Early termination of a life insurance policy can involve high costs and may result in a surrender value that is zero or less than total premiums paid.",
+        "TPD Per Life Limit: Coverage is subject to a TPD per life limit of S$7,500,000, aggregated with other policies or riders on the same life.",
+        "Conversion Limitations: Conversion is not allowed during the TPD Period. If converted, the remaining Insured Amount must meet minimum requirements."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Long-Term Commitment: Life insurance policies are long-term commitments; early termination can be costly.",
+        "Product Summary Limitations: This summary is a simplified description and not exhaustive. Refer to the supplementary agreement for full terms and conditions.",
+        "Underwriting and Acceptance: All applications are subject to underwriting and acceptance by AIA Singapore.",
+        "Non-Standard Life Basis: If issued on a non-Standard Life basis, converted policies will also be on a non-Standard Life basis, and renewal premiums may be computed on the same basis."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "S$7,500,000 (TPD per life limit)",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "TPD on Secure Flexi Term (R&C) - Product Summary",
+        "summary_version": "33db1e96890c438570ef92288d6e82033bb3afea3a9514a316ebb73b2fcbabd9",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_tpd_on_secure_flexi_term_r_and_c.json"
+    }
+  },
+  {
+    "policy_name": "Tpd On Secure Flexi Term To Age",
+    "policy_id": "aia_term_tpd_on_secure_flexi_term_to_age",
+    "file": "aia_term_tpd_on_secure_flexi_term_to_age.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "term",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "TPD on Secure Flexi Term (To Age)",
+        "product_type": "Supplementary benefit for Total and Permanent Disability (TPD)",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking financial protection against total and permanent disability."
+        ],
+        "main_objective": [
+          "To provide financial protection by accelerating the death benefit of a basic policy if the insured becomes totally and permanently disabled before age 70."
+        ],
+        "key_value_proposition": "Offers financial protection for TPD by accelerating the basic policy's death benefit, with premiums payable for the same term as the basic policy. Can be integrated with AIA Vitality for premium discounts."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking TPD protection.",
+          "Those who want the TPD benefit to accelerate the death benefit of their existing basic policy.",
+          "Clients who can benefit from AIA Vitality integration for potential premium discounts."
+        ],
+        "not_ideal_for": [
+          "Clients not requiring TPD protection.",
+          "Clients seeking a standalone TPD policy without a basic policy."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "The shorter of the basic policy term or the number of years from issue to the policy anniversary following the Insured's 70th birthday.",
+        "renewable": false,
+        "convertible": true,
+        "participating_status": "",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Premiums are guaranteed and unchanged for the policy term as long as paid within the grace period. Premiums are payable for as long as the benefit is in force.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "TPD payout accelerates the death benefit of the basic policy, providing financial support when most needed.",
+        "Premium rates are guaranteed and will remain unchanged for the policy term.",
+        "Dual TPD definitions: Caters to different life stages with distinct definitions of TPD before and after age 65.",
+        "Offers potential premium discounts through integration with the AIA Vitality program."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Mortgage Protection",
+          "positioning": "Provides funds to cover outstanding mortgage in case of TPD."
+        },
+        {
+          "scenario": "Income Replacement",
+          "positioning": "Helps replace lost income for dependents if the insured becomes totally and permanently disabled."
+        },
+        {
+          "scenario": "Financial Security",
+          "positioning": "Ensures financial stability for the family in the event of disability."
+        }
+      ],
+      "key_limitations_objections": [
+        "This is a supplementary benefit and requires a basic policy.",
+        "Does not cover TPD caused by deliberate acts endangering oneself (e.g., suicide, violation of law) or engaging in military/naval service in wartime, or operating certain aerial devices.",
+        "The supplementary benefit terminates upon commencement of TPD, policy anniversary following 70th birthday, or if the basic policy terminates.",
+        "Conversion is not allowed during the TPD Period."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [
+          "Subject to underwriting and acceptance by AIA Singapore."
+        ],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "TPD per life limit of S$7,500,000 applies (aggregated with other policies/riders on the same life).",
+          "If issued on a non-Standard Life basis, extra premiums are not subject to AIA Vitality premium adjustments."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "The product summary is a simplified description and not exhaustive. Refer to the supplementary agreement for full terms and conditions.",
+        "Early termination of a policy can involve high costs and may result in a surrender value of zero or less than total premiums paid.",
+        "Consider the disadvantages before terminating or switching policies."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Same as the basic policy",
+        "maximum_coverage": "S$7,500,000 (TPD per life limit, aggregated)",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "TPD on Secure Flexi Term (To Age) - Product Summary",
+        "summary_version": "d060a5196270f881073a3d69e8d6f0027d64a81ab3d46561e612b6fd96babc50",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_term_tpd_on_secure_flexi_term_to_age.json"
+    }
+  },
+  {
+    "policy_name": "Aia Vitality Benefit On Aia Guaranteed Protect Plus Iv",
+    "policy_id": "aia_whole_aia_vitality_benefit_on_aia_guaranteed_protect_plus_iv",
+    "file": "aia_whole_aia_vitality_benefit_on_aia_guaranteed_protect_plus_iv.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Vitality Benefit on AIA Guaranteed Protect Plus (IV)",
+        "product_type": "Benefit endorsement",
+        "insurance_company": "AIA",
+        "target_segment": [
+          "Existing AIA Guaranteed Protect Plus (IV) policyholders who enroll in AIA Vitality"
+        ],
+        "main_objective": [
+          "To provide an additional, Vitality Status-dependent coverage benefit"
+        ],
+        "key_value_proposition": "Offers an additional death benefit and potential for increased coverage based on the insured's health and wellness engagement through AIA Vitality."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Existing AIA Guaranteed Protect Plus (IV) policyholders",
+          "Individuals enrolled in the AIA Vitality program",
+          "Clients seeking potential for increased coverage linked to their health and wellness"
+        ],
+        "not_ideal_for": [
+          "Individuals not enrolled in AIA Vitality",
+          "Clients not holding an AIA Guaranteed Protect Plus (IV) policy",
+          "Clients prioritizing guaranteed cash value growth solely from the base policy, as this benefit is dependent on Vitality Status"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "",
+        "renewable": null,
+        "convertible": null,
+        "participating_status": "",
+        "guaranteed_cash_value": null,
+        "premium_structure": "",
+        "riders_available": [],
+        "multiplier_benefits": "PowerUp Dollar can increase or decrease based on Vitality Status, up to 150% of Base PowerUp Dollar.",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Health-linked Coverage Enhancement: Offers potential for increased coverage as a direct reward for maintaining a healthy lifestyle through AIA Vitality.",
+        "Dynamic Benefit: The PowerUp Dollar can fluctuate with the Insured's Vitality Status, incentivizing ongoing wellness.",
+        "Integration with AIA Vitality: Seamlessly combines health program engagement with enhanced insurance protection.",
+        "Up to 150% of Base PowerUp Dollar: Significant potential for increased benefit payout based on Vitality Status."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Existing GPP(IV) Policyholders",
+          "positioning": "To add an incentive for healthy living and potentially increase their death benefit or maturity payout."
+        },
+        {
+          "scenario": "Clients Actively Engaged in Health & Wellness Programs",
+          "positioning": "To leverage their existing efforts for enhanced financial protection."
+        }
+      ],
+      "key_limitations_objections": [
+        "Dependency on Vitality Status: PowerUp Dollar can decrease or become $0 if Vitality Status is not maintained.",
+        "Reduced Coverage: If Vitality Status is lost, the PowerUp Dollar will be revised to $0 for future adjustments.",
+        "Basic Policy Requirement: This is a benefit endorsement and requires an underlying AIA Guaranteed Protect Plus (IV) policy.",
+        "Termination of Basic Policy: The Vitality Benefit terminates if the basic policy is terminated or altered in specific ways.",
+        "Premium Not Specified: The document does not detail any additional premiums for this benefit.",
+        "Underwriting Details Not Specified: The document does not detail specific underwriting requirements for this benefit endorsement."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Underwriting details not specified in the document."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "The PowerUp Dollar adjustment is dependent on the Insured's Vitality Status.",
+        "Emphasize that maintaining Vitality Status is crucial for the benefit to remain at its potential.",
+        "Clearly explain the conditions under which the PowerUp Dollar can decrease or cease.",
+        "Ensure clients understand the link between their health program participation and the benefit amount.",
+        "This is a simplified summary; refer to the Vitality Benefit endorsement for full terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "Cessation of adjustments on or after 65th/75th birthday or 15th policy anniversary.",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Vitality Benefit on AIA Guaranteed Protect Plus (IV) Summary",
+        "summary_version": "683b4b2b63c54a5757530c3b50f715319aa46daea31df89b813dffe89be513b6",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_aia_vitality_benefit_on_aia_guaranteed_protect_plus_iv.json"
+    }
+  },
+  {
+    "policy_name": "Ci For Whole Life Cover Ii",
+    "policy_id": "aia_whole_ci_for_whole_life_cover_ii",
+    "file": "aia_whole_ci_for_whole_life_cover_ii.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "DIRECT - CI for Whole Life Cover (II)",
+        "product_type": "Supplementary Critical Illness Benefit",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Existing AIA Whole Life Cover (II) policyholders"
+        ],
+        "main_objective": [
+          "Critical Illness Protection"
+        ],
+        "key_value_proposition": "Provides supplementary critical illness coverage attached to your DIRECT - AIA Whole Life Cover (II) policy, accelerating the payment of the Insured Amount of your basic policy."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Existing AIA Whole Life Cover (II) policyholders seeking additional critical illness protection",
+          "Individuals who want the death benefit of their basic policy to be reduced by the critical illness payout",
+          "Clients whose basic policy has a payment term that aligns with their desired coverage duration"
+        ],
+        "not_ideal_for": [
+          "Clients seeking critical illness coverage without an existing basic Whole Life policy",
+          "Clients who want a standalone critical illness policy",
+          "Clients who prefer their basic policy death benefit not to be reduced upon a critical illness claim"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Duration of the attached basic policy",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Applicable bonuses from the basic policy are also paid",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Follows the premium paying term of the attached basic policy. Premium rates are not guaranteed and may be revised.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "37 severe-stage Critical Illnesses, aligned with the Life Insurance Association Singapore (LIA) standard definitions (Version 2024)"
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Integrated Protection: Seamlessly attaches to your existing DIRECT - AIA Whole Life Cover (II) policy, providing a bundled insurance solution.",
+        "Accelerated Payout: Critical illness benefit is paid out during your lifetime, helping with financial needs during a critical illness.",
+        "Comprehensive CI Coverage: Covers 37 severe-stage critical illnesses defined by LIA Singapore.",
+        "Aligned Premium Term: Premium payment term matches your basic policy, simplifying financial planning."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Existing Policyholders",
+          "positioning": "To enhance protection against critical illnesses by leveraging their current life insurance policy."
+        },
+        {
+          "scenario": "Financial Planning",
+          "positioning": "To ensure funds are available to cover medical expenses and living costs during a critical illness, reducing reliance on savings or basic policy payout."
+        }
+      ],
+      "key_limitations_objections": [
+        "Not Standalone: This is a supplementary benefit and requires an existing DIRECT - AIA Whole Life Cover (II) policy.",
+        "Reduced Basic Policy Benefit: Critical illness payout reduces the death benefit of the basic policy.",
+        "Premium Rate Changes: Premiums are not guaranteed and may be revised.",
+        "Waiting Period: 90-day waiting period applies to specific severe illnesses.",
+        "Exclusions: General exclusions and specific critical illness exclusions apply (e.g., suicide within one year, self-inflicted injury, pre-existing conditions, congenital defects for critical illness diagnosed before age six).",
+        "Angioplasty Benefit Limit: Only 10% of the insured amount (max S$25,000) is payable for Angioplasty & Other Invasive Treatment for Coronary Artery, and this benefit is payable only once.",
+        "Termination: The benefit terminates upon a critical illness claim (except Angioplasty), termination of the basic policy, or unpaid premiums."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premium rates are not guaranteed.",
+        "The product summary is a simplified description and not exhaustive; refer to the supplementary agreement for full terms and conditions.",
+        "Buying a life insurance policy is a long-term commitment; consider carefully before terminating or switching.",
+        "The payment or acceptance of premiums after termination does not create liability.",
+        "All applications are subject to underwriting and acceptance. AIA reserves the right to withdraw the plan or reject applications."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Duration of the attached basic policy",
+        "maximum_coverage": "Subject to the Critical Illness per life limit of S$3,000,000",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "DIRECT - CI for Whole Life Cover (II) Product Summary",
+        "summary_version": "977f02a4741929ad0d8abf67ae6bc046c18186c4cf8f733bd5d9fbebdb1a6c79",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_ci_for_whole_life_cover_ii.json"
+    }
+  },
+  {
+    "policy_name": "Critical Cover Accelerator",
+    "policy_id": "aia_whole_critical_cover_accelerator",
+    "file": "aia_whole_critical_cover_accelerator.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "Critical Cover Accelerator (CCA)",
+        "product_type": "Non-participating supplementary benefit (Critical Illness coverage)",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals with an existing AIA basic policy"
+        ],
+        "main_objective": [
+          "Provides accelerated critical illness coverage, accelerating payment of the Insured Amount of the basic policy."
+        ],
+        "key_value_proposition": "Offers critical illness coverage that accelerates the death benefit of the basic policy."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals with an existing AIA basic policy looking to enhance their critical illness protection."
+        ],
+        "not_ideal_for": [],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Non-participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Fixed at \"Pay To Age 65\" or \"10 years\", whichever is longer.",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerated critical illness benefit that pays out from the basic policy's sum assured.",
+        "Covers a comprehensive list of 73 critical illnesses, including many severe-stage conditions defined by the Life Insurance Association Singapore.",
+        "Provides a specific payout for Angioplasty & Other Invasive Treatments for Coronary Artery.",
+        "Enhances the value of the basic policy by accelerating its payout upon critical illness diagnosis."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Enhancing existing protection",
+          "positioning": "For clients who already have a basic AIA policy and want to add critical illness coverage."
+        },
+        {
+          "scenario": "Financial preparedness",
+          "positioning": "To provide a financial buffer for medical expenses and living costs in the event of a critical illness diagnosis."
+        }
+      ],
+      "key_limitations_objections": [
+        "Not a standalone policy: It is a supplementary benefit to a basic policy.",
+        "Premium not guaranteed: Premiums may be revised.",
+        "Waiting Period: Exists for specific critical illnesses.",
+        "Exclusions: Certain conditions are excluded (e.g., pre-existing illnesses, illnesses not defined as critical, AIDS due to HIV, deliberate acts).",
+        "Reduction of Sum Assured: A claim payment reduces the sum assured of the basic policy and the supplementary benefit.",
+        "Termination Conditions: The benefit can terminate under specific circumstances.",
+        "Specific Illness Definitions: Detailed definitions and criteria for each critical illness apply, and not all conditions meeting a general description may qualify."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "",
+          "available": null,
+          "notes": "Not specified in document, other than it being a supplementary benefit to a basic policy."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premium rates are not guaranteed.",
+        "The product summary is a simplified description and does not form part of the insurance contract. Refer to the actual supplementary agreements for full terms and conditions.",
+        "Buying a life insurance policy is a long-term commitment; careful consideration is needed before terminating or switching policies."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "Critical Cover Accelerator (CCA) Product Summary",
+        "summary_version": "9319f48d7440ba750bb9662ec422351dd706070849a867451247b25c3938bcd8",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_critical_cover_accelerator.json"
+    }
+  },
+  {
+    "policy_name": "Critical Protector Life Iv",
+    "policy_id": "aia_whole_critical_protector_life_iv",
+    "file": "aia_whole_critical_protector_life_iv.pdf",
+    "is_rider": true,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "Critical Protector Life (IV) on AIA Guaranteed Protect Plus (IV)",
+        "product_type": "Supplementary Critical Illness Benefit",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [],
+        "main_objective": [
+          "Critical Illness Protection"
+        ],
+        "key_value_proposition": "Accelerates the payout of the basic policy's Insured Amount upon diagnosis of a covered critical illness."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking additional critical illness coverage.",
+          "Clients who already have or are considering AIA Guaranteed Protect Plus (IV).",
+          "Those who want an accelerated benefit payout to manage immediate financial needs during a critical illness."
+        ],
+        "not_ideal_for": [
+          "Clients who do not have or are not considering the AIA Guaranteed Protect Plus (IV) policy, as this is a supplementary benefit.",
+          "Clients solely focused on savings or investment components in their insurance."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Depends on the underlying AIA Guaranteed Protect Plus (IV) policy and the Booster component expiry (65th or 75th birthday).",
+        "renewable": null,
+        "convertible": null,
+        "participating_status": "Includes a participating component (CPL (IV) on GPP (IV) Accumulator) and a non-participating component (CPL (IV) on GPP (IV) Booster).",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Premiums are not guaranteed and may be revised.",
+        "riders_available": [],
+        "multiplier_benefits": "Booster component offers coverage up to age 65 or 75.",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Accelerated Death Benefit: Provides access to funds when critically ill, accelerating the basic policy payout.",
+        "Comprehensive CI Coverage: Covers a broad spectrum of 73 critical illnesses.",
+        "Simplicity: Integrates with the AIA Guaranteed Protect Plus (IV) policy.",
+        "Booster Component: Offers coverage up to age 65 or 75, providing extended protection."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Financial Safety Net for Illness",
+          "positioning": "Clients seeking a financial buffer for potential critical illnesses, supplementing their existing life insurance coverage."
+        },
+        {
+          "scenario": "Mortgage Protection",
+          "positioning": "For individuals with a mortgage who want to ensure their loan can be managed or paid off if diagnosed with a critical illness."
+        },
+        {
+          "scenario": "Family Protection",
+          "positioning": "To provide funds for medical expenses and income replacement for families if a primary earner is diagnosed with a critical illness."
+        }
+      ],
+      "key_limitations_objections": [
+        "Supplementary Nature: This benefit is not a standalone product and requires an underlying AIA Guaranteed Protect Plus (IV) policy.",
+        "Reduced Payout: Critical illness payouts reduce the basic policy's sum assured, affecting future death benefit or claims.",
+        "Non-Guaranteed Premiums: Premium rates are subject to revision.",
+        "Waiting Period: Specific waiting period applies to certain critical illnesses.",
+        "Exclusions: General exclusions apply, including pre-existing conditions, deliberate acts, and specific causes for certain illnesses (e.g., HIV for Tuberculosis Meningitis).",
+        "Limited Claim on Coronary Artery Procedures: Angioplasty & Other Invasive Treatments for Coronary Artery has a 10% claim percentage and a S$25,000 limit.",
+        "Booster Expiry: The booster component coverage ceases at a specified age."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "AIA Guaranteed Protect Plus (IV)",
+          "available": true,
+          "notes": "This is a supplementary benefit designed to work with the AIA Guaranteed Protect Plus (IV) base policy."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Premium rates are not guaranteed.",
+        "The product summary is a simplification and does not form part of the contract. Refer to the actual supplementary agreement for full terms and conditions.",
+        "Buying life insurance is a long-term commitment; careful consideration is advised before terminating or switching policies.",
+        "Health insurance products not suitable for needs may impact ability to finance future healthcare."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Depends on the underlying AIA Guaranteed Protect Plus (IV) policy and the Booster component expiry (65th or 75th birthday).",
+        "maximum_coverage": "The payout is an acceleration of the Insured Amount of the underlying AIA Guaranteed Protect Plus (IV) policy, subject to a Critical Illness per life limit of S$3,000,000.",
+        "multiplier_duration": "Coverage for the Booster component is up to the policy anniversary on or immediately following the Insured's 65th or 75th birthday.",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "Critical Protector Life (IV) on AIA Guaranteed Protect Plus (IV) - Product Summary",
+        "summary_version": "6087392eb7832fa2219bd910110c412a4976c44bcbdd2401a22b19c9d6e031d3",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_critical_protector_life_iv.json"
+    }
+  },
+  {
+    "policy_name": "Guaranteed Protect Plus Iv",
+    "policy_id": "aia_whole_guaranteed_protect_plus_iv",
+    "file": "aia_whole_guaranteed_protect_plus_iv.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Critical Protector Life Iv",
+        "file": "aia_whole_critical_protector_life_iv.pdf"
+      },
+      {
+        "policy_name": "Aia Vitality Benefit On Aia Guaranteed Protect Plus Iv",
+        "file": "aia_whole_aia_vitality_benefit_on_aia_guaranteed_protect_plus_iv.pdf"
+      }
+    ],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Guaranteed Protect Plus (IV)",
+        "product_type": "Participating Whole Life and Limited Premium Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking long-term protection with potential for accumulation and flexibility."
+        ],
+        "main_objective": [
+          "Protection",
+          "Savings",
+          "Potential for future income."
+        ],
+        "key_value_proposition": "Provides guaranteed death and TPD benefits, potential for bonuses, and flexible options for premium payment and income generation."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking lifelong death coverage until age 100.",
+          "Those requiring protection for Total and Permanent Disability (TPD) up to age 70.",
+          "Individuals who want to participate in the performance of a participating fund and earn potential bonuses.",
+          "Clients who prefer to pay premiums over a fixed term (15, 20, or 25 years).",
+          "Those interested in flexible options like the Income Drawdown Facility for future income.",
+          "Individuals looking for an option to purchase additional insurance without medical underwriting via the OPAI benefit.",
+          "Clients who may face involuntary retrenchment and would benefit from the Premium Pass Option."
+        ],
+        "not_ideal_for": [
+          "Clients seeking short-term investment vehicles.",
+          "Individuals who require guaranteed cash value at all times.",
+          "Clients who cannot tolerate investment risks associated with participating funds."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": "Can tolerate investment risks associated with participating funds."
+      },
+      "core_features": {
+        "coverage_duration": "Whole life coverage for death benefit until age 100. TPD coverage until age 70.",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Limited Premium Plan (15, 20, or 25 years)",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Lifelong Protection: Death coverage extends to age 100.",
+        "Participating Component: Potential to earn non-guaranteed bonuses (RB & TB) based on the performance of the participating fund.",
+        "Flexibility: Premium payment terms of 15, 20, or 25 years. Options for Premium Pass and Income Drawdown.",
+        "Enhanced Protection Options: OPAI benefit allows for additional coverage without medical underwriting.",
+        "TPD Benefit Acceleration: TPD benefit is an accelerated benefit that reduces the death benefit."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Protection",
+          "positioning": "For individuals seeking lifelong life insurance coverage."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "To ensure a death benefit is paid to beneficiaries."
+        },
+        {
+          "scenario": "Retirement Income Planning",
+          "positioning": "Through the Income Drawdown Facility."
+        },
+        {
+          "scenario": "Family Protection",
+          "positioning": "To provide financial security for dependents."
+        },
+        {
+          "scenario": "Securing Future Needs",
+          "positioning": "OPAI benefit can be used to secure additional coverage for future life events."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed bonuses (RB and TB) depend on participating fund's performance.",
+        "Early surrender may result in zero or less than total premiums paid.",
+        "TPD coverage ends at age 70.",
+        "Booster component expires at age 65 or 75.",
+        "OPAI eligibility is limited for those aged 55 and above at policy purchase.",
+        "Specific exclusions apply to Death and TPD benefits."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": []
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Must explain that bonuses (RB and TB) are non-guaranteed and depend on the participating fund's performance.",
+        "Surrender values can be zero or less than premiums paid, especially in the early years.",
+        "The policy is a long-term commitment.",
+        "Policy contract contains full terms, conditions, and exclusions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Premium payment terms of 15, 20, or 25 years.",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Guaranteed Protect Plus (IV) - Product Summary",
+        "summary_version": "7a50764fd53f5b983a71ad24c7537e3efca866386d2f777f34bdd533823c93bc",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_guaranteed_protect_plus_iv.json"
+    }
+  },
+  {
+    "policy_name": "Life Dividends",
+    "policy_id": "aia_whole_life_dividends",
+    "file": "aia_whole_life_dividends.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Critical Cover Accelerator",
+        "file": "aia_whole_critical_cover_accelerator.pdf"
+      }
+    ],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Life Dividends",
+        "product_type": "Participating Whole Life Insurance",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking protection and potential participation in fund performance"
+        ],
+        "main_objective": [
+          "Protection (Death and Total & Permanent Disability) with potential for long-term savings through dividends"
+        ],
+        "key_value_proposition": "Provides lifelong insurance protection with a limited premium payment term of 10 years, and allows policyholders to participate in the performance of the participating fund via dividends."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking lifelong protection",
+          "Those wanting to protect against death and total & permanent disability (TPD)",
+          "Clients interested in a limited premium payment term (10 years)",
+          "Individuals who want to participate in the performance of a participating fund"
+        ],
+        "not_ideal_for": [
+          "Clients seeking a short-term policy",
+          "Individuals who require guaranteed cash value",
+          "Those who are not comfortable with the non-guaranteed nature of dividends"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Whole life",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Limited to 10 years",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Lifelong Protection",
+        "Limited Premium Payment",
+        "Participation in Fund Performance",
+        "Accelerated TPD Benefit"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-term financial planning for dependents.",
+          "positioning": "To provide financial security for beneficiaries in case of death or TPD, ensuring their future needs are met."
+        },
+        {
+          "scenario": "Individuals aged between 30-50 seeking to secure lifelong coverage with a defined premium payment period.",
+          "positioning": "A solution for those who want to lock in protection and potential dividend growth without a lifetime of premium payments."
+        },
+        {
+          "scenario": "Clients interested in a financial product that combines insurance protection with an element of investment participation.",
+          "positioning": "Offers a way to benefit from the insurer's investment performance while maintaining essential life cover."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed Dividends",
+        "Early Surrender Value",
+        "Limited TPD Coverage Period",
+        "Exclusions Apply",
+        "Investment Risk"
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": false,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "An Insured is considered a juvenile until they reach age 16 and are gainfully employed/self-employed, or attain age 21, whichever is earlier."
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "Early CI rider",
+          "available": null,
+          "notes": ""
+        },
+        {
+          "rider_name": "Hospital rider",
+          "available": null,
+          "notes": ""
+        },
+        {
+          "rider_name": "Disability waiver",
+          "available": null,
+          "notes": ""
+        },
+        {
+          "rider_name": "Payor benefit",
+          "available": null,
+          "notes": ""
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [
+        {
+          "this_product_better_for": "Limited premium payment term (10 years) for whole life coverage.",
+          "competitor_better_for": "Products with guaranteed cash values or higher guaranteed benefits.",
+          "competitor_product": ""
+        }
+      ],
+      "compliance_advisory_notes": [
+        "Must explain non-guaranteed returns",
+        "Not suitable for short-term holding",
+        "Needs risk profiling"
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Whole life",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "AIA Life Dividends Product Summary",
+        "summary_version": "72e785e50bdd7e863cd534f45755b6488160056bc4a101104bb4f246fa9f9066",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_life_dividends.json"
+    }
+  },
+  {
+    "policy_name": "Platinum Gift For Life Plus Ii Limited Pay",
+    "policy_id": "aia_whole_platinum_gift_for_life_plus_ii_limited_pay",
+    "file": "aia_whole_platinum_gift_for_life_plus_ii_limited_pay.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Platinum Gift for Life Plus (II) – Limited-Pay",
+        "product_type": "Participating Whole Life Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking long-term protection with potential for income generation"
+        ],
+        "main_objective": [
+          "Monthly income",
+          "Death coverage",
+          "Long-term savings/legacy"
+        ],
+        "key_value_proposition": "Provides a monthly income up to age 120, comprises guaranteed monthly coupon and non-guaranteed dividend, and offers death coverage."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking a consistent monthly income stream up to age 120",
+          "Those looking for long-term life protection",
+          "Clients who want to participate in the performance of a participating fund",
+          "Individuals who can commit to paying premiums over a 5 or 10-year term"
+        ],
+        "not_ideal_for": [
+          "Clients seeking short-term savings vehicles",
+          "Individuals who are unwilling to accept non-guaranteed dividend components",
+          "Those requiring immediate cash value from inception"
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Whole Life, up to age 120",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating Plan",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Limited-Pay (5 or 10 years)",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Monthly Income Up to Age 120",
+        "Guaranteed Monthly Coupon",
+        "Limited Premium Payment Term",
+        "Death and Maturity Benefits",
+        "Change of Insured Option"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-term income planning",
+          "positioning": "Provide a steady income for life, supplementing retirement or other financial needs."
+        },
+        {
+          "scenario": "Legacy planning",
+          "positioning": "Ensure a payout to beneficiaries upon death, with the potential for accumulated dividends."
+        },
+        {
+          "scenario": "Individuals seeking guaranteed income with potential upside",
+          "positioning": "Combines a guaranteed income component with the possibility of growth through participation in the fund."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Dividends: Monthly and terminal dividends are not guaranteed and depend on the participating fund's performance. Significant reductions are possible during poor investment returns.",
+        "Early Surrender Costs: Early termination of the policy usually involves high costs, and the surrender value may be zero or less than total premiums paid.",
+        "Maturity at Age 120: While providing income up to 120, the policy matures at this age, meaning benefits cease.",
+        "Change of Insured Rider Termination: Optional riders attached to the policy will be terminated upon an effective Change of Insured.",
+        "Limited Experience for New Product: Launched in 2024, has no past experience for MD or TD availability."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Not specified in document"
+        ]
+      },
+      "rider_compatibility": [
+        {
+          "rider_name": "Change of Insured",
+          "available": true,
+          "notes": "Available after 1 year, subject to conditions and insurability. Optional riders attached to the policy will be terminated upon an effective Change of Insured."
+        }
+      ],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Non-Guaranteed Returns: Must explain that dividends are not guaranteed and actual benefits may vary from illustrations.",
+        "Long-Term Commitment: This is a long-term policy, and early termination should be carefully considered due to potential costs.",
+        "Risk Disclosure: Policyholders participate in the performance of the participating fund, which involves investment risks."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "5 or 10 years",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_whole_platinum_gift_for_life_plus_ii_limited_pay.pdf",
+        "summary_version": "b8bb6d7201c743b188c29a43615ff40869841a6f1555d19d2cbc710f89087448",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_platinum_gift_for_life_plus_ii_limited_pay.json"
+    }
+  },
+  {
+    "policy_name": "Platinum Gift For Life Plus Ii Single Premium",
+    "policy_id": "aia_whole_platinum_gift_for_life_plus_ii_single_premium",
+    "file": "aia_whole_platinum_gift_for_life_plus_ii_single_premium.pdf",
+    "is_rider": false,
+    "riders": [],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "AIA Platinum Gift for Life Plus (II) – Single Premium",
+        "product_type": "Participating Whole Life Plan",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [],
+        "main_objective": [
+          "Monthly Income",
+          "Death Coverage"
+        ],
+        "key_value_proposition": "Provides monthly income up to age 120, with death coverage."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking a monthly income stream up to age 120.",
+          "Those looking for death coverage."
+        ],
+        "not_ideal_for": [
+          "Clients who do not want a long-term commitment.",
+          "Clients seeking cash value or wealth accumulation beyond the stated benefits."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Whole life, up to age 120 for the insured",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": null,
+        "premium_structure": "Single Premium",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Monthly Income up to Age 120",
+        "Guaranteed Monthly Coupon",
+        "Potential for Non-Guaranteed Dividends",
+        "Change of Insured Option",
+        "Participating Plan"
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Long-Term Income Stream",
+          "positioning": "For individuals planning for retirement income or seeking a regular payout for a prolonged period."
+        },
+        {
+          "scenario": "Legacy Planning",
+          "positioning": "Can provide a benefit to beneficiaries upon death."
+        },
+        {
+          "scenario": "Supplementing Retirement Needs",
+          "positioning": "For those who want a guaranteed and potentially enhanced income in later life."
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-guaranteed dividends (monthly and terminal) are subject to participating fund performance and can vary.",
+        "Early surrender costs are high; surrender value may be less than premiums paid.",
+        "Limited Death Benefit Calculation: 101% of single premium, potentially lower than protection-focused plans.",
+        "Maturity Benefit: 80% of single premium plus other components, may not meet investment growth expectations.",
+        "Product launched in 2024, no past experience for Monthly Dividend (MD) yet.",
+        "Investment risk: Returns are not guaranteed and can fluctuate."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "Not specified in document."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Must explain that dividends (monthly and terminal) are non-guaranteed and subject to participating fund performance.",
+        "Policy illustrations for MD and TD should be referred to for projected amounts at different investment rates of return.",
+        "Policy is a long-term commitment; early termination involves high costs.",
+        "Annual performance updates are provided.",
+        "This summary is a simplified description and not exhaustive; refer to the actual policy contract for full terms and conditions."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_whole_platinum_gift_for_life_plus_ii_single_premium.pdf",
+        "summary_version": "4a6961b5cd47ba093d2341b34dfcdf870b31521ca2b4244a29fcfab60ab687d1",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_platinum_gift_for_life_plus_ii_single_premium.json"
+    }
+  },
+  {
+    "policy_name": "Whole Life Cover Ii",
+    "policy_id": "aia_whole_whole_life_cover_ii",
+    "file": "aia_whole_whole_life_cover_ii.pdf",
+    "is_rider": false,
+    "riders": [
+      {
+        "policy_name": "Ci For Whole Life Cover Ii",
+        "file": "aia_whole_ci_for_whole_life_cover_ii.pdf"
+      }
+    ],
+    "policy_category": "whole",
+    "provider": "AIA",
+    "details": {
+      "product_snapshot": {
+        "product_name": "DIRECT - AIA Whole Life Cover (II)",
+        "product_type": "Whole Life Insurance",
+        "insurance_company": "AIA Singapore Private Limited",
+        "target_segment": [
+          "Individuals seeking lifelong death benefit protection.",
+          "Those who want to accumulate potential cash value through non-guaranteed bonuses.",
+          "Clients looking for a plan that offers Terminal Illness and Total & Permanent Disability (TPD) benefits."
+        ],
+        "main_objective": [
+          "Protection",
+          "Savings (through bonuses)"
+        ],
+        "key_value_proposition": "Provides lifelong protection with the potential to participate in the performance of the participating fund through non-guaranteed bonuses."
+      },
+      "ideal_client_profile": {
+        "suitable_for": [
+          "Individuals seeking lifelong death benefit protection.",
+          "Those who want to accumulate potential cash value through non-guaranteed bonuses.",
+          "Clients looking for a plan that offers Terminal Illness and Total & Permanent Disability (TPD) benefits."
+        ],
+        "not_ideal_for": [
+          "Clients focused solely on guaranteed returns.",
+          "Individuals requiring very short-term coverage.",
+          "Those who may need to surrender the policy early, as surrender values can be low."
+        ],
+        "typical_age_group": "",
+        "income_profile": "",
+        "family_situation": "",
+        "financial_goals": [
+          "Lifelong financial security for beneficiaries",
+          "Long-term savings and wealth accumulation"
+        ],
+        "risk_appetite": ""
+      },
+      "core_features": {
+        "coverage_duration": "Lifelong coverage up to age 100",
+        "renewable": false,
+        "convertible": false,
+        "participating_status": "Participating",
+        "guaranteed_cash_value": false,
+        "premium_structure": "Options to pay premiums up to age 70 or up to age 85",
+        "riders_available": [],
+        "multiplier_benefits": "",
+        "critical_illness_stages_covered": [
+          "Terminal Illness",
+          "Total & Permanent Disability (TPD)"
+        ],
+        "premium_waiver_options": []
+      },
+      "key_selling_points": [
+        "Lifelong Protection: Provides coverage up to age 100.",
+        "Potential for Growth: Participates in the performance of the participating fund through non-guaranteed bonuses.",
+        "Integrated Benefits: Includes Death, Terminal Illness, and Total & Permanent Disability benefits.",
+        "Flexible Premium Payment: Offers options to pay premiums up to age 70 or 85."
+      ],
+      "common_use_cases": [
+        {
+          "scenario": "Clients seeking lifelong financial security for their beneficiaries.",
+          "positioning": ""
+        },
+        {
+          "scenario": "Individuals planning for long-term savings and wealth accumulation through a participating policy.",
+          "positioning": ""
+        },
+        {
+          "scenario": "Protection against critical health events with the Terminal Illness and TPD benefits.",
+          "positioning": ""
+        }
+      ],
+      "key_limitations_objections": [
+        "Non-Guaranteed Bonuses: Reversionary and Terminal Bonuses are not guaranteed and depend on the participating fund's performance.",
+        "Early Surrender Impact: Early termination usually involves high costs, and the surrender value may be zero or less than total premiums paid.",
+        "Exclusions: Specific conditions apply to benefits (e.g., suicide within one year for Death Benefit, HIV/AIDS-related Terminal Illness, specific causes for TPD).",
+        "Complexity of Participating Funds: Understanding the impact of investment returns, expenses, and market volatility on non-guaranteed benefits is crucial."
+      ],
+      "underwriting_notes": {
+        "simplified_underwriting_available": null,
+        "medical_exam_threshold": "",
+        "health_condition_notes": [],
+        "bmi_limits": "",
+        "foreigner_eligibility": null,
+        "other_notes": [
+          "TPD benefit is subject to a TPD per life limit of S$7,500,000 (aggregated with other policies)."
+        ]
+      },
+      "rider_compatibility": [],
+      "recommended_bundles": [],
+      "competitor_comparison": [],
+      "compliance_advisory_notes": [
+        "Must explain that bonuses are not guaranteed and illustrate potential outcomes at different investment rates of return (e.g., 3.00% and 4.25%).",
+        "Investment risks associated with the participating fund need to be disclosed.",
+        "This is a long-term commitment; early termination may result in significant loss.",
+        "Policy illustrations should be used to explain surrender values and potential benefits."
+      ],
+      "quick_numbers": {
+        "entry_age": "",
+        "minimum_premium": "",
+        "policy_term_range": "Lifelong",
+        "maximum_coverage": "",
+        "multiplier_duration": "",
+        "sample_premiums": []
+      },
+      "metadata": {
+        "source_document": "../input/aia_whole_whole_life_cover_ii.pdf",
+        "summary_version": "2278f8198cea35c6b553c19c3861c82726cd93441336fbc33205b86910a0e409",
+        "last_updated": "2026-05-06",
+        "review_status": "draft",
+        "intended_user": "internal_agents",
+        "compliance_review_required": true
+      },
+      "source_filename": "aia_whole_whole_life_cover_ii.json"
+    }
+  }
+]

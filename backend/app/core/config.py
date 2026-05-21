@@ -43,6 +43,18 @@ class Settings(BaseSettings):
     gemini_model: str = Field(default="gemini-2.0-flash-lite")
     openrouter_api_key: str | None = Field(default=None)
 
+    # Vector store
+    qdrant_url: str | None = Field(default=None)
+    qdrant_api_key: str | None = Field(default=None)
+
+    # Embeddings
+    embedding_model: str = Field(default="models/text-embedding-004")
+    embedding_dimension: int = Field(default=768)
+
+    # Retrieval tuning
+    textbook_top_k: int = Field(default=5)
+    product_summary_top_k: int = Field(default=5)
+
     # Observability
     langfuse_public_key: str | None = Field(default=None)
     langfuse_secret_key: str | None = Field(default=None)

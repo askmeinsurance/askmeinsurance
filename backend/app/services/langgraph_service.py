@@ -3,15 +3,22 @@ from typing import Any
 from uuid import UUID
 
 import httpx
+from langchain_core.messages import AIMessage, HumanMessage
 
 from app.core.config import Settings, get_settings
 from app.schemas.chat import ChatEvent
+from app.services.message_service import MessageService, message_service
+from app.src.graph import get_compiled_graph
+
+
 class LangGraphService:
     def __init__(
         self,
         settings: Settings | None = None,
+        message_store: MessageService | None = None,
     ) -> None:
         self._settings = settings or get_settings()
+        self._message_store = message_store or message_service
 
     async def _call_gemini_once(self, message: str) -> str:
         api_key = self._settings.gemini_api_key
@@ -50,7 +57,7 @@ class LangGraphService:
             "Return only the title, no quotes, no punctuation at the end.\n\n"
             f"Message: {first_message}"
         )
-        if self._settings.llm_provider == "gemini":
+        if self._settings.gemini_api_key:
             return await self._call_gemini_once(prompt)
         return ""
 
@@ -65,27 +72,43 @@ class LangGraphService:
         conversation_id: UUID | None,
         user: Any,
     ) -> AsyncGenerator[ChatEvent, None]:
-        using_gemini = self._settings.llm_provider == "gemini"
+        graph = await get_compiled_graph()
+
+        history = []
+        if conversation_id and user:
+            raw = await self._message_store.list_messages(
+                conversation_id, user_id=user.user_id
+            )
+            # Exclude the current user message already stored by ChatService
+            if raw and raw[-1].role == "user" and raw[-1].content == message:
+                raw = raw[:-1]
+            history = [
+                HumanMessage(content=m.content) if m.role == "user" else AIMessage(content=m.content)
+                for m in raw
+            ]
 
         yield ChatEvent(
             event="meta",
             data={
                 "conversation_id": str(conversation_id) if conversation_id else None,
-                "model": self._settings.gemini_model if using_gemini else "dummy-langgraph",
+                "model": "langgraph/main_agent",
                 "user_present": user is not None,
             },
         )
-        if using_gemini:
-            try:
-                response_text = await self._call_gemini_once(message)
-            except Exception:  # noqa: BLE001
-                response_text = (
-                    "I couldn't get a response from Gemini right now. "
-                    "Please try again in a moment."
-                )
-            for piece in self._chunk_text(response_text):
-                yield ChatEvent(event="chunk", data={"text": piece})
-        else:
-            yield ChatEvent(event="chunk", data={"text": f"Echo: {message[:80]}"})
+
+        try:
+            result = await graph.ainvoke(
+                {
+                    "messages": [HumanMessage(content=message)],
+                    "conversation_history": history,
+                }
+            )
+            final_messages = result.get("messages", [])
+            answer = final_messages[-1].content if final_messages else "No response generated."
+        except Exception:  # noqa: BLE001
+            answer = "I couldn't generate a response right now. Please try again in a moment."
+
+        for piece in self._chunk_text(answer):
+            yield ChatEvent(event="chunk", data={"text": piece})
 
         yield ChatEvent(event="done", data={"reason": "completed"})

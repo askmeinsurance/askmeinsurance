@@ -1,0 +1,23 @@
+name_match_workflow:
+  model: google|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  temperature: 0
+
+find_product_with_criteria_workflow:
+  model: google|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  temperature: 0
+
+general_agent_planner:
+  model: google|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  temperature: 0
+
+general_agent_synthesis:
+  model: google|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  temperature: 0
