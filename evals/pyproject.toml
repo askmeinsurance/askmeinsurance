@@ -13,6 +13,7 @@ dependencies = [
     "python-dotenv>=1.0",
     "deepeval>=1.0",
     "langchain-google-genai>=4.2.2",
+    "langfuse>=2.0.0",
 ]
 
 [build-system]
