@@ -4,6 +4,9 @@ from uuid import UUID
 
 import httpx
 from langchain_core.messages import AIMessage, HumanMessage
+from langfuse import get_client
+from langfuse._client.propagation import propagate_attributes
+from langfuse.langchain import CallbackHandler
 
 from app.core.config import Settings, get_settings
 from app.schemas.chat import ChatEvent
@@ -57,9 +60,18 @@ class LangGraphService:
             "Return only the title, no quotes, no punctuation at the end.\n\n"
             f"Message: {first_message}"
         )
-        if self._settings.gemini_api_key:
-            return await self._call_gemini_once(prompt)
-        return ""
+        if not self._settings.gemini_api_key:
+            return ""
+        lf = get_client()
+        with lf.start_as_current_observation(
+            name="generate_conversation_title",
+            as_type="generation",
+            model=self._settings.gemini_model,
+            input=prompt,
+        ) as gen:
+            result = await self._call_gemini_once(prompt)
+            gen.update(output=result)
+        return result
 
     @staticmethod
     def _chunk_text(text: str, size: int = 180) -> list[str]:
@@ -71,6 +83,7 @@ class LangGraphService:
         message: str,
         conversation_id: UUID | None,
         user: Any,
+        message_id: UUID | None = None,
     ) -> AsyncGenerator[ChatEvent, None]:
         graph = await get_compiled_graph()
 
@@ -82,6 +95,7 @@ class LangGraphService:
             # Exclude the current user message already stored by ChatService
             if raw and raw[-1].role == "user" and raw[-1].content == message:
                 raw = raw[:-1]
+            raw = raw[-5:]
             history = [
                 HumanMessage(content=m.content) if m.role == "user" else AIMessage(content=m.content)
                 for m in raw
@@ -96,13 +110,27 @@ class LangGraphService:
             },
         )
 
+        lf = get_client()
+        trace_context = {"trace_id": message_id.hex} if message_id else None
+        handler = CallbackHandler()
+
         try:
-            result = await graph.ainvoke(
-                {
-                    "messages": [HumanMessage(content=message)],
-                    "conversation_history": history,
-                }
-            )
+            with lf.start_as_current_observation(
+                name="stream_chat",
+                as_type="span",
+                trace_context=trace_context,
+            ):
+                with propagate_attributes(
+                    session_id=str(conversation_id) if conversation_id else None,
+                    user_id=str(user.user_id) if user else None,
+                ):
+                    result = await graph.ainvoke(
+                        {
+                            "messages": [HumanMessage(content=message)],
+                            "conversation_history": history,
+                        },
+                        config={"callbacks": [handler]},
+                    )
             final_messages = result.get("messages", [])
             answer = final_messages[-1].content if final_messages else "No response generated."
         except Exception:  # noqa: BLE001

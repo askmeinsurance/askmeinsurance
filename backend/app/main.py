@@ -14,6 +14,7 @@ from app.api.v1.chat import router as chat_router
 from app.api.v1.conversations import router as conversations_router
 from app.api.v1.forms import router as forms_router
 from app.core.config import get_settings
+from app.core.langfuse import init_langfuse
 from app.schemas.common import ErrorEnvelope
 
 logger = logging.getLogger("askmeinsurance.api")
@@ -39,6 +40,7 @@ def _build_error_envelope(*, status_code: int, message: str, detail: Any) -> Err
 
 
 def create_app() -> FastAPI:
+    init_langfuse()
     settings = get_settings()
     app = FastAPI(title="AskMeInsurance API", version="0.1.0")
     print("[BOOT] AskMeInsurance backend app created", flush=True)
