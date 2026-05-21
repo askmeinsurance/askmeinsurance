@@ -1,0 +1,1431 @@
+[
+  {
+    "chunk_id": "chapter_1__small_000001",
+    "source_chunk_ids": [
+      "chapter_1__chunk_001"
+    ],
+    "chapter": "chapter_1",
+    "header": "1. RISK AND INSURANCE",
+    "level": 1,
+    "context": "This initial section of the document introduces the fundamental concepts of risk and insurance, defining risk in the insurance context and highlighting its relevance to both individuals and businesses.",
+    "text": "<context>This initial section of the document introduces the fundamental concepts of risk and insurance, defining risk in the insurance context and highlighting its relevance to both individuals and businesses.</context>\n# 1. RISK AND INSURANCE\n\n.1 Life insurance products are designed to provide protection against the risk of financial loss1 . In order to understand insurance and how it works, we need to understand the concept of risk and which types of risks are insurable. Everyday, both individuals and businesses are exposed to risks. For example, an individual who is the breadwinner in the family may meet with a serious accident while driving his car, leaving the family with no income, if he becomes disabled and unable to work. A company may suffer business losses when one of its key employees is stricken with a major illness and is unable to continue working. As you can see from the above two examples, risk, in the insurance context, is the possibility of loss, and there is an uncertainty element to it.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000002",
+    "source_chunk_ids": [
+      "chapter_1__chunk_002"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Speculative Risks And Pure Risks",
+    "level": 1,
+    "context": "This chunk explains the distinction between speculative and pure risks, highlighting that only pure risks are insurable by insurers. It follows the introductory section on \"Risk and Insurance\" and precedes the detailed requirements for insurable risks.",
+    "text": "<context>This chunk explains the distinction between speculative and pure risks, highlighting that only pure risks are insurable by insurers. It follows the introductory section on \"Risk and Insurance\" and precedes the detailed requirements for insurable risks.</context>\n# A. Speculative Risks And Pure Risks\n\n1.2 Both individuals and businesses experience two kinds of risks – speculative risk and pure risk. Speculative risk involves three possible outcomes: loss, gain, or no change. For example, in purchasing shares of stock, the buyer is speculating that the value of the stock will rise and that he will earn a profit on his investment. However, the value can also fall and the buyer will lose some or all of the money that he has invested. On the other hand, the value of the stock can also remain the same – the buyer may not lose money, but he may not make a profit. Insurers will not insure speculative risks.\n\n1.3 Pure risk involves no possibility of gain; either a loss occurs or no loss occurs. An example of a pure risk is the possibility that an individual may become disabled. If he is unable to work, he will experience an income disruption leading to a financial loss. If, on the other hand, he never became disabled, then he would incur no loss from that risk. This possibility of financial loss without the possibility of gain – pure risk – is the only kind of risk that can be insured (provided that it meets certain other requirements) as explained in the next section. This is because the purpose of insurance is to compensate for financial loss, not to provide an opportunity for financial gain.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000003",
+    "source_chunk_ids": [
+      "chapter_1__chunk_003"
+    ],
+    "chapter": "chapter_1",
+    "header": "2. REQUIREMENTS OF INSURABLE RISKS",
+    "level": 1,
+    "context": "This chunk details the specific criteria that a risk must meet to be considered insurable, following the general definition of risk and the distinction between pure and speculative risks.",
+    "text": "<context>This chunk details the specific criteria that a risk must meet to be considered insurable, following the general definition of risk and the distinction between pure and speculative risks.</context>\n# 2. REQUIREMENTS OF INSURABLE RISKS\n\n2.1 In addition to the pure risk requirement, there are other requirements that must be met before a risk can be potentially insurable. The loss must:\n\n(a) be significant in financial terms;   \n(b) occur by chance;   \n(c) be definite;   \n(d) be measurable;   \n(e) not be catastrophic to the insurer; and (f) be based on large number of insured.\n\n2.2 Let us now look at the first five of the above requirements in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000004",
+    "source_chunk_ids": [
+      "chapter_1__chunk_004"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. The Loss Must Be Significant In Financial Terms",
+    "level": 1,
+    "context": "This chunk is situated within section 2, \"REQUIREMENTS OF INSURABLE RISKS,\" specifically under subsection A, \"The Loss Must Be Significant In Financial Terms.\" It explains why minor financial losses are generally not insurable, contrasting them with more significant losses that can cause financial hardship and are therefore considered insurable.",
+    "text": "<context>This chunk is situated within section 2, \"REQUIREMENTS OF INSURABLE RISKS,\" specifically under subsection A, \"The Loss Must Be Significant In Financial Terms.\" It explains why minor financial losses are generally not insurable, contrasting them with more significant losses that can cause financial hardship and are therefore considered insurable.</context>\n# A. The Loss Must Be Significant In Financial Terms\n\n2.3 Insignificant losses arising from, say, the risk of catching a cold in the rain, are not normally insured. The administrative expenses of paying benefits when a very small loss occurs will drive the cost for such insurance protection so high in relation to the potential loss, that most people will find the protection financially unattractive.\n\n2.4 On the other hand, some losses will cause financial hardships to most people and are considered to be insurable. For example, a person injured in an accident may lose a significant amount of income if he is unable to work. Insurance coverage is available to protect against such a potential risk.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000005",
+    "source_chunk_ids": [
+      "chapter_1__chunk_005"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. The Loss Must Occur By Chance",
+    "level": 1,
+    "context": "This chunk is part of the section detailing the requirements for a risk to be insurable, specifically focusing on the condition that the loss must occur by chance.",
+    "text": "<context>This chunk is part of the section detailing the requirements for a risk to be insurable, specifically focusing on the condition that the loss must occur by chance.</context>\n# B. The Loss Must Occur By Chance\n\n2.5 In order for a potential loss to be insurable, the loss must occur by chance. In order words, it must be random in nature and cannot be predicted in advance. The loss must be caused either by an unexpected event, such as contracting a terminal disease, or by an event that is not intentionally caused by the person covered by the insurance, such as fire. Although death is a certain event, a person is unable to control the timing of his death, as the event usually occurs by chance. Hence, death is an insurable event. However, insurers will exclude suicide coverage within a certain period of the inception of the policy as suicide is clearly not accidental.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000006",
+    "source_chunk_ids": [
+      "chapter_1__chunk_006"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. The Loss Must Be Definite",
+    "level": 1,
+    "context": "This chunk is a sub-point of Section 2. Requirements of Insurable Risks, specifically detailing the requirement that a loss must be definite.",
+    "text": "<context>This chunk is a sub-point of Section 2. Requirements of Insurable Risks, specifically detailing the requirement that a loss must be definite.</context>\n# C. The Loss Must Be Definite\n\n2.6 The insurer must be able to determine whether the loss occurred, and if so, how much money was lost. The amount of loss to be insured can be arrived at, in the case of general insurance, by appraisal or estimation, or in the case of life insurance, by prior agreement.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000007",
+    "source_chunk_ids": [
+      "chapter_1__chunk_007"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. The Loss Must Be Measurable",
+    "level": 1,
+    "context": "This chunk is about the requirements for a risk to be insurable, specifically focusing on the need for the loss to be quantifiable in monetary terms. It is located within section 2. Requirements of Insurable Risks, subsection D. The Loss Must Be Measurable.",
+    "text": "<context>This chunk is about the requirements for a risk to be insurable, specifically focusing on the need for the loss to be quantifiable in monetary terms. It is located within section 2. Requirements of Insurable Risks, subsection D. The Loss Must Be Measurable.</context>\n# D. The Loss Must Be Measurable\n\n2.7 The loss must be measurable in monetary term.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000008",
+    "source_chunk_ids": [
+      "chapter_1__chunk_008"
+    ],
+    "chapter": "chapter_1",
+    "header": "E. The Loss Must Not Be Catastrophic To The Insurer",
+    "level": 1,
+    "context": "This chunk is part of section 2, \"REQUIREMENTS OF INSURABLE RISKS,\" specifically detailing the fifth requirement: that a potential loss must not be catastrophic to the insurer.",
+    "text": "<context>This chunk is part of section 2, \"REQUIREMENTS OF INSURABLE RISKS,\" specifically detailing the fifth requirement: that a potential loss must not be catastrophic to the insurer.</context>\n# E. The Loss Must Not Be Catastrophic To The Insurer\n\n2.8 A potential loss is not considered insurable if a single occurrence is likely to cause or contribute to catastrophic financial damage to the insurer. Such a loss is not insurable because the insurer cannot responsibly promise to pay benefits for the loss, e.g. the loss resulting from nuclear risk.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000009",
+    "source_chunk_ids": [
+      "chapter_1__chunk_009"
+    ],
+    "chapter": "chapter_1",
+    "header": "F. The Loss Must Be Based On Large Number of Insureds",
+    "level": 1,
+    "context": "This chunk is part of Section 2, \"Requirements of Insurable Risks,\" specifically addressing the requirement that a loss must be based on a large number of insureds for accurate pricing through the law of large numbers.",
+    "text": "<context>This chunk is part of Section 2, \"Requirements of Insurable Risks,\" specifically addressing the requirement that a loss must be based on a large number of insureds for accurate pricing through the law of large numbers.</context>\n# F. The Loss Must Be Based On Large Number of Insureds\n\n2.9 There must also be a large number of exposure units, because pricing is based on the law of large numbers. For example, a household insurer needs a large number of flats and buildings to predict the aggregate losses with some reliability. From this, it can calculate the premiums which are adequate to cover the losses and expenses of these policies.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000010",
+    "source_chunk_ids": [
+      "chapter_1__chunk_010"
+    ],
+    "chapter": "chapter_1",
+    "header": "3. DEALING WITH RISK",
+    "level": 1,
+    "context": "This chunk discusses the four fundamental methods individuals and businesses can use to manage financial risks: avoiding, controlling, retaining, and transferring risk. It introduces these concepts before detailing each one.",
+    "text": "<context>This chunk discusses the four fundamental methods individuals and businesses can use to manage financial risks: avoiding, controlling, retaining, and transferring risk. It introduces these concepts before detailing each one.</context>\n# 3. DEALING WITH RISK\n\n3.1 In order to eliminate or reduce one’s exposure to a specific financial risk, and depending on the frequency and severity of the losses, one can deal with risk in one of the following methods:\n\navoiding the risk; controlling the risk;  retaining the risk; or transferring the risk.\n\n3.2 Let us look at each of the methods in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000011",
+    "source_chunk_ids": [
+      "chapter_1__chunk_011"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Avoiding The Risk",
+    "level": 1,
+    "context": "This chunk is about one of the methods of dealing with risk, specifically avoiding it. It falls under section 3, \"Dealing with Risk,\" which outlines four methods: avoiding, controlling, retaining, and transferring risk.",
+    "text": "<context>This chunk is about one of the methods of dealing with risk, specifically avoiding it. It falls under section 3, \"Dealing with Risk,\" which outlines four methods: avoiding, controlling, retaining, and transferring risk.</context>\n# A. Avoiding The Risk\n\n3.3 This method of managing risk is simply to avoid risk altogether. For example, we can avoid the risk of personal injury that may result from a car collision by never driving a car.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000012",
+    "source_chunk_ids": [
+      "chapter_1__chunk_012"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Controlling The Risk",
+    "level": 1,
+    "context": "This chunk is part of section 3, \"Dealing with Risk,\" and specifically subsection B, \"Controlling The Risk.\" It defines risk control and provides an example of a health screening as a method to prevent or reduce losses.",
+    "text": "<context>This chunk is part of section 3, \"Dealing with Risk,\" and specifically subsection B, \"Controlling The Risk.\" It defines risk control and provides an example of a health screening as a method to prevent or reduce losses.</context>\n# B. Controlling The Risk\n\n3.4 Risks can be controlled by taking steps to prevent or reduce losses. An example will be to undergo a health screening examination yearly, when one reaches a certain age (e.g. 40 years old), so that one can detect and treat an illness before it is too late.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000013",
+    "source_chunk_ids": [
+      "chapter_1__chunk_013"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Retaining The Risk",
+    "level": 1,
+    "context": "This chunk discusses methods of dealing with risk, specifically \"Retaining the Risk,\" which involves self-insuring against potential financial losses. It is part of a larger section on \"Dealing with Risk\" and appears after discussions on avoiding and controlling risk, and before transferring risk.",
+    "text": "<context>This chunk discusses methods of dealing with risk, specifically \"Retaining the Risk,\" which involves self-insuring against potential financial losses. It is part of a larger section on \"Dealing with Risk\" and appears after discussions on avoiding and controlling risk, and before transferring risk.</context>\n# C. Retaining The Risk\n\n3.5 This method of managing risk is to accept or retain risk, meaning to assume all the financial responsibility for the risk. Individuals and businesses sometimes decide to accept total responsibility for a given financial risk. In this situation, the person or business is said to self-insure against the risk. For example, an employer can provide medical expense benefits to its employees, by either setting aside money to pay their medical expenses, or paying the expenses out of its current income. In such a case, the employer is said to self-insure the medical benefit plan.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000014",
+    "source_chunk_ids": [
+      "chapter_1__chunk_014"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. Transferring The Risk",
+    "level": 1,
+    "context": "This chunk is part of section 3, \"Dealing with Risk,\" specifically detailing the method of \"Transferring the Risk,\" which is the primary function of insurance.",
+    "text": "<context>This chunk is part of section 3, \"Dealing with Risk,\" specifically detailing the method of \"Transferring the Risk,\" which is the primary function of insurance.</context>\n# D. Transferring The Risk\n\n3.6 An individual can transfer risk to another party by shifting the financial responsibility for that risk to another party, generally in exchange for a fee. The most common way to transfer risk is to buy insurance. For example, a breadwinner may transfer his risk of premature death or disability to the insurer by paying a small, predictable amount of premium to the insurer. In return, the insurer promises to pay the insured amount upon the happening of the insured event. In this way, the individual is relieved of the uncertainty of a potentially much larger financial loss associated with the risk that he faces. He can then go about doing his daily activities with peace of mind, knowing that if anything happens to him, his dependants will not suffer any severe financial hardship. Hence, insurance plays an important function in acting as a risk transfer mechanism.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000015",
+    "source_chunk_ids": [
+      "chapter_1__chunk_015"
+    ],
+    "chapter": "chapter_1",
+    "header": "4. TYPES OF PERSONAL RISKS THAT CAN BE INSURED",
+    "level": 1,
+    "context": "This chunk is found in the section detailing the types of personal risks that are insurable, immediately following the requirements for a risk to be insurable and preceding the descriptions of each specific personal risk.",
+    "text": "<context>This chunk is found in the section detailing the types of personal risks that are insurable, immediately following the requirements for a risk to be insurable and preceding the descriptions of each specific personal risk.</context>\n# 4. TYPES OF PERSONAL RISKS THAT CAN BE INSURED\n\n4.1 The three main types of personal risks faced by an individual that can be insured are:\n\npremature death; outliving resources; and poor health and disablement.\n\n4.2 Let us look at each of the above risks in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000016",
+    "source_chunk_ids": [
+      "chapter_1__chunk_016"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Risk Of Premature Death",
+    "level": 1,
+    "context": "This chunk is about the risk of premature death, which is one of the three main types of personal risks that can be insured, as discussed in Section 4.A of the document.",
+    "text": "<context>This chunk is about the risk of premature death, which is one of the three main types of personal risks that can be insured, as discussed in Section 4.A of the document.</context>\n# A. Risk Of Premature Death\n\n4.3 Premature death is defined as the death of a breadwinner as a result of illness or accident with unfulfilled financial obligations. These obligations can include dependants to support, a mortgage to be paid off or children to educate. If the surviving family members receive an insufficient amount of replacement income from other sources or have insufficient financial assets to replace the lost income, they will suffer not only emotionally but also financially.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000017",
+    "source_chunk_ids": [
+      "chapter_1__chunk_017"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Risk Of Outliving Resources Or Longevity Risk",
+    "level": 1,
+    "context": "This chunk discusses the risk of outliving one's financial resources, a personal risk that can be insured, and is found within the section detailing various types of personal risks that can be insured.",
+    "text": "<context>This chunk discusses the risk of outliving one's financial resources, a personal risk that can be insured, and is found within the section detailing various types of personal risks that can be insured.</context>\n# B. Risk Of Outliving Resources Or Longevity Risk\n\n4.4 With advances in medical science and the standard of living, people are living longer. The average life expectancy of male and female lives as of December 2022 is 80.7 and 85.2 years respectively. The major risk associated with old age is insufficient capital and income during retirement. Planning for retirement is something that most people do not take action on until it is too late. This can pose a problem for the person, as well as society.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000018",
+    "source_chunk_ids": [
+      "chapter_1__chunk_018"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Risk Of Poor Health And Disablement",
+    "level": 1,
+    "context": "This chunk is part of Section 4, \"TYPES OF PERSONAL RISKS THAT CAN BE INSURED,\" specifically detailing the \"Risk of Poor Health And Disablement.\" It follows the discussion of the risks of premature death and outliving resources and precedes the introduction of basic life insurance terms.",
+    "text": "<context>This chunk is part of Section 4, \"TYPES OF PERSONAL RISKS THAT CAN BE INSURED,\" specifically detailing the \"Risk of Poor Health And Disablement.\" It follows the discussion of the risks of premature death and outliving resources and precedes the introduction of basic life insurance terms.</context>\n# C. Risk Of Poor Health And Disablement\n\n4.5 The risk of poor health includes both the payment of catastrophic medical bills and the loss of earned income. The costs of major surgeries have increased substantially in recent years. In addition, as life expectancy increases, people will tend to incur medical expenses as they age. Unless these people have adequate Health Insurance, private savings and financial assets or other sources of income to meet these expenditures, they can be financially drained in the event of a catastrophic illness. Moreover, such illness can result in the person becoming severely disabled and being unable to work. As such, he will be losing his income, as well as incurring substantial medical cost for treatment of his illness.\n\n4.6 All the three personal risks that we have discussed so far can be mitigated to a certain extent with Life and Health Insurance products. Before we look at the various products, we will first look at some basic insurance terms.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000019",
+    "source_chunk_ids": [
+      "chapter_1__chunk_019"
+    ],
+    "chapter": "chapter_1",
+    "header": "5. SOME BASIC LIFE INSURANCE TERMS",
+    "level": 1,
+    "context": "This section defines fundamental terms related to life insurance policies, including \"life insurance policy,\" \"applicant (proposer),\" \"policy owner,\" \"life insured,\" \"beneficiary,\" and \"third-party policy.\"",
+    "text": "<context>This section defines fundamental terms related to life insurance policies, including \"life insurance policy,\" \"applicant (proposer),\" \"policy owner,\" \"life insured,\" \"beneficiary,\" and \"third-party policy.\"</context>\n# 5. SOME BASIC LIFE INSURANCE TERMS\n\n5.1 A life insurance policy is a contract which the insurer promises to pay a benefit upon the death of the person who is insured. As such, life insurance provides financial protection against the economic loss caused by the premature death of the person being insured. This benefit is commonly known as Death Benefit. The insurer will pay a lump sum payment of the sum assured, plus bonuses if applicable, in the event of the life insured’s death.\n\n5.2 The applicant (also known as the proposer)) is the person or business that applies for an insurance policy. When a policy is issued, the person or business that owns the insurance policy is known as the policy owner. In most cases, the applicant is also the policy owner.\n\n5.3 The person who is insured by a life insurance policy is referred to as the life insured. The policy owner and the life insured may be, and often are, the same person. If, for example, a person applies for and is issued an insurance policy on his own life, then he is both the policy owner and the life insured. If, however, a person’s father applies for and is issued a policy on his juvenile son’s life, then he is the policy owner and the son is the life insured. When one person purchases insurance on the life of another person, the policy is known as a third-party policy.\n\n5.4 If the insured risk (e.g. death) occurs while the insurance policy is in force, the insurer pays the policy benefit. This policy benefit when paid as a lump sum, is often referred to as the sum assured2 . This is the amount guaranteed to be paid out by the insurer in the event of a claim. If the policy is a participating life insurance policy, non-guarantee bonuses from the insurer’s participative fund which were declared and accumulated to date, will also be paid in addition to the sum assured.\n\nLife insurance policy proceeds are usually paid to the policy’s owner, the deceased life insured’s estate if he is also the policy",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000020",
+    "source_chunk_ids": [
+      "chapter_1__chunk_019"
+    ],
+    "chapter": "chapter_1",
+    "header": "5. SOME BASIC LIFE INSURANCE TERMS",
+    "level": 1,
+    "context": "This chunk details how benefits are paid out under a life insurance policy, specifically mentioning the sum assured, bonuses, and to whom the proceeds are paid. This information is found within the section defining basic life insurance terms.",
+    "text": "<context>This chunk details how benefits are paid out under a life insurance policy, specifically mentioning the sum assured, bonuses, and to whom the proceeds are paid. This information is found within the section defining basic life insurance terms.</context>\nparticipating life insurance policy, non-guarantee bonuses from the insurer’s participative fund which were declared and accumulated to date, will also be paid in addition to the sum assured.\n\nLife insurance policy proceeds are usually paid to the policy’s owner, the deceased life insured’s estate if he is also the policy owner or nominated beneficiary.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000021",
+    "source_chunk_ids": [
+      "chapter_1__chunk_020"
+    ],
+    "chapter": "chapter_1",
+    "header": "6. INSURANCE AND GAMBLING COMPARED",
+    "level": 1,
+    "context": "This section distinguishes insurance from gambling by highlighting two key differences: gambling creates speculative risk while insurance handles existing pure risk, and gambling is socially unproductive whereas insurance is socially productive.",
+    "text": "<context>This section distinguishes insurance from gambling by highlighting two key differences: gambling creates speculative risk while insurance handles existing pure risk, and gambling is socially unproductive whereas insurance is socially productive.</context>\n# 6. INSURANCE AND GAMBLING COMPARED\n\n6.1 There are two important differences between insurance and gambling. Firstly, gambling creates a new speculative risk, while insurance is a technique for handling an existing pure risk. Thus, if you bet $\\$ 50$ on a lottery draw, a new speculative risk (risk of losing $\\$ 50$ ) is created. However, if you pay $\\$ 50$ a month to an insurer for life insurance, the risk of premature death is already present and is transferred to the insurer by a contract. No new risk is created by the transaction.\n\n6.2 Secondly, the difference between insurance and gambling is that gambling is socially unproductive, because the winner’s gain comes at the expense of the loser. In contrast, insurance is always socially productive, because neither the insurer nor the insured is placed in a position where the gain of the winner comes at the expense of the loser. The insurer and the insured both have a common interest in the prevention or delay of a loss. Both parties win if the loss does not occur. Moreover, gambling transactions never restore the losers to their former financial position. In contrast, insurance contracts restore the insureds financially in whole or in part if losses occur.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000022",
+    "source_chunk_ids": [
+      "chapter_1__chunk_021"
+    ],
+    "chapter": "chapter_1",
+    "header": "7. HAZARDS",
+    "level": 1,
+    "context": "This section defines and explains the concepts of physical and moral hazards in the context of insurance, following the discussion on risk and the requirements for insurable risks.",
+    "text": "<context>This section defines and explains the concepts of physical and moral hazards in the context of insurance, following the discussion on risk and the requirements for insurable risks.</context>\n# 7. HAZARDS\n\n7.1 As noted earlier, insurers cannot predict when a specific individual will die, become injured, or suffer from an illness. Insurers, however, have identified a number of factors that can increase or decrease the likelihood that an individual will suffer a loss. The most important of these factors are physical hazards and moral hazards.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000023",
+    "source_chunk_ids": [
+      "chapter_1__chunk_022"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Physical Hazard",
+    "level": 1,
+    "context": "This chunk discusses \"Physical Hazard\" as a factor that can increase the likelihood of loss, within the broader section on \"Hazards\" that insurers consider.",
+    "text": "<context>This chunk discusses \"Physical Hazard\" as a factor that can increase the likelihood of loss, within the broader section on \"Hazards\" that insurers consider.</context>\n# A. Physical Hazard\n\n7.2 A physical hazard is a physical characteristic that may increase the likelihood of loss. For example, a person with a history of heart attacks possesses a physical hazard that will increase the likelihood of that person dying sooner than that of a person of the same age and gender without such similar medical history. A person who is overweight has a physical characteristic that is known to contribute to health problems, and those health problems may result in the economic loss associated with higher-than-average medical expenses. Underwriters of insurers must carefully evaluate the intending insureds to detect the presence of such physical hazards.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000024",
+    "source_chunk_ids": [
+      "chapter_1__chunk_023"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Moral Hazard",
+    "level": 1,
+    "context": "This chunk discusses the concept of \"Moral Hazard\" in the context of insurance, explaining it as the risk of dishonesty by the insured. It is found within the section titled \"7. HAZARDS\", which categorizes factors that can increase or decrease the likelihood of an individual suffering a loss in insurance.",
+    "text": "<context>This chunk discusses the concept of \"Moral Hazard\" in the context of insurance, explaining it as the risk of dishonesty by the insured. It is found within the section titled \"7. HAZARDS\", which categorizes factors that can increase or decrease the likelihood of an individual suffering a loss in insurance.</context>\n# B. Moral Hazard\n\n3 Moral hazard is the likelihood that a person may act dishonestly in the insurance transaction. For example, if an individual applies for a sum assured which is far in excess of what others in the same financial situation would buy, the insurer would be concerned about the reason for the high cover. The individual may be seeking insurance for a dishonest reason. Underwriters also evaluate the moral hazards presented by individuals in cases where they find that those individuals have provided false information on their applications for insurance. In these cases, the applicants could be trying to obtain insurance coverage that they would not otherwise be able to obtain. When underwriters evaluate applications for insurance, they take a variety of steps to identify intending insureds who present these moral hazards.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000025",
+    "source_chunk_ids": [
+      "chapter_1__chunk_024"
+    ],
+    "chapter": "chapter_1",
+    "header": "8. CONCEPT OF ANTI-SELECTION",
+    "level": 1,
+    "context": "This section explains the concept of anti-selection, where individuals with a higher perceived risk are more likely to seek insurance, and how insurers mitigate this through methods like underwriting, policy excesses, and pre-existing condition exclusions.",
+    "text": "<context>This section explains the concept of anti-selection, where individuals with a higher perceived risk are more likely to seek insurance, and how insurers mitigate this through methods like underwriting, policy excesses, and pre-existing condition exclusions.</context>\n# 8. CONCEPT OF ANTI-SELECTION\n\n8.1 When an insurer receives an application for insurance, the insurer must assess the degree of risk that it will take on if it agrees to issue the policy. An insurer cannot afford to presume that each proposed risk represents an average likelihood of loss. Not all individuals of the same gender and age have an equal likelihood of suffering a loss. Furthermore, those individuals who believe they have a greater-than-average likelihood of loss tend to seek insurance protection to a greater extent than do those who believe they have an average or lessthan-average likelihood of loss. This tendency, which is called anti-selection, adverse selection, or selection against the insurer, means that the insurer will need to carefully review each application to assess properly the degree of risk the insurer is assuming for the policies it issues. If the insurer consistently under-estimates the risks that it assumes, its premium rates will be inadequate to provide the promised benefits.\n\n8.2 To minimise problems arising from anti-selection, insurers can employ a number of methods; one of which is effective underwriting. Underwriting or selection of risks, is the process of identifying and classifying the degree of risk represented by an intending insured and the insurers’ employees who are responsible for evaluating proposed risks are called underwriters. Underwriting involves identifying the risks that an intending insured presents, as well as classifying the degree of risk that an intending insured represents. The risks can be classified as standard, sub-standard or declined / postponed.\n\n8.3 The other methods are offering policies with different excesses3 and offering policies with pre-existing condition exclusions. These will be covered in a later chapter of this Study Text.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000026",
+    "source_chunk_ids": [
+      "chapter_1__chunk_025"
+    ],
+    "chapter": "chapter_1",
+    "header": "9. VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS",
+    "level": 1,
+    "context": "This chunk follows the discussion on basic life insurance terms and precedes the detailed explanation of life insurance as a financial protection tool. It categorizes the various types of life and health insurance products available in the market.",
+    "text": "<context>This chunk follows the discussion on basic life insurance terms and precedes the detailed explanation of life insurance as a financial protection tool. It categorizes the various types of life and health insurance products available in the market.</context>\n# 9. VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_1__small_000027",
+    "source_chunk_ids": [
+      "chapter_1__chunk_026"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Life Insurance Products",
+    "level": 1,
+    "context": "This chunk is found within Section 9, \"VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS,\" specifically detailing the different types of life insurance policies available, such as Term, Whole Life, Endowment, and Universal Life insurance, and mentioning additional benefits like Total and Permanent Disability (TPD) benefits.",
+    "text": "<context>This chunk is found within Section 9, \"VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS,\" specifically detailing the different types of life insurance policies available, such as Term, Whole Life, Endowment, and Universal Life insurance, and mentioning additional benefits like Total and Permanent Disability (TPD) benefits.</context>\n# A. Life Insurance Products\n\n9.1 Life insurance is provided on both an individual and a group basis and is available under a variety of types of policies. We describe the following major types of life insurance policies:\n\nTerm Insurance provides a death benefit if the insured dies during a specified period.\n\nWhole Life Insurance provides life insurance coverage throughout the insured’s lifetime and also build up cash values4 which can be used as a form of savings for the policy owner. A policy’s cash value is a valuable asset that the policy owner can use in a number of ways. This is further explained in a later chapter.\n\nEndowment Insurance provides a policy benefit that is paid either when the insured dies or on a stated date if the insured lives until then. Endowment Insurance has some characteristics of both Term Insurance and permanent life insurance. Like Term Insurance, Endowment Insurance provides life insurance coverage for only a stated amount for a specific period of time. Also, like permanent life insurance, Endowment Insurance provides a savings element.\n\n9.2 All the above policies may also provide the life insured with Total and Permanent Disability (TPD) Benefits either attached to the basic policy or as a supplementary benefit.\n\n9.3 Other types of life insurance that are available in the market include Universal Life Insurance. Universal Life Insurance is a form of “interest sensitive” Whole Life Insurance that offers a death benefit, and because of its flexible premium feature, provides the opportunity to build cash values which the policy owner can borrow from or withdraw. The cash values earn interest at a declared rate, which may change over time. Notwithstanding that, most Universal Life Insurance plans guarantee a minimum interest crediting rate. These plans give the policy owner the flexibility to assist him in meeting his financial goals. Within certain limits, the policy owner can choose the amount, method and timing of his premium payments.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000028",
+    "source_chunk_ids": [
+      "chapter_1__chunk_027"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Annuities And Investment Products",
+    "level": 1,
+    "context": "This chunk is situated within section 9, \"VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS,\" specifically under subsection B, \"Annuities And Investment Products.\" It follows the discussion of different types of life insurance policies and precedes the section on health insurance products.",
+    "text": "<context>This chunk is situated within section 9, \"VARIOUS LIFE AND HEALTH INSURANCE PRODUCTS,\" specifically under subsection B, \"Annuities And Investment Products.\" It follows the discussion of different types of life insurance policies and precedes the section on health insurance products.</context>\n# B. Annuities And Investment Products\n\nAn Annuity is a series of periodic income payments to a named individual in exchange for a premium or a series of premiums.   \nInvestment-linked Life Insurance policies (ILPs) provide a combination of protection and investment elements. Premiums buy life insurance protection and investment units in professionally managed investmentlinked sub-funds. Structured ILPs are ILPs where the sub-funds are invested in structured products and other structured funds.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000029",
+    "source_chunk_ids": [
+      "chapter_1__chunk_028"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Health Insurance Products",
+    "level": 1,
+    "context": "This chunk is part of Section 9, which details various types of life and health insurance products. Specifically, it falls under the subsection discussing Health Insurance Products, describing their purpose and coverage.",
+    "text": "<context>This chunk is part of Section 9, which details various types of life and health insurance products. Specifically, it falls under the subsection discussing Health Insurance Products, describing their purpose and coverage.</context>\n# C. Health Insurance Products\n\n9.4 These products are designed to cover hospital expenses, surgical expenses and emergency accident outpatient expenses incurred as a result of accident, sickness or disease commencing or occurring during the period of insurance. In Singapore, there are private Health Insurance schemes, as well as those offered by the Central Provident Fund Board. For further details, refer to the section below, as well as the SCI Health Insurance module.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000030",
+    "source_chunk_ids": [
+      "chapter_1__chunk_029"
+    ],
+    "chapter": "chapter_1",
+    "header": "10. LIFE INSURANCE AS A FINANCIAL PROTECTION TOOL",
+    "level": 1,
+    "context": "This section explains the role of life insurance in providing financial protection against common personal risks.",
+    "text": "<context>This section explains the role of life insurance in providing financial protection against common personal risks.</context>\n# 10. LIFE INSURANCE AS A FINANCIAL PROTECTION TOOL\n\n10.1 Life insurance is an effective mechanism for providing financial protection for individuals against the personal risks that we have discussed earlier on.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000031",
+    "source_chunk_ids": [
+      "chapter_1__chunk_030"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Financial Protection Against Premature Death",
+    "level": 1,
+    "context": "This chunk discusses how life insurance specifically addresses the risk of premature death by providing funds for dependants, funeral expenses, and loan repayment, with specific product examples like Term, Whole Life, and Endowment insurance. It falls under the broader section about life insurance as a financial protection tool.",
+    "text": "<context>This chunk discusses how life insurance specifically addresses the risk of premature death by providing funds for dependants, funeral expenses, and loan repayment, with specific product examples like Term, Whole Life, and Endowment insurance. It falls under the broader section about life insurance as a financial protection tool.</context>\n# A. Financial Protection Against Premature Death\n\n10.2 Life insurance can be used to fulfil a breadwinner’s financial obligations to his dependants in the event of his premature death. A Term Insurance or Whole Life Insurance policy can provide the funds needed to meet the funeral expenses and to provide a sum of money, to take care of his dependants. Term Insurance can also be used to pay off any outstanding loan that the client may have. Endowment Insurance, on the other hand, can be used to accumulate the funds necessary to finance one’s children’s education in the future.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000032",
+    "source_chunk_ids": [
+      "chapter_1__chunk_031"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Financial Protection Against Outliving Resources",
+    "level": 1,
+    "context": "This chunk is part of Section 10, \"LIFE INSURANCE AS A FINANCIAL PROTECTION TOOL,\" specifically subsection A, \"Financial Protection Against Premature Death.\" It discusses how annuity and endowment insurance policies can be used to provide income during retirement, thereby mitigating the risk of outliving one's financial resources.",
+    "text": "<context>This chunk is part of Section 10, \"LIFE INSURANCE AS A FINANCIAL PROTECTION TOOL,\" specifically subsection A, \"Financial Protection Against Premature Death.\" It discusses how annuity and endowment insurance policies can be used to provide income during retirement, thereby mitigating the risk of outliving one's financial resources.</context>\n# B. Financial Protection Against Outliving Resources\n\n10.3 Annuity and Endowment Insurance policies can be used to provide the necessary income that a person will need in his retirement. In fact, Annuities are specially designed for this purpose. There are many types of Annuity policies designed to meet the various needs of individuals, as you will see in a later chapter of this Study Text. An individual can buy an Annuity policy to pay him a regular income for life. This reduces the risk of one living too long and outliving one’s financial resources.\n\n10.4 Endowment Insurance, on the other hand, can be arranged to mature at the age that a person retires. In this way, the person will receive the benefits upon his retirement, which he can use to purchase an Annuity or to invest elsewhere.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000033",
+    "source_chunk_ids": [
+      "chapter_1__chunk_032"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Financial Protection Against Ill Health And Disablement",
+    "level": 1,
+    "context": "This chunk details various types of health insurance products that provide financial protection against ill health and disablement, including critical illness, medical expense, hospital cash, disability income, and long-term care insurance. It is part of section 10, \"Life Insurance as a Financial Protection Tool,\" discussing how insurance addresses different personal risks.",
+    "text": "<context>This chunk details various types of health insurance products that provide financial protection against ill health and disablement, including critical illness, medical expense, hospital cash, disability income, and long-term care insurance. It is part of section 10, \"Life Insurance as a Financial Protection Tool,\" discussing how insurance addresses different personal risks.</context>\n# C. Financial Protection Against Ill Health And Disablement\n\nThe risk of ill health can be met by Health Insurance coverage. Some examples of Health Insurance are listed below.\n\nCritical Illness Insurance is suitable for providing protection against the contracting of a covered critical illness under the policy.\n\n10.7 Medical Expense Insurance reimburses the insured for expenses incurred as a result of an event, illness or accident, and provides inpatient and some outpatient benefits.\n\n10.8 Hospital Cash (Income) Insurance, on the other hand, will provide the insured with a fixed amount of daily allowance benefit for each day of his hospital stay, irrespective of other expenses incurred for medical treatment during his hospitalisation. There is also no restriction on the use of the benefits payable under this plan. Hence, the insured can use it to meet any of his needs.\n\n10.9 Disability Income Insurance is a form of income-protection insurance which helps to replace a portion of the insured’s income that he loses if he becomes totally disabled and unable to work due to an accident or sickness.\n\n10.10 Long-Term Care Insurance is a product that is designed to meet some or all of the costs of care to the insured who, as a result of accident, sickness, frailty or a combination of these, is physically impaired to the extent that he is no longer able to function independently. Instead, he has to depend on others to help him perform most basic activities of daily living.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000034",
+    "source_chunk_ids": [
+      "chapter_1__chunk_033"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. Financial Protection For Businesses",
+    "level": 1,
+    "context": "This chunk discusses how the principles of financial protection, particularly through life insurance, extend to businesses. It highlights the importance of Key-Person Insurance and its role in business succession planning.",
+    "text": "<context>This chunk discusses how the principles of financial protection, particularly through life insurance, extend to businesses. It highlights the importance of Key-Person Insurance and its role in business succession planning.</context>\n# D. Financial Protection For Businesses\n\n10.11 Financial protection principles apply to businesses, as well as individuals. This is especially true for small businesses where the business owner’s wealth is tied up in the business and its continued success is dependent on their skills and application. For many businesses, especially these smaller ones, the success of the business may depend on certain key individuals. To protect the business against financial losses arising out of the loss of contribution by these key individuals due to sickness, disability or death, the business owner can purchase Key-Person Insurance. A business can also purchase life insurance to provide benefits for its employees. Another key application of life insurance in business setting is to use it as a funding vehicle for buy-sell agreements in business succession planning.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000035",
+    "source_chunk_ids": [
+      "chapter_1__chunk_034"
+    ],
+    "chapter": "chapter_1",
+    "header": "11. THE IMPORTANCE OF LIFE INSURANCE",
+    "level": 1,
+    "context": "This section discusses the broader benefits of life insurance beyond financial protection, specifically how it aids in savings, acts as a safe investment, encourages thrift, and provides peace of mind.",
+    "text": "<context>This section discusses the broader benefits of life insurance beyond financial protection, specifically how it aids in savings, acts as a safe investment, encourages thrift, and provides peace of mind.</context>\n# 11. THE IMPORTANCE OF LIFE INSURANCE\n\n11.1 Aside from the advantage of providing financial protection for individuals, families and businesses; life insurance benefits policy owners in other important ways such as the following:",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000036",
+    "source_chunk_ids": [
+      "chapter_1__chunk_035"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Assist In Making Savings Possible",
+    "level": 1,
+    "context": "This chunk is part of section 11, \"The Importance of Life Insurance,\" specifically discussing how life insurance assists in making savings possible by providing immediate benefit and protection against premature death or disability, which could disrupt long-term savings plans.",
+    "text": "<context>This chunk is part of section 11, \"The Importance of Life Insurance,\" specifically discussing how life insurance assists in making savings possible by providing immediate benefit and protection against premature death or disability, which could disrupt long-term savings plans.</context>\n# A. Assist In Making Savings Possible\n\n11.2 Although one may prefer to save rather than purchase life insurance, saving involves time, resources and discipline. A savings programme can yield only a small amount at the start, whereas an insurance policy guarantees the full face value or other benefit from its beginning. Hence, it can protect the policy owner against failure through early death or incapacity to have sufficient working time to save adequately through other means. Thus, if one is able to save $\\$ 500$ annually, it will take nearly 20 years to accumulate a fund of approximately $\\$ 15,000$ assuming that the accumulations are safely invested annually at $4 \\%$ compound interest. Even at that, an individual’s ability to accumulate such a savings fund is contingent upon his survival for the full period, and this may be defeated by death or disability before the savings have reached any appreciable sum.\n\n11.3 To depend entirely on saving as a means of providing for the future could prove disastrous financially. It is generally accepted that the first requisite in providing for the future support of dependants is reasonable certainty. Life insurance provides protection against the possible failure to continue the annual accumulations of the savings fund because of early death or disability.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000037",
+    "source_chunk_ids": [
+      "chapter_1__chunk_036"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Provides A Safe Investment",
+    "level": 1,
+    "context": "This chunk discusses how life insurance can serve as a safe investment vehicle, contributing to long-term savings and safeguarding policy benefits. It is located within the section detailing the broader importance and benefits of life insurance.",
+    "text": "<context>This chunk discusses how life insurance can serve as a safe investment vehicle, contributing to long-term savings and safeguarding policy benefits. It is located within the section detailing the broader importance and benefits of life insurance.</context>\n# B. Provides A Safe Investment\n\n11.4 Life insurance can, with careful selection, be a reasonable, long-term savings instrument. Life insurance policies and annuities can be safe investments, but life insurance policies also make it possible for the policy owner to arrange for the safeguarding of the policy death benefits and values.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000038",
+    "source_chunk_ids": [
+      "chapter_1__chunk_037"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Encourages Thrift",
+    "level": 1,
+    "context": "This chunk discusses the non-financial benefits of life insurance, specifically how it encourages saving. It falls under Section 11, \"THE IMPORTANCE OF LIFE INSURANCE,\" which details the various advantages of life insurance beyond just financial protection.",
+    "text": "<context>This chunk discusses the non-financial benefits of life insurance, specifically how it encourages saving. It falls under Section 11, \"THE IMPORTANCE OF LIFE INSURANCE,\" which details the various advantages of life insurance beyond just financial protection.</context>\n# C. Encourages Thrift\n\n11.5 Life Insurance can constitute an excellent means of encouraging thrift for many persons. Many individuals who may not otherwise save regularly will nevertheless regularly pay premiums on a life insurance policy. If the policy is of the type that has a cash value this can constitute a type of semi-compulsory savings plan.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000039",
+    "source_chunk_ids": [
+      "chapter_1__chunk_038"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. Minimises Worries And Provides Peace Of Mind",
+    "level": 1,
+    "context": "This chunk is part of Section 11, which discusses the broader importance and benefits of life insurance beyond just financial protection, specifically focusing on how it reduces worries and provides peace of mind.",
+    "text": "<context>This chunk is part of Section 11, which discusses the broader importance and benefits of life insurance beyond just financial protection, specifically focusing on how it reduces worries and provides peace of mind.</context>\n# D. Minimises Worries And Provides Peace Of Mind\n\n11.6 If the breadwinner has adequate amounts of life insurance, he is less likely to worry about the financial security of his dependants in the event of premature death; an individual insured for disability income protection does not have to worry about the loss of earnings if a serious illness or accident occurs. Worry and fear are also reduced after a loss occurs, because the insureds know that he has the insurance that will pay for the loss.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000040",
+    "source_chunk_ids": [
+      "chapter_1__chunk_039"
+    ],
+    "chapter": "chapter_1",
+    "header": "12. POOLING OF RISKS AND THE LAW OF LARGE NUMBERS",
+    "level": 1,
+    "context": "This chunk is part of a larger document about risk and insurance. It specifically discusses the concepts of risk pooling and the law of large numbers, explaining how insurers use these principles to manage and predict financial losses across a large group of policyholders. This section follows discussions on basic insurance terms and before principles like utmost good faith and insurable interest.",
+    "text": "<context>This chunk is part of a larger document about risk and insurance. It specifically discusses the concepts of risk pooling and the law of large numbers, explaining how insurers use these principles to manage and predict financial losses across a large group of policyholders. This section follows discussions on basic insurance terms and before principles like utmost good faith and insurable interest.</context>\n# 12. POOLING OF RISKS AND THE LAW OF LARGE NUMBERS\n\n12.1 You may wonder how insurers can accept so many risks. Well, the answer lies in a concept called risk pooling. An insurer accepts the risk of financial loss of a large number of people, but only a small percentage of these people will actually suffer an insured financial loss at any given period. Contributions, in the form of premiums from the many policy owners, go into this pool. From the pool, payments are made to compensate the losses of the few. Pooling brings together a large number of exposures of similar risk characteristics, thereby allowing the application of the law of large numbers to predict the frequency (probable number of losses) and severity of losses (probable size of the losses).\n\n12.2 The law of large numbers, which is a fundamental mathematical principle of insurance, states that the greater the number of insured persons, the more the actual loss experience will tend towards the expected loss experience. With the increasing number of insured persons, risk and uncertainty will diminish. Thus, the larger the insured group, the more predictable will be the loss experience for the insured group as a whole.\n\n12.3 To illustrate the law of large numbers, consider the flip of a coin, which can result in a head or a tail. Flipping a coin 30 times may result in any combination of heads and tails; there may be 19 heads and 11 tails or any other combination. Based on simple mathematics, you would expect to get the same number of heads and tails, because the chance of getting either is $50 \\%$ .\n\n12.4 However, flipping the coin just 30 times may not give us the 50/50 split that we would expect. Flipping the coin 30,000 times, we would almost certainly see a result of approximately 15,000 heads and 15,000 tails. The law of large numbers, therefore, operates to give a result which is in keeping with the underlying probability (in this example, $50 \\%$ heads and $50 \\%$ tails).\n\n12.5 When the insurer applies the law of large numbers to life insurance, it enables them to predict fairly confidently,",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000041",
+    "source_chunk_ids": [
+      "chapter_1__chunk_039"
+    ],
+    "chapter": "chapter_1",
+    "header": "12. POOLING OF RISKS AND THE LAW OF LARGE NUMBERS",
+    "level": 1,
+    "context": "This chunk explains how the law of large numbers enables insurers to predict claim costs by applying it to a large number of similar risks, allowing for confident premium calculation. It follows a discussion on risk pooling and precedes the explanation of the principle of utmost good faith.",
+    "text": "<context>This chunk explains how the law of large numbers enables insurers to predict claim costs by applying it to a large number of similar risks, allowing for confident premium calculation. It follows a discussion on risk pooling and precedes the explanation of the principle of utmost good faith.</context>\nand 15,000 tails. The law of large numbers, therefore, operates to give a result which is in keeping with the underlying probability (in this example, $50 \\%$ heads and $50 \\%$ tails).\n\n12.5 When the insurer applies the law of large numbers to life insurance, it enables them to predict fairly confidently, the final cost of claims in any one year. This is because insurers provide cover against a large number of similar risks, and the final number of actual loss events tends to be very close to the expected number, provided that the conditions under which the original data were gathered remain constant. This enables the insurer to calculate likely losses and so confidently charge a fixed premium.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000042",
+    "source_chunk_ids": [
+      "chapter_1__chunk_040"
+    ],
+    "chapter": "chapter_1",
+    "header": "13. PRINCIPLE OF UTMOST GOOD FAITH",
+    "level": 1,
+    "context": "This section details the Principle of Utmost Good Faith, a fundamental concept in insurance contracts, explaining the duties of both the insured and the insurer. It follows discussions on insurable risks, dealing with risk, and basic life insurance terms, and precedes sections on the insurable interest requirement and the principle of indemnity.",
+    "text": "<context>This section details the Principle of Utmost Good Faith, a fundamental concept in insurance contracts, explaining the duties of both the insured and the insurer. It follows discussions on insurable risks, dealing with risk, and basic life insurance terms, and precedes sections on the insurable interest requirement and the principle of indemnity.</context>\n# 13. PRINCIPLE OF UTMOST GOOD FAITH",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_1__small_000043",
+    "source_chunk_ids": [
+      "chapter_1__chunk_041"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Insured’s Duty Of Utmost Good Faith",
+    "level": 1,
+    "context": "This chunk is part of Section 13, \"PRINCIPLE OF UTMOST GOOD FAITH,\" specifically detailing the \"Insured's Duty Of Utmost Good Faith\" in insurance contracts. It explains that insurance contracts require a higher standard of honesty than ordinary contracts, emphasizing the proposer's obligation to disclose all material facts and avoid misstatements.",
+    "text": "<context>This chunk is part of Section 13, \"PRINCIPLE OF UTMOST GOOD FAITH,\" specifically detailing the \"Insured's Duty Of Utmost Good Faith\" in insurance contracts. It explains that insurance contracts require a higher standard of honesty than ordinary contracts, emphasizing the proposer's obligation to disclose all material facts and avoid misstatements.</context>\n# A. Insured’s Duty Of Utmost Good Faith\n\n13.1 In ordinary contracts, the contracting parties are not required to reveal all they know about a proposed agreement, as those contracts are subject to the principle of ordinary good faith. A common law principle application to most of these contracts is caveat emptor (let the buyer beware).\n\n13.2 Insurance contracts, however, have always been subject to the more stringent principle of utmost good faith. A life insurance contract is a contract of “utmost good faith” or “uberrima fides”. When issuing a life insurance contract, the insurer must rely on the truthfulness and integrity of the proposer. This is because the proposer knows everything about the risk to be insured, whereas the insurer knows only what the proposer chooses to disclose to the insurer. In return, the proposer must rely on the insurer’s promise and ability to pay future claims.\n\n13.3 The principle of utmost good faith expects the proposers of life insurance policies to:\n\ndisclose all material facts (see explanation below) which they are aware of or ought to have been aware of, even if no question is specifically asked in the proposal (or application) form; and   \nnot to make any misstatement of material facts.\n\n13.4 The fact that the questions in the proposal form have been truthfully answered is not sufficient. The proposer must volunteer information on material facts, even if not asked in the proposal form. This is an obligation, not a matter of choice.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000044",
+    "source_chunk_ids": [
+      "chapter_1__chunk_042"
+    ],
+    "chapter": "chapter_1",
+    "header": "A1. Material Facts",
+    "level": 1,
+    "context": "This chunk is a subsection of section 13, \"PRINCIPLE OF UTMOST GOOD FAITH\", specifically detailing what constitutes \"Material Facts\" that an applicant must disclose to an insurer.",
+    "text": "<context>This chunk is a subsection of section 13, \"PRINCIPLE OF UTMOST GOOD FAITH\", specifically detailing what constitutes \"Material Facts\" that an applicant must disclose to an insurer.</context>\n# A1. Material Facts\n\n13.5 Material facts are facts that can cause an underwriter to deal with a case differently if the information was disclosed at the time of application of the insurance policy. For example, a proposer has undergone some medical tests prior to applying for a life insurance policy. Though the medical test results, which have yet to be released, may or may not reveal any irregularities, it is still the responsibility of the proposer to inform the insurer of such tests done prior to the insurance application as such facts will influence the risk assessment of the underwriter whether to accept or decline an insurance application. Failure to do so will give the insurer the right to void the insurance policy from inception (upon discovery) due to the non-disclosure of material facts to the insurer.\n\n13.6 Another example such as an insured’s occupational exposure to hazards will also have to be disclosed. Other examples of material facts thus include the insured’s insurance history, the insured’s claims history, the insured’s previous criminal convictions, as well as other instances of moral hazard.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000045",
+    "source_chunk_ids": [
+      "chapter_1__chunk_043"
+    ],
+    "chapter": "chapter_1",
+    "header": "A2. Facts Which Need Not Be Disclosed",
+    "level": 1,
+    "context": "This chunk is a subsection under \"Principle of Utmost Good Faith,\" specifically detailing information that a proposer is *not* required to disclose to an insurer. It follows the explanation of what constitutes a \"material fact\" that *must* be disclosed.",
+    "text": "<context>This chunk is a subsection under \"Principle of Utmost Good Faith,\" specifically detailing information that a proposer is *not* required to disclose to an insurer. It follows the explanation of what constitutes a \"material fact\" that *must* be disclosed.</context>\n# A2. Facts Which Need Not Be Disclosed\n\n13.7 There is no duty for the proposer to disclose:\n\nfacts which the insurer already knows [e.g. an insurer should know about outbreak of civil unrest in a certain country, or Influenza A (H1N1) in various parts of the world];   \nfacts which the insurer ought to know;   \nfacts about which the insurer waives information;   \nfacts which can be discovered, where enough information has been given to provoke enquiry by the insurer (e.g. in answering a proposal form question on other existing life insurance policies taken out with the same insurer, the proposer states as “refer to details in your company’s records”, instead of writing down all the policy details as requested in the proposal form); and   \nfacts which lessen the risk (e.g. a person applying for Personal Accident Insurance does not like to take part in hazardous activities).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000046",
+    "source_chunk_ids": [
+      "chapter_1__chunk_044"
+    ],
+    "chapter": "chapter_1",
+    "header": "A3. Duration Of Duty Of Disclosure",
+    "level": 1,
+    "context": "This chunk discusses the duration of the duty to disclose material facts in insurance contracts, specifically covering the periods of inception, renewal, and alteration of the policy. It falls under the broader section about the \"Principle of Utmost Good Faith,\" which details the obligations of both the insured and the insurer in an insurance agreement.",
+    "text": "<context>This chunk discusses the duration of the duty to disclose material facts in insurance contracts, specifically covering the periods of inception, renewal, and alteration of the policy. It falls under the broader section about the \"Principle of Utmost Good Faith,\" which details the obligations of both the insured and the insurer in an insurance agreement.</context>\n# A3. Duration Of Duty Of Disclosure\n\n13.8 We have looked at the duty to disclose material facts. Let us now look at when this duty arises.\n\n13.9 The duty of disclosure arises from the beginning of negotiations until the time that the insurance contract takes effect (the inception of the policy) and at other specific times after inception. The duty arises both under common law and under the policy terms. Let us take a look at the duty of disclosure at each stage of the insurance contract.\n\nA3A. At Inception\n\n13.10 Under common law, the duty of disclosure starts at the beginning of negotiations and ends at the formation of the insurance contract. Sometimes, a policy wording will extend this duty so that it is continuous throughout the policy period.\n\nA3B. On Renewal\n\n13.11 On the renewal of a policy, the duty of disclosure by the insured is revived for general insurance. There is no such duty of disclosure for life insurance policies, as they are not renewable annually, but which are issued for a specific number\n\nof years or for life. For such policies, if the insured wishes to continue paying premiums, the insurer is obliged to accept them. There is, therefore, no duty of disclosure at so-called “renewal” since no new contract is formed.\n\nA3C. On Alteration\n\n13.12 During the currency of the insurance contract, it may be necessary to change the terms of the policy. The insured may wish to increase the sum assured or change the description of the property. In these cases, the duty of disclosure is revived as a new contract is being formed.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000047",
+    "source_chunk_ids": [
+      "chapter_1__chunk_045"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Insurer’s Duty Of Disclosure",
+    "level": 1,
+    "context": "This chunk is located within section 13. PRINCIPLE OF UTMOST GOOD FAITH, specifically under subsection B. Insurer's Duty Of Disclosure, detailing the obligations an insurer has towards the insured regarding the disclosure of information to uphold the principle of utmost good faith in insurance contracts.",
+    "text": "<context>This chunk is located within section 13. PRINCIPLE OF UTMOST GOOD FAITH, specifically under subsection B. Insurer's Duty Of Disclosure, detailing the obligations an insurer has towards the insured regarding the disclosure of information to uphold the principle of utmost good faith in insurance contracts.</context>\n# B. Insurer’s Duty Of Disclosure\n\n13.13 The insurer also has a duty of disclosure to the insured. In order to fulfil this duty, the insurer must also exercise utmost good faith by, for example:\n\nnotifying an insured of a possible entitlement to a premium discount resulting from a good previous insurance history;   \nonly taking on risks which the insurer is licensed to accept, i.e. avoid unenforceable contracts; and   \nensuring that statements made are true, as misleading an insured about policy cover is a breach of utmost good faith.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000048",
+    "source_chunk_ids": [
+      "chapter_1__chunk_046"
+    ],
+    "chapter": "chapter_1",
+    "header": "14. INSURABLE INTEREST REQUIREMENT",
+    "level": 1,
+    "context": "This chunk is about the requirement of insurable interest in insurance contracts, explaining why it's necessary and how it applies to life insurance.",
+    "text": "<context>This chunk is about the requirement of insurable interest in insurance contracts, explaining why it's necessary and how it applies to life insurance.</context>\n# 14. INSURABLE INTEREST REQUIREMENT\n\n14.1 We noted at the beginning of this chapter that only pure risks are insurable; insurance is intended to compensate an individual or a business for a financial loss, not to provide an opportunity for gain. At one time, people used insurance policies as a means of making wagers. For example, they purchased insurance policies on the lives of people who were completely unrelated to them and, in that way, created a possibility of financial gain for themselves if such insured people died.\n\n14.2 The practice of purchasing insurance as a wager is now considered to be against public policy. In most countries, legislation has been put in place requiring that, when an insurance policy is issued, the policy owner must have an insurable interest in the risk that is insured – the policy owner must be likely to suffer a genuine loss or detriment should the event insured against occur.\n\n14.3 The presence of insurable interest must be established for every life insurance policy to ensure that the insurance contract is not formed as an illegal wagering agreement. If the insurable interest requirement is not met when a policy is issued, the policy is not valid. The presence of an insurable interest for life insurance can usually be found by applying the following general rule:\n\nAn insured interest exists when the policy owner is likely to benefit if the insured continues to live and is likely to suffer some loss or detriment if the insured dies.\n\n14.4 To understand how insurable interest requirements are met, we need to consider two possible situations: (1) an individual purchases insurance on his own life; and (2) an individual purchases insurance on another person’s life. In both cases, the applicant for life insurance must name a beneficiary. Let’s look at each of these situations.\n\n14.5 All persons are considered to have an insurable interest in their own lives. A person is always considered to have more to gain by living than by dying. Therefore, an insurable interest between the policy owner and the insured is presumed when a person seeks to purchase",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000049",
+    "source_chunk_ids": [
+      "chapter_1__chunk_046"
+    ],
+    "chapter": "chapter_1",
+    "header": "14. INSURABLE INTEREST REQUIREMENT",
+    "level": 1,
+    "context": "This chunk explains how the insurable interest requirement applies to life insurance, detailing when it is presumed (own life, certain family relationships) and when it must be demonstrated (distant relatives, business relationships). It also clarifies that this requirement only applies at the policy's inception, not at the time of claim, and briefly touches upon its application in health insurance. This section follows the discussion on the principle of utmost good faith and precedes the discussion on the principle of indemnity.",
+    "text": "<context>This chunk explains how the insurable interest requirement applies to life insurance, detailing when it is presumed (own life, certain family relationships) and when it must be demonstrated (distant relatives, business relationships). It also clarifies that this requirement only applies at the policy's inception, not at the time of claim, and briefly touches upon its application in health insurance. This section follows the discussion on the principle of utmost good faith and precedes the discussion on the principle of indemnity.</context>\nthese situations.\n\n14.5 All persons are considered to have an insurable interest in their own lives. A person is always considered to have more to gain by living than by dying. Therefore, an insurable interest between the policy owner and the insured is presumed when a person seeks to purchase insurance on his own life.\n\n14.6 Certain family relationships, e.g. parents and their children are assumed by law to create an insurable interest between a life insured and a policy owner or beneficiary.\n\n14.7 An insurable interest is not presumed when the policy owner or beneficiary is more distantly related to the life insured than the relatives described above or when the parties are not related by blood or marriage, e.g. friends. In these cases, a financial interest in the continued life of the life insured must be demonstrated in order to satisfy the insurable interest requirement. For instance, if Mr. Tan obtains a $\\$ \\$ 30,000$ personal loan from a bank, the bank would have a financial interest and, consequently, an insurable interest in Mr. Tan’s life. If Mr. Tan should die before repaying the loan, the bank could lose some or all of the money that it lent him. Similar examples of financial interest can be found in other business relationships.\n\n14.8 The insurable interest requirement must be met before a life insurance policy will be issued. After the life insurance policy is in force, the presence or absence of insurable interest is no longer relevant. Therefore, a beneficiary need not provide evidence of insurable interest in order to receive the benefits of a life insurance policy.\n\n14.9 The Insurable Interest Requirement in Health Insurance. The insurable interest requirement also must be met when a Health Insurance policy is issued. For Health Insurance purposes, the insurable interest requirement is met if the applicant could demonstrate a genuine risk of economic loss should the proposed insured require medical care or become disabled. Because of the nature of Health Insurance, applicants rarely seek Health Insurance on someone in whom they have no insurable interest. Typically, people seek Health Insurance for themselves and",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000050",
+    "source_chunk_ids": [
+      "chapter_1__chunk_046"
+    ],
+    "chapter": "chapter_1",
+    "header": "14. INSURABLE INTEREST REQUIREMENT",
+    "level": 1,
+    "context": "The context is about the Insurable Interest Requirement in Health Insurance, explaining when it is met and why it's generally not an issue for health insurance applications.",
+    "text": "<context>The context is about the Insurable Interest Requirement in Health Insurance, explaining when it is met and why it's generally not an issue for health insurance applications.</context>\nif the applicant could demonstrate a genuine risk of economic loss should the proposed insured require medical care or become disabled. Because of the nature of Health Insurance, applicants rarely seek Health Insurance on someone in whom they have no insurable interest. Typically, people seek Health Insurance for themselves and for their dependents. As a contract of indemnity, a Health Insurance policy provides coverage to pay for medical expenses that the insured has incurred or to replace a disabled insured’s lost income. Applicants are generally considered to have an insurable interest in their own health. Additionally, for Disability Income Insurance purposes, businesses have an insurable interest in the health of their key employees.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000051",
+    "source_chunk_ids": [
+      "chapter_1__chunk_047"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Why Is Insurable Interest Necessary?",
+    "level": 1,
+    "context": "This chunk explains why insurable interest is a necessary requirement for life insurance contracts, focusing on its role in preventing gambling and encouraging the policy owner to protect the insured subject matter. It directly follows the discussion of when insurable interest must exist and precedes the explanation of when insurable interest is required for different types of insurance.",
+    "text": "<context>This chunk explains why insurable interest is a necessary requirement for life insurance contracts, focusing on its role in preventing gambling and encouraging the policy owner to protect the insured subject matter. It directly follows the discussion of when insurable interest must exist and precedes the explanation of when insurable interest is required for different types of insurance.</context>\n# A. Why Is Insurable Interest Necessary?\n\n14.10 To sum up, insurable interest is required for life insurance contracts for the following reasons: firstly, it excludes the possibility of gambling (i.e. minimise problems of moral hazard in insurance). Secondly, the proposer is expected to safeguard the subject matter (i.e. the proposer is interested in its preservation).\n\n14.11 Without insurable interest, any life insurance is more or less a gamble, since the policy owner (policyholder) will not actually be at risk with the insured peril or event.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000052",
+    "source_chunk_ids": [
+      "chapter_1__chunk_048"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. When Must Insurable Interest Exist?",
+    "level": 1,
+    "context": "This chunk discusses the timing of when insurable interest must exist for different types of insurance, specifically contrasting general insurance and life insurance. It is located within the section detailing the \"Insurable Interest Requirement.\"",
+    "text": "<context>This chunk discusses the timing of when insurable interest must exist for different types of insurance, specifically contrasting general insurance and life insurance. It is located within the section detailing the \"Insurable Interest Requirement.\"</context>\n# B. When Must Insurable Interest Exist?\n\n14.12 In most General Insurance policies, insurable interest must be present at both the inception of the insurance contract and at the time of loss. However, as far as Marine Cargo Insurance is concerned, there is no need for insurable interest to be present at the inception of the insurance contract. Rather, insurable interest must exist only at the time of loss.\n\n14.13 In contrast, as laid out in Section 146 of the Insurance Act 1966, in life insurance, there must be an insurable interest, or a presumed insurable interest, present at the inception of the insurance contract, but it need not be present at the time of the life insured’s death. A beneficiary, therefore, need not provide evidence of insurable interest in order to receive the benefits of a life insurance policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000053",
+    "source_chunk_ids": [
+      "chapter_1__chunk_049"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Insurable Interest Required For Life Insurance Under Insurance Act",
+    "level": 1,
+    "context": "This section details the specific legal requirements for establishing an insurable interest in life insurance policies within Singapore, as stipulated by the Insurance Act. It follows a general discussion on the necessity and timing of insurable interest across different insurance types and precedes the explanation of the principle of indemnity.",
+    "text": "<context>This section details the specific legal requirements for establishing an insurable interest in life insurance policies within Singapore, as stipulated by the Insurance Act. It follows a general discussion on the necessity and timing of insurable interest across different insurance types and precedes the explanation of the principle of indemnity.</context>\n# C. Insurable Interest Required For Life Insurance Under Insurance Act",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_1__small_000054",
+    "source_chunk_ids": [
+      "chapter_1__chunk_050"
+    ],
+    "chapter": "chapter_1",
+    "header": "C1. Own Life",
+    "level": 1,
+    "context": "This chunk is about the requirement of insurable interest in life insurance, specifically detailing the conditions under which a person can take out a policy on their own life according to the Insurance Act 1966.",
+    "text": "<context>This chunk is about the requirement of insurable interest in life insurance, specifically detailing the conditions under which a person can take out a policy on their own life according to the Insurance Act 1966.</context>\n# C1. Own Life\n\n14.14 Section 146(1)(b)(i) of the Insurance Act 1966 provides that a person may take out a policy on his own life.\n\n14.15 Although legally there is no limit to the amount of insurance that an individual can take up on his life, in practice, the insurer usually limits the amount of sum assured to a sum that matches reasonably with the life insured’s financial status and earning power, so that he can afford to pay the premium during the term of his life insurance policy. This will also reduce the risk of moral hazard and fraud.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000055",
+    "source_chunk_ids": [
+      "chapter_1__chunk_051"
+    ],
+    "chapter": "chapter_1",
+    "header": "C2. Spouse",
+    "level": 1,
+    "context": "This section discusses the specific conditions under which an insurable interest is presumed or required for life insurance policies, detailing the relationships that satisfy this requirement, including the case of spouses insuring each other's lives.",
+    "text": "<context>This section discusses the specific conditions under which an insurable interest is presumed or required for life insurance policies, detailing the relationships that satisfy this requirement, including the case of spouses insuring each other's lives.</context>\n# C2. Spouse\n\n14.16 According to Section 146(1)(b)(ii) of the Insurance Act 1966, husbands and wives may effect policies on each other’s lives provided they are married at the time the policy is effected. Hence, a husband can buy a policy on the wife’s life and vice versa.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000056",
+    "source_chunk_ids": [
+      "chapter_1__chunk_052"
+    ],
+    "chapter": "chapter_1",
+    "header": "C3. Child Or Ward",
+    "level": 1,
+    "context": "The context is about the insurable interest requirement for life insurance policies, specifically concerning who can effect insurance on another person's life. This subsection details the conditions under which a person can insure the life of their child or ward.",
+    "text": "<context>The context is about the insurable interest requirement for life insurance policies, specifically concerning who can effect insurance on another person's life. This subsection details the conditions under which a person can insure the life of their child or ward.</context>\n# C3. Child Or Ward\n\n14.17 Under Section 146(1)(b)(iii) of the Insurance Act 1966, it states that a person may effect insurance on his child’s or ward’s life if the child or ward is under the age of 18 years at the time the policy is effected.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000057",
+    "source_chunk_ids": [
+      "chapter_1__chunk_053"
+    ],
+    "chapter": "chapter_1",
+    "header": "C4. Another Person Whom One Is Dependent On",
+    "level": 1,
+    "context": "This chunk is about the requirements for having an insurable interest when taking out life insurance, specifically when one person is dependent on another. It falls under Section 14, \"INSURABLE INTEREST REQUIREMENT,\" which details who can be insured and when.",
+    "text": "<context>This chunk is about the requirements for having an insurable interest when taking out life insurance, specifically when one person is dependent on another. It falls under Section 14, \"INSURABLE INTEREST REQUIREMENT,\" which details who can be insured and when.</context>\n# C4. Another Person Whom One Is Dependent On\n\n14.18 According to Section 146(1)(b)(iv) of the Insurance Act 1966, a person may effect insurance on a person whom he is wholly or partly dependent at the time of application for the insurance policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000058",
+    "source_chunk_ids": [
+      "chapter_1__chunk_054"
+    ],
+    "chapter": "chapter_1",
+    "header": "C5. Trustees & Beneficiaries",
+    "level": 1,
+    "context": "This chunk is located within the section discussing the insurable interest requirement for life insurance policies in Singapore. Specifically, it details the conditions under which trustees and beneficiaries can purchase policies on the life of a settlor, following revisions to the Insurance Act in 2009.",
+    "text": "<context>This chunk is located within the section discussing the insurable interest requirement for life insurance policies in Singapore. Specifically, it details the conditions under which trustees and beneficiaries can purchase policies on the life of a settlor, following revisions to the Insurance Act in 2009.</context>\n# C5. Trustees & Beneficiaries\n\n14.19 Before the Nomination of Beneficiaries (NOB) framework came into effect on 1 September 2009, policies issued under trust are void contracts as no insurable interest exists between the trustee (holder of property on behalf of beneficiaries) and the settlor or grantor (the person who creates the trust), as well as the beneficiaries (persons who will receive the policy proceeds).\n\n14.20 On 1 September 2009, the Insurance Act 1966 was revised and new Sections 146(3b) and (3c) were added to allow trustees and beneficiaries of a trust to purchase policies on the life of the settlor. However, there are several conditions that need to be satisfied. They are as follows:\n\n(1) the life insured must be the settlor or a beneficiary of the trust;   \n(2) the proposer is the trustee of the trust;   \n(3) any beneficiary of the trust - (i) has an insurable interest in the life of the settlor / relevant beneficiary at the time the insurance is effected; or (ii)i is - (a) the settlor/ relevant beneficiary's spouse at the time the insurance is effected; (b) the settor / relevant beneficiary's child or ward under the age of 18 years at the time the insurance is effected; or (c) any other person whom the setor / relevant beneficiary is wholly or partly dependant on and;\n\n(4) the settlor / relevant beneficiary consents in writing to the effecting of the insurance before it is effected.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000059",
+    "source_chunk_ids": [
+      "chapter_1__chunk_055"
+    ],
+    "chapter": "chapter_1",
+    "header": "C6. Creditors & Debtors",
+    "level": 1,
+    "context": "This chunk is part of section 14, \"INSURABLE INTEREST REQUIREMENT,\" and specifically subsection C6, discussing how creditors have an insurable interest in the lives of their debtors. This relates to the broader topic of when an insurable interest is required for life insurance policies.",
+    "text": "<context>This chunk is part of section 14, \"INSURABLE INTEREST REQUIREMENT,\" and specifically subsection C6, discussing how creditors have an insurable interest in the lives of their debtors. This relates to the broader topic of when an insurable interest is required for life insurance policies.</context>\n# C6. Creditors & Debtors\n\n14.21 It has been well established that a creditor has an insurable interest in the life of his debtor. When a creditor who pays the premiums for a policy insures the debtor’s life, his insurable interest is not limited solely to the amount of the indebtedness. He can insure his debtor’s life for a sum assured estimated to be sufficient to reimburse him at the debtor’s death for the premiums paid plus the debt and the interest on both.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000060",
+    "source_chunk_ids": [
+      "chapter_1__chunk_056"
+    ],
+    "chapter": "chapter_1",
+    "header": "C7. Key-Person Insurance",
+    "level": 1,
+    "context": "This chunk is located within Section 14, \"INSURABLE INTEREST REQUIREMENT\", specifically under subsection C7, \"Key-Person Insurance\". It discusses the concept of a key person in a business and how a business has an insurable interest in the life of such an individual, thus justifying Key-Person Insurance.",
+    "text": "<context>This chunk is located within Section 14, \"INSURABLE INTEREST REQUIREMENT\", specifically under subsection C7, \"Key-Person Insurance\". It discusses the concept of a key person in a business and how a business has an insurable interest in the life of such an individual, thus justifying Key-Person Insurance.</context>\n# C7. Key-Person Insurance\n\n14.22 A key-person or key-man refers to an employee who is vital to the continued profitability of a business. Examples of a key-person can be a sales executive with valuable foreign contacts, or an inventor who creates new products. The loss of such a key-person can seriously affect the business profitability.\n\n14.23 Hence, a business enterprise will have an insurable interest in the life of such a key-person. Therefore, it is common for a business enterprise to effect insurance on the life of a key-person. The business enterprise is the proposer, and it has to show that its insurable interest in the key-person (life insured) warrants the level of cover required. The sum assured should be that required to compensate for the loss of profits on the death of the key-person and, in particular, to cover the expenses of recruiting, hiring and training a successor. This is why an underwriter usually request for such evidence like a Key-Person Insurance questionnaire, as well as the profit and loss statements of the company in the past three years, for the assessment of Key-Person Insurance applications.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000061",
+    "source_chunk_ids": [
+      "chapter_1__chunk_057"
+    ],
+    "chapter": "chapter_1",
+    "header": "15. PRINCIPLE OF INDEMNITY AND LIFE INSURANCE",
+    "level": 1,
+    "context": "This chunk is a detailed explanation of the principle of indemnity and its non-applicability to life insurance, discussing why human life's value cannot be priced and how insurers determine the sum assured in life insurance and personal accident insurance.",
+    "text": "<context>This chunk is a detailed explanation of the principle of indemnity and its non-applicability to life insurance, discussing why human life's value cannot be priced and how insurers determine the sum assured in life insurance and personal accident insurance.</context>\n# 15. PRINCIPLE OF INDEMNITY AND LIFE INSURANCE\n\n15.1 As a representative, you must always uphold the highest standards of integrity and professionalism, and give advice to your clients that is fair and objective, and in the clients’ best interests at all times.\n\n15.2 As mentioned earlier, insurance seeks to compensate an insured only for the loss that he has sustained. Insurance is not intended to enable him to profit from the misfortune. This is in accordance with the principle of indemnity which states that the financial position of an insured is to be restored approximately to the position that existed immediately prior to the occurrence of the loss. The purposes of employing this principle in insurance are to prevent the insureds from profiting from insurance and at the same time to reduce moral hazard that can be exercised by some insureds.\n\n15.3 For an indemnity principle to work, a number of factors will need to be considered. Amongst these are: the insured must show that he has suffered a loss in monetary terms. Losses based only on factors such as sentimental value cannot be included. Secondly, the insured must establish the extent and value of his loss. Thirdly, the insured is not entitled to recover more than the amount of the loss from a single loss, irrespective of the number of policies that he has in respect of the same property.\n\n5.4 The principle of indemnity applies to General Insurance as well as Health Insurance. However, it does not apply to Life Insurance and Personal Accident Insurance. It is because we cannot price the value of a human life. Neither can we depreciate a human value. In life insurance, therefore, insurers use the sum assured that an insured wants to purchase, provided that the amount is reasonable. Personal Accident Insurance is another line of insurance where insurers do not use the principle of indemnity Instead, they provide an agreed amount, e.g. $\\$ 600$ per week for loss of income or $\\$ \\$ 200,000$ for loss of one limb. Note that, however, in Life and Personal Accident Insurance, the principle of indemnity is not totally overlooked, in the sense that",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000062",
+    "source_chunk_ids": [
+      "chapter_1__chunk_057"
+    ],
+    "chapter": "chapter_1",
+    "header": "15. PRINCIPLE OF INDEMNITY AND LIFE INSURANCE",
+    "level": 1,
+    "context": "This chunk discusses the principle of indemnity and its inapplicability to life and personal accident insurance, followed by underwriting practices used by insurers to mitigate potential issues with sum assured amounts in these types of policies.",
+    "text": "<context>This chunk discusses the principle of indemnity and its inapplicability to life and personal accident insurance, followed by underwriting practices used by insurers to mitigate potential issues with sum assured amounts in these types of policies.</context>\ninsurers do not use the principle of indemnity Instead, they provide an agreed amount, e.g. $\\$ 600$ per week for loss of income or $\\$ \\$ 200,000$ for loss of one limb. Note that, however, in Life and Personal Accident Insurance, the principle of indemnity is not totally overlooked, in the sense that the financial benefits are kept approximately in line with the insured’s likely earnings that he could have made if having not suffered from the loss. For this, insurers often exercise the following underwriting practices:\n\n(a) Insured’s ability to afford premiums. In theory, Life Insurance and Personal Accident policies can have an unlimited sum assured. In practice, however, the sum assured tends to be restricted by the ability or willingness of an insured to pay the required premium. The sum assured, thus, reflects the insured’s current wealth and future earnings power; and\n\n(b) Direct action by the insurer. A sum assured which seems to be well in excess of reasonable and customary amounts, say, based on the age and occupation of the insured, may put the insurers on alert for the risk of fraud. Also, in Personal Accident Insurance, any such a policy granting weekly benefits far in excess of the insured’s normal earnings could catch the insurer’s attention.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000063",
+    "source_chunk_ids": [
+      "chapter_1__chunk_058"
+    ],
+    "chapter": "chapter_1",
+    "header": "16. STRUCTURE OF THE SINGAPORE INSURANCE MARKET",
+    "level": 1,
+    "context": "This chunk introduces the structure of the Singapore insurance market, outlining its key components: buyers, sellers, and intermediaries, as a precursor to discussing the roles and types of these participants.",
+    "text": "<context>This chunk introduces the structure of the Singapore insurance market, outlining its key components: buyers, sellers, and intermediaries, as a precursor to discussing the roles and types of these participants.</context>\n# 16. STRUCTURE OF THE SINGAPORE INSURANCE MARKET\n\n16.1 We will now briefly introduce the structure of the Singapore insurance market. Like any other market, the Singapore insurance market comprises:\n\nbuyers; sellers; and intermediaries.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000064",
+    "source_chunk_ids": [
+      "chapter_1__chunk_059"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Buyers",
+    "level": 1,
+    "context": "This chunk is located within Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", specifically under subsection A, \"Buyers\". This section broadly outlines the key players in the Singapore insurance market, categorizing them into buyers, sellers, and intermediaries. The \"Buyers\" subsection details the different entities that purchase insurance products.",
+    "text": "<context>This chunk is located within Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", specifically under subsection A, \"Buyers\". This section broadly outlines the key players in the Singapore insurance market, categorizing them into buyers, sellers, and intermediaries. The \"Buyers\" subsection details the different entities that purchase insurance products.</context>\n# A. Buyers\n\n16.2 The buyers of insurance are those who need insurance as follows:\n\nindividuals (including sole proprietors);   \ncommercial enterprises (such as multinational corporations, small and medium enterprises, partnerships, companies, etc.); and   \ngovernment (including its various agencies, ministries and statutory boards).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000065",
+    "source_chunk_ids": [
+      "chapter_1__chunk_060"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Sellers",
+    "level": 1,
+    "context": "This chunk is part of section 16, which describes the structure of the Singapore insurance market. It specifically focuses on the \"Sellers\" in the market, detailing the types of direct insurers and reinsurers.",
+    "text": "<context>This chunk is part of section 16, which describes the structure of the Singapore insurance market. It specifically focuses on the \"Sellers\" in the market, detailing the types of direct insurers and reinsurers.</context>\n# B. Sellers\n\n16.3 Sellers may include direct insurers (which include: life insurers, general insurers, and composite insurers), reinsurers (which include life reinsurers, general reinsurers and composite reinsurers); captive insurers and Lloyd’s Asia Scheme. In the context of life insurance, we will briefly explain the following sellers:\n\nDirect Insurers; and Reinsurers.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000066",
+    "source_chunk_ids": [
+      "chapter_1__chunk_061"
+    ],
+    "chapter": "chapter_1",
+    "header": "B1. Sellers – Direct Insurers",
+    "level": 1,
+    "context": "This chunk is part of Section 16, which describes the structure of the Singapore insurance market. Specifically, it details the role and licensing of direct insurers as sellers of insurance products.",
+    "text": "<context>This chunk is part of Section 16, which describes the structure of the Singapore insurance market. Specifically, it details the role and licensing of direct insurers as sellers of insurance products.</context>\n# B1. Sellers – Direct Insurers\n\n16.4 These are the insurance companies which exist primarily to provide insurance products to buyers in Singapore. All insurance companies carrying on any class of insurance business in Singapore must be licensed under the Insurance Act 1966 for that class of business and are supervised by the Monetary Authority of Singapore (MAS). The direct insurance companies in Singapore sell ordinary life or general business (or both in the case of composite insurance companies). The principal function of these direct insurers, also termed as primary insurers, is to accept the transfer of risks from their personal or commercial customers at appropriate premiums.\n\n16.5 Insurance companies may be organised as private companies or public companies or co-operatives. Co-operatives are business organisations owned by the members who use their services. When a co-operative is set up to provide for the insurance needs of its members, all policy owners of the insurance co-operative become its members and co-owners of the company. Co-operative societies are licensed insurers registered under the Co-operative Societies Act 1979.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000067",
+    "source_chunk_ids": [
+      "chapter_1__chunk_062"
+    ],
+    "chapter": "chapter_1",
+    "header": "B2. Sellers – Reinsurers",
+    "level": 1,
+    "context": "This chunk is located within the section detailing the structure of the Singapore insurance market, specifically under the subsection discussing \"Sellers.\" It elaborates on the role and function of reinsurers within this market structure.",
+    "text": "<context>This chunk is located within the section detailing the structure of the Singapore insurance market, specifically under the subsection discussing \"Sellers.\" It elaborates on the role and function of reinsurers within this market structure.</context>\n# B2. Sellers – Reinsurers\n\n16.6 Just as people transfer risk by buying insurance, insurers may also transfer risk by buying insurance from other insurers. For example, one insurer may buy insurance from another to cover part or all of a risk that the first company will not or cannot undertake itself. The process of transferring risk from one insurer to another is called reinsurance. The company seeking reinsurance is the ceding company. The company accepting the risk is called the reinsurer. Reinsurers that desire to carry on reinsurance business in Singapore must also be authorised under the Insurance Act 1966 and they may be life reinsurers or general reinsurers (or both in the case of composite reinsurers).\n\n16.7 Note that reinsurers only have insurers as customers; they do not take on business from individuals or other commercial enterprises.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000068",
+    "source_chunk_ids": [
+      "chapter_1__chunk_063"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Intermediaries",
+    "level": 1,
+    "context": "This chunk is part of Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", specifically under subsection C, \"Intermediaries\". It details the role and types of insurance intermediaries in Singapore, including agents, brokers, and representatives of insurers, banks, and financial advisory firms.",
+    "text": "<context>This chunk is part of Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", specifically under subsection C, \"Intermediaries\". It details the role and types of insurance intermediaries in Singapore, including agents, brokers, and representatives of insurers, banks, and financial advisory firms.</context>\n# C. Intermediaries\n\n16.8 Insurance can be purchased direct from the insurer or it can be purchased via intermediaries.\n\n16.9 An insurance intermediary means a person who, as an agent for one or more insurers or as an agent for insureds or intending insureds, arranges contracts of insurance in Singapore, and includes an insurance agent or an insurance broker. In legal terms every intermediary is an agent, i.e. one who is authorised by a party, called the principal, to bring that principal into a contractual relationship with another party. In the next section, we will describe the various types of intermediaries or representatives selling or advising on life insurance products in Singapore.\n\n16.10 In Singapore, intermediaries selling life and health insurance products are termed as representatives and they can be representatives of either life insurance companies (insurers) or banks or other financial institutions or financial adviser firms. The licensing of financial advisers and their representatives is governed by the Financial Advisers Act (FAA) 2001. The various types of representatives are further explained as follows:\n\n(a) Representative Of A Life Insurance Company (Insurer)\n\nHe represents one insurer only and can advise the customer on the products of that insurer. He may also advise the customer on the products of other financial institutions, as long as the insurer has an agreement to distribute those products.\n\n(b) Representative Of A Bank Or Other Financial Institution\n\nHe represents one bank or one other financial institution only and can advise the customer on the products of one or more insurers with whom the bank or financial institution has an agreement to distribute those products.\n\nThe representative has to tell the customer the insurer from which he can provide the products. Financial institutions include insurance brokers, securities firms, and finance companies.\n\n(c) Representative Of A Licensed And Exempt Financial Adviser (FA) Firm He represents one FA firm only, and can advise the customer on the products of one or more insurers with whom the FA firm has an agreement to distribute those products. All FA firms are licensed by the MAS.\n\nFA firms that meet certain conditions of",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000069",
+    "source_chunk_ids": [
+      "chapter_1__chunk_063"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Intermediaries",
+    "level": 1,
+    "context": "This chunk is part of the section detailing the intermediaries in the Singapore insurance market, specifically describing the role and licensing of representatives of Licensed and Exempt Financial Adviser (FA) Firms, including Independent Financial Advisers (IFAs).",
+    "text": "<context>This chunk is part of the section detailing the intermediaries in the Singapore insurance market, specifically describing the role and licensing of representatives of Licensed and Exempt Financial Adviser (FA) Firms, including Independent Financial Advisers (IFAs).</context>\nFinancial Adviser (FA) Firm He represents one FA firm only, and can advise the customer on the products of one or more insurers with whom the FA firm has an agreement to distribute those products. All FA firms are licensed by the MAS.\n\nFA firms that meet certain conditions of the FAA may qualify to be \"Independent Financial Adviser\" (IFA) firms. Some of those conditions in the FAA Guidelines will mean that the IFA representative can provide and advise on the products of at least four insurers. He will clearly show the customer that he does not have financial or commercial links with these insurers that can influence his recommendations for the customer.\n\nFor the purpose of this Study Text, we use the term “advisers” interchangeably with “representatives”.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000070",
+    "source_chunk_ids": [
+      "chapter_1__chunk_064"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. Introducer Of Life Insurance Advisory Services",
+    "level": 1,
+    "context": "This chunk is part of Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET,\" specifically under subsection C, \"Intermediaries,\" which details the various entities involved in selling or advising on insurance products. This particular subsection defines the role and limitations of introducers in the life insurance advisory services sector.",
+    "text": "<context>This chunk is part of Section 16, \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET,\" specifically under subsection C, \"Intermediaries,\" which details the various entities involved in selling or advising on insurance products. This particular subsection defines the role and limitations of introducers in the life insurance advisory services sector.</context>\n# D. Introducer Of Life Insurance Advisory Services\n\n16.11 FAs may appoint introducers to introduce their services to the consumer. Introducers may be a corporation or an individual person. The introducer must clearly tell the consumer whether he is paid by the FA, and how much, for making the introduction, if he is asked.\n\n16.12 The introducer is not authorised to give product advice, provide any product recommendations, or market or arrange any contract of insurance.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000071",
+    "source_chunk_ids": [
+      "chapter_1__chunk_065"
+    ],
+    "chapter": "chapter_1",
+    "header": "E. Web Aggregators",
+    "level": 1,
+    "context": "This chunk is located within section 16, titled \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", and specifically under subsection \"E. Web Aggregators\". This section discusses the various players and distribution channels within the Singapore insurance market, with this part focusing on the role and definition of web aggregators as a modern distribution channel for insurance products.",
+    "text": "<context>This chunk is located within section 16, titled \"STRUCTURE OF THE SINGAPORE INSURANCE MARKET\", and specifically under subsection \"E. Web Aggregators\". This section discusses the various players and distribution channels within the Singapore insurance market, with this part focusing on the role and definition of web aggregators as a modern distribution channel for insurance products.</context>\n# E. Web Aggregators\n\n16.13 A web aggregator is intended as a way to leverage on technology to make it easier for consumers to compare products. Web aggregators compile and provide information about insurance policies of various insurance companies on a website. Web aggregators are different from other distribution channels, as they are designed to be a self-help tool for the customers.\n\n16.14 As per Section 39(8) of the Insurance Act 1966, “web aggregator” means an Internet portal or domain on the Internet which the Authority (i.e. MAS), or such person as the Authority may appoint, create, develop and operate for the purposes of publishing certain information from time to time. The purpose of such information in the internet portal is to assist any person in the purchase of a policy.\n\n16.15 Section 39 of the Insurance Act 1966 also stipulates that the Authority may, by regulations made or written notice, require a licensed insurer or class of licensed insurers to provide to the Authority, such information as the Authority may require for the purposes of the web aggregator.\n\n16.16 Personal lines, such as Health Insurance, Travel Insurance and Private Motor Car Insurance are usually displayed and promoted by the web aggregators such as Singsaver at https://insurance.singsaver.com.sg/home, Moneysmart at https://www.moneysmart.sg/insurance etc. These web aggregators tend to be personal insurance comparison sites designed to make it easier for customers to shop for and compare selected insurers’ quotes and terms for Motor, Travel, Health Insurance, etc. Certain web aggregators work directly with the major insurers and intermediaries in Singapore, so that products can be easily bought at one place.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000072",
+    "source_chunk_ids": [
+      "chapter_1__chunk_066"
+    ],
+    "chapter": "chapter_1",
+    "header": "17. OTHER RELEVANT ORGANISATIONS",
+    "level": 1,
+    "context": "This chunk appears in a section detailing various entities and organizations relevant to the insurance industry in Singapore, following discussions on insurance products, market structure, and preceding a section on the MoneySense program.",
+    "text": "<context>This chunk appears in a section detailing various entities and organizations relevant to the insurance industry in Singapore, following discussions on insurance products, market structure, and preceding a section on the MoneySense program.</context>\n# 17. OTHER RELEVANT ORGANISATIONS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_1__small_000073",
+    "source_chunk_ids": [
+      "chapter_1__chunk_067"
+    ],
+    "chapter": "chapter_1",
+    "header": "A. Rating Agencies",
+    "level": 1,
+    "context": "This chunk is located in Section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically under subsection A, \"Rating Agencies.\" It discusses the role of rating agencies in assessing the financial strength and creditworthiness of financial institutions, including insurers, and how their ratings can inform decisions about choosing insurance carriers.",
+    "text": "<context>This chunk is located in Section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically under subsection A, \"Rating Agencies.\" It discusses the role of rating agencies in assessing the financial strength and creditworthiness of financial institutions, including insurers, and how their ratings can inform decisions about choosing insurance carriers.</context>\n# A. Rating Agencies\n\n17.1 Rating agencies play an increasingly important role in the capital markets today, by providing an independent assessment and opinion on the overall financial capacity or credit worthiness of financial institutions that issue a broad range of capital market instruments, such as debt obligations, securities, etc. These ratings typically categorise the financial institutions into different bands represented by letter grades (e.g. AAA, AA, A, BBB, BB, etc.) that reflect the rating agency’s opinion on the relative credit worthiness of institution, in terms of likelihood of default, credit stability, ability or willingness to meet its financial obligations, etc.\n\n17.2 In the case of insurance ratings, the rating will typically reflect an independent assessment of the insurer’s financial strength and ability to meet its ongoing insurance policy and contract obligations. Such ratings may help an insurance or reinsurance buyer or broker to make an informed decision on their choice of insurance or reinsurance carrier.\n\n17.3 Rating agencies are increasingly incorporating sustainability and environmental, social and governance (ESG) issues as far as rating methodologies are concerned.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000074",
+    "source_chunk_ids": [
+      "chapter_1__chunk_068"
+    ],
+    "chapter": "chapter_1",
+    "header": "B. Market Associations",
+    "level": 1,
+    "context": "This chunk discusses market associations within the Singapore insurance market, providing examples of organizations that represent various sectors of the industry. It is part of the section detailing the structure of the Singapore insurance market.",
+    "text": "<context>This chunk discusses market associations within the Singapore insurance market, providing examples of organizations that represent various sectors of the industry. It is part of the section detailing the structure of the Singapore insurance market.</context>\n# B. Market Associations\n\n17.4 Just as there are trade associations representing companies in other markets, there are trade associations in Singapore representing the insurance companies and intermediaries. The main function of such associations is to protect, promote and advance the common interest of their members.\n\n17.5 Examples of such associations are:\n\nhierarchical_json: {\"table_id\": \"chapter_1__chunk_068__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Association\", \"Representing\"], [\"Association of Financial Advisers (Singapore)[AFA(S)]\", \"financial advisers\"], [\"General Insurance Association of Singapore (GlA)\", \"direct generalinsurers\"], [\"Life Insurance Association of Singapore (LIA)\", \"direct life insurers\"], [\"Loss Adjusters Association (Singapore) (LAAS)\", \"loss adjusters\"], [\"Reinsurance Broker's Association (Singapore)(RBAS)\", \"reinsurance brokers\"], [\"Singapore Insurance Brokers' Association (SIBA)\", \"general insurancebrokers\"], [\"Singapore Reinsurers' Association (SRA)\", \"general, life andcomposite reinsurers\"], [\"Singapore Fintech Association (SFA)\", \"FinTech community\"]], \"headers\": {\"column_headers\": [\"Representing\"], \"row_headers\": [\"Association of Financial Advisers (Singapore)[AFA(S)]\", \"General Insurance Association of Singapore (GlA)\", \"Life Insurance Association of Singapore (LIA)\", \"Loss Adjusters Association (Singapore) (LAAS)\", \"Reinsurance Broker's Association (Singapore)(RBAS)\", \"Singapore Insurance Brokers' Association (SIBA)\", \"Singapore Reinsurers' Association (SRA)\", \"Singapore Fintech Association (SFA)\"]}, \"rows\": [{\"row_header\": \"Association of Financial Advisers (Singapore)[AFA(S)]\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"financial advisers\"}]}, {\"row_header\": \"General Insurance Association of Singapore (GlA)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"direct generalinsurers\"}]}, {\"row_header\": \"Life Insurance Association of Singapore (LIA)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"direct life insurers\"}]}, {\"row_header\": \"Loss Adjusters Association (Singapore) (LAAS)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"loss adjusters\"}]}, {\"row_header\": \"Reinsurance Broker's Association (Singapore)(RBAS)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"reinsurance brokers\"}]}, {\"row_header\": \"Singapore Insurance Brokers' Association (SIBA)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"general insurancebrokers\"}]}, {\"row_header\": \"Singapore Reinsurers' Association (SRA)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"general, life andcomposite reinsurers\"}]}, {\"row_header\": \"Singapore Fintech Association (SFA)\", \"cells\": [{\"column_header\": \"Representing\", \"value\": \"FinTech community\"}]}]}\n\ntable narrative: [\"The Association of Financial Advisers (Singapore) [AFA(S)] represents financial advisers.\", \"The General Insurance Association of Singapore (GlA) represents direct general insurers.\", \"The Life Insurance Association of Singapore (LIA) represents direct life insurers.\", \"The Loss Adjusters Association (Singapore) (LAAS) represents loss adjusters.\", \"The Reinsurance Broker's Association (Singapore) (RBAS) represents reinsurance brokers.\", \"The Singapore Insurance Brokers' Association (SIBA) represents general insurance brokers.\", \"The Singapore Reinsurers' Association (SRA) represents general, life and composite reinsurers.\", \"The Singapore Fintech Association (SFA) represents the FinTech community.\"]",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_1__chunk_068__table_01",
+        "table_type": "unknown",
+        "purpose": "unknown",
+        "dimensions": {
+          "row": "The name of the insurance-related trade association in Singapore.",
+          "col": "The group or type of entity that the association represents.",
+          "value": "The group or type of entity that the association represents."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_1__chunk_068__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Association",
+              "Representing"
+            ],
+            [
+              "Association of Financial Advisers (Singapore)[AFA(S)]",
+              "financial advisers"
+            ],
+            [
+              "General Insurance Association of Singapore (GlA)",
+              "direct generalinsurers"
+            ],
+            [
+              "Life Insurance Association of Singapore (LIA)",
+              "direct life insurers"
+            ],
+            [
+              "Loss Adjusters Association (Singapore) (LAAS)",
+              "loss adjusters"
+            ],
+            [
+              "Reinsurance Broker's Association (Singapore)(RBAS)",
+              "reinsurance brokers"
+            ],
+            [
+              "Singapore Insurance Brokers' Association (SIBA)",
+              "general insurancebrokers"
+            ],
+            [
+              "Singapore Reinsurers' Association (SRA)",
+              "general, life andcomposite reinsurers"
+            ],
+            [
+              "Singapore Fintech Association (SFA)",
+              "FinTech community"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Representing"
+            ],
+            "row_headers": [
+              "Association of Financial Advisers (Singapore)[AFA(S)]",
+              "General Insurance Association of Singapore (GlA)",
+              "Life Insurance Association of Singapore (LIA)",
+              "Loss Adjusters Association (Singapore) (LAAS)",
+              "Reinsurance Broker's Association (Singapore)(RBAS)",
+              "Singapore Insurance Brokers' Association (SIBA)",
+              "Singapore Reinsurers' Association (SRA)",
+              "Singapore Fintech Association (SFA)"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Association of Financial Advisers (Singapore)[AFA(S)]",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "financial advisers"
+                }
+              ]
+            },
+            {
+              "row_header": "General Insurance Association of Singapore (GlA)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "direct generalinsurers"
+                }
+              ]
+            },
+            {
+              "row_header": "Life Insurance Association of Singapore (LIA)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "direct life insurers"
+                }
+              ]
+            },
+            {
+              "row_header": "Loss Adjusters Association (Singapore) (LAAS)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "loss adjusters"
+                }
+              ]
+            },
+            {
+              "row_header": "Reinsurance Broker's Association (Singapore)(RBAS)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "reinsurance brokers"
+                }
+              ]
+            },
+            {
+              "row_header": "Singapore Insurance Brokers' Association (SIBA)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "general insurancebrokers"
+                }
+              ]
+            },
+            {
+              "row_header": "Singapore Reinsurers' Association (SRA)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "general, life andcomposite reinsurers"
+                }
+              ]
+            },
+            {
+              "row_header": "Singapore Fintech Association (SFA)",
+              "cells": [
+                {
+                  "column_header": "Representing",
+                  "value": "FinTech community"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The Association of Financial Advisers (Singapore) [AFA(S)] represents financial advisers.",
+          "The General Insurance Association of Singapore (GlA) represents direct general insurers.",
+          "The Life Insurance Association of Singapore (LIA) represents direct life insurers.",
+          "The Loss Adjusters Association (Singapore) (LAAS) represents loss adjusters.",
+          "The Reinsurance Broker's Association (Singapore) (RBAS) represents reinsurance brokers.",
+          "The Singapore Insurance Brokers' Association (SIBA) represents general insurance brokers.",
+          "The Singapore Reinsurers' Association (SRA) represents general, life and composite reinsurers.",
+          "The Singapore Fintech Association (SFA) represents the FinTech community."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000075",
+    "source_chunk_ids": [
+      "chapter_1__chunk_069"
+    ],
+    "chapter": "chapter_1",
+    "header": "C. Professional Bodies",
+    "level": 1,
+    "context": "This chunk is located within Section 17, which provides an overview of the Singapore insurance market. Specifically, it falls under the subsection detailing \"Market Associations\" and \"Professional Bodies,\" which are organizations that support and represent professionals within the insurance industry.",
+    "text": "<context>This chunk is located within Section 17, which provides an overview of the Singapore insurance market. Specifically, it falls under the subsection detailing \"Market Associations\" and \"Professional Bodies,\" which are organizations that support and represent professionals within the insurance industry.</context>\n# C. Professional Bodies\n\n17.6 A professional body is usually a non-profit organisation that exists to further the interests of a particular profession, by representing the views of that profession and its members in matters of public and professional interests. Examples of insurance-related professional bodies are:\n\nAssociation of Singapore Insurance Agents (ASIA);   \nFinancial Planning Association of Singapore (FPAS);   \nFinancial Services Managers Association (FSMA);   \nInsurance and Financial Practitioners Association of Singapore (IFPAS);   \nSingapore Actuarial Society (SAS);   \nSingapore Insurance Institute (SII); and The Association of Financial Advisers (AFAS).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000076",
+    "source_chunk_ids": [
+      "chapter_1__chunk_070"
+    ],
+    "chapter": "chapter_1",
+    "header": "D. Financial Industry Disputes Resolution Centre (FIDReC)",
+    "level": 1,
+    "context": "This chunk discusses the Financial Industry Disputes Resolution Centre (FIDReC) as a dispute resolution mechanism within the broader context of the Singapore insurance market structure and consumer protection.",
+    "text": "<context>This chunk discusses the Financial Industry Disputes Resolution Centre (FIDReC) as a dispute resolution mechanism within the broader context of the Singapore insurance market structure and consumer protection.</context>\n# D. Financial Industry Disputes Resolution Centre (FIDReC)\n\nIn this section, we will briefly touch on the role of FIDReC, including the set-up of FIDReC and its dispute resolution process.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000077",
+    "source_chunk_ids": [
+      "chapter_1__chunk_071"
+    ],
+    "chapter": "chapter_1",
+    "header": "D1. Mission And Background Of FIDReC",
+    "level": 1,
+    "context": "This chunk is part of Section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically subsection D, which details the Financial Industry Disputes Resolution Centre (FIDReC). It outlines FIDReC's mission and background, emphasizing its role as an independent and impartial dispute resolution center for consumers and financial institutions in Singapore.",
+    "text": "<context>This chunk is part of Section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically subsection D, which details the Financial Industry Disputes Resolution Centre (FIDReC). It outlines FIDReC's mission and background, emphasizing its role as an independent and impartial dispute resolution center for consumers and financial institutions in Singapore.</context>\n# D1. Mission And Background Of FIDReC\n\n17.8 FIDreC was launched in August 2005, as part of an initiative by the Monetary Authority of Singapore (MAS) to create a one-stop centre for the resolution of all retail disputes with financial institutions.\n\n17.9 FIDReC’s mission is to provide an affordable alternative dispute resolution scheme that is independent and impartial, so as to encourage and assist in the resolution of disputes between consumers and financial institutions in an\n\namicable and fair manner. Disputes lodged with FIDReC are usually resolved within 6 months, without the involvement of external lawyers.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000078",
+    "source_chunk_ids": [
+      "chapter_1__chunk_072"
+    ],
+    "chapter": "chapter_1",
+    "header": "D2. Jurisdiction Of FIDReC",
+    "level": 1,
+    "context": "This chunk is part of Section 17, \"OTHER RELEVANT ORGANISATIONS\", specifically subsection D, \"Financial Industry Disputes Resolution Centre (FIDReC)\". It details the jurisdiction and scope of FIDReC's dispute resolution services for consumers and financial institutions.",
+    "text": "<context>This chunk is part of Section 17, \"OTHER RELEVANT ORGANISATIONS\", specifically subsection D, \"Financial Industry Disputes Resolution Centre (FIDReC)\". It details the jurisdiction and scope of FIDReC's dispute resolution services for consumers and financial institutions.</context>\n# D2. Jurisdiction Of FIDReC\n\n17.10 The jurisdiction of FIDReC in adjudicating disputes between consumers and financial institutions is as follows:\n\n(a) For claims between insureds and insurance companies: up to $\\$ 100,000$ per claim.   \n(b) For disputes between banks and consumers, capital market disputes and all other disputes: up to $\\$ 100,000$ per claim.\n\n17.11 Generally, FIDReC only handles disputes between financial institutions who are its subscribers and consumers. The financial institution must also have had the opportunity to resolve the dispute with the consumer first.\n\n17.12 The following qualify as consumers:\n\n(a) Individuals or sole proprietors who have a customer relationship with a financial institution;   \n(b) Persons who have a beneficial interest in the activity;   \n(c) A trustee or personal representative;   \n(d) An insured; or   \n(e) Third parties who have third-party coverage under an insurance contract.\n\n17.13 The following complaints cannot be brought before FIDReC:\n\n■ Commercial decisions; Pricing policies and other policies such as interest rates and fees;   \n Cases under investigation by any law enforcement agency; Cases concerning principal agent issues;   \n Complaints that are more than 6 months after the financial institution's final reply; Complaints that have been settled between the consumer and the financial institution; and Cases that have been subjected to a court hearing and for which a court judgment or order has been passed.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000079",
+    "source_chunk_ids": [
+      "chapter_1__chunk_073"
+    ],
+    "chapter": "chapter_1",
+    "header": "D3. FIDReC’s Dispute Resolution Process",
+    "level": 1,
+    "context": "This chunk is part of section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically within subsection D, \"Financial Industry Disputes Resolution Centre (FIDReC),\" detailing FIDReC's dispute resolution process.",
+    "text": "<context>This chunk is part of section 17, \"OTHER RELEVANT ORGANISATIONS,\" specifically within subsection D, \"Financial Industry Disputes Resolution Centre (FIDReC),\" detailing FIDReC's dispute resolution process.</context>\n# D3. FIDReC’s Dispute Resolution Process\n\n17.14 The dispute resolution process of FIDReC comprises: Complaint Filing (1st Stage) Mediation $( 2 ^ { \\mathsf { n d } }$ Stage) and Adjudication $| 3 ^ { \\mathsf { r d } }$ Stage).\n\n(a) Complaint Filing (1st Stage) Consumer lodges complaint at FIDReC and Case Manager verifies if the complaint is within FIDReC’s jurisdiction.\n\n(b) Mediation $( 2 ^ { \\mathsf { n d } }$ Stage)\n\nWhen a complaint is first received, the Case Manager will arrange mediation to facilitate discussions between disputants with the objective of reaching a settlement. This service is free of charge for consumers. However, the financial institution must pay a fee of $\\$ 50$ for the cost of mediation per claim (excluding GST).\n\n(c) Adjudication $( 3 ^ { \\mathsf { r d } }$ Stage)\n\nWhere the dispute is not settled by mediation, the consumer can choose to allow an Adjudicator to decide the case on the facts and merits. Under the FIDReC scheme, the cost of adjudication per claim is $\\$ 50$ for the consumer (excluding GST) and $\\$ 500$ for the financial institution (excluding GST).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000080",
+    "source_chunk_ids": [
+      "chapter_1__chunk_074"
+    ],
+    "chapter": "chapter_1",
+    "header": "D4. Filing A Complaint",
+    "level": 1,
+    "context": "This chunk details the process of filing a complaint with the Financial Industry Disputes Resolution Centre (FIDReC), outlining the stages of complaint filing, mediation, and adjudication. It falls under Section 17 \"OTHER RELEVANT ORGANISATIONS\", specifically subsection D \"Financial Industry Disputes Resolution Centre (FIDReC)\".",
+    "text": "<context>This chunk details the process of filing a complaint with the Financial Industry Disputes Resolution Centre (FIDReC), outlining the stages of complaint filing, mediation, and adjudication. It falls under Section 17 \"OTHER RELEVANT ORGANISATIONS\", specifically subsection D \"Financial Industry Disputes Resolution Centre (FIDReC)\".</context>\n# D4. Filing A Complaint\n\n17.15 The process of initiating a complaint with FIDReC is simple:\n\n(a) Any consumer who has a dispute that he has not been able to resolve with a financial institution can file a complaint free of charge with FIDReC either in person or via fax, post or e-mail.   \n(b) On receipt, a Case Manager will process the complaint. If the complaint is within FIDReC's jurisdiction, the Case Manager will take it up with the financial institution concerned, and will facilitate a resolution of the dispute if possible through case management and mediation. This service is free of charge to consumers.   \n(c) If a resolution cannot be reached, the consumer may then choose to take his complaint further by referring the dispute to the Adjudicator or a Panel of Adjudicators for adjudication. The consumer needs to pay an adjudication case fee when his case proceeds to adjudication.\n\n17.16 The decision of the Adjudicator or Panel is final and binding on the financial institution, but not on the consumer. If the consumer is not satisfied with the decision, he has the option to continue to pursue the complaint through other channels or means such as litigation.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000081",
+    "source_chunk_ids": [
+      "chapter_1__chunk_075"
+    ],
+    "chapter": "chapter_1",
+    "header": "18. MONEYSENSE PROGRAMME",
+    "level": 1,
+    "context": "This chunk is part of a larger document discussing various aspects of insurance. Specifically, it falls under a section detailing financial literacy programs and resources available in Singapore, focusing on the MoneySense program and its objectives.",
+    "text": "<context>This chunk is part of a larger document discussing various aspects of insurance. Specifically, it falls under a section detailing financial literacy programs and resources available in Singapore, focusing on the MoneySense program and its objectives.</context>\n# 18. MONEYSENSE PROGRAMME\n\n18.1 As a representative, you must always uphold the highest standards of integrity and professionalism, and give advice to your clients that is fair and objective, and in the clients’ best interests at all times.\n\n18.2 MoneySense is Singapore’s national financial education programme, started in 2003. Our aim is to help Singaporeans to manage their money well, and make sound financial decisions on their own. The MoneySENSE programme covers three tiers of financial literacy:\n\nTier I - Basic Money Management - covers skills in budgeting and saving, and the responsible use of credit;\n\nTier II - Financial Planning - equips Singaporeans with the skills and knowledge to plan for their long-term financial needs; and Tier III - Investment Know-How - imparts knowledge about the different investment products and skills for investing.\n\n18.3 Listed below are a number of consumer guides that are produced under the MoneySENSE programme:\n\n Your Guide To Health Insurance; Your Guide To Life Insurance; Your Guide To Investment-Linked Insurance Plans; Your Guide To Participating Policies; and Your Guide To The Nomination Of Insurance Nominees 2015.\n\n18.4 The MoneySenseCore Financial Capabilities Framework identifies five core financial capabilities. The capabilities aim to help individuals apply their knowledge and skills across the different tiers of financial literacy when making financial decisions. The five core financial capabilities are as follows:\n\nUnderstanding money is about having the numeracy skills to evaluate the costs and benefits of options available. It is also about understanding how economic conditions can affect a person.   \nUnderstanding yourself, your rights and responsibilities is about knowing how personal circumstances, like how much a person earns, his or her age, the number of children he or she has, affect his or her financial decisions. It is also important to know your rights and responsibilities as a consumer of financial products and services.   \nManaging everyday money is about being able to budget, to live within one’s means and to use credit facilities responsibly (e.g. for major items like buying a home).   \nPlanning ahead is about being able to put together a financial plan to help one manage one’s resources",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000082",
+    "source_chunk_ids": [
+      "chapter_1__chunk_075"
+    ],
+    "chapter": "chapter_1",
+    "header": "18. MONEYSENSE PROGRAMME",
+    "level": 1,
+    "context": "This chunk is part of Section 18, \"MONEYSENSE PROGRAMME,\" which outlines Singapore's national financial education program. Specifically, it details the core financial capabilities emphasized in the MoneySENSE program, following a description of its three tiers of financial literacy.",
+    "text": "<context>This chunk is part of Section 18, \"MONEYSENSE PROGRAMME,\" which outlines Singapore's national financial education program. Specifically, it details the core financial capabilities emphasized in the MoneySENSE program, following a description of its three tiers of financial literacy.</context>\nfinancial products and services.   \nManaging everyday money is about being able to budget, to live within one’s means and to use credit facilities responsibly (e.g. for major items like buying a home).   \nPlanning ahead is about being able to put together a financial plan to help one manage one’s resources (e.g. income, debt, savings and investments) prudently.   \nSelecting financial products is about understanding the purpose, features, risks and costs of common financial products (e.g. debit and credit cards, loans, insurance, and investments), the key factors to consider and questions to ask before deciding whether to take up a product.\n\n18.5 Details of these Consumer Guides, including others can be viewed at the websites of MoneySENSE and/or LIA.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000083",
+    "source_chunk_ids": [
+      "chapter_1__chunk_076"
+    ],
+    "chapter": "chapter_1",
+    "header": "19. SINGAPORE DEPOSIT INSURANCE CORPORATION (SDIC)",
+    "level": 1,
+    "context": "This chunk is part of a section discussing other relevant organizations in the Singapore insurance market, specifically focusing on the role of the Singapore Deposit Insurance Corporation (SDIC) as a deposit insurance and policy owners' protection fund agency.",
+    "text": "<context>This chunk is part of a section discussing other relevant organizations in the Singapore insurance market, specifically focusing on the role of the Singapore Deposit Insurance Corporation (SDIC) as a deposit insurance and policy owners' protection fund agency.</context>\n# 19. SINGAPORE DEPOSIT INSURANCE CORPORATION (SDIC)\n\n19.1 SDIC is a company limited by guarantee (CLG) under the Companies Act, and it is set up by an act of parliament and has been designated to be the deposit insurance and policy owners’ protection fund agency under the Deposit Insurance and Policy Owners’ Protection Schemes Act 2011(DI-PPF Act 2011).\n\n19.2 Singapore Deposit Insurance Corporation Limited (SDIC) covers individuals and other non-bank depositors with insured deposits placed with a Deposit Insurance (DI) Scheme member. Other non-bank depositors include sole proprietorships, companies, associations and societies. All these persons would be insured depositors.\n\n19.3 For further details of the DI Scheme, refer to the SDIC website at: www.sdic.org.sg.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000084",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk is a chapter summary that defines and explains key concepts related to risk and insurance, including different types of risks, requirements for insurable risks, methods of dealing with risk, and personal risks that can be insured, culminating in a definition of a life insurance policy.",
+    "text": "<context>This chunk is a chapter summary that defines and explains key concepts related to risk and insurance, including different types of risks, requirements for insurable risks, methods of dealing with risk, and personal risks that can be insured, culminating in a definition of a life insurance policy.</context>\n# Chapter summary:\n\n- Definition or Explanation: Risk\nRisk is the possibility of loss, and there is an uncertainty element to it.\n\n- Definition or Explanation: Speculative risk\nSpeculative risk involves three possible outcomes: loss, gain, or no change.\n\n- Definition or Explanation: Pure risk\nPure risk involves no possibility of gain; either a loss occurs or no loss occurs.This is the only kind of risk that can be insured (provided that it meets certain otherrequirements)\n\n- Definition or Explanation: Requirements of insurable risks\nLoss must be significant in financial terms. Loss must occur by chance. Loss must be definite. Loss must be measurable. Loss must not be catastrophic to the insurer. Loss must be based on large number of insured.\n\n- Definition or Explanation: Dealing with risk Avoiding the risk\nFor example, we can avoid the risk of personal injury that may result from a carcollision by never driving a car.\n\n- Definition or Explanation: Dealing with risk Controlling the risk\nAn example will be to undergo a health screening examination yearly, when one reaches a certain age (e.g. 40 years old), so that one can detect and treat an illnessbefore it is too late.\n\n- Definition or Explanation: Dealing with risk Retaining the risk\nFor example,an employer can provide medical expense benefits to its employees, by either setting aside money to pay their medical expenses, or paying theexpenses out of its current income.\n\n- Definition or Explanation: Dealing with risk Transferring the risk\nFor example, a breadwinner may transfer his risk of premature death or disability to the insurer by paying a smal, predictable amount of premium to the insurer.\n\n- Definition or Explanation: Personal risks that can beinsured\nRisk of premature death. Risk of outliving resources or longevity risk. Risk of poor health and disablement.\n\n- Definition or Explanation: Life insurance policy\nAlife insurance policy is a contract which the insurer promises to pay a benefitupon the death of the person who is insured. As such, life insurance provides financial protection against the economic loss caused by the premature death of the person being insured. This benefit is commonly",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000085",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines key terms related to life insurance policies, including applicant, policy owner, life insured, beneficiary, third-party policy, and common insurance hazards like physical and moral hazard, as well as the concept of anti-selection. It appears in Section 5 and Section 7 of the document, which cover basic life insurance terms and hazards, respectively.",
+    "text": "<context>This chunk defines key terms related to life insurance policies, including applicant, policy owner, life insured, beneficiary, third-party policy, and common insurance hazards like physical and moral hazard, as well as the concept of anti-selection. It appears in Section 5 and Section 7 of the document, which cover basic life insurance terms and hazards, respectively.</context>\nLife insurance policy\nAlife insurance policy is a contract which the insurer promises to pay a benefitupon the death of the person who is insured. As such, life insurance provides financial protection against the economic loss caused by the premature death of the person being insured. This benefit is commonly known as Death Benefit.The insurer will pay a lump sum payment of the sum assured, plus bonuses ifapplicable,in the event of the life insured's death.\n\n- Definition or Explanation: Applicant of a lifeinsurance policy\nThe applicant (also known as the proposer)is the person or business that applies for an insurance policy.\n\n- Definition or Explanation: Policy owner of a life insurance policy\nWhen a policy is issued, the person or business that owns the insurance policy is known as the policy owner.\n\n- Definition or Explanation: Life insured of a lifeinsurance policy\nThe person who is insured by a life insurance policy is referred to as the life insured.\n\n- Definition or Explanation: Beneficiary of a life insurance policy\nThe person or party whom the policy owner named to receive the policy benefit.\n\n- Definition or Explanation: Third-party policy\nWhen one person purchases insurance on the life of another person.\n\n- Definition or Explanation: Physical hazard\nA physical hazard is a physical characteristic that may increase the likelihood of loss. For example,a person with a history of heart attacks possesses a physical hazard that willincrease the likelihood of that person dying sooner than that of a person of the same age and gender without such similar medical history.\n\n- Definition or Explanation: Moral hazard\nMoral hazard is the likelihood that a person may act dishonestly in the insurance transaction. For example, if an individual applies for a sum assured which is far in excess of what others in the same financial situation would buy,the insurer would be concerned about the reason for the high cover.\n\n- Definition or Explanation: Anti-selection\nIndividuals who believe they have a greater-than-average likelihood of loss tend to seek insurance protection to a greater extent than do those who believe they havean average or less-than-average likelihood",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000086",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines various insurance terms, including different types of life insurance (Term, Whole Life, Endowment, Universal Life), annuities, investment-linked policies, health insurance, and the uses of life insurance as a financial protection tool. It also touches upon concepts like moral hazard, anti-selection, and risk pooling.",
+    "text": "<context>This chunk defines various insurance terms, including different types of life insurance (Term, Whole Life, Endowment, Universal Life), annuities, investment-linked policies, health insurance, and the uses of life insurance as a financial protection tool. It also touches upon concepts like moral hazard, anti-selection, and risk pooling.</context>\nfinancial situation would buy,the insurer would be concerned about the reason for the high cover.\n\n- Definition or Explanation: Anti-selection\nIndividuals who believe they have a greater-than-average likelihood of loss tend to seek insurance protection to a greater extent than do those who believe they havean average or less-than-average likelihood of loss.\n\n- Definition or Explanation: Methods to minimise anti- selection\nUnderwriting or selection of risks.Offering policies with different excesses. Offering policies with pre-existing condition exclusions.\n\n- Definition or Explanation: Term insurance\nProvides a death benefit if the insured dies during a specified period.\n\n- Definition or Explanation: Whole life insurance\nWhole Life Insurance provides life insurance coverage throughout the insured's lifetime and also builds up cash values which can be used as a form of savings for the policy owner.\n\n- Definition or Explanation: Endowment insurance\nEndowment insurance provides a policy benefit that is paid either when the insured dies or on a stated date if the insured lives until then.\n\n- Definition or Explanation: Universal life insurance\nUniversal life insurance is a form of \"interest sensitive\"whole life insurance that offers a death benefit, and because of its flexible premium feature, provides the opportunity to build cash values which the policy owner can borrow from orwithdraw.\n\n- Definition or Explanation: Annuity\nAn annuity is a series of periodic income payments to a named individual in exchange for a premium or a series of premiums.\n\n- Definition or Explanation: Investment-linked LifeInsurance policies (ILPs)\nILPs provide a combination of protection and investment elements.\n\n- Definition or Explanation: Health insurance products\nThese products are designed to cover hospital expenses, surgical expenses andemergency accident outpatient expenses incurred as a result of accident, sicknessor disease commencing or occurring during the period of insurance.\n\n- Definition or Explanation: Life insurance as afinancial protection tool\nFinancial protection against premature death.Financial protection against outliving resources. Financial protection against ill health and disablement.》 Critical illness insurance. Medical expense insurance. Hospital cash (income) insurance. Disability income insurance.Long-term care insurance. Financial protection for businesses\n\n- Definition or Explanation: Other uses of lifeinsurance\nAssist in making savings possible. Provides a safe",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000087",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk summarizes key concepts and definitions related to life insurance, including its uses, risk pooling, the law of large numbers, and the principle of utmost good faith, serving as a glossary or a quick reference section within a larger document about insurance.",
+    "text": "<context>This chunk summarizes key concepts and definitions related to life insurance, including its uses, risk pooling, the law of large numbers, and the principle of utmost good faith, serving as a glossary or a quick reference section within a larger document about insurance.</context>\nprotection against premature death.Financial protection against outliving resources. Financial protection against ill health and disablement.》 Critical illness insurance. Medical expense insurance. Hospital cash (income) insurance. Disability income insurance.Long-term care insurance. Financial protection for businesses\n\n- Definition or Explanation: Other uses of lifeinsurance\nAssist in making savings possible. Provides a safe investment.Encourages thrift.Minimises worries and provides peace of mind.\n\n- Definition or Explanation: Risk pooling\nPooling brings together a large number of exposures of similar risk characteristics, thereby allowing the application of the law of large numbers to predict the frequency (probable number of losses) and severity of losses (probable size of thelosses).\n\n- Definition or Explanation: How insurers can accept so many risks?\nAn insurer accepts the risk of financial loss of a large number of people, but only a small percentage of these people will actually suffer an insured financial loss at any given period.\n\n- Definition or Explanation: Law of large numbers -insurance\nWith the increasing number of insured persons, risk and uncertainty will diminish.Thus, the larger the insured group, the more predictable willbe the loss experiencefor the insured group as a whole.\n\n- Definition or Explanation: Principle of utmost goodfaith(Uberrima Fides)\nDisclose all material facts (see explanation below) which they are aware of orought to have been aware of, even if no question is specifically asked in the proposal (or application) form; andNot to make any mis-statement of material facts.\n\n- Definition or Explanation: Material facts\nMaterial facts are facts that can cause an underwriter to deal with a case differentlyif the information was disclosed at the time of application of the insurance policy.\n\n- Definition or Explanation: Facts which need not bedisclosed\nFacts which the insurer already knows [e.g. An insurer should know aboutoutbreak of civil unrest in a certain country, or influenza A (H1N1) in various parts of the world];Facts which the insurer ought to know; Facts about which the insurer waives information; Facts which can be discovered, where enough information has been given toprovoke enquiry by the insurer (e.g. In answering a proposal form questionon other existing life insurance policies taken out with the",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000088",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk details exceptions to the duty of disclosure in insurance contracts and explains the concept and timing of insurable interest, including scenarios where it is not met.",
+    "text": "<context>This chunk details exceptions to the duty of disclosure in insurance contracts and explains the concept and timing of insurable interest, including scenarios where it is not met.</context>\nvarious parts of the world];Facts which the insurer ought to know; Facts about which the insurer waives information; Facts which can be discovered, where enough information has been given toprovoke enquiry by the insurer (e.g. In answering a proposal form questionon other existing life insurance policies taken out with the same insurer, theproposer states as \"refer to details in your company's records\", instead ofwriting down all the policy details as requested in the proposal form); andFacts which lessen the risk (e.g. A person applying for Personal Accident Insurance does not like to take part in hazardous activities).\n\n- Definition or Explanation: Duty of disclosure - atinception\nUnder common law, the duty of disclosure starts at the beginning of negotiations and ends at the formation of the insurance contract.\n\n- Definition or Explanation: Duty of disclosure - onrenewal\nOn the renewal of a policy, the duty of disclosure by the insured is revived forgeneral insurance.There is no such duty of disclosure for life insurance policies, as they are not renewable annually, but which are issued for a specific number of years or for life.\n\n- Definition or Explanation: Duty of disclosure - on alteration\nDuring the currency of the insurance contract,it may be necessary to changethe terms of the policy. In these cases, the duty of disclosure is revived as a newcontract is being formed.\n\n- Definition or Explanation: Insurer's duty of disclosure\nNotifying an insured of a possible entitlement to a premium discount resultingfrom a good previous insurance history; Only taking on risks which the insurer is licensed to accept, i.e. Avoidunenforceable contracts; and Ensuring that statements made are true, as misleading an insured about policycover is a breach of utmost good faith.\n\n- Definition or Explanation: When does insurable interest exist?\nAn insured interest exists when the policy owner is likely to benefit if the insured continues to live and is likely to suffer some loss or detriment if the insured dies.\n\n- Definition or Explanation: Insurable interestrequirement not met.\nIf the insurable interest requirement is not met when a policy is issued,the policy isnot valid.\n\n- Definition or",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000089",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines key concepts related to insurance principles, including insurable interest, the principle of indemnity, and the roles of buyers, sellers, and intermediaries in the insurance market.",
+    "text": "<context>This chunk defines key concepts related to insurance principles, including insurable interest, the principle of indemnity, and the roles of buyers, sellers, and intermediaries in the insurance market.</context>\nis likely to benefit if the insured continues to live and is likely to suffer some loss or detriment if the insured dies.\n\n- Definition or Explanation: Insurable interestrequirement not met.\nIf the insurable interest requirement is not met when a policy is issued,the policy isnot valid.\n\n- Definition or Explanation: Why is insurable interest necessary?\nExcludes the possibility of gambling (i.e. minimise problems of moral hazard ininsurance).The proposer is expected to safeguard the subject matter (i.e. the proposer is interested in its preservation).\n\n- Definition or Explanation: Insurable interest in lifeinsurance\nThere must be an insurable interest, or a presumed insurable interest, present at the inception of the insurance contract, but it need not be present at the time of the life insured's death. A beneficiary, therefore, need not provide evidence of insurable interest in order to receive the benefits of a life insurance policy.\n\n- Definition or Explanation: Insurable interest in general insurance\nInsurable interest must be present at both the inception of the insurancecontract and at the time of loss. For Marine Cargo Insurance, there is no need for insurable interest to be present at the inception of the insurance contract. Rather, insurable interest must exist only at the time of loss.\n\n- Definition or Explanation: Principle of indemnity\nStates that the financial position of an insured is to be restored approximatelyto the position that existed immediately prior to the occurrence of the loss.The principle of indemnity applies to General Insurance as well as Health Insurance. However, it does not apply to Life Insurance and Personal Accident Insurance. It is because we cannot price the value of a human life.\n\n- Definition or Explanation: Buyers of insurance\nIndividuals (including sole proprietors);Commercial enterprises (such as multinational corporations, small and medium enterprises, partnerships, companies, etc.); and Government (including its various agencies, ministries and statutory boards).\n\n- Definition or Explanation: Sellers of insurance\nDirect insurers (which include: life insurers, general insurers,and compositeinsurers). Reinsurers (which include life reinsurers, general reinsurers and compositereinsurers). Captive insurers Lloyd's Asia Scheme.\n\n- Definition or Explanation: Intermediaries\nAn insurance intermediary means a person who,as an agent",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000090",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines the various players within the Singapore insurance market, including buyers, sellers (direct insurers and reinsurers), intermediaries, introducers, web aggregators, rating agencies, market associations, professional bodies, and dispute resolution mechanisms like FIDReC.",
+    "text": "<context>This chunk defines the various players within the Singapore insurance market, including buyers, sellers (direct insurers and reinsurers), intermediaries, introducers, web aggregators, rating agencies, market associations, professional bodies, and dispute resolution mechanisms like FIDReC.</context>\nvarious agencies, ministries and statutory boards).\n\n- Definition or Explanation: Sellers of insurance\nDirect insurers (which include: life insurers, general insurers,and compositeinsurers). Reinsurers (which include life reinsurers, general reinsurers and compositereinsurers). Captive insurers Lloyd's Asia Scheme.\n\n- Definition or Explanation: Intermediaries\nAn insurance intermediary means a person who,as an agent for one or more insurers or as an agent for insureds or intending insureds,arranges contracts of insurance in Singapore, and includes an insurance agent or an insurance broker. Representative Of A Life Insurance Company (Insurer). Representative Of A Bank Or Other Financial Institution. Representative Of A Licensed And Exempt Financial Adviser (FA) Firm.\n\n- Definition or Explanation: Introducer of lifeinsurance advisoryservices\nThe introducer is not authorised to give advice, provide any recommendations, ormarket or arrange any contract of insurance.\n\n- Definition or Explanation: Web aggregator\nWeb aggregators compile and provide information about insurance policies ofvarious insurance companies on a website.\n\n- Definition or Explanation: Rating agencies\nRating agencies play an increasingly important role in the capital markets today, byproviding an independent assessment and opinion on the overallfinancial capacityor credit worthiness of financial institutions that issue a broad range of capitalmarket instruments, such as debt obligations, securities, etc.Rating agencies are increasingly incorporating sustainability and environmental, social and governance (ESG) issues as far as rating methodologies are concerned.\n\n- Definition or Explanation: Market associations\nThe main function of such associations is to protect, promote and advance thecommon interest of their members.\n\n- Definition or Explanation: Professional bodies\nA professional body is usually a non-profit organisation that exists to further the interests of a particular profession, by representing the views of that profession and its members in matters of public and professional interests.\n\n- Definition or Explanation: Financial Industry Disputes Resolution Centre (FIDReC)\nA one-stop centre for the resolution of all retail disputes with financial institutions. FIDReC's mission is to provide an affordable alternative dispute resolution scheme that is independent and impartial, so as to encourage and assist in the resolution of disputes between consumers and financial institutions in an amicable and fair manner\n\n- Definition or Explanation: Jurisdiction of FIDReC\nFor claims",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_1__small_000091",
+    "source_chunk_ids": [
+      "chapter_1__chunk_077"
+    ],
+    "chapter": "chapter_1",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk details the role and dispute resolution process of the Financial Industry Disputes Resolution Centre (FIDReC) in Singapore.",
+    "text": "<context>This chunk details the role and dispute resolution process of the Financial Industry Disputes Resolution Centre (FIDReC) in Singapore.</context>\nwith financial institutions. FIDReC's mission is to provide an affordable alternative dispute resolution scheme that is independent and impartial, so as to encourage and assist in the resolution of disputes between consumers and financial institutions in an amicable and fair manner\n\n- Definition or Explanation: Jurisdiction of FIDReC\nFor claims between insureds and insurance companies: up to S$100,000 perclaim. For disputes between banks and consumers, capital market disputes and allother disputes: up to S$100,000 per claim.\n\n- Definition or Explanation: Dispute resolution process of FIDReC\nComplaint Filing (1st Stage)Consumer lodges complaint at FiDReC and Case Manager verifies if the complaint iswithin FIDReC's jurisdiction.· Mediation (2nd Stage)When a complaint is first received, the Case Manager willarrange mediation to facilitate discussions between disputants with the objective of reaching a settlement. This service is free of charge for consumers. However, the financialinstitution must pay a fee of S$50 for the cost of mediation per claim (excludingGST). Adjudication (3rd Stage)Where the dispute is not setted by mediation, the consumer can choose to allow anAdjudicator to decide the case on the facts and merits. Under the FIDReC scheme, the cost of adjudication per claim is S$50 for the consumer (excluding GST) and S$500 for the financial institution (excluding GST).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  }
+]

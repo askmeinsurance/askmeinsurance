@@ -1,0 +1,1169 @@
+[
+  {
+    "chunk_id": "chapter_2__small_000001",
+    "source_chunk_ids": [
+      "chapter_2__chunk_001"
+    ],
+    "chapter": "chapter_2",
+    "header": "1. PRICING CONSIDERATIONS",
+    "level": 1,
+    "context": "This document chunk is the introduction to a section on \"PRICING CONSIDERATIONS\" for life insurance policies. It outlines the role of actuaries in setting premiums and lists the key factors they consider, such as mortality, investment income, expenses, gender, smoking status, sum assured, and premium payment frequency.",
+    "text": "<context>This document chunk is the introduction to a section on \"PRICING CONSIDERATIONS\" for life insurance policies. It outlines the role of actuaries in setting premiums and lists the key factors they consider, such as mortality, investment income, expenses, gender, smoking status, sum assured, and premium payment frequency.</context>\n# 1. PRICING CONSIDERATIONS\n\n1.1 The premiums of life insurance policies are calculated by professionals called Actuaries. The job of the actuary is to set the premiums, such that they are sufficient to cover the claims that the insurer must pay, and the costs of doing business, which will include profits to the insurer. In addition, they have to make sure that the premiums are not too high, such that they are not competitive with that of the other life insurers.\n\n1.2 When setting the premiums, the actuaries will take into consideration the following factors:\n\nMortality and Morbidity Rates; Investment Income; Expenses; Gender; Smoking Status; Amount of Sum Assured; and Frequency of Premium Payments.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000002",
+    "source_chunk_ids": [
+      "chapter_2__chunk_002"
+    ],
+    "chapter": "chapter_2",
+    "header": "A. Mortality And Morbidity Rates",
+    "level": 1,
+    "context": "This chunk is a subsection under \"1. PRICING CONSIDERATIONS,\" specifically detailing the first major factor actuaries consider when setting insurance premiums: mortality and morbidity rates.",
+    "text": "<context>This chunk is a subsection under \"1. PRICING CONSIDERATIONS,\" specifically detailing the first major factor actuaries consider when setting insurance premiums: mortality and morbidity rates.</context>\n# A. Mortality And Morbidity Rates",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_2__small_000003",
+    "source_chunk_ids": [
+      "chapter_2__chunk_003"
+    ],
+    "chapter": "chapter_2",
+    "header": "A1. Mortality Rate",
+    "level": 1,
+    "context": "This chunk is part of the \"Pricing Considerations\" section, specifically detailing the \"Mortality Rate\" which is a key factor actuaries use to calculate life insurance premiums. It explains how mortality rates are determined using historical data and mortality tables, and provides an example of how these rates are applied to calculate the cost of death benefits.",
+    "text": "<context>This chunk is part of the \"Pricing Considerations\" section, specifically detailing the \"Mortality Rate\" which is a key factor actuaries use to calculate life insurance premiums. It explains how mortality rates are determined using historical data and mortality tables, and provides an example of how these rates are applied to calculate the cost of death benefits.</context>\n# A1. Mortality Rate\n\n1.3 The first factor that an actuary considers when determining the premium rate to be charged for a life insurance product is to find the mortality rate. He will predict ahead of time the average number of people who will die each year at each age, based on the large number of people and deaths recorded by the life insurer over the years. As this record has been kept by the life insurer for many years, of people of all ages over a long period of time, it enables the actuary to make reliable predictions. This is an example of the Law of Large Numbers in action which forms the basis of insurance. In other words, when the actuary calculates the mortality rate, he is not concerned with how long an individual may live, but rather, how many individuals in a large group may die in a given period of time.\n\n1.4 Having decided on the number of deaths, the actuary then divides it by the total number of people of that age to arrive at the mortality rate. He then compiles the mortality rates into a table categorised by age. This table is called the Mortality Table. A Mortality Table, thus, represents a record of mortality observed in the past and is arranged so as to show the probabilities of death and survival at each separate age. It shows a hypothetical group of individuals beginning with a certain age and traces the history of the entire group year by year until all have died. Figure 2.1 shows an abridged version of a mortality table.\n\nFigure 2.1: Mortality Table For 100,000 People   \n\nhierarchical_json: {\"table_id\": \"chapter_2__chunk_003__table_01\", \"table_type\": \"rate_table\", \"parse_tier\": 1, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Age\", \"Number Living\", \"NumberDying\", \"Age\", \"Number Living\", \"NumberDying\"], [\"0\", \"100,000\", \"708\", \"60\", \"76,987\", \"1,566\"], [\"10\", \"98,509\", \"119\", \"70\", \"55,920\", \"2,784\"], [\"20\", \"96,650\", \"173\", \"80\", \"26,264\", \"2,888\"], [\"30\", \"94,804\", \"202\", \"90\", \"4,681\", \"1,068\"], [\"40\", \"92,414\", \"326\", \"99\", \"64\", \"64\"], [\"50\", \"87,623\", \"729\", \"100\", \"0\", \"0\"]], \"headers\": {\"column_headers\": [\"Number Living\", \"NumberDying\", \"Age\", \"Number Living\", \"NumberDying\"], \"row_headers\": [\"0\", \"10\", \"20\", \"30\", \"40\", \"50\"]}, \"rows\": [{\"row_header\": \"0\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"100,000\"}, {\"column_header\": \"NumberDying\", \"value\": \"708\"}, {\"column_header\": \"Age\", \"value\": \"60\"}, {\"column_header\": \"Number Living\", \"value\": \"76,987\"}, {\"column_header\": \"NumberDying\", \"value\": \"1,566\"}]}, {\"row_header\": \"10\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"98,509\"}, {\"column_header\": \"NumberDying\", \"value\": \"119\"}, {\"column_header\": \"Age\", \"value\": \"70\"}, {\"column_header\": \"Number Living\", \"value\": \"55,920\"}, {\"column_header\": \"NumberDying\", \"value\": \"2,784\"}]}, {\"row_header\": \"20\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"96,650\"}, {\"column_header\": \"NumberDying\", \"value\": \"173\"}, {\"column_header\": \"Age\", \"value\": \"80\"}, {\"column_header\": \"Number Living\", \"value\": \"26,264\"}, {\"column_header\": \"NumberDying\", \"value\": \"2,888\"}]}, {\"row_header\": \"30\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"94,804\"}, {\"column_header\": \"NumberDying\", \"value\": \"202\"}, {\"column_header\": \"Age\", \"value\": \"90\"}, {\"column_header\": \"Number Living\", \"value\": \"4,681\"}, {\"column_header\": \"NumberDying\", \"value\": \"1,068\"}]}, {\"row_header\": \"40\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"92,414\"}, {\"column_header\": \"NumberDying\", \"value\": \"326\"}, {\"column_header\": \"Age\", \"value\": \"99\"}, {\"column_header\": \"Number Living\", \"value\": \"64\"}, {\"column_header\": \"NumberDying\", \"value\": \"64\"}]}, {\"row_header\": \"50\", \"cells\": [{\"column_header\": \"Number Living\", \"value\": \"87,623\"}, {\"column_header\": \"NumberDying\", \"value\": \"729\"}, {\"column_header\": \"Age\", \"value\": \"100\"}, {\"column_header\": \"Number Living\", \"value\": \"0\"}, {\"column_header\": \"NumberDying\", \"value\": \"0\"}]}]}\n\ntable narrative: [\"For a hypothetical group of 100,000 people starting at age 0, 708 are expected to die.\", \"At age 10, 98,509 people are living, and 119 are expected to die.\", \"At age 20, 96,650 people are living, and 173 are expected to die.\", \"At age 30, 94,804 people are living, and 202 are expected to die.\", \"At age 40, 92,414 people are living, and 326 are expected to die.\", \"At age 50, 87,623 people are living, and 729 are expected to die.\", \"At age 60, 76,987 people are living, and 1,566 are expected to die.\", \"At age 70, 55,920 people are living, and 2,784 are expected to die.\", \"At age 80, 26,264 people are living, and 2,888 are expected to die.\", \"At age 90, 4,681 people are living, and 1,068 are expected to die.\", \"At age 99, 64 people are living, and 64 are expected to die.\", \"At age 100, 0 people are living, and 0 are expected to die.\"]\n\n1.5 Looking at the age of 10 years, the table above tells us that 98,509 of the original group of 100,000 are still living. Of those still living, 119 will die within the year. So, in order to provide a death benefit of $\\$ 10,000$ to each beneficiary of those who will be dying, the insurer needs a total of $\\$ \\$ 1$ ,190,000 $( { \\bf S } { \\$ 10, 00 0 } \\times { \\ : 1 1 9 } =$ $\\$ \\$ 1$ ,190,000).\n\n1.6 In order to accumulate this $\\mathsf { S } \\$ 1,190,000$ , each of the 98,509",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_003__table_01",
+        "table_type": "rate_table",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "age",
+          "col": "number living or number dying",
+          "value": "count"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_003__table_01",
+          "table_type": "rate_table",
+          "parse_tier": 1,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Age",
+              "Number Living",
+              "NumberDying",
+              "Age",
+              "Number Living",
+              "NumberDying"
+            ],
+            [
+              "0",
+              "100,000",
+              "708",
+              "60",
+              "76,987",
+              "1,566"
+            ],
+            [
+              "10",
+              "98,509",
+              "119",
+              "70",
+              "55,920",
+              "2,784"
+            ],
+            [
+              "20",
+              "96,650",
+              "173",
+              "80",
+              "26,264",
+              "2,888"
+            ],
+            [
+              "30",
+              "94,804",
+              "202",
+              "90",
+              "4,681",
+              "1,068"
+            ],
+            [
+              "40",
+              "92,414",
+              "326",
+              "99",
+              "64",
+              "64"
+            ],
+            [
+              "50",
+              "87,623",
+              "729",
+              "100",
+              "0",
+              "0"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Number Living",
+              "NumberDying",
+              "Age",
+              "Number Living",
+              "NumberDying"
+            ],
+            "row_headers": [
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "0",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "100,000"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "708"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "60"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "76,987"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "1,566"
+                }
+              ]
+            },
+            {
+              "row_header": "10",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "98,509"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "119"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "70"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "55,920"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "2,784"
+                }
+              ]
+            },
+            {
+              "row_header": "20",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "96,650"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "173"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "80"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "26,264"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "2,888"
+                }
+              ]
+            },
+            {
+              "row_header": "30",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "94,804"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "202"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "90"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "4,681"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "1,068"
+                }
+              ]
+            },
+            {
+              "row_header": "40",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "92,414"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "326"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "99"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "64"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "64"
+                }
+              ]
+            },
+            {
+              "row_header": "50",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "87,623"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "729"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "100"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "0"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For a hypothetical group of 100,000 people starting at age 0, 708 are expected to die.",
+          "At age 10, 98,509 people are living, and 119 are expected to die.",
+          "At age 20, 96,650 people are living, and 173 are expected to die.",
+          "At age 30, 94,804 people are living, and 202 are expected to die.",
+          "At age 40, 92,414 people are living, and 326 are expected to die.",
+          "At age 50, 87,623 people are living, and 729 are expected to die.",
+          "At age 60, 76,987 people are living, and 1,566 are expected to die.",
+          "At age 70, 55,920 people are living, and 2,784 are expected to die.",
+          "At age 80, 26,264 people are living, and 2,888 are expected to die.",
+          "At age 90, 4,681 people are living, and 1,068 are expected to die.",
+          "At age 99, 64 people are living, and 64 are expected to die.",
+          "At age 100, 0 people are living, and 0 are expected to die."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000004",
+    "source_chunk_ids": [
+      "chapter_2__chunk_003"
+    ],
+    "chapter": "chapter_2",
+    "header": "A1. Mortality Rate",
+    "level": 1,
+    "context": "This chunk provides a specific calculation example of how a mortality rate from a mortality table is used to determine the premium rate for a 10-year-old. It follows the explanation of mortality tables and precedes the discussion on morbidity rates.",
+    "text": "<context>This chunk provides a specific calculation example of how a mortality rate from a mortality table is used to determine the premium rate for a 10-year-old. It follows the explanation of mortality tables and precedes the discussion on morbidity rates.</context>\nstill living, 119 will die within the year. So, in order to provide a death benefit of $\\$ 10,000$ to each beneficiary of those who will be dying, the insurer needs a total of $\\$ \\$ 1$ ,190,000 $( { \\bf S } { \\$ 10, 00 0 } \\times { \\ : 1 1 9 } =$ $\\$ \\$ 1$ ,190,000).\n\n1.6 In order to accumulate this $\\mathsf { S } \\$ 1,190,000$ , each of the 98,509 persons living at the beginning of the year will have to pay $\\$ 12.08 (5 \\$ 1,190,000 \\div98,509)$ . This will be the premium rate that the insurer will charge for pure death protection for proposers who are buying insurance policies at the age of 10 years.",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_003__table_01",
+        "table_type": "rate_table",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "age",
+          "col": "number living or number dying",
+          "value": "count"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_003__table_01",
+          "table_type": "rate_table",
+          "parse_tier": 1,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Age",
+              "Number Living",
+              "NumberDying",
+              "Age",
+              "Number Living",
+              "NumberDying"
+            ],
+            [
+              "0",
+              "100,000",
+              "708",
+              "60",
+              "76,987",
+              "1,566"
+            ],
+            [
+              "10",
+              "98,509",
+              "119",
+              "70",
+              "55,920",
+              "2,784"
+            ],
+            [
+              "20",
+              "96,650",
+              "173",
+              "80",
+              "26,264",
+              "2,888"
+            ],
+            [
+              "30",
+              "94,804",
+              "202",
+              "90",
+              "4,681",
+              "1,068"
+            ],
+            [
+              "40",
+              "92,414",
+              "326",
+              "99",
+              "64",
+              "64"
+            ],
+            [
+              "50",
+              "87,623",
+              "729",
+              "100",
+              "0",
+              "0"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Number Living",
+              "NumberDying",
+              "Age",
+              "Number Living",
+              "NumberDying"
+            ],
+            "row_headers": [
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "0",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "100,000"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "708"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "60"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "76,987"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "1,566"
+                }
+              ]
+            },
+            {
+              "row_header": "10",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "98,509"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "119"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "70"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "55,920"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "2,784"
+                }
+              ]
+            },
+            {
+              "row_header": "20",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "96,650"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "173"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "80"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "26,264"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "2,888"
+                }
+              ]
+            },
+            {
+              "row_header": "30",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "94,804"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "202"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "90"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "4,681"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "1,068"
+                }
+              ]
+            },
+            {
+              "row_header": "40",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "92,414"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "326"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "99"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "64"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "64"
+                }
+              ]
+            },
+            {
+              "row_header": "50",
+              "cells": [
+                {
+                  "column_header": "Number Living",
+                  "value": "87,623"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "729"
+                },
+                {
+                  "column_header": "Age",
+                  "value": "100"
+                },
+                {
+                  "column_header": "Number Living",
+                  "value": "0"
+                },
+                {
+                  "column_header": "NumberDying",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For a hypothetical group of 100,000 people starting at age 0, 708 are expected to die.",
+          "At age 10, 98,509 people are living, and 119 are expected to die.",
+          "At age 20, 96,650 people are living, and 173 are expected to die.",
+          "At age 30, 94,804 people are living, and 202 are expected to die.",
+          "At age 40, 92,414 people are living, and 326 are expected to die.",
+          "At age 50, 87,623 people are living, and 729 are expected to die.",
+          "At age 60, 76,987 people are living, and 1,566 are expected to die.",
+          "At age 70, 55,920 people are living, and 2,784 are expected to die.",
+          "At age 80, 26,264 people are living, and 2,888 are expected to die.",
+          "At age 90, 4,681 people are living, and 1,068 are expected to die.",
+          "At age 99, 64 people are living, and 64 are expected to die.",
+          "At age 100, 0 people are living, and 0 are expected to die."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000005",
+    "source_chunk_ids": [
+      "chapter_2__chunk_004"
+    ],
+    "chapter": "chapter_2",
+    "header": "A2. Morbidity Rate",
+    "level": 1,
+    "context": "This chunk is a subsection explaining \"Morbidity Rate\" under section \"A. Mortality And Morbidity Rates,\" which is a sub-point of \"1.2 The following factors\" considered by actuaries when setting life insurance premiums.",
+    "text": "<context>This chunk is a subsection explaining \"Morbidity Rate\" under section \"A. Mortality And Morbidity Rates,\" which is a sub-point of \"1.2 The following factors\" considered by actuaries when setting life insurance premiums.</context>\n# A2. Morbidity Rate\n\n1.7 Morbidity rate is primarily used to determine the premiums for Health Insurance, such as Critical Illness or Dread Disease Insurance. It is the rate at which sickness, injury and failure of health occur among a defined group of people. Like the mortality rates, insurers compile the morbidity rates into morbidity tables according to age. Although morbidity is the main consideration in determining the premium rates for Health Insurance, the actuary will also take into consideration the mortality rate.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000006",
+    "source_chunk_ids": [
+      "chapter_2__chunk_005"
+    ],
+    "chapter": "chapter_2",
+    "header": "B. Investment Income",
+    "level": 1,
+    "context": "This section discusses how investment income earned by the insurer on premiums collected can reduce the overall cost of insurance. It explains that actuaries estimate potential investment returns and incorporate them into premium calculations, leading to lower premiums for policyholders. This section also introduces the concept of \"net premiums,\" which are calculated using mortality/morbidity rates and investment income alone.",
+    "text": "<context>This section discusses how investment income earned by the insurer on premiums collected can reduce the overall cost of insurance. It explains that actuaries estimate potential investment returns and incorporate them into premium calculations, leading to lower premiums for policyholders. This section also introduces the concept of \"net premiums,\" which are calculated using mortality/morbidity rates and investment income alone.</context>\n# B. Investment Income\n\n1.8 Premiums are the main source of money used to pay death benefits. However, with the level premiums that are used for most life insurance policies, not all of the premiums which the insurer receives each year are needed to pay death benefits in that year. Some life insureds live for many years and pay premiums to keep their policies in force throughout those years. These premiums are invested by the insurer to earn investment returns.\n\n1.9 When the actuary calculates the price of insurance, he estimates the amount of money that the insurer expects to earn on its investments. Investments help to reduce the amount of money that the insurer has to charge for the insurance, i.e. the insurer reduces the price of insurance by the investment income that it expects to earn. The insurer usually assumes a moderate rate of investment return on the premiums which it has invested. Some investments may earn more, while some may earn less than the assumed rate of interest. Whatever the investment experience, premium calculations are made in the expectation that the insurer will earn the assumed rate of interest. So, the higher the assumed rate of interest, the lower will be the premiums charged to policy owners.\n\n1.10 When an insurer uses just the rate of mortality/morbidity and investment income to calculate the premiums, it is actually calculating the net premiums. The net premium is the amount needed just to pay for the insurance protection.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000007",
+    "source_chunk_ids": [
+      "chapter_2__chunk_006"
+    ],
+    "chapter": "chapter_2",
+    "header": "C. Expenses",
+    "level": 1,
+    "context": "This chunk explains the \"Expenses\" factor in life insurance premium calculation, detailing the two main categories of costs insurers incur and how these costs, along with a profit margin, are added to the net premium to determine the final gross premium.",
+    "text": "<context>This chunk explains the \"Expenses\" factor in life insurance premium calculation, detailing the two main categories of costs insurers incur and how these costs, along with a profit margin, are added to the net premium to determine the final gross premium.</context>\n# C. Expenses\n\n1.11 However, an insurer must also collect sufficient premiums to pay for its expenses. Like any business, an insurer incurs costs when carrying out its business. Generally, there are two types of costs. The first category includes the salaries for staff, commissions for representatives of financial advisers, rents, advertisements, taxes, and other costs of running the business.\n\n1.12 The second category is the lapse rate of policies. Sometimes, a policy lapses (terminates for non-payment of premiums) before the insurer has collected enough premiums to cover the costs associated with underwriting and issuing the policy. As such, the actuary includes an amount in the product’s price to compensate the insurer for the losses associated with lapses. In general, the higher the anticipated lapse rate in the early years of the policy, the higher will be the amount that must be added to the product’s price, to allow the insurer to recover its expenses. The cost of this early lapse rate, together with the costs incurred under the first category, increases the price of insurance.\n\n1.13 The total amount added to the net premium to cover all of the insurer’s expenses (and to provide for a margin of profit) is called the loading. Once the loading is added to the net premium, the result is the gross premium (see Figure 2.2). This is the premium that the proposer is required to pay.\n\n  \nFigure 2.2: Determining The Gross Premium",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000008",
+    "source_chunk_ids": [
+      "chapter_2__chunk_007"
+    ],
+    "chapter": "chapter_2",
+    "header": "D. Gender",
+    "level": 1,
+    "context": "This chunk is located in section D, titled \"Gender,\" which is part of the broader section \"1. PRICING CONSIDERATIONS\" in the document. This section details the various factors actuaries consider when calculating life insurance premiums. Specifically, it explains how gender influences premium rates for both life and health insurance due to observed differences in life expectancy and healthcare utilization.",
+    "text": "<context>This chunk is located in section D, titled \"Gender,\" which is part of the broader section \"1. PRICING CONSIDERATIONS\" in the document. This section details the various factors actuaries consider when calculating life insurance premiums. Specifically, it explains how gender influences premium rates for both life and health insurance due to observed differences in life expectancy and healthcare utilization.</context>\n# D. Gender\n\n1.14 Generally, the premium rates for females are lower than those for males where life insurance is concerned. This is because statistics show that females, on average, tend to live longer than males of the same age. Hence, most insurers charge lower premium rates for females. The common practice is to use the reduction in age method. For example, a 24-year-old female life insured may be charged the premium rate of a 21-year-old male, effectively a discount of three years in age.\n\n1.15 Where Health Insurance is concerned, however, the premium rates for female lives tend to be higher than those for male lives. This is because statistics show that women above the age of 65 years require hospitalisation more often and have more surgeries and medical treatments than men.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000009",
+    "source_chunk_ids": [
+      "chapter_2__chunk_008"
+    ],
+    "chapter": "chapter_2",
+    "header": "E. Smoking Status",
+    "level": 1,
+    "context": "This chunk discusses how smoking status affects life insurance premiums, explaining that non-smokers receive discounts due to their longer life expectancy and better health, and it includes a table detailing these discounts based on age.",
+    "text": "<context>This chunk discusses how smoking status affects life insurance premiums, explaining that non-smokers receive discounts due to their longer life expectancy and better health, and it includes a table detailing these discounts based on age.</context>\n# E. Smoking Status\n\n1.16 Besides the gender, insurers also give discounts for non-smokers, as statistics show that they tend to enjoy better health and, thus, also enjoy a longer life span as compared to those who smoke. Figure 2.3 is an example of the discounts enjoyed by non-smokers.\n\nFigure 2.3: Non-smoker Discount   \n\nhierarchical_json: {\"table_id\": \"chapter_2__chunk_008__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Age Next Birthday (Years)\", \"Discount Per S$1,000 Sum Assured\"], [\"17 - 30\", \"S$0.40\"], [\"31 - 40\", \"S$0.70\"], [\"41 - 50\", \"S$1.00\"], [\"> 50\", \"S$1.80\"]], \"headers\": {\"column_headers\": [\"Discount Per S$1,000 Sum Assured\"], \"row_headers\": [\"17 - 30\", \"31 - 40\", \"41 - 50\", \"> 50\"]}, \"rows\": [{\"row_header\": \"17 - 30\", \"cells\": [{\"column_header\": \"Discount Per S$1,000 Sum Assured\", \"value\": \"S$0.40\"}]}, {\"row_header\": \"31 - 40\", \"cells\": [{\"column_header\": \"Discount Per S$1,000 Sum Assured\", \"value\": \"S$0.70\"}]}, {\"row_header\": \"41 - 50\", \"cells\": [{\"column_header\": \"Discount Per S$1,000 Sum Assured\", \"value\": \"S$1.00\"}]}, {\"row_header\": \"> 50\", \"cells\": [{\"column_header\": \"Discount Per S$1,000 Sum Assured\", \"value\": \"S$1.80\"}]}]}\n\ntable narrative: [\"For non-smokers aged 17 to 30, the non-smoker discount is S$0.40 per S$1,000 sum assured.\", \"For non-smokers aged 31 to 40, the non-smoker discount is S$0.70 per S$1,000 sum assured.\", \"For non-smokers aged 41 to 50, the non-smoker discount is S$1.00 per S$1,000 sum assured.\", \"For non-smokers over 50 years old, the non-smoker discount is S$1.80 per S$1,000 sum assured.\"]",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_008__table_01",
+        "table_type": "unknown",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "age range for the insured",
+          "col": "discount amount per S$1,000 of sum assured",
+          "value": "the discount amount"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_008__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Age Next Birthday (Years)",
+              "Discount Per S$1,000 Sum Assured"
+            ],
+            [
+              "17 - 30",
+              "S$0.40"
+            ],
+            [
+              "31 - 40",
+              "S$0.70"
+            ],
+            [
+              "41 - 50",
+              "S$1.00"
+            ],
+            [
+              "> 50",
+              "S$1.80"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Discount Per S$1,000 Sum Assured"
+            ],
+            "row_headers": [
+              "17 - 30",
+              "31 - 40",
+              "41 - 50",
+              "> 50"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "17 - 30",
+              "cells": [
+                {
+                  "column_header": "Discount Per S$1,000 Sum Assured",
+                  "value": "S$0.40"
+                }
+              ]
+            },
+            {
+              "row_header": "31 - 40",
+              "cells": [
+                {
+                  "column_header": "Discount Per S$1,000 Sum Assured",
+                  "value": "S$0.70"
+                }
+              ]
+            },
+            {
+              "row_header": "41 - 50",
+              "cells": [
+                {
+                  "column_header": "Discount Per S$1,000 Sum Assured",
+                  "value": "S$1.00"
+                }
+              ]
+            },
+            {
+              "row_header": "> 50",
+              "cells": [
+                {
+                  "column_header": "Discount Per S$1,000 Sum Assured",
+                  "value": "S$1.80"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For non-smokers aged 17 to 30, the non-smoker discount is S$0.40 per S$1,000 sum assured.",
+          "For non-smokers aged 31 to 40, the non-smoker discount is S$0.70 per S$1,000 sum assured.",
+          "For non-smokers aged 41 to 50, the non-smoker discount is S$1.00 per S$1,000 sum assured.",
+          "For non-smokers over 50 years old, the non-smoker discount is S$1.80 per S$1,000 sum assured."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000010",
+    "source_chunk_ids": [
+      "chapter_2__chunk_009"
+    ],
+    "chapter": "chapter_2",
+    "header": "F. Amount Of Sum Assured",
+    "level": 1,
+    "context": "This chunk is about how the amount of the sum assured affects the premium calculation for life insurance policies. It explains that while premiums are generally proportional to the sum assured, insurers may offer discounts for larger policies due to fixed administrative costs.",
+    "text": "<context>This chunk is about how the amount of the sum assured affects the premium calculation for life insurance policies. It explains that while premiums are generally proportional to the sum assured, insurers may offer discounts for larger policies due to fixed administrative costs.</context>\n# F. Amount Of Sum Assured\n\n1.17 For ease of calculation, insurers usually set a premium rate for life insurance policies. For example, the annual premium rate may be $\\$ 123,96$ per $\\$ 1,000$ of sum assured for a 25-year-old male. So if the policy is for $\\$ 100,000$ , the premium can easily be calculated as $\\mathbf { S } \\$ 100,000 \\times 18.9 6 \\div 1,00 0 = \\mathbf { S } \\$ 1,8 9 6$ .\n\n1.18 However, some of the administrative expenses involved in the issuing and servicing of an insurance policy are fixed and independent of the sum assured. For example, printing and sending a policy costs the same whether the policy sum assured is $\\$ 50,000$ or $\\$ \\$ 500,000$ . So charging a premium that increases in proportion to the sum assured may result in charging the policy owner too much for the administrative expenses.\n\n1.19 Hence, insurers sometimes give a discount for a larger policy. This is usually done by way of a reduction to the premium rate to be charged. Using the example of the annual premium rate for a 25-year-old man above, assume that buying a $\\$ \\$ 250,000$ policy gets a $\\$ \\$ 1$ discount from the annual premium rate. Therefore, the discounted rate is ${ \\sf S } \\$ ( 18. 9 6 - 1 ) = { \\sf S } \\$ 17. 96$ . The premium payable is then $\\$ 4,490$ $( \\mathbb { S } \\mathbb { S } 2 5 0 , 0 0 0 \\times 1 7 . 9 6 \\div 1 , 0 0 0 )$ per annum. Without such discount, he will have to pay $\\$ \\$ 4,740$ $( \\mathbb { S } \\mathbb { S } 2 5 0 , 0 0 0 \\times 1 8 . 9 6 \\div 1 , 0 0 0 )$ per annum. Thus, he enjoys a discount of $\\$ 5250$ per annum.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000011",
+    "source_chunk_ids": [
+      "chapter_2__chunk_010"
+    ],
+    "chapter": "chapter_2",
+    "header": "G. Frequency Of Premium Payments",
+    "level": 1,
+    "context": "This chunk details various premium payment frequencies and modes, including regular, single, recurrent single, yearly renewable, and limited premiums, explaining how each impacts the policy and insurer. It is part of a larger section on \"PRICING CONSIDERATIONS\" for life insurance policies, specifically under the factor \"G. Frequency Of Premium Payments.\"",
+    "text": "<context>This chunk details various premium payment frequencies and modes, including regular, single, recurrent single, yearly renewable, and limited premiums, explaining how each impacts the policy and insurer. It is part of a larger section on \"PRICING CONSIDERATIONS\" for life insurance policies, specifically under the factor \"G. Frequency Of Premium Payments.\"</context>\n# G. Frequency Of Premium Payments\n\n(a) Regular Premiums\n\nThe premiums for most life insurance products are calculated on an annual basis, payable annually in advance, and are level, i.e. the policy owner will pay a fixed amount annually (year after year). However, insurers do allow their policy owners to pay by other frequencies, such as semi-annually, quarterly, monthly or in one lump sum (single premium).\n\nBy allowing the more frequent payments, the insurer would lose the interest that it could have earned should the policy owner have paid the premium on an annual basis. In addition, it would incur expenses for processing the additional number of payments each year. As such, insurers would cost in these two factors when computing the other frequent modes of premium payments. For example, some insurers charge an additional $2 \\%$ of annual premium if policy owners choose to pay monthly rather than yearly premiums.\n\n(b) Single Premiums\n\nInsurers also allow payment by single premium, i.e. payment in one lump sum. With such payment, the insurer has the full premium amount for investment upfront. This enables the insurer to earn higher investment returns. Hence, all other things being equal, the single premium is likely to be lower than the sum of all future regular premiums.\n\n(c) Recurrent Single Premiums\n\nBesides payment by single premium, insurers sometimes allow policy owners to pay by recurrent single premiums. This applies usually to investment linked policies. This option is similar in concept to the regular premium option in that the policy owner may make single premium payments on a regular basis. However, unlike regular premium policies, the policy owner has the flexibility of discontinuing future premium payments without affecting the policy (i.e. it will be treated as a fully paid-up policy).\n\nUnder current CPF rules, only Single Premium or Recurrent Single Premium policies may be purchased using CPF monies. (Other restrictions also apply.)\n\n(d) Yearly Renewable Premium\n\nThere is another type of premium payment where the policy owner pays for only one year of coverage each year and renews the policy each year. These premiums may be subject to an increase in premium payment",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000012",
+    "source_chunk_ids": [
+      "chapter_2__chunk_010"
+    ],
+    "chapter": "chapter_2",
+    "header": "G. Frequency Of Premium Payments",
+    "level": 1,
+    "context": "This chunk is part of section G, \"Frequency of Premium Payments,\" discussing different payment structures for life insurance policies. Specifically, it defines \"Yearly Renewable Premium\" and \"Limited Premium\" payment options.",
+    "text": "<context>This chunk is part of section G, \"Frequency of Premium Payments,\" discussing different payment structures for life insurance policies. Specifically, it defines \"Yearly Renewable Premium\" and \"Limited Premium\" payment options.</context>\nbe purchased using CPF monies. (Other restrictions also apply.)\n\n(d) Yearly Renewable Premium\n\nThere is another type of premium payment where the policy owner pays for only one year of coverage each year and renews the policy each year. These premiums may be subject to an increase in premium payment upon renewal of the insurance policy, owing to the increase in age and, therefore, the increase in mortality risk.\n\n(e) Limited Premium\n\nSome insurers also permit limited premium for selected policies. The policy owner will only need to pay premiums for a specified period (e.g. 20 years) or up to a specified age (e.g. the age of 60 years). The premium payable will be higher than the normal regular premium policy, because the same cost is being spread over a shorter period.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000013",
+    "source_chunk_ids": [
+      "chapter_2__chunk_011"
+    ],
+    "chapter": "chapter_2",
+    "header": "H. Suitability Of Frequency And Mode Of Premium Payments",
+    "level": 1,
+    "context": "This chunk discusses the suitability of different premium payment frequencies and modes, such as regular, single, recurrent single, yearly renewable, and limited premiums, in relation to a client's budget, coverage needs, and specific insurance products like Mortgage Reducing Term Insurance, Whole Life Insurance, Endowment Insurance, and Yearly Renewable Term Insurance. It follows sections detailing various factors actuaries consider when setting insurance premiums, including mortality/morbidity rates, investment income, expenses, gender, smoking status, sum assured, and frequency of premium payments.",
+    "text": "<context>This chunk discusses the suitability of different premium payment frequencies and modes, such as regular, single, recurrent single, yearly renewable, and limited premiums, in relation to a client's budget, coverage needs, and specific insurance products like Mortgage Reducing Term Insurance, Whole Life Insurance, Endowment Insurance, and Yearly Renewable Term Insurance. It follows sections detailing various factors actuaries consider when setting insurance premiums, including mortality/morbidity rates, investment income, expenses, gender, smoking status, sum assured, and frequency of premium payments.</context>\n# H. Suitability Of Frequency And Mode Of Premium Payments\n\n1.20 The important factors which you must consider when advising your client on the frequency and mode of premium payment are his budget and the amount of coverage that he requires, i.e. premium affordability and product suitability.\n\n1.21 Unless the client has sufficient money set aside to buy insurance policies, you should not advise him to pay by a single premium, as otherwise the amount of coverage that he can buy may be less than he needs.\n\n1.22 However, as the premiums for Mortgage Reducing Term Insurance policies are low, you may advise him to pay the premium as a single lump sum. In this way, there will be no chance of the policy lapsing due to non-payment of premium. The policy could then fulfil the purpose for which it was originally taken out (in this case to settle any outstanding housing loan with the bank).\n\n1.23 Regular premiums are more suitable for Whole Life Insurance and Endowment Insurance policies, as the premiums for these policies are higher compared to Term Insurance policies for the same sum assured, and paying by single premium will require comparatively larger amounts of money. Besides, as this type of policy acquires cash value, the policy can remain in force by activating one of the non-forfeiture options, if necessary. However, if the client has a lump sum of money and wishes to invest in insurance, then a single premium Endowment Insurance policy may be suitable for him.\n\n1.24 Yearly renewable premium is applicable only to Yearly Renewable Term Insurance policies. The premium increases yearly or every few years based on the insured’s attained age. Although the premiums may initially be lower than a corresponding Term Insurance policy, they will increase significantly as the insured gets older. You should not recommend this type of policy without pointing this out to your client.\n\n1.25 A Term Insurance policy with a longer term and with a renewable option attached to it may be a better choice than a Yearly Renewable Term Insurance policy.\n\n1.26 Table 2.1 shows a summary table of the different types of premium payments",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_011__table_01",
+        "table_type": "plan_comparison",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "mode of premium payment",
+          "col": "frequency of premium payments",
+          "value": "description of payment mode"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_011__table_01",
+          "table_type": "plan_comparison",
+          "parse_tier": 1,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Differentmodesofpremium Frequency of premium paymentspayments",
+              "Differentmodesofpremium Frequency of premium payments"
+            ],
+            [
+              "Regular premiums",
+              "- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium)."
+            ],
+            [
+              "Single premiums",
+              "Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront."
+            ],
+            [
+              "Recurrent single premiums",
+              "- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy)."
+            ],
+            [
+              "Yearly renewable premiums",
+              "Policy owner pays for only one year ofcoverage each year and renews thepolicy each year."
+            ],
+            [
+              "Limited premiums",
+              ". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period."
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Differentmodesofpremium Frequency of premium payments"
+            ],
+            "row_headers": [
+              "Regular premiums",
+              "Single premiums",
+              "Recurrent single premiums",
+              "Yearly renewable premiums",
+              "Limited premiums"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Regular premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium)."
+                }
+              ]
+            },
+            {
+              "row_header": "Single premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront."
+                }
+              ]
+            },
+            {
+              "row_header": "Recurrent single premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy)."
+                }
+              ]
+            },
+            {
+              "row_header": "Yearly renewable premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "Policy owner pays for only one year ofcoverage each year and renews thepolicy each year."
+                }
+              ]
+            },
+            {
+              "row_header": "Limited premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": ". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For regular premiums, the frequency of premium payments are calculated on an annual basis, payable annually in advance, and are level; however, insurers allow payments semi-annually, quarterly, monthly, or in one lump sum (single premium).",
+          "For single premiums, the frequency of premium payment is in one lump sum, and the insurer has the full premium amount for investment upfront.",
+          "For recurrent single premiums, the frequency of premium payment is similar to regular premiums, but the policy owner can discontinue future payments without affecting the policy, treating it as a fully paid-up policy.",
+          "For yearly renewable premiums, the policy owner pays for only one year of coverage each year and renews the policy each year.",
+          "For limited premiums, the policy owner will only need to pay premiums for a specified period, such as 20 years or up to age 60, and the premium payable will be higher than a normal regular premium policy since the cost is spread over a shorter period."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000014",
+    "source_chunk_ids": [
+      "chapter_2__chunk_011"
+    ],
+    "chapter": "chapter_2",
+    "header": "H. Suitability Of Frequency And Mode Of Premium Payments",
+    "level": 1,
+    "context": "This section discusses different premium payment frequencies and modes, including regular, single, recurrent single, yearly renewable, and limited premiums, summarizing their characteristics in a table.",
+    "text": "<context>This section discusses different premium payment frequencies and modes, including regular, single, recurrent single, yearly renewable, and limited premiums, summarizing their characteristics in a table.</context>\nwithout pointing this out to your client.\n\n1.25 A Term Insurance policy with a longer term and with a renewable option attached to it may be a better choice than a Yearly Renewable Term Insurance policy.\n\n1.26 Table 2.1 shows a summary table of the different types of premium payments and their frequencies.\n\nTable 2.1: Summary table of the different frequency of premium payments.   \n\nhierarchical_json: {\"table_id\": \"chapter_2__chunk_011__table_01\", \"table_type\": \"plan_comparison\", \"parse_tier\": 1, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Differentmodesofpremium Frequency of premium paymentspayments\", \"Differentmodesofpremium Frequency of premium payments\"], [\"Regular premiums\", \"- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium).\"], [\"Single premiums\", \"Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront.\"], [\"Recurrent single premiums\", \"- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy).\"], [\"Yearly renewable premiums\", \"Policy owner pays for only one year ofcoverage each year and renews thepolicy each year.\"], [\"Limited premiums\", \". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period.\"]], \"headers\": {\"column_headers\": [\"Differentmodesofpremium Frequency of premium payments\"], \"row_headers\": [\"Regular premiums\", \"Single premiums\", \"Recurrent single premiums\", \"Yearly renewable premiums\", \"Limited premiums\"]}, \"rows\": [{\"row_header\": \"Regular premiums\", \"cells\": [{\"column_header\": \"Differentmodesofpremium Frequency of premium payments\", \"value\": \"- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium).\"}]}, {\"row_header\": \"Single premiums\", \"cells\": [{\"column_header\": \"Differentmodesofpremium Frequency of premium payments\", \"value\": \"Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront.\"}]}, {\"row_header\": \"Recurrent single premiums\", \"cells\": [{\"column_header\": \"Differentmodesofpremium Frequency of premium payments\", \"value\": \"- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy).\"}]}, {\"row_header\": \"Yearly renewable premiums\", \"cells\": [{\"column_header\": \"Differentmodesofpremium Frequency of premium payments\", \"value\": \"Policy owner pays for only one year ofcoverage each year and renews thepolicy each year.\"}]}, {\"row_header\": \"Limited premiums\", \"cells\": [{\"column_header\": \"Differentmodesofpremium Frequency of premium payments\", \"value\": \". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period.\"}]}]}\n\ntable narrative: [\"For regular premiums, the frequency of premium payments are calculated on an annual basis, payable annually in advance, and are level; however, insurers allow payments semi-annually, quarterly, monthly, or in one lump sum (single premium).\", \"For single premiums, the frequency of premium payment is in one lump sum, and the insurer has the full premium amount for investment upfront.\", \"For recurrent single premiums, the frequency of premium payment is similar to regular premiums, but the policy owner can discontinue future payments without affecting the policy, treating it as a fully paid-up policy.\", \"For yearly renewable premiums, the policy owner pays for only one year of coverage each year and renews the policy each year.\", \"For limited premiums, the policy owner will only need to pay premiums for a specified period, such as 20 years or up to age 60, and the premium payable will be higher than a normal regular premium policy since the cost is spread over a shorter period.\"]",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_011__table_01",
+        "table_type": "plan_comparison",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "mode of premium payment",
+          "col": "frequency of premium payments",
+          "value": "description of payment mode"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_011__table_01",
+          "table_type": "plan_comparison",
+          "parse_tier": 1,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Differentmodesofpremium Frequency of premium paymentspayments",
+              "Differentmodesofpremium Frequency of premium payments"
+            ],
+            [
+              "Regular premiums",
+              "- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium)."
+            ],
+            [
+              "Single premiums",
+              "Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront."
+            ],
+            [
+              "Recurrent single premiums",
+              "- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy)."
+            ],
+            [
+              "Yearly renewable premiums",
+              "Policy owner pays for only one year ofcoverage each year and renews thepolicy each year."
+            ],
+            [
+              "Limited premiums",
+              ". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period."
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Differentmodesofpremium Frequency of premium payments"
+            ],
+            "row_headers": [
+              "Regular premiums",
+              "Single premiums",
+              "Recurrent single premiums",
+              "Yearly renewable premiums",
+              "Limited premiums"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Regular premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "- Such premiums for most life insurance products are calculated on an annualbasis, payable annually in advance,andare level.： However, insurers do allow their policyowners to pay by other frequencies,suchassemi-annually，quarterly,monthly or in one lump sum (singlepremium)."
+                }
+              ]
+            },
+            {
+              "row_header": "Single premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "Payment is in one lump sum.- With such payment, the insurer has thefull premium amount for investmentupfront."
+                }
+              ]
+            },
+            {
+              "row_header": "Recurrent single premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "- Similar in concept to the regularpremium option.- But unlike regular premium policies,the policy owner has the flexibility ofdiscontinuingfuture   premiumpayments without affecting the policy(i.e. it will be treated as a fully paid-uppolicy)."
+                }
+              ]
+            },
+            {
+              "row_header": "Yearly renewable premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": "Policy owner pays for only one year ofcoverage each year and renews thepolicy each year."
+                }
+              ]
+            },
+            {
+              "row_header": "Limited premiums",
+              "cells": [
+                {
+                  "column_header": "Differentmodesofpremium Frequency of premium payments",
+                  "value": ". Policy owner will only need to pay premiums for a specified period (e.g. 20years) or up to a specified age (e.g. theage of 60 years). Premium payable will be higher than the normal regular premium policy since the same cost is being spreadover a shorter period."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For regular premiums, the frequency of premium payments are calculated on an annual basis, payable annually in advance, and are level; however, insurers allow payments semi-annually, quarterly, monthly, or in one lump sum (single premium).",
+          "For single premiums, the frequency of premium payment is in one lump sum, and the insurer has the full premium amount for investment upfront.",
+          "For recurrent single premiums, the frequency of premium payment is similar to regular premiums, but the policy owner can discontinue future payments without affecting the policy, treating it as a fully paid-up policy.",
+          "For yearly renewable premiums, the policy owner pays for only one year of coverage each year and renews the policy each year.",
+          "For limited premiums, the policy owner will only need to pay premiums for a specified period, such as 20 years or up to age 60, and the premium payable will be higher than a normal regular premium policy since the cost is spread over a shorter period."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000015",
+    "source_chunk_ids": [
+      "chapter_2__chunk_012"
+    ],
+    "chapter": "chapter_2",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk summarizes key definitions and considerations for setting life insurance premiums, including the roles of actuaries, various factors influencing premiums like mortality and expenses, and the distinction between net and gross premiums. It appears to be a chapter summary or a glossary section from a larger document discussing life insurance pricing.",
+    "text": "<context>This chunk summarizes key definitions and considerations for setting life insurance premiums, including the roles of actuaries, various factors influencing premiums like mortality and expenses, and the distinction between net and gross premiums. It appears to be a chapter summary or a glossary section from a larger document discussing life insurance pricing.</context>\n# Chapter summary:\n\n- Definition or Explanation: Actuaries\nActuaries. The job of the actuary is to set the premiums, such that they are sufficient to cover the claims that the insurer must pay,and the costs of doing business, which will include profits to the insurer. In addition,they have to make sure that the premiums are not too high,such\n\n- Definition or Explanation: Considerations when setting premiums\nthat they are not competitive with that of the other life insurers. Mortality and morbidity rates. Investment income. Expenses. Gender. Smoking status. Amount of sum assured. Frequency of premium payments.\n\n- Definition or Explanation: Mortality rate\nWhen the actuary calculates the mortality rate, he is not concerned with how longanindividual maylive,but rather,how many individuals ina large group may die in a given period of time. Having decided on the number of deaths, the actuary then divides it by the total number of people of that age to arrive at the mortality rate.\n\n- Definition or Explanation: Morbidity rate\nsuch as Critical Iiness or Dread Disease Insurance. Morbidity rate is primarily used to determine the premiums for Health Insurance,\n\n- Definition or Explanation: Net premium\nThe net premium is the amount needed just to pay for the insurance protection. An insurer uses just the rate of mortality/morbidity and investment income to calculate the premiums.\n\n- Definition or Explanation: Expenses\nFirst category includes the salaries for staff, commissions for representatives of financial advisers, rents,advertisements,taxes,and other costs of running the business. Second category is the lapse rate of policies.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_2__small_000016",
+    "source_chunk_ids": [
+      "chapter_2__chunk_013"
+    ],
+    "chapter": "chapter_2",
+    "header": "G. Frequency of premium payments",
+    "level": 1,
+    "context": "This chunk is a table summarizing different modes of premium payments and their associated frequencies, detailing regular, single, recurrent single, yearly renewable, and limited premiums. It follows a section discussing various factors considered when setting life insurance premiums, including mortality/morbidity rates, investment income, expenses, gender, smoking status, sum assured, and frequency of payments.",
+    "text": "<context>This chunk is a table summarizing different modes of premium payments and their associated frequencies, detailing regular, single, recurrent single, yearly renewable, and limited premiums. It follows a section discussing various factors considered when setting life insurance premiums, including mortality/morbidity rates, investment income, expenses, gender, smoking status, sum assured, and frequency of payments.</context>\n# G. Frequency of premium payments\n\nhierarchical_json: {\"table_id\": \"chapter_2__chunk_012__table_01\", \"table_type\": \"plan_comparison\", \"parse_tier\": 1, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Different modes ofpremium payments\", \"Frequency of premium payments\"], [\"Regular premiums\", \"Such premiums for most life insurance productsare calculated on an annual basis, payableannually in advance, and are level. However, insurers do allow their policy owners to pay by other frequencies, such as semi-annually, quarterly, monthly or in one lump sum(single premium).\"], [\"Single premiums\", \"Payment is in one lump sum.With such payment, the insurer has the full premium amount for investment upfront.\"], [\"Recurrent singlepremiums\", \"Similar in concept to the regular premiumoption. But unlike regular premium policies, the policyowner has the flexibility of discontinuing future premium payments without affecting the policy(i.e. it will be treated as a fully paid-up policy).\"], [\"Yearly renewablepremiums\", \"Policy owner pays for only one year of coverageeach year and renews the policy each year.\"], [\"Limited premiums\", \"Policy owner will only need to pay premiumsfor a specified period (e.g. 20 years) or up to a specified age (e.g. the age of 60 years).Premium payable will be higher than the normalregular premium policy since the same cost isbeing spread over a shorter period.\"]], \"headers\": {\"column_headers\": [\"Frequency of premium payments\"], \"row_headers\": [\"Regular premiums\", \"Single premiums\", \"Recurrent singlepremiums\", \"Yearly renewablepremiums\", \"Limited premiums\"]}, \"rows\": [{\"row_header\": \"Regular premiums\", \"cells\": [{\"column_header\": \"Frequency of premium payments\", \"value\": \"Such premiums for most life insurance productsare calculated on an annual basis, payableannually in advance, and are level. However, insurers do allow their policy owners to pay by other frequencies, such as semi-annually, quarterly, monthly or in one lump sum(single premium).\"}]}, {\"row_header\": \"Single premiums\", \"cells\": [{\"column_header\": \"Frequency of premium payments\", \"value\": \"Payment is in one lump sum.With such payment, the insurer has the full premium amount for investment upfront.\"}]}, {\"row_header\": \"Recurrent singlepremiums\", \"cells\": [{\"column_header\": \"Frequency of premium payments\", \"value\": \"Similar in concept to the regular premiumoption. But unlike regular premium policies, the policyowner has the flexibility of discontinuing future premium payments without affecting the policy(i.e. it will be treated as a fully paid-up policy).\"}]}, {\"row_header\": \"Yearly renewablepremiums\", \"cells\": [{\"column_header\": \"Frequency of premium payments\", \"value\": \"Policy owner pays for only one year of coverageeach year and renews the policy each year.\"}]}, {\"row_header\": \"Limited premiums\", \"cells\": [{\"column_header\": \"Frequency of premium payments\", \"value\": \"Policy owner will only need to pay premiumsfor a specified period (e.g. 20 years) or up to a specified age (e.g. the age of 60 years).Premium payable will be higher than the normalregular premium policy since the same cost isbeing spread over a shorter period.\"}]}]}\n\ntable narrative: [\"For regular premiums, most life insurance products calculate premiums on an annual basis, payable annually in advance and are level, but insurers allow payment semi-annually, quarterly, monthly, or in one lump sum (single premium).\", \"For single premiums, payment is in one lump sum, allowing the insurer to invest the full premium amount upfront.\", \"For recurrent single premiums, similar to regular premiums, policy owners can discontinue future premium payments without affecting the policy, treating it as a fully paid-up policy.\", \"For yearly renewable premiums, the policy owner pays for one year of coverage each year and renews the policy annually.\", \"For limited premiums, the policy owner pays premiums for a specified period or up to a specified age, resulting in higher premium payments than normal regular premium policies because the cost is spread over a shorter period.\"]",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_2__chunk_012__table_01",
+        "table_type": "plan_comparison",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "premium payment type",
+          "col": "frequency of premium payments",
+          "value": "description of premium payment type"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_2__chunk_012__table_01",
+          "table_type": "plan_comparison",
+          "parse_tier": 1,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Different modes ofpremium payments",
+              "Frequency of premium payments"
+            ],
+            [
+              "Regular premiums",
+              "Such premiums for most life insurance productsare calculated on an annual basis, payableannually in advance, and are level. However, insurers do allow their policy owners to pay by other frequencies, such as semi-annually, quarterly, monthly or in one lump sum(single premium)."
+            ],
+            [
+              "Single premiums",
+              "Payment is in one lump sum.With such payment, the insurer has the full premium amount for investment upfront."
+            ],
+            [
+              "Recurrent singlepremiums",
+              "Similar in concept to the regular premiumoption. But unlike regular premium policies, the policyowner has the flexibility of discontinuing future premium payments without affecting the policy(i.e. it will be treated as a fully paid-up policy)."
+            ],
+            [
+              "Yearly renewablepremiums",
+              "Policy owner pays for only one year of coverageeach year and renews the policy each year."
+            ],
+            [
+              "Limited premiums",
+              "Policy owner will only need to pay premiumsfor a specified period (e.g. 20 years) or up to a specified age (e.g. the age of 60 years).Premium payable will be higher than the normalregular premium policy since the same cost isbeing spread over a shorter period."
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Frequency of premium payments"
+            ],
+            "row_headers": [
+              "Regular premiums",
+              "Single premiums",
+              "Recurrent singlepremiums",
+              "Yearly renewablepremiums",
+              "Limited premiums"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Regular premiums",
+              "cells": [
+                {
+                  "column_header": "Frequency of premium payments",
+                  "value": "Such premiums for most life insurance productsare calculated on an annual basis, payableannually in advance, and are level. However, insurers do allow their policy owners to pay by other frequencies, such as semi-annually, quarterly, monthly or in one lump sum(single premium)."
+                }
+              ]
+            },
+            {
+              "row_header": "Single premiums",
+              "cells": [
+                {
+                  "column_header": "Frequency of premium payments",
+                  "value": "Payment is in one lump sum.With such payment, the insurer has the full premium amount for investment upfront."
+                }
+              ]
+            },
+            {
+              "row_header": "Recurrent singlepremiums",
+              "cells": [
+                {
+                  "column_header": "Frequency of premium payments",
+                  "value": "Similar in concept to the regular premiumoption. But unlike regular premium policies, the policyowner has the flexibility of discontinuing future premium payments without affecting the policy(i.e. it will be treated as a fully paid-up policy)."
+                }
+              ]
+            },
+            {
+              "row_header": "Yearly renewablepremiums",
+              "cells": [
+                {
+                  "column_header": "Frequency of premium payments",
+                  "value": "Policy owner pays for only one year of coverageeach year and renews the policy each year."
+                }
+              ]
+            },
+            {
+              "row_header": "Limited premiums",
+              "cells": [
+                {
+                  "column_header": "Frequency of premium payments",
+                  "value": "Policy owner will only need to pay premiumsfor a specified period (e.g. 20 years) or up to a specified age (e.g. the age of 60 years).Premium payable will be higher than the normalregular premium policy since the same cost isbeing spread over a shorter period."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For regular premiums, most life insurance products calculate premiums on an annual basis, payable annually in advance and are level, but insurers allow payment semi-annually, quarterly, monthly, or in one lump sum (single premium).",
+          "For single premiums, payment is in one lump sum, allowing the insurer to invest the full premium amount upfront.",
+          "For recurrent single premiums, similar to regular premiums, policy owners can discontinue future premium payments without affecting the policy, treating it as a fully paid-up policy.",
+          "For yearly renewable premiums, the policy owner pays for one year of coverage each year and renews the policy annually.",
+          "For limited premiums, the policy owner pays premiums for a specified period or up to a specified age, resulting in higher premium payments than normal regular premium policies because the cost is spread over a shorter period."
+        ]
+      }
+    ],
+    "header_content_only": false
+  }
+]
