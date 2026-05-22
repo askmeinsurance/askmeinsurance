@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -13,6 +14,8 @@ from app.src.prompts.prompts import (
 from app.src.schema.tool_schema import FindPolicyIdWithCriteriaInput, FindPolicyIdWithCriteriaOutput
 from app.src.services.llm_service import get_llm
 from app.src.tools.product_registry import find_policy_id_with_criteria
+
+_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
 
 
 async def find_product_with_criteria_workflow(
@@ -38,7 +41,7 @@ async def find_product_with_criteria_workflow(
                 HumanMessage(content=user_message),
             ],
         ),
-        timeout=60,
+        timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
     )
 
     tool_output: FindPolicyIdWithCriteriaOutput = await asyncio.to_thread(
@@ -55,6 +58,6 @@ async def find_product_with_criteria_workflow(
                 ),
             ],
         ),
-        timeout=60,
+        timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
     )
     return output

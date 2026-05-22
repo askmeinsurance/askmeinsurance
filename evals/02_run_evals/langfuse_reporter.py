@@ -59,7 +59,7 @@ def post_scores(
     scores: {metric_name: (value, reason_or_None)}
     """
     for name, (value, reason) in scores.items():
-        client.score(
+        client.create_score(
             trace_id=trace_id,
             name=name,
             value=value,
@@ -74,8 +74,8 @@ def link_to_dataset_run(
     dataset_item_id: str,
     trace_id: str,
 ) -> None:
-    client.create_dataset_run_item(
+    client.api.dataset_run_items.create(
         run_name=run_name,
         dataset_item_id=dataset_item_id,
-        observation_id=trace_id,
+        trace_id=trace_id,
     )

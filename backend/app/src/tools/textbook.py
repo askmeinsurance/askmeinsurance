@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 from app.src.utils.misc import get_embeddings, get_qdrant_client, get_textbook_top_k
 
-COLLECTION = "insurance_text_book"
+COLLECTION = "insurance_text_book2"
 
 
 class TextbookInput(BaseModel):

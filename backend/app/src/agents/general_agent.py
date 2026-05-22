@@ -17,6 +17,7 @@ agent workflow:
 """
 
 import asyncio
+import os
 from typing import Annotated, List
 
 import operator
@@ -33,6 +34,8 @@ from app.src.prompts.prompts import (
 from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
 from app.src.services.llm_service import get_llm
 from app.src.utils.parallel_executor import execute_parallel_plan
+
+_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
 
 
 class GeneralAgentStateInput(BaseModel):
@@ -77,7 +80,7 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
                     HumanMessage(content=user_message_text),
                 ],
             ),
-            timeout=30,
+            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 30,
         )
         return {
             "question_type": classification.question_type,
@@ -101,7 +104,7 @@ execution results = {state.execution_results}
                     HumanMessage(content=planner_user_message),
                 ],
             ),
-            timeout=60,
+            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
         )
         return {
             "execution_plan": [step.model_dump() for step in execution_plan.steps],
@@ -134,7 +137,7 @@ execution results = {state.execution_results}
                     HumanMessage(content=user_message),
                 ],
             ),
-            timeout=60,
+            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
         )
         return {"messages": [res]}
 

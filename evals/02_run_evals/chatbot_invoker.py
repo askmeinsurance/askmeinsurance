@@ -14,7 +14,9 @@ async def get_graph():
     """Return the singleton compiled LangGraph (initialised once)."""
     global _graph
     if _graph is None:
+        print("  [graph] compiling LangGraph...")
         _graph = await get_compiled_graph()
+        print("  [graph] ready")
     return _graph
 
 
@@ -22,17 +24,25 @@ def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
     """Extract retrieved text chunks from graph execution_results."""
     chunks = []
     seen = set()
+    tool_hits: dict[str, int] = {}
     for batch in execution_results:
         for step in batch.get("results", []):
             if step.get("kind") != "tool":
                 continue
-            if step.get("target") not in ("query_textbook", "query_product_summary"):
+            target = step.get("target")
+            if target not in ("query_textbook", "query_product_summary"):
                 continue
             for chunk in step.get("output") or []:
                 text = chunk.get("text") or chunk.get("combined_text") or ""
                 if text and text not in seen:
                     seen.add(text)
                     chunks.append(text)
+                    tool_hits[target] = tool_hits.get(target, 0) + 1
+    if tool_hits:
+        summary = "  ".join(f"{t}={n}" for t, n in tool_hits.items())
+        print(f"  [retrieval] {len(chunks)} chunks  ({summary})")
+    else:
+        print("  [retrieval] no chunks retrieved")
     return chunks
 
 

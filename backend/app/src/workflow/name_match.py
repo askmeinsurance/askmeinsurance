@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -6,6 +7,8 @@ from app.src.agent_state.agent_state import NameMatchStateInput, NameMatchStateO
 from app.src.prompts.prompts import NAME_MATCH_SYSTEM
 from app.src.services.llm_service import get_llm
 from app.src.tools.product_registry import get_product_names
+
+_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
 
 
 async def name_match_workflow(state: NameMatchStateInput) -> NameMatchStateOutput:
@@ -23,7 +26,7 @@ Catalog: {catalog}
             llm.invoke,
             [SystemMessage(content=NAME_MATCH_SYSTEM), HumanMessage(content=user_message)],
         ),
-        timeout=10,
+        timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 10,
     )
 
     return output

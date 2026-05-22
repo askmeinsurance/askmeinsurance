@@ -13,7 +13,15 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).parent / ".env", override=True)
+_EVALS_ROOT = Path(__file__).parents[1]
+_ENV_CANDIDATES = [
+    _EVALS_ROOT / ".env",          # preferred: evals/.env
+    Path(__file__).parent / ".env" # fallback: evals/02_run_evals/.env
+]
+for _env_path in _ENV_CANDIDATES:
+    if _env_path.exists():
+        load_dotenv(_env_path, override=True)
+        break
 
 _BACKEND_ROOT = Path(__file__).parents[2] / "backend"
 if str(_BACKEND_ROOT) not in sys.path:
@@ -97,10 +105,22 @@ async def _eval_case(
         active_metrics.append(metrics_map["contextual_precision"])
         active_metrics.append(metrics_map["contextual_recall"])
 
-    await asyncio.gather(*[m.a_measure(test_case) for m in active_metrics])
+    def _metric_name(m) -> str:
+        return getattr(m, "name", type(m).__name__)
+
+    metric_names = [_metric_name(m) for m in active_metrics]
+    print(f"  [metrics] running: {', '.join(metric_names)}")
+
+    async def measure_and_log(metric):
+        await metric.a_measure(test_case)
+        reason = getattr(metric, "reason", None)
+        reason_str = f" — {reason}" if reason else ""
+        print(f"  [score]  {_metric_name(metric):<22} {metric.score:.2f}{reason_str}")
+
+    await asyncio.gather(*[measure_and_log(m) for m in active_metrics])
 
     scores: dict[str, tuple[float, str | None]] = {
-        m.name: (m.score, getattr(m, "reason", None)) for m in active_metrics
+        _metric_name(m): (m.score, getattr(m, "reason", None)) for m in active_metrics
     }
 
     post_scores(lf_client, trace_id, scores)
