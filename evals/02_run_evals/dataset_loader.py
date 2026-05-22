@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-_DATASET_ROOT = Path(__file__).parents[1] / "01_create_reference_dataset"
+_DATASET_ROOT = Path(__file__).parents[1] 
 
 
 @dataclass
@@ -17,7 +17,7 @@ class EvalCase:
 
 
 def load_manual_evals() -> list[EvalCase]:
-    path = _DATASET_ROOT / "manual_evals" / "manual_data.json"
+    path = _DATASET_ROOT / "dataset" / "manual_data.json"
     data = json.loads(path.read_text())
     return [
         EvalCase(

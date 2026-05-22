@@ -130,18 +130,12 @@ async def _eval_case(
         retrieval_context=retrieval_context or None,
     )
 
-    # Run metrics; faithfulness only when ground-truth is available;
-    # contextual metrics only when both ground-truth and retrieval context are available
     active_metrics = [
-        metrics_map["answer_relevancy"],
-        metrics_map["completeness"],
-        metrics_map["insurance_accuracy"],
+        cfg.metric
+        for cfg in metrics_map.values()
+        if (not cfg.requires_expected_output or case.expected_output)
+        and (not cfg.requires_retrieval_context or retrieval_context)
     ]
-    if case.expected_output:
-        active_metrics.append(metrics_map["faithfulness"])
-    if case.expected_output and retrieval_context:
-        active_metrics.append(metrics_map["contextual_precision"])
-        active_metrics.append(metrics_map["contextual_recall"])
 
     def _metric_name(m) -> str:
         return getattr(m, "name", type(m).__name__)
