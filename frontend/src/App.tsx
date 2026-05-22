@@ -15,6 +15,7 @@ import {
 } from './lib/auth';
 import { getSupabaseClient } from './lib/supabase';
 import {
+  deleteConversation,
   getConversationMessages,
   listConversations,
   streamChatMessage,
@@ -452,6 +453,40 @@ export default function App() {
     }
   }
 
+  async function handleConversationDelete(conversationId: string) {
+    if (!session) return;
+
+    const target = conversations.find((item) => item.id === conversationId);
+    const title = target?.title ?? 'this conversation';
+    const confirmed = window.confirm(`Delete "${title}"? This cannot be undone.`);
+    if (!confirmed) return;
+
+    try {
+      await deleteConversation(conversationId, session.accessToken);
+      setConversations((prev) => prev.filter((item) => item.id !== conversationId));
+      setMessagesByConversation((prev) => {
+        const next = { ...prev };
+        delete next[conversationId];
+        return next;
+      });
+
+      if (activeConversationId === conversationId) {
+        setView('chat');
+        setActiveConversationId(null);
+        setMessages([]);
+        setActiveFormRequest(null);
+        setFormSubmitError(null);
+      }
+    } catch (error) {
+      const status = (error as { status?: number }).status;
+      if (status === 401) {
+        handleUnauthorized();
+        return;
+      }
+      setAuthWarning('Unable to delete conversation right now.');
+    }
+  }
+
   function handleNewChat() {
     setView('chat');
     setMessages([]);
@@ -554,6 +589,7 @@ export default function App() {
       onSidebarToggle={handleSidebarToggle}
       conversations={sidebarConversations}
       onConversationSelect={handleConversationSelect}
+      onConversationDelete={handleConversationDelete}
       onNewChat={handleNewChat}
       onSignOut={handleSignOut}
       signedInEmail={session?.email}

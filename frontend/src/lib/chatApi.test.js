@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
 import { afterEach, describe, it, mock } from 'node:test';
-import { getConversationMessages, listConversations, streamChatMessage, submitFormAnswers } from './chatApi.ts';
+import {
+  deleteConversation,
+  getConversationMessages,
+  listConversations,
+  streamChatMessage,
+  submitFormAnswers,
+} from './chatApi.ts';
 
 function sseResponse(events) {
   const sseBody = events
@@ -152,6 +158,15 @@ describe('conversation APIs', () => {
     const result = await getConversationMessages('f1a9f6de-4d4d-42d5-b893-c783f6f32641', 'token');
     assert.equal(result.length, 1);
     assert.equal(result[0].role, 'user');
+  });
+
+  it('deletes a conversation', async () => {
+    const fetchMock = mock.method(globalThis, 'fetch', async () => new Response(null, { status: 204 }));
+    await deleteConversation('f1a9f6de-4d4d-42d5-b893-c783f6f32641', 'token');
+    assert.equal(fetchMock.mock.calls.length, 1);
+    const [url, options] = fetchMock.mock.calls[0]?.arguments ?? [];
+    assert.equal(url, '/api/v1/conversations/f1a9f6de-4d4d-42d5-b893-c783f6f32641');
+    assert.equal(options.method, 'DELETE');
   });
 });
 
