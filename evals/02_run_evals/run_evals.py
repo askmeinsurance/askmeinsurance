@@ -51,6 +51,44 @@ from langfuse_reporter import (
 from metrics import GeminiJudge, build_metrics
 
 DATASET_NAME = "insurance_chatbot_evals"
+_LOGS_DIR = Path(__file__).parents[2] / "evals" / "logs"
+
+
+def _save_log(
+    run_name: str,
+    results: list[dict],
+    all_metric_names: list[str],
+    total_cases: int,
+) -> None:
+    _LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = _LOGS_DIR / f"{run_name}.txt"
+    with_gt = sum(1 for r in results if r["scores"])
+    lines: list[str] = [
+        f"Run    : {run_name}",
+        f"Date   : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        f"Cases  : {total_cases} total  ({with_gt} with scores)",
+        "─" * 64,
+    ]
+    for i, r in enumerate(results, 1):
+        lines.append(f"\n[{i}/{total_cases}] {r['question']}")
+        answer_preview = r["answer"][:200].replace("\n", " ")
+        if len(r["answer"]) > 200:
+            answer_preview += "..."
+        lines.append(f"  Answer : {answer_preview}")
+        for metric, (score, reason) in r["scores"].items():
+            reason_str = f"  — {reason}" if reason else ""
+            lines.append(f"  {metric:<22} : {score:.2f}{reason_str}")
+    lines.append(f"\n{'─' * 64}")
+    lines.append("Summary")
+    for metric in all_metric_names:
+        vals = [r["scores"][metric][0] for r in results if metric in r["scores"]]
+        if vals:
+            avg = sum(vals) / len(vals)
+            passing = sum(1 for v in vals if v >= 0.7)
+            lines.append(f"  {metric:<22} avg={avg:.3f}  pass={passing}/{len(vals)}")
+    lines.append(f"\nLangfuse: Datasets → {DATASET_NAME} → Runs → {run_name}")
+    log_path.write_text("\n".join(lines))
+    print(f"Log saved: {log_path}")
 
 
 async def _eval_case(
@@ -192,6 +230,7 @@ async def main() -> None:
             print(f"  {metric:<22} avg={avg:.3f}  pass={passing}/{len(vals)}")
 
     print(f"\nLangfuse: Datasets → {DATASET_NAME} → Runs → {run_name}")
+    _save_log(run_name, results, all_metric_names, len(cases))
     lf_client.flush()
 
 

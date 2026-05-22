@@ -12,6 +12,7 @@ class GeminiJudge(DeepEvalBaseLLM):
     """Gemini-backed LLM judge for DeepEval metrics."""
 
     def __init__(self, model_name: str = "gemini-2.5-flash-lite") -> None:
+        model_name = "gemini-flash-lite-latest"
         self._model_name = model_name
         _timeout = int(os.getenv("LLM_TIMEOUT_SECONDS", "60"))
         self._llm = ChatGoogleGenerativeAI(
@@ -25,10 +26,22 @@ class GeminiJudge(DeepEvalBaseLLM):
         return self._llm
 
     def generate(self, prompt: str) -> str:
-        return self._llm.invoke(prompt).content
+        content = self._llm.invoke(prompt).content
+        if isinstance(content, list):
+            return "".join(
+                part.get("text", "") if isinstance(part, dict) else str(part)
+                for part in content
+            )
+        return content
 
     async def a_generate(self, prompt: str) -> str:
-        return (await self._llm.ainvoke(prompt)).content
+        content = (await self._llm.ainvoke(prompt)).content
+        if isinstance(content, list):
+            return "".join(
+                part.get("text", "") if isinstance(part, dict) else str(part)
+                for part in content
+            )
+        return content
 
     def get_model_name(self) -> str:
         return self._model_name

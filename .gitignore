@@ -1,3 +1,4 @@
 ref/*
 **/.env
 **/.env.*
+evals/logs/
