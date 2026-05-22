@@ -54,6 +54,25 @@ async def _classify_node(state: SimpleWorkflowGraphState, config: RunnableConfig
     return {"classification": result}
 
 
+async def _expand_queries_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
+    llm = get_llm("simple_workflow").with_structured_output(ExpandedQueries)
+    classification = state.classification
+    user_message = (
+        f"Conversation history:\n{state.conversation_history}\n\n"
+        f"User question:\n{state.messages}\n\n"
+        f"Question type: {classification.question_type if classification else 'unknown'}\n"
+        f"Product mentioned: {classification.product_name_mentioned if classification else 'none'}"
+    )
+    result = await asyncio.wait_for(
+        llm.ainvoke(
+            [SystemMessage(content=SIMPLE_WORKFLOW_EXPAND_SYSTEM), HumanMessage(content=user_message)],
+            config=config,
+        ),
+        timeout=_timeout(),
+    )
+    return {"expanded": result}
+
+
 async def _name_match_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
     product_name = state.classification.product_name_mentioned if state.classification else None
     if not product_name:
@@ -74,47 +93,25 @@ async def _name_match_node(state: SimpleWorkflowGraphState, config: RunnableConf
     return {"policy_ids": policy_ids}
 
 
-async def _expand_queries_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
-    llm = get_llm("simple_workflow").with_structured_output(ExpandedQueries)
-    classification = state.classification
-    user_message = (
-        f"Conversation history:\n{state.conversation_history}\n\n"
-        f"User question:\n{state.messages}\n\n"
-        f"Question type: {classification.question_type if classification else 'unknown'}\n"
-        f"Product mentioned: {classification.product_name_mentioned if classification else 'none'}"
+async def _retrieve_product_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
+    product_queries = state.expanded.product_queries if state.expanded else []
+    if not state.policy_ids or not product_queries:
+        return {"product_chunks": []}
+    query_pairs = [[q, pid] for pid in state.policy_ids for q in product_queries]
+    chunks = await asyncio.to_thread(
+        lambda: query_product_summary.invoke({"queries": query_pairs}, config=config)
     )
-    result = await asyncio.wait_for(
-        llm.ainvoke(
-            [SystemMessage(content=SIMPLE_WORKFLOW_EXPAND_SYSTEM), HumanMessage(content=user_message)],
-            config=config,
-        ),
-        timeout=_timeout(),
+    return {"product_chunks": chunks}
+
+
+async def _retrieve_concept_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
+    concept_queries = state.expanded.concept_queries if state.expanded else []
+    if not concept_queries:
+        return {"concept_chunks": []}
+    chunks = await asyncio.to_thread(
+        lambda: query_textbook.invoke({"queries": [[q] for q in concept_queries]}, config=config)
     )
-    return {"expanded": result}
-
-
-async def _retrieve_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
-    expanded = state.expanded
-    product_queries = expanded.product_queries if expanded else []
-    concept_queries = expanded.concept_queries if expanded else []
-
-    async def _retrieve_product() -> list[dict]:
-        if not state.policy_ids or not product_queries:
-            return []
-        query_pairs = [[q, pid] for pid in state.policy_ids for q in product_queries]
-        return await asyncio.to_thread(
-            lambda: query_product_summary.invoke({"queries": query_pairs}, config=config)
-        )
-
-    async def _retrieve_concept() -> list[dict]:
-        if not concept_queries:
-            return []
-        return await asyncio.to_thread(
-            lambda: query_textbook.invoke({"queries": [[q] for q in concept_queries]}, config=config)
-        )
-
-    product_chunks, concept_chunks = await asyncio.gather(_retrieve_product(), _retrieve_concept())
-    return {"product_chunks": product_chunks, "concept_chunks": concept_chunks}
+    return {"concept_chunks": chunks}
 
 
 async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
@@ -138,30 +135,31 @@ async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConf
     return {"messages": [AIMessage(content=response.content)]}
 
 
-def _route_after_classify(state: SimpleWorkflowGraphState) -> str:
-    if state.classification and state.classification.question_type in ("specific_product", "both"):
-        return "name_match"
-    return "expand_queries"
+def _route_after_expand(state: SimpleWorkflowGraphState) -> list[str]:
+    qt = state.classification.question_type if state.classification else "concept"
+    if qt == "specific_product":
+        return ["name_match"]
+    if qt == "concept":
+        return ["retrieve_concept"]
+    return ["name_match", "retrieve_concept"]  # "both" — parallel fan-out
 
 
 def get_simple_workflow_subgraph():
     builder = StateGraph(SimpleWorkflowGraphState)
 
     builder.add_node("classify", _classify_node)
-    builder.add_node("name_match", _name_match_node)
     builder.add_node("expand_queries", _expand_queries_node)
-    builder.add_node("retrieve", _retrieve_node)
+    builder.add_node("name_match", _name_match_node)
+    builder.add_node("retrieve_product", _retrieve_product_node)
+    builder.add_node("retrieve_concept", _retrieve_concept_node)
     builder.add_node("synthesise", _synthesise_node)
 
     builder.add_edge(START, "classify")
-    builder.add_conditional_edges(
-        "classify",
-        _route_after_classify,
-        {"name_match": "name_match", "expand_queries": "expand_queries"},
-    )
-    builder.add_edge("name_match", "expand_queries")
-    builder.add_edge("expand_queries", "retrieve")
-    builder.add_edge("retrieve", "synthesise")
+    builder.add_edge("classify", "expand_queries")
+    builder.add_conditional_edges("expand_queries", _route_after_expand)
+    builder.add_edge("name_match", "retrieve_product")
+    builder.add_edge("retrieve_product", "synthesise")
+    builder.add_edge("retrieve_concept", "synthesise")
     builder.add_edge("synthesise", END)
 
     return builder.compile()
