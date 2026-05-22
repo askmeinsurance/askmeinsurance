@@ -6,7 +6,8 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-from app.src.agents.general_agent import get_general_agent_subgraph
+# from app.src.agents.general_agent import get_general_agent_subgraph
+from app.src.workflow.simple_workflow import get_simple_workflow_subgraph
 
 
 class MainAgentState(BaseModel):
@@ -16,16 +17,17 @@ class MainAgentState(BaseModel):
 
 
 async def get_main_agent_graph():
-    """Build and compile the main agent graph.
-
-    For now all messages route directly to general_agent.
-    Routing to fplanner_agent will be added when that agent is implemented.
-    """
-    general_agent = await get_general_agent_subgraph()
-
+    """Build and compile the main agent graph."""
     builder = StateGraph(MainAgentState)
-    builder.add_node("general_agent", general_agent)
-    builder.add_edge(START, "general_agent")
-    builder.add_edge("general_agent", END)
+
+    # general_agent = await get_general_agent_subgraph()
+    # builder.add_node("general_agent", general_agent)
+    # builder.add_edge(START, "general_agent")
+    # builder.add_edge("general_agent", END)
+
+    simple_workflow = get_simple_workflow_subgraph()
+    builder.add_node("simple_workflow", simple_workflow)
+    builder.add_edge(START, "simple_workflow")
+    builder.add_edge("simple_workflow", END)
 
     return builder.compile()
