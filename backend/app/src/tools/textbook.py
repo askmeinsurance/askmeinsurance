@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from typing_extensions import TypedDict
 
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
@@ -6,6 +7,26 @@ from pydantic import BaseModel, Field
 from app.src.utils.misc import get_embeddings, get_qdrant_client, get_textbook_top_k
 
 COLLECTION = "insurance_text_book2"
+
+
+class TextbookChunk(TypedDict):
+    chunk_id: str | None
+    text: str | None
+    chapter: str | None
+    header: str | None
+    level: int | None
+    has_table: bool | None
+    query_ids: list[int]
+
+
+class TextbookQueryItem(TypedDict):
+    query_id: int
+    query: str
+
+
+class TextbookOutput(TypedDict):
+    queries: list[TextbookQueryItem]
+    results: list[TextbookChunk]
 
 
 class TextbookInput(BaseModel):
@@ -32,7 +53,7 @@ def query_textbook(
     queries: list[list | str] | None = None,
     query: str | None = None,
     k: int | None = None,
-) -> list[dict]:
+) -> TextbookOutput:
     """Search the insurance textbook for conceptual definitions, regulatory frameworks,
     and general product knowledge. Use for 'what is X' or 'how does X work' questions.
     Do NOT use for specific policy benefit details or insurer-specific terms."""
@@ -71,26 +92,37 @@ def query_textbook(
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:
         points_groups = list(executor.map(_retrieve_one, normalized_queries))
 
-    deduped_points = []
-    seen_chunk_ids: set[str] = set()
-    for points in points_groups:
-        for point in points:
-            chunk_id = point.payload.get("chunk_id")
-            if chunk_id and chunk_id in seen_chunk_ids:
-                continue
-            if chunk_id:
-                seen_chunk_ids.add(chunk_id)
-            deduped_points.append(point)
-
-    return [
-        {
-            "chunk_id": r.payload.get("chunk_id"),
-            "text": r.payload.get("text"),
-            "chapter": r.payload.get("chapter"),
-            "header": r.payload.get("header"),
-            "level": r.payload.get("level"),
-            "has_table": r.payload.get("has_table"),
-            "score": r.score,
-        }
-        for r in deduped_points
+    query_items: list[TextbookQueryItem] = [
+        {"query": q, "query_id": idx}
+        for idx, q in enumerate(normalized_queries, start=1)
     ]
+
+    deduped_by_key: dict[str, TextbookChunk] = {}
+    for query_item, points in zip(query_items, points_groups):
+        query_id = query_item["query_id"]
+        for point in points:
+            payload = point.payload or {}
+            chunk_id = payload.get("chunk_id")
+            text = payload.get("text")
+            dedupe_key = str(chunk_id) if chunk_id else f"text::{(text or '').strip()}"
+            if dedupe_key not in deduped_by_key:
+                deduped_by_key[dedupe_key] = {
+                    "chunk_id": chunk_id,
+                    "text": text,
+                    "chapter": payload.get("chapter"),
+                    "header": payload.get("header"),
+                    "level": payload.get("level"),
+                    "has_table": payload.get("has_table"),
+                    "query_ids": [query_id],
+                }
+                continue
+            if query_id not in deduped_by_key[dedupe_key]["query_ids"]:
+                deduped_by_key[dedupe_key]["query_ids"].append(query_id)
+
+    for chunk in deduped_by_key.values():
+        chunk["query_ids"].sort()
+
+    return {
+        "queries": query_items,
+        "results": list(deduped_by_key.values()),
+    }

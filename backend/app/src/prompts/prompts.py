@@ -869,16 +869,39 @@ Every step in `steps` must be a JSON object with these fields:
 
 Semantic search over the insurance knowledge base — definitions, regulatory frameworks, product structures, general principles.
 
-**Input:** `queries` is a **list of single-element lists**. Each question must be wrapped in its own inner list.
+**Input:** `queries` supports both:
+- preferred: list of single-element lists
+- accepted: list of plain strings
 
 ✅ CORRECT — each question is a one-element list:
 ```json
 { "queries": [["what is a reversionary bonus"], ["how does CPF interact with life insurance"]] }
 ```
 
-❌ WRONG — plain strings (will fail):
+✅ ALSO CORRECT — plain strings:
 ```json
 { "queries": ["what is a reversionary bonus", "how does CPF interact"] }
+```
+
+**Output:** one dictionary containing deduplicated chunks with query references:
+```json
+{
+  "queries": [
+    { "query": "what is a reversionary bonus", "query_id": 1 },
+    { "query": "are reversionary bonuses guaranteed", "query_id": 2 }
+  ],
+  "results": [
+    {
+      "chunk_id": "tb_12_004",
+      "text": "...",
+      "chapter": "Participating Policies",
+      "header": "Bonuses",
+      "level": 2,
+      "has_table": false,
+      "query_ids": [1, 2]
+    }
+  ]
+}
 ```
 
 `query_textbook` never depends on other steps — `"depends_on"` must always be `[]`.
@@ -1036,7 +1059,7 @@ Before outputting, verify:
 - [ ] Every step has `kind` set to `"tool"` or `"sub_agent"` exactly.
 - [ ] Every step has `target` matching one of the five registered names exactly.
 - [ ] Every step has an `input` dict.
-- [ ] `query_textbook` — `input.queries` is a list of single-element lists.
+- [ ] `query_textbook` — `input.queries` is a list of single-element lists (preferred) or plain strings.
 - [ ] `query_product_summary` — `input.queries` is a list of two-element lists.
 - [ ] `find_policy_details_with_policy_id` — `input` has `policy_id` (non-null) and `criteria` (non-empty list).
 - [ ] `name_match_workflow` — `input` has `messages` and `retrieval_query`.

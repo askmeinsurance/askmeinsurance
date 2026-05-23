@@ -8,7 +8,7 @@ from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, System
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.src.agent_state.agent_state import (
     ExpandedQueries,
@@ -23,7 +23,7 @@ from app.src.prompts.prompts import (
 )
 from app.src.services.llm_service import get_llm, resolve_timeout_seconds
 from app.src.tools.product_summary import query_product_summary
-from app.src.tools.textbook import query_textbook
+from app.src.tools.textbook import TextbookOutput, query_textbook
 from app.src.utils.prompt_format import format_json_for_prompt
 from app.src.workflow.name_match import name_match_workflow
 
@@ -38,7 +38,7 @@ class SimpleWorkflowGraphState(BaseModel):
     policy_ids: Annotated[list[str], operator.add] = []
     expanded: ExpandedQueries | None = None
     product_chunks: Annotated[list[dict], operator.add] = []
-    concept_chunks: Annotated[list[dict], operator.add] = []
+    concept_chunks: TextbookOutput = Field(default_factory=lambda: {"queries": [], "results": []})
 
 
 async def _classify_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
@@ -106,7 +106,7 @@ async def _retrieve_product_node(state: SimpleWorkflowGraphState, config: Runnab
 async def _retrieve_concept_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
     concept_queries = state.expanded.concept_queries if state.expanded else []
     if not concept_queries:
-        return {"concept_chunks": []}
+        return {"concept_chunks": {"queries": [], "results": []}}
     chunks = await asyncio.to_thread(
         lambda: query_textbook.invoke({"queries": [[q] for q in concept_queries]}, config=config)
     )

@@ -61,7 +61,7 @@ def register_defaults() -> None:
     )
     from app.src.tools.product_registry import find_policy_details_with_policy_id
     from app.src.tools.product_summary import query_product_summary
-    from app.src.tools.textbook import query_textbook
+    from app.src.tools.textbook import TextbookOutput, query_textbook
     from app.src.workflow.find_product_with_criteria import find_product_with_criteria_workflow
     from app.src.workflow.name_match import name_match_workflow
 
@@ -91,7 +91,7 @@ def register_defaults() -> None:
     async def _tool_query_product_summary(step_input: dict, _context: dict) -> list[dict]:
         return query_product_summary.invoke(step_input)
 
-    async def _tool_query_textbook(step_input: dict, _context: dict) -> list[dict]:
+    async def _tool_query_textbook(step_input: dict, _context: dict) -> TextbookOutput:
         return query_textbook.invoke(step_input)
 
     async def _subagent_find_product_with_criteria_workflow(step_input: dict, _context: dict) -> dict:
