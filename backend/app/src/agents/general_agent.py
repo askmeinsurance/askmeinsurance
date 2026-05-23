@@ -17,7 +17,6 @@ agent workflow:
 """
 
 import asyncio
-import os
 from typing import Annotated, List
 
 import operator
@@ -32,10 +31,8 @@ from app.src.prompts.prompts import (
     QUESTION_CLASSIFIER_SYSTEM,
 )
 from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
-from app.src.services.llm_service import get_llm
+from app.src.services.llm_service import get_llm, resolve_timeout_seconds
 from app.src.utils.parallel_executor import execute_parallel_plan
-
-_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
 
 
 class GeneralAgentStateInput(BaseModel):
@@ -46,7 +43,7 @@ class GeneralAgentStateInput(BaseModel):
 class GeneralAgentStateOutput(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
     conversation_history: Annotated[list[BaseMessage], operator.add]
-    execution_results: list = Field(default_factory=list)
+    execution_results: Annotated[list, operator.add] = Field(default_factory=list)
 
 
 class GeneralAgentStateReact(BaseModel):
@@ -80,7 +77,7 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
                     HumanMessage(content=user_message_text),
                 ],
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 30,
+            timeout=resolve_timeout_seconds("general_agent_planner", 30),
         )
         return {
             "question_type": classification.question_type,
@@ -104,7 +101,7 @@ execution results = {state.execution_results}
                     HumanMessage(content=planner_user_message),
                 ],
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
+            timeout=resolve_timeout_seconds("general_agent_planner", 60),
         )
         return {
             "execution_plan": [step.model_dump() for step in execution_plan.steps],
@@ -137,7 +134,7 @@ execution results = {state.execution_results}
                     HumanMessage(content=user_message),
                 ],
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
+            timeout=resolve_timeout_seconds("general_agent_synthesis", 60),
         )
         return {"messages": [res]}
 

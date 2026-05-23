@@ -8,28 +8,41 @@ name_match_workflow:
   model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
+  max_output_tokens: 10000
   temperature: 0
 
 find_product_with_criteria_workflow:
   model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
+  max_output_tokens: 10000
   temperature: 0
 
 general_agent_planner:
   model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
+  max_output_tokens: 10000
   temperature: 0
 
 general_agent_synthesis:
   model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
+  max_output_tokens: 10000
   temperature: 0
 
 simple_workflow:
   model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
+  max_output_tokens: 10000
+  temperature: 0
+
+
+main_agent:
+  model: openrouter|gpt-5.4-nano
+  thinking_budget: 0
+  timeout_seconds: 30
+  max_output_tokens: 20000
   temperature: 0

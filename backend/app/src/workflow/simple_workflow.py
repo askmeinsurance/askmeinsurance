@@ -1,7 +1,8 @@
 import asyncio
 import operator
-import os
 from typing import Annotated, List
+
+import anyio
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
@@ -18,23 +19,20 @@ from app.src.prompts.prompts import (
     SIMPLE_WORKFLOW_CLASSIFY_SYSTEM,
     SIMPLE_WORKFLOW_EXPAND_SYSTEM,
     SIMPLE_WORKFLOW_SYNTHESIS_SYSTEM,
-    GENERAL_AGENT_SYNTHESIS_SYSTEM
+    GENERAL_AGENT_SYNTHESIS_SYSTEM,
 )
-from app.src.services.llm_service import get_llm
+from app.src.services.llm_service import get_llm, resolve_timeout_seconds
 from app.src.tools.product_summary import query_product_summary
 from app.src.tools.textbook import query_textbook
 from app.src.workflow.name_match import name_match_workflow
 
-_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
-
-
 def _timeout() -> float:
-    return float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 30
+    return resolve_timeout_seconds("simple_workflow", 30)
 
 
 class SimpleWorkflowGraphState(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
-    conversation_history: Annotated[list[BaseMessage], add_messages] = []
+    conversation_history: Annotated[list[BaseMessage], operator.add] = []
     classification: SimpleQueryClassification | None = None
     policy_ids: Annotated[list[str], operator.add] = []
     expanded: ExpandedQueries | None = None
@@ -45,13 +43,11 @@ class SimpleWorkflowGraphState(BaseModel):
 async def _classify_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
     llm = get_llm("simple_workflow").with_structured_output(SimpleQueryClassification)
     user_message = f"Conversation history:\n{state.conversation_history}\n\nMost recent question:\n{state.messages}"
-    result = await asyncio.wait_for(
-        llm.ainvoke(
+    with anyio.fail_after(_timeout()):
+        result = await llm.ainvoke(
             [SystemMessage(content=SIMPLE_WORKFLOW_CLASSIFY_SYSTEM), HumanMessage(content=user_message)],
             config=config,
-        ),
-        timeout=_timeout(),
-    )
+        )
     return {"classification": result}
 
 
@@ -64,13 +60,11 @@ async def _expand_queries_node(state: SimpleWorkflowGraphState, config: Runnable
         f"Question type: {classification.question_type if classification else 'unknown'}\n"
         f"Product mentioned: {classification.product_name_mentioned if classification else 'none'}"
     )
-    result = await asyncio.wait_for(
-        llm.ainvoke(
+    with anyio.fail_after(_timeout()):
+        result = await llm.ainvoke(
             [SystemMessage(content=SIMPLE_WORKFLOW_EXPAND_SYSTEM), HumanMessage(content=user_message)],
             config=config,
-        ),
-        timeout=_timeout(),
-    )
+        )
     return {"expanded": result}
 
 
@@ -126,13 +120,11 @@ async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConf
         f"Product evidence:\n{state.product_chunks}\n\n"
         f"Concept evidence:\n{state.concept_chunks}"
     )
-    response = await asyncio.wait_for(
-        llm.ainvoke(
+    with anyio.fail_after(_timeout()):
+        response = await llm.ainvoke(
             [SystemMessage(content=SIMPLE_WORKFLOW_SYNTHESIS_SYSTEM), HumanMessage(content=user_message)],
             config=config,
-        ),
-        timeout=_timeout(),
-    )
+        )
     return {"messages": [AIMessage(content=response.content)]}
 
 

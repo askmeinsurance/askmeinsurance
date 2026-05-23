@@ -32,15 +32,6 @@ class FindProductWithCriteriaStateOutput(BaseModel):
     matching_product: List[PolicyMatch]
 
 
-class SimpleWorkflowStateInput(BaseModel):
-    messages: Annotated[list[BaseMessage], add_messages]
-    conversation_history: Annotated[list[BaseMessage], add_messages] = []
-
-
-class SimpleWorkflowStateOutput(BaseModel):
-    response: str
-
-
 class SimpleQueryClassification(BaseModel):
     question_type: Literal["specific_product", "concept", "both"]
     product_name_mentioned: str | None

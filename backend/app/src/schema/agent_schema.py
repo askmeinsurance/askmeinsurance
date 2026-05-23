@@ -6,6 +6,17 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 
 StepKind = Literal["tool", "sub_agent"]
 QuestionType = Literal["concept", "specific_product", "comparison", "needs_based"]
+MainAgentRoute = Literal["simple_workflow", "general_agent"]
+
+
+class MainAgentRouterClassification(BaseModel):
+    route: MainAgentRoute = Field(
+        description="Route target for the main agent graph: 'simple_workflow' or 'general_agent'."
+    )
+    reasoning: str = Field(
+        default="",
+        description="Brief reasoning for why the route was selected.",
+    )
 
 
 class QuestionClassification(BaseModel):
