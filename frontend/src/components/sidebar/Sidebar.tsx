@@ -7,6 +7,7 @@ import {
   HelpCircle,
   ChevronRight,
   LogOut,
+  Trash2,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { IconButton } from "../ui/IconButton";
@@ -47,6 +48,7 @@ interface SidebarProps {
   onToggle: () => void;
   conversations?: ChatHistoryItem[];
   onConversationSelect?: (id: string) => void;
+  onConversationDelete?: (id: string) => void;
   onNewChat?: () => void;
   onSignOut?: () => void;
   signedInEmail?: string;
@@ -57,6 +59,7 @@ export function Sidebar({
   onToggle,
   conversations = [],
   onConversationSelect,
+  onConversationDelete,
   onNewChat,
   onSignOut,
   signedInEmail,
@@ -122,18 +125,33 @@ export function Sidebar({
             <ul className="flex flex-col gap-0.5 overflow-y-auto">
               {conversations.map((item) => (
                 <li key={item.id}>
-                  <button
-                    type="button"
-                    onClick={() => onConversationSelect?.(item.id)}
-                    className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${
+                  <div
+                    className={`group flex w-full items-center gap-1 rounded-lg px-1 py-0.5 text-sm transition-colors ${
                       item.active
                         ? "bg-blue-50 text-blue-600"
                         : "text-gray-600 hover:bg-gray-100 hover:text-gray-800"
                     }`}
                   >
-                    <MessageSquare size={14} className="shrink-0" />
-                    <span className="truncate">{item.title}</span>
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => onConversationSelect?.(item.id)}
+                      className="flex min-w-0 flex-1 items-center gap-2 rounded-md px-1 py-1"
+                    >
+                      <MessageSquare size={14} className="shrink-0" />
+                      <span className="truncate">{item.title}</span>
+                    </button>
+                    <button
+                      type="button"
+                      aria-label={`Delete conversation ${item.title}`}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        onConversationDelete?.(item.id);
+                      }}
+                      className="rounded-md p-1 text-gray-400 opacity-0 transition hover:bg-red-50 hover:text-red-600 group-hover:opacity-100"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>

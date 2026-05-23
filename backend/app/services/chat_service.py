@@ -80,20 +80,19 @@ class ChatService:
             conversation_id=conversation_id,
             user_id=user.user_id,
         )
-        await self._message_store.add_message(
-            ConversationMessage(
-                conversation_id=resolved_conversation_id,
-                role="user",
-                content=message,
-            ),
-            user_id=user.user_id,
+        user_msg = ConversationMessage(
+            conversation_id=resolved_conversation_id,
+            role="user",
+            content=message,
         )
+        await self._message_store.add_message(user_msg, user_id=user.user_id)
 
         bot_text = ""
         async for event in self._langgraph_service.stream_chat(
             message=message,
             conversation_id=resolved_conversation_id,
             user=user,
+            message_id=user_msg.id,
         ):
             if event.event == "chunk":
                 chunk = event.data.get("text")

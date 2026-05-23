@@ -83,6 +83,7 @@ Notes:
 4. `DELETE /api/v1/conversations/{conversation_id}`
 - Response `204`
 - Response `404`: error
+- Semantics: soft delete only (`archived_at` is set). Deleted conversations should no longer appear in the sidebar list.
 
 ### Chat Stream (SSE)
 

@@ -1,0 +1,1850 @@
+[
+  {
+    "chunk_id": "chapter_7__small_000001",
+    "source_chunk_ids": [
+      "chapter_7__chunk_001"
+    ],
+    "chapter": "chapter_7",
+    "header": "1 INTRODUCTION",
+    "level": 1,
+    "context": "This chunk is the very beginning of the document, introducing Investment-linked Life Insurance Policies (ILPs) and a primary reason for their popularity.",
+    "text": "<context>This chunk is the very beginning of the document, introducing Investment-linked Life Insurance Policies (ILPs) and a primary reason for their popularity.</context>\n# 1 INTRODUCTION\n\n1.1 Investment-linked Life Insurance Policies (ILPs) started gaining popularity from the early 1990s. One reason for their popularity is that ILPs offer the potential of higher returns as compared to traditional life insurance policies.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000002",
+    "source_chunk_ids": [
+      "chapter_7__chunk_002"
+    ],
+    "chapter": "chapter_7",
+    "header": "2. WHAT IS AN ILP?",
+    "level": 1,
+    "context": "This chunk defines what an Investment-Linked Policy (ILP) is, explaining its dual nature of protection and investment, its reliance on unit values tied to underlying assets, and its lack of guaranteed cash values. It directly follows the introduction to ILPs and precedes the explanation of investment-linked sub-funds.",
+    "text": "<context>This chunk defines what an Investment-Linked Policy (ILP) is, explaining its dual nature of protection and investment, its reliance on unit values tied to underlying assets, and its lack of guaranteed cash values. It directly follows the introduction to ILPs and precedes the explanation of investment-linked sub-funds.</context>\n# 2. WHAT IS AN ILP?\n\n2.1 An ILP is a life insurance policy which provides a combination of protection and investment. Premiums buy life insurance protection and investment units in professionally managed investment-linked sub-funds.\n\n2.2 The Insurance Act 1966 defines an investment-linked policy as follows:\n\n\"Investment-linked policy\" means any policy which provides benefits calculated by reference to units, the value of which is related to the market value of the underlying assets.\n\n2.3 ILPs do not provide guaranteed cash values. The value of the ILP depends on the price of the underlying assets, which in turn depends on how the investments in the sub-fund perform. Fees, expenses and insurance charges associated with an ILP are usually paid for either through a deduction of the premium and / or sale of purchased units. The value of the policy will fluctuate with the value of the units purchased by the premiums.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000003",
+    "source_chunk_ids": [
+      "chapter_7__chunk_003"
+    ],
+    "chapter": "chapter_7",
+    "header": "3. WHAT IS AN INVESTMENT-LINKED SUB-FUND?",
+    "level": 1,
+    "context": "This chunk defines what an investment-linked sub-fund is, explaining its role in pooling premiums, building diversified portfolios, and offering investment planning choices to individuals. It is found within the section discussing the components and purpose of Investment-Linked Policies (ILPs).",
+    "text": "<context>This chunk defines what an investment-linked sub-fund is, explaining its role in pooling premiums, building diversified portfolios, and offering investment planning choices to individuals. It is found within the section discussing the components and purpose of Investment-Linked Policies (ILPs).</context>\n# 3. WHAT IS AN INVESTMENT-LINKED SUB-FUND?\n\n3.1 Just like unit trusts, an investment-linked sub-fund is a professionally managed investment fund, usually by an insurance company (insurer) or external fund manager. An investment-linked sub-fund pools together the premiums paid by policy owners with similar investment objectives. The aggregate sum is then used by the fund to build a diversified investment portfolio of assets which consists of stocks, bonds and other assets according to the investment objective of the fund. The price of each unit in a fund depends on how the investments in that fund perform.\n\n3.2 The investment-linked sub-fund helps in the investment planning of individuals by giving them a choice of placing their monies in a diversified investment option. This helps to diversify their investments and protect against the risk of “putting too many eggs in one basket”. Hence, such funds provide investors with an opportunity to attain medium to long-term capital growth by investing primarily in equities. Such funds will endeavour to provide above average returns in the long term.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000004",
+    "source_chunk_ids": [
+      "chapter_7__chunk_004"
+    ],
+    "chapter": "chapter_7",
+    "header": "4. PURPOSE OF ILPS",
+    "level": 1,
+    "context": "This section follows the definition and explanation of Investment-Linked Policies (ILPs) and their sub-funds, and precedes a detailed breakdown of the different types of ILPs.",
+    "text": "<context>This section follows the definition and explanation of Investment-Linked Policies (ILPs) and their sub-funds, and precedes a detailed breakdown of the different types of ILPs.</context>\n# 4. PURPOSE OF ILPS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000005",
+    "source_chunk_ids": [
+      "chapter_7__chunk_005"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Investment",
+    "level": 1,
+    "context": "This chunk is located within section 4, \"PURPOSE OF ILPS\", and specifically under subsection A, \"Investment\". It explains how ILPs aim to provide higher returns than traditional plans by linking policy returns to sub-fund performance, with the policy owner bearing the investment risk.",
+    "text": "<context>This chunk is located within section 4, \"PURPOSE OF ILPS\", and specifically under subsection A, \"Investment\". It explains how ILPs aim to provide higher returns than traditional plans by linking policy returns to sub-fund performance, with the policy owner bearing the investment risk.</context>\n# A. Investment\n\n4.1 By linking the returns of an ILP to the performance of an underlying sub-fund, the policy owner can earn potentially higher returns, as compared to that of a traditional life insurance plan. This is because the investment risks are now fully borne by the policy owner.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000006",
+    "source_chunk_ids": [
+      "chapter_7__chunk_006"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Wealth Accumulation",
+    "level": 1,
+    "context": "This chunk is located within section 4, \"PURPOSE OF ILPS\", and follows the discussion on the investment purpose of ILPs, detailing how they can also be used for wealth accumulation.",
+    "text": "<context>This chunk is located within section 4, \"PURPOSE OF ILPS\", and follows the discussion on the investment purpose of ILPs, detailing how they can also be used for wealth accumulation.</context>\n# B. Wealth Accumulation\n\n4.2 An ILP can also serve as a wealth accumulation vehicle to meet the long-term financial goals of a policy owner. By regularly investing in an ILP, a policy owner can use it as a long-term store of wealth.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000007",
+    "source_chunk_ids": [
+      "chapter_7__chunk_007"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Protection",
+    "level": 1,
+    "context": "This chunk is part of Section 4, \"PURPOSE OF ILPS\", specifically detailing the protection aspect of these policies, following the discussion on investment and wealth accumulation.",
+    "text": "<context>This chunk is part of Section 4, \"PURPOSE OF ILPS\", specifically detailing the protection aspect of these policies, following the discussion on investment and wealth accumulation.</context>\n# C. Protection\n\n4.3 Besides life insurance coverage, an ILP can also provide cover for total and permanent disability, as well as critical illnesses.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000008",
+    "source_chunk_ids": [
+      "chapter_7__chunk_008"
+    ],
+    "chapter": "chapter_7",
+    "header": "5. TYPES OF ILPS",
+    "level": 1,
+    "context": "This chunk is part of the section detailing the different classifications of Investment-Linked Insurance Policies (ILPs), specifically focusing on how they can be categorized by premium payment frequency and product features.",
+    "text": "<context>This chunk is part of the section detailing the different classifications of Investment-Linked Insurance Policies (ILPs), specifically focusing on how they can be categorized by premium payment frequency and product features.</context>\n# 5. TYPES OF ILPS\n\n5.1 There are two ways to classify the different types of ILPs. They can be classified by:\n\nfrequency of premium payment; and / or product features.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000009",
+    "source_chunk_ids": [
+      "chapter_7__chunk_009"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. By Frequency Of Premium Payment",
+    "level": 1,
+    "context": "This chunk is part of section 5, \"TYPES OF ILPS,\" specifically detailing the first method of classification: by premium payment frequency.",
+    "text": "<context>This chunk is part of section 5, \"TYPES OF ILPS,\" specifically detailing the first method of classification: by premium payment frequency.</context>\n# A. By Frequency Of Premium Payment",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000010",
+    "source_chunk_ids": [
+      "chapter_7__chunk_010"
+    ],
+    "chapter": "chapter_7",
+    "header": "A1. Single Premium",
+    "level": 1,
+    "context": "This chunk is part of section 5, \"TYPES OF ILPS\", specifically under subsection A, \"By Frequency Of Premium Payment\", detailing the characteristics of a Single Premium Investment-Linked Insurance Policy.",
+    "text": "<context>This chunk is part of section 5, \"TYPES OF ILPS\", specifically under subsection A, \"By Frequency Of Premium Payment\", detailing the characteristics of a Single Premium Investment-Linked Insurance Policy.</context>\n# A1. Single Premium\n\nIn a single premium policy, a lump-sum premium is used to purchase units in a sub-fund.\n\n5.3 The emphasis here is normally for savings and investment. However, it is possible for this policy to be used for protection, although its use as a protection plan is less common than the Regular Premium version.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000011",
+    "source_chunk_ids": [
+      "chapter_7__chunk_011"
+    ],
+    "chapter": "chapter_7",
+    "header": "A2. Regular Premium",
+    "level": 1,
+    "context": "This chunk discusses the characteristics of \"Regular Premium\" Investment-Linked Insurance Policies (ILPs), explaining how premiums are paid, the primary purpose (protection), available coverage, and the option of making additional \"top-up\" payments. It follows a section on \"Single Premium\" policies and precedes a classification of ILPs by product features.",
+    "text": "<context>This chunk discusses the characteristics of \"Regular Premium\" Investment-Linked Insurance Policies (ILPs), explaining how premiums are paid, the primary purpose (protection), available coverage, and the option of making additional \"top-up\" payments. It follows a section on \"Single Premium\" policies and precedes a classification of ILPs by product features.</context>\n# A2. Regular Premium\n\nFor such policies, premiums are paid on a regular basis. Units are purchased as premiums are received.\n\n5.5 Regular premium policies are usually purchased for protection purposes. Apart from life insurance protection, total and permanent disability and critical illnesses cover, other forms of coverage are also available. The facility to vary the level of insurance cover is a common feature.\n\n5.6 In addition to single and regular premium payments, most plans give the option of investing an additional amount to the ILP at any time. This additional amount (known as a top-up premium) can be invested on a regular or ad-hoc basis. Some single premium ILPs offer you the option of making top-ups at specific intervals. These options are commonly known as recurring single premium options.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000012",
+    "source_chunk_ids": [
+      "chapter_7__chunk_012"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. By Product Features",
+    "level": 1,
+    "context": "This section, \"By Product Features\", follows the classification of ILPs by \"Frequency Of Premium Payment\" and precedes a detailed look at the general \"Features of ILPs\". It is part of a larger section discussing \"Types of ILPs\".",
+    "text": "<context>This section, \"By Product Features\", follows the classification of ILPs by \"Frequency Of Premium Payment\" and precedes a detailed look at the general \"Features of ILPs\". It is part of a larger section discussing \"Types of ILPs\".</context>\n# B. By Product Features",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000013",
+    "source_chunk_ids": [
+      "chapter_7__chunk_013"
+    ],
+    "chapter": "chapter_7",
+    "header": "B1. Investment-Linked Whole Life Insurance Policy",
+    "level": 1,
+    "context": "This chunk is located within the section \"5. TYPES OF ILPS\", specifically under the subsection \"B. By Product Features\", detailing one of the classifications of Investment-Linked Policies.",
+    "text": "<context>This chunk is located within the section \"5. TYPES OF ILPS\", specifically under the subsection \"B. By Product Features\", detailing one of the classifications of Investment-Linked Policies.</context>\n# B1. Investment-Linked Whole Life Insurance Policy\n\n5.7 This policy is similar to a traditional Whole Life Insurance policy because it is designed to provide lifetime coverage. For a regular premium policy, the policy owner can choose to vary the level of insurance cover.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000014",
+    "source_chunk_ids": [
+      "chapter_7__chunk_014"
+    ],
+    "chapter": "chapter_7",
+    "header": "B2. Investment-Linked Annuity Policy",
+    "level": 1,
+    "context": "This chunk describes a specific type of Investment-Linked Policy (ILP) called an Investment-Linked Annuity Policy, detailing how it generates income for the policy owner, particularly in retirement, and the potential advantages and disadvantages related to unit price fluctuations. It is located within the section discussing the different \"Types of ILPs\" by product features.",
+    "text": "<context>This chunk describes a specific type of Investment-Linked Policy (ILP) called an Investment-Linked Annuity Policy, detailing how it generates income for the policy owner, particularly in retirement, and the potential advantages and disadvantages related to unit price fluctuations. It is located within the section discussing the different \"Types of ILPs\" by product features.</context>\n# B2. Investment-Linked Annuity Policy\n\n5.8 An Investment-Linked Annuity or Variable Annuity policy generates a regular stream of income for the policy owner for as long as he is alive, or till all units in the policy have been cashed out. Under such a policy, the policy owner pays a single premium or regular premiums to purchase units. When the policy owner retires, a fixed number of units can be cashed out at pre-determined intervals to generate an income. Income will fluctuate, depending on the unit price at the time of cash out. However, over the long term, the value of units is expected to rise. Hence, the policy owner will enjoy the advantage of protection against inflation.\n\n5.9 On the other hand, if the value of units fluctuates too much, then the income of the policy owner will be affected. However, annuity payments can be paid at a fixed amount basis. The advantage to the policy owner is that he receives a steady stream of income. On the other hand, because the policy value is dependent on the unit price, the units for payment deduction may be depleted quickly during times of adverse economic conditions. Hence, there may not be enough sub-funds left to cover the lifetime of the insured. However, there can be variants of the products that provide a stream of income throughout the lifetime of the policy owner.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000015",
+    "source_chunk_ids": [
+      "chapter_7__chunk_015"
+    ],
+    "chapter": "chapter_7",
+    "header": "6. FEATURES OF ILPS",
+    "level": 1,
+    "context": "This section describes the various features offered by Investment-Linked Insurance Policies (ILPs), following the introductory explanation of what an ILP is and its purpose.",
+    "text": "<context>This section describes the various features offered by Investment-Linked Insurance Policies (ILPs), following the introductory explanation of what an ILP is and its purpose.</context>\n# 6. FEATURES OF ILPS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000016",
+    "source_chunk_ids": [
+      "chapter_7__chunk_016"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Protection",
+    "level": 1,
+    "context": "This chunk is found in Section 6, \"FEATURES OF ILPS\", under subsection A, \"Protection\". It details the types of insurance coverage an ILP can offer, including death, disability, and critical illness benefits, and discusses the flexibility in varying coverage levels, particularly for regular premium policies, while noting that single premium policies typically offer lower protection.",
+    "text": "<context>This chunk is found in Section 6, \"FEATURES OF ILPS\", under subsection A, \"Protection\". It details the types of insurance coverage an ILP can offer, including death, disability, and critical illness benefits, and discusses the flexibility in varying coverage levels, particularly for regular premium policies, while noting that single premium policies typically offer lower protection.</context>\n# A. Protection\n\n6.1 Since ILPs are developed and distributed by life insurers, the basic and minimum protection benefit is the death protection. The protection element may take the form of death (or accidental death) or total and permanent disability. On top of that, most of the additional benefits, e.g. personal accident and critical illness covers, can be attached to an Investment-linked Plan.\n\n6.2 Generally, regular premium ILPs also give the policy owner the flexibility to vary the level of insurance coverage to meet his individual protection needs.\n\nHowever, an increase in coverage may be subject to the insurer’s underwriting approval.\n\nMost single premium ILPs provide lower levels of insurance protection as compared to regular premium ILPs.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000017",
+    "source_chunk_ids": [
+      "chapter_7__chunk_017"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Top-Ups",
+    "level": 1,
+    "context": "This chunk is a description of the \"Top-Ups\" feature of Investment-Linked Insurance Policies (ILPs), found within the section detailing the various \"FEATURES OF ILPS\".",
+    "text": "<context>This chunk is a description of the \"Top-Ups\" feature of Investment-Linked Insurance Policies (ILPs), found within the section detailing the various \"FEATURES OF ILPS\".</context>\n# B. Top-Ups\n\n6.4 During the policy term of an ILP, the policy owner has a choice to do a top-up anytime by investing an additional premium. This top-up can be on a regular or ad hoc (for a particular purpose) basis. Most insurers have a $100 \\%$ premium allocation for top-up premiums.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000018",
+    "source_chunk_ids": [
+      "chapter_7__chunk_018"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Sub-Fund Switch",
+    "level": 1,
+    "context": "This chunk discusses the \"Sub-Fund Switch\" feature of Investment-Linked Policies (ILPs), explaining what it is, how it works (including the bid-to-bid pricing mechanism for switches), and the different ways it can be performed (ad hoc or regular). It is part of a larger section detailing the various features of ILPs.",
+    "text": "<context>This chunk discusses the \"Sub-Fund Switch\" feature of Investment-Linked Policies (ILPs), explaining what it is, how it works (including the bid-to-bid pricing mechanism for switches), and the different ways it can be performed (ad hoc or regular). It is part of a larger section detailing the various features of ILPs.</context>\n# C. Sub-Fund Switch\n\n6.5 All life insurers in Singapore have more than one investment sub-fund for their policy owners to choose from. Thus, this enables a policy owner to do a subfund switch according to his personal circumstances. Sub-fund switch is just switching from one investment sub-fund to another investment sub-fund.\n\n6.6 Do remember that, on a normal buy transaction, the policy owner will buy at the offer price.\n\n6.7 However, most sub-fund switches are done on a bid-to-bid basis, i.e. to sell from one sub-fund at the bid price and to buy into another also at the bid price. Sub-fund switch can either be on an ad hoc or regular basis. Another name for regular sub-fund switches is automatic sub-fund switch. It simply means that any sub-fund switch will be done on a specified regular date, with a fixed amount as specified by the policy owner.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000019",
+    "source_chunk_ids": [
+      "chapter_7__chunk_019"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. Partial / Full Surrender",
+    "level": 1,
+    "context": "This chunk is part of section 6, \"FEATURES OF ILPS\", and specifically describes the \"Partial / Full Surrender\" feature, which allows policy owners to access their invested sub-funds.",
+    "text": "<context>This chunk is part of section 6, \"FEATURES OF ILPS\", and specifically describes the \"Partial / Full Surrender\" feature, which allows policy owners to access their invested sub-funds.</context>\n# D. Partial / Full Surrender\n\n6.8 The policy owner has the right to surrender part or the whole of the units allocated to him. This is attractive to the policy owner who wants to have easy access to the sub-funds. Withdrawals (i.e. partial cashing out of units) and surrenders (i.e. cashing out of all units) are allowed.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000020",
+    "source_chunk_ids": [
+      "chapter_7__chunk_020"
+    ],
+    "chapter": "chapter_7",
+    "header": "E. Premium Holiday",
+    "level": 1,
+    "context": "Section 6 (Features of ILPs) describes various features, including \"Premium Holiday\", which allows policy owners to temporarily stop paying premiums while maintaining policy benefits by using existing units to cover charges.",
+    "text": "<context>Section 6 (Features of ILPs) describes various features, including \"Premium Holiday\", which allows policy owners to temporarily stop paying premiums while maintaining policy benefits by using existing units to cover charges.</context>\n# E. Premium Holiday\n\n6.9 Premium holiday is a period when the policy owner does not pay any premium, and yet enjoy the benefits that are defined in the policy. Since there is no premium paid, the insurer will sell away the existing units from the policy to pay for all the benefit charges. Hence, how long the premium holiday period lasts will depend on the actual number of units which can be used to pay for all these charges.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000021",
+    "source_chunk_ids": [
+      "chapter_7__chunk_021"
+    ],
+    "chapter": "chapter_7",
+    "header": "F. Riders",
+    "level": 1,
+    "context": "This chunk is located in Section 6, \"FEATURES OF ILPS,\" specifically under subsection \"F. Riders.\" It follows discussions on features like protection, top-ups, sub-fund switching, partial/full surrender, and premium holidays, and precedes the section on key factors to consider before purchasing an ILP.",
+    "text": "<context>This chunk is located in Section 6, \"FEATURES OF ILPS,\" specifically under subsection \"F. Riders.\" It follows discussions on features like protection, top-ups, sub-fund switching, partial/full surrender, and premium holidays, and precedes the section on key factors to consider before purchasing an ILP.</context>\n# F. Riders\n\n6.10 Usually, a Whole Life Investment-linked policy allows for more comprehensive protection against mortality, major illnesses and permanent disability by including riders. Some riders are paid by unit deductions, while others are paid by additional premium payments.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000022",
+    "source_chunk_ids": [
+      "chapter_7__chunk_022"
+    ],
+    "chapter": "chapter_7",
+    "header": "7. KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP",
+    "level": 1,
+    "context": "This section, \"Key Factors to Consider Before Purchasing an ILP,\" follows the explanation of what ILPs are, their purpose, and types, and precedes detailed discussions on specific features, benefits, risks, and pricing. It serves as a crucial bridge, guiding potential buyers on the essential criteria to evaluate before making an informed decision about purchasing an ILP.",
+    "text": "<context>This section, \"Key Factors to Consider Before Purchasing an ILP,\" follows the explanation of what ILPs are, their purpose, and types, and precedes detailed discussions on specific features, benefits, risks, and pricing. It serves as a crucial bridge, guiding potential buyers on the essential criteria to evaluate before making an informed decision about purchasing an ILP.</context>\n# 7. KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000023",
+    "source_chunk_ids": [
+      "chapter_7__chunk_023"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Insurance Protection Needs",
+    "level": 1,
+    "context": "This chunk is located in section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP,\" and specifically under subsection A, \"Insurance Protection Needs.\" It follows the general introduction to ILPs and precedes discussions on risk profile and investment objectives.",
+    "text": "<context>This chunk is located in section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP,\" and specifically under subsection A, \"Insurance Protection Needs.\" It follows the general introduction to ILPs and precedes discussions on risk profile and investment objectives.</context>\n# A. Insurance Protection Needs\n\n7.1 This determines the type of insurance coverage that the policy owner will be taking (e.g. protection for death, critical illnesses, disability and accidents), and the level and duration of insurance coverage suitable to meet his needs.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000024",
+    "source_chunk_ids": [
+      "chapter_7__chunk_024"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Risk Profile",
+    "level": 1,
+    "context": "This chunk is part of section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP\", and specifically discusses the importance of understanding one's personal risk tolerance when choosing an ILP, as the policy's value is tied to investment performance and is not guaranteed.",
+    "text": "<context>This chunk is part of section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP\", and specifically discusses the importance of understanding one's personal risk tolerance when choosing an ILP, as the policy's value is tied to investment performance and is not guaranteed.</context>\n# B. Risk Profile\n\n7.2 The policy owner’s risk profile refers to how much investment risk that he is willing to bear. It varies from individual to individual, and changes as he gets older, as his financial situation and investment objectives change. The cash value of an ILP depends on the performance of the investment-linked subfund(s) as selected. The returns are not guaranteed. A policy owner investing in an ILP needs to be aware that the cash value of his policy will fluctuate according to the performance of the sub-fund(s). The changing risk profile will also mean that the policy owner should re-evaluate his investments at different points of time (after he has purchased the ILP), to ensure that his policy remains relevant to his needs.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000025",
+    "source_chunk_ids": [
+      "chapter_7__chunk_025"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Personal Investment Objective",
+    "level": 1,
+    "context": "Section 7 discusses key factors to consider before purchasing an ILP, with subsection C focusing on the importance of aligning sub-fund selection with personal investment objectives.",
+    "text": "<context>Section 7 discusses key factors to consider before purchasing an ILP, with subsection C focusing on the importance of aligning sub-fund selection with personal investment objectives.</context>\n# C. Personal Investment Objective\n\n7.3 Different investment-linked sub-funds focus on different asset classes, geographical regions or industry sectors, and have different levels of volatility. It is important to select a sub-fund(s) that will commensurate with his risk profile and investment objectives.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000026",
+    "source_chunk_ids": [
+      "chapter_7__chunk_026"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. Time Horizon",
+    "level": 1,
+    "context": "This chunk is part of section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP\", specifically discussing \"Time Horizon\" as a crucial factor for potential buyers.",
+    "text": "<context>This chunk is part of section 7, \"KEY FACTORS TO CONSIDER BEFORE PURCHASING AN ILP\", specifically discussing \"Time Horizon\" as a crucial factor for potential buyers.</context>\n# D. Time Horizon\n\n7.4 This refers to the period that the policy owner can stay invested before he expects to cash out his investment. Regular premium ILPs are generally regarded as long-term insurance plans. A longer time horizon is particularly important when investing in these types of plans, as there are usually significant charges in the early policy years.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000027",
+    "source_chunk_ids": [
+      "chapter_7__chunk_027"
+    ],
+    "chapter": "chapter_7",
+    "header": "8. ARE ILPS SUITABLE FOR OLDER PEOPLE?",
+    "level": 1,
+    "context": "This section discusses the suitability of Investment-Linked Policies (ILPs) for older individuals, considering factors like insurance needs, risk tolerance, investment goals, time horizon, and the ability to sustain premium payments, especially in relation to retirement.",
+    "text": "<context>This section discusses the suitability of Investment-Linked Policies (ILPs) for older individuals, considering factors like insurance needs, risk tolerance, investment goals, time horizon, and the ability to sustain premium payments, especially in relation to retirement.</context>\n# 8. ARE ILPS SUITABLE FOR OLDER PEOPLE?\n\n8.1 The suitability for older people can be assessed through the four points as mentioned above, namely Insurance Protection Needs, Risk Profile, Personal Investment Objective and Time Horizon. As a general rule, older people have less pressing needs for life insurance – they may have made adequate provision, or they may have fewer needs once their children are financially independent.\n\n8.2 An important factor that comes into play for the older person is his ability to sustain premium payments if retirement is approaching. As such, an older person who is unlikely to continue his premium payments beyond retirement and for whom the primary aim is investment, a regular premium ILP will not be a suitable option. The initial costs and the short-term investment horizon will seriously limit the potential returns. There will be other investment options that will better suit his needs.\n\n8.3 Similarly, if insurance protection is a significant objective, but cover is required only for a very limited period, there are likely to be other insurance options that can be considered as such.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000028",
+    "source_chunk_ids": [
+      "chapter_7__chunk_028"
+    ],
+    "chapter": "chapter_7",
+    "header": "9. INVESTING IN ILPS WITH CPF SAVINGS",
+    "level": 1,
+    "context": "This section discusses the specific method of funding Investment-Linked Policies (ILPs) using Central Provident Fund (CPF) savings, outlining the rules and restrictions associated with using CPF funds for different types of ILP premiums.",
+    "text": "<context>This section discusses the specific method of funding Investment-Linked Policies (ILPs) using Central Provident Fund (CPF) savings, outlining the rules and restrictions associated with using CPF funds for different types of ILP premiums.</context>\n# 9. INVESTING IN ILPS WITH CPF SAVINGS\n\n9.1 Premiums and top-ups can be made with CPF savings if the ILP is included under the CPF Investment Scheme (CPFIS). Since January 2001, only single premium plans and recurrent single premium plans (i.e. top-ups in single premium payments) have been allowed under the CPFIS. However, CPF members who have purchased regular premium plans before 2001 can continue to have the regular premiums paid from their CPF savings.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000029",
+    "source_chunk_ids": [
+      "chapter_7__chunk_029"
+    ],
+    "chapter": "chapter_7",
+    "header": "10. DIFFERENCES BETWEEN AN ILP AND A TRADITIONAL LIFE INSURANCE POLICY",
+    "level": 1,
+    "context": "This section directly follows discussions on the purpose, types, and features of Investment-Linked Policies (ILPs) and precedes detailed explanations of ILP unit pricing and fees. It serves as a comparative analysis, highlighting how ILPs differ from traditional life insurance policies across several key aspects like bonuses, investment returns, premium breakdown, and investment mandates.",
+    "text": "<context>This section directly follows discussions on the purpose, types, and features of Investment-Linked Policies (ILPs) and precedes detailed explanations of ILP unit pricing and fees. It serves as a comparative analysis, highlighting how ILPs differ from traditional life insurance policies across several key aspects like bonuses, investment returns, premium breakdown, and investment mandates.</context>\n# 10. DIFFERENCES BETWEEN AN ILP AND A TRADITIONAL LIFE INSURANCE POLICY",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000030",
+    "source_chunk_ids": [
+      "chapter_7__chunk_030"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Bonuses",
+    "level": 1,
+    "context": "This chunk is part of section 10, which compares Investment-Linked Insurance Policies (ILPs) with traditional life insurance policies, specifically focusing on the differences in how bonuses are handled.",
+    "text": "<context>This chunk is part of section 10, which compares Investment-Linked Insurance Policies (ILPs) with traditional life insurance policies, specifically focusing on the differences in how bonuses are handled.</context>\n# A. Bonuses\n\n10.1 Traditional participating policies share in the profits of the insurer. The benefits under these policies are increased by regular additions of reversionary and terminal bonuses. Once declared, they become guaranteed additions to the policies. However, future bonuses are not guaranteed.\n\n10.2 In the case of an ILP, the policy value is linked to the prevailing unit value that fluctuates with the value of the underlying assets.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000031",
+    "source_chunk_ids": [
+      "chapter_7__chunk_031"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Investment Returns",
+    "level": 1,
+    "context": "This chunk is located in section 10, which compares Investment-Linked Insurance Policies (ILPs) with traditional life insurance policies, specifically addressing the nature of investment returns and the associated risks for policy owners.",
+    "text": "<context>This chunk is located in section 10, which compares Investment-Linked Insurance Policies (ILPs) with traditional life insurance policies, specifically addressing the nature of investment returns and the associated risks for policy owners.</context>\n# B. Investment Returns\n\n10.3 Policy owners of traditional participating policies are generally guaranteed a minimum surrender value. This is in addition to any bonuses that may be declared.\n\nIn general, ILPs do not guarantee a minimum return, and the policy owners bear the full investment risks.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000032",
+    "source_chunk_ids": [
+      "chapter_7__chunk_032"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Premium Breakdown",
+    "level": 1,
+    "context": "This chunk is part of Section 10, \"DIFFERENCES BETWEEN AN ILP AND A TRADITIONAL LIFE INSURANCE POLICY,\" specifically addressing the transparency of how premiums are allocated in each type of policy.",
+    "text": "<context>This chunk is part of Section 10, \"DIFFERENCES BETWEEN AN ILP AND A TRADITIONAL LIFE INSURANCE POLICY,\" specifically addressing the transparency of how premiums are allocated in each type of policy.</context>\n# C. Premium Breakdown\n\n10.5 Under traditional policies, the policy owners will not know the proportions of premiums that are used to pay for insurance cover, expenses and savings.\n\n10.6 Disclosure under ILPs is more transparent. Hence, the policy owners will know the amounts that have been deducted for expenses and insurance cover, as well as the amount that has been allocated to purchase units for investment purposes.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000033",
+    "source_chunk_ids": [
+      "chapter_7__chunk_033"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. Investment Mandate",
+    "level": 1,
+    "context": "This chunk is part of Section 10, which details the differences between Investment-Linked Policies (ILPs) and traditional life insurance policies, specifically focusing on the investment mandate and how premiums are allocated and invested.",
+    "text": "<context>This chunk is part of Section 10, which details the differences between Investment-Linked Policies (ILPs) and traditional life insurance policies, specifically focusing on the investment mandate and how premiums are allocated and invested.</context>\n# D. Investment Mandate\n\n10.7 For traditional policies, premiums collected are pooled into the insurer’s Life Sub-fund, which is invested taking into account the nature, term and currency of the insurer’s liabilities. Typically, the Life Sub-fund invests mainly in fixed income instruments, such as bonds with a relatively smaller proportion in equities.\n\n10.8 For ILPs, each of the underlying sub-funds is invested in accordance with its specified investment objective. This may be investing $100 \\%$ in bonds or $100 \\%$ in equities, depending on the investment mandate of the sub-fund.\n\nSummary Table On The Differences Between   \n\nhierarchical_json: {\"table_id\": \"chapter_7__chunk_033__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"An ILP And A Traditional Life Insurance Policy\", \"\", \"\"], [\"\", \"ILP\", \"Traditional Life Insurance Policy\"], [\"Bonuses\", \"The value of the ILPdepends on the performance of thechosen sub-funds.\", \"For participating whole life andendowment plans,bonuses may bepayable depending on the insurer's profits. Bonuses are not guaranteed.However, once they are declared bythe insurer, they become guaranteedadditions to the sum assured of theplans.\"], [\"Investment Returns\", \"The investment risk isusually borne entirely bythe policy owner.\", \"There are two categories of benefits - guaranteed and non-guaranteed. For guaranteed benefits, the insurer bearsthe investment risk. However, for non- guaranteed benefits, such as bonuses,benefits depend on the performanceof the insurer's participating sub-fund.\"], [\"PremiumBreakdown\", \"The amount of thepremium used forinsurance coverage,othercharges and the purchaseof units are unbundled and transparent. They aredisclosed in the Product Summary and PolicyContract.\", \"The premium amount used forinsurance coverage, other charges and investment are bundled up. They are not separately identified in the ProductSummary and Policy Contract.\"], [\"InvestmentMandate\", \"The part of yourpremiums allocated forthe purchase of units willbe invested in yourchosen investment-linkedsub-fund. The sub-fund isinvested according to itsspecified investmentobjective. Theperformance of the sub-fund can be trackedthrough the daily publication of unit prices.\", \"All of your premiums go into theinsurer's participating sub-fund. Theinsurer decides on the appropriateinvestment portfolio for this sub-fundafter taking into account the nature,term and currency of the insurer'soverall liabilities.The performance of the sub-fund willdepend not only upon investmentperformance,but also upon otherfactors,such as claims experience(whether this is more or less thananticipated) and expense levels.\"]], \"spanning_title\": \"An ILP And A Traditional Life Insurance Policy\", \"headers\": {\"column_headers\": [\"ILP\", \"Traditional Life Insurance Policy\"], \"row_headers\": [\"Bonuses\", \"Investment Returns\", \"PremiumBreakdown\", \"InvestmentMandate\"]}, \"rows\": [{\"row_header\": \"Bonuses\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The value of the ILPdepends on the performance of thechosen sub-funds.\"}, {\"column_header\": \"Traditional Life Insurance Policy\", \"value\": \"For participating whole life andendowment plans,bonuses may bepayable depending on the insurer's profits. Bonuses are not guaranteed.However, once they are declared bythe insurer, they become guaranteedadditions to the sum assured of theplans.\"}]}, {\"row_header\": \"Investment Returns\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The investment risk isusually borne entirely bythe policy owner.\"}, {\"column_header\": \"Traditional Life Insurance Policy\", \"value\": \"There are two categories of benefits - guaranteed and non-guaranteed. For guaranteed benefits, the insurer bearsthe investment risk. However, for non- guaranteed benefits, such as bonuses,benefits depend on the performanceof the insurer's participating sub-fund.\"}]}, {\"row_header\": \"PremiumBreakdown\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The amount of thepremium used forinsurance coverage,othercharges and the purchaseof units are unbundled and transparent. They aredisclosed in the Product Summary and PolicyContract.\"}, {\"column_header\": \"Traditional Life Insurance Policy\", \"value\": \"The premium amount used forinsurance coverage, other charges and investment are bundled up. They are not separately identified in the ProductSummary and Policy Contract.\"}]}, {\"row_header\": \"InvestmentMandate\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The part of yourpremiums allocated forthe purchase of units willbe invested in yourchosen investment-linkedsub-fund. The sub-fund isinvested according to itsspecified investmentobjective. Theperformance of the sub-fund can be trackedthrough the daily publication of unit prices.\"}, {\"column_header\": \"Traditional Life Insurance Policy\", \"value\": \"All of your premiums go into theinsurer's participating sub-fund. Theinsurer decides on the appropriateinvestment portfolio for this sub-fundafter taking into account the nature,term and currency of the insurer'soverall liabilities.The performance of the sub-fund willdepend not only upon investmentperformance,but also upon otherfactors,such as claims experience(whether this is more or less thananticipated) and expense levels.\"}]}]}\n\ntable narrative: [\"For ILPs, the value of the ILP depends on the performance of the chosen sub-funds.\", \"For Traditional Life Insurance Policies, bonuses may be payable for participating whole life and endowment plans depending on the insurer's profits; these bonuses are not guaranteed, but once declared, they become guaranteed additions to the sum assured of the plans.\", \"For ILPs, the investment risk is usually borne entirely by the policy owner.\", \"For Traditional Life Insurance Policies, there are two categories of benefits: guaranteed and non-guaranteed; for guaranteed benefits, the insurer bears the investment risk, but for non-guaranteed benefits like bonuses, benefits depend on the performance of the insurer's participating sub-fund.\", \"For ILPs, the amount of premium used for insurance coverage, other charges, and the purchase of units are unbundled and transparent, disclosed in the Product Summary and Policy Contract.\", \"For Traditional Life Insurance Policies, the premium amount used for insurance coverage, other charges, and investment are bundled up and not separately identified in the Product Summary and Policy Contract.\", \"For ILPs, the part of your premiums allocated for the purchase of units will be invested in your chosen investment-linked sub-fund according to its specified investment objective, and the sub-fund's performance can be tracked through the daily publication of unit prices.\", \"For Traditional Life Insurance Policies, all of your premiums go into the insurer's participating sub-fund, where the insurer decides on the appropriate investment portfolio for this sub-fund after considering the nature, term, and currency of the insurer's overall liabilities; the sub-fund's performance depends not only on investment performance but also on other factors like claims experience and expense levels.\"]",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_7__chunk_033__table_01",
+        "table_type": "unknown",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "The rows detail specific features or aspects of insurance policies.",
+          "col": "The columns compare Investment-Linked Insurance Policies (ILPs) and Traditional Life Insurance Policies.",
+          "value": "The cells describe how each policy type handles the specific feature outlined in the row."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_7__chunk_033__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "An ILP And A Traditional Life Insurance Policy",
+              "",
+              ""
+            ],
+            [
+              "",
+              "ILP",
+              "Traditional Life Insurance Policy"
+            ],
+            [
+              "Bonuses",
+              "The value of the ILPdepends on the performance of thechosen sub-funds.",
+              "For participating whole life andendowment plans,bonuses may bepayable depending on the insurer's profits. Bonuses are not guaranteed.However, once they are declared bythe insurer, they become guaranteedadditions to the sum assured of theplans."
+            ],
+            [
+              "Investment Returns",
+              "The investment risk isusually borne entirely bythe policy owner.",
+              "There are two categories of benefits - guaranteed and non-guaranteed. For guaranteed benefits, the insurer bearsthe investment risk. However, for non- guaranteed benefits, such as bonuses,benefits depend on the performanceof the insurer's participating sub-fund."
+            ],
+            [
+              "PremiumBreakdown",
+              "The amount of thepremium used forinsurance coverage,othercharges and the purchaseof units are unbundled and transparent. They aredisclosed in the Product Summary and PolicyContract.",
+              "The premium amount used forinsurance coverage, other charges and investment are bundled up. They are not separately identified in the ProductSummary and Policy Contract."
+            ],
+            [
+              "InvestmentMandate",
+              "The part of yourpremiums allocated forthe purchase of units willbe invested in yourchosen investment-linkedsub-fund. The sub-fund isinvested according to itsspecified investmentobjective. Theperformance of the sub-fund can be trackedthrough the daily publication of unit prices.",
+              "All of your premiums go into theinsurer's participating sub-fund. Theinsurer decides on the appropriateinvestment portfolio for this sub-fundafter taking into account the nature,term and currency of the insurer'soverall liabilities.The performance of the sub-fund willdepend not only upon investmentperformance,but also upon otherfactors,such as claims experience(whether this is more or less thananticipated) and expense levels."
+            ]
+          ],
+          "spanning_title": "An ILP And A Traditional Life Insurance Policy",
+          "headers": {
+            "column_headers": [
+              "ILP",
+              "Traditional Life Insurance Policy"
+            ],
+            "row_headers": [
+              "Bonuses",
+              "Investment Returns",
+              "PremiumBreakdown",
+              "InvestmentMandate"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Bonuses",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The value of the ILPdepends on the performance of thechosen sub-funds."
+                },
+                {
+                  "column_header": "Traditional Life Insurance Policy",
+                  "value": "For participating whole life andendowment plans,bonuses may bepayable depending on the insurer's profits. Bonuses are not guaranteed.However, once they are declared bythe insurer, they become guaranteedadditions to the sum assured of theplans."
+                }
+              ]
+            },
+            {
+              "row_header": "Investment Returns",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The investment risk isusually borne entirely bythe policy owner."
+                },
+                {
+                  "column_header": "Traditional Life Insurance Policy",
+                  "value": "There are two categories of benefits - guaranteed and non-guaranteed. For guaranteed benefits, the insurer bearsthe investment risk. However, for non- guaranteed benefits, such as bonuses,benefits depend on the performanceof the insurer's participating sub-fund."
+                }
+              ]
+            },
+            {
+              "row_header": "PremiumBreakdown",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The amount of thepremium used forinsurance coverage,othercharges and the purchaseof units are unbundled and transparent. They aredisclosed in the Product Summary and PolicyContract."
+                },
+                {
+                  "column_header": "Traditional Life Insurance Policy",
+                  "value": "The premium amount used forinsurance coverage, other charges and investment are bundled up. They are not separately identified in the ProductSummary and Policy Contract."
+                }
+              ]
+            },
+            {
+              "row_header": "InvestmentMandate",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The part of yourpremiums allocated forthe purchase of units willbe invested in yourchosen investment-linkedsub-fund. The sub-fund isinvested according to itsspecified investmentobjective. Theperformance of the sub-fund can be trackedthrough the daily publication of unit prices."
+                },
+                {
+                  "column_header": "Traditional Life Insurance Policy",
+                  "value": "All of your premiums go into theinsurer's participating sub-fund. Theinsurer decides on the appropriateinvestment portfolio for this sub-fundafter taking into account the nature,term and currency of the insurer'soverall liabilities.The performance of the sub-fund willdepend not only upon investmentperformance,but also upon otherfactors,such as claims experience(whether this is more or less thananticipated) and expense levels."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For ILPs, the value of the ILP depends on the performance of the chosen sub-funds.",
+          "For Traditional Life Insurance Policies, bonuses may be payable for participating whole life and endowment plans depending on the insurer's profits; these bonuses are not guaranteed, but once declared, they become guaranteed additions to the sum assured of the plans.",
+          "For ILPs, the investment risk is usually borne entirely by the policy owner.",
+          "For Traditional Life Insurance Policies, there are two categories of benefits: guaranteed and non-guaranteed; for guaranteed benefits, the insurer bears the investment risk, but for non-guaranteed benefits like bonuses, benefits depend on the performance of the insurer's participating sub-fund.",
+          "For ILPs, the amount of premium used for insurance coverage, other charges, and the purchase of units are unbundled and transparent, disclosed in the Product Summary and Policy Contract.",
+          "For Traditional Life Insurance Policies, the premium amount used for insurance coverage, other charges, and investment are bundled up and not separately identified in the Product Summary and Policy Contract.",
+          "For ILPs, the part of your premiums allocated for the purchase of units will be invested in your chosen investment-linked sub-fund according to its specified investment objective, and the sub-fund's performance can be tracked through the daily publication of unit prices.",
+          "For Traditional Life Insurance Policies, all of your premiums go into the insurer's participating sub-fund, where the insurer decides on the appropriate investment portfolio for this sub-fund after considering the nature, term, and currency of the insurer's overall liabilities; the sub-fund's performance depends not only on investment performance but also on other factors like claims experience and expense levels."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000034",
+    "source_chunk_ids": [
+      "chapter_7__chunk_034"
+    ],
+    "chapter": "chapter_7",
+    "header": "11. PRICING OF ILP UNITS",
+    "level": 1,
+    "context": "This section explains how the value of units in an Investment-Linked Insurance Policy (ILP) is determined, covering aspects like offer and bid prices, and the concept of single pricing. It follows the discussion on the differences between ILPs and traditional policies and precedes the details on how premiums are used to purchase units.",
+    "text": "<context>This section explains how the value of units in an Investment-Linked Insurance Policy (ILP) is determined, covering aspects like offer and bid prices, and the concept of single pricing. It follows the discussion on the differences between ILPs and traditional policies and precedes the details on how premiums are used to purchase units.</context>\n# 11. PRICING OF ILP UNITS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000035",
+    "source_chunk_ids": [
+      "chapter_7__chunk_035"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Offer And Bid Prices",
+    "level": 1,
+    "context": "This chunk details the concepts of offer price, bid price, and the bid-offer spread, which are fundamental to understanding how the pricing of units in investment-linked sub-funds works, specifically within the context of Section 11, \"Pricing of ILP Units\".",
+    "text": "<context>This chunk details the concepts of offer price, bid price, and the bid-offer spread, which are fundamental to understanding how the pricing of units in investment-linked sub-funds works, specifically within the context of Section 11, \"Pricing of ILP Units\".</context>\n# A. Offer And Bid Prices\n\n(a) Offer Price\n\nThe offer price is the price which the insurer uses to allocate units to a policy when premiums are paid. It is\n\nthe price of a unit that is sold to a policy owner. If the offer price is $\\$ \\$ 1$ and the whole $\\$ 100$ premium is to be applied to buy units, it will, therefore, buy 100 units.\n\n(b) Bid Price\n\nThe bid price is the price which the insurer will give for the units if the policy owner wishes to cash in or claim under the policy. It is the price of a unit to be sold by the policy owner. This is always lower than the offer price. For example, if the bid price is $\\$ 95$ , 100 units can be cashed for $\\$ 95$ .\n\n(c) Bid-Offer Spread\n\nThe bid-offer spread is one of the initial charges levied when the policy owner purchases a unit in the sub-fund. It is a charge made by the insurer to cover its expenses in setting up the policy. Usually, there is a $5 \\%$ difference between bid and offer prices, although there are insurers that charge lesser than this rate. The bid-offer spread is sometimes called the initial sales charge.\n\nAn example below explains the relationship between the offer price, bid price and bid-offer spread.\n\nBid-Offer Spread: $5 \\%$   \nOffer Price is at $\\$ \\$ 2.45$   \nBid Price $= S \\$ 2.45\\times95 \\% = S \\$ 2.33$   \nIf you invest $\\$ 100$ , you get $1 0 0 / 2 . 4 5 = 4 0 . 8 2$ units   \nIf you sell immediately, you get back only $\\Im \\ S 2 . 3 3 \\times 4 0 . 8 2$ units $= 5 \\$ 95.11$",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000036",
+    "source_chunk_ids": [
+      "chapter_7__chunk_036"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Single Pricing",
+    "level": 1,
+    "context": "This chunk discusses 'Single Pricing' as a method for determining the price of Investment-Linked Policy (ILP) units, contrasting it with the 'Bid-Offer Spread' pricing model. It falls under Section 11, \"PRICING OF ILP UNITS\", which details how the value of ILP units is calculated.",
+    "text": "<context>This chunk discusses 'Single Pricing' as a method for determining the price of Investment-Linked Policy (ILP) units, contrasting it with the 'Bid-Offer Spread' pricing model. It falls under Section 11, \"PRICING OF ILP UNITS\", which details how the value of ILP units is calculated.</context>\n# B. Single Pricing\n\n11.1 Some insurers use a single price to reflect the value of the underlying investment sub-funds. The difference between a single pricing concept and a bid-offer pricing concept is that, under a single pricing model, policy owners will buy and sell units based only on that particular one price. On the other hand, for a bid-offer pricing model, policy owners will buy units at offer price and sell units at bid price. An interesting way to remember this is “BOSB”. “BOSB” stands for Buy at Offer, Sell at Bid. For a single pricing model, the initial sales charge is clearly and precisely stated and made known to the policy owners. That is to say that only the net premium, after deducting the sales charge, will be used to purchase units based on this single price.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000037",
+    "source_chunk_ids": [
+      "chapter_7__chunk_037"
+    ],
+    "chapter": "chapter_7",
+    "header": "12. HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?",
+    "level": 1,
+    "context": "This chunk explains how premiums are allocated to purchase units in an Investment-Linked Policy (ILP), differentiating between single and regular premium plans and introducing the concepts of front-end and back-end loading. It follows sections discussing the features and pricing of ILPs and precedes a detailed explanation of these loading structures.",
+    "text": "<context>This chunk explains how premiums are allocated to purchase units in an Investment-Linked Policy (ILP), differentiating between single and regular premium plans and introducing the concepts of front-end and back-end loading. It follows sections discussing the features and pricing of ILPs and precedes a detailed explanation of these loading structures.</context>\n# 12. HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?\n\n12.1 The full amount of premium paid may not always be allocated to purchase units. Before buying an ILP, it is important to find out what percentage of the premium will be used to purchase units. This information, commonly known as premium allocation rate, is available in the Product Summary and / or Policy Contract.\n\n12.2 For most single premium ILPs and top-ups, $100 \\%$ of the premiums are used to purchase units. For regular premium ILPs, the amount of premium used to purchase units will depend on the structure of the plan i.e. whether it has a front-end loading or back-end loading.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000038",
+    "source_chunk_ids": [
+      "chapter_7__chunk_038"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Front-End Loading",
+    "level": 1,
+    "context": "This chunk is located within section 12, \"HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?\", and specifically discusses the concept of \"Front-End Loading\" in the context of premium allocation for Investment-Linked Policies (ILPs).",
+    "text": "<context>This chunk is located within section 12, \"HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?\", and specifically discusses the concept of \"Front-End Loading\" in the context of premium allocation for Investment-Linked Policies (ILPs).</context>\n# A. Front-End Loading\n\n12.3 In a front-end loaded plan, a certain amount of the premiums will be used to help defray the insurer’s expenses, such as distribution and administration costs in the early years. These expenses decrease over time. As such, less than $100 \\%$ of the premiums are allocated to purchase units in the initial years. The premium allocation increases over time until it reaches $100 \\%$ . Some insurers also provide premium allocations in excess of $100 \\%$ in the later policy years, usually to reward policy owners who keep their policies in force for the long term.\n\n12.4 Premium allocation is explained further in the later chapter in this Study Text on “How do ILPs work?”",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000039",
+    "source_chunk_ids": [
+      "chapter_7__chunk_039"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Back-End Loading",
+    "level": 1,
+    "context": "This chunk is about \"Back-End Loading\" and is found in section 12, which discusses \"HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?\".",
+    "text": "<context>This chunk is about \"Back-End Loading\" and is found in section 12, which discusses \"HOW MUCH OF THE PREMIUM IS USED TO PURCHASE UNITS?\".</context>\n# B. Back-End Loading\n\n12.5 Under a back-end loaded plan, $100 \\%$ of the premiums are allocated to purchase units from the start. However, to help insurers defray distribution and administration costs, back-end charges are imposed if the policy owner wishes to surrender his plan, in whole or in part, within a certain time.\n\n12.6 It should be noted that, although the premium allocation structure differs for front-end and back-end loaded ILPs, the overall effect of the charges will be similar.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000040",
+    "source_chunk_ids": [
+      "chapter_7__chunk_040"
+    ],
+    "chapter": "chapter_7",
+    "header": "13. HOW ARE UNIT PRICES COMPUTED?",
+    "level": 1,
+    "context": "This chunk explains how the unit prices of Investment-Linked Policies (ILPs) are calculated, focusing on the forward pricing method commonly used in the insurance industry. It details the process of re-calculating net asset value, deducting charges, and determining unit prices for purchases and sales.",
+    "text": "<context>This chunk explains how the unit prices of Investment-Linked Policies (ILPs) are calculated, focusing on the forward pricing method commonly used in the insurance industry. It details the process of re-calculating net asset value, deducting charges, and determining unit prices for purchases and sales.</context>\n# 13. HOW ARE UNIT PRICES COMPUTED?\n\n13.1 The frequency and methodology for computing unit prices vary from sub-fund to sub-fund. Details are specified in the Product Summary and Policy Contract.\n\n13.2 For most ILPs, unit prices are computed based on forward pricing. This means that the fund manager re-calculates the sub-fund’s net asset value, based on the value of the investment-linked sub-fund’s underlying assets, after the market closes. The sub-fund management charges are then deducted from the net asset value, and the balance is then divided by the total number of units to arrive at the unit price. All ILP orders to purchase or sell units are then settled, based on the next computed unit price.\n\n13.3 Forward pricing is the most widely used pricing model in the local insurance industry. It basically means that the number of units that are purchased from the underlying investment sub-funds shall be determined by reference to the offer price established on the next valuation date. In essence, it means that the next available offer price after the premium has been paid. Similarly, units that are sold will be determined using the next available bid price. Valuation date is the date that the insurer will determine the value of the underlying assets in the investment sub-funds.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000041",
+    "source_chunk_ids": [
+      "chapter_7__chunk_041"
+    ],
+    "chapter": "chapter_7",
+    "header": "14. INSURANCE PROTECTION FEATURE OF ILPS",
+    "level": 1,
+    "context": "This section details the insurance protection aspects of Investment-Linked Policies (ILPs), following the discussion of their features, benefits, and risks, and preceding the comparison with Unit Trusts.",
+    "text": "<context>This section details the insurance protection aspects of Investment-Linked Policies (ILPs), following the discussion of their features, benefits, and risks, and preceding the comparison with Unit Trusts.</context>\n# 14. INSURANCE PROTECTION FEATURE OF ILPS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000042",
+    "source_chunk_ids": [
+      "chapter_7__chunk_042"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. What Types of Insurance Protection Do ILPs Provide?",
+    "level": 1,
+    "context": "This chunk is part of Section 14, titled \"INSURANCE PROTECTION FEATURE OF ILPS\", and specifically details the types of insurance protection offered by Investment-Linked Policies (ILPs), including death, disability, and critical illness coverage, and notes variations between single and regular premium policies.",
+    "text": "<context>This chunk is part of Section 14, titled \"INSURANCE PROTECTION FEATURE OF ILPS\", and specifically details the types of insurance protection offered by Investment-Linked Policies (ILPs), including death, disability, and critical illness coverage, and notes variations between single and regular premium policies.</context>\n# A. What Types of Insurance Protection Do ILPs Provide?\n\n14.1 As mentioned previously, ILPs provide insurance protection in the event of death. Additional benefits may include total and permanent disability, accidental death, critical illness and hospitalisation coverage. Regular premium ILPs also generally give the policy owner the flexibility to vary the level of insurance coverage to meet your individual protection needs.\n\n14.2 However, an increase in coverage may be subject to the insurer’s underwriting approval.\n\n14.3 It should be noted that the cost of insurance, based on the policy owner’s age, scope and type of protection chosen, would be charged accordingly. Most single premium ILPs provide lower levels of insurance protection as compared to regular premiums ILPs.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000043",
+    "source_chunk_ids": [
+      "chapter_7__chunk_043"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Effect Of Age On Cost Of Insurance",
+    "level": 1,
+    "context": "This chunk discusses how the cost of insurance within an ILP increases with the policy owner's age, explaining the rationale behind this increase due to rising risks of death, disability, and critical illness. It is part of the larger section detailing the \"Insurance Protection Feature of ILPs.\"",
+    "text": "<context>This chunk discusses how the cost of insurance within an ILP increases with the policy owner's age, explaining the rationale behind this increase due to rising risks of death, disability, and critical illness. It is part of the larger section detailing the \"Insurance Protection Feature of ILPs.\"</context>\n# B. Effect Of Age On Cost Of Insurance\n\n14.4 The cost of insurance will increase with age. It is an inescapable fact of life that, as the policy owner ages from 30 years old onwards, there is, year by year, an increasing risk of death, disability or contracting a critical illness. This increasing risk of claim has to be factored into the calculation of the premiums for any life insurance product.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000044",
+    "source_chunk_ids": [
+      "chapter_7__chunk_044"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Effect Of Age On Amount Of Premiums To Be Paid",
+    "level": 1,
+    "context": "This chunk discusses how premiums are handled in regular premium ILPs, explaining that premiums generally remain level despite increasing insurance charges as the policyholder ages, and how sub-fund performance impacts the ability to cover these charges. It is part of a larger section detailing the insurance protection features of ILPs.",
+    "text": "<context>This chunk discusses how premiums are handled in regular premium ILPs, explaining that premiums generally remain level despite increasing insurance charges as the policyholder ages, and how sub-fund performance impacts the ability to cover these charges. It is part of a larger section detailing the insurance protection features of ILPs.</context>\n# C. Effect Of Age On Amount Of Premiums To Be Paid\n\n14.5 The policy owner does not necessarily have to increase the premiums paid as his age increases. Most life insurance products, including regular premium ILPs are designed, so that the premium which the policy owner pays remains level throughout the life of the policy. For most regular premium ILPs, the premium, which is usually payable monthly, is used to buy units in the chosen investment-linked sub-fund. Units are then sold to pay for the insurance cover that month.\n\n14.6 While these insurance coverage charges increase year by year, the premium that the policy owner pays — that is, the sum of money that actually leaves his bank account each month — will have been determined with the expectation that the premium will remain unchanged for the intended duration of the policy. This premium will have been based on certain assumptions about the performance of the sub-fund but, if the sub-fund performs poorly, the units may not be adequate to meet the insurance coverage charges. Under these circumstances, the policy owner may need to increase his premiums or reduce the level of insurance protection.\n\n14.7 It should be noted that some insurers offer plans that limit insurance cover to modest levels for which there is no explicit charge, and where the cost is borne by the insurer out of the management fees.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000045",
+    "source_chunk_ids": [
+      "chapter_7__chunk_045"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. How Does The Level Of Protection Affect Cash Values?",
+    "level": 1,
+    "context": "This chunk is found in Section 14. Insurance Protection Feature of ILPs, specifically under subsection D, discussing the impact of the level of insurance coverage chosen on the cash value accumulation within regular premium Investment-Linked Policies (ILPs).",
+    "text": "<context>This chunk is found in Section 14. Insurance Protection Feature of ILPs, specifically under subsection D, discussing the impact of the level of insurance coverage chosen on the cash value accumulation within regular premium Investment-Linked Policies (ILPs).</context>\n# D. How Does The Level Of Protection Affect Cash Values?\n\n14.8 For regular premium ILPs, it is important to understand that, for the premium which the policy owner wishes to pay, there will be a trade-off between the amount of insurance coverage provided and the amount available for investment. The higher the level of coverage selected, the more units will be absorbed to pay for the insurance charges, and the fewer units will remain to accumulate cash values under his policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000046",
+    "source_chunk_ids": [
+      "chapter_7__chunk_046"
+    ],
+    "chapter": "chapter_7",
+    "header": "15. INVESTMENT RETURNS OF ILPS",
+    "level": 1,
+    "context": "This chunk is part of a larger document discussing Investment-Linked Life Insurance Policies (ILPs). It appears after sections detailing the features and types of ILPs and before sections on fees, benefits, risks, and comparisons with other financial products. Specifically, it focuses on the nature of investment returns within ILPs.",
+    "text": "<context>This chunk is part of a larger document discussing Investment-Linked Life Insurance Policies (ILPs). It appears after sections detailing the features and types of ILPs and before sections on fees, benefits, risks, and comparisons with other financial products. Specifically, it focuses on the nature of investment returns within ILPs.</context>\n# 15. INVESTMENT RETURNS OF ILPS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000047",
+    "source_chunk_ids": [
+      "chapter_7__chunk_047"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Are Investment Returns Guaranteed?",
+    "level": 1,
+    "context": "This chunk discusses the nature of investment returns in ILPs, specifically addressing whether they are guaranteed and highlighting that policy owners bear the investment risk. It falls under the broader section \"15. INVESTMENT RETURNS OF ILPS\".",
+    "text": "<context>This chunk discusses the nature of investment returns in ILPs, specifically addressing whether they are guaranteed and highlighting that policy owners bear the investment risk. It falls under the broader section \"15. INVESTMENT RETURNS OF ILPS\".</context>\n# A. Are Investment Returns Guaranteed?\n\n15.1 Investment returns from ILPs depend on the performance of the policy owner’s chosen sub-fund. The returns are not guaranteed. The policy owner has to bear the investment losses if the sub-fund performs poorly. Conversely, he will enjoy the full benefit of investment gains if the sub-funds perform well. It should also be noted that the past returns of a sub-fund are not necessarily indicative of the future performance of the sub-fund.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000048",
+    "source_chunk_ids": [
+      "chapter_7__chunk_048"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. What Types Of Sub-Funds Do ILPs Offer?",
+    "level": 1,
+    "context": "This chunk is part of the section \"15. INVESTMENT RETURNS OF ILPS\" and discusses the variety of sub-funds available within Investment-Linked Policies (ILPs), how they cater to different risk profiles and investment objectives, and the concept of risk-reward trade-offs. It also mentions the risk classification of sub-funds under the CPF Investment Scheme.",
+    "text": "<context>This chunk is part of the section \"15. INVESTMENT RETURNS OF ILPS\" and discusses the variety of sub-funds available within Investment-Linked Policies (ILPs), how they cater to different risk profiles and investment objectives, and the concept of risk-reward trade-offs. It also mentions the risk classification of sub-funds under the CPF Investment Scheme.</context>\n# B. What Types Of Sub-Funds Do ILPs Offer?\n\n15.2 Most insurers offer a wide range of sub-funds to suit the policy owner’s investment objectives, risk profile and time horizons. There is a correlation between risk and reward, so that there will be a trade-off between the risks associated with the sub-fund and its potential returns. For example, higher risk investments, such as equity sub-funds, offer greater potential for higher returns, whereas the relative safety of cash sub-funds may be expected to yield more modest returns.\n\n15.3 The policy owner’s risk preference, and therefore, the appropriate sub-fund, may change during the lifetime of his policy as his time horizons shorten. As a general rule, the closer that the policy owner gets to the time when the value of the policy will be realised, the less risk that he will wish to take.\n\n15.4 For investments under the CPF Investment Scheme, the CPF assigns a risk classification to all participating ILP sub-funds.\n\n15.5 For further details and more information on the common type of sub-funds available, do refer to the next chapter of this Study Text.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000049",
+    "source_chunk_ids": [
+      "chapter_7__chunk_049"
+    ],
+    "chapter": "chapter_7",
+    "header": "16. FEES AND CHARGES FOR ILPS",
+    "level": 1,
+    "context": "This section details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs), explaining how they are paid and providing examples such as initial sales charges, management fees, and insurance charges.",
+    "text": "<context>This section details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs), explaining how they are paid and providing examples such as initial sales charges, management fees, and insurance charges.</context>\n# 16. FEES AND CHARGES FOR ILPS\n\n16.1 Fees and charges for an ILP are paid for through the following ways:\n\ndeduction of premiums; and / or sale of purchased units.\n\n16.2 For the sale of purchased units, charges are deducted by way of reducing the number of units that the policy owner holds. Charges are first converted to units by using the bid price, after which the same number of units is deducted from the policy owner.\n\n16.3 Here are examples of the types of fees and charges that may be incurred in an ILP:\n\nInitial sales charge;   \nSub-fund management fee;   \nBenefit / Insurance charges;   \nPolicy fees;   \nAdministrative charges;   \nSurrender charges;   \nPremium holiday charges; and Sub-fund switching charges.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000050",
+    "source_chunk_ids": [
+      "chapter_7__chunk_050"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Initial Sales Charge Or Bid-Offer Spread",
+    "level": 1,
+    "context": "This chunk discusses the \"Initial Sales Charge Or Bid-Offer Spread\" which is a type of fee or charge associated with Investment-Linked Policies (ILPs), specifically detailing its purpose and nature as a one-off charge. It falls under section 16, \"FEES AND CHARGES FOR ILPS\".",
+    "text": "<context>This chunk discusses the \"Initial Sales Charge Or Bid-Offer Spread\" which is a type of fee or charge associated with Investment-Linked Policies (ILPs), specifically detailing its purpose and nature as a one-off charge. It falls under section 16, \"FEES AND CHARGES FOR ILPS\".</context>\n# A. Initial Sales Charge Or Bid-Offer Spread\n\n16.4 This is a charge that goes towards paying the insurer which sells the sub-fund in respect of an ILP. Initial sales charges are usually a percentage of the investment amount (e.g. $3 \\%$ or $5 \\%$ ). Initial sales charges are one-off charges, and are made either at the point of purchase, or at the point of redemption (sale). This is unlike the other costs, which may be incurred every year upon owning a share in the sub-fund.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000051",
+    "source_chunk_ids": [
+      "chapter_7__chunk_051"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Sub-Fund Management Fee",
+    "level": 1,
+    "context": "This chunk is part of section 16, \"FEES AND CHARGES FOR ILPS,\" specifically under subsection B, \"Sub-Fund Management Fee.\" It details what this fee covers, its typical range, and factors influencing its cost.",
+    "text": "<context>This chunk is part of section 16, \"FEES AND CHARGES FOR ILPS,\" specifically under subsection B, \"Sub-Fund Management Fee.\" It details what this fee covers, its typical range, and factors influencing its cost.</context>\n# B. Sub-Fund Management Fee\n\n6.5 The investments of the unitised sub-fund are managed by professional investment managers. A sub-fund management fee is paid to the fund manager for portfolio supervision and for general management of the sub-fund affairs. Such fee also serves to compensate the manager for the expenses incurred in providing the relevant services. There will normally be a sub-fund management charge likely to range from $0 . 5 \\%$ to $2 \\%$ per annum. The level of this charge will depend on the competition, the type of assets under management, and the profit requirements of the life insurers. A sub-fund investing in government securities will normally attract a lower sub-fund management charge as compared to an equity sub-fund. They are normally charged at the same frequency as the pricing of the units. The pricing of the units should have taken this into account. Such a fee will cover investment expenses and will provide for profits to shareholders of the insurer.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000052",
+    "source_chunk_ids": [
+      "chapter_7__chunk_052"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Benefit / Insurance Charges",
+    "level": 1,
+    "context": "This chunk is about \"Benefit / Insurance Charges\" and is located within section 16, which details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs). It explains how these charges are incurred, how they increase with age, and their potential impact on policy value and financial planning.",
+    "text": "<context>This chunk is about \"Benefit / Insurance Charges\" and is located within section 16, which details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs). It explains how these charges are incurred, how they increase with age, and their potential impact on policy value and financial planning.</context>\n# C. Benefit / Insurance Charges\n\n16.6 These are charges incurred by the client for the insurer to provide coverage for certain events like death, total and permanent disability or critical illness, etc. occurring during the policy period of insurance for the ILP.\n\n16.7 The charges for the basic insurance cover, i.e. death and total and permanent disability, increase with the life insured’s age. For example, the charges for $\\$ 1,000$ basic insurance cover for a male when he is at the age of 30, 40, 50 and 60 years are $\\$ 80.78$ , $\\$ 129$ , $\\$ \\$ 3.12$ and $\\$ 11.64$ respectively. The numbers in this example are not definite numbers as different insurers offer different rates. These charges are usually sub-funded by the cancellation of a number of units under the policy, which will give the equivalent dollar amount of the relevant benefit charges.\n\n16.8 On the other hand, the charges for riders can be by way of cancellation of units (e.g. critical illness rider) or by cash payment (e.g. accidental death benefit rider). If it is the former, the charges increase with the insured’s age. As for the latter, the charges are a fixed amount payable throughout the premium payment term of the policy.\n\n16.9 The charges for the basic insurance cover and those riders which are paid by way of cancellation of units escalate as the insured ages, as you can see from the above example. Should the charges outstrip the annual premiums paid, the investment gains would be used to pay for the charges. This means that there is a possibility of the policy lapsing (some insurers have features in place to prevent this from happening) or having low surrender value at the point of a claim. This defeats the purpose of the client buying the policy to earn high investment returns, and enjoy insurance protection at the same time.\n\n16.10 It will have serious consequences on his financial planning. It is important that you bear this point in mind when you advise your clients, (particularly those who are in the older age group, as the mortality charges are higher) to purchase ILPs for their",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000053",
+    "source_chunk_ids": [
+      "chapter_7__chunk_052"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Benefit / Insurance Charges",
+    "level": 1,
+    "context": "This chunk is part of section 16, \"FEES AND CHARGES FOR ILPS\", specifically under subsection C, \"Benefit / Insurance Charges\". It discusses how insurance charges, particularly for older individuals, can impact the policy's ability to meet the owner's objectives and when traditional life insurance might be a better alternative.",
+    "text": "<context>This chunk is part of section 16, \"FEES AND CHARGES FOR ILPS\", specifically under subsection C, \"Benefit / Insurance Charges\". It discusses how insurance charges, particularly for older individuals, can impact the policy's ability to meet the owner's objectives and when traditional life insurance might be a better alternative.</context>\nprotection at the same time.\n\n16.10 It will have serious consequences on his financial planning. It is important that you bear this point in mind when you advise your clients, (particularly those who are in the older age group, as the mortality charges are higher) to purchase ILPs for their insurance needs. You should ensure that the charges for the insurance cover would not result in your client not meeting his objective for which he had bought the policy. For any client who has substantial life insurance needs, you can advise him to purchase one of the traditional life insurance policies instead. It is also important that you highlight the increase in charges to your client. You may refer to later relevant chapter to see how this is done.\n\n16.11 The charges for the cash payment type of insurance cover are included in the premium that the policy owner pays and, as the rate is unchanged as age increases, it does not have any adverse effect on the policy. However, some of these benefits’ premium rates are non-guaranteed in nature and, hence, may change depending on the claim experience. This may have an overall effect on the policy in terms of affordability.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000054",
+    "source_chunk_ids": [
+      "chapter_7__chunk_053"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. Policy Fees",
+    "level": 1,
+    "context": "This chunk is about policy fees, a type of fee and charge associated with Investment-Linked Policies (ILPs), and it falls under section 16 \"FEES AND CHARGES FOR ILPS\".",
+    "text": "<context>This chunk is about policy fees, a type of fee and charge associated with Investment-Linked Policies (ILPs), and it falls under section 16 \"FEES AND CHARGES FOR ILPS\".</context>\n# D. Policy Fees\n\n16.12 These cover the administrative expenses of setting up the policy, as well as the regular running expenses of administering the policy. As the cost of setting up a big or small policy is more or less the same amount, the insurer will normally levy (impose and collect) a uniform policy fee for each policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000055",
+    "source_chunk_ids": [
+      "chapter_7__chunk_054"
+    ],
+    "chapter": "chapter_7",
+    "header": "E. Administrative Charges",
+    "level": 1,
+    "context": "This chunk is located within section 16, \"FEES AND CHARGES FOR ILPS\", specifically under subsection E, \"Administrative Charges\". It details the types of initial expenses covered by administrative charges in an ILP.",
+    "text": "<context>This chunk is located within section 16, \"FEES AND CHARGES FOR ILPS\", specifically under subsection E, \"Administrative Charges\". It details the types of initial expenses covered by administrative charges in an ILP.</context>\n# E. Administrative Charges\n\n16.13 These cover the initial expenses of the policy. The cost of administration is incurred largely to provide record-keeping and transaction services. Sometimes, these costs may represent additional fees paid to the fund manager. Other times, these fees are paid to banks and sub-fund service organisations, which provide such services independent of insurers. These costs usually range from $0 . 2 \\%$ to $0 . 4 \\%$ of average sub-fund assets.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000056",
+    "source_chunk_ids": [
+      "chapter_7__chunk_055"
+    ],
+    "chapter": "chapter_7",
+    "header": "F. Surrender Charges",
+    "level": 1,
+    "context": "This chunk is found in Section 16, \"FEES AND CHARGES FOR ILPS,\" specifically under subsection F, \"Surrender Charges.\" It details the nature, purpose, and calculation of surrender charges, which are fees incurred when a policy owner cashes out units before a specified period.",
+    "text": "<context>This chunk is found in Section 16, \"FEES AND CHARGES FOR ILPS,\" specifically under subsection F, \"Surrender Charges.\" It details the nature, purpose, and calculation of surrender charges, which are fees incurred when a policy owner cashes out units before a specified period.</context>\n# F. Surrender Charges\n\n16.14 Surrender charges or back-end loads are the charges that a client would incur should he decide to cash out a portion or all of his units before a certain period of time. This serves to compensate the insurer for the costs incurred in the setup and the administration of the policy. Surrender charges are usually a percentage of the total surrender value that a client will be cashing out or surrendering. The charges usually decrease from the first year onwards.\n\n16.15 For example, the surrender charges may be:\n\n$9 5 \\%$ of surrender value in year 1;   \n$8 5 \\%$ in year 2;   \n$6 5 \\%$ in year 3;   \nuntil it finally decreases to zero.\n\n16.16 The dollar amount for the surrender charges will be calculated as follows:\n\nA x B x Bid price where A is the surrender factor or percentage as above; and B is the number of units to be surrendered.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000057",
+    "source_chunk_ids": [
+      "chapter_7__chunk_056"
+    ],
+    "chapter": "chapter_7",
+    "header": "G. Premium Holiday Charges",
+    "level": 1,
+    "context": "This chunk, detailing \"Premium Holiday Charges\", is located within the \"16. FEES AND CHARGES FOR ILPS\" section of the document, following discussions on Surrender Charges and preceding Sub-Fund Switching Charges.",
+    "text": "<context>This chunk, detailing \"Premium Holiday Charges\", is located within the \"16. FEES AND CHARGES FOR ILPS\" section of the document, following discussions on Surrender Charges and preceding Sub-Fund Switching Charges.</context>\n# G. Premium Holiday Charges\n\n16.17 An ILP gives the policy owner the flexibility to go on a premium holiday. A premium holiday means that the policy owner can choose to stop paying his regular premium for a certain period of time, for as long as the surrender value of that policy is enough to cover the charges for the policy.\n\n16.18 A fee, called the premium holiday charge, may be levied by the insurer for using this premium holiday feature. This charge may be based on a percentage of the regular premium that is due, or a percentage of the charges and fees payable for the policy. The percentage payable usually decreases with time. The charges and fees payable are by way of deduction of units at the bid price. As practices of insurers do differ, it is important that the adviser check the practice of the insurer which he represents, before giving advice to his clients.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000058",
+    "source_chunk_ids": [
+      "chapter_7__chunk_057"
+    ],
+    "chapter": "chapter_7",
+    "header": "H. Sub-Fund Switching Charges",
+    "level": 1,
+    "context": "This chunk is found in Section 16, which details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs). Specifically, it discusses \"Sub-Fund Switching Charges,\" explaining that while some initial switches may be free, subsequent ones typically incur a fee.",
+    "text": "<context>This chunk is found in Section 16, which details the various fees and charges associated with Investment-Linked Insurance Policies (ILPs). Specifically, it discusses \"Sub-Fund Switching Charges,\" explaining that while some initial switches may be free, subsequent ones typically incur a fee.</context>\n# H. Sub-Fund Switching Charges\n\n16.19 As mentioned earlier, the policy owner has the option to switch his holdings from one sub-fund to another. The sub-fund switch feature of an ILP allows the policy owner to switch all or a portion of his holdings from one sub-fund to another, in line with his risk profile and investment preference. The first such sub-fund switch made in a year is usually free, but subsequent switches are subject to charges, usually at a flat dollar amount per switch made (e.g. $\\$ \\$ 25$ . There are insurers that offer more than one free sub-fund switch per year. Some may even offer unlimited sub-fund switches, subject to certain conditions.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000059",
+    "source_chunk_ids": [
+      "chapter_7__chunk_058"
+    ],
+    "chapter": "chapter_7",
+    "header": "17. BENEFITS OF INVESTING IN ILPS",
+    "level": 1,
+    "context": "The document discusses Investment-Linked Insurance Policies (ILPs), and after detailing their types, features, and risks, it moves on to explain the advantages of investing in them.",
+    "text": "<context>The document discusses Investment-Linked Insurance Policies (ILPs), and after detailing their types, features, and risks, it moves on to explain the advantages of investing in them.</context>\n# 17. BENEFITS OF INVESTING IN ILPS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_7__small_000060",
+    "source_chunk_ids": [
+      "chapter_7__chunk_059"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Pooling Or Diversification",
+    "level": 1,
+    "context": "This chunk is located within Section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically under the subheading \"A. Pooling Or Diversification\". It explains how investment-linked sub-funds allow policy owners to access diversified portfolios, which helps mitigate risk by spreading investments across various stocks and bonds, thereby protecting against the failure of a single security or sector.",
+    "text": "<context>This chunk is located within Section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically under the subheading \"A. Pooling Or Diversification\". It explains how investment-linked sub-funds allow policy owners to access diversified portfolios, which helps mitigate risk by spreading investments across various stocks and bonds, thereby protecting against the failure of a single security or sector.</context>\n# A. Pooling Or Diversification\n\n17.1 The sub-fund offers the policy owner an access to a \"pooled\" or \"diversified\" portfolio. A sub-fund normally consists of a large number of equity stocks and / or a range of corporate bonds. The policy owner is unlikely to be able to construct such a diversified portfolio on his own. A diversified portfolio has better risk characteristics than a portfolio that is not well diversified, i.e. a subfund should cushion from a severe price decline of any one stock, and sometimes, a sector of stocks in the portfolio.\n\n17.2 Diversification does not and cannot protect policy owners against adverse moves in the broad investment market. It protects only against the risk of “putting too many eggs in one basket”, i.e. putting too much money into one company’s securities.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000061",
+    "source_chunk_ids": [
+      "chapter_7__chunk_060"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Flexibility",
+    "level": 1,
+    "context": "This chunk is part of Section 17, \"BENEFITS OF INVESTING IN ILPS,\" and specifically discusses the flexibility of Investment-Linked Insurance Policies (ILPs) compared to conventional insurance products.",
+    "text": "<context>This chunk is part of Section 17, \"BENEFITS OF INVESTING IN ILPS,\" and specifically discusses the flexibility of Investment-Linked Insurance Policies (ILPs) compared to conventional insurance products.</context>\n# B. Flexibility\n\n17.3 An ILP can be very flexible because of the nature of the product. An ILP policy owner can vary the amount of life cover within very wide limits and can vary premium payments, take premium holidays, add single premium top-ups, or make withdrawals at any time.\n\n17.4 Such flexibility cannot be achieved under a conventional product structure. For example, a participating or non-participating Endowment or Whole Life Insurance policy requires complicated alteration of calculations, if the policy owner wishes to change his premium level or sum assured. This is expensive and the cost has to be reflected in the premium to be charged.\n\n17.5 However, there are limitations to the flexible features offered by ILPs. It is important that you know the limitations, and highlight them to your clients when presenting your recommendations to them.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000062",
+    "source_chunk_ids": [
+      "chapter_7__chunk_061"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Dollar Cost Averaging",
+    "level": 1,
+    "context": "This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically under subsection C, \"Dollar Cost Averaging.\" It explains the concept and benefits of dollar cost averaging as a strategy for investing in ILPs.",
+    "text": "<context>This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically under subsection C, \"Dollar Cost Averaging.\" It explains the concept and benefits of dollar cost averaging as a strategy for investing in ILPs.</context>\n# C. Dollar Cost Averaging\n\n17.6 Dollar cost averaging simply means investing the same dollar amount in a subfund at regular intervals, regardless of the sub-fund price fluctuations. By regularly investing specified amounts of money over a period of time, the policy owner is able to capitalise on market cycles, by purchasing more units when prices are low and fewer units when prices are high.\n\n17.7 If you invest in the long term, buying units of the sub-fund at different prices as a sub-fund value characteristically moves up and down, you will find that the cost of each share should be typically lower than the average price of the share during the same period. This is the beneficial effect of dollar cost averaging.\n\n17.8 As a result, the average cost of the units is reduced, thereby increasing the potential for higher returns on the principal, and effectively eliminating the risk of timing the market incorrectly.\n\n  \nSource: https://secure.fundsupermart.com/main/research/viewHTML.tpl?articleNo=2963",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000063",
+    "source_chunk_ids": [
+      "chapter_7__chunk_062"
+    ],
+    "chapter": "chapter_7",
+    "header": "D. Professional Management",
+    "level": 1,
+    "context": "This chunk discusses the benefit of professional management in Investment-Linked Policies (ILPs), explaining how fund managers and their teams select investments for the sub-funds. It is part of a larger section on the benefits of investing in ILPs.",
+    "text": "<context>This chunk discusses the benefit of professional management in Investment-Linked Policies (ILPs), explaining how fund managers and their teams select investments for the sub-funds. It is part of a larger section on the benefits of investing in ILPs.</context>\n# D. Professional Management\n\n17.9 A professional fund manager or investment adviser carefully selects the specific stocks and / or bonds in which the sub-fund invests. This may be done by a single person or a team of people.\n\n17.10 In addition, the sub-fund management company usually employs researchers, as well as investment analysts and strategists, to provide the fund manager with detailed information, insights, and interpretations that are important considerations, when selecting individual stocks or bonds. These data and opinions enable the fund manager to fulfil the sub-fund objectives and select securities that will, hopefully, produce a substantial positive return.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000064",
+    "source_chunk_ids": [
+      "chapter_7__chunk_063"
+    ],
+    "chapter": "chapter_7",
+    "header": "E. Affordability",
+    "level": 1,
+    "context": "This chunk discusses one of the benefits of investing in Investment-Linked Policies (ILPs), specifically \"Affordability,\" within the broader context of section 17, \"BENEFITS OF INVESTING IN ILPS.\"",
+    "text": "<context>This chunk discusses one of the benefits of investing in Investment-Linked Policies (ILPs), specifically \"Affordability,\" within the broader context of section 17, \"BENEFITS OF INVESTING IN ILPS.\"</context>\n# E. Affordability\n\n17.11 The small investor is able to access the sub-fund with a modest capital. He is unlikely to be able to purchase bonds and certain stocks directly, and as costeffectively, at such low levels of capital investment.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000065",
+    "source_chunk_ids": [
+      "chapter_7__chunk_064"
+    ],
+    "chapter": "chapter_7",
+    "header": "F. Ease Of Administration",
+    "level": 1,
+    "context": "This chunk discusses the benefits of investing in ILPs, specifically highlighting the ease of administration for the policy owner as their investments are professionally managed.",
+    "text": "<context>This chunk discusses the benefits of investing in ILPs, specifically highlighting the ease of administration for the policy owner as their investments are professionally managed.</context>\n# F. Ease Of Administration\n\n17.12 The policy owner, apart from keeping his policy document and annual statements provided by the insurer, he need not concern himself with the administration of his investments. The administration of a portfolio of investments can be a complicated affair.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000066",
+    "source_chunk_ids": [
+      "chapter_7__chunk_065"
+    ],
+    "chapter": "chapter_7",
+    "header": "G. Choice Of Sub-Funds",
+    "level": 1,
+    "context": "This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", and specifically discusses the benefit of having a \"Choice Of Sub-Funds\" within an ILP.",
+    "text": "<context>This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", and specifically discusses the benefit of having a \"Choice Of Sub-Funds\" within an ILP.</context>\n# G. Choice Of Sub-Funds\n\n17.13 ILPs let the policy owner choose from a wide range of investment-linked subfunds, managed by professional fund managers. It is important to select subfund(s) that suit your client’s financial goals and risk profile, for example, low, medium or high risk. ILPs also allow the policy owner to move his money from one sub-fund to another, to suit his financial situation and risk profile, since these can change over time. Most insurers offer a limited number of free switches and charge a nominal fee per switch. Before switching from one subfund to another, do check whether your client is entitled to free switches and, if not, how much he needs to pay for the switch.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000067",
+    "source_chunk_ids": [
+      "chapter_7__chunk_066"
+    ],
+    "chapter": "chapter_7",
+    "header": "H. Potential Returns",
+    "level": 1,
+    "context": "This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically detailing the benefit of \"Potential Returns\".",
+    "text": "<context>This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", specifically detailing the benefit of \"Potential Returns\".</context>\n# H. Potential Returns\n\n17.14 With ILPs, depending on the choice of sub-fund, the policy owner can earn potentially higher returns over the long term as compared to other life insurance policies, such as traditional whole life and endowment plans, since the investment risk is borne by the policy owner, and he may choose to invest into higher risk sub-funds.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000068",
+    "source_chunk_ids": [
+      "chapter_7__chunk_067"
+    ],
+    "chapter": "chapter_7",
+    "header": "I. Guaranteed Insurability",
+    "level": 1,
+    "context": "This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", and specifically details the benefit of guaranteed insurability.",
+    "text": "<context>This chunk is part of section 17, \"BENEFITS OF INVESTING IN ILPS\", and specifically details the benefit of guaranteed insurability.</context>\n# I. Guaranteed Insurability\n\n17.15 Like other life insurance products, once you purchase an ILP, you will enjoy guaranteed insurability for the duration of the plan, regardless of any changes in your health status. However, an increase in coverage may be subject to the insurer’s underwriting approval.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000069",
+    "source_chunk_ids": [
+      "chapter_7__chunk_068"
+    ],
+    "chapter": "chapter_7",
+    "header": "18. RISKS OF INVESTING IN ILPS",
+    "level": 1,
+    "context": "The document discusses Investment-Linked Life Insurance Policies (ILPs), detailing their nature, features, benefits, and risks. This chunk, located in section 18, specifically addresses the inherent risks associated with investing in ILPs, focusing on the direct link between unit values and investment performance.",
+    "text": "<context>The document discusses Investment-Linked Life Insurance Policies (ILPs), detailing their nature, features, benefits, and risks. This chunk, located in section 18, specifically addresses the inherent risks associated with investing in ILPs, focusing on the direct link between unit values and investment performance.</context>\n# 18. RISKS OF INVESTING IN ILPS\n\n18.1 Since the values of the units of ILPs are directly linked to the investment performance of the underlying assets in the sub-fund, the value of the units can rise or fall with the underlying assets in the sub-fund. Hence, it is possible that the value of the policies may fall. As such, the cash and maturity values will be adversely affected. Therefore, while the potential yield of an ILP may be higher than a non-linked or traditional life insurance policy, the risks are also greater.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000070",
+    "source_chunk_ids": [
+      "chapter_7__chunk_069"
+    ],
+    "chapter": "chapter_7",
+    "header": "A. Investment Returns Are Not Guaranteed",
+    "level": 1,
+    "context": "This chunk discusses a key risk of ILPs: the fact that investment returns are not guaranteed because the policy owner bears the investment risk. It is located within the broader \"RISKS OF INVESTING IN ILPS\" section, following the introduction to this section.",
+    "text": "<context>This chunk discusses a key risk of ILPs: the fact that investment returns are not guaranteed because the policy owner bears the investment risk. It is located within the broader \"RISKS OF INVESTING IN ILPS\" section, following the introduction to this section.</context>\n# A. Investment Returns Are Not Guaranteed\n\n18.2 In an ILP, the investment risk will be borne entirely by the policy owner. The performance of the sub-funds is not guaranteed, and the price of the units can rise or fall. As such, if a sub-fund does not perform well, the cash and maturity values will be adversely affected.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000071",
+    "source_chunk_ids": [
+      "chapter_7__chunk_070"
+    ],
+    "chapter": "chapter_7",
+    "header": "B. Insurance Coverage Charges Are Not Guaranteed",
+    "level": 1,
+    "context": "This chunk is part of section 18, \"RISKS OF INVESTING IN ILPS\", specifically discussing the non-guaranteed nature of insurance coverage charges. It follows a discussion of investment return risks and precedes a point about units potentially being insufficient to cover these charges.",
+    "text": "<context>This chunk is part of section 18, \"RISKS OF INVESTING IN ILPS\", specifically discussing the non-guaranteed nature of insurance coverage charges. It follows a discussion of investment return risks and precedes a point about units potentially being insufficient to cover these charges.</context>\n# B. Insurance Coverage Charges Are Not Guaranteed\n\n18.3 Most single premium ILPs offer lower insurance coverage levels. Consequently, they have lower insurance coverage charges as compared with regular premium ILPs.\n\n18.4 For regular premium ILPs, the scale of insurance coverage charges is not usually guaranteed and may be adjusted by the insurers, subject to any maximum limits as stated in the policy. An increase in the scale of charges would only arise should there be a general and sustained worsening of claims experience. Should such an increase be necessary, it would be applied to an entire class of policies, and not in isolation to an individual policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000072",
+    "source_chunk_ids": [
+      "chapter_7__chunk_071"
+    ],
+    "chapter": "chapter_7",
+    "header": "C. Units May Be Insufficient To Pay The Insurance Coverage Charges",
+    "level": 1,
+    "context": "This chunk discusses a specific risk associated with Investment-Linked Policies (ILPs), particularly for older policy owners paying regular premiums, where the policy's unit value may become insufficient to cover increasing insurance charges due to age and potential poor investment performance. It falls under the broader section detailing the risks of investing in ILPs.",
+    "text": "<context>This chunk discusses a specific risk associated with Investment-Linked Policies (ILPs), particularly for older policy owners paying regular premiums, where the policy's unit value may become insufficient to cover increasing insurance charges due to age and potential poor investment performance. It falls under the broader section detailing the risks of investing in ILPs.</context>\n# C. Units May Be Insufficient To Pay The Insurance Coverage Charges\n\n18.5 As the risk of death, disability and illness generally increases with age, insurance coverage charges typically increase as the policy owner gets older. For most regular premium ILPs, insurance coverage charges are paid through the sale of units. As the policy owner gets older, it is possible that a combination of high insurance protection and a poorly performing sub-fund may result in the value of the units being inadequate to meet such charges for the level of coverage as provided by his policy.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000073",
+    "source_chunk_ids": [
+      "chapter_7__chunk_072"
+    ],
+    "chapter": "chapter_7",
+    "header": "19. COMPARISON WITH UNIT TRUSTS (UTs)",
+    "level": 1,
+    "context": "This section compares Investment-Linked Policies (ILPs) with Unit Trusts (UTs), highlighting their similarities and key distinctions in terms of regulation, disclosure, benefits, and operational aspects.",
+    "text": "<context>This section compares Investment-Linked Policies (ILPs) with Unit Trusts (UTs), highlighting their similarities and key distinctions in terms of regulation, disclosure, benefits, and operational aspects.</context>\n# 19. COMPARISON WITH UNIT TRUSTS (UTs)\n\n19.1 ILPs and UTs are very similar. Broadly there are no differences in the tax treatment or investment bases between ILPs and UTs. However, there are some differences in the way that they operate, e.g. ILPs do not need trustees or registrars.\n\n19.2 The key distinction between ILPs and UTs is that ILPs provide insurance coverage (death benefit), as well as investment returns, whereas UTs provide only investment returns. Upon the death of the policy owner of an ILP, the benefits paid out will be both the value of the units, as well as the death benefit, or the higher of the two. Besides the death benefit, some insurers provide other types of coverage, such as total and permanent disability benefit, and critical illness benefit, under an ILP.\n\n19.3 You may refer to the Comparison Chart for your knowledge.\n\nComparison Chart Between ILPs And Unit Trusts   \n\nhierarchical_json: {\"table_id\": \"chapter_7__chunk_072__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Item\", \"ILPs\", \"UTs\"], [\"InvestmentGuidelines\", \"ILP sub-funds are subject to therequirements as specified in theInsurance Regulations -Insurance Act 1966 and NoticeNo: MAS 307\", \"Subject to requirements asspecified in the Code onCollective InvestmentSchemes and regulatedunder the Securities andFutures Act 2001.\"], [\"ProductDisclosure(at point ofsale)\", \"A Copy Of The Cover Page Product Summary Policy lustration Bundled Product DisclosureDocument Guide to Life Insurance (fromLIA)\", \"Prospectus /Profile Statement\"], [\"Product Disclosure(post-sale)\", \"Policy contract Annual Statement of Accounts AnnualandSemi-AnnualReport on ILP sub-fund\", \"Annual Statement ofAccounts · Annual and Semi-Annual Report\"], [\"Death Benefit\", \"Left to market forces to decide on the appropriate level of deathbenefits for ILPs offered in Singapore\", \"Not applicable\"], [\"Free-look /CancellationPeriod\", \"14 days from the date ofreceipt of policy Insurer entitled to makeadjustments to reflectchanges in market values ofunderlying assets\", \"·7 calendar days from the date of signing of thePurchase Agreement Relevant person entitled to an adjustment to reflectthe change in market values of the units held bythe investor\"], [\"Treatment ofrounding differences and compensationforcomputationalerrors\", \"Refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses77 to 82\", \"Refer to Code on CollectiveInvestment Schemes (last revised on 3 March 2022)\"], [\"Business conductrequirementsfor sub-fundmanagers\", \"Specific requirements spelt out in Notice No: MAS 307\", \"Specific requirements speltout in the Securities andFutures Act 2001.\"]], \"headers\": {\"column_headers\": [\"ILPs\", \"UTs\"], \"row_headers\": [\"InvestmentGuidelines\", \"ProductDisclosure(at point ofsale)\", \"Product Disclosure(post-sale)\", \"Death Benefit\", \"Free-look /CancellationPeriod\", \"Treatment ofrounding differences and compensationforcomputationalerrors\", \"Business conductrequirementsfor sub-fundmanagers\"]}, \"rows\": [{\"row_header\": \"InvestmentGuidelines\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"ILP sub-funds are subject to therequirements as specified in theInsurance Regulations -Insurance Act 1966 and NoticeNo: MAS 307\"}, {\"column_header\": \"UTs\", \"value\": \"Subject to requirements asspecified in the Code onCollective InvestmentSchemes and regulatedunder the Securities andFutures Act 2001.\"}]}, {\"row_header\": \"ProductDisclosure(at point ofsale)\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"A Copy Of The Cover Page Product Summary Policy lustration Bundled Product DisclosureDocument Guide to Life Insurance (fromLIA)\"}, {\"column_header\": \"UTs\", \"value\": \"Prospectus /Profile Statement\"}]}, {\"row_header\": \"Product Disclosure(post-sale)\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Policy contract Annual Statement of Accounts AnnualandSemi-AnnualReport on ILP sub-fund\"}, {\"column_header\": \"UTs\", \"value\": \"Annual Statement ofAccounts · Annual and Semi-Annual Report\"}]}, {\"row_header\": \"Death Benefit\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Left to market forces to decide on the appropriate level of deathbenefits for ILPs offered in Singapore\"}, {\"column_header\": \"UTs\", \"value\": \"Not applicable\"}]}, {\"row_header\": \"Free-look /CancellationPeriod\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"14 days from the date ofreceipt of policy Insurer entitled to makeadjustments to reflectchanges in market values ofunderlying assets\"}, {\"column_header\": \"UTs\", \"value\": \"·7 calendar days from the date of signing of thePurchase Agreement Relevant person entitled to an adjustment to reflectthe change in market values of the units held bythe investor\"}]}, {\"row_header\": \"Treatment ofrounding differences and compensationforcomputationalerrors\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses77 to 82\"}, {\"column_header\": \"UTs\", \"value\": \"Refer to Code on CollectiveInvestment Schemes (last revised on 3 March 2022)\"}]}, {\"row_header\": \"Business conductrequirementsfor sub-fundmanagers\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Specific requirements spelt out in Notice No: MAS 307\"}, {\"column_header\": \"UTs\", \"value\": \"Specific requirements speltout in the Securities andFutures Act 2001.\"}]}]}\n\ntable narrative: [\"For Investment-Linked Insurance Policies (ILPs), investment guidelines for ILP sub-funds are subject to the requirements specified in the Insurance Regulations - Insurance Act 1966 and Notice No: MAS 307.\", \"For Unit Trusts (UTs), investment guidelines are subject to requirements specified in the Code on Collective Investment Schemes and regulated under the Securities and Futures Act 2001.\", \"For Investment-Linked Insurance Policies (ILPs), product disclosure at the point of sale includes a copy of the cover page, product summary, policy illustration, bundled product disclosure document, and the Guide to Life Insurance (from LIA).\", \"For Unit Trusts (UTs), product disclosure at the point of sale includes a prospectus or profile statement.\", \"For Investment-Linked Insurance Policies (ILPs), product disclosure post-sale includes the policy contract, annual statement of accounts, and annual and semi-annual reports on the ILP sub-fund.\", \"For Unit Trusts (UTs), product disclosure post-sale includes the annual statement of accounts and annual and semi-annual reports.\", \"For Investment-Linked Insurance Policies (ILPs), the death benefit is left to market forces to decide on the appropriate level of death benefits for ILPs offered in Singapore.\", \"For Unit Trusts (UTs), there is no death benefit.\", \"For Investment-Linked Insurance Policies (ILPs), the free-look or cancellation period is 14 days from the date of receipt of policy, and the insurer is entitled to make adjustments to reflect changes in market values of underlying assets.\", \"For Unit Trusts (UTs), the free-look or cancellation period is 7 calendar days from the date of signing of the purchase agreement, and the relevant person is entitled to an adjustment to reflect the change in market values of the units held by the investor.\", \"For Investment-Linked Insurance Policies (ILPs), treatment of rounding differences and compensation for computational errors refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses 77 to 82.\", \"For Unit Trusts (UTs), treatment of rounding differences and compensation for computational errors refer to the Code on Collective Investment Schemes (last revised on 3 March 2022).\", \"For Investment-Linked Insurance Policies (ILPs), business conduct requirements for sub-fund managers have specific requirements spelt out in Notice No: MAS 307.\", \"For Unit Trusts (UTs), business conduct requirements for sub-fund managers have specific requirements spelt out in the Securities and Futures Act 2001.\"]\n\nCHAPTER 07\n\nINVESTMENT-LINKED LIFE INSURANCE POLICIES (ILPS): TYPES, FEATURES, BENEFITS AND RISKS",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_7__chunk_072__table_01",
+        "table_type": "unknown",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "The rows represent different aspects of product regulation and disclosure.",
+          "col": "The columns represent Investment-Linked Insurance Policies (ILPs) and Unit Trusts (UTs).",
+          "value": "The cells contain details specific to each aspect for ILPs and UTs."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_7__chunk_072__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Item",
+              "ILPs",
+              "UTs"
+            ],
+            [
+              "InvestmentGuidelines",
+              "ILP sub-funds are subject to therequirements as specified in theInsurance Regulations -Insurance Act 1966 and NoticeNo: MAS 307",
+              "Subject to requirements asspecified in the Code onCollective InvestmentSchemes and regulatedunder the Securities andFutures Act 2001."
+            ],
+            [
+              "ProductDisclosure(at point ofsale)",
+              "A Copy Of The Cover Page Product Summary Policy lustration Bundled Product DisclosureDocument Guide to Life Insurance (fromLIA)",
+              "Prospectus /Profile Statement"
+            ],
+            [
+              "Product Disclosure(post-sale)",
+              "Policy contract Annual Statement of Accounts AnnualandSemi-AnnualReport on ILP sub-fund",
+              "Annual Statement ofAccounts · Annual and Semi-Annual Report"
+            ],
+            [
+              "Death Benefit",
+              "Left to market forces to decide on the appropriate level of deathbenefits for ILPs offered in Singapore",
+              "Not applicable"
+            ],
+            [
+              "Free-look /CancellationPeriod",
+              "14 days from the date ofreceipt of policy Insurer entitled to makeadjustments to reflectchanges in market values ofunderlying assets",
+              "·7 calendar days from the date of signing of thePurchase Agreement Relevant person entitled to an adjustment to reflectthe change in market values of the units held bythe investor"
+            ],
+            [
+              "Treatment ofrounding differences and compensationforcomputationalerrors",
+              "Refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses77 to 82",
+              "Refer to Code on CollectiveInvestment Schemes (last revised on 3 March 2022)"
+            ],
+            [
+              "Business conductrequirementsfor sub-fundmanagers",
+              "Specific requirements spelt out in Notice No: MAS 307",
+              "Specific requirements speltout in the Securities andFutures Act 2001."
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "ILPs",
+              "UTs"
+            ],
+            "row_headers": [
+              "InvestmentGuidelines",
+              "ProductDisclosure(at point ofsale)",
+              "Product Disclosure(post-sale)",
+              "Death Benefit",
+              "Free-look /CancellationPeriod",
+              "Treatment ofrounding differences and compensationforcomputationalerrors",
+              "Business conductrequirementsfor sub-fundmanagers"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "InvestmentGuidelines",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "ILP sub-funds are subject to therequirements as specified in theInsurance Regulations -Insurance Act 1966 and NoticeNo: MAS 307"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Subject to requirements asspecified in the Code onCollective InvestmentSchemes and regulatedunder the Securities andFutures Act 2001."
+                }
+              ]
+            },
+            {
+              "row_header": "ProductDisclosure(at point ofsale)",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "A Copy Of The Cover Page Product Summary Policy lustration Bundled Product DisclosureDocument Guide to Life Insurance (fromLIA)"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Prospectus /Profile Statement"
+                }
+              ]
+            },
+            {
+              "row_header": "Product Disclosure(post-sale)",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Policy contract Annual Statement of Accounts AnnualandSemi-AnnualReport on ILP sub-fund"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Annual Statement ofAccounts · Annual and Semi-Annual Report"
+                }
+              ]
+            },
+            {
+              "row_header": "Death Benefit",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Left to market forces to decide on the appropriate level of deathbenefits for ILPs offered in Singapore"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Not applicable"
+                }
+              ]
+            },
+            {
+              "row_header": "Free-look /CancellationPeriod",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "14 days from the date ofreceipt of policy Insurer entitled to makeadjustments to reflectchanges in market values ofunderlying assets"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "·7 calendar days from the date of signing of thePurchase Agreement Relevant person entitled to an adjustment to reflectthe change in market values of the units held bythe investor"
+                }
+              ]
+            },
+            {
+              "row_header": "Treatment ofrounding differences and compensationforcomputationalerrors",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses77 to 82"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Refer to Code on CollectiveInvestment Schemes (last revised on 3 March 2022)"
+                }
+              ]
+            },
+            {
+              "row_header": "Business conductrequirementsfor sub-fundmanagers",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Specific requirements spelt out in Notice No: MAS 307"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Specific requirements speltout in the Securities andFutures Act 2001."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For Investment-Linked Insurance Policies (ILPs), investment guidelines for ILP sub-funds are subject to the requirements specified in the Insurance Regulations - Insurance Act 1966 and Notice No: MAS 307.",
+          "For Unit Trusts (UTs), investment guidelines are subject to requirements specified in the Code on Collective Investment Schemes and regulated under the Securities and Futures Act 2001.",
+          "For Investment-Linked Insurance Policies (ILPs), product disclosure at the point of sale includes a copy of the cover page, product summary, policy illustration, bundled product disclosure document, and the Guide to Life Insurance (from LIA).",
+          "For Unit Trusts (UTs), product disclosure at the point of sale includes a prospectus or profile statement.",
+          "For Investment-Linked Insurance Policies (ILPs), product disclosure post-sale includes the policy contract, annual statement of accounts, and annual and semi-annual reports on the ILP sub-fund.",
+          "For Unit Trusts (UTs), product disclosure post-sale includes the annual statement of accounts and annual and semi-annual reports.",
+          "For Investment-Linked Insurance Policies (ILPs), the death benefit is left to market forces to decide on the appropriate level of death benefits for ILPs offered in Singapore.",
+          "For Unit Trusts (UTs), there is no death benefit.",
+          "For Investment-Linked Insurance Policies (ILPs), the free-look or cancellation period is 14 days from the date of receipt of policy, and the insurer is entitled to make adjustments to reflect changes in market values of underlying assets.",
+          "For Unit Trusts (UTs), the free-look or cancellation period is 7 calendar days from the date of signing of the purchase agreement, and the relevant person is entitled to an adjustment to reflect the change in market values of the units held by the investor.",
+          "For Investment-Linked Insurance Policies (ILPs), treatment of rounding differences and compensation for computational errors refer to Notice No: MAS 307 (last revised on 28 June 2021) Clauses 77 to 82.",
+          "For Unit Trusts (UTs), treatment of rounding differences and compensation for computational errors refer to the Code on Collective Investment Schemes (last revised on 3 March 2022).",
+          "For Investment-Linked Insurance Policies (ILPs), business conduct requirements for sub-fund managers have specific requirements spelt out in Notice No: MAS 307.",
+          "For Unit Trusts (UTs), business conduct requirements for sub-fund managers have specific requirements spelt out in the Securities and Futures Act 2001."
+        ]
+      },
+      {
+        "source_chunk_id": "chapter_7__chunk_072__table_02",
+        "table_type": "unknown",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "A specific financial term related to pricing.",
+          "col": "A comparison point for investment-linked policies (ILPs) and traditional life insurance policies.",
+          "value": "The value or definition of the financial term."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_7__chunk_072__table_02",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Differences Between An ILP And A Traditional Life Insurance Policy"
+            ],
+            [
+              ""
+            ],
+            [
+              "Offer Price"
+            ],
+            [
+              "Bid Price"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Differences Between An ILP And A Traditional Life Insurance Policy"
+            ],
+            "row_headers": []
+          },
+          "rows": [
+            {
+              "row_header": "row_0",
+              "cells": [
+                {
+                  "column_header": "Differences Between An ILP And A Traditional Life Insurance Policy",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "row_header": "row_1",
+              "cells": [
+                {
+                  "column_header": "Differences Between An ILP And A Traditional Life Insurance Policy",
+                  "value": "Offer Price"
+                }
+              ]
+            },
+            {
+              "row_header": "row_2",
+              "cells": [
+                {
+                  "column_header": "Differences Between An ILP And A Traditional Life Insurance Policy",
+                  "value": "Bid Price"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The table compares differences between an ILP and a traditional life insurance policy, with columns representing specific pricing terms like 'Offer Price' and 'Bid Price'."
+        ]
+      },
+      {
+        "source_chunk_id": "chapter_7__chunk_072__table_03",
+        "table_type": "unknown",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "This table compares the features of Investment-Linked Insurance Policies (ILPs) and Traditional Life Insurance Policies.",
+          "col": "The columns represent the features of Investment-Linked Insurance Policies (ILP) and Traditional Life Insurance Policies.",
+          "value": "The cells describe specific characteristics of each policy type related to the row's feature."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_7__chunk_072__table_03",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "",
+              "ILP",
+              "Traditional Life InsurancePolicy"
+            ],
+            [
+              "Bonuses",
+              "The value of the ILP depends on the performance of thechosen sub-funds.",
+              "For participating whole life and"
+            ],
+            [
+              "",
+              "",
+              "endowment plans,bonuses may be payable depending on the insurer's profits. Bonuses are not guaranteed. However,"
+            ],
+            [
+              "",
+              "",
+              "the insurer's profits. Bonuses are not guaranteed. However, once they are declared bythe insurer, they become guaranteed additions to the sum assured of the plans."
+            ],
+            [
+              "Investment Returns",
+              "The investment risk is usually borne entirely by the policyowner.",
+              "There are two categories ofbenefits - guaranteed and non- guaranteed. For guaranteedbenefits, the insurer bears theinvestment risk. However, for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund."
+            ],
+            [
+              "PremiumBreakdown",
+              "The amount of the premium used for insurance coverage, other charges and the purchase of units areunbundled and transparent.They are disclosed in the Product Summary and PolicyContract.",
+              "The premium amount usedfor insurance coverage,other charges and investment are bundled up. They are not separately identified in the Product Summary and PolicyContract."
+            ],
+            [
+              "InvestmentMandate",
+              "The part of your premiums allocated for the purchase of units will be invested in yourchosen investment-linked sub-fund. The sub-fund is invested according to its specifiedinvestment objective. The performance of the sub-fundcan be tracked through the daily publication of unit prices.",
+              "All of your premiums go into the insurer's participating sub-fund. The insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature,term and currency of the insurer's overall liabilites.The performance of the sub-fund will depend not only upon investment performance, but also upon other factors, such as claims experience(whether this is more or less than anticipated) and expenselevels."
+            ],
+            [
+              "is the price which the insurer uses to allocate units to a policy when premiumsre paid.It is the price of a unit that is sold to a policy owner. If the offer price is S$nd the whole S$100 premium is to be applied to buy units, it will, therefore, buy00 units.",
+              "",
+              ""
+            ],
+            [
+              "is the price which the insurer will give for the units if the policy owner wishes toash in or claim under the policy.It is the price of a unit to be sold by the policywner.This is always lower than the offer price. For example, if the bid price is$0.95, 100 units can be cashed for S$95.",
+              "",
+              ""
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "ILP",
+              "Traditional Life InsurancePolicy"
+            ],
+            "row_headers": []
+          },
+          "rows": [
+            {
+              "row_header": "row_0",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The value of the ILP depends on the performance of thechosen sub-funds."
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "For participating whole life and"
+                }
+              ]
+            },
+            {
+              "row_header": "row_1",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": ""
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "endowment plans,bonuses may be payable depending on the insurer's profits. Bonuses are not guaranteed. However,"
+                }
+              ]
+            },
+            {
+              "row_header": "row_2",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": ""
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "the insurer's profits. Bonuses are not guaranteed. However, once they are declared bythe insurer, they become guaranteed additions to the sum assured of the plans."
+                }
+              ]
+            },
+            {
+              "row_header": "row_3",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The investment risk is usually borne entirely by the policyowner."
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "There are two categories ofbenefits - guaranteed and non- guaranteed. For guaranteedbenefits, the insurer bears theinvestment risk. However, for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund."
+                }
+              ]
+            },
+            {
+              "row_header": "row_4",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The amount of the premium used for insurance coverage, other charges and the purchase of units areunbundled and transparent.They are disclosed in the Product Summary and PolicyContract."
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "The premium amount usedfor insurance coverage,other charges and investment are bundled up. They are not separately identified in the Product Summary and PolicyContract."
+                }
+              ]
+            },
+            {
+              "row_header": "row_5",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": "The part of your premiums allocated for the purchase of units will be invested in yourchosen investment-linked sub-fund. The sub-fund is invested according to its specifiedinvestment objective. The performance of the sub-fundcan be tracked through the daily publication of unit prices."
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": "All of your premiums go into the insurer's participating sub-fund. The insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature,term and currency of the insurer's overall liabilites.The performance of the sub-fund will depend not only upon investment performance, but also upon other factors, such as claims experience(whether this is more or less than anticipated) and expenselevels."
+                }
+              ]
+            },
+            {
+              "row_header": "row_6",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": ""
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "row_header": "row_7",
+              "cells": [
+                {
+                  "column_header": "ILP",
+                  "value": ""
+                },
+                {
+                  "column_header": "Traditional Life InsurancePolicy",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For Investment-Linked Insurance Policies (ILPs), the value depends on the performance of the chosen sub-funds.",
+          "For Traditional Life Insurance Policies, for participating whole life and endowment plans, bonuses may be payable depending on the insurer's profits.",
+          "For Traditional Life Insurance Policies, bonuses are not guaranteed, however, once they are declared by the insurer, they become guaranteed additions to the sum assured of the plans.",
+          "For Investment-Linked Insurance Policies (ILPs), the investment risk is usually borne entirely by the policyowner.",
+          "For Traditional Life Insurance Policies, there are two categories of benefits: guaranteed and non-guaranteed; for guaranteed benefits, the insurer bears the investment risk, but for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund.",
+          "For Investment-Linked Insurance Policies (ILPs), the amount of the premium used for insurance coverage, other charges, and the purchase of units are unbundled and transparent, and they are disclosed in the Product Summary and Policy Contract.",
+          "For Traditional Life Insurance Policies, the premium amount used for insurance coverage, other charges, and investment are bundled up and are not separately identified in the Product Summary and Policy Contract.",
+          "For Investment-Linked Insurance Policies (ILPs), the portion of your premiums allocated for the purchase of units will be invested in your chosen investment-linked sub-fund, which is invested according to its specified investment objective, and the performance of the sub-fund can be tracked through the daily publication of unit prices.",
+          "For Traditional Life Insurance Policies, all of your premiums go into the insurer's participating sub-fund, and the insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature, term, and currency of the insurer's overall liabilities; the performance of the sub-fund will depend not only upon investment performance but also upon other factors, such as claims experience and expense levels."
+        ]
+      },
+      {
+        "source_chunk_id": "chapter_7__chunk_072__table_04",
+        "table_type": "unknown",
+        "purpose": "compare_options",
+        "dimensions": {
+          "row": "This describes various aspects of the Investment-Linked Policies (ILPs) and Unit Trusts (UTs).",
+          "col": "This compares the Investment-Linked Policies (ILPs) against Unit Trusts (UTs).",
+          "value": "This provides the specific details for each comparison point."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_7__chunk_072__table_04",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Item",
+              "ILPs",
+              "UTs"
+            ],
+            [
+              "Investment",
+              "ILP sub-funds are subject",
+              "Subject to requirements as specified in the Code on Collective Investment Schemes and regulatedunder the Securities andFutures Act 2001."
+            ],
+            [
+              "Guidelines",
+              "to the requirements as specified in the Insurance Regulations - Insurance Act1966 and Notice No: MAS307",
+              ""
+            ],
+            [
+              "Product Disclosure(at point of sale)",
+              "A Copy Of The CoverPage Product Summary Policy IllustrationBundled Product Disclosure Document Guide to Life Insurance(from LIA)",
+              "Prospectus / ProfileStatement"
+            ],
+            [
+              "Product Disclosure(post-sale)",
+              "Policy contractAnnual Statement ofAccounts Annual and Semi-Annual Report on ILP sub-fund",
+              "Annual Statement ofAccounts Annual and Semi-AnnualReport"
+            ],
+            [
+              "Death Benefit",
+              "Left to market forces to decide on the appropriatelevel of death benefits for ILPs offered in Singapore",
+              "Not applicable"
+            ],
+            [
+              "Free-look /CancellationPeriod",
+              "14 days from the date ofreceipt of policy Insurer entitled to make adjustments to reflectchanges in market values of underlyingassets",
+              "Seven calendar daysfrom the date of signing of the PurchaseAgreement Relevant person entitled to an adjustment to reflect the change in market values of the units held by theinvestor"
+            ],
+            [
+              "Treatment ofrounding differences andcompensation for computationalerrors",
+              "Refer to Notice No: MAS 307 (last revised on 28 June2021) Clauses 77 to 82",
+              "Refer to Code on Collective Investment Schemes (lastrevised on 3 March 2022)"
+            ],
+            [
+              "Business conductrequirements for sub-fundmanagers",
+              "Specific requirements spelt out in Notice No: MAS 307",
+              "Specific requirements spelt out in the Securities andFutures Act 2001."
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "ILPs",
+              "UTs"
+            ],
+            "row_headers": [
+              "Investment",
+              "Guidelines",
+              "Product Disclosure(at point of sale)",
+              "Product Disclosure(post-sale)",
+              "Death Benefit",
+              "Free-look /CancellationPeriod",
+              "Treatment ofrounding differences andcompensation for computationalerrors",
+              "Business conductrequirements for sub-fundmanagers"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "Investment",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "ILP sub-funds are subject"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Subject to requirements as specified in the Code on Collective Investment Schemes and regulatedunder the Securities andFutures Act 2001."
+                }
+              ]
+            },
+            {
+              "row_header": "Guidelines",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "to the requirements as specified in the Insurance Regulations - Insurance Act1966 and Notice No: MAS307"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "row_header": "Product Disclosure(at point of sale)",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "A Copy Of The CoverPage Product Summary Policy IllustrationBundled Product Disclosure Document Guide to Life Insurance(from LIA)"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Prospectus / ProfileStatement"
+                }
+              ]
+            },
+            {
+              "row_header": "Product Disclosure(post-sale)",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Policy contractAnnual Statement ofAccounts Annual and Semi-Annual Report on ILP sub-fund"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Annual Statement ofAccounts Annual and Semi-AnnualReport"
+                }
+              ]
+            },
+            {
+              "row_header": "Death Benefit",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Left to market forces to decide on the appropriatelevel of death benefits for ILPs offered in Singapore"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Not applicable"
+                }
+              ]
+            },
+            {
+              "row_header": "Free-look /CancellationPeriod",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "14 days from the date ofreceipt of policy Insurer entitled to make adjustments to reflectchanges in market values of underlyingassets"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Seven calendar daysfrom the date of signing of the PurchaseAgreement Relevant person entitled to an adjustment to reflect the change in market values of the units held by theinvestor"
+                }
+              ]
+            },
+            {
+              "row_header": "Treatment ofrounding differences andcompensation for computationalerrors",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Refer to Notice No: MAS 307 (last revised on 28 June2021) Clauses 77 to 82"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Refer to Code on Collective Investment Schemes (lastrevised on 3 March 2022)"
+                }
+              ]
+            },
+            {
+              "row_header": "Business conductrequirements for sub-fundmanagers",
+              "cells": [
+                {
+                  "column_header": "ILPs",
+                  "value": "Specific requirements spelt out in Notice No: MAS 307"
+                },
+                {
+                  "column_header": "UTs",
+                  "value": "Specific requirements spelt out in the Securities andFutures Act 2001."
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "For Investment-Linked Policies (ILPs), ILP sub-funds are subject to the requirements as specified in the Insurance Regulations - Insurance Act 1966 and Notice No: MAS307.",
+          "For Unit Trusts (UTs), investments are subject to requirements as specified in the Code on Collective Investment Schemes and regulated under the Securities and Futures Act 2001.",
+          "At the point of sale, Investment-Linked Policies (ILPs) require a Copy Of The CoverPage, Product Summary, Policy Illustration, Bundled Product Disclosure Document, and Guide to Life Insurance (from LIA).",
+          "At the point of sale, Unit Trusts (UTs) require a Prospectus / Profile Statement.",
+          "Post-sale, Investment-Linked Policies (ILPs) provide a Policy contract, Annual Statement of Accounts, and Annual and Semi-Annual Report on ILP sub-fund.",
+          "Post-sale, Unit Trusts (UTs) provide an Annual Statement of Accounts and Annual and Semi-Annual Report.",
+          "For Investment-Linked Policies (ILPs), the appropriate level of death benefits for ILPs offered in Singapore is left to market forces.",
+          "For Unit Trusts (UTs), death benefits are not applicable.",
+          "The free-look or cancellation period for Investment-Linked Policies (ILPs) is 14 days from the date of receipt of policy, and the insurer is entitled to make adjustments to reflect changes in market values of underlying assets.",
+          "The free-look or cancellation period for Unit Trusts (UTs) is seven calendar days from the date of signing of the Purchase Agreement, and the relevant person is entitled to an adjustment to reflect the change in market values of the units held by the investor.",
+          "For Investment-Linked Policies (ILPs), the treatment of rounding differences and compensation for computational errors refers to Notice No: MAS 307 (last revised on 28 June 2021) Clauses 77 to 82.",
+          "For Unit Trusts (UTs), the treatment of rounding differences and compensation for computational errors refers to the Code on Collective Investment Schemes (last revised on 3 March 2022).",
+          "Business conduct requirements for sub-fund managers for Investment-Linked Policies (ILPs) have specific requirements spelt out in Notice No: MAS 307.",
+          "Business conduct requirements for sub-fund managers for Unit Trusts (UTs) have specific requirements spelt out in the Securities and Futures Act 2001."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000074",
+    "source_chunk_ids": [
+      "chapter_7__chunk_073"
+    ],
+    "chapter": "chapter_7",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk is a chapter summary from a document about Investment-Linked Life Insurance Policies (ILPs). It defines ILPs, investment-linked sub-funds, and specific types of ILPs like whole life and annuity policies. It also outlines key features of ILPs, including protection, top-ups, sub-fund switching, partial/full surrenders, premium holidays, and riders.",
+    "text": "<context>This chunk is a chapter summary from a document about Investment-Linked Life Insurance Policies (ILPs). It defines ILPs, investment-linked sub-funds, and specific types of ILPs like whole life and annuity policies. It also outlines key features of ILPs, including protection, top-ups, sub-fund switching, partial/full surrenders, premium holidays, and riders.</context>\n# Chapter summary:\n\n- Definition or Explanation: Investment-linked LifeInsurance Policies (ILPs)\nIt is a life insurance policy which provides a combination of protection and investment. Premiums buy life insurance protection and investment units in professionally managed investment-linked sub-funds.\n\n- Definition or Explanation: Investment-Linked Sub-Fund\nIt is a professionally managed investment fund, usually by an insurance company(insurer or external fund manager. An investment-linked sub-fund pools togetherthe premiums paid by policy owners with similar investment objectives. The aggregate sum is then used by the fund to build a diversified investment portfolioof assets which consists of stocks,bonds and other assets according to the investment objective of the fund. The price of each unit in a fund depends on howthe investments in that fund perform.\n\n- Definition or Explanation: Investment-Linked WholeLife Insurance Policy\nThis policy is similar to a traditional Whole Life Insurance policy because it isdesigned to provide lifetime coverage. For a regular premium policy,the policyowner can choose to vary the level of insurance cover.\n\n- Definition or Explanation: Investment-Linked AnnuityPolicy\nAn Investment-Linked Annuity or Variable Annuity policy generates a regular streamof income for the policy owner for as long as he is alive, or till allunits in the policyhave been cashed out.\n\n- Definition or Explanation: Features of Investment-Linked Policies\n· ProtectionTop-ups Sub-fund switch Partial /full surrenderPremium holidayRidersThese features will be elaborated below.\n\n- Definition or Explanation: Protection\nSince ILPs are developed and distributed by life insurers, the basic and minimum protection benefit is the death protection. The protection element may take theform of death (or accidental death) or total and permanent disability.\n\n- Definition or Explanation: Top-Ups\nDuring the policy term of an ILP,the policy owner has a choice to do a top-up anytime by investing an additional premium.This top-up can be on a regular or ad hoc (for a particular purpose) basis. Most insurers have a 1oo% premium allocationfor top-up premiums.\n\n- Definition or Explanation: Sub-Fund Switch\nThis feature enables a policy owner to do a sub-fund switch according to his personal circumstances.Sub-fund switch is just switching from one investment sub-fund to another investment sub-fund.\n\n- Definition or Explanation: Partial /Full Surrender",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000075",
+    "source_chunk_ids": [
+      "chapter_7__chunk_073"
+    ],
+    "chapter": "chapter_7",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk is part of a chapter detailing the features, benefits, risks, and comparisons of Investment-Linked Life Insurance Policies (ILPs). It focuses on the differences between ILPs and traditional life insurance policies, specifically regarding bonuses, investment returns, premium breakdown, and investment mandates, and also includes definitions of key terms like Offer Price and Bid Price.",
+    "text": "<context>This chunk is part of a chapter detailing the features, benefits, risks, and comparisons of Investment-Linked Life Insurance Policies (ILPs). It focuses on the differences between ILPs and traditional life insurance policies, specifically regarding bonuses, investment returns, premium breakdown, and investment mandates, and also includes definitions of key terms like Offer Price and Bid Price.</context>\nMost insurers have a 1oo% premium allocationfor top-up premiums.\n\n- Definition or Explanation: Sub-Fund Switch\nThis feature enables a policy owner to do a sub-fund switch according to his personal circumstances.Sub-fund switch is just switching from one investment sub-fund to another investment sub-fund.\n\n- Definition or Explanation: Partial /Full Surrender\nThe policy owner has the right to surrender part or the whole of the units allocatedto him. This is attractive to the policy owner who wants to have easy access to thesub-funds.\n\n- Definition or Explanation: Premium Holiday\nIt is a period when the policy owner does not pay any premium,and yet enjoy thebenefits that are defined in the policy.\n\nhierarchical_json: {\"table_id\": \"chapter_7__chunk_072__table_02\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Differences Between An ILP And A Traditional Life Insurance Policy\"], [\"\"], [\"Offer Price\"], [\"Bid Price\"]], \"headers\": {\"column_headers\": [\"Differences Between An ILP And A Traditional Life Insurance Policy\"], \"row_headers\": []}, \"rows\": [{\"row_header\": \"row_0\", \"cells\": [{\"column_header\": \"Differences Between An ILP And A Traditional Life Insurance Policy\", \"value\": \"\"}]}, {\"row_header\": \"row_1\", \"cells\": [{\"column_header\": \"Differences Between An ILP And A Traditional Life Insurance Policy\", \"value\": \"Offer Price\"}]}, {\"row_header\": \"row_2\", \"cells\": [{\"column_header\": \"Differences Between An ILP And A Traditional Life Insurance Policy\", \"value\": \"Bid Price\"}]}]}\n\ntable narrative: [\"The table compares differences between an ILP and a traditional life insurance policy, with columns representing specific pricing terms like 'Offer Price' and 'Bid Price'.\"]\n\nhierarchical_json: {\"table_id\": \"chapter_7__chunk_072__table_03\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"\", \"ILP\", \"Traditional Life InsurancePolicy\"], [\"Bonuses\", \"The value of the ILP depends on the performance of thechosen sub-funds.\", \"For participating whole life and\"], [\"\", \"\", \"endowment plans,bonuses may be payable depending on the insurer's profits. Bonuses are not guaranteed. However,\"], [\"\", \"\", \"the insurer's profits. Bonuses are not guaranteed. However, once they are declared bythe insurer, they become guaranteed additions to the sum assured of the plans.\"], [\"Investment Returns\", \"The investment risk is usually borne entirely by the policyowner.\", \"There are two categories ofbenefits - guaranteed and non- guaranteed. For guaranteedbenefits, the insurer bears theinvestment risk. However, for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund.\"], [\"PremiumBreakdown\", \"The amount of the premium used for insurance coverage, other charges and the purchase of units areunbundled and transparent.They are disclosed in the Product Summary and PolicyContract.\", \"The premium amount usedfor insurance coverage,other charges and investment are bundled up. They are not separately identified in the Product Summary and PolicyContract.\"], [\"InvestmentMandate\", \"The part of your premiums allocated for the purchase of units will be invested in yourchosen investment-linked sub-fund. The sub-fund is invested according to its specifiedinvestment objective. The performance of the sub-fundcan be tracked through the daily publication of unit prices.\", \"All of your premiums go into the insurer's participating sub-fund. The insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature,term and currency of the insurer's overall liabilites.The performance of the sub-fund will depend not only upon investment performance, but also upon other factors, such as claims experience(whether this is more or less than anticipated) and expenselevels.\"], [\"is the price which the insurer uses to allocate units to a policy when premiumsre paid.It is the price of a unit that is sold to a policy owner. If the offer price is S$nd the whole S$100 premium is to be applied to buy units, it will, therefore, buy00 units.\", \"\", \"\"], [\"is the price which the insurer will give for the units if the policy owner wishes toash in or claim under the policy.It is the price of a unit to be sold by the policywner.This is always lower than the offer price. For example, if the bid price is$0.95, 100 units can be cashed for S$95.\", \"\", \"\"]], \"headers\": {\"column_headers\": [\"ILP\", \"Traditional Life InsurancePolicy\"], \"row_headers\": []}, \"rows\": [{\"row_header\": \"row_0\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The value of the ILP depends on the performance of thechosen sub-funds.\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"For participating whole life and\"}]}, {\"row_header\": \"row_1\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"endowment plans,bonuses may be payable depending on the insurer's profits. Bonuses are not guaranteed. However,\"}]}, {\"row_header\": \"row_2\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"the insurer's profits. Bonuses are not guaranteed. However, once they are declared bythe insurer, they become guaranteed additions to the sum assured of the plans.\"}]}, {\"row_header\": \"row_3\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The investment risk is usually borne entirely by the policyowner.\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"There are two categories ofbenefits - guaranteed and non- guaranteed. For guaranteedbenefits, the insurer bears theinvestment risk. However, for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund.\"}]}, {\"row_header\": \"row_4\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The amount of the premium used for insurance coverage, other charges and the purchase of units areunbundled and transparent.They are disclosed in the Product Summary and PolicyContract.\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"The premium amount usedfor insurance coverage,other charges and investment are bundled up. They are not separately identified in the Product Summary and PolicyContract.\"}]}, {\"row_header\": \"row_5\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"The part of your premiums allocated for the purchase of units will be invested in yourchosen investment-linked sub-fund. The sub-fund is invested according to its specifiedinvestment objective. The performance of the sub-fundcan be tracked through the daily publication of unit prices.\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"All of your premiums go into the insurer's participating sub-fund. The insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature,term and currency of the insurer's overall liabilites.The performance of the sub-fund will depend not only upon investment performance, but also upon other factors, such as claims experience(whether this is more or less than anticipated) and expenselevels.\"}]}, {\"row_header\": \"row_6\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"\"}]}, {\"row_header\": \"row_7\", \"cells\": [{\"column_header\": \"ILP\", \"value\": \"\"}, {\"column_header\": \"Traditional Life InsurancePolicy\", \"value\": \"\"}]}]}\n\ntable narrative: [\"For Investment-Linked Insurance Policies (ILPs), the value depends on the performance of the chosen sub-funds.\", \"For Traditional Life Insurance Policies, for participating whole life and endowment plans, bonuses may be payable depending on the insurer's profits.\", \"For Traditional Life Insurance Policies, bonuses are not guaranteed, however, once they are declared by the insurer, they become guaranteed additions to the sum assured of the plans.\", \"For Investment-Linked Insurance Policies (ILPs), the investment risk is usually borne entirely by the policyowner.\", \"For Traditional Life Insurance Policies, there are two categories of benefits: guaranteed and non-guaranteed; for guaranteed benefits, the insurer bears the investment risk, but for non-guaranteed benefits, such as bonuses, benefits depend on the performance of the insurer's participating sub-fund.\", \"For Investment-Linked Insurance Policies (ILPs), the amount of the premium used for insurance coverage, other charges, and the purchase of units are unbundled and transparent, and they are disclosed in the Product Summary and Policy Contract.\", \"For Traditional Life Insurance Policies, the premium amount used for insurance coverage, other charges, and investment are bundled up and are not separately identified in the Product Summary and Policy Contract.\", \"For Investment-Linked Insurance Policies (ILPs), the portion of your premiums allocated for the purchase of units will be invested in your chosen investment-linked sub-fund, which is invested according to its specified investment objective, and the performance of the sub-fund can be tracked through the daily publication of unit prices.\", \"For Traditional Life Insurance Policies, all of your premiums go into the insurer's participating sub-fund, and the insurer decides on the appropriate investment portfolio for this sub-fund after taking into account the nature, term, and currency of the insurer's overall liabilities; the performance of the sub-fund will depend not only upon investment performance but also upon other factors, such as claims experience and expense levels.\"]\n\n# Chapter summary:\n\n- Definition or Explanation: Bid-Offer Spread\nIt is one of the initial charges levied when the policy owner purchases a unit in the sub-fund. It is a charge made by the insurer to cover its expenses in setting up thepolicy. Usually, there is a 5% difference between bid and offer prices,although thereare insurers that charge lesser than this rate.The bid-offer spread is sometimescalled the initial sales charge.\n\n- Definition or Explanation: Front-End Loading\nIn a front-end loaded plan, a certain amount of the premiums will be used to helpdefray the insurer's expenses, such as distribution and administration costs in theearly years. These expenses decrease over time.\n\n- Definition or Explanation: Back-End Loading\nUnder a back-end loaded plan, 10o% of the premiums are allocated to purchaseunits from the start.To help insurers defray distribution and administration costs,back-end charges are imposed if the policy owner wishes to surrender his plan, inwhole or in part, within a certain time.\n\n- Definition or Explanation: Forward pricing\nForward pricing is the most widely used pricing model in the local insuranceindustry. It basically means that the number of units that are purchased from theunderlying investment sub-funds shall be determined by reference to the offerprice established on the next valuation date. In essence, it means that the next available offer price after the premium has been paid.\n\n- Definition or Explanation: Sub-Fund ManagementFee\nA sub-fund management fee is paid to the fund manager for portfolio",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000076",
+    "source_chunk_ids": [
+      "chapter_7__chunk_073"
+    ],
+    "chapter": "chapter_7",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines key concepts related to Investment-Linked Policies (ILPs), including pricing mechanisms like forward pricing, and details various fees and charges such as sub-fund management fees, benefit/insurance charges, policy fees, administrative charges, surrender charges, and the investment strategy of dollar cost averaging.",
+    "text": "<context>This chunk defines key concepts related to Investment-Linked Policies (ILPs), including pricing mechanisms like forward pricing, and details various fees and charges such as sub-fund management fees, benefit/insurance charges, policy fees, administrative charges, surrender charges, and the investment strategy of dollar cost averaging.</context>\ninvestment sub-funds shall be determined by reference to the offerprice established on the next valuation date. In essence, it means that the next available offer price after the premium has been paid.\n\n- Definition or Explanation: Sub-Fund ManagementFee\nA sub-fund management fee is paid to the fund manager for portfolio supervisionand for general management of the sub-fund affairs. Such fee also serves tocompensate the manager for the expenses incurred in providing the relevant services. There will normally be a sub-fund management charge likely to range from0.5% to 2% per annum. The level of this charge will depend on the competition, the type of assets under management, and the profit requirements of the life insurers.\n\n- Definition or Explanation: Benefit / InsuranceCharges\nThese are charges incurred by the client for the insurer to provide coverage forcertain events like death, total and permanent disability or critical illness, etc.occurring during the policy period of insurance for the ILP.\n\n- Definition or Explanation: Policy Fees\nThese cover the administrative expenses of setting up the policy, as well as theregular running expenses of administering the policy.\n\n- Definition or Explanation: Administrative Charges\nThese cover the initial expenses of the policy.The cost of administration is incurredlargely to provide record-keeping and transaction services.\n\n- Definition or Explanation: Surrender Charges\nSurrender charges or back-end loads are the charges that a client would incur should he decide to cash out a portion or allof his units before a certain period oftime. This serves to compensate the insurer for the costs incurred in the setup andthe administration of the policy. Surrender charges are usually a percentage of thetotal surrender value that a client willbe cashing out or surrendering. The chargesusually decrease from the first year onwards.\n\n- Definition or Explanation: Dollar Cost Averaging\nDollar cost averaging simply means investing the same dollar amount in a sub- fund at regular intervals, regardless of the sub-fund price fluctuations. By regularlyinvesting specified amounts of money over a period of time, the policy owner is ableto capitalise on market cycles, by purchasing more units when prices are low andfewer units when prices are high.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_7__small_000077",
+    "source_chunk_ids": [
+      "chapter_7__chunk_073"
+    ],
+    "chapter": "chapter_7",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk is part of a comparison between Investment-Linked Policies (ILPs) and Unit Trusts (UTs), detailing differences in investment guidelines, product disclosure, death benefits, cancellation periods, and regulatory requirements. It follows a discussion on the benefits of ILPs, including dollar cost averaging, and precedes sections on fees and charges.",
+    "text": "<context>This chunk is part of a comparison between Investment-Linked Policies (ILPs) and Unit Trusts (UTs), detailing differences in investment guidelines, product disclosure, death benefits, cancellation periods, and regulatory requirements. It follows a discussion on the benefits of ILPs, including dollar cost averaging, and precedes sections on fees and charges.</context>\nsame dollar amount in a sub- fund at regular intervals, regardless of the sub-fund price fluctuations. By regularlyinvesting specified amounts of money over a period of time, the policy owner is ableto capitalise on market cycles, by purchasing more units when prices are low andfewer units when prices are high.\n\nComparison Chart Between ILPs and Unit Trusts   \n\nhierarchical_json: {\"table_id\": \"chapter_7__chunk_072__table_04\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Item\", \"ILPs\", \"UTs\"], [\"Investment\", \"ILP sub-funds are subject\", \"Subject to requirements as specified in the Code on Collective Investment Schemes and regulatedunder the Securities andFutures Act 2001.\"], [\"Guidelines\", \"to the requirements as specified in the Insurance Regulations - Insurance Act1966 and Notice No: MAS307\", \"\"], [\"Product Disclosure(at point of sale)\", \"A Copy Of The CoverPage Product Summary Policy IllustrationBundled Product Disclosure Document Guide to Life Insurance(from LIA)\", \"Prospectus / ProfileStatement\"], [\"Product Disclosure(post-sale)\", \"Policy contractAnnual Statement ofAccounts Annual and Semi-Annual Report on ILP sub-fund\", \"Annual Statement ofAccounts Annual and Semi-AnnualReport\"], [\"Death Benefit\", \"Left to market forces to decide on the appropriatelevel of death benefits for ILPs offered in Singapore\", \"Not applicable\"], [\"Free-look /CancellationPeriod\", \"14 days from the date ofreceipt of policy Insurer entitled to make adjustments to reflectchanges in market values of underlyingassets\", \"Seven calendar daysfrom the date of signing of the PurchaseAgreement Relevant person entitled to an adjustment to reflect the change in market values of the units held by theinvestor\"], [\"Treatment ofrounding differences andcompensation for computationalerrors\", \"Refer to Notice No: MAS 307 (last revised on 28 June2021) Clauses 77 to 82\", \"Refer to Code on Collective Investment Schemes (lastrevised on 3 March 2022)\"], [\"Business conductrequirements for sub-fundmanagers\", \"Specific requirements spelt out in Notice No: MAS 307\", \"Specific requirements spelt out in the Securities andFutures Act 2001.\"]], \"headers\": {\"column_headers\": [\"ILPs\", \"UTs\"], \"row_headers\": [\"Investment\", \"Guidelines\", \"Product Disclosure(at point of sale)\", \"Product Disclosure(post-sale)\", \"Death Benefit\", \"Free-look /CancellationPeriod\", \"Treatment ofrounding differences andcompensation for computationalerrors\", \"Business conductrequirements for sub-fundmanagers\"]}, \"rows\": [{\"row_header\": \"Investment\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"ILP sub-funds are subject\"}, {\"column_header\": \"UTs\", \"value\": \"Subject to requirements as specified in the Code on Collective Investment Schemes and regulatedunder the Securities andFutures Act 2001.\"}]}, {\"row_header\": \"Guidelines\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"to the requirements as specified in the Insurance Regulations - Insurance Act1966 and Notice No: MAS307\"}, {\"column_header\": \"UTs\", \"value\": \"\"}]}, {\"row_header\": \"Product Disclosure(at point of sale)\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"A Copy Of The CoverPage Product Summary Policy IllustrationBundled Product Disclosure Document Guide to Life Insurance(from LIA)\"}, {\"column_header\": \"UTs\", \"value\": \"Prospectus / ProfileStatement\"}]}, {\"row_header\": \"Product Disclosure(post-sale)\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Policy contractAnnual Statement ofAccounts Annual and Semi-Annual Report on ILP sub-fund\"}, {\"column_header\": \"UTs\", \"value\": \"Annual Statement ofAccounts Annual and Semi-AnnualReport\"}]}, {\"row_header\": \"Death Benefit\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Left to market forces to decide on the appropriatelevel of death benefits for ILPs offered in Singapore\"}, {\"column_header\": \"UTs\", \"value\": \"Not applicable\"}]}, {\"row_header\": \"Free-look /CancellationPeriod\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"14 days from the date ofreceipt of policy Insurer entitled to make adjustments to reflectchanges in market values of underlyingassets\"}, {\"column_header\": \"UTs\", \"value\": \"Seven calendar daysfrom the date of signing of the PurchaseAgreement Relevant person entitled to an adjustment to reflect the change in market values of the units held by theinvestor\"}]}, {\"row_header\": \"Treatment ofrounding differences andcompensation for computationalerrors\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Refer to Notice No: MAS 307 (last revised on 28 June2021) Clauses 77 to 82\"}, {\"column_header\": \"UTs\", \"value\": \"Refer to Code on Collective Investment Schemes (lastrevised on 3 March 2022)\"}]}, {\"row_header\": \"Business conductrequirements for sub-fundmanagers\", \"cells\": [{\"column_header\": \"ILPs\", \"value\": \"Specific requirements spelt out in Notice No: MAS 307\"}, {\"column_header\": \"UTs\", \"value\": \"Specific requirements spelt out in the Securities andFutures Act 2001.\"}]}]}\n\ntable narrative: [\"For Investment-Linked Policies (ILPs), ILP sub-funds are subject to the requirements as specified in the Insurance Regulations - Insurance Act 1966 and Notice No: MAS307.\", \"For Unit Trusts (UTs), investments are subject to requirements as specified in the Code on Collective Investment Schemes and regulated under the Securities and Futures Act 2001.\", \"At the point of sale, Investment-Linked Policies (ILPs) require a Copy Of The CoverPage, Product Summary, Policy Illustration, Bundled Product Disclosure Document, and Guide to Life Insurance (from LIA).\", \"At the point of sale, Unit Trusts (UTs) require a Prospectus / Profile Statement.\", \"Post-sale, Investment-Linked Policies (ILPs) provide a Policy contract, Annual Statement of Accounts, and Annual and Semi-Annual Report on ILP sub-fund.\", \"Post-sale, Unit Trusts (UTs) provide an Annual Statement of Accounts and Annual and Semi-Annual Report.\", \"For Investment-Linked Policies (ILPs), the appropriate level of death benefits for ILPs offered in Singapore is left to market forces.\", \"For Unit Trusts (UTs), death benefits are not applicable.\", \"The free-look or cancellation period for Investment-Linked Policies (ILPs) is 14 days from the date of receipt of policy, and the insurer is entitled to make adjustments to reflect changes in market values of underlying assets.\", \"The free-look or cancellation period for Unit Trusts (UTs) is seven calendar days from the date of signing of the Purchase Agreement, and the relevant person is entitled to an adjustment to reflect the change in market values of the units held by the investor.\", \"For Investment-Linked Policies (ILPs), the treatment of rounding differences and compensation for computational errors refers to Notice No: MAS 307 (last revised on 28 June 2021) Clauses 77 to 82.\", \"For Unit Trusts (UTs), the treatment of rounding differences and compensation for computational errors refers to the Code on Collective Investment Schemes (last revised on 3 March 2022).\", \"Business conduct requirements for sub-fund managers for Investment-Linked Policies (ILPs) have specific requirements spelt out in Notice No: MAS 307.\", \"Business conduct requirements for sub-fund managers for Unit Trusts (UTs) have specific requirements spelt out in the Securities and Futures Act 2001.\"]",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  }
+]

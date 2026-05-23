@@ -1,0 +1,970 @@
+[
+  {
+    "chunk_id": "chapter_10__small_000001",
+    "source_chunk_ids": [
+      "chapter_10__chunk_001"
+    ],
+    "chapter": "chapter_10",
+    "header": "1. WHAT IS CPF LIFE?",
+    "level": 1,
+    "context": "This document defines CPF LIFE, a national annuity scheme, and explains its purpose, eligibility, and enrollment process.",
+    "text": "<context>This document defines CPF LIFE, a national annuity scheme, and explains its purpose, eligibility, and enrollment process.</context>\n# 1. WHAT IS CPF LIFE?\n\n1.1 Started in 2009 by the Government, the CPF Lifelong Income for the Elderly (CPF LIFE) is a national longevity insurance annuity scheme that will provide the CPF member with a monthly payout from his Payout Start Age (currently between 65 and 70 years old), no matter how long he lives. The CPF member’s savings in his Retirement Account will be used to purchase a CPF LIFE annuity.\n\nCPF LIFE is an insurance product, which helps to protect members against the risk of running out of retirement savings, so that they may continue receiving monthly retirement income no matter how long they live. CPF LIFE addresses the dispersion of life expectancy – although some people live longer and some shorter, members do not have to worry that they will outlive their savings.\n\n1.2 CPF members will be automatically included in CPF LIFE if they are Singapore Citizens or Permanent Residents born in 1958 or after, and have at least $\\mathsf { S S 6 0 } , 0 0 0$ in their Retirement Account when they start their monthly payouts1 .\n\n1.3 A CPF member who is not automatically included in CPF LIFE can apply to join CPF LIFE anytime between his Payout Eligibility Age (currently 65 years old) and one month before he turns 80 years old.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000002",
+    "source_chunk_ids": [
+      "chapter_10__chunk_002"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. CPF LIFE Plans",
+    "level": 1,
+    "context": "This chunk details the three available CPF LIFE plans (Escalating, Standard, and Basic), explaining how they differ in payout structure and how they address inflation and member needs, and mentions that the Standard Plan is the default option.",
+    "text": "<context>This chunk details the three available CPF LIFE plans (Escalating, Standard, and Basic), explaining how they differ in payout structure and how they address inflation and member needs, and mentions that the Standard Plan is the default option.</context>\n# A. CPF LIFE Plans\n\n1.4 There are currently three CPF LIFE plans for CPF members to choose from – the LIFE Escalating Plan, the LIFE Standard Plan and the LIFE Basic Plan. The plans differ in terms of the monthly payout the CPF member would receive.\n\nEach CPF LIFE plan provides different types of monthly payouts to cater to members with different retirement income needs. Members can choose a CPF LIFE plan based on their desired retirement lifestyle. Members should consider the impact of inflation on their retirement expenses when selecting their CPF LIFE plan – whether they wish to maintain their lifestyle with rising prices or adjust their lifestyle and buy less as prices rise. The CPF LIFE Escalating Plan monthly payouts will increase by $2 \\%$ every year to protect against inflation.\n\n1.5 Members can choose their CPF LIFE plan any time they are ready to start their payouts from their Payout Eligibility Age to age 70. Members who do not choose a plan will be placed on the LIFE Standard Plan, which is the default plan.\n\nSource: CPF website\n\n1.6 The CPF LIFE Escalating Plan provides payouts that increase by $2 \\%$ each year to protect members against rising prices. Escalating Plan payouts start lower initially but will eventually be higher than Standard Plan and Basic Plan payouts. This helps member to generally keep his standard of living even as things become more expensive in their retirement years.\n\n1.7 The CPF LIFE Standard Plan provides level payouts. It is suitable for people who are willing to cope with rising prices in the years ahead by buying less and living a more modest lifestyle. Payouts start higher than the Escalating Plan if a member joins with the same CPF LIFE premium, but will remain the same for the rest of his life and will eventually be lower than Escalating Plan payouts.\n\n1.8 Unlike the CPF LIFE Standard Plan that gives higher and level monthly payouts, Basic Plan2 monthly payouts are lower and will get progressively lower when combined CPF balances eventually fall below $\\$ 60,000$ . This is because the extra interest earned on",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_10__chunk_002__table_01",
+        "table_type": "unknown",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "The desired monthly payout from age 65 under the CPF LIFE Standard Plan.",
+          "col": "The CPF LIFE premium required at different ages.",
+          "value": "The estimated savings needed for the specified monthly payout."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_10__chunk_002__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Desired monthly payout from 65",
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            [
+              "$540 - $570",
+              "$97,300",
+              "$75,900",
+              "$60,000"
+            ],
+            [
+              "$820 - $870",
+              "$154,500",
+              "$123,000",
+              "$99,400"
+            ],
+            [
+              "$960 - $1,030",
+              "$184,400",
+              "$147,500",
+              "$120,000"
+            ],
+            [
+              "$1,510 - $1,620",
+              "$298,800",
+              "$241,600",
+              "$198,800"
+            ],
+            [
+              "$2,210 - $2,370",
+              "$443,100",
+              "$360,200",
+              "$298,200"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            "row_headers": [
+              "$540 - $570",
+              "$820 - $870",
+              "$960 - $1,030",
+              "$1,510 - $1,620",
+              "$2,210 - $2,370"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "$540 - $570",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$97,300"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$75,900"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$60,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$820 - $870",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$154,500"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$123,000"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$99,400"
+                }
+              ]
+            },
+            {
+              "row_header": "$960 - $1,030",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$184,400"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$147,500"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$120,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$1,510 - $1,620",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$298,800"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$241,600"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$198,800"
+                }
+              ]
+            },
+            {
+              "row_header": "$2,210 - $2,370",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$443,100"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$360,200"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$298,200"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The CPF LIFE Standard Plan requires $97,300 in savings at age 65 to provide a desired monthly payout of $540 - $570, $75,900 in savings at age 60, and $60,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $154,500 in savings at age 65 to provide a desired monthly payout of $820 - $870, $123,000 in savings at age 60, and $99,400 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $184,400 in savings at age 65 to provide a desired monthly payout of $960 - $1,030, $147,500 in savings at age 60, and $120,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $298,800 in savings at age 65 to provide a desired monthly payout of $1,510 - $1,620, $241,600 in savings at age 60, and $198,800 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $443,100 in savings at age 65 to provide a desired monthly payout of $2,210 - $2,370, $360,200 in savings at age 60, and $298,200 in savings at age 55."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000003",
+    "source_chunk_ids": [
+      "chapter_10__chunk_002"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. CPF LIFE Plans",
+    "level": 1,
+    "context": "This chunk discusses the required savings for different CPF LIFE monthly payout levels, as detailed in a table, and explains the factors influencing CPF LIFE premiums and payout levels.",
+    "text": "<context>This chunk discusses the required savings for different CPF LIFE monthly payout levels, as detailed in a table, and explains the factors influencing CPF LIFE premiums and payout levels.</context>\nwill eventually be lower than Escalating Plan payouts.\n\n1.8 Unlike the CPF LIFE Standard Plan that gives higher and level monthly payouts, Basic Plan2 monthly payouts are lower and will get progressively lower when combined CPF balances eventually fall below $\\$ 60,000$ . This is because the extra interest earned on the first $\\$ 60,000$ of members’ combined CPF balances is credited to the Retirement Account (RA) and paid as part of their monthly payouts. As balances fall due to payouts, the extra interest earned and subsequent payouts will decline as well.\n\n1.9 After deciding on a suitable CPF LIFE plan, the next step is to work out the amount of monthly payouts the member will need to support his desired retirement lifestyle. Members can use the CPF LIFE Estimator to find out how much savings he needs for his desired monthly payouts under his chosen plan. If a member is short on the retirement savings required, he can consider making cash top-ups and/or CPF transfers to his Retirement Account, or defer his payouts (up to age 70).\n\n1.10 The table below shows the retirement savings a member needs for different levels of monthly payouts.\n\nhierarchical_json: {\"table_id\": \"chapter_10__chunk_002__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Desired monthly payout from 65\", \"CPF LIFE premium at 65(Savings you need at 65)\", \"Savings you need at 60\", \"Savings youneed at 55\"], [\"$540 - $570\", \"$97,300\", \"$75,900\", \"$60,000\"], [\"$820 - $870\", \"$154,500\", \"$123,000\", \"$99,400\"], [\"$960 - $1,030\", \"$184,400\", \"$147,500\", \"$120,000\"], [\"$1,510 - $1,620\", \"$298,800\", \"$241,600\", \"$198,800\"], [\"$2,210 - $2,370\", \"$443,100\", \"$360,200\", \"$298,200\"]], \"headers\": {\"column_headers\": [\"CPF LIFE premium at 65(Savings you need at 65)\", \"Savings you need at 60\", \"Savings youneed at 55\"], \"row_headers\": [\"$540 - $570\", \"$820 - $870\", \"$960 - $1,030\", \"$1,510 - $1,620\", \"$2,210 - $2,370\"]}, \"rows\": [{\"row_header\": \"$540 - $570\", \"cells\": [{\"column_header\": \"CPF LIFE premium at 65(Savings you need at 65)\", \"value\": \"$97,300\"}, {\"column_header\": \"Savings you need at 60\", \"value\": \"$75,900\"}, {\"column_header\": \"Savings youneed at 55\", \"value\": \"$60,000\"}]}, {\"row_header\": \"$820 - $870\", \"cells\": [{\"column_header\": \"CPF LIFE premium at 65(Savings you need at 65)\", \"value\": \"$154,500\"}, {\"column_header\": \"Savings you need at 60\", \"value\": \"$123,000\"}, {\"column_header\": \"Savings youneed at 55\", \"value\": \"$99,400\"}]}, {\"row_header\": \"$960 - $1,030\", \"cells\": [{\"column_header\": \"CPF LIFE premium at 65(Savings you need at 65)\", \"value\": \"$184,400\"}, {\"column_header\": \"Savings you need at 60\", \"value\": \"$147,500\"}, {\"column_header\": \"Savings youneed at 55\", \"value\": \"$120,000\"}]}, {\"row_header\": \"$1,510 - $1,620\", \"cells\": [{\"column_header\": \"CPF LIFE premium at 65(Savings you need at 65)\", \"value\": \"$298,800\"}, {\"column_header\": \"Savings you need at 60\", \"value\": \"$241,600\"}, {\"column_header\": \"Savings youneed at 55\", \"value\": \"$198,800\"}]}, {\"row_header\": \"$2,210 - $2,370\", \"cells\": [{\"column_header\": \"CPF LIFE premium at 65(Savings you need at 65)\", \"value\": \"$443,100\"}, {\"column_header\": \"Savings you need at 60\", \"value\": \"$360,200\"}, {\"column_header\": \"Savings youneed at 55\", \"value\": \"$298,200\"}]}]}\n\ntable narrative: [\"The CPF LIFE Standard Plan requires $97,300 in savings at age 65 to provide a desired monthly payout of $540 - $570, $75,900 in savings at age 60, and $60,000 in savings at age 55.\", \"The CPF LIFE Standard Plan requires $154,500 in savings at age 65 to provide a desired monthly payout of $820 - $870, $123,000 in savings at age 60, and $99,400 in savings at age 55.\", \"The CPF LIFE Standard Plan requires $184,400 in savings at age 65 to provide a desired monthly payout of $960 - $1,030, $147,500 in savings at age 60, and $120,000 in savings at age 55.\", \"The CPF LIFE Standard Plan requires $298,800 in savings at age 65 to provide a desired monthly payout of $1,510 - $1,620, $241,600 in savings at age 60, and $198,800 in savings at age 55.\", \"The CPF LIFE Standard Plan requires $443,100 in savings at age 65 to provide a desired monthly payout of $2,210 - $2,370, $360,200 in savings at age 60, and $298,200 in savings at age 55.\"]\n\nNote: These monthly payouts are estimates based on the CPF LIFE Standard Plan, for members who turn 65 in 2033, computed as of 2023. Payouts may also be adjusted to account for long-term changes in interest rates or life expectancy. Such adjustments (if any) are expected to be small and gradual.\n\nSource: CPF website\n\n1.11 To receive a monthly payout of $\\$ 1,510\\mathrm { ~ - ~ } \\$ 1,620$ , a member will need $\\$ 298,800$ in his Retirement Account (RA) at age 65. A much lesser sum of $\\$ 198,800$ is required if he sets aside the amount in his RA at 55. This is because CPF interest rates of up to $6 \\% ^ { 3 }$ will help him grow his savings through compound interest.\n\n1.12 The CPF LIFE premium and payout levels are determined by an independent actuarial consultant. They depend on factors such as:\n\n(a) Gender;   \n(b) Age;   \n(c) CPF interest rates; and (d) Mortality rates\n\n1.13 While CPF LIFE payouts are designed to be",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_10__chunk_002__table_01",
+        "table_type": "unknown",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "The desired monthly payout from age 65 under the CPF LIFE Standard Plan.",
+          "col": "The CPF LIFE premium required at different ages.",
+          "value": "The estimated savings needed for the specified monthly payout."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_10__chunk_002__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Desired monthly payout from 65",
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            [
+              "$540 - $570",
+              "$97,300",
+              "$75,900",
+              "$60,000"
+            ],
+            [
+              "$820 - $870",
+              "$154,500",
+              "$123,000",
+              "$99,400"
+            ],
+            [
+              "$960 - $1,030",
+              "$184,400",
+              "$147,500",
+              "$120,000"
+            ],
+            [
+              "$1,510 - $1,620",
+              "$298,800",
+              "$241,600",
+              "$198,800"
+            ],
+            [
+              "$2,210 - $2,370",
+              "$443,100",
+              "$360,200",
+              "$298,200"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            "row_headers": [
+              "$540 - $570",
+              "$820 - $870",
+              "$960 - $1,030",
+              "$1,510 - $1,620",
+              "$2,210 - $2,370"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "$540 - $570",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$97,300"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$75,900"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$60,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$820 - $870",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$154,500"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$123,000"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$99,400"
+                }
+              ]
+            },
+            {
+              "row_header": "$960 - $1,030",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$184,400"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$147,500"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$120,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$1,510 - $1,620",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$298,800"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$241,600"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$198,800"
+                }
+              ]
+            },
+            {
+              "row_header": "$2,210 - $2,370",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$443,100"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$360,200"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$298,200"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The CPF LIFE Standard Plan requires $97,300 in savings at age 65 to provide a desired monthly payout of $540 - $570, $75,900 in savings at age 60, and $60,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $154,500 in savings at age 65 to provide a desired monthly payout of $820 - $870, $123,000 in savings at age 60, and $99,400 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $184,400 in savings at age 65 to provide a desired monthly payout of $960 - $1,030, $147,500 in savings at age 60, and $120,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $298,800 in savings at age 65 to provide a desired monthly payout of $1,510 - $1,620, $241,600 in savings at age 60, and $198,800 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $443,100 in savings at age 65 to provide a desired monthly payout of $2,210 - $2,370, $360,200 in savings at age 60, and $298,200 in savings at age 55."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000004",
+    "source_chunk_ids": [
+      "chapter_10__chunk_002"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. CPF LIFE Plans",
+    "level": 1,
+    "context": "This chunk discusses how CPF LIFE premiums and payout levels are determined, how payouts are reviewed and adjusted, options for deferring payouts, and how additional inflows affect monthly payouts. It concludes with information on beneficiary payouts and where to find more details.",
+    "text": "<context>This chunk discusses how CPF LIFE premiums and payout levels are determined, how payouts are reviewed and adjusted, options for deferring payouts, and how additional inflows affect monthly payouts. It concludes with information on beneficiary payouts and where to find more details.</context>\nhelp him grow his savings through compound interest.\n\n1.12 The CPF LIFE premium and payout levels are determined by an independent actuarial consultant. They depend on factors such as:\n\n(a) Gender;   \n(b) Age;   \n(c) CPF interest rates; and (d) Mortality rates\n\n1.13 While CPF LIFE payouts are designed to be stable, the monthly payouts are not fixed. The payout amount will be reviewed annually. The CPF Board may adjust the payout owing to changes in the mortality experience, interest rate and transactions in the member’s Retirement Account balance. This will ensure that the CPF LIFE annuity fund is sustainable in the long run.\n\nMembers can choose to start their payouts anytime between their Payout Eligibility Age and age 70. For every year of deferred payouts, their CPF LIFE monthly payouts will increase by up to $7 \\%$ . If members have not started their payouts by age 70, the CPF Board will automatically start payouts, as their CPF savings are meant to fund retirement and not to be kept indefinitely. Members who have no immediate use of their monthly payouts after age 70 may invest them outside the CPF system if they wish.\n\n1.14 Since November 2021, CPF LIFE members who receive inflows in RA, such as via cash top-ups, CPF transfers or housing refunds, will see an automatic increase in their CPF LIFE monthly payouts. Members started receiving these higher payouts since July 2022. Prior to this, they had to apply to annuitise these inflows to increase their CPF LIFE monthly payouts.\n\n1.15 Any remaining CPF LIFE premium balance together with any remaining savings in the CPF member’s CPF accounts will be paid to the CPF member’s beneficiaries, according to his CPF nomination.\n\n1.16 For more details of the CPF LIFE scheme and eligibility requirements, please refer to the CPF website at: www.cpf.gov.sg.",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_10__chunk_002__table_01",
+        "table_type": "unknown",
+        "purpose": "show_schedule",
+        "dimensions": {
+          "row": "The desired monthly payout from age 65 under the CPF LIFE Standard Plan.",
+          "col": "The CPF LIFE premium required at different ages.",
+          "value": "The estimated savings needed for the specified monthly payout."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_10__chunk_002__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Desired monthly payout from 65",
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            [
+              "$540 - $570",
+              "$97,300",
+              "$75,900",
+              "$60,000"
+            ],
+            [
+              "$820 - $870",
+              "$154,500",
+              "$123,000",
+              "$99,400"
+            ],
+            [
+              "$960 - $1,030",
+              "$184,400",
+              "$147,500",
+              "$120,000"
+            ],
+            [
+              "$1,510 - $1,620",
+              "$298,800",
+              "$241,600",
+              "$198,800"
+            ],
+            [
+              "$2,210 - $2,370",
+              "$443,100",
+              "$360,200",
+              "$298,200"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "CPF LIFE premium at 65(Savings you need at 65)",
+              "Savings you need at 60",
+              "Savings youneed at 55"
+            ],
+            "row_headers": [
+              "$540 - $570",
+              "$820 - $870",
+              "$960 - $1,030",
+              "$1,510 - $1,620",
+              "$2,210 - $2,370"
+            ]
+          },
+          "rows": [
+            {
+              "row_header": "$540 - $570",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$97,300"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$75,900"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$60,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$820 - $870",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$154,500"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$123,000"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$99,400"
+                }
+              ]
+            },
+            {
+              "row_header": "$960 - $1,030",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$184,400"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$147,500"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$120,000"
+                }
+              ]
+            },
+            {
+              "row_header": "$1,510 - $1,620",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$298,800"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$241,600"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$198,800"
+                }
+              ]
+            },
+            {
+              "row_header": "$2,210 - $2,370",
+              "cells": [
+                {
+                  "column_header": "CPF LIFE premium at 65(Savings you need at 65)",
+                  "value": "$443,100"
+                },
+                {
+                  "column_header": "Savings you need at 60",
+                  "value": "$360,200"
+                },
+                {
+                  "column_header": "Savings youneed at 55",
+                  "value": "$298,200"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The CPF LIFE Standard Plan requires $97,300 in savings at age 65 to provide a desired monthly payout of $540 - $570, $75,900 in savings at age 60, and $60,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $154,500 in savings at age 65 to provide a desired monthly payout of $820 - $870, $123,000 in savings at age 60, and $99,400 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $184,400 in savings at age 65 to provide a desired monthly payout of $960 - $1,030, $147,500 in savings at age 60, and $120,000 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $298,800 in savings at age 65 to provide a desired monthly payout of $1,510 - $1,620, $241,600 in savings at age 60, and $198,800 in savings at age 55.",
+          "The CPF LIFE Standard Plan requires $443,100 in savings at age 65 to provide a desired monthly payout of $2,210 - $2,370, $360,200 in savings at age 60, and $298,200 in savings at age 55."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000005",
+    "source_chunk_ids": [
+      "chapter_10__chunk_003"
+    ],
+    "chapter": "chapter_10",
+    "header": "2. HOW DO ANNUITIES WORK?",
+    "level": 1,
+    "context": "This chunk explains the fundamental mechanics of how annuities operate, detailing the roles of the annuity owner and insurer, the concepts of premium payments, accumulation periods, and payout periods.",
+    "text": "<context>This chunk explains the fundamental mechanics of how annuities operate, detailing the roles of the annuity owner and insurer, the concepts of premium payments, accumulation periods, and payout periods.</context>\n# 2. HOW DO ANNUITIES WORK?\n\n2.1 The annuity owner (who is usually the annuitant, i.e., the recipient of the periodic benefit payout) makes a single premium or a series of premium payments to the insurer. If a single premium is paid, it is often referred to as the purchase price or consideration. The insurer invests the premiums collected to earn interest. If the annuity remains in force until a specified date, the insurer starts making a series of payments to the annuitant. The period of time between the first (or single premium) being paid and the time that the payments to the annuitant starts is called the accumulation period. These payments are called the annuity income benefits, and the period of time during which the income benefits are paid is called the payout period. Figure 10.1 summarises the basic way that an annuity functions.\n\n  \nFigure 10.1: How Does An Annuity Work?",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000006",
+    "source_chunk_ids": [
+      "chapter_10__chunk_004"
+    ],
+    "chapter": "chapter_10",
+    "header": "3. TYPES OF ANNUITIES",
+    "level": 1,
+    "context": "This chunk is located in Section 3 of the document, which focuses on the different types of annuities. It introduces the two main categories of annuities: Immediate and Deferred.",
+    "text": "<context>This chunk is located in Section 3 of the document, which focuses on the different types of annuities. It introduces the two main categories of annuities: Immediate and Deferred.</context>\n# 3. TYPES OF ANNUITIES\n\n3.1 There are two main categories of annuities based on when the annuity payments begin. These are Immediate and Deferred Annuities. Let us look at each of them in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000007",
+    "source_chunk_ids": [
+      "chapter_10__chunk_005"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. Immediate Annuities",
+    "level": 1,
+    "context": "The chunk discusses Immediate Annuities, a type of annuity where payments begin shortly after purchase, contrasting them with deferred annuities and outlining payment structures and conditions.",
+    "text": "<context>The chunk discusses Immediate Annuities, a type of annuity where payments begin shortly after purchase, contrasting them with deferred annuities and outlining payment structures and conditions.</context>\n# A. Immediate Annuities\n\n3.2 Annuities that start paying out (almost) immediately after the policy starts are called “Immediate Annuities”. The income stream starts immediately one payment period after the annuity is purchased. For example, if the annuity payments are monthly, then the payments begin one month after the purchase of the annuity. Figure 10.2 illustrates how an Immediate Annuity works.\n\n  \nFigure 10.2: How Does An Immediate Annuity Work?\n\n3.3 Keep in mind that since the annuity payments under an Immediate Annuity start “immediately”, the purchaser must pay for the entire contract at once, i.e. an Immediate Annuity must be paid in one lump sum (single premium) upfront.\n\n3.4 You will also need to know what happens if the annuitant dies or decides to surrender his policy before and after the annuity payments begin.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000008",
+    "source_chunk_ids": [
+      "chapter_10__chunk_006"
+    ],
+    "chapter": "chapter_10",
+    "header": "A1. Before The Annuity Payments Commence",
+    "level": 1,
+    "context": "This section details what happens if the annuitant dies or cancels the policy *before* annuity payments begin under an Immediate Annuity.",
+    "text": "<context>This section details what happens if the annuitant dies or cancels the policy *before* annuity payments begin under an Immediate Annuity.</context>\n# A1. Before The Annuity Payments Commence\n\n(i) Annuitant Dies\n\nThe insurer will usually refund the purchase price with or without interest, depending on the policy terms.\n\n(ii) Annuity Owner Wishes To Cancel The Policy\n\nThe insurer will usually refund the purchase price with or without interest, depending on the policy terms.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000009",
+    "source_chunk_ids": [
+      "chapter_10__chunk_007"
+    ],
+    "chapter": "chapter_10",
+    "header": "A2. After The Annuity Payments Commence",
+    "level": 1,
+    "context": "This chunk details the consequences of the annuitant's death or policy surrender after annuity payments have begun, specifically within the context of Immediate Annuities.",
+    "text": "<context>This chunk details the consequences of the annuitant's death or policy surrender after annuity payments have begun, specifically within the context of Immediate Annuities.</context>\n# A2. After The Annuity Payments Commence\n\n(i) Annuitant Dies\n\nIf survivor or refund benefits are provided, they will be paid to the beneficiary and the policy will be terminated.\n\nIf there is a minimum guaranteed payment period, the payments will continue until the end of this period, after which the policy will be terminated.\n\nIf no such additional benefits apply or there is no minimum period, then the policy is terminated and payments cease.\n\n(ii) Annuity Owner Surrenders His Policy\n\nMost insurers will usually pay a surrender value to the annuity owner if he surrenders his policy during the guarantee period. No surrender is allowed after the guarantee period (or if there is no guarantee period).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000010",
+    "source_chunk_ids": [
+      "chapter_10__chunk_008"
+    ],
+    "chapter": "chapter_10",
+    "header": "A3. Reasons Why People Buy Immediate Annuities",
+    "level": 1,
+    "context": "This chunk discusses the primary motivation for purchasing immediate annuities: to gain peace of mind by converting a lump sum into a guaranteed lifelong income, thus preventing the annuitant from outliving their savings. It falls under section 3.A.3, which details the reasons people buy immediate annuities.",
+    "text": "<context>This chunk discusses the primary motivation for purchasing immediate annuities: to gain peace of mind by converting a lump sum into a guaranteed lifelong income, thus preventing the annuitant from outliving their savings. It falls under section 3.A.3, which details the reasons people buy immediate annuities.</context>\n# A3. Reasons Why People Buy Immediate Annuities\n\n3.5 An Immediate Annuity gives one peace of mind, because it allows the buyer to convert a sum of money (the consideration paid for the immediate annuity) into a regular fixed income that he will receive for the rest of his life contractually, no matter how long he lives. In this way, the annuitant ensures that he does not outlive the sum of money.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000011",
+    "source_chunk_ids": [
+      "chapter_10__chunk_009"
+    ],
+    "chapter": "chapter_10",
+    "header": "B. Deferred Annuities",
+    "level": 1,
+    "context": "This chunk details the definition and mechanics of Deferred Annuities, contrasting them with Immediate Annuities, and explaining their payment structures and potential outcomes during the accumulation period.",
+    "text": "<context>This chunk details the definition and mechanics of Deferred Annuities, contrasting them with Immediate Annuities, and explaining their payment structures and potential outcomes during the accumulation period.</context>\n# B. Deferred Annuities\n\n3.6 Deferred Annuities differ from Immediate Annuities in that the annuity payments begin only on a certain date, usually at least a few years in the future, after the policy start date.\n\n3.7 The annuities which CPF members can purchase with their CPF Minimum Sum are examples of Deferred Annuities. The CPF Board allows its members to withdraw their Minimum Sum to buy Deferred Annuities (immediate annuities are not allowed) at the age of 55 years for the income stream payments to begin from the age of 65 years (the applicable draw-down age). From 2013, CPF members are automatically included to participate in CPF LIFE when they reach the age of 55 years and have at least $\\$ 40,000$ in the Retirement Account, or have at least $\\$ 60,000$ in their Retirement Account when they reach the age of 65 years.\n\nFigure 10.3 shows how a Deferred Annuity works.\n\n  \nFigure 10.3: How Does A Deferred Annuity Work?\n\nInsurer makes payments for life or for a limited period.\n\n3.9 Unlike an Immediate Annuity which can be purchased only by way of a single premium, a Deferred Annuity can be paid by single premium or regular premiums.\n\n(a) Single Premium\n\nThis is the most common way of payment. The insurer will usually specify a minimum amount (otherwise the resultant annuity will be too small to be useful).\n\n(b) Regular Premiums\n\nRegular premiums are suitable for those who do not have a lump sum of money for purchasing an annuity or who wish to pay the premium over, say, their working years. The annuity owner may pay on a yearly, halfyearly, quarterly or monthly basis.\n\n3.10 With Deferred Annuities, several possible events may occur during either the accumulation period or the payout period. Let us look at some of them.\n\n(i) During The Accumulation Period\n\nAnnuity Owner Stops Paying Premiums\n\nAn annuity owner may decide to stop paying the premiums. In such a case, the insurer will either:\n\nrefund the premiums paid (with or without interest) to the annuity owner; or   \npay a reduced annuity income to the annuitant on the annuity starting date.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000012",
+    "source_chunk_ids": [
+      "chapter_10__chunk_009"
+    ],
+    "chapter": "chapter_10",
+    "header": "B. Deferred Annuities",
+    "level": 1,
+    "context": "This chunk discusses events that can occur during the accumulation and payout periods of a deferred annuity, specifically focusing on what happens if the annuity owner stops paying premiums or if the annuitant dies before the annuity starting date. It also touches on the reasons for purchasing deferred annuities. This section is part of a larger explanation of different types of annuities.",
+    "text": "<context>This chunk discusses events that can occur during the accumulation and payout periods of a deferred annuity, specifically focusing on what happens if the annuity owner stops paying premiums or if the annuitant dies before the annuity starting date. It also touches on the reasons for purchasing deferred annuities. This section is part of a larger explanation of different types of annuities.</context>\nPeriod\n\nAnnuity Owner Stops Paying Premiums\n\nAn annuity owner may decide to stop paying the premiums. In such a case, the insurer will either:\n\nrefund the premiums paid (with or without interest) to the annuity owner; or   \npay a reduced annuity income to the annuitant on the annuity starting date.\n\n Annuitant Dies Before Annuity Starting Date\n\nThe annuitant may die before the annuity starting date. In such a case, the insurer will either:\n\nrefund the premiums paid (with or without interest) to the beneficiary; or   \npay the annuity income to the beneficiary depending on the type of annuity purchased.\n\nAnnuitant Lives To Annuity Starting Date\n\nIf the annuitant is alive on the annuity starting date, the insurer starts to pay the annuity income to him. This is the most common scenario.\n\n(ii) During The Payout Period\n\nIn the event that the annuitant dies after the annuity starting date, the policy will be terminated, unless a guarantee period or refund benefits are provided. These are described in section 4 below.\n\n(iii) Reasons Why People Buy Deferred Annuities\n\nIt is possible to arrange something similar to a deferred annuity by accumulating assets in some other way (e.g., through an endowment policy) and then purchasing an immediate annuity with those assets.\n\nHowever, sometimes the deferred annuity product offers guarantees or additional benefits which make the eventual annuity payments more attractive.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000013",
+    "source_chunk_ids": [
+      "chapter_10__chunk_010"
+    ],
+    "chapter": "chapter_10",
+    "header": "4. VARIATIONS OF ANNUITY POLICIES",
+    "level": 1,
+    "context": "This chunk introduces the variations of annuity policies, which are further categorized by payout options, bonus entitlement, number of lives covered, and increasing rates. These variations build upon the two main categories of annuities previously discussed: Immediate and Deferred Annuities.",
+    "text": "<context>This chunk introduces the variations of annuity policies, which are further categorized by payout options, bonus entitlement, number of lives covered, and increasing rates. These variations build upon the two main categories of annuities previously discussed: Immediate and Deferred Annuities.</context>\n# 4. VARIATIONS OF ANNUITY POLICIES\n\n4.1 Both of the two broad categories which we have just discussed can have many variations based on their contract provisions as follows:\n\n payout options;   \n bonus entitlement (i.e. participating or non-participating); number of lives covered under the policy; and increasing rate annuity.\n\n4.2 The various types of annuities under the two broad categories basically function in the same way. Let us now look at each of the categories in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000014",
+    "source_chunk_ids": [
+      "chapter_10__chunk_011"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. Payout Options",
+    "level": 1,
+    "context": "This chunk is located within Section 4, \"VARIATIONS OF ANNUITY POLICIES,\" specifically under subsection A, \"Payout Options.\" It introduces the concept of different payout methods for annuities and transitions into discussing \"Life Annuities.\"",
+    "text": "<context>This chunk is located within Section 4, \"VARIATIONS OF ANNUITY POLICIES,\" specifically under subsection A, \"Payout Options.\" It introduces the concept of different payout methods for annuities and transitions into discussing \"Life Annuities.\"</context>\n# A. Payout Options\n\nThere are various ways in which the annuity benefits are paid out.\n\n4.4\n\nLet us begin by looking at Life Annuities.\n\nA1.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000015",
+    "source_chunk_ids": [
+      "chapter_10__chunk_012"
+    ],
+    "chapter": "chapter_10",
+    "header": "Life Annuities",
+    "level": 1,
+    "context": "This chunk is part of Section 4.A.1, \"Life Annuities,\" which details different payout options within annuity policies, specifically focusing on \"Pure Life Annuity\" and \"Guaranteed Minimum Payout Annuity\" types.",
+    "text": "<context>This chunk is part of Section 4.A.1, \"Life Annuities,\" which details different payout options within annuity policies, specifically focusing on \"Pure Life Annuity\" and \"Guaranteed Minimum Payout Annuity\" types.</context>\n# Life Annuities\n\n4.5 Under a Life Annuity, the payout is guaranteed for life. This is the most common type of annuity sold and can be sub-divided into two main classes, namely Pure Life Annuity and Guaranteed Minimum Payout Annuity.\n\nA1A. Pure Life Annuity\n\n4.6 Under this option, the insurer pays income benefits until the annuitant dies, whatever age that may be. Upon the death of the annuitant, the insurer pays no further benefits and has no further liability under the contract. Figure 10.4 illustrates how this annuity works.\n\n  \nFigure 10.4: How Does A Straight Life Annuity Work?\n\n4.7 Suppose an annuitant has made a single purchase payment of $\\$ 100,000$ for an immediate Pure Life Annuity which provides payments of $\\$ 500$ monthly. If the annuitant dies after receiving two years payments (i.e. $\\mathtt { S 5 5 0 0 } \\times 2 4 = \\mathtt { S 5 } 1 2 , 0 0 0 )$ , the annuitant would have paid $\\$ 988,000$ more than he received. This possible loss could dissuade many people from buying an annuity. Insurers recognise this, so they also provide payout options that guarantee a minimum return, called a “Guaranteed Minimum Payout Annuity”, which is explained below.\n\nA1B. Guaranteed Minimum Payout Annuity\n\nThis type of annuity guarantees a minimum number of payments (irrespective of whether the annuitant is alive to receive them), or a refund of the some of the consideration in the event of the annuitant’s premature death. It is far more popular than the Pure Life Annuity. However, as part of the premium paid is applied towards meeting the cost of guaranteeing a minimum amount of benefits, the periodic income payment will be lower than that of a Pure Life Annuity. Let us look at the two common types of annuities that guarantee a minimum payout option.\n\nLife Annuity With Period Certain\n\nWith this option, the insurer also provides annuity payments for as long as the annuitant lives, but if the annuitant dies before the end of a specified period (the period certain), the benefits will continue to be paid to the beneficiary until the end of the period certain. Figure 10.5 illustrates how this annuity works.\n\n  \nFigure 10.5: How Does A Life Annuity With Period Certain Work?",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000016",
+    "source_chunk_ids": [
+      "chapter_10__chunk_012"
+    ],
+    "chapter": "chapter_10",
+    "header": "Life Annuities",
+    "level": 1,
+    "context": "This chunk details two types of Guaranteed Minimum Payout Annuities: \"Life Annuity With Period Certain\" and \"Life Income With Refund Annuity,\" explaining how payments continue to beneficiaries under specific conditions after the annuitant's death.",
+    "text": "<context>This chunk details two types of Guaranteed Minimum Payout Annuities: \"Life Annuity With Period Certain\" and \"Life Income With Refund Annuity,\" explaining how payments continue to beneficiaries under specific conditions after the annuitant's death.</context>\nbut if the annuitant dies before the end of a specified period (the period certain), the benefits will continue to be paid to the beneficiary until the end of the period certain. Figure 10.5 illustrates how this annuity works.\n\n  \nFigure 10.5: How Does A Life Annuity With Period Certain Work?\n\nLife Income With Refund Annuity\n\nA Life Income With Refund Annuity also provides annuity payments for as long as the annuitant lives, but if the annuitant dies before the total payments made exceed the purchase price, then the insurer pays a refund to the beneficiary. The refund is equal to the difference between the purchase price of the annuity and the amount paid out to the annuitant. Figure 10.6 illustrates how this annuity works.\n\n  \nFigure 10.6: How Does A Life Income With Refund Annuity Work?",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000017",
+    "source_chunk_ids": [
+      "chapter_10__chunk_013"
+    ],
+    "chapter": "chapter_10",
+    "header": "A2. Temporary Annuities",
+    "level": 1,
+    "context": "This chunk discusses temporary annuities, which do not guarantee a lifetime income, and details two types: Fixed Period Payments and Fixed Amount Payment. It is part of a larger section on \"Variations of Annuity Policies.\"",
+    "text": "<context>This chunk discusses temporary annuities, which do not guarantee a lifetime income, and details two types: Fixed Period Payments and Fixed Amount Payment. It is part of a larger section on \"Variations of Annuity Policies.\"</context>\n# A2. Temporary Annuities\n\n4.9 In contrast to Life Annuities, which continue the annuity for as long as the annuitant lives, temporary annuities do not guarantee a lifetime income. Instead, the insurer limits the annuity payment period in various ways.\n\nA2A. Fixed Period Payments\n\n4.10 This product provides annuity payments until the expiry of a specified period or the annuitant dies, whichever occurs first. Figure 10.7 illustrates how this annuity works.\n\nFigure 10.7: How Does A Fixed Period Payment Annuity Work?\n\n4.11 Like a Life Annuity, a Fixed Period Payment Annuity can also be issued with a guarantee period or a refund option.\n\nA2B. Fixed Amount Payment\n\n4.12 This product provides annuity payments until the total payments exceed a specified maximum amount or the annuitant dies, whichever occurs first. This product may also have a guarantee period or refund option. Figure 10.8 illustrates how this annuity works.\n\nFigure 10.8: How Does A Fixed Amount Payment Annuity Work?\n\nScenario 1\n\nMaximum amount has not been used up.   \nAnnuitant dies.\n\nBenefit payment ceases.\n\nScenario 2\n\nMaximum amount been fully used up.\n\nAnnuitant is alive.\n\nBenefit payments cease.\n\n4.13 Like a Life Annuity, a Fixed Amount Payment Annuity can also be issued with a guarantee period or a refund option.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000018",
+    "source_chunk_ids": [
+      "chapter_10__chunk_014"
+    ],
+    "chapter": "chapter_10",
+    "header": "B. Bonus Entitlement",
+    "level": 1,
+    "context": "This chunk discusses the classification of annuities based on bonus entitlement, specifically differentiating between participating annuities (which share in insurer profits via bonuses) and non-participating annuities (with fixed payments), as part of a broader section on variations of annuity policies.",
+    "text": "<context>This chunk discusses the classification of annuities based on bonus entitlement, specifically differentiating between participating annuities (which share in insurer profits via bonuses) and non-participating annuities (with fixed payments), as part of a broader section on variations of annuity policies.</context>\n# B. Bonus Entitlement\n\n4.14 Annuities can also be classified according to whether they are participating or non-participating annuities. Participating annuities are entitled to share in the profits of the insurer’s participative fund, in the form of bonuses. For example, the bonuses may be credited to the policy yearly and paid out to the annuitant in the same year. The bonuses usually start after one year of benefits has been paid. Example 10.1 illustrates how a Participating Annuity works.\n\nExample 10.1: How Does A Participating Annuity Work?\n\nAge Monthly Payments\n\n62 : Receives $\\$ 552$ per month.   \n63 : Receives $\\$ 563$ per month (insurer declares a $2 \\%$ bonus that year).   \n64 : Receives $\\$ 568$ per month (insurer declares a $3 \\%$ bonus that year) and so on …\n\n4.15 The monthly payments under a participating annuity fluctuate each year depending on the bonuses declared, but at no time will they be less than the minimum guaranteed, which is $\\$ 552$ as illustrated in the above example.\n\n4.16\n\nNon-participating annuities, which are the most common, do not share in the profits of the insurer and the annuity payments remain fixed.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000019",
+    "source_chunk_ids": [
+      "chapter_10__chunk_015"
+    ],
+    "chapter": "chapter_10",
+    "header": "C. Number Of Lives Covered",
+    "level": 1,
+    "context": "This chunk is part of Section 4, \"VARIATIONS OF ANNUITY POLICIES\", specifically under subsection C, which details how annuities can be classified based on the number of lives they cover.",
+    "text": "<context>This chunk is part of Section 4, \"VARIATIONS OF ANNUITY POLICIES\", specifically under subsection C, which details how annuities can be classified based on the number of lives they cover.</context>\n# C. Number Of Lives Covered\n\n4.17 Annuities can be issued to cover a single life or more than one life. Let us now look at each of them in turn.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000020",
+    "source_chunk_ids": [
+      "chapter_10__chunk_016"
+    ],
+    "chapter": "chapter_10",
+    "header": "C1. Single Life Annuity",
+    "level": 1,
+    "context": "This section defines a Single Life Annuity as an annuity payment dependent on one life, noting it is the most common form, within the broader classification of annuities based on the number of lives covered.",
+    "text": "<context>This section defines a Single Life Annuity as an annuity payment dependent on one life, noting it is the most common form, within the broader classification of annuities based on the number of lives covered.</context>\n# C1. Single Life Annuity\n\nUnder a Single Life Annuity the payment of annuities is dependent on one life.   \nThis is the most common form of annuity.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000021",
+    "source_chunk_ids": [
+      "chapter_10__chunk_017"
+    ],
+    "chapter": "chapter_10",
+    "header": "C2. Joint Life Annuity",
+    "level": 1,
+    "context": "This chunk discusses variations of annuity policies, specifically focusing on the number of lives covered. It falls under section 4.C, \"Number Of Lives Covered,\" and precedes the explanation of \"Joint And Survivor Annuity.\"",
+    "text": "<context>This chunk discusses variations of annuity policies, specifically focusing on the number of lives covered. It falls under section 4.C, \"Number Of Lives Covered,\" and precedes the explanation of \"Joint And Survivor Annuity.\"</context>\n# C2. Joint Life Annuity\n\n4.19 A Joint Life Annuity provides that the periodic benefits will be paid only for as long as both of two designated annuitants are alive. The payment ends when one of the joint annuitants dies. Figure 10.9 illustrates how this annuity works.\n\n  \nFigure 10.9: How Does A Joint Life Annuity Work?",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000022",
+    "source_chunk_ids": [
+      "chapter_10__chunk_018"
+    ],
+    "chapter": "chapter_10",
+    "header": "C3. Joint And Survivor Annuity",
+    "level": 1,
+    "context": "This chunk is a detailed explanation of a \"Joint and Survivor Annuity,\" which is a type of annuity that covers multiple lives. It follows sections discussing other annuity payout options and variations, specifically \"Single Life Annuity\" and \"Joint Life Annuity,\" and precedes a section on \"Increasing Rate Annuity.\" It is part of a larger document explaining different types of annuities and their features.",
+    "text": "<context>This chunk is a detailed explanation of a \"Joint and Survivor Annuity,\" which is a type of annuity that covers multiple lives. It follows sections discussing other annuity payout options and variations, specifically \"Single Life Annuity\" and \"Joint Life Annuity,\" and precedes a section on \"Increasing Rate Annuity.\" It is part of a larger document explaining different types of annuities and their features.</context>\n# C3. Joint And Survivor Annuity\n\n4.20 A Joint and Survivor Annuity, also called a Joint and Last Survivor Annuity, provides periodic benefits to two or more individuals with financial relationships, e.g. parents plus a disabled child. Very often though, they are purchased by couples. The benefits under this annuity continue until both or all the individuals die. There are many variations of such an annuity. For example, for some Joint and Survivor Annuities, the periodic benefit amount remains the same after the first annuitant dies, while for other Joint and Survivor Annuities, the periodic benefit falls to a certain percentage, often $5 0 \\%$ , of the original benefit after the death of the first annuitant. Figure 10.10 illustrates how a Joint and Survivor Annuity works.\n\n  \nFigure 10.10: How Does A Joint And Survivor Annuity Work?\n\n4.21 In the above example, while both annuitants are alive, they receive one single payment of $\\$ 800$ per month. Upon the death of one of the annuitants, the survivor receives a payment of $\\$ 400$ per month until he dies. Nothing is payable after the death of the second annuitant.\n\n4.22 This form of annuity is very rarely offered in Singapore.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000023",
+    "source_chunk_ids": [
+      "chapter_10__chunk_019"
+    ],
+    "chapter": "chapter_10",
+    "header": "D. Increasing Rate Annuity",
+    "level": 1,
+    "context": "This chunk is a subsection under \"4. VARIATIONS OF ANNUITY POLICIES\", specifically detailing a type of annuity payout option.",
+    "text": "<context>This chunk is a subsection under \"4. VARIATIONS OF ANNUITY POLICIES\", specifically detailing a type of annuity payout option.</context>\n# D. Increasing Rate Annuity\n\n4.23 An increasing rate annuity increases each year at a certain percentage, e.g. $1 \\%$ or $2 \\%$ simple interest. This type of annuity is useful for hedging against inflation, but is rarely offered.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000024",
+    "source_chunk_ids": [
+      "chapter_10__chunk_020"
+    ],
+    "chapter": "chapter_10",
+    "header": "5. BENEFITS AND LIMITATIONS OF ANNUITIES",
+    "level": 1,
+    "context": "This chunk discusses the benefits and limitations of annuities, appearing after sections detailing different types of annuities (Immediate, Deferred, Life, Temporary, etc.) and before sections on other life insurance products and a glossary.",
+    "text": "<context>This chunk discusses the benefits and limitations of annuities, appearing after sections detailing different types of annuities (Immediate, Deferred, Life, Temporary, etc.) and before sections on other life insurance products and a glossary.</context>\n# 5. BENEFITS AND LIMITATIONS OF ANNUITIES\n\n5.1 The benefits of annuities are as follows:\n\n(i) Annuity payouts are free from income tax, unless they are received from the following sources:\n\nPartnership;   \nSupplementary Retirement Scheme (SRS); and   \nAnnuity policy bought by the employer of the employee, in place of a pension or other employment benefits payable to him during his employment or upon retirement. (ii) They provide guaranteed income.   \n(iii) Investment returns earned during the accumulation period are tax-free.   \n(iv) Capital may be guaranteed depending on the type of annuity purchased.\n\n5.2 The limitations of annuities are as follows:\n\n(i) They cannot be used for death protection, and should be purchased only after provision for premature death is in place;   \n(ii) They cannot be used to provide for major illness protection;   \n(iii) Most annuities are weak at mitigating the effect of inflation in the long term; and   \n(iv) Usually, there is no attaching benefit rider.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000025",
+    "source_chunk_ids": [
+      "chapter_10__chunk_021"
+    ],
+    "chapter": "chapter_10",
+    "header": "6. OTHER LIFE INSURANCE PRODUCTS",
+    "level": 1,
+    "context": "This section shifts focus from annuities to other life insurance products, specifically guaranteed income plans and universal life insurance.",
+    "text": "<context>This section shifts focus from annuities to other life insurance products, specifically guaranteed income plans and universal life insurance.</context>\n# 6. OTHER LIFE INSURANCE PRODUCTS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_10__small_000026",
+    "source_chunk_ids": [
+      "chapter_10__chunk_022"
+    ],
+    "chapter": "chapter_10",
+    "header": "A. Guaranteed Income",
+    "level": 1,
+    "context": "The chunk discusses guaranteed income life insurance policies, which, along with CPF Life, offer a steady stream of retirement income. This follows the detailed explanation of CPF Life and annuities in sections 1-5 and precedes the discussion of Universal Life insurance in section 6B.",
+    "text": "<context>The chunk discusses guaranteed income life insurance policies, which, along with CPF Life, offer a steady stream of retirement income. This follows the detailed explanation of CPF Life and annuities in sections 1-5 and precedes the discussion of Universal Life insurance in section 6B.</context>\n# A. Guaranteed Income\n\n6.1 Insurers also offer a form of life insurance policy where the insured pays a premium for a limited period (accumulation period) and will be guaranteed a lifetime payout of income. Some insurance plans offer a payout for a certain period and/or a lump sum cash at the end of the payout period. There are various classifications as described earlier under annuities or endowment plans.\n\n6.2 This is sometimes marketed as a guaranteed income retirement plan. The premium of this type of insurance policy is highly dependent on the amount of the guaranteed income required during the retirement years. The guaranteed and non-guaranteed returns of such plans depend on the client’s current age, chosen retirement age, premium payment period and the amount of the income payout.\n\nThese plans, together with CPF Life, provide a steady stream of retirement income for the client.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000027",
+    "source_chunk_ids": [
+      "chapter_10__chunk_023"
+    ],
+    "chapter": "chapter_10",
+    "header": "B. Universal Life",
+    "level": 1,
+    "context": "This chunk discusses Universal Life insurance, contrasting it with whole life and term products, and detailing its features such as flexible premiums, cash value accumulation, and specific benefits like minimum credit interest and no-lapse features. It falls under the broader section \"6. OTHER LIFE INSURANCE PRODUCTS\".",
+    "text": "<context>This chunk discusses Universal Life insurance, contrasting it with whole life and term products, and detailing its features such as flexible premiums, cash value accumulation, and specific benefits like minimum credit interest and no-lapse features. It falls under the broader section \"6. OTHER LIFE INSURANCE PRODUCTS\".</context>\n# B. Universal Life\n\n6.4 Universal Life insurance (UL) is very different from whole life and term products. While each form of life insurance provides a death benefit to beneficiaries for the purpose of mitigating financial loss of an incoming earning family member, the other features are different.\n\n6.5 A whole life insurance contract has level premiums that stay the same for the life of the policy. It has cash value accumulation and this cash value is guaranteed by the insurance company once declared.\n\n.6 ULs do not have minimum cash value guarantees. Their premiums are not level. They are also not “participating” policies, so the insureds do not have a right to benefit from the life insurance companies’ participative funds earnings. UL is a form of life insurance which offers the insured a form of term life cover, as well as an element for cash value build up. It offers flexibility to the insured in terms of premium allocation, premium payable, amount of sum assured (subject to the insurer’s approval), costs and also other extra features, as compared to the traditional Whole Life Insurance. Some of these extra features include:\n\n(i) Minimum Credit interest\n\nThe insurer guarantees an interest rate to the insured for amounts in the cash value account.\n\n(ii) No-Lapse feature\n\nThis feature allows the UL to be in-force even if the cash value of the UL is zero and the insured is not required to top up any money at all.\n\n6.7 An insured actually has the choice to pay any amount in premium that they wish, as long as he pays enough to cover the cost of the life insurance. Alternatively, the cash value account has enough money to cover the cost (all payments technically first go to the cash value account, and all insurance charges are taken from the cash value account). Any excess premium gains interest in the cash value account. As long as the minimum cost of insurance is covered, either by paying premiums or deducting from the accumulated cash value, the policy will stay inforce. If the insured does not consistently pay more in",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000028",
+    "source_chunk_ids": [
+      "chapter_10__chunk_023"
+    ],
+    "chapter": "chapter_10",
+    "header": "B. Universal Life",
+    "level": 1,
+    "context": "This chunk discusses the funding requirements and long-term viability of Universal Life (UL) insurance products, specifically addressing how premiums and accumulated interest need to outpace increasing insurance costs over the contract's lifetime for the policy to remain in force and potentially benefit from tax advantages.",
+    "text": "<context>This chunk discusses the funding requirements and long-term viability of Universal Life (UL) insurance products, specifically addressing how premiums and accumulated interest need to outpace increasing insurance costs over the contract's lifetime for the policy to remain in force and potentially benefit from tax advantages.</context>\nfrom the cash value account). Any excess premium gains interest in the cash value account. As long as the minimum cost of insurance is covered, either by paying premiums or deducting from the accumulated cash value, the policy will stay inforce. If the insured does not consistently pay more in premium than the cost of insurance (mainly owing to higher mortality costs as the insured ages) over the lifetime of the contract, maintenance of coverage will eventually not be feasible.\n\n6.8 In order for a UL product to be viable, it has to be funded sufficiently early enough in the contract such that earnings accumulate at greater rates than increasing costs of insurance. In some countries, the cash value or interest accumulated over the years enjoy certain tax benefits or concessions.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000029",
+    "source_chunk_ids": [
+      "chapter_10__chunk_024"
+    ],
+    "chapter": "chapter_10",
+    "header": "B1. Premium Financing",
+    "level": 1,
+    "context": "This chunk discusses the concept of premium financing within the context of Universal Life (UL) insurance policies, explaining how it works, its purpose, and potential risks, and is located within Section 6.B, which covers other life insurance products.",
+    "text": "<context>This chunk discusses the concept of premium financing within the context of Universal Life (UL) insurance policies, explaining how it works, its purpose, and potential risks, and is located within Section 6.B, which covers other life insurance products.</context>\n# B1. Premium Financing\n\nPremium financing is the borrowing of funds from a financial institution to cover the cost of a policy. The funds borrowed constitute a contractual debt on the borrower, who usually is the policy owner. While the life insured is alive, the policy owner is required to pay the interest of the loan to the lender. When the life insured dies, the lender will recover the loan principal from the sum assured of the UL. As most ULs will have cash value from Day One of the policy owing to the lump sum payment received upfront, this Day One cash value provides a “collateral” which allows premium financing for UL to be carried out.\n\n6.10 Premium financing is not a way to purchase a UL policy in an affordable way. It is primarily for clients who have substantial illiquid assets but low in liquidity and who wish to acquire UL policy usually for estate equalisation, wealth replacement or estate liquidity purpose. Alternatively, premium financing enables a high-networth client to use his cash assets for other investments instead of locking them into UL. Premium financing allows the financial institution to offer loans for the premium payment (typically up to $70 \\%$ to $80 \\%$ of the first day cash value). This is illustrated in the Figure 10.11 and Example 10.2 for a UL policy premium of USD1.1 million.\n\n  \nFigure 10.11: Premium Financing for Universal Life (UL)\n\nExample 10.2: How Premium Financing Works\n\nPremium Amou $\\mathsf { n t } = \\mathsf { l }$ USD1.1 million   \nFirst Day Cash Value $= \\mathsf { U S D } \\$ 1$ million   \nFinancial Institution finances $70 \\%$ of the First Day Cash Value $= 7 0 \\%$ x USD\\$1 million $= \\cup \\mathtt { S D } \\$ 700,000$   \nInsured will pay in cash the remaining amount of $\\mathsf { U S D } \\$ 400,000$ $\\lvert \\mathsf { U S D } \\$ 1.1$ million – $\\cup \\mathsf { S D } \\$ 700,000$ and frees up his cash holdings of USD700,000 for other uses.\n\n6.11 With premium financing, the insured must maintain sufficient funds to pay the interest. As the policy is now held by the financial institution, failing to make the interest payment allows the financial institution to have the right to recover the outstanding balance of the premium financing from the policy assigned. This may result in the termination of the UL",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000030",
+    "source_chunk_ids": [
+      "chapter_10__chunk_024"
+    ],
+    "chapter": "chapter_10",
+    "header": "B1. Premium Financing",
+    "level": 1,
+    "context": "This chunk discusses the risks and obligations associated with premium financing for Universal Life (UL) insurance policies, specifically focusing on the consequences of failing to make interest payments and the potential impact on the insured's financial plan and ability to maintain coverage.",
+    "text": "<context>This chunk discusses the risks and obligations associated with premium financing for Universal Life (UL) insurance policies, specifically focusing on the consequences of failing to make interest payments and the potential impact on the insured's financial plan and ability to maintain coverage.</context>\nto pay the interest. As the policy is now held by the financial institution, failing to make the interest payment allows the financial institution to have the right to recover the outstanding balance of the premium financing from the policy assigned. This may result in the termination of the UL policy and affect the insured’s financial plan.\n\nThe insured may not be able to purchase the same plan, with the same premium amount, owing to his increasing age or changing health condition.\n\n6.12 The insured is still obliged to repay the financial institution the total outstanding balance due. In this regard, a premium financed UL is a dual edged sword. It can work well for an insured that needs a large amount of coverage but lacks liquidity. On the other hand, the insured may be left in a dire state as discussed above.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000031",
+    "source_chunk_ids": [
+      "chapter_10__chunk_025"
+    ],
+    "chapter": "chapter_10",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk is a chapter summary providing definitions and explanations of key terms related to annuities and CPF LIFE, which are discussed in detail in the preceding sections of the document.",
+    "text": "<context>This chunk is a chapter summary providing definitions and explanations of key terms related to annuities and CPF LIFE, which are discussed in detail in the preceding sections of the document.</context>\n# Chapter summary:\n\n- Definition or Explanation: CPF LIFE\nIt is an insurance product, which helps to protect members against the risk ofrunning out of retirement savings, so that they may continue receiving monthlyretirement income no matter how long they live.\n\n- Definition or Explanation: CPF Life Plans\nThree CPF LIFE plans for CPF members to choose from: the LiFE Standard Plan - Higher level monthly payouts the LIFE Escalating Plan - Monthly payouts that start lower but increases by 2%yearly the LiFE Basic Plan - Lower monthly payouts\n\n- Definition or Explanation: Immediate Annuities\nAnnuities that start paying out (almost) immediately after the policy starts are called\"Immediate Annuities\". The income stream starts immediately one payment periodafter the annuityis purchased. For example, if the annuity payments are monthly, then the payments begin one month after the purchase of the annuity.\n\n- Definition or Explanation: Deferred Annuities\nThe annuity payments begin only on a certain date, usually at least a few years in the future, after the policy start date.\n\n- Definition or Explanation: Single Premium\nThis is the most common way of payment. The insurer will usually specify a minimum amount (otherwise the resultant annuity willbe too small to be useful).\n\n- Definition or Explanation: Regular Premiums\nRegular premiums are suitable for those who do not have a lump sum of moneyfor purchasing an annuity or who wish to pay the premium over,say,their working years. The annuity owner may pay on a yearly, half-yearly, quarterly or monthlybasis.\n\n- Definition or Explanation: Life Annuities\nUnder a Life Annuity, the payout is guaranteed for life. This is the most commontype of annuity sold and can be sub-divided into two main classes, namely Pure Life Annuity and Guaranteed Minimum Payout Annuity.\n\n- Definition or Explanation: Pure Life Annuity\nThe insurer pays income benefits until the annuitant dies, whatever age that maybe. Upon the death of the annuitant, the insurer pays no further benefits and has no further liability under the contract.\n\n- Definition or Explanation: Guaranteed MinimumPayout Annuity\nThis type of annuity guarantees a minimum number of payments (irrespectiveof whether the annuitant is alive to",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000032",
+    "source_chunk_ids": [
+      "chapter_10__chunk_025"
+    ],
+    "chapter": "chapter_10",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines various types of annuity payout options, specifically focusing on \"Life Annuities\" and \"Temporary Annuities,\" detailing their payout structures and conditions upon the annuitant's death or policy surrender.",
+    "text": "<context>This chunk defines various types of annuity payout options, specifically focusing on \"Life Annuities\" and \"Temporary Annuities,\" detailing their payout structures and conditions upon the annuitant's death or policy surrender.</context>\nannuitant dies, whatever age that maybe. Upon the death of the annuitant, the insurer pays no further benefits and has no further liability under the contract.\n\n- Definition or Explanation: Guaranteed MinimumPayout Annuity\nThis type of annuity guarantees a minimum number of payments (irrespectiveof whether the annuitant is alive to receive them), or a refund of the some ofthe consideration in the event of the annuitant's premature death.It is far more popular than the Pure Life Annuity. However, as part of the premium paid is applied towards meeting the cost of guaranteeing a minimum amount of benefits, theperiodic income payment willbe lower than that of a Pure Life Annuity.\n\n- Definition or Explanation: Life Annuity With PeriodCertain\nWith this option,the insurer also provides annuity payments for as long as the annuitant lives, but if the annuitant dies before the end of a specified period (the period certain), the benefits will continue to be paid to the beneficiary until the endof the period certain.\n\n- Definition or Explanation: Life Income With RefundAnnuity\nA Life Income With Refund Annuity also provides annuity payments for as long asthe annuitant lives, but if the annuitant dies before the total payments made exceedthe purchase price, then the insurer pays a refund to the beneficiary. The refund is equal to the difference between the purchase price of the annuity and the amountpaid out to the annuitant.\n\n- Definition or Explanation: Temporary Annuities\nTemporary annuities do not guarantee a lifetime income. Instead, the insurer limits the annuity payment period in various ways.\n\n- Definition or Explanation: Fixed Period Payments\nThis product provides annuity payments until the expiry of a specified period or theannuitant dies, whichever occurs first.\n\n- Definition or Explanation: Fixed Amount Payment\nThis product provides annuity payments until the total payments exceed a specified maximum amount or the annuitant dies, whichever occurs first. This product may also have a guarantee period or refund option.\n\n- Definition or Explanation: Single Life Annuity\nThe payment of annuities is dependent on one life.This is the most common formof annuity.\n\n- Definition or Explanation: Joint Life Annuity\nA Joint",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000033",
+    "source_chunk_ids": [
+      "chapter_10__chunk_025"
+    ],
+    "chapter": "chapter_10",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk defines various types of annuities and insurance products, including life annuities, temporary annuities, and universal life insurance, along with related concepts like premium financing.",
+    "text": "<context>This chunk defines various types of annuities and insurance products, including life annuities, temporary annuities, and universal life insurance, along with related concepts like premium financing.</context>\namount or the annuitant dies, whichever occurs first. This product may also have a guarantee period or refund option.\n\n- Definition or Explanation: Single Life Annuity\nThe payment of annuities is dependent on one life.This is the most common formof annuity.\n\n- Definition or Explanation: Joint Life Annuity\nA Joint Life Annuity provides that the periodic benefits willbe paid only for as long as both of two designated annuitants are alive. The payment ends when one of the joint annuitants dies.\n\n- Definition or Explanation: Joint And Survivor Annuity\nAlso called a Joint and Last Survivor Annuity, provides periodic benefits to two ormore individuals with financial relationships, e.g. parents plus a disabled child.Very often though,they are purchased by couples. The benefits under this annuitycontinue until both or allthe individuals die. There are many variations of such anannuity.\n\n- Definition or Explanation: Increasing Rate Annuity\nAn increasing rate annuity increases each year at a certain percentage, e.g. 1% or 2% simple interest. This type of annuity is useful for hedging against inflation, but israrely offered.\n\n- Definition or Explanation: Universal Life insurance(UL)\n· ULs do not have minimum cash value guarantees.Their premiums are not level. Not \"participating\" policies, so the insureds do not have a right to benefit fromthe life insurance companies'participative funds earnings.A form of life insurance which offers the insured a form of term life cover,aswell as an element for cash value buildup. It offers flexibility to the insured in terms of premium allocation, premiumpayable,amount of sum assured (subject to the insurer's approval), costs andalso other extra features,as compared to the traditional Whole Life Insurance.\n\n- Definition or Explanation: Minimum Credit interest\nThe insurer guarantees an interest rate to the insured for amounts in the cash valueaccount.\n\n- Definition or Explanation: No-Lapse feature\nThis feature allows the UL to be in-force even if the cash value of the UL is zero and the insured is not required to top up any money at all.\n\n- Definition or Explanation: Premium Financing\nPremium financing is the borrowing of funds from a financial institution to coverthe cost of a policy. The funds",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_10__small_000034",
+    "source_chunk_ids": [
+      "chapter_10__chunk_025"
+    ],
+    "chapter": "chapter_10",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "The chunk defines and explains \"Premium Financing\" as a method of funding a Universal Life insurance policy, detailing how it works and its implications for the policy owner. It appears in section 6.B.1, which discusses Universal Life insurance and its related financial arrangements.",
+    "text": "<context>The chunk defines and explains \"Premium Financing\" as a method of funding a Universal Life insurance policy, detailing how it works and its implications for the policy owner. It appears in section 6.B.1, which discusses Universal Life insurance and its related financial arrangements.</context>\nbe in-force even if the cash value of the UL is zero and the insured is not required to top up any money at all.\n\n- Definition or Explanation: Premium Financing\nPremium financing is the borrowing of funds from a financial institution to coverthe cost of a policy. The funds borrowed constitute a contractual debt on theborrower,who usually is the policy owner. While the life insured is alive,the policy owner is required to pay the interest of the loan to the lender.When the life insureddies, the lender will recover the loan principal from the sum assured of the UL. Asmost ULs willhave cash value from Day One of the policy owing to the lump sum payment received upfront, this Day One cash value provides a \"collateral\" which allows premium financing for UL to be carried out.\n\n#",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  }
+]

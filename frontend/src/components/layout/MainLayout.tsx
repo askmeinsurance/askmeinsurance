@@ -9,6 +9,7 @@ interface MainLayoutProps {
   onSidebarToggle: () => void;
   conversations?: { id: string; title: string; active?: boolean }[];
   onConversationSelect?: (id: string) => void;
+  onConversationDelete?: (id: string) => void;
   onNewChat?: () => void;
   onSignOut?: () => void;
   signedInEmail?: string;
@@ -28,6 +29,7 @@ export function MainLayout({
   onSidebarToggle,
   conversations,
   onConversationSelect,
+  onConversationDelete,
   onNewChat,
   onSignOut,
   signedInEmail,
@@ -51,6 +53,7 @@ export function MainLayout({
         onToggle={onSidebarToggle}
         conversations={conversations}
         onConversationSelect={onConversationSelect}
+        onConversationDelete={onConversationDelete}
         onNewChat={onNewChat}
         onSignOut={onSignOut}
         signedInEmail={signedInEmail}

@@ -1,0 +1,726 @@
+[
+  {
+    "chunk_id": "chapter_16__small_000001",
+    "source_chunk_ids": [
+      "chapter_16__chunk_001"
+    ],
+    "chapter": "chapter_16",
+    "header": "1. INTRODUCTION",
+    "level": 1,
+    "context": "This chunk is the introductory section of a document explaining Singapore's personal income tax system, focusing on taxable income, reliefs, and how life insurance purchases can qualify for tax relief.",
+    "text": "<context>This chunk is the introductory section of a document explaining Singapore's personal income tax system, focusing on taxable income, reliefs, and how life insurance purchases can qualify for tax relief.</context>\n# 1. INTRODUCTION\n\n1.1 In this chapter, we will explain how personal income is taxable in Singapore, the various reliefs granted to an individual who is tax resident1 in Singapore, and how life insurance purchase can qualify for income tax relief.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000002",
+    "source_chunk_ids": [
+      "chapter_16__chunk_002"
+    ],
+    "chapter": "chapter_16",
+    "header": "2. TAXABLE INCOME",
+    "level": 1,
+    "context": "This chunk is from the \"Taxable Income\" chapter and specifically details what constitutes taxable income in Singapore according to the Income Tax Act 1947.",
+    "text": "<context>This chunk is from the \"Taxable Income\" chapter and specifically details what constitutes taxable income in Singapore according to the Income Tax Act 1947.</context>\n# 2. TAXABLE INCOME\n\n2.1 In Singapore, income is taxed under the Income Tax Act 1947. Section 10(1) of the Income Tax Act 1947 provides that income tax may be imposed upon the income of any person, accruing in or derived from Singapore, or received in Singapore (from outside Singapore), in respect of the following:\n\n■ gains and profits from any trade, business, profession or vocation;   \n1 gains and profits from any employment; dividends, interest or discounts; any pension, charge2 or annuity; rents, royalties, premiums and any other profits arising from property; and any gains or profits of an income nature not falling within any of the preceding items.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000003",
+    "source_chunk_ids": [
+      "chapter_16__chunk_003"
+    ],
+    "chapter": "chapter_16",
+    "header": "A. Exemption From Income Tax",
+    "level": 1,
+    "context": "This chunk is a subsection within the \"TAXABLE INCOME\" chapter, specifically detailing exemptions from income tax under the Singapore Income Tax Act 1947, including capital gains, various types of income, dividends, alimony, and specific awards.",
+    "text": "<context>This chunk is a subsection within the \"TAXABLE INCOME\" chapter, specifically detailing exemptions from income tax under the Singapore Income Tax Act 1947, including capital gains, various types of income, dividends, alimony, and specific awards.</context>\n# A. Exemption From Income Tax\n\n2.2 As a general rule, capital gains are not taxable under the Income Tax Act 1947. Receipts, such as gifts, legacies, lottery wins and capital gains are not regarded as income, and are not chargeable to income tax.\n\n2.3 In addition, certain types of income are specifically exempted from income tax. Common examples are CPF withdrawals, war pensions, certain approved pensions, death gratuities, interests on bank deposits and dividends. (Dividends derived from Singapore are taxable unless they are specifically exempted under the Income Tax Act 1947).\n\n2.4 Dividends are not taxable if they are:\n\nForeign dividends received in Singapore on or after 1 January 2004. This excludes foreign-source income received through partnerships in Singapore.   \nIncome distributions from unit trusts and real estate investment trusts (REIT), that are authorised under Section 286 of the Securities and Futures Act 2001 (excluding distributions out of franked dividends) on or after 1 January 2004.   \nOne-tier exempt dividends from companies under the one-tier corporate tax system. Under this system, tax paid by a company on its chargeable\n\nincome is the final tax. All dividends paid by a company are exempt from tax in the hands of the shareholders.\n\n2.5 With effect from the Year of Assessment 2012, the income from charge (i.e. alimony / maintenance payments and income from separation deed or court order) is also exempt from tax.\n\n2.6 The National Service Recognition Award (NSRA), given out by the Ministry of Defence and the Ministry of Home Affairs, to recognise the contributions of Singapore Citizens who serve National Service, is also exempt from tax.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000004",
+    "source_chunk_ids": [
+      "chapter_16__chunk_004"
+    ],
+    "chapter": "chapter_16",
+    "header": "3. STATUTORY INCOME, ASSESSABLE INCOME AND CHARGEABLE INCOME",
+    "level": 1,
+    "context": "This chunk defines and explains the concepts of Statutory Income, Assessable Income, and Chargeable Income, which are key components in calculating an individual's tax liability in Singapore, following the introductory sections on taxable income and exemptions.",
+    "text": "<context>This chunk defines and explains the concepts of Statutory Income, Assessable Income, and Chargeable Income, which are key components in calculating an individual's tax liability in Singapore, following the introductory sections on taxable income and exemptions.</context>\n# 3. STATUTORY INCOME, ASSESSABLE INCOME AND CHARGEABLE INCOME",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_16__small_000005",
+    "source_chunk_ids": [
+      "chapter_16__chunk_005"
+    ],
+    "chapter": "chapter_16",
+    "header": "A. Statutory Income",
+    "level": 1,
+    "context": "This chunk defines \"Statutory Income\" within the broader section on calculating an individual's taxable income, referencing its definition in the Income Tax Act and relating it to sources of income previously discussed.",
+    "text": "<context>This chunk defines \"Statutory Income\" within the broader section on calculating an individual's taxable income, referencing its definition in the Income Tax Act and relating it to sources of income previously discussed.</context>\n# A. Statutory Income\n\n3.1 According to Section 35 of the Income Tax Act 1947, statutory income refers to the full amount of income for the year preceding the Year of Assessment from each source of income (see Section 2, Paragraph 2.1 of this chapter).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000006",
+    "source_chunk_ids": [
+      "chapter_16__chunk_006"
+    ],
+    "chapter": "chapter_16",
+    "header": "B. Assessable Income",
+    "level": 1,
+    "context": "This chunk defines Assessable Income and illustrates its calculation, including allowable expenses and approved donations, as part of a broader explanation of Singapore's income tax structure (statutory, assessable, and chargeable income).",
+    "text": "<context>This chunk defines Assessable Income and illustrates its calculation, including allowable expenses and approved donations, as part of a broader explanation of Singapore's income tax structure (statutory, assessable, and chargeable income).</context>\n# B. Assessable Income\n\n3.2 Assessable Income $=$ Total Income - Allowable Expenses - Approved Donations\n\nExample Illustration:   \n\nhierarchical_json: {\"table_id\": \"chapter_16__chunk_006__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 3, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Income Items\", \"\", \"Amount\", \"\"], [\"Total Income\", \"\", \"S$60,000\", \"\"], [\"Less: Allowable Expenses\", \"\", \"(S$3,000)\", \"\"], [\"Less: Approved Donations\", \"\", \"(S$1,000)\", \"\"], [\"Assessable Income\", \"\", \"S$56,000\", \"\"]]}\n\ntable narrative: [\"The insurance product's Total Income is S$60,000.\", \"For the insurance product, Allowable Expenses are (S$3,000).\", \"The insurance product includes Approved Donations of (S$1,000).\", \"The Assessable Income for the insurance product is S$56,000.\"]\n\n3.3 Only expenses which are incurred for income-producing purposes are deductible. Notwithstanding this, certain expenses are specifically prohibited from deduction under the Income Tax Act 1947. A notable example is the running of a motor vehicle.\n\n3.4 In addition, capital allowances can only be claimed by a taxpayer if the capital asset concerned (for e.g. computer, furniture, etc.) is used for trading or business purposes. For example, capital allowances cannot be claimed on capital assets used for deriving income from an employment or from a passive rental source.\n\n3.5 A loss arising from a trade or business source can be carried forward to reduce profits of a later period. A loss that arises from a non-trade or non-business source cannot be carried forward and is effectively lost.\n\n3.6 Donations to approved charities and institutions are currently deductible at 2.5 times the amount donated. However, the government may from time to time vary the deductions allowed. In addition, unutilised donations can be carried forward for up to five years.",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_16__chunk_006__table_01",
+        "table_type": "unknown",
+        "purpose": "define_benefit",
+        "dimensions": {
+          "row": "The rows in this table describe the components of assessable income calculation for the insurance product.",
+          "col": "The columns in this table represent the income items, their description, the calculated amount, and a supplementary column.",
+          "value": "The value column contains the financial amounts associated with each income item."
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_16__chunk_006__table_01",
+          "table_type": "unknown",
+          "parse_tier": 3,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Income Items",
+              "",
+              "Amount",
+              ""
+            ],
+            [
+              "Total Income",
+              "",
+              "S$60,000",
+              ""
+            ],
+            [
+              "Less: Allowable Expenses",
+              "",
+              "(S$3,000)",
+              ""
+            ],
+            [
+              "Less: Approved Donations",
+              "",
+              "(S$1,000)",
+              ""
+            ],
+            [
+              "Assessable Income",
+              "",
+              "S$56,000",
+              ""
+            ]
+          ]
+        },
+        "narrative": [
+          "The insurance product's Total Income is S$60,000.",
+          "For the insurance product, Allowable Expenses are (S$3,000).",
+          "The insurance product includes Approved Donations of (S$1,000).",
+          "The Assessable Income for the insurance product is S$56,000."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000007",
+    "source_chunk_ids": [
+      "chapter_16__chunk_007"
+    ],
+    "chapter": "chapter_16",
+    "header": "C. Chargeable Income",
+    "level": 1,
+    "context": "This chunk defines \"Chargeable Income\" as assessable income minus personal reliefs, and explains how tax is calculated based on it, including progressive tax rates for residents and flat rates for non-residents. It follows sections on \"Statutory Income\" and \"Assessable Income\" within the broader topic of Singaporean income tax.",
+    "text": "<context>This chunk defines \"Chargeable Income\" as assessable income minus personal reliefs, and explains how tax is calculated based on it, including progressive tax rates for residents and flat rates for non-residents. It follows sections on \"Statutory Income\" and \"Assessable Income\" within the broader topic of Singaporean income tax.</context>\n# C. Chargeable Income\n\n3.7 Chargeable income of an individual is then derived from the remainder of the assessable income after deducting all personal reliefs, such as earned income relief, spouse relief, child relief, deductions for CPF and SRS contributions, etc. Since a company is not able to claim personal reliefs, the assessable income is the same as the chargeable income.\n\nExample Illustration:   \n\nhierarchical_json: {\"table_id\": \"chapter_16__chunk_007__table_01\", \"table_type\": \"unknown\", \"parse_tier\": 2, \"caption\": \"\", \"footnotes\": [], \"raw_grid\": [[\"Income ltems\", \"Amount\"], [\"Employment\", \"S$60,000\"], [\"Less:Expenses\", \"(S$3,000)\"], [\"Total Income\", \"S$57,000\"], [\"Less: Approved donations\", \"(S$1,000)\"], [\"Assessable Income\", \"S$56,000\"], [\"\", \"\"], [\"Less: Personal Reliefs\", \"(S$1,000)\"], [\"Chargeable Income\", \"S$55,000\"]], \"headers\": {\"column_headers\": [\"Income ltems\", \"Amount\"], \"row_headers\": []}, \"rows\": [{\"row_header\": \"row_0\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Employment\"}, {\"column_header\": \"Amount\", \"value\": \"S$60,000\"}]}, {\"row_header\": \"row_1\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Less:Expenses\"}, {\"column_header\": \"Amount\", \"value\": \"(S$3,000)\"}]}, {\"row_header\": \"row_2\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Total Income\"}, {\"column_header\": \"Amount\", \"value\": \"S$57,000\"}]}, {\"row_header\": \"row_3\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Less: Approved donations\"}, {\"column_header\": \"Amount\", \"value\": \"(S$1,000)\"}]}, {\"row_header\": \"row_4\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Assessable Income\"}, {\"column_header\": \"Amount\", \"value\": \"S$56,000\"}]}, {\"row_header\": \"row_5\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"\"}, {\"column_header\": \"Amount\", \"value\": \"\"}]}, {\"row_header\": \"row_6\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Less: Personal Reliefs\"}, {\"column_header\": \"Amount\", \"value\": \"(S$1,000)\"}]}, {\"row_header\": \"row_7\", \"cells\": [{\"column_header\": \"Income ltems\", \"value\": \"Chargeable Income\"}, {\"column_header\": \"Amount\", \"value\": \"S$55,000\"}]}]}\n\ntable narrative: [\"The example illustration shows that the employment income for this individual is S$60,000.\", \"The example illustration shows that expenses are deducted from employment income, totaling (S$3,000).\", \"The example illustration shows that the total income is S$57,000.\", \"The example illustration shows that approved donations are deducted from total income, amounting to (S$1,000).\", \"The example illustration shows that the assessable income is S$56,000.\", \"The example illustration shows that personal reliefs are deducted from assessable income, totaling (S$1,000).\", \"The example illustration shows that the chargeable income is S$55,000.\"]\n\n3.8 The tax payable is based on the chargeable income at the rates given in the Second Schedule attached to the Income Tax Act 1947, which is subject to change from time to time.\n\n3.9 Singapore adopts a progressive income tax regime for resident individuals. From the Year of Assessment 2017 onwards, the personal income tax rate for resident individuals will range from 2 per cent to 22 per cent. No tax is payable for chargeable income less than or equal to $\\$ \\$ 20,000$ . Tax rates for non-resident individuals will differ from resident individuals. Generally, a non-resident individual is taxed at a flat rate of $1 5 \\%$ or the resident progressive tax rate, whichever is the higher amount.",
+    "has_table": true,
+    "table_parsings": [
+      {
+        "source_chunk_id": "chapter_16__chunk_007__table_01",
+        "table_type": "unknown",
+        "purpose": "define_benefit",
+        "dimensions": {
+          "row": "income items",
+          "col": "amount",
+          "value": "monetary value"
+        },
+        "hierarchical_json": {
+          "table_id": "chapter_16__chunk_007__table_01",
+          "table_type": "unknown",
+          "parse_tier": 2,
+          "caption": "",
+          "footnotes": [],
+          "raw_grid": [
+            [
+              "Income ltems",
+              "Amount"
+            ],
+            [
+              "Employment",
+              "S$60,000"
+            ],
+            [
+              "Less:Expenses",
+              "(S$3,000)"
+            ],
+            [
+              "Total Income",
+              "S$57,000"
+            ],
+            [
+              "Less: Approved donations",
+              "(S$1,000)"
+            ],
+            [
+              "Assessable Income",
+              "S$56,000"
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "Less: Personal Reliefs",
+              "(S$1,000)"
+            ],
+            [
+              "Chargeable Income",
+              "S$55,000"
+            ]
+          ],
+          "headers": {
+            "column_headers": [
+              "Income ltems",
+              "Amount"
+            ],
+            "row_headers": []
+          },
+          "rows": [
+            {
+              "row_header": "row_0",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Employment"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "S$60,000"
+                }
+              ]
+            },
+            {
+              "row_header": "row_1",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Less:Expenses"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "(S$3,000)"
+                }
+              ]
+            },
+            {
+              "row_header": "row_2",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Total Income"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "S$57,000"
+                }
+              ]
+            },
+            {
+              "row_header": "row_3",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Less: Approved donations"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "(S$1,000)"
+                }
+              ]
+            },
+            {
+              "row_header": "row_4",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Assessable Income"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "S$56,000"
+                }
+              ]
+            },
+            {
+              "row_header": "row_5",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": ""
+                },
+                {
+                  "column_header": "Amount",
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "row_header": "row_6",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Less: Personal Reliefs"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "(S$1,000)"
+                }
+              ]
+            },
+            {
+              "row_header": "row_7",
+              "cells": [
+                {
+                  "column_header": "Income ltems",
+                  "value": "Chargeable Income"
+                },
+                {
+                  "column_header": "Amount",
+                  "value": "S$55,000"
+                }
+              ]
+            }
+          ]
+        },
+        "narrative": [
+          "The example illustration shows that the employment income for this individual is S$60,000.",
+          "The example illustration shows that expenses are deducted from employment income, totaling (S$3,000).",
+          "The example illustration shows that the total income is S$57,000.",
+          "The example illustration shows that approved donations are deducted from total income, amounting to (S$1,000).",
+          "The example illustration shows that the assessable income is S$56,000.",
+          "The example illustration shows that personal reliefs are deducted from assessable income, totaling (S$1,000).",
+          "The example illustration shows that the chargeable income is S$55,000."
+        ]
+      }
+    ],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000008",
+    "source_chunk_ids": [
+      "chapter_16__chunk_008"
+    ],
+    "chapter": "chapter_16",
+    "header": "4. PERSONAL RELIEFS",
+    "level": 1,
+    "context": "This section introduces and explains the various personal reliefs available to resident individuals for income tax purposes in Singapore, noting that these reliefs can change annually.",
+    "text": "<context>This section introduces and explains the various personal reliefs available to resident individuals for income tax purposes in Singapore, noting that these reliefs can change annually.</context>\n# 4. PERSONAL RELIEFS\n\n4.1 In this chapter, we will focus only on the various personal reliefs granted to resident individuals. Personal Reliefs are granted only to resident individuals. As the government varies the reliefs periodically after each “Budget” release, it is important that advisers are updated on the latest rates / amounts permitted as they do differ from year to year. The following are the types of reliefs granted to individuals.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000009",
+    "source_chunk_ids": [
+      "chapter_16__chunk_009"
+    ],
+    "chapter": "chapter_16",
+    "header": "A. Earned Income Relief",
+    "level": 1,
+    "context": "This chunk is part of the \"PERSONAL RELIEFS\" section, specifically detailing the \"Earned Income Relief\" and explaining its purpose.",
+    "text": "<context>This chunk is part of the \"PERSONAL RELIEFS\" section, specifically detailing the \"Earned Income Relief\" and explaining its purpose.</context>\n# A. Earned Income Relief\n\n4.2 “Earned income relief” is a relief to provide recognition for individuals who receive income from employment, trade, business, profession or vocation less allowable expenses.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000010",
+    "source_chunk_ids": [
+      "chapter_16__chunk_010"
+    ],
+    "chapter": "chapter_16",
+    "header": "B. NSman (Self / Wife / Parent) Relief",
+    "level": 1,
+    "context": "This chunk discusses the \"NSman Relief,\" a specific personal tax relief available to individuals in Singapore who have completed National Service, and provides details on the associated wife and parent reliefs. It falls under the broader section on Personal Reliefs, which are deductions granted to resident individuals to reduce their taxable income.",
+    "text": "<context>This chunk discusses the \"NSman Relief,\" a specific personal tax relief available to individuals in Singapore who have completed National Service, and provides details on the associated wife and parent reliefs. It falls under the broader section on Personal Reliefs, which are deductions granted to resident individuals to reduce their taxable income.</context>\n# B. NSman (Self / Wife / Parent) Relief\n\n4.3 “NSman relief” is a relief to recognise the contributions of National Service men (NSmen) and NS Key Appointment Holders. The relief (self) will be given when a taxpayer has completed his full-time National Service.\n\n4.4 To recognise the support given by wives to their husbands and parents to their children, NSman (wife) relief and NSman (parent) relief are granted. Parents of deceased NSmen are eligible for the relief. Widows of deceased NSmen are also eligible for the relief unless they remarry.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000011",
+    "source_chunk_ids": [
+      "chapter_16__chunk_011"
+    ],
+    "chapter": "chapter_16",
+    "header": "C. Spouse / Handicapped Spouse Relief",
+    "level": 1,
+    "context": "This chunk is located within the \"PERSONAL RELIEFS\" section of the document, specifically detailing the \"Spouse / Handicapped Spouse Relief\" and its conditions.",
+    "text": "<context>This chunk is located within the \"PERSONAL RELIEFS\" section of the document, specifically detailing the \"Spouse / Handicapped Spouse Relief\" and its conditions.</context>\n# C. Spouse / Handicapped Spouse Relief\n\n4.5 “Spouse relief” is an expansion of the wife relief to support family formation and provide recognition to male and female taxpayers supporting their spouses or ex-spouses.\n\nWith effect from the Year of Assessment 2012, the taxpayer (the husband) cannot claim the spouse relief for alimony paid to his ex-wife.\n\n4.7 The taxpayer cannot claim this relief if he has already claimed handicapped spouse relief, or someone is claiming any relief (other than grandparent caregiver relief) on his wife or ex-wife.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000012",
+    "source_chunk_ids": [
+      "chapter_16__chunk_012"
+    ],
+    "chapter": "chapter_16",
+    "header": "D. Qualifying / Handicapped Child Relief",
+    "level": 1,
+    "context": "This chunk is a detailed explanation of the Qualifying Child Relief (QCR) and Handicapped Child Relief (HCR) available to Singapore taxpayers, outlining eligibility criteria and conditions. It falls under the section \"4. PERSONAL RELIEFS,\" which discusses various tax reliefs granted to resident individuals.",
+    "text": "<context>This chunk is a detailed explanation of the Qualifying Child Relief (QCR) and Handicapped Child Relief (HCR) available to Singapore taxpayers, outlining eligibility criteria and conditions. It falls under the section \"4. PERSONAL RELIEFS,\" which discusses various tax reliefs granted to resident individuals.</context>\n# D. Qualifying / Handicapped Child Relief\n\n4.8 “Qualifying child relief (QCR) / handicapped child relief $( \\mathsf { H C R } ) ^ { \\prime \\prime }$ are reliefs given in recognition of families’ efforts in supporting their children and caring for handicapped children.\n\n4.9 Each qualifying child is eligible only for either QCR or HCR, and may be shared with a taxpayer’s spouse, based on the proportion agreed by both parties. The amount of reliefs will depend on the order of children (based on date of birth or date of legal adoption).\n\n4.10 The qualifying child must fulfil all the conditions below and must:\n\n□ be a legitimate child, step-child or legally adopted child; be below 16 years old or studying full-time at any university, college, or other educational institution; and not have an annual income (includes National Service Allowances, income from internship and attachment but excludes scholarships, bursaries and similar allowances) exceeding $\\$ \\$ 4,000$ in the previous year. Note that the income threshold may vary from year to year.\n\n4.11 To claim for HCR, the qualifying child must be mentally or physically handicapped, in addition to only the first two points above.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000013",
+    "source_chunk_ids": [
+      "chapter_16__chunk_013"
+    ],
+    "chapter": "chapter_16",
+    "header": "E. Working Mother’s Child Relief",
+    "level": 1,
+    "context": "This chunk is located in section 4.E, which details various personal income tax reliefs available to resident individuals in Singapore. Specifically, it explains the Working Mother's Child Relief (WMCR), its objectives, and the conditions for claiming it, including its interaction with Qualifying Child Relief (QCR) and Handicapped Child Relief (HCR).",
+    "text": "<context>This chunk is located in section 4.E, which details various personal income tax reliefs available to resident individuals in Singapore. Specifically, it explains the Working Mother's Child Relief (WMCR), its objectives, and the conditions for claiming it, including its interaction with Qualifying Child Relief (QCR) and Handicapped Child Relief (HCR).</context>\n# E. Working Mother’s Child Relief\n\n4.12 “Working mother’s child relief (WMCR)” is a relief introduced to serve the following objectives:\n\n to reward families with children holding Singapore citizenship; to encourage parents to take up citizenship for their children; and to encourage married women to remain in the workforce after having children.\n\n4.13 The amount of WMCR claimable for each child is based on a specified percentage of the working mother’s earned income corresponding to the child order, subject to a maximum amount. This relief is claimable on the same child, even if the working mother and / or husband may have already claimed QCR or HCR. However, the member must satisfy the following conditions.\n\nQCR/HCR claims will be allowed first (it does not matter whether the claim is made by the member or his/her spouse)   \nThe total cap (i.e. QCR/HCR plus WMCR) is $\\$ 50,000$ per child; and   \nThe WMCR is limited to the remaining balance after the QCR/HCR claim is allowed.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000014",
+    "source_chunk_ids": [
+      "chapter_16__chunk_014"
+    ],
+    "chapter": "chapter_16",
+    "header": "F. Handicapped Brother / Sister Relief",
+    "level": 1,
+    "context": "This chunk details the \"Handicapped Brother / Sister Relief\" as part of the Personal Reliefs section in a document explaining Singapore's income tax system.",
+    "text": "<context>This chunk details the \"Handicapped Brother / Sister Relief\" as part of the Personal Reliefs section in a document explaining Singapore's income tax system.</context>\n# F. Handicapped Brother / Sister Relief\n\n4.14 “Handicapped brother / sister relief” is a relief given to provide recognition for individuals supporting their physically or mentally handicapped siblings or siblings-in-law who lives in Singapore.\n\n4.15 A taxpayer can claim this relief if he has supported his handicapped sibling or sibling-in-law who lived with the taxpayer in the same household in the previous year, or he has incurred $\\$ \\$ 2,000$ or more in supporting him/her in the previous year.\n\n4.16 The taxpayer cannot claim this relief if someone else has claimed any other reliefs on the same sibling or sibling-in-law. For example, if the taxpayer’s father has claimed Handicapped Child Relief on his handicapped brother, the taxpayer and his other siblings cannot claim Handicapped Brother Relief on the handicapped brother.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000015",
+    "source_chunk_ids": [
+      "chapter_16__chunk_015"
+    ],
+    "chapter": "chapter_16",
+    "header": "G. Parent / Handicapped Parent Relief",
+    "level": 1,
+    "context": "This section describes the \"Parent / Handicapped Parent Relief,\" which is one of several personal reliefs available to resident individuals in Singapore, as detailed in Chapter 4.",
+    "text": "<context>This section describes the \"Parent / Handicapped Parent Relief,\" which is one of several personal reliefs available to resident individuals in Singapore, as detailed in Chapter 4.</context>\n# G. Parent / Handicapped Parent Relief\n\n4.17 “Parent / handicapped parent relief” is a relief to promote filial piety and provides recognition to individuals supporting their parents / handicapped parents in Singapore.\n\nA taxpayer may claim this relief if he has supported his or his spouse’s parents and grandparents in the previous year, for up to two dependants.\n\n4.19 Full amount of this relief can be claimed even if the dependant has passed away in the previous year (provided all conditions as stated above are satisfied).",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000016",
+    "source_chunk_ids": [
+      "chapter_16__chunk_016"
+    ],
+    "chapter": "chapter_16",
+    "header": "H. Grandparent Caregiver Relief",
+    "level": 1,
+    "context": "This section details various personal reliefs available to individuals in Singapore for tax purposes. Specifically, it defines \"Grandparent Caregiver Relief\" (GCR), which recognizes the role of grandparents as caregivers and aids working mothers.",
+    "text": "<context>This section details various personal reliefs available to individuals in Singapore for tax purposes. Specifically, it defines \"Grandparent Caregiver Relief\" (GCR), which recognizes the role of grandparents as caregivers and aids working mothers.</context>\n# H. Grandparent Caregiver Relief\n\n4.20 “Grandparent caregiver relief” (GCR) is a relief given to provide recognition for grandparents who play the role of a caregiver, and to help working mothers take care of their children.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000017",
+    "source_chunk_ids": [
+      "chapter_16__chunk_017"
+    ],
+    "chapter": "chapter_16",
+    "header": "I. Life Insurance Relief",
+    "level": 1,
+    "context": "This section details the conditions and limitations for claiming tax relief on life insurance premiums paid by an individual or their spouse, as part of the personal reliefs available to resident individuals in Singapore.",
+    "text": "<context>This section details the conditions and limitations for claiming tax relief on life insurance premiums paid by an individual or their spouse, as part of the personal reliefs available to resident individuals in Singapore.</context>\n# I. Life Insurance Relief\n\n“Life insurance relief” is a relief on annual insurance premiums paid on the taxpayer’s or his wife’s life insurance policies.\n\n4.22 The premiums paid for a life insurance policy are allowed to be deducted from the assessable income, but are subject to the following conditions:\n\nthe policy must be on the life of the taxpayer or his wife, and in the case of a female taxpayer, on her life only;   \nthe policy must be issued by a life insurer which has an office or branch in Singapore (this condition is not applicable to policies effected before 10 August 1973);   \nthe amount to be deducted shall not exceed $7 \\%$ of the capital sum secured on death from such policy exclusive of any additional benefit by way of bonus, profits, or otherwise; and   \nthe taxpayer is not eligible for life insurance relief if his total compulsory employee CPF contribution and/or voluntary CPF contribution in the previous year is $\\$ \\$ 5,000$ or more. If his CPF contribution is less than $\\$ \\$ 5,000$ , he can claim the lower of the difference between $\\$ \\$ 5,000$ and the CPF contribution, or up to $7 \\%$ of the insured value of his own / his wife’s life, or the amount of insurance premiums paid, whichever is lower.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000018",
+    "source_chunk_ids": [
+      "chapter_16__chunk_018"
+    ],
+    "chapter": "chapter_16",
+    "header": "J. Central Provident Fund (CPF) / Provident Fund Relief For Employees",
+    "level": 1,
+    "context": "This chunk is part of section 4 \"PERSONAL RELIEFS\", specifically subsection J which details relief available for employees' CPF contributions. It explains what CPF/Provident Fund relief is, who can claim it, and conditions under which it is not available.",
+    "text": "<context>This chunk is part of section 4 \"PERSONAL RELIEFS\", specifically subsection J which details relief available for employees' CPF contributions. It explains what CPF/Provident Fund relief is, who can claim it, and conditions under which it is not available.</context>\n# J. Central Provident Fund (CPF) / Provident Fund Relief For Employees\n\n“CPF / Provident fund relief” is a relief given to encourage individuals to save for their retirement.\n\n4.24\n\nEmployees who are Singapore Citizens / Permanent Residents may claim CPF/ Provident Fund relief on compulsory employee CPF contributions or contributions to an approved pension or provident fund.\n\n4.25 However, no relief is available for:\n\nvoluntary contributions that are made in excess of the compulsory contributions under the CPF Act; CPF contributions made in respect of overseas employment while the taxpayer is seconded or posted overseas for work; and CPF contribution on additional wages that exceed the CPF cap on wages from related employers (employed concurrently by 2 or more related employers in a year).\n\nRefer to IRAS website on CPF Relief for employees for more info.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000019",
+    "source_chunk_ids": [
+      "chapter_16__chunk_019"
+    ],
+    "chapter": "chapter_16",
+    "header": "K. CPF Relief For Self-Employed Persons",
+    "level": 1,
+    "context": "This chunk details the specific rules and limitations regarding CPF relief for self-employed individuals, following the general explanation of personal reliefs and preceding the section on tax relief for cash top-ups to retirement and healthcare savings.",
+    "text": "<context>This chunk details the specific rules and limitations regarding CPF relief for self-employed individuals, following the general explanation of personal reliefs and preceding the section on tax relief for cash top-ups to retirement and healthcare savings.</context>\n# K. CPF Relief For Self-Employed Persons\n\n4.26 It is compulsory for an individual who is self-employed, is a Singapore Citizen or Singapore Permanent Resident and earns a yearly net trade income of more than $\\$ \\$ 6,000$ to make MediSave contributions.\n\n4.27 For the year of assessment, the taxpayer’s tax relief for his Medisave and voluntary CPF contributions will be capped at the lower of:\n\n$3 7 \\%$ of his net trade income assessed; or CPF relief cap of $\\$ 37,740$ ; or actual amount contributed by him.\n\n4.28 No CPF relief will be allowed in respect of the taxpayer’s compulsory Medisave or voluntary CPF contributions made in the previous year if he has no assessable net trade income for the Year of Assessment.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000020",
+    "source_chunk_ids": [
+      "chapter_16__chunk_020"
+    ],
+    "chapter": "chapter_16",
+    "header": "L. Tax Relief for Cash Top-ups To Retirement And Healthcare Savings",
+    "level": 1,
+    "context": "This chunk details tax relief for cash top-ups to retirement and healthcare savings accounts, outlining eligibility, conditions, and limits for both self-contributions and contributions to loved ones, and is part of the broader discussion on personal reliefs available to individuals in Singapore.",
+    "text": "<context>This chunk details tax relief for cash top-ups to retirement and healthcare savings accounts, outlining eligibility, conditions, and limits for both self-contributions and contributions to loved ones, and is part of the broader discussion on personal reliefs available to individuals in Singapore.</context>\n# L. Tax Relief for Cash Top-ups To Retirement And Healthcare Savings\n\n4.29 Tax relief is given on cash top-ups to the Special/Retirement/MediSave Account to encourage individuals to save for their own or their family members’ retirement and healthcare needs.\n\n4.30 For top-ups to the Special/Retirement Account, the tax relief applies to cash topups up to the current Full Retirement Sum. For top-ups to the MediSave Account, the tax relief applies to cash top-ups up to the individual’s current Basic Healthcare Sum.\n\n4.31 The relief is given:\n\nFor top-ups to self - if the taxpayer or his employer on his behalf has made   \ncash top-ups in the preceding year, to his own: Special Account (for recipients below age 55); or Retirement Account (for recipients aged 55 and above); or MediSave Account\n\nFor top-ups to loved ones - if the taxpayer has made cash top-ups in the preceding year, to his loved ones.\n\nParents or Parents-in-law;   \nGrandparents or Grandparents-in-law; Spouse; and/or   \nSiblings.\n\n4.32 To claim tax relief for cash top-ups to the taxpayer’s spouse or siblings, the recipient must not have an annual income exceeding $\\$ \\$ 4,000$ in the year preceding the year of the top-up.\n\n4.33 Annual income includes taxable income (e.g. trade, employment and rental), tax exempt income (e.g. bank interest, dividends and pension) and foreignsourced income regardless of whether it has been remitted to Singapore. This income threshold does not apply to parents, grandparents, physically/mentally handicapped spouse or siblings.\n\n4.34 For cash top-ups to an employee, the employer will be eligible for an equivalent amount of tax deductions for the cash top-ups made, while the employee will also receive tax relief of up to $\\$ 8,000$ per calendar year. The tax relief that the employee will receive takes into consideration any cash top-ups that he has made to his own CPF accounts.\n\n4.35 There is a personal income tax relief cap of $\\$ 80,000$ , which applies to all tax reliefs, including tax relief on cash top-up made to CPF accounts.\n\nWith effect from 1 January 2022, members who top up their or their loved ones’ Special/Retirement/MediSave Account in cash will enjoy tax relief of up to $\\$ 48,000$ for top ups to",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000021",
+    "source_chunk_ids": [
+      "chapter_16__chunk_020"
+    ],
+    "chapter": "chapter_16",
+    "header": "L. Tax Relief for Cash Top-ups To Retirement And Healthcare Savings",
+    "level": 1,
+    "context": "This chunk is part of section 4. L. Tax Relief for Cash Top-ups To Retirement And Healthcare Savings, which details tax reliefs available for individuals making cash top-ups to their CPF accounts and those of their loved ones.",
+    "text": "<context>This chunk is part of section 4. L. Tax Relief for Cash Top-ups To Retirement And Healthcare Savings, which details tax reliefs available for individuals making cash top-ups to their CPF accounts and those of their loved ones.</context>\nof $\\$ 80,000$ , which applies to all tax reliefs, including tax relief on cash top-up made to CPF accounts.\n\nWith effect from 1 January 2022, members who top up their or their loved ones’ Special/Retirement/MediSave Account in cash will enjoy tax relief of up to $\\$ 48,000$ for top ups to their own Special/Retirement/MediSave Account, and an additional $\\$ 4$ for top ups to their loved ones’ Special/Retirement/MediSave Account.\n\n4.36 For details on tax relief, do visit the IRAS website at: https://www.iras.gov.sg/taxes/individual-income-tax/employees/deductionsfor-individuals",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000022",
+    "source_chunk_ids": [
+      "chapter_16__chunk_021"
+    ],
+    "chapter": "chapter_16",
+    "header": "M. Course Fees Relief",
+    "level": 1,
+    "context": "This chunk details the conditions and limitations for claiming \"Course Fees Relief\" under Singapore's income tax laws, which is part of a larger section on various personal reliefs available to resident individuals.",
+    "text": "<context>This chunk details the conditions and limitations for claiming \"Course Fees Relief\" under Singapore's income tax laws, which is part of a larger section on various personal reliefs available to resident individuals.</context>\n# M. Course Fees Relief\n\n“Course fees relief” is given to encourage an individual to continuously upgrade himself, so as to enhance his lifelong employability.\n\n4.38 An individual can claim relief for the current Year of Assessment (YA) in respect of the course fees incurred in the previous year for:\n\n(a) Any course, seminar or conference he attended in the previous year leading to an approved academic, professional or vocation qualification;   \n(b) Any course, seminar or conference he attended in the previous year that is relevant to his current employment, trade, business, profession or vocation; or   \n(c) Any course, seminar or conference that he completed two years before the previous year which is relevant to your new employment, trade, business, profession or vocation in the previous year.\n\n4.39 The following courses are not eligible for relief:\n\n(a) Courses, seminars or conferences for recreational, leisure or hobby (e.g. photography, language and sports courses);   \n(b) Courses, seminars and conferences for general skills or knowledge (e.g. Internet surfing course, social media skills, basic website building skills and Microsoft Office skills); and   \n(c) Polytechnic/University courses if graduates have never exercised any employment or carried on any trade, profession or vocation previously. Vacation jobs or internships are not considered employment for the purpose of this relief.\n\n4.40 The allowable course fees include registration fees or enrolment fees, examination fees, tuition fees and aptitude test fees (for computer courses).\n\n4.41 With effect from the Year of Assessment 2009, a taxpayer is allowed to defer this claim if he is unable to claim relief in the preceding year, because his assessable income did not exceed $\\$ \\$ 22,000$ . This will benefit taxpayers who may not be able to benefit in the Year of Assessment for which the expense is actually incurred. The taxpayer should claim the tax relief within two Years of Assessment, as soon as he has assessable income above $\\$ \\$ 22,000$ .",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000023",
+    "source_chunk_ids": [
+      "chapter_16__chunk_022"
+    ],
+    "chapter": "chapter_16",
+    "header": "N. Foreign Domestic Worker Levy Relief",
+    "level": 1,
+    "context": "This chunk is part of Section 4, \"PERSONAL RELIEFS,\" specifically under subsection \"N. Foreign Domestic Worker Levy Relief.\" It details the conditions and benefits of this particular tax relief.",
+    "text": "<context>This chunk is part of Section 4, \"PERSONAL RELIEFS,\" specifically under subsection \"N. Foreign Domestic Worker Levy Relief.\" It details the conditions and benefits of this particular tax relief.</context>\n# N. Foreign Domestic Worker Levy Relief\n\n“Foreign Domestic Worker levy relief” is a relief given to encourage married women to remain in the workforce and to also encourage procreation.\n\n4.43 To qualify for this relief, the taxpayer must be:\n\na married woman living with her husband; or   \na married woman, and her husband not being a resident of Singapore; or a woman who is separated, divorced or widowed, and living with her unmarried child for whom she can claim child relief.\n\n4.44 This relief is twice the amount of domestic worker levy paid for one foreign domestic worker. The wife can claim the relief to be offset against her earned income, even if the levy is paid by the husband.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000024",
+    "source_chunk_ids": [
+      "chapter_16__chunk_023"
+    ],
+    "chapter": "chapter_16",
+    "header": "O. Supplementary Retirement Scheme (SRS) Relief",
+    "level": 1,
+    "context": "This chunk is located within Section 4, titled \"PERSONAL RELIEFS,\" specifically under subsection \"O. Supplementary Retirement Scheme (SRS) Relief.\" It explains the SRS as a voluntary retirement savings scheme and the associated tax reliefs for contributions.",
+    "text": "<context>This chunk is located within Section 4, titled \"PERSONAL RELIEFS,\" specifically under subsection \"O. Supplementary Retirement Scheme (SRS) Relief.\" It explains the SRS as a voluntary retirement savings scheme and the associated tax reliefs for contributions.</context>\n# O. Supplementary Retirement Scheme (SRS) Relief\n\n4.45 SRS is a voluntary scheme introduced by the Government to encourage individuals to save more for retirement on top of the contributions made to the CPF. SRS contributions may be used to purchase various investment instruments. SRS participants enjoy tax reliefs for contributions made into their SRS accounts, in the Year of Assessment following the year of contribution. Investment returns are tax-free before withdrawal and only $50 \\%$ of the withdrawals from SRS are taxable at retirement. The SRS contribution rate for Singaporeans and Singapore Permanent Residents (SPRs) is $1 5 \\%$ while the SRS contribution rate for foreigners is $3 5 \\%$ in view of the fact that they do not enjoy tax relief from CPF contributions. The respective yearly maximum SRS contributions are also capped. This will help the taxpayer to reduce his chargeable income and in return reduce the tax payable.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000025",
+    "source_chunk_ids": [
+      "chapter_16__chunk_024"
+    ],
+    "chapter": "chapter_16",
+    "header": "P. Matched Retirement Savings Scheme (MRSS)",
+    "level": 1,
+    "context": "This section details the Matched Retirement Savings Scheme (MRSS), a government initiative to help senior citizens build retirement savings through matched cash top-ups to their Retirement Accounts, and outlines the eligibility criteria for this scheme. It falls under the broader category of \"Personal Reliefs\" in the document, specifically discussing various tax benefits and schemes available to individuals.",
+    "text": "<context>This section details the Matched Retirement Savings Scheme (MRSS), a government initiative to help senior citizens build retirement savings through matched cash top-ups to their Retirement Accounts, and outlines the eligibility criteria for this scheme. It falls under the broader category of \"Personal Reliefs\" in the document, specifically discussing various tax benefits and schemes available to individuals.</context>\n# P. Matched Retirement Savings Scheme (MRSS)\n\n4.46 The Matched Retirement Savings Scheme (MRSS) was launched in 2021 to help senior Singapore Citizens who have not reached the current Basic Retirement Sum, to build their retirement savings. From 2021 to 2025, the Government will match every dollar of cash top-up made to eligible members’ Retirement Accounts, up to an annual cap of $\\$ 600$ . Anyone, including family members, employers or members of the community, can make cash top-ups to eligible members. These cash top-ups can qualify for the tax relief, subject to the conditions above.\n\n4.47 Eligibility is assessed automatically annually, and eligible members will be notified by CPFB in January each year:\n\nAge 55 to 70 (both inclusive).   \nRetirement savings are less than the current BRS. Average monthly income is not more than $\\$ \\$ 4,000$ . This covers a majority of senior workers.   \nAnnual value of residence is not more than $\\$ 123,000$ . This covers most HDB flats.   \nOwn not more than one property.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000026",
+    "source_chunk_ids": [
+      "chapter_16__chunk_025"
+    ],
+    "chapter": "chapter_16",
+    "header": "Q. Additional MediSave Contribution Scheme (AMCS) For Employees",
+    "level": 1,
+    "context": "This section details the Additional MediSave Contribution Scheme (AMCS) for employees, which is a voluntary employer-sponsored plan to enhance employee healthcare savings, and explains its tax implications. It is part of a broader discussion on various tax reliefs and benefits available to individuals in Singapore, particularly under Section 4.",
+    "text": "<context>This section details the Additional MediSave Contribution Scheme (AMCS) for employees, which is a voluntary employer-sponsored plan to enhance employee healthcare savings, and explains its tax implications. It is part of a broader discussion on various tax reliefs and benefits available to individuals in Singapore, particularly under Section 4.</context>\n# Q. Additional MediSave Contribution Scheme (AMCS) For Employees\n\n4.48 AMCS is a voluntary scheme for employers to contribute more to their employees' MA to help build up their savings for employees' healthcare needs. Employers can make contributions under AMCS of any amount up to $\\$ 2,730$ per employee per year. AMCS contributions are not subject to Annual Limit nor the employee’s Basic Healthcare Sum (BHS). It is also tax free for the employees and employers can enjoy certain tax benefits.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000027",
+    "source_chunk_ids": [
+      "chapter_16__chunk_026"
+    ],
+    "chapter": "chapter_16",
+    "header": "5. REBATES",
+    "level": 1,
+    "context": "This section discusses rebates, which are distinct from reliefs and offer a direct reduction in tax payable. It specifically details the Parenthood Tax Rebate.",
+    "text": "<context>This section discusses rebates, which are distinct from reliefs and offer a direct reduction in tax payable. It specifically details the Parenthood Tax Rebate.</context>\n# 5. REBATES\n\n5.1 In addition to the reliefs, the Government may also grant rebates. A rebate is a reduction of tax otherwise payable by a taxpayer.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000028",
+    "source_chunk_ids": [
+      "chapter_16__chunk_027"
+    ],
+    "chapter": "chapter_16",
+    "header": "A. Parenthood Tax Rebate",
+    "level": 1,
+    "context": "This chunk discusses the Parenthood Tax Rebate, a type of tax rebate offered to married Singapore resident individuals as an incentive to have children, detailing the rebate amounts for each child. It is part of Chapter 5, which covers various tax rebates.",
+    "text": "<context>This chunk discusses the Parenthood Tax Rebate, a type of tax rebate offered to married Singapore resident individuals as an incentive to have children, detailing the rebate amounts for each child. It is part of Chapter 5, which covers various tax rebates.</context>\n# A. Parenthood Tax Rebate\n\n5.2 Parenthood tax rebate is a rebate given to married Singapore resident individuals, to encourage them to have more children. Rebates are given only if the child is a Singaporean. The rebate can be used to offset the income tax payable of the parents, in any proportion as agreed by the spouses. Any rebate unutilised can be carried forward to offset against future tax payable of the parents.\n\n5.3 The rebates available are:\n\n${ \\uparrow } ^ { \\mathsf { s t } }$ child S\\$5,000   \n$2 ^ { \\mathsf { n d } }$ child S\\$10,000   \n$\\mathfrak { 3 ^ { \\mathrm { { r d } } } }$ child onwards S\\$20,000",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000029",
+    "source_chunk_ids": [
+      "chapter_16__chunk_028"
+    ],
+    "chapter": "chapter_16",
+    "header": "6. WHO WILL BENEFIT FROM INCOME TAX RELIEF BY TAKING UP AN INSURANCE POLICY?",
+    "level": 1,
+    "context": "This section details specific groups of individuals who can benefit from life insurance income tax relief, particularly self-employed individuals and foreigners, and notes limitations on the relief amount due to aggregation with CPF contributions.",
+    "text": "<context>This section details specific groups of individuals who can benefit from life insurance income tax relief, particularly self-employed individuals and foreigners, and notes limitations on the relief amount due to aggregation with CPF contributions.</context>\n# 6. WHO WILL BENEFIT FROM INCOME TAX RELIEF BY TAKING UP AN INSURANCE POLICY?\n\n6.1 The individuals who may benefit most from income tax relief by taking up insurance policies on their own lives or on their wives’ lives include:\n\nindividuals who are self-employed and who do not make voluntary CPF contributions, such as businessmen, doctors, lawyers, accountants, etc. practising as sole proprietors or in partnerships; and   \nforeigners working in Singapore being exempted from the CPF contribution scheme.\n\n6.2 However, it should be noted that the amount of benefit for tax relief for life insurance premiums is relatively small, being limited to only $\\$ 45,000$ , and due to the fact that this relief is aggregated with the relief for CPF contributions.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000030",
+    "source_chunk_ids": [
+      "chapter_16__chunk_029"
+    ],
+    "chapter": "chapter_16",
+    "header": "7. TAX BENEFIT FOR SRS PARTICIPANTS",
+    "level": 1,
+    "context": "This section, detailing tax benefits for SRS participants, follows the explanations of various personal reliefs available to individuals. It discusses tax concessions on withdrawals from SRS accounts and the tax benefits associated with purchasing annuities through SRS.",
+    "text": "<context>This section, detailing tax benefits for SRS participants, follows the explanations of various personal reliefs available to individuals. It discusses tax concessions on withdrawals from SRS accounts and the tax benefits associated with purchasing annuities through SRS.</context>\n# 7. TAX BENEFIT FOR SRS PARTICIPANTS",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": true
+  },
+  {
+    "chunk_id": "chapter_16__small_000031",
+    "source_chunk_ids": [
+      "chapter_16__chunk_030"
+    ],
+    "chapter": "chapter_16",
+    "header": "A. Tax Concession On Withdrawal",
+    "level": 1,
+    "context": "This chunk details the tax concessions available to Supplementary Retirement Scheme (SRS) participants upon withdrawal from their accounts, including conditions for reduced tax liability and penalties for premature withdrawals. It falls under Section 7, \"TAX BENEFIT FOR SRS PARTICIPANTS,\" of the document.",
+    "text": "<context>This chunk details the tax concessions available to Supplementary Retirement Scheme (SRS) participants upon withdrawal from their accounts, including conditions for reduced tax liability and penalties for premature withdrawals. It falls under Section 7, \"TAX BENEFIT FOR SRS PARTICIPANTS,\" of the document.</context>\n# A. Tax Concession On Withdrawal\n\n7.1 Besides enjoying SRS reliefs for contributions made, SRS participants will also receive tax concessions for withdrawals from their SRS accounts. Only $50 \\%$ of the amount withdrawn is subject to tax, if the withdrawal is made:\n\non or after the statutory retirement age prevailing at the time of the first contribution;   \nupon the death of the SRS participant;   \non medical grounds; or   \nby a foreigner (who is not a Singapore permanent resident) who has maintained his SRS account for at least ten years from the date of his first contribution, subject to a withholding tax at the prevailing non-resident tax rate of $2 2 \\%$ at the point of withdrawal. If he is not a Singapore tax resident, the actual tax payable on his SRS withdrawal will be $1 5 \\%$ or the progressive resident rates, whichever is higher.\n\n7.2 The SRS withdrawal may be made in a lump sum or spread over a maximum period of ten years.\n\n7.3 For premature withdrawal made before the statutory retirement age, $100 \\%$ of the sum withdrawn will be subject to tax. A $5 \\%$ penalty for premature withdrawal will also be imposed. This is non-refundable and is separate from any withholding tax as mentioned above.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000032",
+    "source_chunk_ids": [
+      "chapter_16__chunk_031"
+    ],
+    "chapter": "chapter_16",
+    "header": "B. Tax Benefits For Annuities Purchased Through SRS",
+    "level": 1,
+    "context": "This chunk discusses tax benefits for Supplementary Retirement Scheme (SRS) participants, specifically focusing on the tax treatment of annuity payments received for life. It is part of the broader section on \"TAX BENEFIT FOR SRS PARTICIPANTS.\"",
+    "text": "<context>This chunk discusses tax benefits for Supplementary Retirement Scheme (SRS) participants, specifically focusing on the tax treatment of annuity payments received for life. It is part of the broader section on \"TAX BENEFIT FOR SRS PARTICIPANTS.\"</context>\n# B. Tax Benefits For Annuities Purchased Through SRS\n\n7.4 For investments in life annuities, the 10-year withdrawal period does not apply. So long as the SRS participant continues to receive the annuity payments for life, $50 \\%$ of the annuity payments will be subject to tax each year.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000033",
+    "source_chunk_ids": [
+      "chapter_16__chunk_032"
+    ],
+    "chapter": "chapter_16",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk provides definitions and explanations for key income tax concepts in Singapore, including taxable income, statutory income, assessable income, chargeable income, and various personal reliefs like Earned Income Relief, NSman Relief, Spouse Relief, Child Reliefs, and Working Mother's Child Relief. It appears in a section detailing important concepts related to income tax.",
+    "text": "<context>This chunk provides definitions and explanations for key income tax concepts in Singapore, including taxable income, statutory income, assessable income, chargeable income, and various personal reliefs like Earned Income Relief, NSman Relief, Spouse Relief, Child Reliefs, and Working Mother's Child Relief. It appears in a section detailing important concepts related to income tax.</context>\n# Chapter summary:\n\n- Definition or Explanation: Taxable Income\nIn Singapore, income is taxed under the Income Tax Act 1947. Section 10(1) of the Income Tax Act 1947 provides that income tax may be imposed upon the income ofany person,accruing in or derived from Singapore, or received in Singapore (fromoutside Singapore).\n\n- Definition or Explanation: Statutory Income\nAccording to Section 35 of the Income Tax Act 1947, statutory income refers to the full amount of income for the year preceding the Year of Assessment fromeach source of income.\n\n- Definition or Explanation: Assessable Income\nAssessable Income = Total Income - Allowable Expenses - Approved Donations\n\n- Definition or Explanation: Chargeable Income\nIt is derived from the remainder of the assessable income after deducting all personal reliefs, such as earned income relief, spouse relief, child relief,deductionsfor CPF and SRS contributions, etc.Since a company is not able to claim personalreliefs, the assessable income is the same as the chargeable income.\n\n- Definition or Explanation: Personal Reliefs\nPersonal Reliefs are granted only to resident individuals.\n\n- Definition or Explanation: Earned Income Relief\nA relief to provide recognition for individuals who receive income from employment, trade, business, profession or vocation less allowable expenses.\n\n- Definition or Explanation: NSman (Self / Wife /\n\"NSman relief\" is a relief to recognise the contributions of National Service men(NSmen) and NS Key Appointment Holders. The relief (self) will be given when a taxpayer has completed his full-time National Service.\n\n- Definition or Explanation: Spouse / Handicapped Spouse Relief\n\"Spouse relief\" is an expansion of the wife relief to support family formation and provide recognition to male and female taxpayers supporting their spouses or ex-spouses.\n\n- Definition or Explanation: Qualifying child relief(QCR) / handicapped childrelief (HCR)\nThey are reliefs given in recognition of families'efforts in supporting their children and caring for handicapped children.\n\n- Definition or Explanation: Working Mother's ChildRelief (WMCR)\nWMCR is a relief introduced to serve the following objectives: to reward families with children holding Singapore citizenship; to encourage parents to take up citizenship for their children; and to encourage married women to remain in the workforce after having",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000034",
+    "source_chunk_ids": [
+      "chapter_16__chunk_032"
+    ],
+    "chapter": "chapter_16",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk provides definitions and explanations for various personal reliefs available in Singapore, including those related to children, family members, insurance, retirement savings, education, and foreign domestic workers, along with a chapter summary of these concepts.",
+    "text": "<context>This chunk provides definitions and explanations for various personal reliefs available in Singapore, including those related to children, family members, insurance, retirement savings, education, and foreign domestic workers, along with a chapter summary of these concepts.</context>\nhandicapped children.\n\n- Definition or Explanation: Working Mother's ChildRelief (WMCR)\nWMCR is a relief introduced to serve the following objectives: to reward families with children holding Singapore citizenship; to encourage parents to take up citizenship for their children; and to encourage married women to remain in the workforce after having children.\n\n- Definition or Explanation: Handicapped Brother /\nIt is a relief given to provide recognition for individuals supporting their physically or mentally handicapped siblings or siblings-in-law who lives in Singapore.\n\n- Definition or Explanation: Parent / Handicapped Parent Relief\nIt is a relief to promote filial piety and provides recognition to individuals supporting their parents / handicapped parents in Singapore.\n\n- Definition or Explanation: Grandparent CaregiverRelief (GCR)\nGCR is a relief given to provide recognition for grandparents who play the role of a caregiver,and to help working mothers take care of their children.\n\n- Definition or Explanation: Life Insurance Relief\nIt is a relief on annual insurance premiums paid on the taxpayer's or his wife's life insurance policies.\n\n- Definition or Explanation: Central Provident Fund\n\"CPF / Provident fund relief\" is a relief given to encourage individuals to save for their retirement. Employees who are Singapore Citizens / Permanent Residents may claim CPF/ Provident Fund relief on compulsory employee CPF contributions orcontributions to an approved pension or provident fund.\n\n# Chapter summary:\n\n- Definition or Explanation: CPF Relief for Self-\nIt is compulsory for an individual who is self-employed,is a Singapore citizen or Singapore permanent resident and earns a yearly net trade income of more thanS$6,000 to make Medisave contributions.\n\n- Definition or Explanation: Tax Relief for Cash Top- ups To Retirement And Healthcare Savings\nMembers who top up their or their loved ones' Special/Retirement/MediSaveAccount in cash will enjoy tax relief of up to S$8,0oo for top ups to their own Special/Retirement/MediSave Account, and an additional S$8,0o0 for top ups to their loved ones' Special/Retirement/MediSave Account.\n\n- Definition or Explanation: Course Fees Relief\nIt is given to encourage an individual to continuously upgrade himself, so as to enhance his lifelong employability.\n\n- Definition or Explanation: Foreign Domestic WorkerLevy Relief\nIt is a relief given to encourage married women to remain in the workforce and to also encourage procreation. This relief is twice the amount of domestic worker levy paid for one foreign domestic worker.\n\n- Definition or Explanation: SupplementaryRetirement Scheme (SRS)\nSRS is a voluntary scheme introduced by the Government to encourage individuals to save more for retirement on top of the contributions made to the CPF. Investment returns are tax-free before withdrawal and only 50% of the withdrawals from SRS are taxable at retirement.\n\n- Definition or Explanation: Matched Retirement Savings Scheme (MRSS)\nIt was launched in 2021 to help senior Singapore Citizens who have not reached thecurrent Basic Retirement Sum, to build their retirement savings. From 2021 to 2025, the Government will match every dollar of cash top-up made to eligible members' Retirement Accounts, up to an annual cap of $600.\n\n- Definition or Explanation: Additional MediSaveContribution Scheme(AMCS) For Employees\nAMCS is a voluntary scheme for employers to contribute more to their employees' MA to help build up their savings for employees' healthcare needs. Employers can make contributions under AMCS of any amount up to $2,730 per employee peryear.It is a rebate given to married Singapore resident individuals, to encourage them to have more children. Rebates are given only if the child is a Singaporean. The rebate can be used to offset the income",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  },
+  {
+    "chunk_id": "chapter_16__small_000035",
+    "source_chunk_ids": [
+      "chapter_16__chunk_032"
+    ],
+    "chapter": "chapter_16",
+    "header": "Chapter summary",
+    "level": 1,
+    "context": "This chunk discusses the Additional MediSave Contribution Scheme (AMCS) for employees and the Parenthood Tax Rebate, and appears to be an excerpt from a section detailing various tax benefits and schemes.",
+    "text": "<context>This chunk discusses the Additional MediSave Contribution Scheme (AMCS) for employees and the Parenthood Tax Rebate, and appears to be an excerpt from a section detailing various tax benefits and schemes.</context>\nEmployers can make contributions under AMCS of any amount up to $2,730 per employee peryear.It is a rebate given to married Singapore resident individuals, to encourage them to have more children. Rebates are given only if the child is a Singaporean. The rebate can be used to offset the income tax payable of the parents, in any proportion as agreed by the spouses. Any rebate unutilised can be carried forward to offset against future tax payable of the parents.",
+    "has_table": false,
+    "table_parsings": [],
+    "header_content_only": false
+  }
+]

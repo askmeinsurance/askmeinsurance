@@ -83,6 +83,7 @@ Notes:
 4. `DELETE /api/v1/conversations/{conversation_id}`
 - Response `204`
 - Response `404`: error
+- Semantics: soft delete only (`archived_at` is set). The row remains in DB and is excluded from list/get.
 
 ### Chat Stream (SSE)
 

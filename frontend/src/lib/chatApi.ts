@@ -325,6 +325,26 @@ export async function getConversationMessages(
   return (await response.json()) as ConversationMessage[];
 }
 
+export async function deleteConversation(conversationId: string, accessToken: string): Promise<void> {
+  const normalizedConversationId = parsePossibleUuid(conversationId);
+  if (!normalizedConversationId) {
+    throw new Error('Conversation ID is not a valid UUID');
+  }
+
+  const response = await fetch(`${CONVERSATIONS_ENDPOINT}/${normalizedConversationId}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!response.ok) {
+    const err = new Error(`Delete conversation failed with status ${response.status}`);
+    (err as Error & { status?: number }).status = response.status;
+    throw err;
+  }
+}
+
 export async function submitFormAnswers(opts: {
   formId: string;
   answers: FormAnswerMap;
