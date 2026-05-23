@@ -6,7 +6,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-# from app.src.agents.general_agent import get_general_agent_subgraph
+from app.src.agents.general_agent import get_general_agent_subgraph
 from app.src.workflow.simple_workflow import get_simple_workflow_subgraph
 
 

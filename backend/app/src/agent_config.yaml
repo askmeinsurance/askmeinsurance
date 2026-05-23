@@ -1,29 +1,35 @@
+# --- Provider reference ---
+# openrouter → openrouter|<provider>/<model>   e.g. openrouter|anthropic/claude-3-5-sonnet  (needs OPENROUTER_API_KEY)
+# google     → google|<model>                  e.g. google|gemini-2.5-flash-lite             (needs GEMINI_API_KEY)
+# openai     → openai|<model>                  e.g. openai|gpt-4o-mini                       (needs OPENAI_API_KEY)
+# --------------------------
+
 name_match_workflow:
-  model: google|gemini-2.5-flash-lite
+  model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
   temperature: 0
 
 find_product_with_criteria_workflow:
-  model: google|gemini-2.5-flash-lite
+  model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
   temperature: 0
 
 general_agent_planner:
-  model: google|gemini-2.5-flash-lite
+  model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
   temperature: 0
 
 general_agent_synthesis:
-  model: google|gemini-2.5-flash-lite
+  model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
   temperature: 0
 
 simple_workflow:
-  model: google|gemini-2.5-flash-lite
+  model: openrouter|gemini-2.5-flash-lite
   thinking_budget: 0
   timeout_seconds: 30
   temperature: 0
