@@ -18,6 +18,7 @@ from app.src.prompts.prompts import (
     SIMPLE_WORKFLOW_CLASSIFY_SYSTEM,
     SIMPLE_WORKFLOW_EXPAND_SYSTEM,
     SIMPLE_WORKFLOW_SYNTHESIS_SYSTEM,
+    GENERAL_AGENT_SYNTHESIS_SYSTEM
 )
 from app.src.services.llm_service import get_llm
 from app.src.tools.product_summary import query_product_summary

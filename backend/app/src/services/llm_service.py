@@ -54,6 +54,8 @@ def get_llm(agent_name: str) -> Union[ChatOpenAI, ChatGoogleGenerativeAI]:
     if provider == "openrouter":
         return ChatOpenAI(
             model=model_name,
+            base_url="https://openrouter.ai/api/v1",
             api_key=s.openrouter_api_key,
             temperature=agent_config.get("temperature", 0),
         )
+
