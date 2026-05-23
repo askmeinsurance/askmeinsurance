@@ -36,6 +36,10 @@ from app.src.services.llm_service import (
     invoke_structured_with_fallback,
     resolve_timeout_seconds,
 )
+from app.src.utils.prompt_format import (
+    format_execution_results_for_prompt,
+    format_json_for_prompt,
+)
 from app.src.utils.parallel_executor import execute_parallel_plan
 
 
@@ -90,12 +94,22 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
         }
 
     async def planner_node(state: GeneralAgentStateReact) -> GeneralAgentStateReact:
+        formatted_user_query = format_json_for_prompt(state.messages)
+        formatted_conversation_history = format_json_for_prompt(
+            state.conversation_history
+        )
+        formatted_execution_results = format_execution_results_for_prompt(
+            state.execution_results
+        )
         planner_user_message = f"""question_type: {state.question_type}
 core_question: {state.core_question}
 current iteration count: {state.curr_iteration_count}
-user query = {state.messages}
-conversation history = {state.conversation_history}
-execution results = {state.execution_results}
+user query =
+{formatted_user_query}
+conversation history =
+{formatted_conversation_history}
+execution results =
+{formatted_execution_results}
 """
         execution_plan: ExecutionPlanModel = await asyncio.wait_for(
             asyncio.to_thread(
@@ -124,12 +138,22 @@ execution results = {state.execution_results}
         }
 
     async def synthesis_node(state: GeneralAgentStateReact):
+        formatted_user_query = format_json_for_prompt(state.messages)
+        formatted_conversation_history = format_json_for_prompt(
+            state.conversation_history
+        )
+        formatted_execution_results = format_execution_results_for_prompt(
+            state.execution_results
+        )
         user_message = f"""question_type: {state.question_type}
 core_question: {state.core_question}
 current iteration count: {state.curr_iteration_count}
-user query = {state.messages}
-conversation history = {state.conversation_history}
-execution results = {state.execution_results}
+user query =
+{formatted_user_query}
+conversation history =
+{formatted_conversation_history}
+execution results =
+{formatted_execution_results}
 """
         llm = get_llm("general_agent_synthesis")
         res = await asyncio.wait_for(

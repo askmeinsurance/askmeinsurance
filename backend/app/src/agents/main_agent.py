@@ -10,6 +10,7 @@ from app.src.agents.general_agent import get_general_agent_subgraph
 from app.src.prompts.prompts import MAIN_AGENT_ROUTER_SYSTEM
 from app.src.schema.agent_schema import MainAgentRouterClassification
 from app.src.services.llm_service import get_llm, resolve_timeout_seconds
+from app.src.utils.prompt_format import format_json_for_prompt
 from app.src.workflow.simple_workflow import get_simple_workflow_subgraph
 
 
@@ -26,13 +27,8 @@ async def get_main_agent_graph():
     builder = StateGraph(MainAgentState)
 
     async def router_node(state: MainAgentState) -> dict:
-        user_message_text = "\n".join(
-            m.content if hasattr(m, "content") else str(m) for m in state.messages
-        )
-        history_text = "\n".join(
-            m.content if hasattr(m, "content") else str(m)
-            for m in state.conversation_history
-        )
+        user_message_text = format_json_for_prompt(state.messages)
+        history_text = format_json_for_prompt(state.conversation_history)
         llm = get_llm("main_agent").with_structured_output(MainAgentRouterClassification)
         classification: MainAgentRouterClassification = await llm.ainvoke(
             [

@@ -29,11 +29,15 @@ def _build_leaf_subgraph(response: str):
 class _DummyRouterLLM:
     def __init__(self, route: str):
         self._route = route
+        self.last_prompt = ""
 
     def with_structured_output(self, _schema):
         return self
 
     async def ainvoke(self, *_args, **_kwargs):
+        messages = _args[0] if _args else []
+        if messages:
+            self.last_prompt = messages[-1].content
         return SimpleNamespace(route=self._route, reasoning="test")
 
 
@@ -105,3 +109,32 @@ def test_main_agent_router_fallbacks_to_simple(monkeypatch):
     graph = asyncio.run(get_main_agent_graph())
     result = asyncio.run(graph.ainvoke(_build_main_state_input()))
     assert result["messages"][-1].content == "from simple"
+
+
+def test_main_agent_router_prompt_uses_json(monkeypatch):
+    monkeypatch.setattr(
+        "app.src.agents.main_agent.get_simple_workflow_subgraph",
+        lambda: _build_leaf_subgraph("from simple"),
+    )
+
+    async def _general():
+        return _build_leaf_subgraph("from react")
+
+    monkeypatch.setattr("app.src.agents.main_agent.get_general_agent_subgraph", _general)
+    llm = _DummyRouterLLM("simple")
+    monkeypatch.setattr("app.src.agents.main_agent.get_llm", lambda _name: llm)
+
+    graph = asyncio.run(get_main_agent_graph())
+    _ = asyncio.run(
+        graph.ainvoke(
+            {
+                "messages": [HumanMessage(content="latest question")],
+                "conversation_history": [HumanMessage(content="older question")],
+                "execution_results": [],
+                "route": "",
+                "route_reasoning": "",
+            }
+        )
+    )
+    assert '"content": "latest question"' in llm.last_prompt
+    assert '"content": "older question"' in llm.last_prompt

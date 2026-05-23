@@ -13,6 +13,7 @@ from app.src.prompts.prompts import (
 from app.src.schema.tool_schema import FindPolicyIdWithCriteriaInput, FindPolicyIdWithCriteriaOutput
 from app.src.services.llm_service import get_llm, resolve_timeout_seconds
 from app.src.tools.product_registry import find_policy_id_with_criteria
+from app.src.utils.prompt_format import format_json_for_prompt
 
 
 async def find_product_with_criteria_workflow(
@@ -29,7 +30,7 @@ async def find_product_with_criteria_workflow(
         FindProductWithCriteriaStateOutput
     )
 
-    user_message = f"query: {state.query}"
+    user_message = f"query:\n{format_json_for_prompt(state.query)}"
 
     tool_param: FindPolicyIdWithCriteriaInput = await asyncio.wait_for(
         asyncio.to_thread(
@@ -52,7 +53,10 @@ async def find_product_with_criteria_workflow(
             [
                 SystemMessage(content=FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_2),
                 HumanMessage(
-                    content=user_message + f"\nproduct_catalog:\n{tool_output.model_dump_json()}"
+                    content=(
+                        f"{user_message}\nproduct_catalog:\n"
+                        f"{format_json_for_prompt(tool_output)}"
+                    )
                 ),
             ],
         ),

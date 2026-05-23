@@ -24,6 +24,7 @@ from app.src.prompts.prompts import (
 from app.src.services.llm_service import get_llm, resolve_timeout_seconds
 from app.src.tools.product_summary import query_product_summary
 from app.src.tools.textbook import query_textbook
+from app.src.utils.prompt_format import format_json_for_prompt
 from app.src.workflow.name_match import name_match_workflow
 
 def _timeout() -> float:
@@ -42,7 +43,10 @@ class SimpleWorkflowGraphState(BaseModel):
 
 async def _classify_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
     llm = get_llm("simple_workflow").with_structured_output(SimpleQueryClassification)
-    user_message = f"Conversation history:\n{state.conversation_history}\n\nMost recent question:\n{state.messages}"
+    user_message = (
+        f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
+        f"Most recent question:\n{format_json_for_prompt(state.messages)}"
+    )
     with anyio.fail_after(_timeout()):
         result = await llm.ainvoke(
             [SystemMessage(content=SIMPLE_WORKFLOW_CLASSIFY_SYSTEM), HumanMessage(content=user_message)],
@@ -55,10 +59,10 @@ async def _expand_queries_node(state: SimpleWorkflowGraphState, config: Runnable
     llm = get_llm("simple_workflow").with_structured_output(ExpandedQueries)
     classification = state.classification
     user_message = (
-        f"Conversation history:\n{state.conversation_history}\n\n"
-        f"User question:\n{state.messages}\n\n"
-        f"Question type: {classification.question_type if classification else 'unknown'}\n"
-        f"Product mentioned: {classification.product_name_mentioned if classification else 'none'}"
+        f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
+        f"User question:\n{format_json_for_prompt(state.messages)}\n\n"
+        f"Question type: {format_json_for_prompt(classification.question_type if classification else 'unknown')}\n"
+        f"Product mentioned: {format_json_for_prompt(classification.product_name_mentioned if classification else 'none')}"
     )
     with anyio.fail_after(_timeout()):
         result = await llm.ainvoke(
@@ -113,12 +117,12 @@ async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConf
     llm = get_llm("simple_workflow")
     expanded = state.expanded
     user_message = (
-        f"Conversation history:\n{state.conversation_history}\n\n"
-        f"User question:\n{state.messages}\n\n"
-        f"Expanded product queries: {expanded.product_queries if expanded else []}\n"
-        f"Expanded concept queries: {expanded.concept_queries if expanded else []}\n\n"
-        f"Product evidence:\n{state.product_chunks}\n\n"
-        f"Concept evidence:\n{state.concept_chunks}"
+        f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
+        f"User question:\n{format_json_for_prompt(state.messages)}\n\n"
+        f"Expanded product queries:\n{format_json_for_prompt(expanded.product_queries if expanded else [])}\n"
+        f"Expanded concept queries:\n{format_json_for_prompt(expanded.concept_queries if expanded else [])}\n\n"
+        f"Product evidence:\n{format_json_for_prompt(state.product_chunks)}\n\n"
+        f"Concept evidence:\n{format_json_for_prompt(state.concept_chunks)}"
     )
     with anyio.fail_after(_timeout()):
         response = await llm.ainvoke(
