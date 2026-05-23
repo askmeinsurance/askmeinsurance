@@ -46,6 +46,30 @@ describe('streamChatMessage', () => {
     assert.deepEqual(onChunkCalls, ['Hello ', 'world']);
   });
 
+  it('reads chunk text from block-style data.text payload', async () => {
+    const onChunkCalls = [];
+    mock.method(globalThis, 'fetch', async () =>
+      sseResponse([
+        { event: 'meta', data: { conversation_id: 'f1a9f6de-4d4d-42d5-b893-c783f6f32641' } },
+        {
+          event: 'chunk',
+          data: { text: [{ type: 'text', text: 'Hello ' }, { type: 'text', text: 'world' }] },
+        },
+        { event: 'done', data: { reason: 'completed' } },
+      ]),
+    );
+
+    const result = await streamChatMessage({
+      message: 'hi',
+      accessToken: 'token',
+      onChunk: (chunk) => onChunkCalls.push(chunk),
+    });
+
+    assert.equal(result.text, 'Hello \nworld');
+    assert.equal(result.conversationId, 'f1a9f6de-4d4d-42d5-b893-c783f6f32641');
+    assert.deepEqual(onChunkCalls, ['Hello \nworld']);
+  });
+
   it('maps form_requested payload directly from data into UI formRequest', async () => {
     const onFormRequestCalls = [];
     mock.method(globalThis, 'fetch', async () =>

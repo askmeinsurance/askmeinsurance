@@ -752,6 +752,8 @@ Return a JSON object:
   "reasoning": "<one sentence explaining your classification>"
 }
 ```
+
+Return ONLY a valid JSON object. Do not wrap in markdown code fences. Do not add any extra text before or after the JSON.
 """
 
 
@@ -1002,6 +1004,7 @@ Finds matching products for a needs-based query when no product name is given.
 
 - If `finish=true` → `steps` MUST be `[]`.
 - If `finish=false` → `steps` MUST contain at least one valid step.
+- Return ONLY a valid JSON object. Do not wrap in markdown code fences. Do not add any extra text before or after the JSON.
 
 ---
 

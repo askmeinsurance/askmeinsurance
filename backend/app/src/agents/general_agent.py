@@ -31,7 +31,11 @@ from app.src.prompts.prompts import (
     QUESTION_CLASSIFIER_SYSTEM,
 )
 from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
-from app.src.services.llm_service import get_llm, resolve_timeout_seconds
+from app.src.services.llm_service import (
+    get_llm,
+    invoke_structured_with_fallback,
+    resolve_timeout_seconds,
+)
 from app.src.utils.parallel_executor import execute_parallel_plan
 
 
@@ -68,14 +72,15 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
             m.content if hasattr(m, "content") else str(m)
             for m in state.messages
         )
-        llm = get_llm("general_agent_planner").with_structured_output(QuestionClassification)
         classification: QuestionClassification = await asyncio.wait_for(
             asyncio.to_thread(
-                llm.invoke,
-                [
+                invoke_structured_with_fallback,
+                agent_name="general_agent_planner",
+                messages=[
                     SystemMessage(content=QUESTION_CLASSIFIER_SYSTEM),
                     HumanMessage(content=user_message_text),
                 ],
+                schema_model=QuestionClassification,
             ),
             timeout=resolve_timeout_seconds("general_agent_planner", 30),
         )
@@ -92,14 +97,15 @@ user query = {state.messages}
 conversation history = {state.conversation_history}
 execution results = {state.execution_results}
 """
-        llm = get_llm("general_agent_planner").with_structured_output(ExecutionPlanModel)
         execution_plan: ExecutionPlanModel = await asyncio.wait_for(
             asyncio.to_thread(
-                llm.invoke,
-                [
+                invoke_structured_with_fallback,
+                agent_name="general_agent_planner",
+                messages=[
                     SystemMessage(content=GENERAL_AGENT_PLANNER_SYSTEM),
                     HumanMessage(content=planner_user_message),
                 ],
+                schema_model=ExecutionPlanModel,
             ),
             timeout=resolve_timeout_seconds("general_agent_planner", 60),
         )

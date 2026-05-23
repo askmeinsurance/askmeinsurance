@@ -1,14 +1,19 @@
 import os
+import json
+import logging
 from pathlib import Path
 from typing import Any, Union
 
 import yaml
+from langchain_core.messages import AIMessage, BaseMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
+from pydantic import BaseModel
 
 from app.core.config import get_settings
 
 _CONFIG_PATH = Path(__file__).parent.parent / "agent_config.yaml"
+logger = logging.getLogger("askmeinsurance.llm")
 
 
 def _get_all_agent_configs() -> dict[str, dict[str, Any]]:
@@ -132,3 +137,124 @@ def get_llm(agent_name: str) -> Union[ChatOpenAI, ChatGoogleGenerativeAI]:
         if max_output_tokens is not None:
             kwargs["max_tokens"] = max_output_tokens
         return ChatOpenAI(**kwargs)
+
+
+def _extract_text_content(content: Any) -> str:
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        chunks: list[str] = []
+        for item in content:
+            if isinstance(item, dict) and item.get("type") == "text":
+                text = item.get("text")
+                if isinstance(text, str):
+                    chunks.append(text)
+            elif isinstance(item, str):
+                chunks.append(item)
+        return "\n".join(chunks)
+    return str(content)
+
+
+def _strip_markdown_json_fences(text: str) -> str:
+    stripped = text.strip()
+    if stripped.startswith("```"):
+        lines = stripped.splitlines()
+        if lines and lines[0].strip().startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        stripped = "\n".join(lines).strip()
+    return stripped
+
+
+def _extract_first_json_object(text: str) -> str:
+    start = text.find("{")
+    if start == -1:
+        return text
+    depth = 0
+    in_string = False
+    escaped = False
+    for idx in range(start, len(text)):
+        ch = text[idx]
+        if escaped:
+            escaped = False
+            continue
+        if ch == "\\":
+            escaped = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : idx + 1]
+    return text
+
+
+def invoke_structured_with_fallback(
+    *,
+    agent_name: str,
+    messages: list[BaseMessage],
+    schema_model: type[BaseModel],
+) -> BaseModel:
+    """Invoke a structured model with fallback JSON parsing for providers
+    that return plain text instead of OpenAI parsed/refusal fields."""
+    agent_config = get_agent_config(agent_name)
+    structured_mode = str(agent_config.get("structured_mode", "auto")).strip().lower()
+    model = agent_config.get("model", "unknown")
+
+    llm = get_llm(agent_name)
+
+    if structured_mode in {"native", "auto"}:
+        try:
+            return llm.with_structured_output(schema_model).invoke(messages)
+        except ValueError as exc:
+            err_text = str(exc)
+            if (
+                structured_mode == "native"
+                or "does not have a 'parsed' field nor a 'refusal' field" not in err_text
+            ):
+                raise
+            logger.warning(
+                "Structured output parser fallback engaged: agent=%s model=%s reason=%s",
+                agent_name,
+                model,
+                "missing_parsed_or_refusal",
+            )
+
+    raw = llm.invoke(messages)
+    if isinstance(raw, AIMessage):
+        raw_text = _extract_text_content(raw.content)
+    else:
+        raw_text = _extract_text_content(raw)
+    sanitized = _strip_markdown_json_fences(raw_text)
+    candidate = _extract_first_json_object(sanitized)
+    try:
+        parsed = json.loads(candidate)
+    except json.JSONDecodeError as exc:
+        excerpt = raw_text[:300]
+        raise ValueError(
+            f"Fallback JSON parse failed for agent={agent_name}, model={model}. "
+            f"Raw excerpt={excerpt!r}"
+        ) from exc
+
+    try:
+        result = schema_model.model_validate(parsed)
+    except Exception as exc:  # noqa: BLE001
+        raise ValueError(
+            f"Fallback schema validation failed for agent={agent_name}, "
+            f"model={model}, schema={schema_model.__name__}"
+        ) from exc
+
+    logger.info(
+        "Structured output succeeded via json fallback: agent=%s model=%s schema=%s",
+        agent_name,
+        model,
+        schema_model.__name__,
+    )
+    return result

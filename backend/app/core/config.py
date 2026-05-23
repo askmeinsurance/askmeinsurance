@@ -59,6 +59,9 @@ class Settings(BaseSettings):
     langfuse_public_key: str | None = Field(default=None)
     langfuse_secret_key: str | None = Field(default=None)
     langfuse_host: str | None = Field(default=None)
+    langgraph_log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = Field(default="INFO")
+    langgraph_log_state_excerpt_chars: int = Field(default=240)
+    langgraph_log_include_payloads: bool = Field(default=False)
 
 
 @lru_cache(maxsize=1)

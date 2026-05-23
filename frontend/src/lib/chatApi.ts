@@ -48,6 +48,28 @@ function logDebug(message: string, details?: unknown) {
   console.log(`[chatApi] ${message}`, details);
 }
 
+function extractTextFromUnknown(input: unknown): string {
+  if (typeof input === 'string') return input;
+  if (Array.isArray(input)) {
+    const parts = input
+      .map((item) => {
+        if (typeof item === 'string') return item;
+        if (item && typeof item === 'object') {
+          const rec = item as Record<string, unknown>;
+          if (rec.type === 'text' && typeof rec.text === 'string') return rec.text;
+        }
+        return '';
+      })
+      .filter((part) => part.length > 0);
+    return parts.join('\n');
+  }
+  if (input && typeof input === 'object') {
+    const rec = input as Record<string, unknown>;
+    if (rec.type === 'text' && typeof rec.text === 'string') return rec.text;
+  }
+  return '';
+}
+
 interface FormOptionWire {
   label?: unknown;
   value?: unknown;
@@ -238,8 +260,8 @@ export async function streamChatMessage(opts: {
         const parsed = JSON.parse(rawData) as Record<string, unknown>;
 
         if (eventType === 'chunk') {
-          const chunkText = parsed.text;
-          if (typeof chunkText === 'string') {
+          const chunkText = extractTextFromUnknown(parsed.text);
+          if (chunkText.length > 0) {
             messageText += chunkText;
             opts.onChunk?.(chunkText);
           }

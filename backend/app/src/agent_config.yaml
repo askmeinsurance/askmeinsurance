@@ -20,6 +20,7 @@ find_product_with_criteria_workflow:
 
 general_agent_planner:
   model: openrouter|gemini-2.5-flash-lite
+  structured_mode: auto
   thinking_budget: 0
   timeout_seconds: 30
   max_output_tokens: 10000
