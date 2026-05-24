@@ -17,7 +17,6 @@ agent workflow:
 """
 
 import asyncio
-import os
 from typing import Annotated, List
 
 import operator
@@ -32,10 +31,16 @@ from app.src.prompts.prompts import (
     QUESTION_CLASSIFIER_SYSTEM,
 )
 from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
-from app.src.services.llm_service import get_llm
+from app.src.services.llm_service import (
+    get_llm,
+    invoke_structured_with_fallback,
+    resolve_timeout_seconds,
+)
+from app.src.utils.prompt_format import (
+    format_execution_results_for_prompt,
+    format_json_for_prompt,
+)
 from app.src.utils.parallel_executor import execute_parallel_plan
-
-_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
 
 
 class GeneralAgentStateInput(BaseModel):
@@ -46,7 +51,7 @@ class GeneralAgentStateInput(BaseModel):
 class GeneralAgentStateOutput(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
     conversation_history: Annotated[list[BaseMessage], operator.add]
-    execution_results: list = Field(default_factory=list)
+    execution_results: Annotated[list, operator.add] = Field(default_factory=list)
 
 
 class GeneralAgentStateReact(BaseModel):
@@ -71,16 +76,17 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
             m.content if hasattr(m, "content") else str(m)
             for m in state.messages
         )
-        llm = get_llm("general_agent_planner").with_structured_output(QuestionClassification)
         classification: QuestionClassification = await asyncio.wait_for(
             asyncio.to_thread(
-                llm.invoke,
-                [
+                invoke_structured_with_fallback,
+                agent_name="general_agent_planner",
+                messages=[
                     SystemMessage(content=QUESTION_CLASSIFIER_SYSTEM),
                     HumanMessage(content=user_message_text),
                 ],
+                schema_model=QuestionClassification,
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 30,
+            timeout=resolve_timeout_seconds("general_agent_planner", 30),
         )
         return {
             "question_type": classification.question_type,
@@ -88,23 +94,34 @@ async def get_general_agent_subgraph() -> GeneralAgentStateOutput:
         }
 
     async def planner_node(state: GeneralAgentStateReact) -> GeneralAgentStateReact:
+        formatted_user_query = format_json_for_prompt(state.messages)
+        formatted_conversation_history = format_json_for_prompt(
+            state.conversation_history
+        )
+        formatted_execution_results = format_execution_results_for_prompt(
+            state.execution_results
+        )
         planner_user_message = f"""question_type: {state.question_type}
 core_question: {state.core_question}
 current iteration count: {state.curr_iteration_count}
-user query = {state.messages}
-conversation history = {state.conversation_history}
-execution results = {state.execution_results}
+user query =
+{formatted_user_query}
+conversation history =
+{formatted_conversation_history}
+execution results =
+{formatted_execution_results}
 """
-        llm = get_llm("general_agent_planner").with_structured_output(ExecutionPlanModel)
         execution_plan: ExecutionPlanModel = await asyncio.wait_for(
             asyncio.to_thread(
-                llm.invoke,
-                [
+                invoke_structured_with_fallback,
+                agent_name="general_agent_planner",
+                messages=[
                     SystemMessage(content=GENERAL_AGENT_PLANNER_SYSTEM),
                     HumanMessage(content=planner_user_message),
                 ],
+                schema_model=ExecutionPlanModel,
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
+            timeout=resolve_timeout_seconds("general_agent_planner", 60),
         )
         return {
             "execution_plan": [step.model_dump() for step in execution_plan.steps],
@@ -121,12 +138,22 @@ execution results = {state.execution_results}
         }
 
     async def synthesis_node(state: GeneralAgentStateReact):
+        formatted_user_query = format_json_for_prompt(state.messages)
+        formatted_conversation_history = format_json_for_prompt(
+            state.conversation_history
+        )
+        formatted_execution_results = format_execution_results_for_prompt(
+            state.execution_results
+        )
         user_message = f"""question_type: {state.question_type}
 core_question: {state.core_question}
 current iteration count: {state.curr_iteration_count}
-user query = {state.messages}
-conversation history = {state.conversation_history}
-execution results = {state.execution_results}
+user query =
+{formatted_user_query}
+conversation history =
+{formatted_conversation_history}
+execution results =
+{formatted_execution_results}
 """
         llm = get_llm("general_agent_synthesis")
         res = await asyncio.wait_for(
@@ -137,7 +164,7 @@ execution results = {state.execution_results}
                     HumanMessage(content=user_message),
                 ],
             ),
-            timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 60,
+            timeout=resolve_timeout_seconds("general_agent_synthesis", 60),
         )
         return {"messages": [res]}
 

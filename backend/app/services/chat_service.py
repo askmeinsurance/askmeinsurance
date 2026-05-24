@@ -74,6 +74,7 @@ class ChatService:
         message: str,
         conversation_id: UUID | None,
         user: Any,
+        request_id: str | None = None,
     ) -> AsyncGenerator[ChatEvent, None]:
         resolved_conversation_id = await self._resolve_conversation_for_user(
             message=message,
@@ -93,6 +94,7 @@ class ChatService:
             conversation_id=resolved_conversation_id,
             user=user,
             message_id=user_msg.id,
+            request_id=request_id,
         ):
             if event.event == "chunk":
                 chunk = event.data.get("text")

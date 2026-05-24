@@ -1,33 +1,34 @@
-import asyncio
-import os
-
+import anyio
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 
 from app.src.agent_state.agent_state import NameMatchStateInput, NameMatchStateOutput
 from app.src.prompts.prompts import NAME_MATCH_SYSTEM
-from app.src.services.llm_service import get_llm
+from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
 from app.src.tools.product_registry import get_product_names
-
-_NODE_TIMEOUT = os.getenv("LLM_TIMEOUT_SECONDS")
+from app.src.utils.prompt_format import format_json_for_prompt
 
 
 async def name_match_workflow(state: NameMatchStateInput, config: RunnableConfig | None = None) -> NameMatchStateOutput:
     catalog = get_product_names()
-    user_message = f"""User query: {state.messages}
+    user_message = f"""User query:
+{format_json_for_prompt(state.messages)}
 
-Retrieval query: {state.retrieval_query}
+Retrieval query:
+{format_json_for_prompt(state.retrieval_query)}
 
-Catalog: {catalog}
+Catalog:
+{format_json_for_prompt(catalog)}
 """
-    llm = get_llm("name_match_workflow").with_structured_output(NameMatchStateOutput)
+    timeout = resolve_timeout_seconds("name_match_workflow", 10)
 
-    output: NameMatchStateOutput = await asyncio.wait_for(
-        llm.ainvoke(
-            [SystemMessage(content=NAME_MATCH_SYSTEM), HumanMessage(content=user_message)],
+    with anyio.fail_after(timeout):
+        output: NameMatchStateOutput = await ainvoke_structured_with_fallback(
+            agent_name="name_match_workflow",
+            schema_model=NameMatchStateOutput,
+            timeout_seconds=timeout,
             config=config,
-        ),
-        timeout=float(_NODE_TIMEOUT) if _NODE_TIMEOUT else 10,
-    )
+            messages=[SystemMessage(content=NAME_MATCH_SYSTEM), HumanMessage(content=user_message)],
+        )
 
     return output

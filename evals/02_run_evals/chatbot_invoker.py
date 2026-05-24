@@ -32,8 +32,21 @@ def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
             target = step.get("target")
             if target not in ("query_textbook", "query_product_summary"):
                 continue
-            for chunk in step.get("output") or []:
-                text = chunk.get("text") or chunk.get("combined_text") or ""
+            output = step.get("output") or []
+
+            # query_product_summary output is a flat list of chunk dicts.
+            if target == "query_product_summary":
+                for chunk in output:
+                    text = chunk.get("text") or chunk.get("combined_text") or ""
+                    if text and text not in seen:
+                        seen.add(text)
+                        chunks.append(text)
+                        tool_hits[target] = tool_hits.get(target, 0) + 1
+                continue
+
+            # query_textbook output is {"queries": [...], "results": [...]}
+            for chunk in (output.get("results") if isinstance(output, dict) else []):
+                text = chunk.get("text") or ""
                 if text and text not in seen:
                     seen.add(text)
                     chunks.append(text)
