@@ -1396,16 +1396,19 @@ SIMPLE_WORKFLOW_EXPAND_SYSTEM = """You are a query expansion specialist for an i
 - The query must name the exact product and the specific field only.
 
 ✅ Correct (lookup):
-  product_queries: ["AIA Smart Wealth Builder II minimum premium 10-year payment plan"]
-  concept_queries: []
+```json
+{"product_queries": ["AIA Smart Wealth Builder II minimum premium 10-year payment plan"], "concept_queries": []}
+```
 
 ❌ Wrong (too broad — do not do this for lookup):
-  product_queries: ["AIA Smart Wealth Builder II benefits coverage exclusions premiums riders"]
-  concept_queries: []
+```json
+{"product_queries": ["AIA Smart Wealth Builder II benefits coverage exclusions premiums riders"], "concept_queries": []}
+```
 
 ❌ Wrong (off-topic — do not do this for lookup):
-  product_queries: ["AIA Smart Wealth Builder II participating fund bonus structure maturity"]
-  concept_queries: []
+```json
+{"product_queries": ["AIA Smart Wealth Builder II participating fund bonus structure maturity"], "concept_queries": []}
+```
 
 **Self-check before outputting for lookup:** Is product_queries length exactly 1? Is concept_queries empty? If not, fix before outputting.
 
@@ -1429,33 +1432,18 @@ Generate 2–4 semantically diverse sub-questions that together provide full ret
 ### Few-shot examples
 
 **specific_product** — "What does AIA Guaranteed Protect Plus cover?"
-```
-product_queries: [
-  "AIA Guaranteed Protect Plus key benefits and coverage scope",
-  "AIA Guaranteed Protect Plus exclusions waiting periods and claim conditions"
-]
-concept_queries: []
+```json
+{"product_queries": ["AIA Guaranteed Protect Plus key benefits and coverage scope", "AIA Guaranteed Protect Plus exclusions waiting periods and claim conditions"], "concept_queries": []}
 ```
 
 **concept** — "What is a reversionary bonus?"
-```
-product_queries: []
-concept_queries: [
-  "What is a reversionary bonus and how is it declared by the insurer",
-  "Are reversionary bonuses guaranteed and how do they affect total policy value"
-]
+```json
+{"product_queries": [], "concept_queries": ["What is a reversionary bonus and how is it declared by the insurer", "Are reversionary bonuses guaranteed and how do they affect total policy value"]}
 ```
 
 **both** — "How does AIA Guaranteed Protect Plus compare to a typical whole life plan?"
-```
-product_queries: [
-  "AIA Guaranteed Protect Plus key benefits and coverage",
-  "AIA Guaranteed Protect Plus premium structure and participating status"
-]
-concept_queries: [
-  "How does a whole life insurance plan work and what does it cover",
-  "Difference between participating and non-participating whole life policies"
-]
+```json
+{"product_queries": ["AIA Guaranteed Protect Plus key benefits and coverage", "AIA Guaranteed Protect Plus premium structure and participating status"], "concept_queries": ["How does a whole life insurance plan work and what does it cover", "Difference between participating and non-participating whole life policies"]}
 ```
 
 Respond only with the structured output."""
