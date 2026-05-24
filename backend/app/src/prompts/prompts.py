@@ -1335,33 +1335,45 @@ If question_type is `lookup`, `specific_product`, or `both`:
 
 **Example 1 → lookup**
 User: "What's the absolute minimum I have to pay if I want the 10-year payment plan for the AIA Smart Wealth Builder (II)?"
-Reasoning: Explicit quantitative anchor "minimum" + named payment term "10-year" → lookup, not specific_product.
-Output: question_type=lookup, product_name_mentioned="AIA Smart Wealth Builder (II) 10 pay"
+Decision: Explicit quantitative anchor "minimum" + named payment term "10-year" → lookup, not specific_product.
+```json
+{"question_type": "lookup", "product_name_mentioned": "AIA Smart Wealth Builder (II) 10 pay", "reasoning": "Explicit quantitative anchor 'minimum' with a named payment term signals a fact lookup, not a product explanation."}
+```
 
 **Example 2 → lookup**
 User: "What are the payment term options for the AIA Guaranteed Protect Plus?"
-Reasoning: Asks for an enumerable list of options — a structured table answer, not a product explanation → lookup.
-Output: question_type=lookup, product_name_mentioned="AIA Guaranteed Protect Plus"
+Decision: Asks for an enumerable list of options — a structured table answer, not a product explanation → lookup.
+```json
+{"question_type": "lookup", "product_name_mentioned": "AIA Guaranteed Protect Plus", "reasoning": "User asks for the list of available options, which is a structured enumerable fact, not a product explanation."}
+```
 
 **Example 3 → lookup** (entry age — looks like specific_product but isn't)
 User: "What's the entry age for AIA ProTerm?"
-Reasoning: "Entry age" is a specific numeric limit — quantitative anchor wins over product-explanation intent → lookup.
-Output: question_type=lookup, product_name_mentioned="AIA ProTerm"
+Decision: "Entry age" is a specific numeric limit — quantitative anchor wins over product-explanation intent → lookup.
+```json
+{"question_type": "lookup", "product_name_mentioned": "AIA ProTerm", "reasoning": "Entry age is a specific numeric limit; quantitative anchor wins over open-ended product explanation."}
+```
 
 **Example 4 → specific_product**
 User: "Tell me about the AIA Guaranteed Protect Plus."
-Reasoning: Names a product but wants an open-ended explanation, no quantitative anchor → specific_product.
-Output: question_type=specific_product, product_name_mentioned="AIA Guaranteed Protect Plus"
+Decision: Names a product but wants an open-ended explanation, no quantitative anchor → specific_product.
+```json
+{"question_type": "specific_product", "product_name_mentioned": "AIA Guaranteed Protect Plus", "reasoning": "Open-ended product explanation request with no quantitative or option-list anchor."}
+```
 
 **Example 5 → concept**
 User: "What is a reversionary bonus?"
-Reasoning: General insurance term definition, no product named → concept.
-Output: question_type=concept, product_name_mentioned=null
+Decision: General insurance term definition, no product named → concept.
+```json
+{"question_type": "concept", "product_name_mentioned": null, "reasoning": "Asks for a definition of a general insurance term with no specific product mentioned."}
+```
 
 **Example 6 → both**
 User: "How does the AIA Smart Wealth Builder compare to a regular whole life plan?"
-Reasoning: Named product + conceptual comparison to a product category → both.
-Output: question_type=both, product_name_mentioned="AIA Smart Wealth Builder"
+Decision: Named product + conceptual comparison to a product category → both.
+```json
+{"question_type": "both", "product_name_mentioned": "AIA Smart Wealth Builder", "reasoning": "Mixes a specific named product with a conceptual comparison against a general product category."}
+```
 
 ---
 
