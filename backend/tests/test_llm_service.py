@@ -1,7 +1,10 @@
 from types import SimpleNamespace
+import asyncio
 
 import pytest
+from langchain_core.messages import AIMessage, HumanMessage
 
+from app.src.agent_state.agent_state import NameMatchStateOutput
 from app.src.services import llm_service
 
 
@@ -61,7 +64,7 @@ def test_get_llm_openrouter_sets_max_tokens(monkeypatch):
     llm_service.get_llm("agent")
     assert captured["max_tokens"] == 512
     assert captured["base_url"] == "https://openrouter.ai/api/v1"
-    assert captured["reasoning"] == {"effort": "none"}
+    assert captured["extra_body"] == {"reasoning": {"effort": "none"}}
     assert captured["temperature"] == 0
 
 
@@ -110,7 +113,7 @@ def test_get_llm_openrouter_thinking_budget_positive_does_not_force_none(monkeyp
     monkeypatch.setattr(llm_service, "ChatOpenAI", _chat_openai)
 
     llm_service.get_llm("agent")
-    assert "reasoning" not in captured
+    assert "extra_body" not in captured
 
 
 def test_get_llm_respects_temperature_for_openai(monkeypatch):
@@ -241,3 +244,60 @@ def test_resolve_timeout_invalid_env_raises(monkeypatch, value):
     monkeypatch.setenv("LLM_TIMEOUT_SECONDS", value)
     with pytest.raises(ValueError, match="Invalid LLM_TIMEOUT_SECONDS"):
         llm_service.resolve_timeout_seconds("agent", 30)
+
+
+def test_ainvoke_structured_with_fallback_wraps_single_object_for_single_list_field(monkeypatch):
+    class _DummyLLM:
+        async def ainvoke(self, _messages, config=None):
+            _ = config
+            return AIMessage(
+                content=(
+                    '{"mode":"specific_match","selected_policy_ids":["P123"],'
+                    '"applied_filters":{"provider":"AIA","category":"term"},'
+                    '"confidence":"high","reason":"exact"}'
+                )
+            )
+
+    monkeypatch.setattr(
+        llm_service,
+        "get_agent_config",
+        lambda _name: {**_base_agent("openrouter|google/gemini-2.5-flash-lite"), "structured_mode": "fallback"},
+    )
+    monkeypatch.setattr(llm_service, "get_llm", lambda _name: _DummyLLM())
+
+    result = asyncio.run(
+        llm_service.ainvoke_structured_with_fallback(
+            agent_name="name_match_workflow",
+            messages=[HumanMessage(content="test")],
+            schema_model=NameMatchStateOutput,
+        )
+    )
+
+    assert result.lst_policy_matched[0].selected_policy_ids == ["P123"]
+
+
+def test_ainvoke_structured_with_fallback_accepts_no_match_shape(monkeypatch):
+    class _DummyLLM:
+        async def ainvoke(self, _messages, config=None):
+            _ = config
+            return AIMessage(
+                content='{"mode":"no_match","selected_policy_ids":null,"applied_filters":{"provider":"AIA"},"confidence":"high","reason":"none"}'
+            )
+
+    monkeypatch.setattr(
+        llm_service,
+        "get_agent_config",
+        lambda _name: {**_base_agent("openrouter|google/gemini-2.5-flash-lite"), "structured_mode": "fallback"},
+    )
+    monkeypatch.setattr(llm_service, "get_llm", lambda _name: _DummyLLM())
+
+    result = asyncio.run(
+        llm_service.ainvoke_structured_with_fallback(
+            agent_name="name_match_workflow",
+            messages=[HumanMessage(content="test")],
+            schema_model=NameMatchStateOutput,
+        )
+    )
+
+    assert result.lst_policy_matched[0].mode == "no_match"
+    assert result.lst_policy_matched[0].applied_filters.provider == "AIA"

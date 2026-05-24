@@ -21,7 +21,7 @@ from app.src.prompts.prompts import (
     SIMPLE_WORKFLOW_SYNTHESIS_SYSTEM,
     GENERAL_AGENT_SYNTHESIS_SYSTEM,
 )
-from app.src.services.llm_service import get_llm, resolve_timeout_seconds
+from app.src.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
 from app.src.tools.product_summary import query_product_summary
 from app.src.tools.textbook import TextbookOutput, query_textbook
 from app.src.utils.prompt_format import format_json_for_prompt
@@ -42,21 +42,25 @@ class SimpleWorkflowGraphState(BaseModel):
 
 
 async def _classify_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
-    llm = get_llm("simple_workflow").with_structured_output(SimpleQueryClassification)
     user_message = (
         f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
         f"Most recent question:\n{format_json_for_prompt(state.messages)}"
     )
     with anyio.fail_after(_timeout()):
-        result = await llm.ainvoke(
-            [SystemMessage(content=SIMPLE_WORKFLOW_CLASSIFY_SYSTEM), HumanMessage(content=user_message)],
+        result = await ainvoke_structured_with_fallback(
+            agent_name="simple_workflow",
+            schema_model=SimpleQueryClassification,
+            timeout_seconds=_timeout(),
             config=config,
+            messages=[
+                SystemMessage(content=SIMPLE_WORKFLOW_CLASSIFY_SYSTEM),
+                HumanMessage(content=user_message),
+            ],
         )
     return {"classification": result}
 
 
 async def _expand_queries_node(state: SimpleWorkflowGraphState, config: RunnableConfig) -> dict:
-    llm = get_llm("simple_workflow").with_structured_output(ExpandedQueries)
     classification = state.classification
     user_message = (
         f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
@@ -65,9 +69,15 @@ async def _expand_queries_node(state: SimpleWorkflowGraphState, config: Runnable
         f"Product mentioned: {format_json_for_prompt(classification.product_name_mentioned if classification else 'none')}"
     )
     with anyio.fail_after(_timeout()):
-        result = await llm.ainvoke(
-            [SystemMessage(content=SIMPLE_WORKFLOW_EXPAND_SYSTEM), HumanMessage(content=user_message)],
+        result = await ainvoke_structured_with_fallback(
+            agent_name="simple_workflow",
+            schema_model=ExpandedQueries,
+            timeout_seconds=_timeout(),
             config=config,
+            messages=[
+                SystemMessage(content=SIMPLE_WORKFLOW_EXPAND_SYSTEM),
+                HumanMessage(content=user_message),
+            ],
         )
     return {"expanded": result}
 
