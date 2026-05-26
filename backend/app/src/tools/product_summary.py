@@ -92,13 +92,22 @@ def query_product_summary(
                 seen_chunk_ids.add(chunk_id)
             deduped_points.append(point)
 
-    return [
-        {
+    groups: dict[str, dict] = {}
+    order: list[str] = []
+
+    for r in deduped_points:
+        pid = r.payload.get("policy_id") or "__unknown__"
+        if pid not in groups:
+            order.append(pid)
+            groups[pid] = {
+                "policy_id": pid,
+                "document_metadata": r.payload.get("document_metadata", {}),
+                "chunks": [],
+            }
+        groups[pid]["chunks"].append({
             "chunk_id": r.payload.get("chunk_id"),
-            "policy_id": r.payload.get("policy_id"),
             "combined_text": _strip_context(r.payload.get("combined_text", "")),
-            "document_metadata": r.payload.get("document_metadata", {}),
             "score": r.score,
-        }
-        for r in deduped_points
-    ]
+        })
+
+    return [groups[pid] for pid in order]

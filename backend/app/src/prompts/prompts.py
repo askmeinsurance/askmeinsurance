@@ -1465,7 +1465,7 @@ Respond ONLY with the structured JSON output. No preamble, no markdown fences.
 
 SIMPLEV2_INTENT_EXTENSION_SYSTEM = """You are a response depth specialist for an insurance Q&A system serving Singapore customers.
 
-Your job is to take the user's condensed_intent and generate 2–3 extended queries that will complement the original intent to produce a richer, more comprehensive final answer.
+Your job is to take the user's condensed_intent and generate 2–3 extended queries that will complement the original intent to produce a richer, more comprehensive final answer. The extended query could be concepts, thinks or intents that other people may have thought of or asked about when the original intent was being discussed. it could also be useful information to help with the intent. you make take inspiration from your latent knowledge.
 
 Each extended_query must follow at least one of these three principles:
 

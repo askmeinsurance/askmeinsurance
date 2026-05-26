@@ -34,14 +34,15 @@ def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
                 continue
             output = step.get("output") or []
 
-            # query_product_summary output is a flat list of chunk dicts.
+            # query_product_summary output is grouped by policy_id.
             if target == "query_product_summary":
-                for chunk in output:
-                    text = chunk.get("text") or chunk.get("combined_text") or ""
-                    if text and text not in seen:
-                        seen.add(text)
-                        chunks.append(text)
-                        tool_hits[target] = tool_hits.get(target, 0) + 1
+                for group in output:
+                    for chunk in group.get("chunks", []):
+                        text = chunk.get("text") or chunk.get("combined_text") or ""
+                        if text and text not in seen:
+                            seen.add(text)
+                            chunks.append(text)
+                            tool_hits[target] = tool_hits.get(target, 0) + 1
                 continue
 
             # query_textbook output is {"queries": [...], "results": [...]}

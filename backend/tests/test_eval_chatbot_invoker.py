@@ -34,7 +34,13 @@ def test_extract_retrieval_context_supports_deduped_textbook_output():
                     "kind": "tool",
                     "target": "query_product_summary",
                     "output": [
-                        {"combined_text": "prod-a"},
+                        {
+                            "policy_id": "P001",
+                            "document_metadata": {},
+                            "chunks": [
+                                {"chunk_id": "c1", "combined_text": "prod-a", "score": 0.9},
+                            ],
+                        }
                     ],
                 },
             ]
