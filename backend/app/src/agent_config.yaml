@@ -70,3 +70,33 @@ main_agent:
   timeout_seconds: 30
   max_output_tokens: 20000
   temperature: 0
+
+# --- simple_workflow_v2 agents ---
+
+simplev2_identify_intent:
+  model: openrouter|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  max_output_tokens: 512
+  temperature: 0
+
+simplev2_intent_extension:
+  model: openrouter|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  max_output_tokens: 1024
+  temperature: 0.5
+
+simplev2_intents_decomposition:
+  model: openrouter|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  max_output_tokens: 1024
+  temperature: 0.3
+
+simplev2_query_expansion:
+  model: openrouter|gemini-2.5-flash-lite
+  thinking_budget: 0
+  timeout_seconds: 30
+  max_output_tokens: 1024
+  temperature: 0.2

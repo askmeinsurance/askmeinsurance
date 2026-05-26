@@ -11,7 +11,16 @@ from app.src.prompts.prompts import MAIN_AGENT_ROUTER_SYSTEM
 from app.src.schema.agent_schema import MainAgentRouterClassification
 from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
 from app.src.utils.prompt_format import format_json_for_prompt
-from app.src.workflow.simple_workflow import get_simple_workflow_subgraph
+
+# from app.src.workflow.simple_workflow import get_simple_workflow_subgraph  # v1 — kept for reference
+from app.src.workflow.simple_workflow_v2 import get_simple_workflow_v2_subgraph
+
+
+# ---------------------------------------------------------------------------
+# Dev toggle — set to "simple_workflow" or "general_agent" to bypass routing,
+# or None to use the LLM router normally.
+# ---------------------------------------------------------------------------
+FORCE_ROUTE: str | None = "simple_workflow"
 
 
 class MainAgentState(BaseModel):
@@ -27,6 +36,8 @@ async def get_main_agent_graph():
     builder = StateGraph(MainAgentState)
 
     async def router_node(state: MainAgentState) -> dict:
+        if FORCE_ROUTE is not None:
+            return {"route": FORCE_ROUTE, "route_reasoning": f"[FORCE_ROUTE={FORCE_ROUTE}]"}
         user_message_text = format_json_for_prompt(state.messages)
         history_text = format_json_for_prompt(state.conversation_history)
         classification: MainAgentRouterClassification = await ainvoke_structured_with_fallback(
@@ -52,7 +63,8 @@ async def get_main_agent_graph():
             return "simple_workflow"
         return "simple_workflow"
 
-    simple_workflow = get_simple_workflow_subgraph()
+    # simple_workflow = get_simple_workflow_subgraph()  # v1 — commented out
+    simple_workflow = get_simple_workflow_v2_subgraph()
     general_agent = await get_general_agent_subgraph()
     builder.add_node("router", router_node)
     builder.add_node("simple_workflow", simple_workflow)

@@ -8,6 +8,41 @@ from pydantic import BaseModel
 from app.src.schema.tool_schema import PolicyMatchResponse
 
 
+# ---------------------------------------------------------------------------
+# simple_workflow_v2 state models
+# ---------------------------------------------------------------------------
+
+
+class IntentSummary(BaseModel):
+    condensed_intent: str
+    product_name_mentioned: str | None
+    reasoning: str
+
+
+class ExtendedQuery(BaseModel):
+    query: str
+    reasoning: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentExtension(BaseModel):
+    extended_queries: List[ExtendedQuery]
+
+
+class DecomposedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentsDecomposition(BaseModel):
+    decomposed_intents: List[DecomposedIntent]
+
+
+class RephrasedQuerySet(BaseModel):
+    textbook_queries: List[str]
+    product_queries: List[str]
+
+
 class NameMatchStateInput(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
     retrieval_query: str = ""
