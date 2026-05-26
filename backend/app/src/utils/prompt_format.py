@@ -1,7 +1,7 @@
 import json
 from typing import Any
 
-from langchain_core.messages import BaseMessage
+from langchain_core.messages import AIMessage, BaseMessage
 from pydantic import BaseModel
 
 
@@ -9,9 +9,12 @@ def to_jsonable(value: Any) -> Any:
     """Coerce arbitrary runtime values into JSON-serializable structures."""
     if value is None or isinstance(value, (str, int, float, bool)):
         return value
-    if isinstance(value, BaseModel):
-        return to_jsonable(value.model_dump(mode="json"))
     if isinstance(value, BaseMessage):
+        data: dict = {"content": value.content, "type": value.type}
+        if isinstance(value, AIMessage) and value.tool_calls:
+            data["tool_calls"] = to_jsonable(value.tool_calls)
+        return data
+    if isinstance(value, BaseModel):
         return to_jsonable(value.model_dump(mode="json"))
     if isinstance(value, dict):
         return {str(key): to_jsonable(inner) for key, inner in value.items()}
