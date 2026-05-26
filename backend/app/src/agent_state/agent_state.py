@@ -13,6 +13,10 @@ from app.src.schema.tool_schema import PolicyMatchResponse
 # ---------------------------------------------------------------------------
 
 
+class AbbreviationResolution(BaseModel):
+    abbreviation_context: str | None
+
+
 class IntentSummary(BaseModel):
     condensed_intent: str
     product_name_mentioned: str | None

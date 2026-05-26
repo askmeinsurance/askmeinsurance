@@ -11,6 +11,7 @@ from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
 from app.src.agent_state.agent_state import (
+    AbbreviationResolution,
     DecomposedIntent,
     IntentExtension,
     IntentsDecomposition,
@@ -23,9 +24,11 @@ from app.src.prompts.prompts import (
     SIMPLEV2_INTENT_EXTENSION_SYSTEM,
     SIMPLEV2_INTENTS_DECOMPOSITION_SYSTEM,
     SIMPLEV2_QUERY_EXPANSION_SYSTEM,
+    SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM,
     SIMPLEV2_SYNTHESIS_SYSTEM,
 )
 from app.src.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
+from app.src.tools.product_registry import get_product_names
 from app.src.tools.product_summary import query_product_summary
 from app.src.tools.textbook import TextbookOutput, query_textbook
 from app.src.utils.prompt_format import format_json_for_prompt
@@ -39,6 +42,7 @@ def _timeout() -> float:
 class SimpleWorkflowV2GraphState(BaseModel):
     messages: Annotated[list[BaseMessage], add_messages]
     conversation_history: Annotated[list[BaseMessage], operator.add] = []
+    abbreviation_context: str | None = None
     intent_summary: IntentSummary | None = None
     intent_extension: IntentExtension | None = None
     intents_decomposition: IntentsDecomposition | None = None
@@ -47,7 +51,35 @@ class SimpleWorkflowV2GraphState(BaseModel):
     concept_chunks: TextbookOutput = Field(default_factory=lambda: {"queries": [], "results": []})
 
 
+async def _resolve_abbreviation_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    human_messages = [m for m in state.messages if isinstance(m, HumanMessage)]
+    if not human_messages:
+        return {"abbreviation_context": None}
+
+    latest_message = human_messages[-1].content
+    product_names = get_product_names()
+    product_name_list = [d["policy_name"] for d in product_names if "policy_name" in d]
+    product_list_str = "\n".join(product_name_list)
+
+    with anyio.fail_after(15):
+        result = await ainvoke_structured_with_fallback(
+            agent_name="simplev2_resolve_abbreviation",
+            schema_model=AbbreviationResolution,
+            timeout_seconds=15,
+            config=config,
+            messages=[
+                SystemMessage(content=SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM),
+                HumanMessage(content=f"User message: {latest_message}\n\nProduct names:\n{product_list_str}"),
+            ],
+        )
+    return {"abbreviation_context": result.abbreviation_context}
+
+
 async def _identify_intent_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    extra: list[BaseMessage] = []
+    if state.abbreviation_context:
+        extra = [SystemMessage(content=f"[Abbreviation context]\n{state.abbreviation_context}")]
+
     user_message = (
         f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
         f"Latest user message:\n{format_json_for_prompt(state.messages)}"
@@ -58,7 +90,7 @@ async def _identify_intent_node(state: SimpleWorkflowV2GraphState, config: Runna
             schema_model=IntentSummary,
             timeout_seconds=_timeout(),
             config=config,
-            messages=[
+            messages=extra + [
                 SystemMessage(content=SIMPLEV2_IDENTIFY_INTENT_SYSTEM),
                 HumanMessage(content=user_message),
             ],
@@ -205,6 +237,7 @@ def _route_after_decomposition(state: SimpleWorkflowV2GraphState) -> str:
 def get_simple_workflow_v2_subgraph():
     builder = StateGraph(SimpleWorkflowV2GraphState)
 
+    builder.add_node("resolve_abbreviation", _resolve_abbreviation_node)
     builder.add_node("identify_intent", _identify_intent_node)
     builder.add_node("intent_extension", _intent_extension_node)
     builder.add_node("intents_decomposition", _intents_decomposition_node)
@@ -212,7 +245,8 @@ def get_simple_workflow_v2_subgraph():
     builder.add_node("query_expansion", _query_expansion_node)
     builder.add_node("synthesise", _synthesise_node)
 
-    builder.add_edge(START, "identify_intent")
+    builder.add_edge(START, "resolve_abbreviation")
+    builder.add_edge("resolve_abbreviation", "identify_intent")
     builder.add_edge("identify_intent", "intent_extension")
     builder.add_edge("intent_extension", "intents_decomposition")
     builder.add_conditional_edges(
