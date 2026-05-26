@@ -32,6 +32,32 @@ def format_json_for_prompt(value: Any) -> str:
     )
 
 
+_STEP_KEEP = {"step_id", "target", "status", "output", "error"}
+_INPUT_DROP = {"messages"}  # user query is already in the prompt separately
+_OUTER_KEEP = {"status", "results", "failed_step", "failed_reason"}
+
+
+def _slim_step(step: dict) -> dict:
+    """Keep only inference-relevant fields from a single StepResult dict."""
+    slimmed = {k: v for k, v in step.items() if k in _STEP_KEEP}
+    if "input" in step and isinstance(step["input"], dict):
+        slimmed["input"] = {k: v for k, v in step["input"].items() if k not in _INPUT_DROP}
+    return slimmed
+
+
+def _slim_execution_result(turn: dict) -> dict:
+    """Strip executor bookkeeping fields that carry no value for LLM reasoning."""
+    if not isinstance(turn, dict):
+        return turn
+    slimmed = {k: v for k, v in turn.items() if k in _OUTER_KEEP}
+    if "results" in slimmed and isinstance(slimmed["results"], list):
+        slimmed["results"] = [
+            _slim_step(s) if isinstance(s, dict) else s
+            for s in slimmed["results"]
+        ]
+    return slimmed
+
+
 def format_execution_results_for_prompt(execution_results: list[Any]) -> str:
     if not execution_results:
         return "[]"
@@ -39,5 +65,5 @@ def format_execution_results_for_prompt(execution_results: list[Any]) -> str:
     sections: list[str] = []
     for idx, turn_result in enumerate(execution_results, start=1):
         sections.append(f"===== EXECUTION TURN {idx} =====")
-        sections.append(format_json_for_prompt(turn_result))
+        sections.append(format_json_for_prompt(_slim_execution_result(turn_result)))
     return "\n".join(sections)

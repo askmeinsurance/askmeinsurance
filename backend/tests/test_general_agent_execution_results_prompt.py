@@ -33,16 +33,44 @@ def test_format_execution_results_with_mixed_types() -> None:
     execution_results = [
         {
             "status": "completed",
+            "completed_steps": 2,
+            "total_duration_ms": 1500,
+            "failed_step": None,
+            "failed_reason": None,
             "results": [
-                {"step_id": "tool_1", "output": _SampleModel(policy_id="P123", confidence=0.91)},
-                {"step_id": "tool_2", "output": [1, {"foo": "bar"}]},
+                {
+                    "step_id": "tool_1",
+                    "target": "query_textbook",
+                    "kind": "tool",
+                    "status": "success",
+                    "output": _SampleModel(policy_id="P123", confidence=0.91),
+                    "error": None,
+                    "input": {"queries": ["what is term life?"], "messages": [HumanMessage(content="user q")]},
+                    "original_index": 0,
+                    "upstream_step_ids": [],
+                    "upstream_results": [{"step_id": "prior", "output": "old data"}],
+                    "started_at": 1700000000.0,
+                    "ended_at": 1700000001.0,
+                    "duration_ms": 1000,
+                },
+                {
+                    "step_id": "tool_2",
+                    "target": "query_product_summary",
+                    "kind": "tool",
+                    "status": "success",
+                    "output": [1, {"foo": "bar"}],
+                    "error": None,
+                    "input": {"queries": [["benefit query", "pol_001"]]},
+                    "original_index": 1,
+                    "upstream_step_ids": ["tool_1"],
+                    "upstream_results": [],
+                    "started_at": 1700000001.0,
+                    "ended_at": 1700000001.5,
+                    "duration_ms": 500,
+                },
             ],
-            "debug": {
-                "message": HumanMessage(content="hello"),
-                "opaque": _Unserializable(),
-            },
         },
-        {"status": "failed", "failed_reason": "network timeout"},
+        {"status": "failed", "failed_reason": "network timeout", "failed_step": "tool_2"},
     ]
 
     formatted = format_execution_results_for_prompt(execution_results)
@@ -52,11 +80,43 @@ def test_format_execution_results_with_mixed_types() -> None:
 
     parsed_turns = _extract_turn_payloads(formatted)
     assert len(parsed_turns) == 2
-    assert parsed_turns[0]["status"] == "completed"
-    assert parsed_turns[0]["results"][0]["output"]["policy_id"] == "P123"
-    assert parsed_turns[0]["debug"]["message"]["content"] == "hello"
-    assert parsed_turns[0]["debug"]["opaque"] == "opaque-object"
-    assert parsed_turns[1]["status"] == "failed"
+
+    turn1 = parsed_turns[0]
+    # Outer envelope: kept fields
+    assert turn1["status"] == "completed"
+    assert turn1["failed_step"] is None
+    assert turn1["failed_reason"] is None
+    # Outer envelope: noise fields stripped
+    assert "completed_steps" not in turn1
+    assert "total_duration_ms" not in turn1
+
+    step1 = turn1["results"][0]
+    # Per-step: kept fields
+    assert step1["step_id"] == "tool_1"
+    assert step1["target"] == "query_textbook"
+    assert step1["status"] == "success"
+    assert step1["output"]["policy_id"] == "P123"
+    assert step1["error"] is None
+    # input: query kept, messages stripped
+    assert step1["input"]["queries"] == ["what is term life?"]
+    assert "messages" not in step1["input"]
+    # Per-step: noise fields stripped
+    assert "duration_ms" not in step1
+    assert "started_at" not in step1
+    assert "ended_at" not in step1
+    assert "upstream_results" not in step1
+    assert "upstream_step_ids" not in step1
+    assert "original_index" not in step1
+    assert "kind" not in step1
+
+    step2 = turn1["results"][1]
+    assert step2["step_id"] == "tool_2"
+    assert step2["input"] == {"queries": [["benefit query", "pol_001"]]}
+
+    turn2 = parsed_turns[1]
+    assert turn2["status"] == "failed"
+    assert turn2["failed_reason"] == "network timeout"
+    assert turn2["failed_step"] == "tool_2"
 
 
 def test_format_execution_results_empty() -> None:
