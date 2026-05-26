@@ -20,7 +20,7 @@ load_dotenv(_env_path, override=True)
 # ---------------------------------------------------------------------------
 # CONFIG — edit these before running
 # ---------------------------------------------------------------------------
-QUERY_TEXT = """How do I know if a term life policy is enough for my family’s needs?"""
+QUERY_TEXT = """How much guaranteed cash back will I get each year if I buy the 5-year payment AIA Smart Flexi Rewards (II) plan?"""
 TOP_K = 5
 OUTPUT_FILE = "similar.json"  # set to a path like "similar.json" to save results, or None to skip
 # ---------------------------------------------------------------------------
@@ -78,7 +78,8 @@ def main() -> None:
 
     qdrant_url = os.environ.get("QDRANT_URL", "http://localhost:6333")
     qdrant_api_key = os.environ.get("QDRANT_API_KEY") or None
-    collection = os.environ.get("QDRANT_COLLECTION", "insurance_text_book")
+    # collection = os.environ.get("QDRANT_COLLECTION", "insurance_text_book")
+    collection = "product_summary"
 
     client = QdrantClient(url=qdrant_url, api_key=qdrant_api_key)
 

@@ -127,6 +127,7 @@ async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConf
     llm = get_llm("simple_workflow")
     expanded = state.expanded
     user_message = (
+        f"Question type: {state.classification.question_type if state.classification else 'unknown'}\n\n"
         f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
         f"User question:\n{format_json_for_prompt(state.messages)}\n\n"
         f"Expanded product queries:\n{format_json_for_prompt(expanded.product_queries if expanded else [])}\n"
@@ -144,7 +145,7 @@ async def _synthesise_node(state: SimpleWorkflowGraphState, config: RunnableConf
 
 def _route_after_expand(state: SimpleWorkflowGraphState) -> list[str]:
     qt = state.classification.question_type if state.classification else "concept"
-    if qt == "specific_product":
+    if qt in ("specific_product", "lookup"):
         return ["name_match"]
     if qt == "concept":
         return ["retrieve_concept"]

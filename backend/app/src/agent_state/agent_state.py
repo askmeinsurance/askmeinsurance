@@ -33,7 +33,7 @@ class FindProductWithCriteriaStateOutput(BaseModel):
 
 
 class SimpleQueryClassification(BaseModel):
-    question_type: Literal["specific_product", "concept", "both"]
+    question_type: Literal["specific_product", "concept", "both", "lookup"]
     product_name_mentioned: str | None
     reasoning: str
 

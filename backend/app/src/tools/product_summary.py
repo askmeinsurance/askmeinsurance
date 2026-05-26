@@ -7,7 +7,7 @@ from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_top_k
 
-COLLECTION = "policy_chunks"
+COLLECTION = "product_summary"
 _CONTEXT_RE = re.compile(r"<context>.*?</context>", re.DOTALL)
 
 

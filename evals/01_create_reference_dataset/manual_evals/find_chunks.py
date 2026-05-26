@@ -7,7 +7,7 @@ from pathlib import Path
 
 STATIC_DIR = Path(__file__).parent / "static"
 
-QUERY = "non-forfeiture option1 to prevent the policy from lapsing; the premium cost is the lowest compared to other types of life insurance for coverage o"
+QUERY = "How much guaranteed cash back will I get each year if I buy the 5-year payment AIA Smart Flexi Rewards (II) plan?"
 
 
 def normalize(text: str) -> str:
