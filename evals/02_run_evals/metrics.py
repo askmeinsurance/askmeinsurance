@@ -66,14 +66,14 @@ class GeminiJudge(DeepEvalBaseLLM):
 def build_metrics(judge: GeminiJudge | None = None) -> dict[str, MetricConfig]:
     """Return all configured DeepEval metrics keyed by slug."""
     return {
-        "answer_relevancy": MetricConfig(
-            metric=AnswerRelevancyMetric(
-                threshold=0.7,
-                model=judge,
-                include_reason=True,
-            ),
-        ),
-        "completeness": MetricConfig(
+        # "answer_relevancy": MetricConfig(
+        #     metric=AnswerRelevancyMetric(
+        #         threshold=0.7,
+        #         model=judge,
+        #         include_reason=True,
+        #     ),
+        # ),
+        "helpfulness": MetricConfig(
             metric=GEval(
                 name="helpfulness",
                 criteria=("""## 1. Helpfulness

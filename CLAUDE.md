@@ -46,15 +46,20 @@ POST /api/v1/chat/stream
 ### Agent Routing (`app/src/agents/main_agent.py`)
 The main agent is a LangGraph `StateGraph` with state type `MainAgentState`. A **router node** calls an LLM to classify the user query and sets `state.route` to either `"simple_workflow"` or `"general_agent"`. A conditional edge then dispatches to the appropriate subgraph.
 
-### Simple Workflow (`app/src/workflow/simple_workflow.py`)
-A LangGraph subgraph for straightforward insurance Q&A. Steps:
-1. **classify** — classifies as `specific_product`, `concept`, or `both`
-2. **expand_queries** — generates product and concept sub-queries
-3. **name_match** ← parallel fan-out when applicable → **retrieve_concept**
-4. **retrieve_product** (follows name_match)
-5. **synthesise** — waits for both retrieval branches, generates final answer
+### Simple Workflow (`app/src/workflow/simple_workflow_v2.py`)
+**Active implementation** (v1 `simple_workflow.py` is kept for reference only). A LangGraph subgraph for straightforward insurance Q&A. Steps:
+1. **resolve_abbreviation** — expands abbreviations in the query using product registry
+2. **identify_intent** — extracts `product_name_mentioned` and intent summary
+3. **intent_extension** — enriches intent with related concepts
+4. **intents_decomposition** — breaks intent into retrieval sub-intents
+5. **name_match** ← conditional: runs only when a product name is detected
+6. **query_expansion** — generates retrieval queries for both product and concept searches
+7. **synthesise** — runs parallel product + concept retrieval, then generates final answer
 
-The `_route_after_expand` function implements the parallel fan-out: `"both"` returns `["name_match", "retrieve_concept"]` to run them concurrently.
+The `_route_after_decomposition` function: if `intent_summary.product_name_mentioned` is set → `name_match` → `query_expansion`; otherwise skips directly to `query_expansion`.
+
+### Dev Routing Toggle
+`FORCE_ROUTE` at the top of `app/src/agents/main_agent.py` bypasses the LLM router. Set to `"simple_workflow"`, `"general_agent"`, or `None` (live routing). Default is `"simple_workflow"` to avoid router LLM calls during development.
 
 ### General Agent (`app/src/agents/general_agent.py`)
 A ReAct planner-executor loop (max 5 iterations). Classifies the question, then iteratively plans tool calls (`textbook_retriever`, `product_registry`, `name_match`, `find_product_with_criteria`), executes them via `execute_parallel_plan`, and synthesises when the planner marks `finish=True`.
@@ -84,6 +89,20 @@ Langfuse is initialized in `app/core/langfuse.py` at startup. `LangGraphService`
 
 ### Auth
 JWT verification (RS256) using `SUPABASE_JWT_SECRET`. Set `AUTH_ENABLED=false` in `.env` to disable during local development.
+
+## Evals
+
+Offline evaluation scripts live under `evals/`. They import backend code directly (no running server needed).
+
+```bash
+# From evals/02_run_evals/
+uv run python run_evals.py                          # Run all evals
+uv run python run_evals.py --run-name "my-run"      # Named run (for Langfuse tracking)
+uv run python run_evals.py --dataset manual         # Manual dataset only
+uv run python run_evals.py --limit 5                # Limit to 5 cases
+```
+
+Copy `evals/example.env` to `evals/.env` and fill in `GOOGLE_API_KEY` / `GEMINI_API_KEY`, `QDRANT_URL`, `LANGFUSE_*` keys. The evals runner also needs all backend env vars since it imports `backend/` directly via `sys.path`.
 
 ## Environment Setup
 
