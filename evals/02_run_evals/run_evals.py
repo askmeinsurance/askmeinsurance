@@ -121,7 +121,7 @@ async def _eval_case(
 
     messages = result.get("messages", [])
     answer = messages[-1].content if messages else ""
-    retrieval_context = extract_retrieval_context(result.get("execution_results", []))
+    retrieval_context = extract_retrieval_context(result)
 
     test_case = LLMTestCase(
         input=case.question,

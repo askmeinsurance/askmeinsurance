@@ -29,6 +29,10 @@ class MainAgentState(BaseModel):
     execution_results: Annotated[list, operator.add] = Field(default_factory=list)
     route: str = "simple_workflow"
     route_reasoning: str = ""
+    # simple_workflow_v2 retrieval output — must be present here so LangGraph
+    # merges the subgraph's final state back into this parent state.
+    product_chunks: Annotated[list[dict], operator.add] = Field(default_factory=list)
+    concept_chunks: dict = Field(default_factory=lambda: {"queries": [], "results": []})
 
 
 async def get_main_agent_graph():
