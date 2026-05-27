@@ -22,7 +22,7 @@ def load_manual_evals() -> list[EvalCase]:
     return [
         EvalCase(
             question=item["question"],
-            expected_output=item.get("answer"),
+            expected_output=item.get("base_answer"),
             source="manual",
         )
         for item in data
