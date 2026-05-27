@@ -42,6 +42,12 @@ class IntentsDecomposition(BaseModel):
     decomposed_intents: List[DecomposedIntent]
 
 
+class ResolvedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+    policy_ids: List[str] = []
+
+
 class RephrasedQuerySet(BaseModel):
     textbook_queries: List[str]
     product_queries: List[str]
@@ -55,6 +61,12 @@ class NameMatchStateInput(BaseModel):
 
 class NameMatchStateOutput(BaseModel):
     lst_policy_matched: Annotated[list[PolicyMatchResponse], operator.add]
+
+
+class OnePolicyMatchOutput(BaseModel):
+    policy_id: str | None
+    confidence: Literal["low", "medium", "high"]
+    reason: str
 
 
 class FindProductWithCriteriaStateInput(BaseModel):

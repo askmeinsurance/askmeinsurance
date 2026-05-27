@@ -17,7 +17,9 @@ from app.src.agent_state.agent_state import (
     IntentsDecomposition,
     IntentSummary,
     NameMatchStateInput,
+    OnePolicyMatchOutput,
     RephrasedQuerySet,
+    ResolvedIntent,
 )
 from app.src.prompts.prompts import (
     SIMPLEV2_IDENTIFY_INTENT_SYSTEM,
@@ -32,7 +34,7 @@ from app.src.tools.product_registry import get_product_names
 from app.src.tools.product_summary import query_product_summary
 from app.src.tools.textbook import TextbookOutput, query_textbook
 from app.src.utils.prompt_format import format_json_for_prompt
-from app.src.workflow.name_match import name_match_workflow
+from app.src.workflow.name_match import name_match_one_policy_workflow
 
 
 def _timeout() -> float:
@@ -47,6 +49,7 @@ class SimpleWorkflowV2GraphState(BaseModel):
     intent_extension: IntentExtension | None = None
     intents_decomposition: IntentsDecomposition | None = None
     policy_ids: Annotated[list[str], operator.add] = []
+    resolved_intents: List[ResolvedIntent] = []
     product_chunks: Annotated[list[dict], operator.add] = []
     concept_chunks: TextbookOutput = Field(default_factory=lambda: {"queries": [], "results": []})
 
@@ -140,35 +143,46 @@ async def _intents_decomposition_node(state: SimpleWorkflowV2GraphState, config:
 
 
 async def _name_match_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
-    product_name = state.intent_summary.product_name_mentioned if state.intent_summary else None
-    if not product_name:
-        return {"policy_ids": []}
-    result = await name_match_workflow(
-        NameMatchStateInput(
-            messages=state.messages,
-            retrieval_query=product_name,
-            conversation_history=state.conversation_history,
-        ),
-        config=config,
+    decomposed = (
+        state.intents_decomposition.decomposed_intents if state.intents_decomposition else []
     )
-    policy_ids: List[str] = [
-        match.selected_policy_ids[0]
-        for match in result.lst_policy_matched
-        if match.selected_policy_ids
-    ]
-    return {"policy_ids": policy_ids}
+
+    async def resolve_one(intent: DecomposedIntent) -> ResolvedIntent:
+        if intent.source_type not in ("product", "both"):
+            return ResolvedIntent(**intent.model_dump(), policy_ids=[])
+        result: OnePolicyMatchOutput = await name_match_one_policy_workflow(
+            NameMatchStateInput(
+                messages=state.messages,
+                retrieval_query=intent.intent_description,
+                conversation_history=state.conversation_history,
+            ),
+            config=config,
+        )
+        ids: List[str] = [result.policy_id] if result.policy_id else []
+        return ResolvedIntent(**intent.model_dump(), policy_ids=ids)
+
+    resolved = await asyncio.gather(*[resolve_one(i) for i in decomposed])
+    return {"resolved_intents": list(resolved)}
 
 
 async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
-    decomposed_intents = (
-        state.intents_decomposition.decomposed_intents if state.intents_decomposition else []
-    )
-    if not decomposed_intents:
+    resolved = state.resolved_intents or []
+
+    # Fall back to decomposed_intents if name_match was skipped (concept-only path)
+    if not resolved and state.intents_decomposition:
+        resolved = [
+            ResolvedIntent(**i.model_dump(), policy_ids=[])
+            for i in state.intents_decomposition.decomposed_intents
+        ]
+
+    if not resolved:
         return {"concept_chunks": {"queries": [], "results": []}, "product_chunks": []}
 
-    # LLM rephrases each decomposed intent for its target RAG source
+    # LLM rephrases each resolved intent for its target RAG source.
+    # Pass only intent_description + source_type — policy_ids are not needed by the prompt.
     user_message = (
-        f"Decomposed intents:\n{format_json_for_prompt(decomposed_intents)}"
+        f"Decomposed intents:\n"
+        f"{format_json_for_prompt([{'intent_description': i.intent_description, 'source_type': i.source_type} for i in resolved])}"
     )
     with anyio.fail_after(_timeout()):
         rephrased: RephrasedQuerySet = await ainvoke_structured_with_fallback(
@@ -184,8 +198,10 @@ async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: Runna
 
     # Call both RAG tools in parallel
     textbook_queries = rephrased.textbook_queries or []
-    product_queries = rephrased.product_queries or []
-    policy_ids = state.policy_ids
+    product_queries: List[str] = rephrased.product_queries or []
+
+    # Product intents that have resolved policy IDs — same order as product_queries output
+    product_intents = [i for i in resolved if i.source_type in ("product", "both") and i.policy_ids]
 
     async def _fetch_concept() -> TextbookOutput:
         if not textbook_queries:
@@ -195,9 +211,17 @@ async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: Runna
         )
 
     async def _fetch_product() -> list:
-        if not policy_ids or not product_queries:
+        if not product_intents or not product_queries:
             return []
-        query_pairs = [[q, pid] for pid in policy_ids for q in product_queries]
+        # Positional alignment: product_queries[i] corresponds to product_intents[i].
+        # zip stops at the shorter list, so a count mismatch degrades gracefully.
+        query_pairs = [
+            [query, pid]
+            for query, intent in zip(product_queries, product_intents)
+            for pid in intent.policy_ids
+        ]
+        if not query_pairs:
+            return []
         return await asyncio.to_thread(
             lambda: query_product_summary.invoke({"queries": query_pairs}, config=config)
         )
@@ -228,10 +252,11 @@ async def _synthesise_node(state: SimpleWorkflowV2GraphState, config: RunnableCo
 
 
 def _route_after_decomposition(state: SimpleWorkflowV2GraphState) -> str:
-    product_name = state.intent_summary.product_name_mentioned if state.intent_summary else None
-    if product_name:
-        return "name_match"
-    return "query_expansion"
+    has_product_intent = any(
+        i.source_type in ("product", "both")
+        for i in (state.intents_decomposition.decomposed_intents if state.intents_decomposition else [])
+    )
+    return "name_match" if has_product_intent else "query_expansion"
 
 
 def get_simple_workflow_v2_subgraph():
