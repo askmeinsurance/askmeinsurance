@@ -20,12 +20,19 @@ async def get_graph():
     return _graph
 
 
-def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
-    """Extract retrieved text chunks from graph execution_results."""
+def extract_retrieval_context(result: dict) -> list[str]:
+    """Extract retrieved text chunks from graph result.
+
+    Supports two workflow shapes:
+    - general_agent: chunks are nested inside result["execution_results"]
+    - simple_workflow_v2: chunks are in result["product_chunks"] and result["concept_chunks"]
+    """
     chunks = []
     seen = set()
     tool_hits: dict[str, int] = {}
-    for batch in execution_results:
+
+    # --- Path 1: general_agent style (execution_results) ---
+    for batch in result.get("execution_results", []):
         for step in batch.get("results", []):
             if step.get("kind") != "tool":
                 continue
@@ -34,14 +41,15 @@ def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
                 continue
             output = step.get("output") or []
 
-            # query_product_summary output is a flat list of chunk dicts.
+            # query_product_summary output is grouped by policy_id.
             if target == "query_product_summary":
-                for chunk in output:
-                    text = chunk.get("text") or chunk.get("combined_text") or ""
-                    if text and text not in seen:
-                        seen.add(text)
-                        chunks.append(text)
-                        tool_hits[target] = tool_hits.get(target, 0) + 1
+                for group in output:
+                    for chunk in group.get("chunks", []):
+                        text = chunk.get("text") or chunk.get("combined_text") or ""
+                        if text and text not in seen:
+                            seen.add(text)
+                            chunks.append(text)
+                            tool_hits[target] = tool_hits.get(target, 0) + 1
                 continue
 
             # query_textbook output is {"queries": [...], "results": [...]}
@@ -51,6 +59,24 @@ def extract_retrieval_context(execution_results: list[dict]) -> list[str]:
                     seen.add(text)
                     chunks.append(text)
                     tool_hits[target] = tool_hits.get(target, 0) + 1
+
+    # --- Path 2: simple_workflow_v2 style (product_chunks / concept_chunks) ---
+    for group in result.get("product_chunks", []):
+        for chunk in group.get("chunks", []):
+            text = chunk.get("text") or chunk.get("combined_text") or ""
+            if text and text not in seen:
+                seen.add(text)
+                chunks.append(text)
+                tool_hits["query_product_summary"] = tool_hits.get("query_product_summary", 0) + 1
+
+    concept_output = result.get("concept_chunks") or {}
+    for chunk in concept_output.get("results", []):
+        text = chunk.get("text") or ""
+        if text and text not in seen:
+            seen.add(text)
+            chunks.append(text)
+            tool_hits["query_textbook"] = tool_hits.get("query_textbook", 0) + 1
+
     if tool_hits:
         summary = "  ".join(f"{t}={n}" for t, n in tool_hits.items())
         print(f"  [retrieval] {len(chunks)} chunks  ({summary})")

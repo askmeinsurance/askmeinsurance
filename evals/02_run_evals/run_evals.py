@@ -43,7 +43,9 @@ from chatbot_invoker import extract_retrieval_context, get_graph
 from dataset_loader import EvalCase, load_all_evals, load_manual_evals, load_textbook_evals
 from langfuse_reporter import (
     ensure_dataset,
+    fetch_prior_results,
     get_langfuse_client,
+    get_processed_item_ids,
     link_to_dataset_run,
     post_scores,
     upsert_dataset_items,
@@ -121,7 +123,7 @@ async def _eval_case(
 
     messages = result.get("messages", [])
     answer = messages[-1].content if messages else ""
-    retrieval_context = extract_retrieval_context(result.get("execution_results", []))
+    retrieval_context = extract_retrieval_context(result)
 
     test_case = LLMTestCase(
         input=case.question,
@@ -193,38 +195,55 @@ async def main() -> None:
     ensure_dataset(lf_client, DATASET_NAME)
     question_to_item_id = upsert_dataset_items(lf_client, DATASET_NAME, cases)
 
+    processed_ids = get_processed_item_ids(lf_client, DATASET_NAME, run_name)
+    if processed_ids:
+        print(f"Resuming '{run_name}' — skipping {len(processed_ids)} already-processed case(s)")
+
     graph = await get_graph()
     judge = GeminiJudge()
     metrics_map = build_metrics(judge)
 
     results: list[dict] = []
     for i, case in enumerate(cases, 1):
-        print(f"\n[{i}/{len(cases)}] {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
         item_id = question_to_item_id.get(case.question, "")
+        if item_id in processed_ids:
+            print(f"\n[{i}/{len(cases)}] SKIP: {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
+            continue
+        print(f"\n[{i}/{len(cases)}] {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
         result = await _eval_case(graph, case, run_name, lf_client, item_id, metrics_map)
         results.append(result)
 
         score_parts = [f"{k}={v:.2f}" for k, (v, _) in result["scores"].items()]
         print(f"  {' | '.join(score_parts)}")
 
+    # Merge prior-session results so the summary covers the full run
+    current_item_ids = {question_to_item_id.get(r["question"], "") for r in results}
+    item_id_to_question = {v: k for k, v in question_to_item_id.items()}
+    prior_results = fetch_prior_results(
+        lf_client, DATASET_NAME, run_name, current_item_ids, item_id_to_question
+    )
+    if prior_results:
+        print(f"[summary] Loaded {len(prior_results)} prior result(s) from Langfuse")
+    all_results = prior_results + results  # prior first to preserve original order
+
     # Aggregate summary
     print(f"\n{'─' * 64}")
-    print(f"Run '{run_name}'  ({len(results)} cases evaluated)")
+    print(f"Run '{run_name}'  ({len(all_results)} cases evaluated)")
     all_metric_names: list[str] = []
-    for r in results:
+    for r in all_results:
         for k in r["scores"]:
             if k not in all_metric_names:
                 all_metric_names.append(k)
 
     for metric in all_metric_names:
-        vals = [r["scores"][metric][0] for r in results if metric in r["scores"]]
+        vals = [r["scores"][metric][0] for r in all_results if metric in r["scores"]]
         if vals:
             avg = sum(vals) / len(vals)
             passing = sum(1 for v in vals if v >= 0.7)
             print(f"  {metric:<22} avg={avg:.3f}  pass={passing}/{len(vals)}")
 
     print(f"\nLangfuse: Datasets → {DATASET_NAME} → Runs → {run_name}")
-    _save_log(run_name, results, all_metric_names, len(cases))
+    _save_log(run_name, all_results, all_metric_names, len(cases))
     lf_client.flush()
 
 

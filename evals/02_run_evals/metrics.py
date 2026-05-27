@@ -1,5 +1,7 @@
 """DeepEval metric configurations for the insurance chatbot."""
 
+import asyncio
+import json
 import os
 from dataclasses import dataclass
 
@@ -63,17 +65,117 @@ class GeminiJudge(DeepEvalBaseLLM):
         return self._model_name
 
 
+class IntentCoverageMetric(BaseMetric):
+    """Two-phase coverage metric: decompose base_answer, then binary-check each point.
+
+    Phase 1: LLM decomposes expected_output into a list of discrete coverage points.
+    Phase 2: For each point, a binary LLM check determines if actual_output covers it.
+    Score = covered_points / total_points (true ratio, not holistic judgment).
+    Extra content in actual_output beyond expected_output is irrelevant to the score.
+    """
+
+    name = "intent_coverage"
+
+    def __init__(self, model: "GeminiJudge", threshold: float = 0.7) -> None:
+        if model is None:
+            raise ValueError("IntentCoverageMetric requires an explicit judge model")
+        self.model = model
+        self.threshold = threshold
+
+    def measure(self, test_case, *args, **kwargs) -> float:
+        raise NotImplementedError("Use a_measure; sync execution is not supported.")
+
+    async def a_measure(self, test_case, *args, **kwargs) -> float:
+        expected = (test_case.expected_output or "").strip()
+        actual = test_case.actual_output or ""
+
+        if not expected:
+            self.score = 0.0
+            self.reason = "Empty base_answer; no coverage points to evaluate."
+            self.success = False
+            return self.score
+
+        points = await self._decompose(expected)
+
+        if not points:
+            self.score = 0.0
+            self.reason = "Decomposition returned no points."
+            self.success = False
+            return self.score
+
+        verdicts: tuple[bool, ...] = await asyncio.gather(
+            *[self._check_point(p, actual) for p in points]
+        )
+
+        covered = sum(verdicts)
+        total = len(points)
+        self.score = covered / total
+        verdict_lines = [
+            f"  {'[COVERED]' if v else '[MISSING]'} {p}"
+            for p, v in zip(points, verdicts)
+        ]
+        self.reason = (
+            f"Covered {covered}/{total} points ({self.score:.0%}):\n"
+            + "\n".join(verdict_lines)
+        )
+        self.success = self.is_successful()
+        return self.score
+
+    async def _decompose(self, expected_output: str) -> list[str]:
+        """Ask the judge LLM to break expected_output into atomic coverage points."""
+        prompt = (
+            "You are an evaluation assistant. Decompose the following reference answer "
+            "into discrete, atomic coverage points.\n\n"
+            f"Reference answer:\n{expected_output}\n\n"
+            "Instructions:\n"
+            "- Extract each distinct factual claim, condition, or piece of information as a separate point.\n"
+            "- Each point must be self-contained and independently verifiable against a chatbot response.\n"
+            "- Do not add information not present in the reference answer.\n"
+            "- Return ONLY a valid JSON array of strings, with no markdown fencing, no preamble, and no explanation.\n\n"
+            'Example output format:\n["The minimum premium is $3,600.", "This applies to the 10-year payment option only."]'
+        )
+        raw = await self.model.a_generate(prompt)
+        raw = raw.strip()
+        # Strip markdown fences if present
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        try:
+            result = json.loads(raw)
+            if isinstance(result, list):
+                return [str(p).strip() for p in result if str(p).strip()]
+        except json.JSONDecodeError:
+            return ["[decomposition_failed: could not parse LLM output]"]
+        return []
+
+    async def _check_point(self, point: str, actual_output: str) -> bool:
+        """Binary check: does actual_output cover this single coverage point?"""
+        prompt = (
+            "You are an evaluation assistant checking whether a chatbot response covers a specific point.\n\n"
+            f"Point to check:\n{point}\n\n"
+            f"Chatbot response:\n{actual_output}\n\n"
+            "Does the chatbot response cover this point, either explicitly or with equivalent meaning? "
+            "Answer with exactly one word: YES or NO."
+        )
+        raw = await self.model.a_generate(prompt)
+        return raw.strip().upper().startswith("YES")
+
+    def is_successful(self) -> bool:
+        return (self.score or 0.0) >= self.threshold
+
+
 def build_metrics(judge: GeminiJudge | None = None) -> dict[str, MetricConfig]:
     """Return all configured DeepEval metrics keyed by slug."""
     return {
-        "answer_relevancy": MetricConfig(
-            metric=AnswerRelevancyMetric(
-                threshold=0.7,
-                model=judge,
-                include_reason=True,
-            ),
-        ),
-        "completeness": MetricConfig(
+        # "answer_relevancy": MetricConfig(
+        #     metric=AnswerRelevancyMetric(
+        #         threshold=0.7,
+        #         model=judge,
+        #         include_reason=True,
+        #     ),
+        # ),
+        "helpfulness": MetricConfig(
             metric=GEval(
                 name="helpfulness",
                 criteria=("""## 1. Helpfulness
@@ -174,6 +276,10 @@ When evaluating for honesty, look at the conversation through three high-level l
                 threshold=0.6,
                 model=judge,
             ),
+            requires_expected_output=True,
+        ),
+        "intent_coverage": MetricConfig(
+            metric=IntentCoverageMetric(model=judge, threshold=0.7),
             requires_expected_output=True,
         ),
     }

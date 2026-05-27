@@ -5,7 +5,7 @@ from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_top_k
+from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_score_threshold, get_product_summary_top_k
 
 COLLECTION = "product_summary"
 _CONTEXT_RE = re.compile(r"<context>.*?</context>", re.DOTALL)
@@ -42,6 +42,7 @@ def query_product_summary(
     embeddings = get_embeddings()
     client = get_qdrant_client()
     top_k = get_product_summary_top_k()
+    score_threshold = get_product_summary_score_threshold()
 
     _ = context
     normalized_queries: list[tuple[str, str | None]] = []
@@ -76,6 +77,7 @@ def query_product_summary(
             limit=top_k,
             with_payload=True,
             query_filter=qdrant_filter,
+            score_threshold=score_threshold or None,
         ).points
 
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:
@@ -92,13 +94,22 @@ def query_product_summary(
                 seen_chunk_ids.add(chunk_id)
             deduped_points.append(point)
 
-    return [
-        {
+    groups: dict[str, dict] = {}
+    order: list[str] = []
+
+    for r in deduped_points:
+        pid = r.payload.get("policy_id") or "__unknown__"
+        if pid not in groups:
+            order.append(pid)
+            groups[pid] = {
+                "policy_id": pid,
+                "document_metadata": r.payload.get("document_metadata", {}),
+                "chunks": [],
+            }
+        groups[pid]["chunks"].append({
             "chunk_id": r.payload.get("chunk_id"),
-            "policy_id": r.payload.get("policy_id"),
             "combined_text": _strip_context(r.payload.get("combined_text", "")),
-            "document_metadata": r.payload.get("document_metadata", {}),
             "score": r.score,
-        }
-        for r in deduped_points
-    ]
+        })
+
+    return [groups[pid] for pid in order]

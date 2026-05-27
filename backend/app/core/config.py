@@ -54,6 +54,8 @@ class Settings(BaseSettings):
     # Retrieval tuning
     textbook_top_k: int = Field(default=5)
     product_summary_top_k: int = Field(default=5)
+    textbook_score_threshold: float = Field(default=0.0)
+    product_summary_score_threshold: float = Field(default=0.0)
 
     # Observability
     langfuse_public_key: str | None = Field(default=None)
