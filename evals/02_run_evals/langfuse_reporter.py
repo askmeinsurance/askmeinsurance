@@ -90,7 +90,7 @@ def fetch_prior_results(
 
         try:
             trace = client.api.trace.get(item.trace_id)
-            scores_resp = client.api.score.get(trace_id=item.trace_id)
+            scores_resp = client.api.scores.get_many(trace_id=item.trace_id)
 
             question = trace.input["messages"][0]["content"]
             answer = trace.output["messages"][-1]["content"]
