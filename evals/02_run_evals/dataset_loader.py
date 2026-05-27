@@ -12,6 +12,7 @@ class EvalCase:
     question: str
     expected_output: Optional[str]
     source: str
+    case_id: Optional[str] = None
     context: list[str] = field(default_factory=list)
     retrieval_context: list[str] = field(default_factory=list)
 
@@ -24,6 +25,7 @@ def load_manual_evals() -> list[EvalCase]:
             question=item["question"],
             expected_output=item.get("base_answer"),
             source="manual",
+            case_id=item.get("id"),
         )
         for item in data
     ]

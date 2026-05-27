@@ -44,6 +44,7 @@ from dataset_loader import EvalCase, load_all_evals, load_manual_evals, load_tex
 from langfuse_reporter import (
     ensure_dataset,
     get_langfuse_client,
+    get_processed_item_ids,
     link_to_dataset_run,
     post_scores,
     upsert_dataset_items,
@@ -193,14 +194,21 @@ async def main() -> None:
     ensure_dataset(lf_client, DATASET_NAME)
     question_to_item_id = upsert_dataset_items(lf_client, DATASET_NAME, cases)
 
+    processed_ids = get_processed_item_ids(lf_client, DATASET_NAME, run_name)
+    if processed_ids:
+        print(f"Resuming '{run_name}' — skipping {len(processed_ids)} already-processed case(s)")
+
     graph = await get_graph()
     judge = GeminiJudge()
     metrics_map = build_metrics(judge)
 
     results: list[dict] = []
     for i, case in enumerate(cases, 1):
-        print(f"\n[{i}/{len(cases)}] {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
         item_id = question_to_item_id.get(case.question, "")
+        if item_id in processed_ids:
+            print(f"\n[{i}/{len(cases)}] SKIP: {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
+            continue
+        print(f"\n[{i}/{len(cases)}] {case.question[:80]}{'...' if len(case.question) > 80 else ''}")
         result = await _eval_case(graph, case, run_name, lf_client, item_id, metrics_map)
         results.append(result)
 
