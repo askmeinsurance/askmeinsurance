@@ -62,6 +62,54 @@ def get_processed_item_ids(client: Langfuse, dataset_name: str, run_name: str) -
             return set()
 
 
+def fetch_prior_results(
+    client: Langfuse,
+    dataset_name: str,
+    run_name: str,
+    current_item_ids: set[str],
+) -> list[dict]:
+    """Fetch question, answer, and scores for all run items NOT in current_item_ids.
+
+    current_item_ids: item IDs processed in the current session (already in `results`).
+    Returns a list of result dicts in the same shape as _eval_case returns, so they
+    can be merged directly with the current session's results for a complete summary.
+    """
+    try:
+        run = client.api.datasets.get_run(
+            dataset_name=dataset_name,
+            run_name=run_name,
+        )
+    except Exception as exc:
+        print(f"[summary] Could not fetch prior results from Langfuse: {exc}")
+        return []
+
+    prior: list[dict] = []
+    for item in run.dataset_run_items:
+        if item.dataset_item_id in current_item_ids:
+            continue  # already captured in the current session's results
+
+        try:
+            trace = client.api.trace.get(item.trace_id)
+            scores_resp = client.api.score.get(trace_id=item.trace_id)
+
+            question = trace.input["messages"][0]["content"]
+            answer = trace.output["messages"][-1]["content"]
+            score_map: dict[str, tuple[float, str | None]] = {
+                s.name: (s.value, s.comment)
+                for s in scores_resp.data
+            }
+            prior.append({
+                "question": question,
+                "answer": answer,
+                "scores": score_map,
+                "trace_id": item.trace_id,
+            })
+        except Exception as exc:
+            print(f"[summary] Skipping trace {item.trace_id}: {exc}")
+
+    return prior
+
+
 def ensure_dataset(client: Langfuse, name: str) -> None:
     try:
         client.get_dataset(name)
