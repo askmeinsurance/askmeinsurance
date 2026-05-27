@@ -89,14 +89,21 @@ def fetch_prior_results(
             continue  # already captured in the current session's results
 
         try:
-            trace = client.api.trace.get(item.trace_id)
-            scores_resp = client.api.scores.get_many(trace_id=item.trace_id)
+            # Request io + scores field groups so input/output/scores are populated
+            trace = client.api.trace.get(item.trace_id, fields="core,io,scores")
 
-            question = trace.input["messages"][0]["content"]
-            answer = trace.output["messages"][-1]["content"]
+            inp = trace.input or {}
+            out = trace.output or {}
+            messages_in = inp.get("messages", []) if isinstance(inp, dict) else []
+            messages_out = out.get("messages", []) if isinstance(out, dict) else []
+
+            question = messages_in[0].get("content", "") if messages_in else ""
+            answer = messages_out[-1].get("content", "") if messages_out else ""
+
+            # Scores are embedded in TraceWithFullDetails — no extra API call needed
             score_map: dict[str, tuple[float, str | None]] = {
                 s.name: (s.value, s.comment)
-                for s in scores_resp.data
+                for s in trace.scores
             }
             prior.append({
                 "question": question,
