@@ -62,17 +62,46 @@ def get_processed_item_ids(client: Langfuse, dataset_name: str, run_name: str) -
             return set()
 
 
+def _extract_answer_from_observations(observations: list) -> str:
+    """Scan LangChain callback observations for the last AI message content.
+
+    The LangChain CallbackHandler creates child observations whose output
+    contains the final LangGraph state (a dict with a 'messages' list).
+    We look for any observation whose output has messages and return the
+    content of the last one.
+    """
+    for obs in observations:
+        out = getattr(obs, "output", None)
+        if not isinstance(out, dict):
+            continue
+        msgs = out.get("messages", [])
+        if not msgs:
+            continue
+        last = msgs[-1]
+        # messages can be dicts or serialized LangChain message objects
+        if isinstance(last, dict):
+            content = last.get("content", "")
+        else:
+            content = getattr(last, "content", "")
+        if content:
+            return content
+    return ""
+
+
 def fetch_prior_results(
     client: Langfuse,
     dataset_name: str,
     run_name: str,
     current_item_ids: set[str],
+    item_id_to_question: dict[str, str],
 ) -> list[dict]:
     """Fetch question, answer, and scores for all run items NOT in current_item_ids.
 
     current_item_ids: item IDs processed in the current session (already in `results`).
-    Returns a list of result dicts in the same shape as _eval_case returns, so they
-    can be merged directly with the current session's results for a complete summary.
+    item_id_to_question: reverse mapping of question_to_item_id — used to reliably
+        recover the question text without relying on trace.input (which is None because
+        lf.start_as_current_observation is called without an explicit input= argument).
+    Returns a list of result dicts in the same shape as _eval_case returns.
     """
     try:
         run = client.api.datasets.get_run(
@@ -89,16 +118,17 @@ def fetch_prior_results(
             continue  # already captured in the current session's results
 
         try:
-            # Request io + scores field groups so input/output/scores are populated
-            trace = client.api.trace.get(item.trace_id, fields="core,io,scores")
+            # Request scores + observations; io is omitted because trace.input/output
+            # are None (the eval span was created without explicit input/output args).
+            trace = client.api.trace.get(
+                item.trace_id, fields="core,scores,observations"
+            )
 
-            inp = trace.input or {}
-            out = trace.output or {}
-            messages_in = inp.get("messages", []) if isinstance(inp, dict) else []
-            messages_out = out.get("messages", []) if isinstance(out, dict) else []
+            # Question: recovered from the local dataset mapping — reliable
+            question = item_id_to_question.get(item.dataset_item_id, "")
 
-            question = messages_in[0].get("content", "") if messages_in else ""
-            answer = messages_out[-1].get("content", "") if messages_out else ""
+            # Answer: extracted from the LangChain child observations
+            answer = _extract_answer_from_observations(trace.observations)
 
             # Scores are embedded in TraceWithFullDetails — no extra API call needed
             score_map: dict[str, tuple[float, str | None]] = {

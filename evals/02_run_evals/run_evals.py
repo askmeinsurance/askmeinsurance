@@ -218,7 +218,10 @@ async def main() -> None:
 
     # Merge prior-session results so the summary covers the full run
     current_item_ids = {question_to_item_id.get(r["question"], "") for r in results}
-    prior_results = fetch_prior_results(lf_client, DATASET_NAME, run_name, current_item_ids)
+    item_id_to_question = {v: k for k, v in question_to_item_id.items()}
+    prior_results = fetch_prior_results(
+        lf_client, DATASET_NAME, run_name, current_item_ids, item_id_to_question
+    )
     if prior_results:
         print(f"[summary] Loaded {len(prior_results)} prior result(s) from Langfuse")
     all_results = prior_results + results  # prior first to preserve original order
