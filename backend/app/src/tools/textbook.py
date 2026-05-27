@@ -4,7 +4,7 @@ from typing_extensions import TypedDict
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_textbook_top_k
+from app.src.utils.misc import get_embeddings, get_qdrant_client, get_textbook_score_threshold, get_textbook_top_k
 
 COLLECTION = "insurance_text_book2"
 
@@ -62,6 +62,7 @@ def query_textbook(
 
     _ = k
     top_k = get_textbook_top_k()
+    score_threshold = get_textbook_score_threshold()
     normalized_queries: list[str] = []
     for item in (queries or []):
         if isinstance(item, str):
@@ -87,6 +88,7 @@ def query_textbook(
             query=query_vector,
             limit=top_k,
             with_payload=True,
+            score_threshold=score_threshold or None,
         ).points
 
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:

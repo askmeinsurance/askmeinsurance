@@ -38,3 +38,17 @@ def get_product_summary_top_k() -> int:
     if not 1 <= v <= 15:
         raise ValueError("product_summary_top_k must be between 1 and 15.")
     return v
+
+
+def get_textbook_score_threshold() -> float:
+    v = get_settings().textbook_score_threshold
+    if not 0.0 <= v <= 1.0:
+        raise ValueError("textbook_score_threshold must be between 0.0 and 1.0.")
+    return v
+
+
+def get_product_summary_score_threshold() -> float:
+    v = get_settings().product_summary_score_threshold
+    if not 0.0 <= v <= 1.0:
+        raise ValueError("product_summary_score_threshold must be between 0.0 and 1.0.")
+    return v

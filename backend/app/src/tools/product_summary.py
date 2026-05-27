@@ -5,7 +5,7 @@ from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_top_k
+from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_score_threshold, get_product_summary_top_k
 
 COLLECTION = "product_summary"
 _CONTEXT_RE = re.compile(r"<context>.*?</context>", re.DOTALL)
@@ -42,6 +42,7 @@ def query_product_summary(
     embeddings = get_embeddings()
     client = get_qdrant_client()
     top_k = get_product_summary_top_k()
+    score_threshold = get_product_summary_score_threshold()
 
     _ = context
     normalized_queries: list[tuple[str, str | None]] = []
@@ -76,6 +77,7 @@ def query_product_summary(
             limit=top_k,
             with_payload=True,
             query_filter=qdrant_filter,
+            score_threshold=score_threshold or None,
         ).points
 
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:
