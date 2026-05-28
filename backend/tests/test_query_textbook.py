@@ -1,8 +1,16 @@
 from types import SimpleNamespace
+from unittest.mock import MagicMock
 
 import pytest
 
 from app.agent.tools import textbook
+
+
+def _mock_settings(textbook_top_k: int = 3) -> MagicMock:
+    s = MagicMock()
+    s.textbook_top_k = textbook_top_k
+    s.textbook_score_threshold = 0.0
+    return s
 
 
 def _point(chunk_id: str, text: str, score: float) -> SimpleNamespace:
@@ -37,7 +45,7 @@ def test_query_textbook_returns_deduped_results_with_query_ids(monkeypatch):
 
     monkeypatch.setattr(textbook, "get_embeddings", lambda: _Embeddings())
     monkeypatch.setattr(textbook, "get_qdrant_client", lambda: _Client())
-    monkeypatch.setattr(textbook, "get_textbook_top_k", lambda: 3)
+    monkeypatch.setattr(textbook, "get_settings", lambda: _mock_settings(textbook_top_k=3))
 
     out = textbook.query_textbook.func(queries=[["q1"], "q2"])
 
@@ -68,7 +76,7 @@ def test_query_textbook_fallback_dedupe_key_uses_text_when_chunk_id_missing(monk
 
     monkeypatch.setattr(textbook, "get_embeddings", lambda: _Embeddings())
     monkeypatch.setattr(textbook, "get_qdrant_client", lambda: _Client())
-    monkeypatch.setattr(textbook, "get_textbook_top_k", lambda: 3)
+    monkeypatch.setattr(textbook, "get_settings", lambda: _mock_settings(textbook_top_k=3))
 
     out = textbook.query_textbook.func(queries=[["q1"], ["q2"]])
     assert len(out["results"]) == 1

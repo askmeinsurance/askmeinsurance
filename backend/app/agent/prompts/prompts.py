@@ -1,13 +1,4 @@
-FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_1 = """You are an expert in finding insurance products that matches a query.
-
-Your job is to select the most appropriate `criteria`(s) (see below) to be used as input list
-to the tool `find_policy_id_with_criteria` so that it can be used as context to find the most
- appropriate product that matches the query. 
-
-
-
-
-criteria: 
+_CRITERIA_KEYS_DESCRIPTION = """\
 - product_snapshot: High-level overview providing the identity and basic purpose of the insurance - policy.
 - product_snapshot.product_name: The official marketing and legal name of the insurance product.
 - product_snapshot.product_type: The category of the policy (e.g., Endowment, Term, Whole Life).
@@ -70,7 +61,20 @@ criteria:
 - quick_numbers.policy_term_range: The available durations for which the policy can be set.
 - quick_numbers.maximum_coverage: The upper limit of the death or illness benefit allowed.
 - quick_numbers.multiplier_duration: The length of time a benefit-boost (multiplier) stays active.
-- quick_numbers.sample_premiums: Example price points for different age/gender profiles to provide a - cost estimate.
+- quick_numbers.sample_premiums: Example price points for different age/gender profiles to provide a - cost estimate."""
+
+
+FIND_PRODUCT_WITH_CRITERIA_SYSTEM_1 = f"""You are an expert in finding insurance products that matches a query.
+
+Your job is to select the most appropriate `criteria`(s) (see below) to be used as input list
+to the tool `find_policy_id_with_criteria` so that it can be used as context to find the most
+ appropriate product that matches the query.
+
+
+
+
+criteria:
+{_CRITERIA_KEYS_DESCRIPTION}
 
 policy_category:
 - endowment: endowment insurance
@@ -91,29 +95,29 @@ def find_policy_id_with_criteria(criteria : list, policy_category: str, is_rider
 output schema:
 ```json
 [
-    {
+    {{
         "key": <first_criteria_key>,
         "value": <first_criteria_values>,
         "policy_id": <policy_id_1>,
-    },
+    }},
     ...
-    {
+    {{
         "key": <first_criteria_key>,
         "value": <first_criteria_values>,
         "policy_id": <policy_id_N>,
-    },
+    }},
     ...
-    {
+    {{
         "key": <last_criteria_key>,
         "value": <last_criteria_values>,
         "policy_id": <policy_id1_1>,
-    },
+    }},
     ...
-    {
+    {{
         "key": <last_criteria_key>,
         "value": <last_criteria_values>,
         "policy_id": <policy_id1_N>,
-    }
+    }}
 ]
 ```
 
@@ -274,9 +278,9 @@ Valid `complexity_triggers` values:
 """
 
 
-FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_2 = """You are an expert in finding insurance products that matches the given query.
-Your job is to evaluate the product catalog and shortlist all the product(s) by `policy_id` 
-based on the given criteria(s). With respect to the given query, you are to give a short reasoning 
+FIND_PRODUCT_WITH_CRITERIA_SYSTEM_2 = f"""You are an expert in finding insurance products that matches the given query.
+Your job is to evaluate the product catalog and shortlist all the product(s) by `policy_id`
+based on the given criteria(s). With respect to the given query, you are to give a short reasoning
 to explain why the `policy_id` selected matches the given query.
 
 RULES:
@@ -289,92 +293,30 @@ RULES:
 product_catalog schema:
 ```json
 [
-    {   "criteria1": <value1>,
+    {{   "criteria1": <value1>,
         "criteria2": <value2>,
         "criteria3": <value3>,
         "criteria4": <value4>,
         "policy_id": <policy_id_1>,
-    },
+    }},
     ...
-    {   "criteria1": <value1>,
+    {{   "criteria1": <value1>,
         "criteria2": <value2>,
         "criteria3": <value3>,
         "criteria4": <value4>,
         "policy_id": <policy_id_N>,
-    }
+    }}
 ]
 ```
 
 criteria key and what it means
-- product_snapshot: High-level overview providing the identity and basic purpose of the insurance - policy.
-- product_snapshot.product_name: The official marketing and legal name of the insurance product.
-- product_snapshot.product_type: The category of the policy (e.g., Endowment, Term, Whole Life).
-- product_snapshot.insurance_company: The legal entity underwriting the policy and responsible for - payouts.
-- product_snapshot.target_segment: The specific demographic or group of people the product was - designed for.
-- product_snapshot.main_objective: The primary financial goals the policy is intended to solve for - the client.
-- product_snapshot.key_value_proposition: The unique selling point or the single most important - benefit of the product.
-
-- ideal_client_profile: Guidance on the characteristics of a consumer who would benefit most from - this plan.
-- ideal_client_profile.suitable_for: A list of specific needs or traits that make a client a good - match for this product.
-- ideal_client_profile.not_ideal_for: Scenarios, financial situations, or needs that would make this - product inappropriate.
-- ideal_client_profile.typical_age_group: The recommended or common age range for applicants of this - policy.
-- ideal_client_profile.income_profile: The suggested financial or earnings bracket for which this - plan is affordable.
-- ideal_client_profile.family_situation: Context on whether the plan is suited for singles, - families, or those with dependents.
-- ideal_client_profile.financial_goals: The specific life milestones this product helps the client - reach.
-- ideal_client_profile.risk_appetite: The level of investment or market risk the client must be - comfortable with.
-
-- core_features: The fundamental technical attributes and contractual elements of the policy.
-- core_features.coverage_duration: The length of time the insurance protection remains in force.
-- core_features.renewable: Indicates if the policy can be extended at the end of the term without - new medical evidence.
-- core_features.convertible: Indicates if the plan can be changed to another policy type without - medical underwriting.
-- core_features.participating_status: Whether the policy shares in the profits of the insurer's fund - (via dividends/bonuses).
-- core_features.guaranteed_cash_value: Whether the policy builds a surrender value that is legally - promised by the insurer.
-- core_features.premium_structure: How the premiums are paid (e.g., single premium, limited pay, or - regular pay).
-- core_features.riders_available: Optional add-on benefits that can be attached to the base policy - for extra cost.
-- core_features.multiplier_benefits: Features that increase the sum assured by a factor during a - specific period.
-- core_features.critical_illness_stages_covered: Specifies if the plan covers early, intermediate, - or late-stage illnesses.
-- core_features.premium_waiver_options: Conditions under which future premiums are waived while - coverage continues.
-
-- key_selling_points: A list of the most attractive features used by advisors to market the product.
-
-- common_use_cases: Practical examples of how the product is applied in real-world financial - planning.
-- common_use_cases.scenario: The specific life event or planning need being addressed.
-- common_use_cases.positioning: How the advisor should explain the product's role within that - specific scenario.
-
-- key_limitations_objections: The downsides, restrictions, or common client concerns regarding the - product.
-
-- underwriting_notes: Technical information regarding the application and medical approval process.
-- underwriting_notes.simplified_underwriting_available: Whether the plan can be purchased with - minimal health questions.
-- underwriting_notes.medical_exam_threshold: The coverage amount or age at which a medical check-up - becomes mandatory.
-- underwriting_notes.health_condition_notes: Specific guidance on how certain pre-existing - conditions affect the application.
-- underwriting_notes.bmi_limits: The acceptable body mass index range for standard premium rates.
-- underwriting_notes.foreigner_eligibility: Rules regarding residency status and nationality for - applicants.
-- underwriting_notes.other_notes: Miscellaneous technical requirements or exceptions for the - underwriting process.
-
-- rider_compatibility: Rules governing which specific riders can or cannot be combined with this - base plan.
-
-- recommended_bundles: Suggestions for other insurance products that complement this policy for - comprehensive coverage.
-
-- competitor_comparison: A high-level analysis of how this product performs against similar plans in - the market.
-- competitor_comparison.this_product_better_for: Specific areas where this policy outperforms the - competition.
-- competitor_comparison.competitor_better_for: Areas where a different plan might be more suitable - for the client.
-- competitor_comparison.competitor_product: The name of the specific rival product being compared.
-
-- compliance_advisory_notes: Mandatory disclosures and legal warnings required by financial - regulators.
-
-- quick_numbers: A summary of the numerical limits and data points for fast reference.
-- quick_numbers.entry_age: The minimum and maximum age a person can be to apply for the policy.
-- quick_numbers.minimum_premium: The lowest amount of money required to start or maintain the policy.
-- quick_numbers.policy_term_range: The available durations for which the policy can be set.
-- quick_numbers.maximum_coverage: The upper limit of the death or illness benefit allowed.
-- quick_numbers.multiplier_duration: The length of time a benefit-boost (multiplier) stays active.
-- quick_numbers.sample_premiums: Example price points for different age/gender profiles to provide a - cost estimate.
+{_CRITERIA_KEYS_DESCRIPTION}
 
 output format:
 ```json
 [
-    {"policy_id": <first_policy_id>, "reasoning": <reasoning of why this matches the given criteria>},
-    {"policy_id": <second_policy_id>, "reasoning": <reasoning of why this matches the given criteria>},
+    {{"policy_id": <first_policy_id>, "reasoning": <reasoning of why this matches the given criteria>}},
+    {{"policy_id": <second_policy_id>, "reasoning": <reasoning of why this matches the given criteria>}},
     ...
 ]
 ```

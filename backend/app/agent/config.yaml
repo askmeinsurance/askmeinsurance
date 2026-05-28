@@ -94,3 +94,9 @@ simplev2_query_expansion:
   timeout_seconds: 30
   max_output_tokens: 1024
   temperature: 0.2
+
+conversation_title:
+  model: google|gemini-2.0-flash-lite
+  timeout_seconds: 30
+  max_output_tokens: 50
+  temperature: 0

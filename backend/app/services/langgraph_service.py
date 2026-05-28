@@ -4,7 +4,6 @@ import time
 from typing import Any
 from uuid import UUID
 
-import httpx
 from langchain_core.messages import AIMessage, HumanMessage
 from langfuse import get_client
 from langfuse._client.propagation import propagate_attributes
@@ -14,7 +13,7 @@ from app.core.config import Settings, get_settings
 from app.schemas.chat import ChatEvent
 from app.services.message_service import MessageService, message_service
 from app.agent.graph import get_compiled_graph
-from app.agent.services.llm_service import _extract_text_content
+from app.agent.services.llm_service import extract_text_content, get_llm
 
 logger = logging.getLogger("askmeinsurance.langgraph")
 
@@ -28,45 +27,15 @@ class LangGraphService:
         self._settings = settings or get_settings()
         self._message_store = message_store or message_service
 
-    async def _call_gemini_once(self, message: str) -> str:
-        api_key = self._settings.gemini_api_key
-        if not api_key:
-            raise RuntimeError("GEMINI_API_KEY is not configured")
-
-        model = self._settings.gemini_model
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-        payload = {
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [{"text": message}],
-                }
-            ]
-        }
-
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(url, params={"key": api_key}, json=payload)
-            response.raise_for_status()
-            data = response.json()
-
-        candidates = data.get("candidates") or []
-        if not candidates:
-            raise RuntimeError("Gemini response did not contain candidates")
-        content = candidates[0].get("content") or {}
-        parts = content.get("parts") or []
-        text = "".join(part.get("text", "") for part in parts if isinstance(part, dict))
-        if not text.strip():
-            raise RuntimeError("Gemini response did not contain text output")
-        return text
-
     async def generate_conversation_title(self, first_message: str) -> str:
+        if not self._settings.gemini_api_key:
+            return ""
         prompt = (
             "Create a concise chat title (max 7 words) for this first user message. "
             "Return only the title, no quotes, no punctuation at the end.\n\n"
             f"Message: {first_message}"
         )
-        if not self._settings.gemini_api_key:
-            return ""
+        llm = get_llm("conversation_title")
         lf = get_client()
         with lf.start_as_current_observation(
             name="generate_conversation_title",
@@ -74,7 +43,8 @@ class LangGraphService:
             model=self._settings.gemini_model,
             input=prompt,
         ) as gen:
-            result = await self._call_gemini_once(prompt)
+            response = await llm.ainvoke([HumanMessage(content=prompt)])
+            result = extract_text_content(response.content)
             gen.update(output=result)
         return result
 
@@ -188,7 +158,7 @@ class LangGraphService:
             if isinstance(result, dict) and isinstance(result.get("messages"), list):
                 final_messages = result["messages"]
             answer = (
-                _extract_text_content(final_messages[-1].content)
+                extract_text_content(final_messages[-1].content)
                 if final_messages
                 else "No response generated."
             )

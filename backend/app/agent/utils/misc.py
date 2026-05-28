@@ -14,7 +14,7 @@ def get_qdrant_client() -> QdrantClient:
     s = get_settings()
     if not s.qdrant_url:
         raise ValueError("Missing QDRANT_URL.")
-    return QdrantClient(url=s.qdrant_url, api_key=s.qdrant_api_key or None)
+    return QdrantClient(url=s.qdrant_url, api_key=s.qdrant_api_key or None, timeout=30)
 
 
 def get_embeddings() -> GoogleGenerativeAIEmbeddings:
@@ -26,29 +26,3 @@ def get_embeddings() -> GoogleGenerativeAIEmbeddings:
     )
 
 
-def get_textbook_top_k() -> int:
-    v = get_settings().textbook_top_k
-    if not 1 <= v <= 15:
-        raise ValueError("textbook_top_k must be between 1 and 15.")
-    return v
-
-
-def get_product_summary_top_k() -> int:
-    v = get_settings().product_summary_top_k
-    if not 1 <= v <= 15:
-        raise ValueError("product_summary_top_k must be between 1 and 15.")
-    return v
-
-
-def get_textbook_score_threshold() -> float:
-    v = get_settings().textbook_score_threshold
-    if not 0.0 <= v <= 1.0:
-        raise ValueError("textbook_score_threshold must be between 0.0 and 1.0.")
-    return v
-
-
-def get_product_summary_score_threshold() -> float:
-    v = get_settings().product_summary_score_threshold
-    if not 0.0 <= v <= 1.0:
-        raise ValueError("product_summary_score_threshold must be between 0.0 and 1.0.")
-    return v

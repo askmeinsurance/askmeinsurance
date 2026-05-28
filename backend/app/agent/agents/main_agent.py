@@ -1,5 +1,8 @@
+import logging
 import operator
 from typing import Annotated
+
+logger = logging.getLogger("askmeinsurance.main_agent")
 
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langgraph.graph import END, START, StateGraph
@@ -64,6 +67,7 @@ async def get_main_agent_graph():
             return "general_agent"
         if state.route == "simple_workflow":
             return "simple_workflow"
+        logger.warning("Unknown route %r — defaulting to simple_workflow", state.route)
         return "simple_workflow"
 
     simple_workflow = get_simple_workflow_v2_subgraph()

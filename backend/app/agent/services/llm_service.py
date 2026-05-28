@@ -126,7 +126,7 @@ def get_llm(agent_name: str) -> Union[ChatOpenAI, ChatGoogleGenerativeAI]:
 
     if provider == "openrouter":
         thinking_budget = agent_config.get("thinking_budget", 0)
-        kwargs = {
+        kwargs: dict[str, Any] = {
             "model": model_name,
             "base_url": "https://openrouter.ai/api/v1",
             "api_key": s.openrouter_api_key,
@@ -142,7 +142,7 @@ def get_llm(agent_name: str) -> Union[ChatOpenAI, ChatGoogleGenerativeAI]:
         return ChatOpenAI(**kwargs)
 
 
-def _extract_text_content(content: Any) -> str:
+def extract_text_content(content: Any) -> str:
     if isinstance(content, str):
         return content
     if isinstance(content, list):
@@ -227,16 +227,50 @@ def _normalize_single_field_payload(parsed: Any, schema_model: type[BaseModel]) 
     return {field_name: parsed}
 
 
-def invoke_structured_with_fallback(
-    *,
+def _parse_structured_response(
+    raw: Any,
     agent_name: str,
-    messages: list[BaseMessage],
+    model: str,
     schema_model: type[BaseModel],
-    timeout_seconds: float | None = None,
-    config: dict[str, Any] | None = None,
 ) -> BaseModel:
-    """Invoke a structured model with fallback JSON parsing for providers
-    that return plain text instead of OpenAI parsed/refusal fields."""
+    """Parse and validate a raw LLM response into the target schema."""
+    raw_content = raw.content if isinstance(raw, AIMessage) else raw
+    raw_text = extract_text_content(raw_content)
+    sanitized = _strip_markdown_json_fences(raw_text)
+    candidate = _extract_first_json_object(sanitized)
+    try:
+        parsed = json.loads(candidate)
+    except json.JSONDecodeError as exc:
+        excerpt = raw_text[:300]
+        raise ValueError(
+            f"Fallback JSON parse failed for agent={agent_name}, model={model}. "
+            f"Raw excerpt={excerpt!r}"
+        ) from exc
+
+    normalized_payload = _normalize_single_field_payload(parsed, schema_model)
+    try:
+        result = schema_model.model_validate(normalized_payload)
+    except Exception as exc:  # noqa: BLE001
+        raise ValueError(
+            f"Fallback schema validation failed for agent={agent_name}, "
+            f"model={model}, schema={schema_model.__name__}"
+        ) from exc
+
+    logger.info(
+        "Structured output succeeded via json fallback: agent=%s model=%s schema=%s",
+        agent_name,
+        model,
+        schema_model.__name__,
+    )
+    return result
+
+
+def _prepare_invocation(
+    agent_name: str,
+    config: dict[str, Any] | None,
+    timeout_seconds: float | None,
+) -> tuple[Any, dict[str, Any], str, str]:
+    """Resolve agent config and build the invoke config dict."""
     agent_config = get_agent_config(agent_name)
     structured_mode = str(agent_config.get("structured_mode", "auto")).strip().lower()
     model = agent_config.get("model", "unknown")
@@ -248,6 +282,23 @@ def invoke_structured_with_fallback(
         invoke_config["timeout"] = timeout_seconds
     if structured_mode == "auto" and provider == "openrouter":
         structured_mode = "fallback"
+
+    return llm, invoke_config, structured_mode, model
+
+
+def invoke_structured_with_fallback(
+    *,
+    agent_name: str,
+    messages: list[BaseMessage],
+    schema_model: type[BaseModel],
+    timeout_seconds: float | None = None,
+    config: dict[str, Any] | None = None,
+) -> BaseModel:
+    """Invoke a structured model with fallback JSON parsing for providers
+    that return plain text instead of OpenAI parsed/refusal fields."""
+    llm, invoke_config, structured_mode, model = _prepare_invocation(
+        agent_name, config, timeout_seconds
+    )
 
     if structured_mode in {"native", "auto"}:
         try:
@@ -267,37 +318,7 @@ def invoke_structured_with_fallback(
             )
 
     raw = llm.invoke(messages, config=invoke_config)
-    if isinstance(raw, AIMessage):
-        raw_text = _extract_text_content(raw.content)
-    else:
-        raw_text = _extract_text_content(raw)
-    sanitized = _strip_markdown_json_fences(raw_text)
-    candidate = _extract_first_json_object(sanitized)
-    try:
-        parsed = json.loads(candidate)
-    except json.JSONDecodeError as exc:
-        excerpt = raw_text[:300]
-        raise ValueError(
-            f"Fallback JSON parse failed for agent={agent_name}, model={model}. "
-            f"Raw excerpt={excerpt!r}"
-        ) from exc
-
-    normalized_payload = _normalize_single_field_payload(parsed, schema_model)
-    try:
-        result = schema_model.model_validate(normalized_payload)
-    except Exception as exc:  # noqa: BLE001
-        raise ValueError(
-            f"Fallback schema validation failed for agent={agent_name}, "
-            f"model={model}, schema={schema_model.__name__}"
-        ) from exc
-
-    logger.info(
-        "Structured output succeeded via json fallback: agent=%s model=%s schema=%s",
-        agent_name,
-        model,
-        schema_model.__name__,
-    )
-    return result
+    return _parse_structured_response(raw, agent_name, model, schema_model)
 
 
 async def ainvoke_structured_with_fallback(
@@ -309,17 +330,9 @@ async def ainvoke_structured_with_fallback(
     config: dict[str, Any] | None = None,
 ) -> BaseModel:
     """Async variant of invoke_structured_with_fallback."""
-    agent_config = get_agent_config(agent_name)
-    structured_mode = str(agent_config.get("structured_mode", "auto")).strip().lower()
-    model = agent_config.get("model", "unknown")
-    provider = model.split("|", 1)[0].strip().lower() if "|" in model else ""
-
-    llm = get_llm(agent_name)
-    invoke_config = dict(config or {})
-    if timeout_seconds:
-        invoke_config["timeout"] = timeout_seconds
-    if structured_mode == "auto" and provider == "openrouter":
-        structured_mode = "fallback"
+    llm, invoke_config, structured_mode, model = _prepare_invocation(
+        agent_name, config, timeout_seconds
+    )
 
     if structured_mode in {"native", "auto"}:
         try:
@@ -339,34 +352,4 @@ async def ainvoke_structured_with_fallback(
             )
 
     raw = await llm.ainvoke(messages, config=invoke_config)
-    if isinstance(raw, AIMessage):
-        raw_text = _extract_text_content(raw.content)
-    else:
-        raw_text = _extract_text_content(raw)
-    sanitized = _strip_markdown_json_fences(raw_text)
-    candidate = _extract_first_json_object(sanitized)
-    try:
-        parsed = json.loads(candidate)
-    except json.JSONDecodeError as exc:
-        excerpt = raw_text[:300]
-        raise ValueError(
-            f"Fallback JSON parse failed for agent={agent_name}, model={model}. "
-            f"Raw excerpt={excerpt!r}"
-        ) from exc
-
-    normalized_payload = _normalize_single_field_payload(parsed, schema_model)
-    try:
-        result = schema_model.model_validate(normalized_payload)
-    except Exception as exc:  # noqa: BLE001
-        raise ValueError(
-            f"Fallback schema validation failed for agent={agent_name}, "
-            f"model={model}, schema={schema_model.__name__}"
-        ) from exc
-
-    logger.info(
-        "Structured output succeeded via json fallback: agent=%s model=%s schema=%s",
-        agent_name,
-        model,
-        schema_model.__name__,
-    )
-    return result
+    return _parse_structured_response(raw, agent_name, model, schema_model)

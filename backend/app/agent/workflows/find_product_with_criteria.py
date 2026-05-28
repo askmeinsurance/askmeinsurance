@@ -1,13 +1,13 @@
 import asyncio
-from typing import Annotated, List
+from typing import Annotated
 
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel
 
 from app.agent.prompts.prompts import (
-    FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_1,
-    FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_2,
+    FIND_PRODUCT_WITH_CRITERIA_SYSTEM_1,
+    FIND_PRODUCT_WITH_CRITERIA_SYSTEM_2,
 )
 from app.agent.schemas.tools import FindPolicyIdWithCriteriaInput, FindPolicyIdWithCriteriaOutput
 from app.agent.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
@@ -31,7 +31,7 @@ class PolicyMatch(BaseModel):
 
 
 class FindProductWithCriteriaStateOutput(BaseModel):
-    matching_product: List[PolicyMatch]
+    matching_product: list[PolicyMatch]
 
 
 # ---------------------------------------------------------------------------
@@ -51,7 +51,7 @@ async def find_product_with_criteria_workflow(
         schema_model=FindPolicyIdWithCriteriaInput,
         timeout_seconds=timeout,
         messages=[
-            SystemMessage(content=FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_1),
+            SystemMessage(content=FIND_PRODUCT_WITH_CRITERIA_SYSTEM_1),
             HumanMessage(content=user_message),
         ],
     )
@@ -65,7 +65,7 @@ async def find_product_with_criteria_workflow(
         schema_model=FindProductWithCriteriaStateOutput,
         timeout_seconds=timeout,
         messages=[
-            SystemMessage(content=FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_2),
+            SystemMessage(content=FIND_PRODUCT_WITH_CRITERIA_SYSTEM_2),
             HumanMessage(
                 content=(
                     f"{user_message}\nproduct_catalog:\n"
