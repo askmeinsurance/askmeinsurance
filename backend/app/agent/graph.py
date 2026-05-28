@@ -1,4 +1,4 @@
-from app.src.agents.main_agent import get_main_agent_graph
+from app.agent.agents.main_agent import get_main_agent_graph
 
 _graph = None
 

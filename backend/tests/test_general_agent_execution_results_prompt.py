@@ -5,9 +5,9 @@ import re
 from langchain_core.messages import AIMessage, HumanMessage
 from pydantic import BaseModel
 
-from app.src.agents.general_agent import get_general_agent_subgraph
-from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
-from app.src.utils.prompt_format import format_execution_results_for_prompt
+from app.agent.agents.general_agent import get_general_agent_subgraph
+from app.agent.schemas.agent import ExecutionPlanModel, QuestionClassification
+from app.agent.utils.prompt_format import format_execution_results_for_prompt
 
 
 class _SampleModel(BaseModel):
@@ -150,15 +150,15 @@ def test_general_agent_prompts_use_formatted_execution_results(monkeypatch) -> N
             return AIMessage(content="answer")
 
     monkeypatch.setattr(
-        "app.src.agents.general_agent.invoke_structured_with_fallback",
+        "app.agent.agents.general_agent.invoke_structured_with_fallback",
         _invoke_structured_with_fallback,
     )
     monkeypatch.setattr(
-        "app.src.agents.general_agent.get_llm",
+        "app.agent.agents.general_agent.get_llm",
         lambda _name: _DummySynthesisLLM(),
     )
     monkeypatch.setattr(
-        "app.src.agents.general_agent.resolve_timeout_seconds",
+        "app.agent.agents.general_agent.resolve_timeout_seconds",
         lambda _agent_name, _default: 1,
     )
 

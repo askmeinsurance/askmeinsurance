@@ -2,7 +2,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from app.src.tools import textbook
+from app.agent.tools import textbook
 
 
 def _point(chunk_id: str, text: str, score: float) -> SimpleNamespace:
@@ -25,7 +25,7 @@ def test_query_textbook_returns_deduped_results_with_query_ids(monkeypatch):
             return query
 
     class _Client:
-        def query_points(self, *, collection_name, query, limit, with_payload):
+        def query_points(self, *, collection_name, query, limit, with_payload, score_threshold=None):
             assert collection_name == "insurance_text_book2"
             assert limit == 3
             assert with_payload is True
@@ -58,7 +58,7 @@ def test_query_textbook_fallback_dedupe_key_uses_text_when_chunk_id_missing(monk
             return query
 
     class _Client:
-        def query_points(self, *, collection_name, query, limit, with_payload):
+        def query_points(self, *, collection_name, query, limit, with_payload, score_threshold=None):
             _ = collection_name, limit, with_payload
             if query == "q1":
                 points = [_point("", "shared text", 0.9)]

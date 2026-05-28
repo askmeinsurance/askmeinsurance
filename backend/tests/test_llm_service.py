@@ -4,8 +4,8 @@ import asyncio
 import pytest
 from langchain_core.messages import AIMessage, HumanMessage
 
-from app.src.agent_state.agent_state import NameMatchStateOutput
-from app.src.services import llm_service
+from app.agent.workflows.name_match import NameMatchStateOutput
+from app.agent.services import llm_service
 
 
 def _base_agent(model: str = "openai|gpt-4o-mini") -> dict:

@@ -13,8 +13,8 @@ from langfuse.langchain import CallbackHandler
 from app.core.config import Settings, get_settings
 from app.schemas.chat import ChatEvent
 from app.services.message_service import MessageService, message_service
-from app.src.graph import get_compiled_graph
-from app.src.services.llm_service import _extract_text_content
+from app.agent.graph import get_compiled_graph
+from app.agent.services.llm_service import _extract_text_content
 
 logger = logging.getLogger("askmeinsurance.langgraph")
 

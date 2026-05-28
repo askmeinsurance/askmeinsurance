@@ -12,7 +12,7 @@ from pydantic import BaseModel
 
 from app.core.config import get_settings
 
-_CONFIG_PATH = Path(__file__).parent.parent / "agent_config.yaml"
+_CONFIG_PATH = Path(__file__).parent.parent / "config.yaml"
 logger = logging.getLogger("askmeinsurance.llm")
 
 
@@ -20,7 +20,7 @@ def _get_all_agent_configs() -> dict[str, dict[str, Any]]:
     with open(_CONFIG_PATH) as f:
         loaded = yaml.safe_load(f) or {}
     if not isinstance(loaded, dict):
-        raise ValueError("agent_config.yaml must be a mapping of agent names to config blocks.")
+        raise ValueError("config.yaml must be a mapping of agent names to config blocks.")
     return loaded
 
 
@@ -81,7 +81,7 @@ def resolve_timeout_seconds(
 
 
 def get_llm(agent_name: str) -> Union[ChatOpenAI, ChatGoogleGenerativeAI]:
-    """Return a LangChain LLM object for the given agent name from agent_config.yaml."""
+    """Return a LangChain LLM object for the given agent name from config.yaml."""
     PROVIDERS = ["google", "openai", "openrouter"]
 
     agent_config = get_agent_config(agent_name)

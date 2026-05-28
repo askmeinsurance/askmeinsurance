@@ -5,7 +5,7 @@ from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_score_threshold, get_product_summary_top_k
+from app.agent.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_score_threshold, get_product_summary_top_k
 
 COLLECTION = "product_summary"
 _CONTEXT_RE = re.compile(r"<context>.*?</context>", re.DOTALL)

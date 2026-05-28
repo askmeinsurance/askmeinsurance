@@ -6,13 +6,13 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-from app.src.agents.general_agent import get_general_agent_subgraph
-from app.src.prompts.prompts import MAIN_AGENT_ROUTER_SYSTEM
-from app.src.schema.agent_schema import MainAgentRouterClassification
-from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
-from app.src.utils.prompt_format import format_json_for_prompt
+from app.agent.agents.general_agent import get_general_agent_subgraph
+from app.agent.prompts.prompts import MAIN_AGENT_ROUTER_SYSTEM
+from app.agent.schemas.agent import MainAgentRouterClassification
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
+from app.agent.utils.prompt_format import format_json_for_prompt
 
-from app.src.workflow.simple_workflow_v2 import get_simple_workflow_v2_subgraph
+from app.agent.workflows.simple_workflow_v2 import get_simple_workflow_v2_subgraph
 
 
 # ---------------------------------------------------------------------------

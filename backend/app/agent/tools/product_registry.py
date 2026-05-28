@@ -4,7 +4,7 @@ import json
 
 from langchain_core.tools import tool
 
-from app.src.schema.tool_schema import (
+from app.agent.schemas.tools import (
     FindPolicyDetailsWithPolicyIdInput,
     FindPolicyDetailsWithPolicyIdOutput,
     FindPolicyIdWithCriteriaInput,

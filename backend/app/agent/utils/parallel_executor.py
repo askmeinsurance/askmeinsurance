@@ -55,15 +55,13 @@ def register_defaults() -> None:
 
     from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 
-    from app.src.agent_state.agent_state import (
-        FindProductWithCriteriaStateInput,
-        NameMatchStateInput,
-    )
-    from app.src.tools.product_registry import find_policy_details_with_policy_id
-    from app.src.tools.product_summary import query_product_summary
-    from app.src.tools.textbook import TextbookOutput, query_textbook
-    from app.src.workflow.find_product_with_criteria import find_product_with_criteria_workflow
-    from app.src.workflow.name_match import name_match_workflow
+    from app.agent.workflows.find_product_with_criteria import FindProductWithCriteriaStateInput
+    from app.agent.workflows.name_match import NameMatchStateInput
+    from app.agent.tools.product_registry import find_policy_details_with_policy_id
+    from app.agent.tools.product_summary import query_product_summary
+    from app.agent.tools.textbook import TextbookOutput, query_textbook
+    from app.agent.workflows.find_product_with_criteria import find_product_with_criteria_workflow
+    from app.agent.workflows.name_match import name_match_workflow
 
     _ROLE_MAP = {
         "user": HumanMessage,

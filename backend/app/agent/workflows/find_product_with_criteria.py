@@ -1,19 +1,42 @@
 import asyncio
+from typing import Annotated, List
 
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
+from langgraph.graph.message import add_messages
+from pydantic import BaseModel
 
-from app.src.agent_state.agent_state import (
-    FindProductWithCriteriaStateInput,
-    FindProductWithCriteriaStateOutput,
-)
-from app.src.prompts.prompts import (
+from app.agent.prompts.prompts import (
     FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_1,
     FIND_PPRODUCT_WITH_CRITERIA_SYSTEM_2,
 )
-from app.src.schema.tool_schema import FindPolicyIdWithCriteriaInput, FindPolicyIdWithCriteriaOutput
-from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
-from app.src.tools.product_registry import find_policy_id_with_criteria
-from app.src.utils.prompt_format import format_json_for_prompt
+from app.agent.schemas.tools import FindPolicyIdWithCriteriaInput, FindPolicyIdWithCriteriaOutput
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
+from app.agent.tools.product_registry import find_policy_id_with_criteria
+from app.agent.utils.prompt_format import format_json_for_prompt
+
+
+# ---------------------------------------------------------------------------
+# State models
+# ---------------------------------------------------------------------------
+
+
+class FindProductWithCriteriaStateInput(BaseModel):
+    messages: Annotated[list[BaseMessage], add_messages]
+    query: str
+
+
+class PolicyMatch(BaseModel):
+    policy_id: str
+    reasoning: str
+
+
+class FindProductWithCriteriaStateOutput(BaseModel):
+    matching_product: List[PolicyMatch]
+
+
+# ---------------------------------------------------------------------------
+# Workflow
+# ---------------------------------------------------------------------------
 
 
 async def find_product_with_criteria_workflow(

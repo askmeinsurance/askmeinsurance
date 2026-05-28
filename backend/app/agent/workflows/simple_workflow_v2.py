@@ -1,6 +1,6 @@
 import asyncio
 import operator
-from typing import Annotated, List
+from typing import Annotated, List, Literal
 
 import anyio
 
@@ -10,18 +10,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-from app.src.agent_state.agent_state import (
-    AbbreviationResolution,
-    DecomposedIntent,
-    IntentExtension,
-    IntentsDecomposition,
-    IntentSummary,
-    NameMatchStateInput,
-    OnePolicyMatchOutput,
-    RephrasedQuerySet,
-    ResolvedIntent,
-)
-from app.src.prompts.prompts import (
+from app.agent.prompts.prompts import (
     SIMPLEV2_IDENTIFY_INTENT_SYSTEM,
     SIMPLEV2_INTENT_EXTENSION_SYSTEM,
     SIMPLEV2_INTENTS_DECOMPOSITION_SYSTEM,
@@ -29,12 +18,61 @@ from app.src.prompts.prompts import (
     SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM,
     SIMPLEV2_SYNTHESIS_SYSTEM,
 )
-from app.src.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
-from app.src.tools.product_registry import get_product_names
-from app.src.tools.product_summary import query_product_summary
-from app.src.tools.textbook import TextbookOutput, query_textbook
-from app.src.utils.prompt_format import format_json_for_prompt
-from app.src.workflow.name_match import name_match_one_policy_workflow
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
+from app.agent.tools.product_registry import get_product_names
+from app.agent.tools.product_summary import query_product_summary
+from app.agent.tools.textbook import TextbookOutput, query_textbook
+from app.agent.utils.prompt_format import format_json_for_prompt
+from app.agent.workflows.name_match import (
+    NameMatchStateInput,
+    OnePolicyMatchOutput,
+    name_match_one_policy_workflow,
+)
+
+
+# ---------------------------------------------------------------------------
+# State models
+# ---------------------------------------------------------------------------
+
+
+class AbbreviationResolution(BaseModel):
+    abbreviation_context: str | None
+
+
+class IntentSummary(BaseModel):
+    condensed_intent: str
+    product_name_mentioned: str | None
+    reasoning: str
+
+
+class ExtendedQuery(BaseModel):
+    query: str
+    reasoning: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentExtension(BaseModel):
+    extended_queries: List[ExtendedQuery]
+
+
+class DecomposedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentsDecomposition(BaseModel):
+    decomposed_intents: List[DecomposedIntent]
+
+
+class ResolvedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+    policy_ids: List[str] = []
+
+
+class RephrasedQuerySet(BaseModel):
+    textbook_queries: List[str]
+    product_queries: List[str]
 
 
 def _timeout() -> float:

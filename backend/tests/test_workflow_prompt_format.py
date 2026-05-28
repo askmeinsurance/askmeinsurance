@@ -2,12 +2,12 @@ import asyncio
 
 from langchain_core.messages import HumanMessage
 
-from app.src.agent_state.agent_state import (
+from app.agent.workflows.name_match import (
     NameMatchStateInput,
     NameMatchStateOutput,
 )
-from app.src.schema.tool_schema import AppliedFilters, PolicyMatchResponse
-from app.src.workflow.name_match import name_match_workflow
+from app.agent.schemas.tools import AppliedFilters, PolicyMatchResponse
+from app.agent.workflows.name_match import name_match_workflow
 
 
 def test_name_match_prompt_uses_json(monkeypatch) -> None:
@@ -28,10 +28,10 @@ def test_name_match_prompt_uses_json(monkeypatch) -> None:
         captured["prompt"] = messages[-1].content
         return output
 
-    monkeypatch.setattr("app.src.workflow.name_match.ainvoke_structured_with_fallback", _fake_ainvoke)
-    monkeypatch.setattr("app.src.workflow.name_match.get_product_names", lambda: ["AIA ProTerm"])
+    monkeypatch.setattr("app.agent.workflows.name_match.ainvoke_structured_with_fallback", _fake_ainvoke)
+    monkeypatch.setattr("app.agent.workflows.name_match.get_product_names", lambda: ["AIA ProTerm"])
     monkeypatch.setattr(
-        "app.src.workflow.name_match.resolve_timeout_seconds",
+        "app.agent.workflows.name_match.resolve_timeout_seconds",
         lambda _agent_name, _default: 1,
     )
 

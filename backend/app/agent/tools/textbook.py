@@ -4,7 +4,7 @@ from typing_extensions import TypedDict
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_textbook_score_threshold, get_textbook_top_k
+from app.agent.utils.misc import get_embeddings, get_qdrant_client, get_textbook_score_threshold, get_textbook_top_k
 
 COLLECTION = "insurance_text_book2"
 
