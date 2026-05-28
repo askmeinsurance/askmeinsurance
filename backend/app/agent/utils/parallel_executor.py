@@ -16,43 +16,20 @@ import asyncio
 import inspect
 import time
 from dataclasses import dataclass
+from functools import lru_cache
 from typing import Any, Awaitable, Callable, Literal
 
+from app.agent.schemas.agent import StepKind
 
-StepKind = Literal["tool", "sub_agent"]
 StepStatus = Literal["pending", "running", "success", "failed", "skipped"]
 
 ToolCallable = Callable[[dict[str, Any], dict[str, Any]], Any | Awaitable[Any]]
 AgentCallable = Callable[[dict[str, Any], dict[str, Any]], Any | Awaitable[Any]]
-InputResolver = Callable[
-    ["ExecutionStep", list["StepResult"], dict[str, Any]], dict[str, Any]
-]
-ResultTransformer = Callable[
-    ["ExecutionStep", "StepResult", dict[str, Any]], "StepResult"
-]
-
-TOOLS_REGISTRY: dict[str, ToolCallable] = {}
-SUB_AGENTS_REGISTRY: dict[str, AgentCallable] = {}
-_DEFAULTS_REGISTERED = False
 
 
-def register_tool(name: str, fn: ToolCallable) -> None:
-    if not isinstance(name, str) or not name.strip():
-        raise PlanValidationError("Tool name must be a non-empty string.")
-    TOOLS_REGISTRY[name.strip()] = fn
-
-
-def register_sub_agent(name: str, fn: AgentCallable) -> None:
-    if not isinstance(name, str) or not name.strip():
-        raise PlanValidationError("Sub-agent name must be a non-empty string.")
-    SUB_AGENTS_REGISTRY[name.strip()] = fn
-
-
-def register_defaults() -> None:
-    global _DEFAULTS_REGISTERED
-    if _DEFAULTS_REGISTERED:
-        return
-
+@lru_cache(maxsize=1)
+def _build_default_registries() -> tuple[dict[str, ToolCallable], dict[str, AgentCallable]]:
+    """Build and cache the default tool and sub-agent registries on first call."""
     from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 
     from app.agent.workflows.find_product_with_criteria import FindProductWithCriteriaStateInput
@@ -107,12 +84,16 @@ def register_defaults() -> None:
         output = await name_match_workflow(NameMatchStateInput(**state))
         return output.model_dump()
 
-    register_tool("find_policy_details_with_policy_id", _tool_find_policy_details_with_policy_id)
-    register_tool("query_product_summary", _tool_query_product_summary)
-    register_tool("query_textbook", _tool_query_textbook)
-    register_sub_agent("find_product_with_criteria_workflow", _subagent_find_product_with_criteria_workflow)
-    register_sub_agent("name_match_workflow", _subagent_name_match_workflow)
-    _DEFAULTS_REGISTERED = True
+    tools: dict[str, ToolCallable] = {
+        "find_policy_details_with_policy_id": _tool_find_policy_details_with_policy_id,
+        "query_product_summary": _tool_query_product_summary,
+        "query_textbook": _tool_query_textbook,
+    }
+    sub_agents: dict[str, AgentCallable] = {
+        "find_product_with_criteria_workflow": _subagent_find_product_with_criteria_workflow,
+        "name_match_workflow": _subagent_name_match_workflow,
+    }
+    return tools, sub_agents
 
 
 @dataclass(slots=True)
@@ -165,15 +146,11 @@ class StepResult:
         }
 
 
-class ParallelExecutorError(RuntimeError):
-    """Top-level execution error."""
-
-
-class PlanValidationError(ParallelExecutorError):
+class PlanValidationError(RuntimeError):
     """Execution plan is invalid."""
 
 
-class StepExecutionError(ParallelExecutorError):
+class StepExecutionError(RuntimeError):
     """A step failed during execution."""
 
 
@@ -187,10 +164,6 @@ def _now() -> float:
 
 def _duration_ms(started_at: float, ended_at: float) -> int:
     return int((ended_at - started_at) * 1000)
-
-
-def _is_coro_callable(fn: Callable[..., Any]) -> bool:
-    return inspect.iscoroutinefunction(fn) or inspect.isawaitable(fn)
 
 
 async def _call_target(
@@ -313,17 +286,15 @@ async def execute_parallel_plan(
     sub_agents: dict[str, AgentCallable] | None = None,
     context: dict[str, Any] | None = None,
     default_timeout_seconds: float | None = None,
-    input_resolver: InputResolver | None = None,
-    result_transformer: ResultTransformer | None = None,
 ) -> dict[str, Any]:
     """Execute a dependency-aware plan with generic tools and sub-agents.
 
     Fail-fast: if any running step errors or times out, execution stops immediately.
     """
 
-    register_defaults()
-    tools = {**TOOLS_REGISTRY, **(tools or {})}
-    sub_agents = {**SUB_AGENTS_REGISTRY, **(sub_agents or {})}
+    default_tools, default_agents = _build_default_registries()
+    tools = {**default_tools, **(tools or {})}
+    sub_agents = {**default_agents, **(sub_agents or {})}
     context = context or {}
 
     if default_timeout_seconds is not None and default_timeout_seconds <= 0:
@@ -356,12 +327,6 @@ async def execute_parallel_plan(
         upstream_dicts = [u.as_dict() for u in upstream]
 
         step_input = dict(step.input)
-        if input_resolver:
-            step_input = input_resolver(step, upstream, context)
-            if not isinstance(step_input, dict):
-                raise StepExecutionError(
-                    f"input_resolver must return a dict for step {step.step_id}"
-                )
 
         result = StepResult(
             step_id=step.step_id,
@@ -381,8 +346,6 @@ async def execute_parallel_plan(
             result.status = "skipped"
             result.ended_at = ended
             result.duration_ms = _duration_ms(started, ended)
-            if result_transformer:
-                result = result_transformer(step, result, context)
             return result
 
         target_fn = tools[step.target] if step.kind == "tool" else sub_agents[step.target]
@@ -400,8 +363,6 @@ async def execute_parallel_plan(
             result.status = "success"
             result.ended_at = ended
             result.duration_ms = _duration_ms(started, ended)
-            if result_transformer:
-                result = result_transformer(step, result, context)
             return result
         except TimeoutError as exc:
             ended = _now()
@@ -412,8 +373,6 @@ async def execute_parallel_plan(
             )
             result.ended_at = ended
             result.duration_ms = _duration_ms(started, ended)
-            if result_transformer:
-                result = result_transformer(step, result, context)
             raise StepTimeoutError(result.error) from exc
         except Exception as exc:  # noqa: BLE001
             ended = _now()
@@ -421,8 +380,6 @@ async def execute_parallel_plan(
             result.error = f"Step '{step.step_id}' ({step.kind}:{step.target}) failed: {exc}"
             result.ended_at = ended
             result.duration_ms = _duration_ms(started, ended)
-            if result_transformer:
-                result = result_transformer(step, result, context)
             raise StepExecutionError(result.error) from exc
 
     while remaining:

@@ -4,7 +4,8 @@ from typing_extensions import TypedDict
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 
-from app.agent.utils.misc import get_embeddings, get_qdrant_client, get_textbook_score_threshold, get_textbook_top_k
+from app.agent.utils.misc import get_embeddings, get_qdrant_client
+from app.core.config import get_settings
 
 COLLECTION = "insurance_text_book2"
 
@@ -45,14 +46,12 @@ class TextbookInput(BaseModel):
             "use query_product_summary instead."
         ),
     )
-    k: int | None = Field(default=None, description="Legacy field. Retrieval depth is controlled by TEXTBOOK_TOP_K.")
 
 
 @tool(args_schema=TextbookInput)
 def query_textbook(
     queries: list[list | str] | None = None,
     query: str | None = None,
-    k: int | None = None,
 ) -> TextbookOutput:
     """Search the insurance textbook for conceptual definitions, regulatory frameworks,
     and general product knowledge. Use for 'what is X' or 'how does X work' questions.
@@ -60,9 +59,9 @@ def query_textbook(
     embeddings = get_embeddings()
     client = get_qdrant_client()
 
-    _ = k
-    top_k = get_textbook_top_k()
-    score_threshold = get_textbook_score_threshold()
+    s = get_settings()
+    top_k = s.textbook_top_k
+    score_threshold = s.textbook_score_threshold
     normalized_queries: list[str] = []
     for item in (queries or []):
         if isinstance(item, str):

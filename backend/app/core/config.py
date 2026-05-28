@@ -37,7 +37,6 @@ class Settings(BaseSettings):
     supabase_jwt_secret: str | None = Field(default=None)
 
     # LLM providers
-    llm_provider: Literal["openai", "gemini", "openrouter", "mock"] = Field(default="mock")
     openai_api_key: str | None = Field(default=None)
     gemini_api_key: str | None = Field(default=None)
     gemini_model: str = Field(default="gemini-2.0-flash-lite")
@@ -52,10 +51,10 @@ class Settings(BaseSettings):
     embedding_dimension: int = Field(default=768)
 
     # Retrieval tuning
-    textbook_top_k: int = Field(default=5)
-    product_summary_top_k: int = Field(default=5)
-    textbook_score_threshold: float = Field(default=0.0)
-    product_summary_score_threshold: float = Field(default=0.0)
+    textbook_top_k: int = Field(default=5, ge=1, le=15)
+    product_summary_top_k: int = Field(default=5, ge=1, le=15)
+    textbook_score_threshold: float = Field(default=0.0, ge=0.0, le=1.0)
+    product_summary_score_threshold: float = Field(default=0.0, ge=0.0, le=1.0)
 
     # Observability
     langfuse_public_key: str | None = Field(default=None)
@@ -69,6 +68,3 @@ class Settings(BaseSettings):
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
     return Settings()
-
-
-settings = get_settings()
