@@ -83,12 +83,3 @@ class FindProductWithCriteriaStateOutput(BaseModel):
     matching_product: List[PolicyMatch]
 
 
-class SimpleQueryClassification(BaseModel):
-    question_type: Literal["specific_product", "concept", "both", "lookup"]
-    product_name_mentioned: str | None
-    reasoning: str
-
-
-class ExpandedQueries(BaseModel):
-    product_queries: list[str]
-    concept_queries: list[str]

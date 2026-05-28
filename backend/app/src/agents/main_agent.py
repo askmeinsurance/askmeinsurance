@@ -12,7 +12,6 @@ from app.src.schema.agent_schema import MainAgentRouterClassification
 from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
 from app.src.utils.prompt_format import format_json_for_prompt
 
-# from app.src.workflow.simple_workflow import get_simple_workflow_subgraph  # v1 — kept for reference
 from app.src.workflow.simple_workflow_v2 import get_simple_workflow_v2_subgraph
 
 
@@ -67,7 +66,6 @@ async def get_main_agent_graph():
             return "simple_workflow"
         return "simple_workflow"
 
-    # simple_workflow = get_simple_workflow_subgraph()  # v1 — commented out
     simple_workflow = get_simple_workflow_v2_subgraph()
     general_agent = await get_general_agent_subgraph()
     builder.add_node("router", router_node)
