@@ -95,10 +95,9 @@ JWT verification (RS256) using `SUPABASE_JWT_SECRET`. Set `AUTH_ENABLED=false` i
 Offline evaluation scripts live under `evals/`. They import backend code directly (no running server needed).
 
 ```bash
-# From evals/02_run_evals/
-uv run python run_evals.py                          # Run all evals
+# From evals/
+uv run python run_evals.py                          # Run manual evals
 uv run python run_evals.py --run-name "my-run"      # Named run (for Langfuse tracking)
-uv run python run_evals.py --dataset manual         # Manual dataset only
 uv run python run_evals.py --limit 5                # Limit to 5 cases
 ```
 

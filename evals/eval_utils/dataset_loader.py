@@ -1,24 +1,23 @@
 """Load evaluation datasets from golden Q&A files."""
+
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
-_DATASET_ROOT = Path(__file__).parents[1] 
+from eval_utils.config import EVALS_ROOT
 
 
 @dataclass
 class EvalCase:
     question: str
-    expected_output: Optional[str]
+    expected_output: str | None
     source: str
-    case_id: Optional[str] = None
+    case_id: str | None = None
     context: list[str] = field(default_factory=list)
-    retrieval_context: list[str] = field(default_factory=list)
 
 
-def load_manual_evals() -> list[EvalCase]:
-    path = _DATASET_ROOT / "dataset" / "manual_data.json"
+def load_manual_evals(dataset_root: Path = EVALS_ROOT) -> list[EvalCase]:
+    path = dataset_root / "dataset" / "manual_data.json"
     data = json.loads(path.read_text())
     return [
         EvalCase(
@@ -31,8 +30,8 @@ def load_manual_evals() -> list[EvalCase]:
     ]
 
 
-def load_textbook_evals() -> list[EvalCase]:
-    path = _DATASET_ROOT / "textbook_evals" / "generated_goldens.json"
+def load_textbook_evals(dataset_root: Path = EVALS_ROOT) -> list[EvalCase]:
+    path = dataset_root / "textbook_evals" / "generated_goldens.json"
     if not path.exists():
         return []
     data = json.loads(path.read_text())
@@ -48,5 +47,3 @@ def load_textbook_evals() -> list[EvalCase]:
     ]
 
 
-def load_all_evals() -> list[EvalCase]:
-    return load_manual_evals() + load_textbook_evals()

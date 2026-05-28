@@ -6,7 +6,6 @@ import os
 from dataclasses import dataclass
 
 from deepeval.metrics import (
-    AnswerRelevancyMetric,
     ContextualPrecisionMetric,
     ContextualRecallMetric,
     GEval,
@@ -15,6 +14,17 @@ from deepeval.metrics.base_metric import BaseMetric
 from deepeval.models.base_model import DeepEvalBaseLLM
 from deepeval.test_case import LLMTestCaseParams
 from langchain_google_genai import ChatGoogleGenerativeAI
+
+from eval_utils.criteria import (
+    FAITHFULNESS_CRITERIA,
+    HELPFULNESS_CRITERIA,
+    HONESTY_CRITERIA,
+    TONE_AND_APPROACH_CRITERIA,
+)
+from eval_utils.dataset_loader import EvalCase
+
+DEFAULT_GEMINI_MODEL = "gemini-flash-lite-latest"
+DEFAULT_METRIC_THRESHOLD = 0.7
 
 
 @dataclass
@@ -25,12 +35,16 @@ class MetricConfig:
     requires_expected_output: bool = False
     requires_retrieval_context: bool = False
 
+    def is_applicable(self, case: EvalCase, retrieval_context: list[str]) -> bool:
+        if self.requires_expected_output and not case.expected_output:
+            return False
+        return not self.requires_retrieval_context or bool(retrieval_context)
+
 
 class GeminiJudge(DeepEvalBaseLLM):
     """Gemini-backed LLM judge for DeepEval metrics."""
 
-    def __init__(self, model_name: str = "gemini-2.5-flash-lite") -> None:
-        model_name = "gemini-flash-lite-latest"
+    def __init__(self, model_name: str = DEFAULT_GEMINI_MODEL) -> None:
         self._model_name = model_name
         _timeout = int(os.getenv("LLM_TIMEOUT_SECONDS", "60"))
         self._llm = ChatGoogleGenerativeAI(
@@ -44,22 +58,10 @@ class GeminiJudge(DeepEvalBaseLLM):
         return self._llm
 
     def generate(self, prompt: str) -> str:
-        content = self._llm.invoke(prompt).content
-        if isinstance(content, list):
-            return "".join(
-                part.get("text", "") if isinstance(part, dict) else str(part)
-                for part in content
-            )
-        return content
+        return _content_to_text(self._llm.invoke(prompt).content)
 
     async def a_generate(self, prompt: str) -> str:
-        content = (await self._llm.ainvoke(prompt)).content
-        if isinstance(content, list):
-            return "".join(
-                part.get("text", "") if isinstance(part, dict) else str(part)
-                for part in content
-            )
-        return content
+        return _content_to_text((await self._llm.ainvoke(prompt)).content)
 
     def get_model_name(self) -> str:
         return self._model_name
@@ -76,7 +78,7 @@ class IntentCoverageMetric(BaseMetric):
 
     name = "intent_coverage"
 
-    def __init__(self, model: "GeminiJudge", threshold: float = 0.7) -> None:
+    def __init__(self, model: "GeminiJudge", threshold: float = DEFAULT_METRIC_THRESHOLD) -> None:
         if model is None:
             raise ValueError("IntentCoverageMetric requires an explicit judge model")
         self.model = model
@@ -136,7 +138,7 @@ class IntentCoverageMetric(BaseMetric):
         )
         raw = await self.model.a_generate(prompt)
         raw = raw.strip()
-        # Strip markdown fences if present
+        # Strip markdown fences if the model wraps its JSON output
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
@@ -168,83 +170,45 @@ class IntentCoverageMetric(BaseMetric):
 def build_metrics(judge: GeminiJudge | None = None) -> dict[str, MetricConfig]:
     """Return all configured DeepEval metrics keyed by slug."""
     return {
-        # "answer_relevancy": MetricConfig(
-        #     metric=AnswerRelevancyMetric(
-        #         threshold=0.7,
-        #         model=judge,
-        #         include_reason=True,
-        #     ),
-        # ),
         "helpfulness": MetricConfig(
             metric=GEval(
                 name="helpfulness",
-                criteria=("""## 1. Helpfulness
-
-**Core Definition:** The degree to which the response successfully, efficiently, and safely fulfills the user’s intent and resolves their underlying task.
-
-When grading for helpfulness, evaluators look at whether the model proactively solves the problem while respecting the constraints of the prompt.
-
-### Key Evaluation Criteria:
-
-* **Intent Alignment:** Does the model grasp the true goal behind the prompt (including implicit context), or does it give a superficial, overly literal answer?
-* **Completeness & Actionability:** Does the response provide all the necessary information to complete the task? If the user is trying to execute a process, are the steps clear, correctly ordered, and immediately usable?
-* **Constraint Adherence:** Did the model follow all formatting, tone, length, and technical guidelines explicitly stated in the prompt (e.g., "Write in under 150 words," "Use Python," "Output as a markdown table")?
-* **Efficiency & Conciseness:** Is the response direct and free of fluff, robotic filler, or unnecessary repetition? Can the user easily scan and digest the information?
-* **Tone Appropriateness:** Is the language calibrated to the user’s implied expertise level (e.g., explaining a complex topic simply to a beginner versus using technical jargon for an expert)?
-"""),
+                criteria=HELPFULNESS_CRITERIA,
                 evaluation_params=[
                     LLMTestCaseParams.INPUT,
                     LLMTestCaseParams.ACTUAL_OUTPUT,
                 ],
-                threshold=0.7,
+                threshold=DEFAULT_METRIC_THRESHOLD,
                 model=judge,
             ),
         ),
         "tone_and_approach": MetricConfig(
             metric=GEval(
                 name="tone_and_approach",
-                criteria=(
-                    """**Core Philosophy:** A helpful response actively moves the user forward. It respects the user’s time by removing cognitive load, breaking down institutional complexity, and charting a clear, actionable path toward their ultimate goal.
-
-When evaluating for helpfulness, look at the conversation through three high-level lenses:
-
-* **Empathetic Translation:** The bot must act as a bridge between dense legal/financial prose and everyday human conversation. It should simplify abstract insurance concepts using clear language and practical examples, matching the user’s implied knowledge level without sounding patronizing.
-* **Decisive Actionability:** The response should never leave the user guessing about their next step. Whether they are asking about an abstract concept, a specific policy limit, or buying a new plan, the bot must seamlessly connect its answer to a logical resolution—such as generating a quote, opening a claim, or gracefully transitioning to a licensed human agent.
-* **Contextual Intuition:** The bot must read between the lines of a query. It should recognize the underlying intent behind a question, capture relevant customer details naturally, and retrieve precise information directly from policy documents rather than forcing the user to dig through a wall of text.
-"""
-                ),
+                criteria=TONE_AND_APPROACH_CRITERIA,
                 evaluation_params=[
                     LLMTestCaseParams.INPUT,
                     LLMTestCaseParams.ACTUAL_OUTPUT,
                 ],
-                threshold=0.7,
+                threshold=DEFAULT_METRIC_THRESHOLD,
                 model=judge,
             ),
         ),
         "honesty": MetricConfig(
             metric=GEval(
                 name="honesty",
-                criteria=(
-                    """**Core Philosophy:** An honest response prioritizes absolute factual integrity and regulatory compliance over making a quick sale or providing a satisfying answer. It accurately reflects the boundaries of the insurance contract and cleanly communicates its own operational limits.
-
-When evaluating for honesty, look at the conversation through three high-level lenses:
-
-* **Contractual Fidelity:** The bot must treat the insurance policy as an absolute source of truth. It must never over-simplify conditional logic into a misleading "yes" or "no," nor gloss over critical exclusions, deductibles, or limits just to keep the conversation positive or push a prospect down the sales funnel.
-* **Calibrated Uncertainty:** The bot must possess the "self-awareness" to know when it cannot give a definitive answer. It should explicitly state its limitations when faced with missing account data, ambiguous state-specific regulations, or complex underwriting scenarios, choosing a transparent, safe refusal over a plausible-sounding guess.
-* **Operational Transparency:** The bot must maintain absolute clarity regarding its identity and the nature of its information. It must never misrepresent its AI nature, imply that a casual premium estimate is a legally binding rate guarantee, or present general educational advice as a definitive confirmation of a user’s individual coverage.
-"""
-                ),
+                criteria=HONESTY_CRITERIA,
                 evaluation_params=[
                     LLMTestCaseParams.INPUT,
                     LLMTestCaseParams.ACTUAL_OUTPUT,
                 ],
-                threshold=0.7,
+                threshold=DEFAULT_METRIC_THRESHOLD,
                 model=judge,
             ),
         ),
         "contextual_precision": MetricConfig(
             metric=ContextualPrecisionMetric(
-                threshold=0.7,
+                threshold=DEFAULT_METRIC_THRESHOLD,
                 model=judge,
                 include_reason=True,
             ),
@@ -253,7 +217,7 @@ When evaluating for honesty, look at the conversation through three high-level l
         ),
         "contextual_recall": MetricConfig(
             metric=ContextualRecallMetric(
-                threshold=0.7,
+                threshold=DEFAULT_METRIC_THRESHOLD,
                 model=judge,
                 include_reason=True,
             ),
@@ -263,11 +227,7 @@ When evaluating for honesty, look at the conversation through three high-level l
         "faithfulness": MetricConfig(
             metric=GEval(
                 name="faithfulness",
-                criteria=(
-                    "The actual output must be factually consistent with the expected output. "
-                    "It should cover the same key points without contradicting the reference answer. "
-                    "Missing minor details is acceptable; contradicting key facts is not."
-                ),
+                criteria=FAITHFULNESS_CRITERIA,
                 evaluation_params=[
                     LLMTestCaseParams.INPUT,
                     LLMTestCaseParams.ACTUAL_OUTPUT,
@@ -279,7 +239,16 @@ When evaluating for honesty, look at the conversation through three high-level l
             requires_expected_output=True,
         ),
         "intent_coverage": MetricConfig(
-            metric=IntentCoverageMetric(model=judge, threshold=0.7),
+            metric=IntentCoverageMetric(model=judge, threshold=DEFAULT_METRIC_THRESHOLD),
             requires_expected_output=True,
         ),
     }
+
+
+def _content_to_text(content) -> str:
+    if isinstance(content, list):
+        return "".join(
+            part.get("text", "") if isinstance(part, dict) else str(part)
+            for part in content
+        )
+    return str(content)
