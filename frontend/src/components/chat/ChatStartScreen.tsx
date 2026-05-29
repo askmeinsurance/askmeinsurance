@@ -10,11 +10,11 @@ interface ChatStartScreenProps {
 export function ChatStartScreen({ onSubmit, disclaimerAgreed, onDisclaimerCheckboxClick }: ChatStartScreenProps) {
   return (
     <div
-      className="flex flex-1 flex-col items-center justify-center h-full gap-6 px-4"
+      className="flex flex-1 flex-col items-center justify-center h-full gap-6 px-6"
     >
       <div className="flex flex-col items-center gap-1 text-center">
         <p className="text-base text-gray-500">Welcome</p>
-        <h1 className="text-xl sm:text-3xl font-semibold text-gray-900">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900">
           Where should we start?
         </h1>
       </div>
