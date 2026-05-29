@@ -2,9 +2,6 @@ import {
   Menu,
   Plus,
   MessageSquare,
-  Bookmark,
-  Settings,
-  HelpCircle,
   ChevronRight,
   LogOut,
   Trash2,
@@ -76,7 +73,7 @@ export function Sidebar({
         </IconButton>
         {!collapsed && (
           <span className="truncate text-sm font-semibold text-gray-900">
-            InsureBot SG
+            AskMeInsurance
           </span>
         )}
       </div>
@@ -97,19 +94,6 @@ export function Sidebar({
           </button>
         )}
       </div>
-
-      <nav className="flex flex-col gap-1 px-2">
-        <NavItem
-          icon={<MessageSquare size={18} />}
-          label="My stuff"
-          collapsed={collapsed}
-        />
-        <NavItem
-          icon={<Bookmark size={18} />}
-          label="Saved"
-          collapsed={collapsed}
-        />
-      </nav>
 
       {!collapsed && (
         <div className="mt-4 flex flex-1 flex-col overflow-hidden px-2">
@@ -171,16 +155,6 @@ export function Sidebar({
             onClick={onSignOut}
           />
         )}
-        <NavItem
-          icon={<Settings size={18} />}
-          label="Settings"
-          collapsed={collapsed}
-        />
-        <NavItem
-          icon={<HelpCircle size={18} />}
-          label="Help"
-          collapsed={collapsed}
-        />
       </div>
     </aside>
   );
