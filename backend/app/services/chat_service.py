@@ -7,6 +7,7 @@ from app.schemas.conversation import ConversationCreate, ConversationMessage
 from app.services.conversation_service import ConversationService, conversation_service
 from app.services.langgraph_service import LangGraphService
 from app.services.message_service import MessageService, message_service
+from app.services.user_limits_service import user_limits_service
 
 
 class ChatService:
@@ -49,6 +50,7 @@ class ChatService:
         message: str,
         conversation_id: UUID | None,
         user_id: str,
+        is_super_user: bool = False,
     ) -> UUID:
         if conversation_id:
             touched = await self._conversation_store.touch_conversation(
@@ -65,8 +67,15 @@ class ChatService:
         created = await self._conversation_store.create_conversation(
             ConversationCreate(title=title),
             user_id=user_id,
+            is_super_user=is_super_user,
         )
         return created.id
+
+    async def check_limits(self, user: Any, conversation_id: UUID | None) -> None:
+        """Check limits before the SSE stream starts so 429 is raised before headers are sent."""
+        await user_limits_service.check_message_limit(user.user_id, is_super_user=user.is_super_user)
+        if conversation_id is None:
+            await user_limits_service.check_conversation_limit(user.user_id, is_super_user=user.is_super_user)
 
     async def stream_chat(
         self,
@@ -80,13 +89,14 @@ class ChatService:
             message=message,
             conversation_id=conversation_id,
             user_id=user.user_id,
+            is_super_user=user.is_super_user,
         )
         user_msg = ConversationMessage(
             conversation_id=resolved_conversation_id,
             role="user",
             content=message,
         )
-        await self._message_store.add_message(user_msg, user_id=user.user_id)
+        await self._message_store.add_message(user_msg, user_id=user.user_id, is_super_user=user.is_super_user)
 
         bot_text = ""
         async for event in self._langgraph_service.stream_chat(

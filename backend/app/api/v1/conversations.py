@@ -23,7 +23,7 @@ async def create_conversation(
     payload: ConversationCreate,
     user: UserContext = Depends(require_auth),
 ) -> Conversation:
-    return await conversation_service.create_conversation(payload, user_id=user.user_id)
+    return await conversation_service.create_conversation(payload, user_id=user.user_id, is_super_user=user.is_super_user)
 
 
 @router.get("/{conversation_id}", response_model=Conversation)

@@ -30,6 +30,8 @@ async def stream_chat(
         len(payload.message),
     )
 
+    await chat_service.check_limits(current_user, payload.conversation_id)
+
     async def event_stream() -> AsyncGenerator[str, None]:
         event_count = 0
         try:

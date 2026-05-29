@@ -43,6 +43,7 @@ function NavItem({ icon, label, collapsed, active = false, onClick }: NavItemPro
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
+  mobile?: boolean;
   conversations?: ChatHistoryItem[];
   onConversationSelect?: (id: string) => void;
   onConversationDelete?: (id: string) => void;
@@ -54,6 +55,7 @@ interface SidebarProps {
 export function Sidebar({
   collapsed,
   onToggle,
+  mobile = false,
   conversations = [],
   onConversationSelect,
   onConversationDelete,
@@ -61,9 +63,16 @@ export function Sidebar({
   onSignOut,
   signedInEmail,
 }: SidebarProps) {
+  const positionClass =
+    mobile && !collapsed
+      ? 'fixed inset-y-0 left-0 z-50 w-64 shadow-xl'
+      : collapsed
+        ? 'w-14'
+        : 'w-64';
+
   return (
     <aside
-      className={`flex h-full flex-col border-r border-gray-200 bg-white transition-all duration-200 ${collapsed ? "w-14" : "w-64"}`}
+      className={`flex h-full flex-col border-r border-gray-200 bg-white transition-all duration-200 ${positionClass}`}
     >
       <div
         className={`flex items-center border-b border-gray-100 px-3 py-3 ${collapsed ? "justify-center" : "gap-3"}`}
@@ -157,7 +166,7 @@ export function Sidebar({
                         event.stopPropagation();
                         onConversationDelete?.(item.id);
                       }}
-                      className="rounded-md p-1 text-gray-400 opacity-0 transition hover:bg-red-50 hover:text-red-600 group-hover:opacity-100"
+                      className="rounded-md p-1 text-gray-300 transition hover:bg-red-50 hover:text-red-600"
                     >
                       <Trash2 size={14} />
                     </button>

@@ -6,7 +6,7 @@ const DISCLAIMER_TEXT = `
 
 **1. Nature of Service**
 
-This chatbot is a demonstration project created for educational and professional portfolio purposes. It is **not** a licensed financial institution, insurance provider, or advisor. The information provided by this chatbot is for general informational purposes only and does not constitute financial, insurance, legal, or professional advice.
+This chatbot is a demonstration project created for **educational and professional portfolio purposes**. It is **not** a licensed financial institution, insurance provider, or advisor. The information provided by this chatbot is for general informational purposes only and does not constitute financial, insurance, legal, or professional advice.
 
 **2. No Reliance**
 

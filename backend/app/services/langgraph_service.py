@@ -28,7 +28,7 @@ class LangGraphService:
         self._message_store = message_store or message_service
 
     async def generate_conversation_title(self, first_message: str) -> str:
-        if not self._settings.gemini_api_key:
+        if not self._settings.openrouter_api_key:
             return ""
         prompt = (
             "Create a concise chat title (max 7 words) for this first user message. "
@@ -40,7 +40,6 @@ class LangGraphService:
         with lf.start_as_current_observation(
             name="generate_conversation_title",
             as_type="generation",
-            model=self._settings.gemini_model,
             input=prompt,
         ) as gen:
             response = await llm.ainvoke([HumanMessage(content=prompt)])
