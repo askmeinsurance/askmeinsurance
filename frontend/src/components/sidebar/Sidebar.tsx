@@ -5,6 +5,7 @@ import {
   ChevronRight,
   LogOut,
   Trash2,
+  Github,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { IconButton } from "../ui/IconButton";
@@ -72,9 +73,20 @@ export function Sidebar({
           <Menu size={20} />
         </IconButton>
         {!collapsed && (
-          <span className="truncate text-sm font-semibold text-gray-900">
-            AskMeInsurance
-          </span>
+          <>
+            <span className="truncate text-sm font-semibold text-gray-900">
+              AskMeInsurance
+            </span>
+            <a
+              href="https://github.com/askmeinsurance/askmeinsurance"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+              className="ml-auto shrink-0 rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+            >
+              <Github size={15} />
+            </a>
+          </>
         )}
       </div>
 

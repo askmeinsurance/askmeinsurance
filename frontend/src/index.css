@@ -9,6 +9,14 @@
   --color-text: #111827;
   --color-text-muted: #6b7280;
   --color-user-bubble: #f3f4f6;
+
+  /* Accent — change these to retheme the entire app */
+  --color-accent: #171717;
+  --color-accent-hover: #404040;
+  --color-accent-ring: #525252;
+  --color-accent-light: #e5e5e5;
+  --color-accent-pale: #f5f5f5;
+  --color-accent-muted: #a3a3a3;
 }
 
 * {

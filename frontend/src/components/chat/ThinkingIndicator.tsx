@@ -23,7 +23,7 @@ export function ThinkingIndicator() {
 
   return (
     <div className="flex gap-3 mb-4">
-      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
+      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-accent flex items-center justify-center mt-0.5">
         <Bot size={15} className="text-white" />
       </div>
       <div className="flex-1 min-w-0 flex flex-col gap-1.5 pt-1">

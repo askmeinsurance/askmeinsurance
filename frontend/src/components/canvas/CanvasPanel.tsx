@@ -9,7 +9,7 @@ function SystemPromptCard() {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4">
       <div className="mb-3 flex items-center gap-2">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-pale text-accent">
           <span className="text-xs font-bold">S</span>
         </div>
         <span className="text-sm font-semibold text-gray-800">System Prompt</span>
@@ -57,7 +57,7 @@ function AvailableSkillsCard() {
           trigger="Trigger: bitcoin, ethereum, crypto"
         />
         <SkillItem
-          color="bg-blue-400"
+          color="bg-accent-muted"
           label="Tax Optimisation Skill"
           trigger="Trigger: tax, deduction, ira"
         />
@@ -74,7 +74,7 @@ function AgentBrainFooter() {
     <div className="rounded-xl bg-gray-900 p-4 text-white">
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-xs font-bold">
+          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-bold">
             G
           </div>
           <div>
@@ -83,12 +83,12 @@ function AgentBrainFooter() {
           </div>
         </div>
         <div className="text-right">
-          <p className="text-lg font-bold text-blue-400">43%</p>
+          <p className="text-lg font-bold text-accent-muted">43%</p>
           <p className="text-xs text-gray-400">TOTAL ACTIVE TOKENS</p>
         </div>
       </div>
       <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-gray-700">
-        <div className="h-full w-[43%] rounded-full bg-blue-500" />
+        <div className="h-full w-[43%] rounded-full bg-accent-ring" />
       </div>
       <div className="mt-1 flex justify-between text-xs text-gray-400">
         <span>SYSTEM LAYER</span>
@@ -106,8 +106,8 @@ export function CanvasPanel({ visible, onClose }: CanvasPanelProps) {
       {/* Header */}
       <div className="flex shrink-0 items-center justify-between border-b border-gray-200 px-4 py-3">
         <div className="flex items-center gap-2 min-w-0">
-          <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-blue-100">
-            <span className="text-xs font-bold text-blue-600">A</span>
+          <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-pale">
+            <span className="text-xs font-bold text-accent">A</span>
           </div>
           <span className="truncate text-sm text-gray-600">Agent Architecture Visualiser</span>
           <div className="flex items-center gap-1 text-gray-400">
@@ -131,7 +131,7 @@ export function CanvasPanel({ visible, onClose }: CanvasPanelProps) {
           </button>
           <button
             type="button"
-            className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600 hover:bg-blue-100 transition-colors"
+            className="rounded-lg border border-accent-light bg-accent-pale px-3 py-1 text-xs font-medium text-accent hover:bg-accent-light transition-colors"
           >
             <span className="flex items-center gap-1">
               <Eye size={12} />
