@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import { ThinkingSection } from "./ThinkingSection";
+import { ThinkingIndicator } from "./ThinkingIndicator";
 import type { Message } from "../../types";
 
 interface MessageBubbleProps {
@@ -18,6 +19,10 @@ export function MessageBubble({ message }: MessageBubbleProps) {
         </div>
       </div>
     );
+  }
+
+  if (message.content === "") {
+    return <ThinkingIndicator />;
   }
 
   return (
