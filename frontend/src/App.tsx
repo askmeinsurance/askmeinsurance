@@ -4,6 +4,7 @@ import { MainLayout } from './components/layout/MainLayout';
 import { ChatStartScreen } from './components/chat/ChatStartScreen';
 import { ChatPanel } from './components/chat/ChatPanel';
 import { AuthGate } from './components/auth/AuthGate';
+import { DisclaimerModal } from './components/disclaimer/DisclaimerModal';
 import type { AppView, DiagramTab, Message } from './types';
 import type { AuthSession, EmailPasswordCredentials } from './types/auth';
 import {
@@ -80,6 +81,8 @@ export default function App() {
   const [isCanvasHidden, setIsCanvasHidden] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [authWarning, setAuthWarning] = useState<string | null>(null);
+  const [disclaimerAgreed, setDisclaimerAgreed] = useState(false);
+  const [showDisclaimerModal, setShowDisclaimerModal] = useState(false);
   const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
   const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
 
@@ -165,6 +168,19 @@ export default function App() {
     if (!session) return;
     void refreshConversations(session.accessToken);
   }, [session]);
+
+  function handleDisclaimerCheckboxClick() {
+    setShowDisclaimerModal(true);
+  }
+
+  function handleDisclaimerAgree() {
+    setDisclaimerAgreed(true);
+    setShowDisclaimerModal(false);
+  }
+
+  function handleDisclaimerExit() {
+    handleSignOut();
+  }
 
   function handleSignOut() {
     logApp('Signing out');
@@ -445,6 +461,8 @@ export default function App() {
     setView('start');
     setMessages([]);
     setActiveConversationId(null);
+    setDisclaimerAgreed(false);
+    setShowDisclaimerModal(false);
   }
 
   function handleDiagramTabSelect(id: string) {
@@ -514,9 +532,25 @@ export default function App() {
       onHideCanvas={handleHideCanvas}
       onCloseAllDiagrams={handleCloseAllDiagrams}
     >
-      {view === 'start' && <ChatStartScreen onSubmit={handleSubmit} />}
+      {view === 'start' && (
+        <ChatStartScreen
+          onSubmit={handleSubmit}
+          disclaimerAgreed={disclaimerAgreed}
+          onDisclaimerCheckboxClick={handleDisclaimerCheckboxClick}
+        />
+      )}
       {view === 'chat' && (
-        <ChatPanel messages={messages} onSend={handleSend} hasDiagramPanel={hasVisibleCanvas} isSending={isSending} />
+        <ChatPanel
+          messages={messages}
+          onSend={handleSend}
+          hasDiagramPanel={hasVisibleCanvas}
+          isSending={isSending}
+          disclaimerAgreed={disclaimerAgreed}
+          onDisclaimerCheckboxClick={handleDisclaimerCheckboxClick}
+        />
+      )}
+      {showDisclaimerModal && (
+        <DisclaimerModal onAgree={handleDisclaimerAgree} onExit={handleDisclaimerExit} />
       )}
       {authWarning && (
         <div className="absolute bottom-4 left-4 z-20 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 shadow-md">

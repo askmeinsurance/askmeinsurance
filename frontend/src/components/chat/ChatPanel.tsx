@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { MessageBubble } from "./MessageBubble";
 import { ChatInput } from "./ChatInput";
+import { DisclaimerCheckbox } from "../disclaimer/DisclaimerCheckbox";
 import type { Message } from "../../types";
 
 interface ChatPanelProps {
@@ -8,9 +9,11 @@ interface ChatPanelProps {
   onSend: (text: string) => void | Promise<void>;
   hasDiagramPanel: boolean;
   isSending?: boolean;
+  disclaimerAgreed: boolean;
+  onDisclaimerCheckboxClick: () => void;
 }
 
-export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false }: ChatPanelProps) {
+export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false, disclaimerAgreed, onDisclaimerCheckboxClick }: ChatPanelProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,7 +38,8 @@ export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false
       <div
         className={`flex-shrink-0 pb-4 pt-2 border-t border-gray-100 ${withCanvas ? "px-4" : "mx-auto w-full max-w-2xl px-4"}`}
       >
-        <ChatInput onSubmit={onSend} disabled={isSending} />
+        <ChatInput onSubmit={onSend} disabled={isSending || !disclaimerAgreed} />
+        <DisclaimerCheckbox agreed={disclaimerAgreed} onCheckboxClick={onDisclaimerCheckboxClick} />
       </div>
     </div>
   );

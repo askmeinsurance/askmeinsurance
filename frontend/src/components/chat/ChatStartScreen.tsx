@@ -1,10 +1,13 @@
 import { ChatInput } from "./ChatInput";
+import { DisclaimerCheckbox } from "../disclaimer/DisclaimerCheckbox";
 
 interface ChatStartScreenProps {
   onSubmit: (message: string) => void;
+  disclaimerAgreed: boolean;
+  onDisclaimerCheckboxClick: () => void;
 }
 
-export function ChatStartScreen({ onSubmit }: ChatStartScreenProps) {
+export function ChatStartScreen({ onSubmit, disclaimerAgreed, onDisclaimerCheckboxClick }: ChatStartScreenProps) {
   return (
     <div
       className="flex flex-1 flex-col items-center justify-center h-full gap-6 px-4"
@@ -17,7 +20,8 @@ export function ChatStartScreen({ onSubmit }: ChatStartScreenProps) {
       </div>
 
       <div className="w-full max-w-lg">
-        <ChatInput onSubmit={onSubmit} placeholder="Ask InsureBot" />
+        <ChatInput onSubmit={onSubmit} placeholder="Ask InsureBot" disabled={!disclaimerAgreed} />
+        <DisclaimerCheckbox agreed={disclaimerAgreed} onCheckboxClick={onDisclaimerCheckboxClick} />
       </div>
     </div>
   );
