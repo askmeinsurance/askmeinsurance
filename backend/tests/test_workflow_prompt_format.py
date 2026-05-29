@@ -1,110 +1,13 @@
 import asyncio
 
-from langchain_core.messages import AIMessage, HumanMessage
+from langchain_core.messages import HumanMessage
 
-from app.src.agent_state.agent_state import (
-    ExpandedQueries,
+from app.agent.workflows.name_match import (
     NameMatchStateInput,
     NameMatchStateOutput,
-    SimpleQueryClassification,
 )
-from app.src.schema.tool_schema import AppliedFilters, PolicyMatchResponse
-from app.src.workflow import simple_workflow as simple_workflow_module
-from app.src.workflow.name_match import name_match_workflow
-
-
-class _DummyStructuredLLM:
-    def __init__(self, result, captured: dict[str, str]):
-        self._result = result
-        self._captured = captured
-
-    def with_structured_output(self, _schema):
-        return self
-
-    async def ainvoke(self, messages, config=None):
-        _ = config
-        self._captured["prompt"] = messages[-1].content
-        return self._result
-
-
-def test_simple_workflow_classify_prompt_uses_json(monkeypatch) -> None:
-    captured: dict[str, str] = {}
-    llm = _DummyStructuredLLM(
-        SimpleQueryClassification(
-            question_type="concept",
-            product_name_mentioned=None,
-            reasoning="test",
-        ),
-        captured,
-    )
-
-    monkeypatch.setattr(
-        "app.src.workflow.simple_workflow.get_llm",
-        lambda _name: llm,
-    )
-    monkeypatch.setattr(
-        "app.src.workflow.simple_workflow.resolve_timeout_seconds",
-        lambda _agent_name, _default: 1,
-    )
-
-    state = simple_workflow_module.SimpleWorkflowGraphState(
-        messages=[HumanMessage(content="What is term insurance?")],
-        conversation_history=[HumanMessage(content="Earlier context")],
-    )
-    _ = asyncio.run(simple_workflow_module._classify_node(state, config={}))
-
-    prompt = captured["prompt"]
-    assert '"content": "What is term insurance?"' in prompt
-    assert '"content": "Earlier context"' in prompt
-
-
-def test_route_after_expand_lookup_goes_to_name_match() -> None:
-    """lookup question_type should route to name_match only (same as specific_product)."""
-    state = simple_workflow_module.SimpleWorkflowGraphState(
-        messages=[HumanMessage(content="What is the minimum premium?")],
-        classification=SimpleQueryClassification(
-            question_type="lookup",
-            product_name_mentioned="AIA Smart Wealth Builder II",
-            reasoning="quantitative anchor",
-        ),
-    )
-    result = simple_workflow_module._route_after_expand(state)
-    assert result == ["name_match"]
-
-
-def test_synthesise_node_passes_question_type_to_prompt(monkeypatch) -> None:
-    """synthesise node must include 'Question type: lookup' in the prompt sent to the LLM."""
-    captured: dict[str, str] = {}
-
-    class _DummyLLM:
-        async def ainvoke(self, messages, config=None):
-            captured["prompt"] = messages[-1].content
-            return AIMessage(content="$3,600")
-
-    monkeypatch.setattr(
-        "app.src.workflow.simple_workflow.get_llm",
-        lambda _name: _DummyLLM(),
-    )
-    monkeypatch.setattr(
-        "app.src.workflow.simple_workflow.resolve_timeout_seconds",
-        lambda _agent_name, _default: 1,
-    )
-
-    state = simple_workflow_module.SimpleWorkflowGraphState(
-        messages=[HumanMessage(content="What is the minimum premium for the 10-year plan?")],
-        classification=SimpleQueryClassification(
-            question_type="lookup",
-            product_name_mentioned="AIA Smart Wealth Builder II",
-            reasoning="quantitative anchor",
-        ),
-        expanded=ExpandedQueries(
-            product_queries=["AIA Smart Wealth Builder II minimum premium 10-year"],
-            concept_queries=[],
-        ),
-    )
-    _ = asyncio.run(simple_workflow_module._synthesise_node(state, config={}))
-
-    assert "Question type: lookup" in captured["prompt"]
+from app.agent.schemas.tools import AppliedFilters, PolicyMatchResponse
+from app.agent.workflows.name_match import name_match_workflow
 
 
 def test_name_match_prompt_uses_json(monkeypatch) -> None:
@@ -120,12 +23,15 @@ def test_name_match_prompt_uses_json(monkeypatch) -> None:
             )
         ]
     )
-    llm = _DummyStructuredLLM(output, captured)
 
-    monkeypatch.setattr("app.src.workflow.name_match.get_llm", lambda _name: llm)
-    monkeypatch.setattr("app.src.workflow.name_match.get_product_names", lambda: ["AIA ProTerm"])
+    async def _fake_ainvoke(agent_name, schema_model, timeout_seconds, config, messages):
+        captured["prompt"] = messages[-1].content
+        return output
+
+    monkeypatch.setattr("app.agent.workflows.name_match.ainvoke_structured_with_fallback", _fake_ainvoke)
+    monkeypatch.setattr("app.agent.workflows.name_match.get_product_names", lambda: ["AIA ProTerm"])
     monkeypatch.setattr(
-        "app.src.workflow.name_match.resolve_timeout_seconds",
+        "app.agent.workflows.name_match.resolve_timeout_seconds",
         lambda _agent_name, _default: 1,
     )
 

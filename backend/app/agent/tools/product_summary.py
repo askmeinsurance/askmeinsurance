@@ -5,7 +5,8 @@ from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-from app.src.utils.misc import get_embeddings, get_qdrant_client, get_product_summary_score_threshold, get_product_summary_top_k
+from app.agent.utils.misc import get_embeddings, get_qdrant_client
+from app.core.config import get_settings
 
 COLLECTION = "product_summary"
 _CONTEXT_RE = re.compile(r"<context>.*?</context>", re.DOTALL)
@@ -24,16 +25,11 @@ class ProductSummaryInput(BaseModel):
             "Use for benefits, exclusions, premium details, riders, and policy limits."
         ),
     )
-    context: str | None = Field(
-        default=None,
-        description="Optional caller context. Ignored by retrieval logic.",
-    )
 
 
 @tool(args_schema=ProductSummaryInput)
 def query_product_summary(
     queries: list[list | str],
-    context: str | None = None,
 ) -> list[dict]:
     """Search insurance product summaries (policy documents) for specific benefit details,
     exclusions, premiums, riders, and policy terms. Use when the question is about a
@@ -41,10 +37,10 @@ def query_product_summary(
     Do NOT use for general insurance concept definitions — use query_textbook instead."""
     embeddings = get_embeddings()
     client = get_qdrant_client()
-    top_k = get_product_summary_top_k()
-    score_threshold = get_product_summary_score_threshold()
+    s = get_settings()
+    top_k = s.product_summary_top_k
+    score_threshold = s.product_summary_score_threshold
 
-    _ = context
     normalized_queries: list[tuple[str, str | None]] = []
     for item in (queries or []):
         if isinstance(item, str):

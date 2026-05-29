@@ -1,6 +1,6 @@
 import asyncio
 import operator
-from typing import Annotated, List
+from typing import Annotated, Literal
 
 import anyio
 
@@ -10,18 +10,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-from app.src.agent_state.agent_state import (
-    AbbreviationResolution,
-    DecomposedIntent,
-    IntentExtension,
-    IntentsDecomposition,
-    IntentSummary,
-    NameMatchStateInput,
-    OnePolicyMatchOutput,
-    RephrasedQuerySet,
-    ResolvedIntent,
-)
-from app.src.prompts.prompts import (
+from app.agent.prompts.prompts import (
     SIMPLEV2_IDENTIFY_INTENT_SYSTEM,
     SIMPLEV2_INTENT_EXTENSION_SYSTEM,
     SIMPLEV2_INTENTS_DECOMPOSITION_SYSTEM,
@@ -29,12 +18,61 @@ from app.src.prompts.prompts import (
     SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM,
     SIMPLEV2_SYNTHESIS_SYSTEM,
 )
-from app.src.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
-from app.src.tools.product_registry import get_product_names
-from app.src.tools.product_summary import query_product_summary
-from app.src.tools.textbook import TextbookOutput, query_textbook
-from app.src.utils.prompt_format import format_json_for_prompt
-from app.src.workflow.name_match import name_match_one_policy_workflow
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, get_llm, resolve_timeout_seconds
+from app.agent.tools.product_registry import get_product_names
+from app.agent.tools.product_summary import query_product_summary
+from app.agent.tools.textbook import TextbookOutput, query_textbook
+from app.agent.utils.prompt_format import format_json_for_prompt
+from app.agent.workflows.name_match import (
+    NameMatchStateInput,
+    OnePolicyMatchOutput,
+    name_match_one_policy_workflow,
+)
+
+
+# ---------------------------------------------------------------------------
+# State models
+# ---------------------------------------------------------------------------
+
+
+class AbbreviationResolution(BaseModel):
+    abbreviation_context: str | None
+
+
+class IntentSummary(BaseModel):
+    condensed_intent: str
+    product_name_mentioned: str | None
+    reasoning: str
+
+
+class ExtendedQuery(BaseModel):
+    query: str
+    reasoning: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentExtension(BaseModel):
+    extended_queries: list[ExtendedQuery]
+
+
+class DecomposedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+
+
+class IntentsDecomposition(BaseModel):
+    decomposed_intents: list[DecomposedIntent]
+
+
+class ResolvedIntent(BaseModel):
+    intent_description: str
+    source_type: Literal["textbook", "product", "both"]
+    policy_ids: list[str] = []
+
+
+class RephrasedQuerySet(BaseModel):
+    textbook_queries: list[str]
+    product_queries: list[str]
 
 
 def _timeout() -> float:
@@ -49,7 +87,7 @@ class SimpleWorkflowV2GraphState(BaseModel):
     intent_extension: IntentExtension | None = None
     intents_decomposition: IntentsDecomposition | None = None
     policy_ids: Annotated[list[str], operator.add] = []
-    resolved_intents: List[ResolvedIntent] = []
+    resolved_intents: list[ResolvedIntent] = []
     product_chunks: Annotated[list[dict], operator.add] = []
     concept_chunks: TextbookOutput = Field(default_factory=lambda: {"queries": [], "results": []})
 
@@ -79,6 +117,7 @@ async def _resolve_abbreviation_node(state: SimpleWorkflowV2GraphState, config: 
 
 
 async def _identify_intent_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    timeout = _timeout()
     extra: list[BaseMessage] = []
     if state.abbreviation_context:
         extra = [SystemMessage(content=f"[Abbreviation context]\n{state.abbreviation_context}")]
@@ -87,11 +126,11 @@ async def _identify_intent_node(state: SimpleWorkflowV2GraphState, config: Runna
         f"Conversation history:\n{format_json_for_prompt(state.conversation_history)}\n\n"
         f"Latest user message:\n{format_json_for_prompt(state.messages)}"
     )
-    with anyio.fail_after(_timeout()):
+    with anyio.fail_after(timeout):
         result = await ainvoke_structured_with_fallback(
             agent_name="simplev2_identify_intent",
             schema_model=IntentSummary,
-            timeout_seconds=_timeout(),
+            timeout_seconds=timeout,
             config=config,
             messages=extra + [
                 SystemMessage(content=SIMPLEV2_IDENTIFY_INTENT_SYSTEM),
@@ -102,16 +141,17 @@ async def _identify_intent_node(state: SimpleWorkflowV2GraphState, config: Runna
 
 
 async def _intent_extension_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    timeout = _timeout()
     intent_summary = state.intent_summary
     user_message = (
         f"Condensed intent:\n{intent_summary.condensed_intent if intent_summary else 'unknown'}\n\n"
         f"Original user message:\n{format_json_for_prompt(state.messages)}"
     )
-    with anyio.fail_after(_timeout()):
+    with anyio.fail_after(timeout):
         result = await ainvoke_structured_with_fallback(
             agent_name="simplev2_intent_extension",
             schema_model=IntentExtension,
-            timeout_seconds=_timeout(),
+            timeout_seconds=timeout,
             config=config,
             messages=[
                 SystemMessage(content=SIMPLEV2_INTENT_EXTENSION_SYSTEM),
@@ -122,17 +162,18 @@ async def _intent_extension_node(state: SimpleWorkflowV2GraphState, config: Runn
 
 
 async def _intents_decomposition_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    timeout = _timeout()
     intent_summary = state.intent_summary
     intent_extension = state.intent_extension
     user_message = (
         f"Condensed intent:\n{intent_summary.condensed_intent if intent_summary else 'unknown'}\n\n"
         f"Extended queries:\n{format_json_for_prompt(intent_extension.extended_queries if intent_extension else [])}"
     )
-    with anyio.fail_after(_timeout()):
+    with anyio.fail_after(timeout):
         result = await ainvoke_structured_with_fallback(
             agent_name="simplev2_intents_decomposition",
             schema_model=IntentsDecomposition,
-            timeout_seconds=_timeout(),
+            timeout_seconds=timeout,
             config=config,
             messages=[
                 SystemMessage(content=SIMPLEV2_INTENTS_DECOMPOSITION_SYSTEM),
@@ -158,7 +199,7 @@ async def _name_match_node(state: SimpleWorkflowV2GraphState, config: RunnableCo
             ),
             config=config,
         )
-        ids: List[str] = [result.policy_id] if result.policy_id else []
+        ids: list[str] = [result.policy_id] if result.policy_id else []
         return ResolvedIntent(**intent.model_dump(), policy_ids=ids)
 
     resolved = await asyncio.gather(*[resolve_one(i) for i in decomposed])
@@ -166,6 +207,7 @@ async def _name_match_node(state: SimpleWorkflowV2GraphState, config: RunnableCo
 
 
 async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    timeout = _timeout()
     resolved = state.resolved_intents or []
 
     # Fall back to decomposed_intents if name_match was skipped (concept-only path)
@@ -184,11 +226,11 @@ async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: Runna
         f"Decomposed intents:\n"
         f"{format_json_for_prompt([{'intent_description': i.intent_description, 'source_type': i.source_type} for i in resolved])}"
     )
-    with anyio.fail_after(_timeout()):
+    with anyio.fail_after(timeout):
         rephrased: RephrasedQuerySet = await ainvoke_structured_with_fallback(
             agent_name="simplev2_query_expansion",
             schema_model=RephrasedQuerySet,
-            timeout_seconds=_timeout(),
+            timeout_seconds=timeout,
             config=config,
             messages=[
                 SystemMessage(content=SIMPLEV2_QUERY_EXPANSION_SYSTEM),
@@ -198,7 +240,7 @@ async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: Runna
 
     # Call both RAG tools in parallel
     textbook_queries = rephrased.textbook_queries or []
-    product_queries: List[str] = rephrased.product_queries or []
+    product_queries: list[str] = rephrased.product_queries or []
 
     # Product intents that have resolved policy IDs — same order as product_queries output
     product_intents = [i for i in resolved if i.source_type in ("product", "both") and i.policy_ids]
@@ -231,6 +273,7 @@ async def _query_expansion_node(state: SimpleWorkflowV2GraphState, config: Runna
 
 
 async def _synthesise_node(state: SimpleWorkflowV2GraphState, config: RunnableConfig) -> dict:
+    timeout = _timeout()
     llm = get_llm("simple_workflow")
     intent_summary = state.intent_summary
     intents_decomposition = state.intents_decomposition
@@ -243,7 +286,7 @@ async def _synthesise_node(state: SimpleWorkflowV2GraphState, config: RunnableCo
         f"Product evidence:\n{format_json_for_prompt(state.product_chunks)}\n\n"
         f"Concept evidence:\n{format_json_for_prompt(state.concept_chunks)}"
     )
-    with anyio.fail_after(_timeout()):
+    with anyio.fail_after(timeout):
         response = await llm.ainvoke(
             [SystemMessage(content=SIMPLEV2_SYNTHESIS_SYSTEM), HumanMessage(content=user_message)],
             config=config,

@@ -37,16 +37,16 @@ npm run lint      # ESLint
 POST /api/v1/chat/stream
   → ChatService
     → LangGraphService.stream_response()
-      → get_compiled_graph()            (singleton in app/src/graph.py)
+      → get_compiled_graph()            (singleton in app/agent/graph.py)
         → MainAgent (LangGraph graph)
           → router node (classifies route)
           → simple_workflow subgraph  OR  general_agent subgraph
 ```
 
-### Agent Routing (`app/src/agents/main_agent.py`)
+### Agent Routing (`app/agent/agents/main_agent.py`)
 The main agent is a LangGraph `StateGraph` with state type `MainAgentState`. A **router node** calls an LLM to classify the user query and sets `state.route` to either `"simple_workflow"` or `"general_agent"`. A conditional edge then dispatches to the appropriate subgraph.
 
-### Simple Workflow (`app/src/workflow/simple_workflow_v2.py`)
+### Simple Workflow (`app/agent/workflows/simple_workflow_v2.py`)
 **Active implementation** (v1 `simple_workflow.py` is kept for reference only). A LangGraph subgraph for straightforward insurance Q&A. Steps:
 1. **resolve_abbreviation** — expands abbreviations in the query using product registry
 2. **identify_intent** — extracts `product_name_mentioned` and intent summary
@@ -59,22 +59,23 @@ The main agent is a LangGraph `StateGraph` with state type `MainAgentState`. A *
 The `_route_after_decomposition` function: if `intent_summary.product_name_mentioned` is set → `name_match` → `query_expansion`; otherwise skips directly to `query_expansion`.
 
 ### Dev Routing Toggle
-`FORCE_ROUTE` at the top of `app/src/agents/main_agent.py` bypasses the LLM router. Set to `"simple_workflow"`, `"general_agent"`, or `None` (live routing). Default is `"simple_workflow"` to avoid router LLM calls during development.
+`FORCE_ROUTE` at the top of `app/agent/agents/main_agent.py` bypasses the LLM router. Set to `"simple_workflow"`, `"general_agent"`, or `None` (live routing). Default is `"simple_workflow"` to avoid router LLM calls during development.
 
-### General Agent (`app/src/agents/general_agent.py`)
+### General Agent (`app/agent/agents/general_agent.py`)
 A ReAct planner-executor loop (max 5 iterations). Classifies the question, then iteratively plans tool calls (`textbook_retriever`, `product_registry`, `name_match`, `find_product_with_criteria`), executes them via `execute_parallel_plan`, and synthesises when the planner marks `finish=True`.
 
-### LLM Configuration (`app/src/agent_config.yaml`)
+### LLM Configuration (`app/agent/config.yaml`)
 Each named agent gets its own model config block. `get_llm(agent_name)` in `llm_service.py` reads this file and returns a LangChain LLM instance. Model format: `provider|model-name` where provider is `openrouter`, `google`, or `openai`.
 
-To change which model an agent uses, edit `agent_config.yaml` — no Python changes needed.
+To change which model an agent uses, edit `app/agent/config.yaml` — no Python changes needed.
 
-### Shared State Types (`app/src/agent_state/agent_state.py`)
-- `SimpleQueryClassification` — `question_type`, `product_name_mentioned`
-- `ExpandedQueries` — `product_queries`, `concept_queries`
-- `NameMatchStateInput` / `NameMatchStateOutput`
+### State Models (colocated with their workflows)
+Each workflow owns its state models at the top of its file:
+- `app/agent/workflows/simple_workflow_v2.py` — `AbbreviationResolution`, `IntentSummary`, `IntentExtension`, `IntentsDecomposition`, `ResolvedIntent`, `RephrasedQuerySet`
+- `app/agent/workflows/name_match.py` — `NameMatchStateInput`, `NameMatchStateOutput`, `OnePolicyMatchOutput`
+- `app/agent/workflows/find_product_with_criteria.py` — `FindProductWithCriteriaStateInput`, `FindProductWithCriteriaStateOutput`, `PolicyMatch`
 
-### Tools (`app/src/tools/`)
+### Tools (`app/agent/tools/`)
 - `textbook.py` — `query_textbook`: searches Qdrant collection `insurance_text_book2`
 - `product_summary.py` — `query_product_summary`: searches Qdrant product summary collection
 - `product_registry.py` — `get_product_names()`: returns flat list of product names from `static_data/`
@@ -116,7 +117,7 @@ Copy `frontend/sample.env` to `frontend/.env` similarly.
 
 ## Key Design Patterns
 
-- **Agent config over code**: model selection and timeouts live in `agent_config.yaml`, not in Python. Add a new agent entry there before calling `get_llm("new_agent")`.
+- **Agent config over code**: model selection and timeouts live in `app/agent/config.yaml`, not in Python. Add a new agent entry there before calling `get_llm("new_agent")`.
 - **Subgraphs as nodes**: both `simple_workflow` and `general_agent` are compiled LangGraph subgraphs added as nodes in the main graph via `builder.add_node("simple_workflow", compiled_subgraph)`.
 - **Pydantic state**: all LangGraph state types are Pydantic `BaseModel`s with `Annotated` reducers (`add_messages`, `operator.add`).
 - **Structured output with fallback**: `invoke_structured_with_fallback()` in `llm_service.py` handles providers that return plain text instead of structured JSON — strips markdown fences and parses manually.

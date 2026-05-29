@@ -1,12 +1,43 @@
-import anyio
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_core.runnables import RunnableConfig
+import operator
+from typing import Annotated, Literal
 
-from app.src.agent_state.agent_state import NameMatchStateInput, NameMatchStateOutput, OnePolicyMatchOutput
-from app.src.prompts.prompts import NAME_MATCH_ONE_POLICY_SYSTEM, NAME_MATCH_SYSTEM
-from app.src.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
-from app.src.tools.product_registry import get_product_names
-from app.src.utils.prompt_format import format_json_for_prompt
+import anyio
+from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
+from langchain_core.runnables import RunnableConfig
+from langgraph.graph.message import add_messages
+from pydantic import BaseModel
+
+from app.agent.prompts.prompts import NAME_MATCH_ONE_POLICY_SYSTEM, NAME_MATCH_SYSTEM
+from app.agent.schemas.tools import PolicyMatchResponse
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, resolve_timeout_seconds
+from app.agent.tools.product_registry import get_product_names
+from app.agent.utils.prompt_format import format_json_for_prompt
+
+
+# ---------------------------------------------------------------------------
+# State models
+# ---------------------------------------------------------------------------
+
+
+class NameMatchStateInput(BaseModel):
+    messages: Annotated[list[BaseMessage], add_messages]
+    retrieval_query: str = ""
+    conversation_history: Annotated[list[BaseMessage], add_messages] = []
+
+
+class NameMatchStateOutput(BaseModel):
+    lst_policy_matched: Annotated[list[PolicyMatchResponse], operator.add]
+
+
+class OnePolicyMatchOutput(BaseModel):
+    policy_id: str | None
+    confidence: Literal["low", "medium", "high"]
+    reason: str
+
+
+# ---------------------------------------------------------------------------
+# Workflows
+# ---------------------------------------------------------------------------
 
 
 async def name_match_workflow(state: NameMatchStateInput, config: RunnableConfig | None = None) -> NameMatchStateOutput:

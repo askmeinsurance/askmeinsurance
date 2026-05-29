@@ -1,8 +1,16 @@
 from types import SimpleNamespace
+from unittest.mock import MagicMock
 
 import pytest
 
-from app.src.tools import textbook
+from app.agent.tools import textbook
+
+
+def _mock_settings(textbook_top_k: int = 3) -> MagicMock:
+    s = MagicMock()
+    s.textbook_top_k = textbook_top_k
+    s.textbook_score_threshold = 0.0
+    return s
 
 
 def _point(chunk_id: str, text: str, score: float) -> SimpleNamespace:
@@ -25,7 +33,7 @@ def test_query_textbook_returns_deduped_results_with_query_ids(monkeypatch):
             return query
 
     class _Client:
-        def query_points(self, *, collection_name, query, limit, with_payload):
+        def query_points(self, *, collection_name, query, limit, with_payload, score_threshold=None):
             assert collection_name == "insurance_text_book2"
             assert limit == 3
             assert with_payload is True
@@ -37,7 +45,7 @@ def test_query_textbook_returns_deduped_results_with_query_ids(monkeypatch):
 
     monkeypatch.setattr(textbook, "get_embeddings", lambda: _Embeddings())
     monkeypatch.setattr(textbook, "get_qdrant_client", lambda: _Client())
-    monkeypatch.setattr(textbook, "get_textbook_top_k", lambda: 3)
+    monkeypatch.setattr(textbook, "get_settings", lambda: _mock_settings(textbook_top_k=3))
 
     out = textbook.query_textbook.func(queries=[["q1"], "q2"])
 
@@ -58,7 +66,7 @@ def test_query_textbook_fallback_dedupe_key_uses_text_when_chunk_id_missing(monk
             return query
 
     class _Client:
-        def query_points(self, *, collection_name, query, limit, with_payload):
+        def query_points(self, *, collection_name, query, limit, with_payload, score_threshold=None):
             _ = collection_name, limit, with_payload
             if query == "q1":
                 points = [_point("", "shared text", 0.9)]
@@ -68,7 +76,7 @@ def test_query_textbook_fallback_dedupe_key_uses_text_when_chunk_id_missing(monk
 
     monkeypatch.setattr(textbook, "get_embeddings", lambda: _Embeddings())
     monkeypatch.setattr(textbook, "get_qdrant_client", lambda: _Client())
-    monkeypatch.setattr(textbook, "get_textbook_top_k", lambda: 3)
+    monkeypatch.setattr(textbook, "get_settings", lambda: _mock_settings(textbook_top_k=3))
 
     out = textbook.query_textbook.func(queries=[["q1"], ["q2"]])
     assert len(out["results"]) == 1

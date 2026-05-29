@@ -25,22 +25,22 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
-from app.src.prompts.prompts import (
+from app.agent.prompts.prompts import (
     GENERAL_AGENT_PLANNER_SYSTEM,
     GENERAL_AGENT_SYNTHESIS_SYSTEM,
     QUESTION_CLASSIFIER_SYSTEM,
 )
-from app.src.schema.agent_schema import ExecutionPlanModel, QuestionClassification
-from app.src.services.llm_service import (
+from app.agent.schemas.agent import ExecutionPlanModel, QuestionClassification
+from app.agent.services.llm_service import (
     get_llm,
     invoke_structured_with_fallback,
     resolve_timeout_seconds,
 )
-from app.src.utils.prompt_format import (
+from app.agent.utils.prompt_format import (
     format_execution_results_for_prompt,
     format_json_for_prompt,
 )
-from app.src.utils.parallel_executor import execute_parallel_plan
+from app.agent.utils.parallel_executor import execute_parallel_plan
 
 
 class GeneralAgentStateInput(BaseModel):
