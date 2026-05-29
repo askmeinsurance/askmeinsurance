@@ -63,12 +63,15 @@ export function Sidebar({
   onSignOut,
   signedInEmail,
 }: SidebarProps) {
-  const positionClass =
-    mobile && !collapsed
+  const closeSidebar = () => { if (mobile && !collapsed) onToggle(); };
+
+  const positionClass = mobile
+    ? !collapsed
       ? 'fixed inset-y-0 left-0 z-50 w-64 shadow-xl'
-      : collapsed
-        ? 'w-14'
-        : 'w-64';
+      : 'w-0 overflow-hidden'
+    : collapsed
+      ? 'w-14'
+      : 'w-64';
 
   return (
     <aside
@@ -113,22 +116,24 @@ export function Sidebar({
         )}
       </div>
 
-      <div className={`px-3 py-3 ${collapsed ? "flex justify-center" : ""}`}>
-        {collapsed ? (
-          <IconButton label="New chat" variant="solid" size="md" onClick={onNewChat}>
-            <Plus size={18} />
-          </IconButton>
-        ) : (
-          <button
-            type="button"
-            onClick={onNewChat}
-            className="flex w-full items-center gap-2 rounded-lg bg-neutral-900 px-3 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
-          >
-            <Plus size={16} />
-            New chat
-          </button>
-        )}
-      </div>
+      {!(mobile && collapsed) && (
+        <div className={`px-3 py-3 ${collapsed ? "flex justify-center" : ""}`}>
+          {collapsed ? (
+            <IconButton label="New chat" variant="solid" size="md" onClick={onNewChat}>
+              <Plus size={18} />
+            </IconButton>
+          ) : (
+            <button
+              type="button"
+              onClick={() => { onNewChat?.(); closeSidebar(); }}
+              className="flex w-full items-center gap-2 rounded-lg bg-neutral-900 px-3 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
+            >
+              <Plus size={16} />
+              New chat
+            </button>
+          )}
+        </div>
+      )}
 
       {!collapsed && (
         <div className="mt-4 flex flex-1 flex-col overflow-hidden px-2">
@@ -153,7 +158,7 @@ export function Sidebar({
                   >
                     <button
                       type="button"
-                      onClick={() => onConversationSelect?.(item.id)}
+                      onClick={() => { onConversationSelect?.(item.id); closeSidebar(); }}
                       className="flex min-w-0 flex-1 items-center gap-2 rounded-md px-1 py-1"
                     >
                       <MessageSquare size={14} className="shrink-0" />
@@ -178,19 +183,21 @@ export function Sidebar({
         </div>
       )}
 
-      <div className="mt-auto border-t border-gray-100 px-2 py-3">
-        {!collapsed && signedInEmail && (
-          <p className="mb-2 truncate px-3 text-xs text-gray-400">Signed in as {signedInEmail}</p>
-        )}
-        {onSignOut && (
-          <NavItem
-            icon={<LogOut size={18} />}
-            label="Sign out"
-            collapsed={collapsed}
-            onClick={onSignOut}
-          />
-        )}
-      </div>
+      {!(mobile && collapsed) && (
+        <div className="mt-auto border-t border-gray-100 px-2 py-3">
+          {!collapsed && signedInEmail && (
+            <p className="mb-2 truncate px-3 text-xs text-gray-400">Signed in as {signedInEmail}</p>
+          )}
+          {onSignOut && (
+            <NavItem
+              icon={<LogOut size={18} />}
+              label="Sign out"
+              collapsed={collapsed}
+              onClick={() => { onSignOut(); closeSidebar(); }}
+            />
+          )}
+        </div>
+      )}
     </aside>
   );
 }
