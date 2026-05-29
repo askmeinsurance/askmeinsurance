@@ -3,6 +3,7 @@ from uuid import UUID
 
 from app.schemas.conversation import Conversation, ConversationCreate
 from app.services.supabase_client import get_supabase_client
+from app.services.user_limits_service import user_limits_service
 
 
 class ConversationService:
@@ -27,7 +28,8 @@ class ConversationService:
         )
         return [self._to_conversation(row) for row in (response.data or [])]
 
-    async def create_conversation(self, payload: ConversationCreate, *, user_id: str) -> Conversation:
+    async def create_conversation(self, payload: ConversationCreate, *, user_id: str, is_super_user: bool = False) -> Conversation:
+        await user_limits_service.check_conversation_limit(user_id, is_super_user=is_super_user)
         client = get_supabase_client()
         response = (
             client.table("conversations")

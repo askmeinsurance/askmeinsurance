@@ -2,6 +2,7 @@ from uuid import UUID
 
 from app.schemas.conversation import ConversationMessage
 from app.services.supabase_client import get_supabase_client
+from app.services.user_limits_service import user_limits_service
 
 
 class MessageService:
@@ -29,9 +30,11 @@ class MessageService:
         )
         return [self._to_message(row) for row in (response.data or [])]
 
-    async def add_message(self, message: ConversationMessage, *, user_id: str) -> ConversationMessage:
+    async def add_message(self, message: ConversationMessage, *, user_id: str, is_super_user: bool = False) -> ConversationMessage:
         client = get_supabase_client()
         sender = "assistant" if message.role == "bot" else "user"
+        if sender == "user":
+            await user_limits_service.check_message_limit(user_id, is_super_user=is_super_user)
         response = (
             client.table("messages")
             .insert(

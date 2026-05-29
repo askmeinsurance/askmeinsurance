@@ -5,6 +5,7 @@ import { ChatStartScreen } from './components/chat/ChatStartScreen';
 import { ChatPanel } from './components/chat/ChatPanel';
 import { AuthGate } from './components/auth/AuthGate';
 import { DisclaimerModal } from './components/disclaimer/DisclaimerModal';
+import { LimitReachedModal } from './components/chat/LimitReachedModal';
 import type { AppView, DiagramTab, Message } from './types';
 import type { AuthSession, EmailPasswordCredentials } from './types/auth';
 import {
@@ -83,6 +84,7 @@ export default function App() {
   const [authWarning, setAuthWarning] = useState<string | null>(null);
   const [disclaimerAgreed, setDisclaimerAgreed] = useState(false);
   const [showDisclaimerModal, setShowDisclaimerModal] = useState(false);
+  const [showLimitModal, setShowLimitModal] = useState(false);
   const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
   const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
 
@@ -382,6 +384,11 @@ export default function App() {
         handleUnauthorized();
         return;
       }
+      if (status === 429) {
+        setMessages((prev) => prev.filter((m) => m.id !== botMessageId));
+        setShowLimitModal(true);
+        return;
+      }
 
       setMessages((prev) =>
         failBotMessage(prev, botMessageId, 'I hit a connection issue while contacting the backend. Please try again.')
@@ -545,6 +552,9 @@ export default function App() {
       )}
       {showDisclaimerModal && (
         <DisclaimerModal onAgree={handleDisclaimerAgree} onExit={handleDisclaimerExit} />
+      )}
+      {showLimitModal && (
+        <LimitReachedModal onClose={() => setShowLimitModal(false)} />
       )}
       {authWarning && (
         <div className="absolute bottom-4 left-4 z-20 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 shadow-md">
