@@ -114,8 +114,9 @@ Deploy this repo as two Railway services from the same GitHub repository.
 
 **Backend service**
 
-- Root directory: `backend`
+- Root directory: repo root (`/`)
 - Builder: Dockerfile
+- Dockerfile path / `RAILWAY_DOCKERFILE_PATH`: `backend/Dockerfile`
 - Public networking: enabled
 - Start command: use the Dockerfile default command
 - Health check path: `/health`
@@ -145,8 +146,9 @@ Railway injects `PORT` automatically; the backend Dockerfile binds to `${PORT:-8
 
 **Frontend service**
 
-- Root directory: `frontend`
+- Root directory: repo root (`/`)
 - Builder: Dockerfile
+- Dockerfile path / `RAILWAY_DOCKERFILE_PATH`: `frontend/Dockerfile`
 - Public networking: enabled
 
 Set frontend build-time variables in Railway:
