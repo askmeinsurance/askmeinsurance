@@ -14,7 +14,7 @@ export function ChatStartScreen({ onSubmit, disclaimerAgreed, onDisclaimerCheckb
     >
       <div className="flex flex-col items-center gap-1 text-center">
         <p className="text-base text-gray-500">Welcome</p>
-        <h1 className="text-3xl font-semibold text-gray-900">
+        <h1 className="text-xl sm:text-3xl font-semibold text-gray-900">
           Where should we start?
         </h1>
       </div>

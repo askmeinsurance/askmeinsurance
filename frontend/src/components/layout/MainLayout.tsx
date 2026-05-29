@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useState } from 'react';
-import { PanelRightOpen } from 'lucide-react';
+import { Menu, PanelRightOpen } from 'lucide-react';
 import { Sidebar } from '../sidebar/Sidebar';
 import { ExcalidrawPanel } from '../canvas/ExcalidrawPanel';
 import type { DiagramTab } from '../../types';
@@ -55,7 +55,20 @@ export function MainLayout({
   }, []);
 
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className="flex h-dvh w-full overflow-hidden">
+      {isMobile && (
+        <header className="fixed top-0 left-0 right-0 z-30 flex h-12 items-center gap-3 border-b border-gray-300/40 bg-transparent px-3">
+          <button
+            type="button"
+            onClick={onSidebarToggle}
+            aria-label="Toggle sidebar"
+            className="rounded-md p-1.5 text-gray-600 hover:bg-gray-100"
+          >
+            <Menu size={20} />
+          </button>
+          <span className="text-sm font-semibold text-gray-400">AskMeInsurance</span>
+        </header>
+      )}
       {isMobile && !sidebarCollapsed && (
         <div
           className="fixed inset-0 z-40 bg-black/30"
@@ -73,7 +86,7 @@ export function MainLayout({
         onSignOut={onSignOut}
         signedInEmail={signedInEmail}
       />
-      <div className="relative flex flex-1 overflow-hidden">
+      <div className={`relative flex flex-1 overflow-hidden ${isMobile ? 'pt-12' : ''}`}>
         {children}
         {shouldShowCanvasButton && (
           <button
