@@ -228,7 +228,7 @@ export function AuthGate({
                 type="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
+                className={`w-full rounded-xl border px-3 py-2 text-base text-neutral-900 outline-none transition ${
                   hasSubmitted && emailError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
                 }`}
                 placeholder="you@example.com"
@@ -245,7 +245,7 @@ export function AuthGate({
                 type="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
+                className={`w-full rounded-xl border px-3 py-2 text-base text-neutral-900 outline-none transition ${
                   hasSubmitted && passwordError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
                 }`}
                 placeholder="At least 8 characters"
@@ -263,7 +263,7 @@ export function AuthGate({
                   type="password"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                  className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
+                  className={`w-full rounded-xl border px-3 py-2 text-base text-neutral-900 outline-none transition ${
                     hasSubmitted && confirmPasswordError
                       ? 'border-red-400 focus:border-red-500'
                       : 'border-neutral-300 focus:border-neutral-600'
