@@ -11,7 +11,7 @@ export function ChatStartScreen({ onSubmit }: ChatStartScreenProps) {
       style={{ backgroundColor: "#f8f9fa" }}
     >
       <div className="flex flex-col items-center gap-1 text-center">
-        <p className="text-base text-gray-500">✦ Welcome</p>
+        <p className="text-base text-gray-500">Welcome</p>
         <h1 className="text-3xl font-semibold text-gray-900">
           Where should we start?
         </h1>

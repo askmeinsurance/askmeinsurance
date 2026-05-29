@@ -442,7 +442,7 @@ export default function App() {
   }
 
   function handleNewChat() {
-    setView('chat');
+    setView('start');
     setMessages([]);
     setActiveConversationId(null);
   }
