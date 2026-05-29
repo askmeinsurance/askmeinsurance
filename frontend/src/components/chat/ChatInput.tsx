@@ -1,5 +1,5 @@
-import { useState, type KeyboardEvent } from 'react';
-import { ArrowUp, Plus } from 'lucide-react';
+import { useState, useRef, type KeyboardEvent } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 interface ChatInputProps {
   value?: string;
@@ -17,7 +17,7 @@ export function ChatInput({
   disabled = false,
 }: ChatInputProps) {
   const [internalValue, setInternalValue] = useState('');
-
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const isControlled = value !== undefined && onChange !== undefined;
   const inputValue = isControlled ? value : internalValue;
 
@@ -27,6 +27,14 @@ export function ChatInput({
     } else {
       setInternalValue(text);
     }
+    autoResize();
+  }
+
+  function autoResize() {
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
   }
 
   function handleSubmit() {
@@ -36,10 +44,11 @@ export function ChatInput({
     onSubmit(trimmed);
     if (!isControlled) {
       setInternalValue('');
+      if (textareaRef.current) textareaRef.current.style.height = 'auto';
     }
   }
 
-  function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+  function handleKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSubmit();
@@ -49,23 +58,17 @@ export function ChatInput({
   const canSubmit = !disabled && inputValue.trim().length > 0;
 
   return (
-    <div className="flex items-center gap-2 w-full rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
-      <button
-        type="button"
-        disabled={disabled}
-        className="flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-        aria-label="Attach file"
-      >
-        <Plus size={18} />
-      </button>
-      <input
-        type="text"
+    <div className="flex items-center gap-2 w-full rounded-2xl border border-gray-200 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-neutral-600 focus-within:border-transparent">
+      <textarea
+        ref={textareaRef}
+        rows={1}
         value={inputValue}
         onChange={(e) => handleChange(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         disabled={disabled}
-        className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none disabled:cursor-not-allowed"
+        className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none resize-none overflow-y-auto disabled:cursor-not-allowed leading-5"
+        style={{ maxHeight: '120px' }}
       />
       <button
         type="button"
@@ -74,7 +77,7 @@ export function ChatInput({
         aria-label="Send message"
         className={`flex-shrink-0 p-1.5 rounded-full transition-colors ${
           canSubmit
-            ? 'bg-blue-600 text-white hover:bg-blue-700'
+            ? 'bg-neutral-900 text-white hover:bg-neutral-800'
             : 'bg-gray-100 text-gray-300 cursor-not-allowed'
         }`}
       >

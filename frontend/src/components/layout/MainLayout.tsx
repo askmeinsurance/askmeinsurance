@@ -47,7 +47,7 @@ export function MainLayout({
   const shouldShowCanvasButton = hasDiagrams && isCanvasHidden;
 
   return (
-    <div className="flex h-screen w-full overflow-hidden" style={{ backgroundColor: '#f8f9fa' }}>
+    <div className="flex h-screen w-full overflow-hidden">
       <Sidebar
         collapsed={sidebarCollapsed}
         onToggle={onSidebarToggle}

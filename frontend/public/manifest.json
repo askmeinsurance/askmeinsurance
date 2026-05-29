@@ -1,0 +1,12 @@
+{
+  "name": "AskMeInsurance",
+  "short_name": "AskMeInsurance",
+  "description": "AI-powered insurance advisor for Singapore",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f59e0b",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

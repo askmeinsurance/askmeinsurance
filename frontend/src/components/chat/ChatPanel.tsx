@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { Wrench, Zap } from "lucide-react";
 import { MessageBubble } from "./MessageBubble";
 import { ChatInput } from "./ChatInput";
+import { DisclaimerCheckbox } from "../disclaimer/DisclaimerCheckbox";
 import type { Message } from "../../types";
 
 interface ChatPanelProps {
@@ -9,9 +9,11 @@ interface ChatPanelProps {
   onSend: (text: string) => void | Promise<void>;
   hasDiagramPanel: boolean;
   isSending?: boolean;
+  disclaimerAgreed: boolean;
+  onDisclaimerCheckboxClick: () => void;
 }
 
-export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false }: ChatPanelProps) {
+export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false, disclaimerAgreed, onDisclaimerCheckboxClick }: ChatPanelProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,20 +38,8 @@ export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false
       <div
         className={`flex-shrink-0 pb-4 pt-2 border-t border-gray-100 ${withCanvas ? "px-4" : "mx-auto w-full max-w-2xl px-4"}`}
       >
-        <div className="flex items-center gap-2 mb-2">
-          <button
-            type="button"
-            className="flex items-center gap-1.5 text-xs text-gray-500 bg-gray-100 hover:bg-gray-200 rounded-full px-3 py-1 transition-colors"
-          >
-            <Wrench size={12} />
-            <span>Tools</span>
-          </button>
-          <div className="flex items-center gap-1 text-xs text-gray-400 ml-auto">
-            <Zap size={12} className="text-yellow-500" />
-            <span>{isSending ? 'Sending...' : 'Fast'}</span>
-          </div>
-        </div>
-        <ChatInput onSubmit={onSend} disabled={isSending} />
+        <ChatInput onSubmit={onSend} disabled={isSending || !disclaimerAgreed} />
+        <DisclaimerCheckbox agreed={disclaimerAgreed} onCheckboxClick={onDisclaimerCheckboxClick} />
       </div>
     </div>
   );

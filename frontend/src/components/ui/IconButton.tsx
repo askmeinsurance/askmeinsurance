@@ -16,11 +16,11 @@ export function IconButton({
   ...props
 }: IconButtonProps) {
   const base =
-    'inline-flex items-center justify-center rounded-lg cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
+    'inline-flex items-center justify-center rounded-lg cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-ring';
 
   const variants: Record<string, string> = {
     ghost: 'text-gray-500 hover:bg-gray-100 hover:text-gray-700',
-    solid: 'bg-blue-600 text-white hover:bg-blue-700',
+    solid: 'bg-accent text-white hover:bg-accent-hover',
   };
 
   const sizes: Record<string, string> = {
