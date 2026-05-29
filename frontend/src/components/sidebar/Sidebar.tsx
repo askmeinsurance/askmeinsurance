@@ -25,7 +25,7 @@ interface NavItemProps {
 
 function NavItem({ icon, label, collapsed, active = false, onClick }: NavItemProps) {
   const activeClass = active
-    ? "bg-blue-50 text-blue-600"
+    ? "bg-neutral-100 text-neutral-900"
     : "text-gray-600 hover:bg-gray-100 hover:text-gray-800";
 
   return (
@@ -87,7 +87,7 @@ export function Sidebar({
           <button
             type="button"
             onClick={onNewChat}
-            className="flex w-full items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+            className="flex w-full items-center gap-2 rounded-lg bg-neutral-900 px-3 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
           >
             <Plus size={16} />
             New chat
@@ -112,7 +112,7 @@ export function Sidebar({
                   <div
                     className={`group flex w-full items-center gap-1 rounded-lg px-1 py-0.5 text-sm transition-colors ${
                       item.active
-                        ? "bg-blue-50 text-blue-600"
+                        ? "bg-neutral-100 text-neutral-900"
                         : "text-gray-600 hover:bg-gray-100 hover:text-gray-800"
                     }`}
                   >

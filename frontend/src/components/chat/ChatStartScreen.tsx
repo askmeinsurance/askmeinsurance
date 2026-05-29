@@ -8,7 +8,6 @@ export function ChatStartScreen({ onSubmit }: ChatStartScreenProps) {
   return (
     <div
       className="flex flex-1 flex-col items-center justify-center h-full gap-6 px-4"
-      style={{ backgroundColor: "#f8f9fa" }}
     >
       <div className="flex flex-col items-center gap-1 text-center">
         <p className="text-base text-gray-500">Welcome</p>

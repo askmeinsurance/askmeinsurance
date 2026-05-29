@@ -58,7 +58,7 @@ export function ChatInput({
   const canSubmit = !disabled && inputValue.trim().length > 0;
 
   return (
-    <div className="flex items-center gap-2 w-full rounded-2xl border border-gray-200 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
+    <div className="flex items-center gap-2 w-full rounded-2xl border border-gray-200 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-neutral-600 focus-within:border-transparent">
       <textarea
         ref={textareaRef}
         rows={1}
@@ -77,7 +77,7 @@ export function ChatInput({
         aria-label="Send message"
         className={`flex-shrink-0 p-1.5 rounded-full transition-colors ${
           canSubmit
-            ? 'bg-blue-600 text-white hover:bg-blue-700'
+            ? 'bg-neutral-900 text-white hover:bg-neutral-800'
             : 'bg-gray-100 text-gray-300 cursor-not-allowed'
         }`}
       >
