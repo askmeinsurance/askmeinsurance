@@ -70,11 +70,11 @@ flowchart TD
 
 ## Local Setup
 
-**Prerequisites:** Python 3.11+, `uv`, Node 20+
+**Prerequisites:** Python 3.11+, `uv`, Node 22+
 
 ```bash
 # Backend
-cp backend/sample.env backend/.env   # fill in OPENROUTER_API_KEY, QDRANT_URL, SUPABASE_* keys
+cp backend/example.env backend/.env  # fill in OPENROUTER_API_KEY, QDRANT_URL, SUPABASE_* keys
 cd backend
 uv run uvicorn app.main:app --reload  # http://localhost:8000
 
@@ -86,6 +86,78 @@ npm run dev                           # http://localhost:5173
 ```
 
 Set `AUTH_ENABLED=false` in `backend/.env` for local dev without Supabase auth.
+
+## Docker
+
+The app can also run locally in a production-like Docker setup: FastAPI is served by Uvicorn and the built Vite frontend is served by Nginx.
+
+```bash
+cp backend/example.env backend/.env
+# fill backend/.env with the required backend secrets
+
+docker compose up --build
+```
+
+Open the frontend at `http://localhost:5173`. The backend is exposed at `http://localhost:8000`, with a public health check at `http://localhost:8000/health`.
+
+For local Docker builds, frontend browser-safe values are passed as build args. By default, Compose sets `VITE_BACKEND_BASE_URL=http://localhost:8000`. If Supabase auth is needed locally, export these before building:
+
+```bash
+export VITE_SUPABASE_URL="..."
+export VITE_SUPABASE_ANON_KEY="..."
+docker compose up --build
+```
+
+## Railway Deployment
+
+Deploy this repo as two Railway services from the same GitHub repository.
+
+**Backend service**
+
+- Root directory: `backend`
+- Builder: Dockerfile
+- Public networking: enabled
+- Start command: use the Dockerfile default command
+- Health check path: `/health`
+
+Set backend runtime variables in Railway:
+
+```env
+APP_ENV=prod
+APP_DEBUG=false
+AUTH_ENABLED=true
+CORS_ALLOWED_ORIGINS=https://<frontend-railway-domain>
+SUPABASE_URL=...
+SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+SUPABASE_JWT_SECRET=...
+OPENAI_API_KEY=...
+GEMINI_API_KEY=...
+OPENROUTER_API_KEY=...
+QDRANT_URL=...
+QDRANT_API_KEY=...
+LANGFUSE_PUBLIC_KEY=...
+LANGFUSE_SECRET_KEY=...
+LANGFUSE_HOST=...
+```
+
+Railway injects `PORT` automatically; the backend Dockerfile binds to `${PORT:-8000}`.
+
+**Frontend service**
+
+- Root directory: `frontend`
+- Builder: Dockerfile
+- Public networking: enabled
+
+Set frontend build-time variables in Railway:
+
+```env
+VITE_BACKEND_BASE_URL=https://<backend-railway-domain>
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_ANON_KEY=...
+```
+
+Only `VITE_*` values are embedded into the browser bundle. Keep backend secrets, service-role keys, JWT secrets, LLM keys, Qdrant keys, and Langfuse secret keys on the backend service only.
 
 ## Evals
 

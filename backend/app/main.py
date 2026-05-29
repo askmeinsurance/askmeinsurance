@@ -61,6 +61,10 @@ def create_app() -> FastAPI:
     logger.info("CORS configured with allowed origins: %s", allowed_origins)
     print(f"[BOOT] CORS allowed origins: {allowed_origins}", flush=True)
 
+    @app.get("/health")
+    async def health() -> dict[str, bool]:
+        return {"ok": True}
+
     @app.middleware("http")
     async def request_logging_middleware(request: Request, call_next):
         request_id = str(uuid4())

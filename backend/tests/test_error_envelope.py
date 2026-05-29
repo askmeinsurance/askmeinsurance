@@ -18,6 +18,17 @@ def anyio_backend() -> str:
 
 
 @pytest.mark.anyio
+async def test_health_check_is_public() -> None:
+    app = create_app()
+    transport = httpx.ASGITransport(app=app)
+    async with httpx.AsyncClient(transport=transport, base_url="http://testserver") as client:
+        response = await client.get("/health")
+
+    assert response.status_code == 200
+    assert response.json() == {"ok": True}
+
+
+@pytest.mark.anyio
 async def test_http_exception_is_normalized(monkeypatch) -> None:
     app = create_app()
     app.dependency_overrides[require_auth] = _fake_user
