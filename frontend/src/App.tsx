@@ -96,6 +96,14 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (!session) {
+      document.title = 'AskMeInsurance — AI Insurance Advisor for Singapore';
+    } else {
+      document.title = 'Chat — AskMeInsurance';
+    }
+  }, [session]);
+
+  useEffect(() => {
     const supabase = getSupabaseClient();
     if (!supabase) {
       logApp('Supabase client unavailable during auth bootstrap');

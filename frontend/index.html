@@ -3,8 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InsureBot SG</title>
+    <meta name="theme-color" content="#f59e0b" />
+    <title>AskMeInsurance — AI Insurance Advisor for Singapore</title>
+    <meta name="description" content="AskMeInsurance — AI-powered insurance advisor for Singapore. Get instant answers to life insurance questions, compare policies, and make confident decisions." />
+    <link rel="canonical" href="https://askmeinsurance.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://askmeinsurance.io/" />
+    <meta property="og:title" content="AskMeInsurance — AI Insurance Advisor for Singapore" />
+    <meta property="og:description" content="Get instant answers to life insurance questions and policy-specific information through an AI-powered conversational experience." />
+    <meta property="og:image" content="https://askmeinsurance.io/og-image.png" />
+    <meta property="og:locale" content="en_SG" />
+    <meta property="og:site_name" content="AskMeInsurance" />
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AskMeInsurance — AI Insurance Advisor for Singapore" />
+    <meta name="twitter:description" content="Get instant answers to life insurance questions through an AI-powered conversational experience." />
+    <meta name="twitter:image" content="https://askmeinsurance.io/og-image.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AskMeInsurance",
+      "url": "https://askmeinsurance.io",
+      "description": "AI-powered insurance advisor for Singapore life insurance questions",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0" },
+      "provider": {
+        "@type": "Organization",
+        "name": "AskMeInsurance",
+        "url": "https://askmeinsurance.io"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
