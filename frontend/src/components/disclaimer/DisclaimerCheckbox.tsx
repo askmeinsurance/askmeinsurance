@@ -10,7 +10,7 @@ export function DisclaimerCheckbox({ agreed, onCheckboxClick }: DisclaimerCheckb
         type="button"
         onClick={agreed ? undefined : onCheckboxClick}
         aria-label="Open portfolio disclaimer"
-        className={`w-4 h-4 flex-shrink-0 rounded border flex items-center justify-center transition-colors ${
+        className={`relative w-4 h-4 flex-shrink-0 rounded border flex items-center justify-center transition-colors before:absolute before:-inset-2 before:content-[''] ${
           agreed
             ? 'bg-neutral-900 border-neutral-900 cursor-default'
             : 'border-gray-300 bg-white hover:border-neutral-500 cursor-pointer'

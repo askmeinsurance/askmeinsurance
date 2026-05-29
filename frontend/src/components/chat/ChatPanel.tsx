@@ -24,7 +24,7 @@ export function ChatPanel({ messages, onSend, hasDiagramPanel, isSending = false
 
   return (
     <div
-      className={`flex flex-col h-full ${withCanvas ? "w-[40%] border-r border-gray-200" : "flex-1"}`}
+      className={`flex flex-col h-full ${withCanvas ? "flex-1 md:flex-none md:w-[40%] md:border-r md:border-gray-200" : "flex-1"}`}
     >
       <div className="flex-1 overflow-y-auto py-4">
         <div className={withCanvas ? "px-4" : "mx-auto w-full max-w-2xl px-4"}>

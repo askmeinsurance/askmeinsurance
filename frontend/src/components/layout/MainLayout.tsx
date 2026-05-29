@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { PanelRightOpen } from 'lucide-react';
 import { Sidebar } from '../sidebar/Sidebar';
 import { ExcalidrawPanel } from '../canvas/ExcalidrawPanel';
@@ -46,11 +46,26 @@ export function MainLayout({
   const hasDiagrams = diagramTabs.length > 0;
   const shouldShowCanvasButton = hasDiagrams && isCanvasHidden;
 
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+
   return (
     <div className="flex h-screen w-full overflow-hidden">
+      {isMobile && !sidebarCollapsed && (
+        <div
+          className="fixed inset-0 z-40 bg-black/30"
+          onClick={onSidebarToggle}
+        />
+      )}
       <Sidebar
         collapsed={sidebarCollapsed}
         onToggle={onSidebarToggle}
+        mobile={isMobile}
         conversations={conversations}
         onConversationSelect={onConversationSelect}
         onConversationDelete={onConversationDelete}

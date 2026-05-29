@@ -75,7 +75,7 @@ export function ChatInput({
         onClick={handleSubmit}
         disabled={!canSubmit}
         aria-label="Send message"
-        className={`flex-shrink-0 p-1.5 rounded-full transition-colors ${
+        className={`flex-shrink-0 p-2 min-w-[36px] min-h-[36px] rounded-full transition-colors ${
           canSubmit
             ? 'bg-neutral-900 text-white hover:bg-neutral-800'
             : 'bg-gray-100 text-gray-300 cursor-not-allowed'

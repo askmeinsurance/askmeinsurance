@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { VerificationEmailSentModal } from './VerificationEmailSentModal';
 
 interface AuthGateProps {
   onEmailPasswordSignIn?: (credentials: { email: string; password: string }) => void | Promise<void>;
@@ -26,6 +27,7 @@ export function AuthGate({
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [activeAction, setActiveAction] = useState<'email' | null>(null);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [verificationEmailSent, setVerificationEmailSent] = useState<string | null>(null);
 
   const emailError = useMemo(() => {
     if (!email.trim()) {
@@ -112,6 +114,11 @@ export function AuthGate({
       }
     } catch (error) {
       logAuthGate('Email auth submit failed', error);
+      const code = (error as { code?: string }).code;
+      if (code === 'EMAIL_VERIFICATION_REQUIRED') {
+        setVerificationEmailSent(email.trim());
+        return;
+      }
       const rawMessage = error instanceof Error ? error.message : 'Authentication failed.';
       const normalized = rawMessage.toLowerCase();
       if (mode === 'signup' && normalized.includes('too many sign-up attempts')) {
@@ -128,6 +135,15 @@ export function AuthGate({
 
   return (
     <div className="auth-landing">
+      {verificationEmailSent && (
+        <VerificationEmailSentModal
+          email={verificationEmailSent}
+          onClose={() => {
+            setVerificationEmailSent(null);
+            switchMode('signin');
+          }}
+        />
+      )}
       {/* Top-right social icons */}
       <div className="auth-social-icons">
         <a
