@@ -3,7 +3,6 @@ import { useMemo, useState } from 'react';
 interface AuthGateProps {
   onEmailPasswordSignIn?: (credentials: { email: string; password: string }) => void | Promise<void>;
   onEmailPasswordSignUp?: (credentials: { email: string; password: string }) => void | Promise<void>;
-  onGoogleSignIn?: () => void | Promise<void>;
 }
 
 type AuthMode = 'signin' | 'signup';
@@ -19,14 +18,14 @@ function logAuthGate(message: string, details?: unknown) {
 export function AuthGate({
   onEmailPasswordSignIn,
   onEmailPasswordSignUp,
-  onGoogleSignIn,
 }: AuthGateProps) {
   const [mode, setMode] = useState<AuthMode>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [activeAction, setActiveAction] = useState<'email' | 'google' | null>(null);
+  const [activeAction, setActiveAction] = useState<'email' | null>(null);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const emailError = useMemo(() => {
     if (!email.trim()) {
@@ -72,8 +71,15 @@ export function AuthGate({
   const canSubmitEmail = !emailError && !passwordError && !confirmPasswordError;
   const isBusy = activeAction !== null;
 
+  function switchMode(next: AuthMode) {
+    setMode(next);
+    setHasSubmitted(false);
+    setErrorMessage(null);
+  }
+
   async function handleEmailSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setHasSubmitted(true);
     setErrorMessage(null);
     logAuthGate('Email auth submit triggered', {
       mode,
@@ -88,7 +94,6 @@ export function AuthGate({
         passwordError,
         confirmPasswordError,
       });
-      setErrorMessage('Please correct the highlighted fields.');
       return;
     }
 
@@ -110,31 +115,13 @@ export function AuthGate({
       const rawMessage = error instanceof Error ? error.message : 'Authentication failed.';
       const normalized = rawMessage.toLowerCase();
       if (mode === 'signup' && normalized.includes('too many sign-up attempts')) {
-        setMode('signin');
+        switchMode('signin');
         setErrorMessage('An account may already exist for this email. Please sign in to continue.');
       } else {
         setErrorMessage(rawMessage);
       }
     } finally {
       logAuthGate('Email auth submit finished');
-      setActiveAction(null);
-    }
-  }
-
-  async function handleGoogleAction() {
-    setErrorMessage(null);
-    setActiveAction('google');
-    logAuthGate('Google auth flow triggered');
-    try {
-      if (onGoogleSignIn) {
-        await onGoogleSignIn();
-        logAuthGate('Google auth handler resolved');
-      }
-    } catch (error) {
-      logAuthGate('Google auth failed', error);
-      setErrorMessage(error instanceof Error ? error.message : 'Google authentication failed.');
-    } finally {
-      logAuthGate('Google auth flow finished');
       setActiveAction(null);
     }
   }
@@ -148,14 +135,14 @@ export function AuthGate({
         </h1>
         <p className="auth-subhead mt-3 text-sm sm:text-base">
           {mode === 'signin'
-            ? 'Sign in with Google or email to continue to your insurance workspace.'
+            ? 'Sign in with email to continue to your insurance workspace.'
             : 'Start with a secure account and keep your advice history in one place.'}
         </p>
 
         <div className="mt-7 grid grid-cols-2 gap-2 rounded-2xl bg-white/70 p-1 ring-1 ring-black/5">
           <button
             type="button"
-            onClick={() => setMode('signin')}
+            onClick={() => switchMode('signin')}
             className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
               mode === 'signin' ? 'bg-neutral-900 text-white shadow-sm' : 'text-neutral-700 hover:bg-neutral-100'
             }`}
@@ -165,7 +152,7 @@ export function AuthGate({
           </button>
           <button
             type="button"
-            onClick={() => setMode('signup')}
+            onClick={() => switchMode('signup')}
             className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
               mode === 'signup' ? 'bg-neutral-900 text-white shadow-sm' : 'text-neutral-700 hover:bg-neutral-100'
             }`}
@@ -173,20 +160,6 @@ export function AuthGate({
           >
             Sign Up
           </button>
-        </div>
-
-        <div className="mt-5 grid gap-2 sm:grid-cols-2">
-          <button
-            type="button"
-            className="rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm font-medium text-neutral-900 transition hover:border-neutral-500 disabled:cursor-not-allowed disabled:opacity-60"
-            onClick={handleGoogleAction}
-            disabled={isBusy}
-          >
-            {activeAction === 'google' ? 'Connecting Google...' : `Continue with Google`}
-          </button>
-          <div className="rounded-xl border border-dashed border-neutral-300 px-4 py-2.5 text-sm text-neutral-500">
-            or use email and password
-          </div>
         </div>
 
         <form className="mt-5 space-y-4" onSubmit={handleEmailSubmit}>
@@ -197,14 +170,14 @@ export function AuthGate({
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
-                emailError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
+                hasSubmitted && emailError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
               }`}
               placeholder="you@example.com"
               autoComplete="email"
               disabled={isBusy}
-              aria-invalid={Boolean(emailError)}
+              aria-invalid={hasSubmitted && Boolean(emailError)}
             />
-            {emailError && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
+            {hasSubmitted && emailError && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
           </label>
 
           <label className="block">
@@ -214,14 +187,14 @@ export function AuthGate({
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
-                passwordError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
+                hasSubmitted && passwordError ? 'border-red-400 focus:border-red-500' : 'border-neutral-300 focus:border-neutral-600'
               }`}
               placeholder="At least 8 characters"
               autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
               disabled={isBusy}
-              aria-invalid={Boolean(passwordError)}
+              aria-invalid={hasSubmitted && Boolean(passwordError)}
             />
-            {passwordError && <p className="mt-1 text-xs text-red-600">{passwordError}</p>}
+            {hasSubmitted && passwordError && <p className="mt-1 text-xs text-red-600">{passwordError}</p>}
           </label>
 
           {mode === 'signup' && (
@@ -232,16 +205,16 @@ export function AuthGate({
                 value={confirmPassword}
                 onChange={(event) => setConfirmPassword(event.target.value)}
                 className={`w-full rounded-xl border px-3 py-2 text-sm text-neutral-900 outline-none transition ${
-                  confirmPasswordError
+                  hasSubmitted && confirmPasswordError
                     ? 'border-red-400 focus:border-red-500'
                     : 'border-neutral-300 focus:border-neutral-600'
                 }`}
                 placeholder="Repeat your password"
                 autoComplete="new-password"
                 disabled={isBusy}
-                aria-invalid={Boolean(confirmPasswordError)}
+                aria-invalid={hasSubmitted && Boolean(confirmPasswordError)}
               />
-              {confirmPasswordError && <p className="mt-1 text-xs text-red-600">{confirmPasswordError}</p>}
+              {hasSubmitted && confirmPasswordError && <p className="mt-1 text-xs text-red-600">{confirmPasswordError}</p>}
             </label>
           )}
 
@@ -250,7 +223,7 @@ export function AuthGate({
           <button
             type="submit"
             className="w-full rounded-xl bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60"
-            disabled={isBusy || !canSubmitEmail}
+            disabled={isBusy}
           >
             {activeAction === 'email'
               ? mode === 'signin'

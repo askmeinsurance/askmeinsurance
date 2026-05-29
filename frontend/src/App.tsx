@@ -298,24 +298,6 @@ export default function App() {
     logApp('Post-signup sign-in completed with active session');
   }
 
-  async function handleGoogleSignIn() {
-    const supabase = getSupabaseClient();
-    if (!supabase) {
-      throw new Error('Supabase auth is not configured.');
-    }
-
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: window.location.href,
-      },
-    });
-
-    if (error) {
-      throw error;
-    }
-  }
-
   async function handleSubmit(message: string) {
     logApp('Start screen submit', { messageLength: message.length });
     setView('chat');
@@ -503,7 +485,6 @@ export default function App() {
       <AuthGate
         onEmailPasswordSignIn={handleEmailPasswordSignIn}
         onEmailPasswordSignUp={handleEmailPasswordSignUp}
-        onGoogleSignIn={handleGoogleSignIn}
       />
     );
   }
