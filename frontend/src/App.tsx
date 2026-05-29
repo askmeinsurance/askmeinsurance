@@ -204,6 +204,7 @@ export default function App() {
     setMessagesByConversation({});
     setConversations([]);
     setActiveConversationId(null);
+    setDisclaimerAgreed(false);
     setView('start');
   }
 
