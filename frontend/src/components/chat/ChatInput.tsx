@@ -67,7 +67,7 @@ export function ChatInput({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         disabled={disabled}
-        className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none resize-none overflow-y-auto disabled:cursor-not-allowed leading-5"
+        className="flex-1 bg-transparent text-base text-gray-800 placeholder-gray-400 outline-none resize-none overflow-y-auto disabled:cursor-not-allowed leading-5"
         style={{ maxHeight: '120px' }}
       />
       <button
