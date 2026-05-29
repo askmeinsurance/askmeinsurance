@@ -4,7 +4,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field
 
 
-ChatEventType = Literal["meta", "chunk", "form_requested", "done"]
+ChatEventType = Literal["meta", "chunk", "done"]
 
 
 class ChatRequest(BaseModel):

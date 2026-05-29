@@ -1,4 +1,4 @@
-import type { FormRequest, Message } from '../types';
+import type { Message } from '../types';
 
 export function appendUserAndBotPlaceholder(prev: Message[], userMessage: Message, botMessageId: string): Message[] {
   return [
@@ -18,26 +18,16 @@ export function appendChunkToBotMessage(prev: Message[], botMessageId: string, t
   );
 }
 
-export function attachFormRequestToBotMessage(
-  prev: Message[],
-  botMessageId: string,
-  formRequest: FormRequest
-): Message[] {
-  return prev.map((message) => (message.id === botMessageId ? { ...message, formRequest } : message));
-}
-
 export function finalizeBotMessage(
   prev: Message[],
   botMessageId: string,
   finalText: string,
-  formRequest?: FormRequest
 ): Message[] {
   return prev.map((message) =>
     message.id === botMessageId
       ? {
           ...message,
           content: finalText,
-          formRequest: formRequest ?? message.formRequest,
         }
       : message
   );

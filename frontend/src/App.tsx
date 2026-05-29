@@ -3,9 +3,8 @@ import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { MainLayout } from './components/layout/MainLayout';
 import { ChatStartScreen } from './components/chat/ChatStartScreen';
 import { ChatPanel } from './components/chat/ChatPanel';
-import { PaginatedFormModal } from './components/forms/PaginatedFormModal';
 import { AuthGate } from './components/auth/AuthGate';
-import type { AppView, DiagramTab, FormAnswerMap, FormRequest, Message } from './types';
+import type { AppView, DiagramTab, Message } from './types';
 import type { AuthSession, EmailPasswordCredentials } from './types/auth';
 import {
   clearAuthSession,
@@ -19,13 +18,11 @@ import {
   getConversationMessages,
   listConversations,
   streamChatMessage,
-  submitFormAnswers,
   type ConversationSummary,
 } from './lib/chatApi';
 import {
   appendChunkToBotMessage,
   appendUserAndBotPlaceholder,
-  attachFormRequestToBotMessage,
   failBotMessage,
   finalizeBotMessage,
 } from './lib/streamingMessageState';
@@ -82,8 +79,6 @@ export default function App() {
   const [diagramState, setDiagramState] = useState({ tabs: [] as DiagramTab[], activeTabId: null as string | null });
   const [isCanvasHidden, setIsCanvasHidden] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [activeFormRequest, setActiveFormRequest] = useState<FormRequest | null>(null);
-  const [formSubmitError, setFormSubmitError] = useState<string | null>(null);
   const [authWarning, setAuthWarning] = useState<string | null>(null);
   const { tabs: diagramTabs, activeTabId: activeDiagramTabId } = diagramState;
   const hasVisibleCanvas = diagramTabs.length > 0 && !isCanvasHidden;
@@ -184,7 +179,6 @@ export default function App() {
     setConversations([]);
     setActiveConversationId(null);
     setView('start');
-    setActiveFormRequest(null);
   }
 
   function fallbackTitle(firstMessage: string): string {
@@ -214,18 +208,6 @@ export default function App() {
 
   function saveDiagramState(nextTabs: DiagramTab[], nextActiveTabId: string | null) {
     setDiagramState({ tabs: nextTabs, activeTabId: nextActiveTabId });
-  }
-
-  function applyBotDiagrams(nextMessages: Message[]) {
-    const botMessages = nextMessages.filter((message) => message.role === 'bot');
-
-    const latestFormRequest = [...botMessages]
-      .reverse()
-      .find((message) => message.formRequest)?.formRequest;
-    if (latestFormRequest) {
-      setActiveFormRequest(latestFormRequest);
-      setFormSubmitError(null);
-    }
   }
 
   async function handleEmailPasswordSignIn(credentials: EmailPasswordCredentials) {
@@ -347,7 +329,6 @@ export default function App() {
       return;
     }
 
-    setFormSubmitError(null);
     logApp('Sending message', {
       messageLength: text.length,
       currentView: view,
@@ -370,19 +351,12 @@ export default function App() {
         onChunk: (textChunk) => {
           setMessages((prev) => appendChunkToBotMessage(prev, botMessageId, textChunk));
         },
-        onFormRequest: (formRequest) => {
-          setMessages((prev) => attachFormRequestToBotMessage(prev, botMessageId, formRequest));
-          setActiveFormRequest(formRequest);
-          setFormSubmitError(null);
-        },
       });
       logApp('Received chat stream result', {
         textLength: result.text.length,
-        hasFormRequest: Boolean(result.formRequest),
       });
       setMessages((prev) => {
-        const next = finalizeBotMessage(prev, botMessageId, result.text, result.formRequest);
-        applyBotDiagrams(next);
+        const next = finalizeBotMessage(prev, botMessageId, result.text);
         const resolvedConversationId = result.conversationId ?? activeConversationId;
         if (resolvedConversationId) {
           setMessagesByConversation((existing) => ({
@@ -474,8 +448,6 @@ export default function App() {
         setView('chat');
         setActiveConversationId(null);
         setMessages([]);
-        setActiveFormRequest(null);
-        setFormSubmitError(null);
       }
     } catch (error) {
       const status = (error as { status?: number }).status;
@@ -491,47 +463,6 @@ export default function App() {
     setView('chat');
     setMessages([]);
     setActiveConversationId(null);
-    setActiveFormRequest(null);
-    setFormSubmitError(null);
-  }
-
-  function handleFormClose() {
-    setActiveFormRequest(null);
-    setFormSubmitError(null);
-  }
-
-  async function handleFormSubmit(formId: string, answers: FormAnswerMap) {
-    if (!session) {
-      logApp('Blocked form submit because session is missing');
-      handleUnauthorized();
-      return;
-    }
-
-    setFormSubmitError(null);
-    logApp('Submitting form', {
-      formId,
-      fieldCount: Object.keys(answers).length,
-    });
-    try {
-      await submitFormAnswers({
-        formId,
-        answers,
-        accessToken: session.accessToken,
-      });
-      setActiveFormRequest(null);
-    } catch (error) {
-      const status = (error as { status?: number }).status;
-      logApp('Form submit failed', {
-        status,
-        error,
-      });
-      console.error('[App] Form submit failed (raw error)', error);
-      if (status === 401) {
-        handleUnauthorized();
-        return;
-      }
-      setFormSubmitError('Unable to submit the form to the backend. Please try again.');
-    }
   }
 
   function handleDiagramTabSelect(id: string) {
@@ -606,23 +537,11 @@ export default function App() {
       {view === 'chat' && (
         <ChatPanel messages={messages} onSend={handleSend} hasDiagramPanel={hasVisibleCanvas} isSending={isSending} />
       )}
-      {formSubmitError && (
-        <div className="absolute bottom-4 right-4 z-20 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 shadow-md">
-          {formSubmitError}
-        </div>
-      )}
       {authWarning && (
         <div className="absolute bottom-4 left-4 z-20 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 shadow-md">
           {authWarning}
         </div>
       )}
-      <PaginatedFormModal
-        key={activeFormRequest?.id ?? 'no-form'}
-        isOpen={Boolean(activeFormRequest)}
-        request={activeFormRequest}
-        onClose={handleFormClose}
-        onSubmit={handleFormSubmit}
-      />
     </MainLayout>
   );
 }
