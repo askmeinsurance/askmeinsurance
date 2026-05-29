@@ -20,7 +20,7 @@ export function AuthGate({
   onEmailPasswordSignIn,
   onEmailPasswordSignUp,
 }: AuthGateProps) {
-  const [mode, setMode] = useState<AuthMode>('signin');
+  const [mode, setMode] = useState<AuthMode>('signup');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -201,16 +201,6 @@ export function AuthGate({
           <div className="mt-7 grid grid-cols-2 gap-2 rounded-2xl bg-white/70 p-1 ring-1 ring-black/5">
             <button
               type="button"
-              onClick={() => switchMode('signin')}
-              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
-                mode === 'signin' ? 'bg-neutral-900 text-white shadow-sm' : 'text-neutral-700 hover:bg-neutral-100'
-              }`}
-              disabled={isBusy}
-            >
-              Sign In
-            </button>
-            <button
-              type="button"
               onClick={() => switchMode('signup')}
               className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
                 mode === 'signup' ? 'bg-neutral-900 text-white shadow-sm' : 'text-neutral-700 hover:bg-neutral-100'
@@ -218,6 +208,16 @@ export function AuthGate({
               disabled={isBusy}
             >
               Sign Up
+            </button>
+            <button
+              type="button"
+              onClick={() => switchMode('signin')}
+              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
+                mode === 'signin' ? 'bg-neutral-900 text-white shadow-sm' : 'text-neutral-700 hover:bg-neutral-100'
+              }`}
+              disabled={isBusy}
+            >
+              Sign In
             </button>
           </div>
 
