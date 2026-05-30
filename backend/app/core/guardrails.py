@@ -63,17 +63,20 @@ def init_guardrails() -> bool:
         return False
     # To add a guard: import it and append to input_guards or output_guards below.
     # To remove a guard: delete its line. No other file needs to change.
+    # Each guard receives the model explicitly — deepteam initializes its own model
+    # in __init__ before Guardrails.evaluation_model can override it.
+    eval_llm = OpenRouterEvalLLM()
     _guardrails = Guardrails(
         input_guards=[
-            PromptInjectionGuard(),
-            IllegalGuard(),
-            TopicalGuard(allowed_topics=INSURANCE_TOPICS),
+            PromptInjectionGuard(model=eval_llm),
+            IllegalGuard(model=eval_llm),
+            TopicalGuard(allowed_topics=INSURANCE_TOPICS, model=eval_llm),
         ],
         output_guards=[
-            ToxicityGuard(),
-            PrivacyGuard(),
+            ToxicityGuard(model=eval_llm),
+            PrivacyGuard(model=eval_llm),
         ],
-        evaluation_model=OpenRouterEvalLLM(),
+        evaluation_model=eval_llm,
         sample_rate=settings.guardrails_sample_rate,
     )
     logger.info("guardrails initialized: sample_rate=%s", settings.guardrails_sample_rate)
