@@ -121,12 +121,12 @@ def init_guardrails() -> bool:
     _guardrails = Guardrails(
         input_guards=[
             PromptInjectionGuard(model=eval_llm),
-            IllegalGuard(model=eval_llm),
             InsuranceTopicalGuard(model=eval_llm),
         ],
         output_guards=[
             ToxicityGuard(model=eval_llm),
             PrivacyGuard(model=eval_llm),
+            IllegalGuard(model=eval_llm),
         ],
         evaluation_model=eval_llm,
         sample_rate=settings.guardrails_sample_rate,
