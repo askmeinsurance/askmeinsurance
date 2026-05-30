@@ -1,0 +1,682 @@
+Run    : structured_reasoning_20260530v2
+Date   : 2026-05-30 19:56:38
+Cases  : 30 total  (30 with scores)
+----------------------------------------------------------------
+
+[1/30] Can I borrow money from my whole life insurance policy?
+  Answer : Yes, you can typically borrow money from a whole life insurance policy, provided it has accumulated sufficient cash value. This is known as a **policy loan**.  Here's how it generally works and what y...
+  honesty                : 0.70 - The response provides an accurate and balanced overview of policy loans, correctly identifying risks like policy lapse and death benefit reduction. However, it fails to explicitly identify itself as an AI or include a disclaimer that the information provided is for educational purposes rather than legally binding advice, which is a requirement of the evaluation steps.
+  intent_coverage        : 0.47 - Covered 8/17 points (47%):
+  [COVERED] You can borrow money from a Whole Life Insurance policy if it has accumulated cash value.
+  [COVERED] The cash value of a non-Investment-Linked Policy (non-ILP) can be used as collateral for a policy loan from the insurer.
+  [COVERED] Loan limits are typically a specified percentage, such as 90%, of the acquired cash surrender value.
+  [MISSING] Loan limits must account for any existing debts already charged on the policy.
+  [MISSING] To initiate a loan, you must complete and submit a policy loan agreement form to the insurer.
+  [MISSING] If the policy is held under a trust, both the policyholder and the trustee must sign the application form.
+  [MISSING] Insurers charge interest on policy loans at a rate generally ranging from 5% to 8%.
+  [MISSING] Interest on policy loans accrues daily.
+  [MISSING] Interest on policy loans is compounded on each policy anniversary date.
+  [MISSING] Unpaid interest is added to the loan principal and subsequently charged interest at the same rate.
+  [COVERED] If the total loan balance plus accrued interest exceeds the policy's available cash value, the insurer will terminate the policy.
+  [MISSING] If a policy is terminated due to an excessive loan balance, premiums paid are not refunded.
+  [COVERED] A policy loan acts as an advance on the policy's cash value.
+  [COVERED] Outstanding loan balances and accrued interest constitute a first charge on the policy.
+  [MISSING] The first charge status of a loan takes priority over all other claims.
+  [COVERED] If the policy is surrendered, the payout is reduced by the total outstanding loan and interest.
+  [COVERED] If a death benefit claim is paid, the payout is reduced by the total outstanding loan and interest.
+  faithfulness           : 0.90 - The actual output accurately addresses the core question and covers all essential concepts, including collateral, loan limits, interest, and the impact on death benefits and policy stability. It is factually consistent with the expected output. The only minor omissions are the specific mention of trust-related application requirements and the specific interest rate range, which are secondary details rather than essential facts.
+  ContextualRecallMetric : 0.57 - The score is 0.57 because while node 15 in the retrieval context successfully supports the ability to borrow against cash value, loan limits, interest charges, and the impact on benefits, the context fails to provide information regarding the application process (including trustee signatures), the specific risk of policy termination, and the concluding summary.
+  ContextualPrecisionMetric : 0.13 - The score is 0.13 because all relevant nodes were ranked at the very end (ranks 14, 15, and 16), while the first 13 nodes were all irrelevant. Specifically, nodes 1 through 13 were irrelevant as they discussed topics like 'maturity and surrender values', 'policy termination', 'terminal illness', 'product summaries', 'expenses', 'free-look periods', 'investment assets', 'investment performance', 'reversionary bonuses', 'expense ratios', 'bonus smoothing', 'surrendering a policy', and 'non-forfeiture options' instead of policy loans. The score is low because these irrelevant nodes were prioritized over the highly relevant information found in the final three nodes.
+  tone_and_approach      : 0.80 - The response effectively translates insurance jargon into clear, accessible language and logically structures the information to minimize cognitive load. It accurately identifies the user's intent regarding policy loans. However, it falls short on the final evaluation step by failing to provide a direct, actionable next step, such as a link to a specific claim form or a direct transition to a human agent, instead offering only a conversational prompt.
+  helpfulness            : 1.00 - The response directly answers the user's question with high accuracy and clarity. It logically organizes the mechanics, impacts, and risks of policy loans, providing actionable information without unnecessary filler. It adheres to all implicit constraints for a helpful, professional explanation.
+
+[2/30] Does whole life insurance build cash value I can actually use?
+  Answer : Yes, whole life insurance does build cash value that you can use. This cash value acts as a savings component within the policy.  Here's how it works and what you can do with it:  *   **How it Builds:...
+  intent_coverage        : 0.35 - Covered 6/17 points (35%):
+  [COVERED] Whole life insurance builds a cash value that can be used for financial needs.
+  [COVERED] The cash value acts as a savings element within the policy.
+  [MISSING] Cash value accumulation typically begins after the policy has been in force for a minimum period, usually three years.
+  [MISSING] The cash value belongs to the policy owner as an asset.
+  [COVERED] Cash value can be used for retirement, emergencies, or other financial objectives.
+  [COVERED] Policy loans allow the owner to borrow money from the insurer using the cash value as collateral.
+  [MISSING] Policy loans are considered an advancement of the cash value.
+  [COVERED] The insurer charges interest on policy loans.
+  [MISSING] Outstanding policy loans and accrued interest reduce the death benefit or surrender value.
+  [COVERED] Cash surrender allows the owner to exchange the policy for its net cash value if coverage is no longer needed.
+  [MISSING] Surrendering the policy terminates the life insurance protection completely.
+  [MISSING] Reduced paid-up insurance allows the owner to stop paying premiums while maintaining a reduced amount of permanent coverage.
+  [MISSING] Reduced paid-up insurance uses the cash value as a net single premium.
+  [MISSING] Extended term insurance uses the cash value to purchase term insurance equal to the original face value.
+  [MISSING] Extended term insurance maintains the original coverage amount for a limited period determined by the available cash value.
+  [MISSING] Automatic premium loans allow the insurer to use cash value to pay unpaid premiums if the grace period expires.
+  [MISSING] Automatic premium loans keep the policy in force.
+  faithfulness           : 0.90 - The actual output accurately addresses the core question and covers the primary methods of accessing cash value, such as loans and surrenders. It includes additional relevant details like tax implications and maturity, which adds value. It is only slightly penalized for omitting specific technical options mentioned in the expected output, such as 'Extended Term Insurance' and 'Automatic Premium Loans', though it covers the essential concepts effectively.
+  ContextualRecallMetric : 0.75 - The score is 0.75 because while nodes 11, 12, 13, and 14 successfully support the general utility of cash value and options like surrender, paid-up insurance, and extended term insurance, the retrieval context lacks information regarding the 'Automatic Premium Loan' provision mentioned in the final sentence of the expected output.
+  honesty                : 0.70 - The output provides a comprehensive and accurate explanation of cash value mechanics, including risks like surrender charges and non-guaranteed bonuses. However, it fails to explicitly identify itself as an AI or provide a disclaimer distinguishing the information from legally binding advice, which is a requirement of the evaluation steps.
+  ContextualPrecisionMetric : 0.18 - The score is 0.18 because the retrieval process failed to prioritize relevant information, placing eleven irrelevant nodes at the start of the list. Specifically, nodes 1 through 11 provide information on product-specific bonuses, surrender risks, or unrelated insurance types, which should have been ranked lower than the relevant nodes found at ranks 12, 14, 15, 19, and 20. Because the system failed to surface the nodes that 'directly address the question' or confirm that cash value is a 'valuable asset' until much later in the sequence, the precision is significantly penalized.
+  helpfulness            : 1.00 - The response directly answers the user's question about cash value accessibility. It provides a clear, logically ordered explanation of how cash value is built and the specific methods for accessing it (loans, withdrawals, surrenders). It also includes essential context regarding risks, tax implications, and non-guaranteed bonuses, fulfilling the user's intent with comprehensive and actionable information.
+  tone_and_approach      : 0.80 - The response effectively translates complex insurance concepts into plain language and provides a comprehensive, structured explanation of how cash value works. It addresses the user's intent by detailing specific methods of access (loans, withdrawals, surrenders). However, it falls short on the final evaluation step by failing to provide a direct, actionable next step, such as a link to a policy portal, a calculator, or a contact option for a human agent, instead ending with a rhetorical question.
+
+[3/30] Why is whole life insurance more expensive than term life insurance?
+  Answer : Whole life insurance is generally more expensive than term life insurance primarily because it offers lifelong coverage and includes a cash value component, features that term life insurance does not ...
+  intent_coverage        : 0.79 - Covered 15/19 points (79%):
+  [COVERED] Whole life insurance premiums are higher than term life insurance premiums.
+  [COVERED] Term insurance provides temporary protection for a defined period.
+  [COVERED] Term insurance only pays a death benefit if the insured dies within the policy term.
+  [COVERED] If the insured survives the term, term insurance coverage ends and no benefit is paid.
+  [COVERED] Term insurance is the lowest-cost type of life insurance because it provides pure protection for a limited duration.
+  [COVERED] Whole life insurance provides lifelong coverage.
+  [COVERED] Whole life insurance pays the face value upon the insured's death regardless of when it occurs, provided the policy is in force.
+  [COVERED] Because death is certain over a lifetime, the insurer is practically guaranteed to pay a whole life claim.
+  [COVERED] The guarantee of a payout in whole life insurance necessitates higher premiums.
+  [COVERED] Whole life insurance includes a built-in savings component known as cash value.
+  [COVERED] Term insurance does not provide cash value.
+  [MISSING] If a term policy is cancelled before the term ends, the insured receives nothing.
+  [MISSING] Whole life insurance generates cash value due to the charging of level premiums for a certain death event.
+  [COVERED] Cash value in whole life insurance grows over time.
+  [COVERED] Cash value serves as a financial asset for the policy owner.
+  [COVERED] Cash value can be used for retirement, emergencies, or other personal objectives.
+  [MISSING] Accumulated cash value provides policy owner flexibility through non-forfeiture options.
+  [MISSING] Non-forfeiture options include taking a policy loan, surrendering the policy for net cash value, or purchasing paid-up or extended term insurance.
+  [COVERED] Funding the savings and investment element contributes to the higher cost of whole life insurance.
+  faithfulness           : 1.00 - The actual output accurately captures all core points from the expected output, including the distinction between temporary and lifetime coverage, the certainty of a payout for whole life insurance, and the inclusion of a cash value savings component. It contains no factual contradictions and effectively explains why these features lead to higher premiums.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are fully supported by the information provided in nodes 4, 5, 6, and 16 in the retrieval context. Great job capturing all the essential details!
+  ContextualPrecisionMetric : 0.53 - The score is 0.53 because, while several relevant nodes are retrieved, the ranking is suboptimal. The first node is an irrelevant introductory sentence, and the third node is an irrelevant section header, both of which should be ranked lower than the relevant nodes found at ranks 2, 4, 5, 6, 8, 14, and 19. The presence of these irrelevant nodes at higher ranks significantly dilutes the precision of the retrieval.
+  honesty                : 0.60 - The response provides an accurate and factual comparison of the two insurance types. However, it fails to explicitly identify itself as an AI and does not include a disclaimer clarifying that the information provided is for educational purposes rather than legally binding financial or insurance advice, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance concepts into plain language and logically structures the comparison to minimize cognitive load. It successfully identifies the user's intent to understand the cost difference. However, it fails to provide a clear, actionable next step; instead of offering a link to a quote tool or a direct path to a human agent, it ends with a vague follow-up question that requires further effort from the user.
+  helpfulness            : 1.00 - The response directly addresses the user's question by clearly explaining the fundamental differences between whole and term life insurance. It provides actionable, logically ordered information regarding lifetime coverage, cash value accumulation, and premium structures, while adhering to a professional and helpful tone.
+
+[4/30] Can I convert my term life policy into a whole life policy later?
+  Answer : Yes, many term life insurance policies offer a **convertible option**, which allows you to convert your term policy into a permanent policy, such as a whole life policy, without needing to undergo a m...
+  intent_coverage        : 0.94 - Covered 16/17 points (94%):
+  [COVERED] Term life insurance can be converted to a permanent policy, such as whole life insurance, if the policy includes a convertible option.
+  [COVERED] The conversion privilege allows changing coverage without providing evidence of insurability.
+  [COVERED] Conversion is possible even if the policyholder's health has deteriorated.
+  [COVERED] Conversion is typically permitted during the policy term or before a specified age, usually 60, whichever occurs first.
+  [COVERED] Insurers may restrict conversion to the first few years of the term.
+  [COVERED] Insurers may restrict the conversion to a smaller percentage of the original face value if converted in later years.
+  [COVERED] Conversion requires a written request using the insurer's prescribed form.
+  [COVERED] Conversion requires payment of the premium for the new policy.
+  [COVERED] The sum assured of the new whole life policy must be equal to or less than the sum assured of the original term policy.
+  [MISSING] The new policy retains all limitations and exclusions from the original term policy.
+  [COVERED] Exclusions from the original policy remain unless evidence is provided that the high-risk activity has been discontinued.
+  [COVERED] Premiums for a whole life policy are higher than those for term insurance.
+  [COVERED] Premium increases reflect the older age at conversion, anti-selection risk, and the nature of whole life coverage.
+  [COVERED] Under 'attained age conversion,' the new premium is based on the policyholder's age at the time of conversion.
+  [COVERED] Convertible term policies typically have higher premium rates than comparable non-convertible term policies.
+  [COVERED] The convertible option guarantees the ability to obtain permanent insurance regardless of future health changes.
+  [COVERED] The option serves as a bridge for those who need permanent insurance but can currently only afford term policy premiums.
+  faithfulness           : 1.00 - The actual output accurately addresses all core points from the expected output, including the conversion process, premium adjustments based on attained age, the benefit of guaranteed insurability, and the specific limitations regarding timing and sum assured. There are no factual contradictions, and the information provided is comprehensive and well-structured.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are fully supported by the information provided across the three nodes in the retrieval context, demonstrating a perfect alignment of content.
+  ContextualPrecisionMetric : 0.95 - The score is 0.95 because the first four nodes are highly relevant, but the fifth node is an irrelevant node that interrupts the sequence of relevant information. While the sixth and seventh nodes are relevant, the presence of irrelevant nodes at ranks 8, 9, and 10 further prevents a perfect score, as these should ideally be ranked lower than the relevant nodes.
+  honesty                : 0.70 - The response provides a comprehensive and accurate overview of conversion options. It effectively addresses the complexities of the process, such as attained age and anti-selection. However, it fails to explicitly identify itself as an AI or provide a disclaimer that the information is for educational purposes rather than legally binding advice, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance concepts like 'attained age' and 'anti-selection' into plain language and provides a comprehensive overview of the conversion process. It successfully identifies the user's intent to understand policy flexibility. However, it fails to provide a clear, actionable next step, such as a link to a policy document lookup or a contact method for a human agent, leaving the user to perform their own research to find their specific policy terms.
+  helpfulness            : 1.00 - The response directly addresses the user's question about converting term life to whole life insurance. It provides a comprehensive, logically ordered explanation of the process, premium implications, and critical limitations, while adhering to a professional and informative tone without unnecessary filler.
+
+[5/30] What happens when my term life insurance policy expires?
+  Answer : When your term life insurance policy expires, the coverage provided by the policy will cease. Unlike some other types of insurance, term life insurance does not typically have a cash value or savings ...
+  intent_coverage        : 0.88 - Covered 14/16 points (88%):
+  [COVERED] When a term life insurance policy reaches the end of its specified period, the insurance cover automatically ceases.
+  [COVERED] If you survive to the end of the term, no death benefit is payable to beneficiaries.
+  [COVERED] If you survive to the end of the term, you receive nothing back from the insurer.
+  [COVERED] Term insurance does not accumulate cash value or a savings element.
+  [COVERED] Coverage may be extended beyond the original term if the policy includes specific continuation features.
+  [COVERED] A renewable option grants the right to renew the policy at the end of the term without providing evidence of insurability.
+  [COVERED] Renewing a policy means current health status will not prevent the extension of cover.
+  [MISSING] Upon renewal, the death benefit and policy term remain unchanged.
+  [COVERED] Upon renewal, the premium increases based on the policyholder's older, attained age.
+  [COVERED] A convertible option allows the policyholder to change an expiring term policy into a permanent life insurance policy.
+  [COVERED] Conversion to a permanent policy does not require evidence of insurability.
+  [COVERED] Conversion guarantees permanent coverage even if the policyholder's health has declined.
+  [COVERED] The premium for a converted policy is higher than the term premium.
+  [COVERED] The premium for a converted policy is based on the attained age at the time of conversion.
+  [MISSING] The premium for a converted policy covers the certain event of death during the lifetime of the policy.
+  [COVERED] Evaluating options like letting the policy expire, renewing, or converting helps align insurance with changing financial circumstances and goals.
+  faithfulness           : 1.00 - The actual output comprehensively covers all key points from the expected output, including the cessation of coverage, the lack of cash value, and the specific details regarding renewable and convertible options. It accurately explains that these options allow for continued coverage without new medical underwriting, while noting the trade-off of higher premiums based on attained age. The response is factually accurate and provides additional helpful context regarding lapsing and surrendering without contradicting the core information.
+  ContextualPrecisionMetric : 0.94 - The score is 0.94 because the majority of relevant nodes are ranked highly, providing comprehensive details on 'Renewable Option', 'Convertible Option', and the consequences of expiration. The score is not higher because several irrelevant nodes, such as the node at rank 10 regarding 'Whole Life Insurance', the node at rank 12 discussing 'surrender of policies', the node at rank 14 concerning 'Immediate Annuities', and the node at rank 15 about 'policy lapsing', are interspersed among the relevant nodes, preventing a perfect ranking.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are fully supported by the information provided across nodes 1, 4, 6, 7, 8, and 11 in the retrieval context. Great job capturing all the necessary details!
+  tone_and_approach      : 0.80 - The response effectively translates complex insurance concepts into plain language and provides a comprehensive overview of options like renewal and conversion. It successfully identifies the user's intent to understand the consequences of policy expiry. However, it falls short on the final evaluation step; while it asks a follow-up question, it fails to provide a direct, actionable next step such as a link to a policy portal, a contact number for an agent, or a specific tool to check policy documents, requiring the user to perform further research to find their specific policy details.
+  honesty                : 0.70 - The response provides a comprehensive and accurate explanation of term life insurance expiration, correctly identifying key concepts like renewal and conversion. However, it fails to explicitly identify itself as an AI or include a disclaimer stating that the information provided is for educational purposes and does not constitute legally binding advice, which is a requirement of the evaluation steps.
+  helpfulness            : 1.00 - The response directly addresses the user's question about policy expiration with high accuracy and clarity. It provides a comprehensive breakdown of outcomes, including the lack of cash value, and explains actionable alternatives like renewal and conversion. The information is logically structured, easy to follow, and adheres to all implicit requirements for a helpful, informative explanation.
+
+[6/30] How do I know if a term life policy is enough for my family’s needs?
+  Answer : To determine if a term life insurance policy is sufficient for your family's needs, you should consider several key factors related to income replacement, debt coverage, and future expenses.  Here's a...
+  intent_coverage        : 0.54 - Covered 13/24 points (54%):
+  [COVERED] Term life insurance is suitable if your financial protection needs are temporary.
+  [MISSING] Term life insurance is suitable if you have a permanent need but cannot currently afford permanent insurance premiums.
+  [COVERED] Term insurance provides coverage for a specific period known as the policy term.
+  [COVERED] Term insurance pays the sum assured only if the insured passes away during the policy term.
+  [COVERED] Term insurance is effective for covering time-bound financial obligations.
+  [COVERED] Term insurance can provide a lump sum to support dependants during their growing years.
+  [COVERED] Term insurance can be used to pay off outstanding debts like mortgages to prevent family financial hardship.
+  [MISSING] Term insurance can cover immediate expenses such as funeral and administrative costs.
+  [MISSING] Level term insurance provides a fixed death benefit throughout the policy term.
+  [COVERED] Level term insurance is suitable for replacing lost income or maintaining a standard of living.
+  [COVERED] Decreasing term insurance provides a death benefit that reduces over time.
+  [COVERED] Decreasing term insurance is ideal for protecting reducing debts like mortgages.
+  [MISSING] A family income benefit rider provides a regular stream of income instead of a lump sum.
+  [MISSING] A family income benefit rider can support a child until they reach independence.
+  [MISSING] A convertible option allows switching a term policy to a permanent policy without new health evidence.
+  [MISSING] A convertible option is useful for those who need permanent protection but have a limited current budget.
+  [MISSING] A renewable option allows extending the policy upon expiration without medical underwriting.
+  [MISSING] Renewing a policy typically results in higher premiums based on the insured's older age.
+  [COVERED] Term insurance does not accumulate cash value.
+  [COVERED] Term insurance does not have a savings or investment component.
+  [COVERED] If the insured survives the policy term, the coverage ends and no payout is received.
+  [MISSING] Term insurance alone is insufficient for goals like funding university education or building a retirement nest egg.
+  [COVERED] Term insurance alone is insufficient if a guaranteed payout regardless of death timing is required.
+  [MISSING] Endowment or Whole Life policies should be considered if savings or lifelong coverage are needed.
+  faithfulness           : 0.80 - The actual output effectively covers the core requirements of assessing term life insurance, including income replacement, debt coverage, and the importance of matching the term to family needs. It correctly identifies the lack of cash value and the temporary nature of the product. However, it misses some of the specific structural nuances found in the expected output, such as the distinction between level term and family income benefit riders, and it does not explicitly emphasize the 'convertible' option as a bridge to permanent insurance as clearly as the expected output.
+  ContextualPrecisionMetric : 0.58 - The score is 0.58 because while the first node is highly relevant, the precision is diluted by several irrelevant nodes appearing at ranks 2, 3, and 4. Specifically, the nodes at rank 2 ('This chunk discusses Critical Illness coverage and is not relevant to the general assessment of term life insurance adequacy.'), rank 3 ('This is a general introduction to ILPs and does not provide specific guidance on assessing term life insurance adequacy.'), and rank 4 ('This is just a section header and does not contain actionable information.') should have been ranked lower than the relevant nodes found at ranks 5, 6, 8, 9, 11, 12, 13, 17, 18, and 19 to achieve a higher score.
+  ContextualRecallMetric : 0.93 - The score is 0.93 because the majority of the expected output is well-supported by nodes in the retrieval context, such as nodes 1, 6, 12, 15, and 16, which cover the core concepts of term insurance, policy types, and limitations; however, the specific mention of the 'Family Income Benefit Rider' in the expected output is not explicitly detailed in the provided nodes in the retrieval context.
+  honesty                : 0.60 - The output provides helpful educational information regarding term life insurance; however, it fails to explicitly identify itself as an AI and does not include a disclaimer clarifying that the information provided is not legally binding or a substitute for professional financial advice. While it maintains factual integrity and avoids sales-driven language, the lack of identity disclosure and legal disclaimers is a significant omission based on the evaluation steps.
+  tone_and_approach      : 0.60 - The response effectively translates insurance concepts into plain language and structures the information logically to minimize cognitive load. However, it fails to meet the requirement for a clear, actionable next step; it ends with reflective questions rather than providing a link to a calculator, a quote tool, or a connection to a human advisor to resolve the user's need.
+  helpfulness            : 1.00 - The response directly addresses the user's query by providing a comprehensive, logical framework for assessing life insurance needs. It covers essential factors like income replacement, debt, and future expenses, and includes actionable questions to help the user calculate their specific requirements without unnecessary filler.
+
+[7/30] What is the main difference between term life insurance and whole life insurance?
+  Answer : The main differences between term life insurance and whole life insurance lie in their coverage duration, premium structure, and the presence of a cash value component.  Here's a breakdown:  *   **Cov...
+  intent_coverage        : 0.65 - Covered 13/20 points (65%):
+  [COVERED] Term life insurance provides coverage for a specific, limited period of time.
+  [COVERED] Whole life insurance provides permanent coverage for the entire lifetime of the insured.
+  [COVERED] Term life insurance coverage ceases and no benefits are payable if the insured survives beyond the policy term.
+  [COVERED] Whole life insurance guarantees the payment of the face value regardless of when the insured's death occurs, provided the policy remains in force.
+  [COVERED] Whole life insurance includes a savings element that generates cash value over time.
+  [COVERED] Term life insurance does not include a savings element or accumulate cash value.
+  [MISSING] The cash value in whole life insurance accumulates because level premiums are charged for an event that is certain to happen.
+  [COVERED] The cash value in a whole life policy belongs to the policy owner.
+  [MISSING] Cash value can be used for emergencies, retirement, or securing a policy loan.
+  [COVERED] If a term insurance policy is cancelled or terminated before the term ends, the insured receives nothing.
+  [COVERED] Whole life insurance offers non-forfeiture options such as surrendering the policy for cash or converting it to paid-up insurance.
+  [MISSING] Whole life insurance offers automatic premium loans to prevent the policy from lapsing.
+  [COVERED] Term insurance does not offer non-forfeiture options or automatic premium loans.
+  [COVERED] Term insurance premiums are the lowest compared to other types of life insurance for the same coverage period.
+  [COVERED] Whole life insurance premiums are higher than term insurance premiums.
+  [COVERED] Whole life insurance premiums are higher due to the lifelong duration, the certainty of a death claim, and the funding of cash value accumulation.
+  [MISSING] Term insurance is only issued on a non-participating basis.
+  [MISSING] Term insurance policyholders are not entitled to bonuses.
+  [MISSING] Whole life insurance can be issued on either a participating or non-participating basis.
+  [MISSING] Participating whole life policies allow the insured to share in the insurer's profits through bonuses added to the guaranteed sum assured.
+  faithfulness           : 0.90 - The actual output accurately covers all core points, including duration, cash value, and premium costs. It provides a comprehensive and factually correct comparison. The only minor omission is the specific mention of 'bonus entitlements' and the distinction between participating and non-participating policies, which were present in the expected output but do not detract from the overall quality of the explanation.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by nodes in the retrieval context, specifically nodes 1, 3, 4, 5, 6, 8, 10, 11, and 13, which provide comprehensive coverage of the differences between term and whole life insurance.
+  ContextualPrecisionMetric : 0.84 - The score is 0.84 because while the majority of relevant nodes are ranked highly, the presence of an irrelevant node at rank 2, which is merely an 'introductory header and is not directly useful for explaining the differences,' lowers the precision. Additionally, another irrelevant node appears at rank 10, described as a 'section header and does not contain comparative information,' and a final irrelevant node at rank 17, which 'focuses on comparing two types of Whole Life insurance rather than comparing Whole Life to Term insurance,' further prevents a perfect score.
+  honesty                : 0.60 - The output provides a clear and accurate educational comparison of the two insurance types. However, it fails to explicitly identify itself as an AI and does not include a disclaimer stating that the information provided is not legally binding or a substitute for professional financial advice, which is a requirement for regulatory compliance and transparency.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance concepts into clear, plain language and uses a logical structure to minimize cognitive load. However, it fails to meet the requirement for a clear, actionable next step; instead of providing a link to a quote tool or a transition to a human agent, it concludes with reflective questions that leave the user to perform further research on their own.
+  helpfulness            : 1.00 - The response directly addresses the user's request by providing a clear, structured comparison between term and whole life insurance. It covers all key differences—duration, premiums, cash value, and flexibility—in a logical, easy-to-read format, and includes helpful follow-up questions to assist the user in their decision-making process.
+
+[8/30] Exactly how many years do I have to pay premiums if I sign up for the AIA Life Dividends plan?
+  Answer : The AIA Life Dividends plan has a **limited premium payment term of 10 years**. This means you will pay premiums for 10 years, and then your policy will continue to provide coverage for your entire li...
+  intent_coverage        : 1.00 - Covered 1/1 points (100%):
+  [COVERED] The premium payment duration for the AIA Life Dividends plan is exactly 10 years.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the 1st node in the retrieval context perfectly captures the 10-year premium payment term mentioned in the expected output. Great job!
+  faithfulness           : 1.00 - The actual output accurately identifies the 10-year premium payment term required by the AIA Life Dividends plan. It addresses the core question directly and provides additional context that is factually consistent with the expected output without introducing any misinformation.
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because the first node perfectly identifies that 'AIA Life Dividends is a participating whole life insurance policy... with a limited premium payment term of 10 years,' and all subsequent irrelevant nodes are correctly ranked lower.
+  honesty                : 0.40 - The response fails to identify itself as an AI and does not include a disclaimer distinguishing the information from legally binding policy terms. While it accurately states the premium term, it lacks the necessary regulatory compliance disclosures and fails to address potential complexities or conditional logic inherent in insurance contracts, opting for a definitive tone that could be perceived as a guarantee.
+  tone_and_approach      : 0.70 - The response successfully translates the policy jargon into a clear, plain-language answer regarding the 10-year premium term. It addresses the user's specific intent accurately. However, it fails to provide a clear, actionable next step as required by the evaluation criteria, such as a link to the policy document, a premium calculator, or an offer to connect with an agent, leaving the user to perform further research if they wish to proceed.
+  helpfulness            : 1.00 - The response directly answers the user's specific question about the premium payment duration for the AIA Life Dividends plan. It provides the correct information (10 years) clearly, explains the policy structure, and avoids unnecessary filler while maintaining a helpful tone.
+
+[9/30] If a policyholder unfortunately commits suicide within the first year of their DIRECT - AIA Term Cover policy, what exactly does the insurer refund?
+  Answer : If a policyholder commits suicide within the first year of their DIRECT - AIA Term Cover policy, the insurer's liability is limited to a refund of the premiums paid. No death benefit will be paid in t...
+  intent_coverage        : 0.80 - Covered 4/5 points (80%):
+  [MISSING] The policy covers suicide committed by the policyholder, whether sane or insane.
+  [COVERED] The suicide clause applies if the event occurs within one year from the issue date or the reinstatement date of the DIRECT - AIA Term Cover policy.
+  [COVERED] The relevant date for the one-year period is whichever is later between the issue date and the reinstatement date.
+  [COVERED] If the suicide occurs within the specified period, the insurer will only refund the premiums paid.
+  [COVERED] The refund of premiums paid does not include interest.
+  faithfulness           : 1.00 - The actual output accurately captures all essential information from the expected output, including the suicide exclusion clause, the one-year timeframe, the condition regarding the issue or reinstatement date, and the specific refund of premiums without interest. It provides a comprehensive and factually correct answer without any contradictions.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the retrieval context perfectly captures all the details regarding the suicide clause and premium refund policy mentioned in the expected output's first sentence.
+  ContextualPrecisionMetric : 0.61 - The score is 0.61 because while the first node correctly identifies the refund policy, the ninth node, which also contains the relevant suicide clause, is ranked too low. The score is not higher because several irrelevant nodes are interspersed between the two relevant nodes, specifically nodes 2 through 8, which discuss general policy information or lack specific clause details, failing to prioritize all pertinent information at the top.
+  honesty                : 0.70 - The response accurately reflects the policy terms regarding suicide exclusions and correctly identifies that the refund is limited to premiums paid without interest. However, it fails to explicitly identify itself as an AI and does not include a formal disclaimer distinguishing the provided information from legally binding coverage or professional advice, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.70 - The response accurately identifies the policy terms regarding suicide exclusions and uses plain language to explain the refund of premiums. It successfully references the specific policy document requirements. However, it fails to provide a clear, actionable next step, such as a link to a claim form or a direct contact method for a human agent, instead ending with a generic question that leaves the user to perform further research.
+  helpfulness            : 1.00 - The response accurately identifies the policy's suicide clause, confirming that only premiums paid are refunded without interest. It directly addresses the user's query, provides the necessary context regarding the one-year timeframe, and includes a helpful disclaimer about checking the specific policy schedule for final calculations.
+
+[10/30] At what specific age of the original insured does the AIA Platinum Gift for Life Plus (II) policy officially mature?
+  Answer : The AIA Platinum Gift for Life Plus (II) policy is a participating whole life plan designed to provide monthly income up to age 120.  Based on the information I have, the policy document mentions that...
+  intent_coverage        : 0.50 - Covered 1/2 points (50%):
+  [MISSING] The AIA Platinum Gift for Life Plus (II) policy matures on the policy anniversary that occurs on or immediately following the original insured's 120th birthday.
+  [COVERED] Upon maturity, the policy will automatically terminate.
+  faithfulness           : 0.40 - The actual output fails to identify the specific maturity age of 120, which is the core information requested. While it correctly mentions that the policy provides income up to age 120, it explicitly states that the maturity age is not known, contradicting the expected fact that the policy matures on the anniversary following the 120th birthday.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the retrieval context, specifically nodes 1 and 7, perfectly aligns with the expected output regarding the policy's maturity at age 120 and its subsequent termination. Great job!
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first node is relevant as it mentions the policy is 'designed to provide monthly income up to age 120', and the second node is also relevant as it explicitly states the policy 'matures on the policy anniversary that occurs on or immediately following the original insured's 120th birthday.' Since all subsequent nodes (ranks 3 through 12) are irrelevant and correctly placed below the relevant ones, the precision is flawless.
+  honesty                : 0.90 - The response adheres well to the evaluation criteria by transparently admitting that the specific maturity age is not explicitly stated in the provided details, rather than guessing. It correctly identifies itself as an AI, distinguishes between general industry knowledge and specific policy terms, and avoids making misleading guarantees. The only minor shortcoming is that it could have more explicitly emphasized that it cannot provide legally binding coverage information, though it does direct the user to their policy contract.
+  tone_and_approach      : 0.40 - The response fails to provide the specific maturity age requested, which is a key detail for the AIA Platinum Gift for Life Plus (II) policy (which matures at age 120). While the tone is professional and avoids jargon, it relies on generic assumptions about whole life policies rather than identifying the specific policy terms. Furthermore, it fails to provide a direct, actionable next step, such as a link to the policy portal or a contact method for a human agent, instead placing the burden of research back on the user.
+  helpfulness            : 0.40 - The response fails to provide the specific maturity age requested, which is 120 for this particular product. While it correctly identifies that the policy provides income up to age 120, it incorrectly states that the maturity age is not explicitly known, leading to unnecessary speculation and filler content instead of providing the factual answer.
+
+[11/30]  I saw a feature called the Option to Purchase Additional Insurance (OPAI) in the AIA Guaranteed Protect Plus (IV) plan. What life events allow me to trigger this, and what does it actually let me do?
+  Answer : The Option to Purchase Additional Insurance (OPAI) benefit in the AIA Guaranteed Protect Plus (IV) plan allows you to buy a new whole life or endowment policy for the Insured without needing to provid...
+  intent_coverage        : 1.00 - Covered 15/15 points (100%):
+  [COVERED] The Option to Purchase Additional Insurance (OPAI) in the AIA Guaranteed Protect Plus (IV) plan allows the purchase of a new whole life or endowment policy on the life of the Insured.
+  [COVERED] The OPAI allows for the purchase of a new policy without providing evidence of insurability or additional medical underwriting.
+  [COVERED] The maximum additional coverage amount is the lower of the Insured Amount of the GPP (IV) Accumulator component or S$100,000.
+  [COVERED] The new policy is issued on the same terms as the original policy, including the carry-over of any existing exclusions.
+  [COVERED] The premium for the new policy is calculated based on the Insured's attained age at the time of application.
+  [COVERED] The option must be exercised within 90 days of a qualifying life event.
+  [COVERED] Qualifying life events include the Insured's 18th birthday (if the policy was issued before age 18).
+  [COVERED] Qualifying life events include the marriage of the Insured.
+  [COVERED] Qualifying life events include the birth of the Insured's child.
+  [COVERED] Qualifying life events include the legal adoption of a child by the Insured.
+  [COVERED] Qualifying life events include the death of the Insured's spouse.
+  [COVERED] The option can only be exercised once during the lifetime of the policy.
+  [COVERED] The option must be exercised before the Insured's 55th birthday.
+  [COVERED] Individuals who are 55 or older at the time of purchasing the original plan are not eligible for the OPAI benefit.
+  [COVERED] The OPAI benefit is only offered to standard lives.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are fully supported by the information provided across the 1st, 2nd, and 3rd nodes in the retrieval context. Excellent work capturing all the necessary details!
+  faithfulness           : 1.00 - The actual output accurately captures all key points from the expected output, including the specific life events, the 90-day window, the coverage limits, the age restrictions, and the requirement for standard lives. It correctly explains the benefit of avoiding medical underwriting and includes all necessary conditions and limitations without factual contradictions.
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because all relevant nodes were perfectly ranked at the top! The first three nodes successfully provided the necessary details regarding 'life events', 'coverage limits', and 'policy rules' for the OPAI feature, while all subsequent irrelevant nodes were correctly placed lower in the ranking.
+  honesty                : 0.80 - The response accurately details the OPAI benefit, including triggers, limitations, and conditions. It maintains factual integrity and avoids sales-driven language. However, it fails to explicitly identify itself as an AI or include a disclaimer distinguishing the information from legally binding policy documents, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.80 - The response effectively translates the OPAI feature into plain language and provides specific, relevant details from the policy document regarding triggers and limitations. It is well-structured and minimizes cognitive load. However, it fails to provide a clear, actionable next step, such as a link to a claim form or a contact method for an agent, which is required to fully resolve the user's need.
+  helpfulness            : 1.00 - The response accurately identifies the OPAI benefit's purpose and clearly lists the specific triggering life events and functional details requested. It adheres to all constraints, providing actionable information in a well-structured format without unnecessary filler.
+
+[12/30] What is the difference between the "Accumulator" and "Booster" components in the Critical Protector Life (IV) rider, and when does the Booster expire?
+  Answer : The Critical Protector Life (IV) rider on AIA Guaranteed Protect Plus (IV) has two components: the Accumulator and the Booster.  ### Accumulator Component *   **Nature:** This is a **participating com...
+  intent_coverage        : 1.00 - Covered 8/8 points (100%):
+  [COVERED] The Critical Protector Life (IV) supplementary benefit consists of two distinct components: the Accumulator component and the Booster component.
+  [COVERED] The Accumulator component is a participating component.
+  [COVERED] The Accumulator component contributes to the experience of the participating fund.
+  [COVERED] The Booster component is a non-participating component.
+  [COVERED] The Booster component does not have a cash surrender value.
+  [COVERED] The Booster component forms part of the Minimum Critical Illness Benefit if a Critical Illness claim occurs before the component expires.
+  [COVERED] The Booster component expires on the policy anniversary occurring on or immediately following the Insured's 65th birthday or 75th birthday.
+  [COVERED] The expiry age of the Booster component depends on whether a multiplier cutoff age of 65 or 75 was chosen for the policy.
+  faithfulness           : 1.00 - The actual output accurately identifies the core differences between the participating Accumulator and non-participating Booster components. It correctly addresses the expiry conditions, specifying that the Booster terminates on the policy anniversary following the insured's 65th or 75th birthday based on the chosen multiplier cutoff. All essential facts from the expected output are present, and the additional context provided does not contradict the required information.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by the information provided in node 1 of the retrieval context. Great job capturing all the details accurately!
+  ContextualPrecisionMetric : 0.89 - The score is 0.89 because the first three nodes are highly relevant, providing clear definitions and expiry logic for the components. However, the score is not higher because a relevant node was placed at rank 7, while several irrelevant nodes—such as those discussing 'claim percentages', 'covered critical illnesses', and 'general insurance advice'—were ranked at positions 4, 5, 6, and 8, which should have been placed after all relevant information.
+  honesty                : 0.60 - The response accurately explains the technical differences between the Accumulator and Booster components and correctly identifies the expiry conditions. However, it fails to explicitly identify itself as an AI and does not include a disclaimer clarifying that the information provided is for educational purposes and does not constitute a legally binding coverage guarantee, which is a requirement for regulatory compliance and transparency.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance jargon into clear, structured definitions and accurately identifies the expiry conditions for the Booster component. It successfully minimizes cognitive load through logical formatting. However, it fails to provide a clear, actionable next step as required by the evaluation steps, instead ending with reflective questions rather than a link to a claim form, policy portal, or human agent.
+  helpfulness            : 1.00 - The response accurately distinguishes between the participating Accumulator and non-participating Booster components. It clearly explains the payout logic for both scenarios and correctly identifies that the Booster expiry is tied to the policy's chosen multiplier cutoff age (65 or 75). The information is logically structured, actionable, and directly addresses all parts of the user's query without unnecessary filler.
+
+[13/30] Can you explain how the "Change of Insured Option" works for the AIA Platinum Gift for Life Plus (II), and what specific conditions I need to meet to swap the insured person?
+  Answer : The AIA Platinum Gift for Life Plus (II) offers a "Change of Insured Option" which allows you to replace the current insured person with a new one. This can be a useful feature for long-term planning,...
+  faithfulness           : 0.90 - The actual output accurately captures all the core requirements and conditions for the Change of Insured Option as specified in the expected output. It correctly identifies the one-year policy duration, insurability requirements, survival status, absence of trusts/nominations, and the impact on riders and maturity dates. The only minor discrepancy is the inclusion of additional, non-requested information regarding policy alternatives, which does not contradict the essential facts.
+  intent_coverage        : 0.92 - Covered 12/13 points (92%):
+  [COVERED] The Change of Insured Option for the AIA Platinum Gift for Life Plus (II) allows a written request to replace the current insured with a new one.
+  [COVERED] AIA must approve the application for the change to occur.
+  [MISSING] AIA will notify the policyholder of the effective date of the change.
+  [COVERED] The policy must have been active for at least one year from its original Issue Date.
+  [COVERED] The new insured person must meet AIA's insurability requirements.
+  [COVERED] The change is subject to AIA's acceptance and terms.
+  [COVERED] Both the current insured and the new insured must be alive on the effective date of the swap.
+  [COVERED] There cannot be any active nomination of beneficiary on the policy.
+  [COVERED] There cannot be any trust created over the policy moneys.
+  [COVERED] The coverage period for the new insured ends upon their death or the original insured's 120th birthday, whichever comes first.
+  [COVERED] The basic policy's maturity date remains unchanged after the change takes effect.
+  [COVERED] Premiums due will continue to be payable after the change takes effect.
+  [COVERED] Any optional riders attached to the policy will be terminated after the change takes effect.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by the information provided in nodes 1, 2, and 3 in the retrieval context. Great job capturing all the necessary details!
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first three nodes successfully address the 'consequences of the change', 'specific conditions' like the 'one-year in-force requirement', and the 'requirement for a written request', while all subsequent irrelevant nodes are correctly placed at the bottom.
+  honesty                : 0.90 - The response accurately outlines the conditions and mechanics of the Change of Insured Option while maintaining transparency regarding missing information, such as the impact on cash value. It correctly identifies itself as an AI and provides educational information rather than binding advice. The response is factually grounded and avoids sales-driven language. It loses one point only because it does not explicitly state that it is not a substitute for the official policy contract or a professional financial advisor, which is a standard requirement for regulatory compliance in insurance queries.
+  tone_and_approach      : 0.70 - The response effectively translates policy jargon into clear, structured information and addresses the user's specific query regarding the 'Change of Insured Option'. It successfully identifies the underlying intent of wealth transfer. However, it falls short on the third evaluation step, as it fails to provide a clear, actionable next step—such as a link to the specific application form or a direct contact method for an agent—to help the user initiate the process.
+  helpfulness            : 0.90 - The response effectively explains the 'Change of Insured Option' and lists the necessary conditions as requested. It is well-structured, actionable, and addresses the user's intent clearly. The score is slightly reduced because the output includes a section on 'Alternatives' that was not requested, which constitutes minor filler, though it remains relevant to the context of policy management.
+
+[14/30] For the AIA Smart Flexi Growth plan, what actually determines how much Terminal Bonus I will get when my policy matures?
+  Answer : The Terminal Bonus (TB) you may receive upon maturity of your AIA Smart Flexi Growth plan is a **non-guaranteed discretionary bonus**. This means it is not fixed and can vary.  Here's what influences ...
+  intent_coverage        : 0.31 - Covered 5/16 points (31%):
+  [COVERED] The Terminal Bonus for the AIA Smart Flexi Growth plan is a non-guaranteed, discretionary bonus.
+  [COVERED] The actual amount received at maturity is determined by the experience of the Participating Fund.
+  [COVERED] Investment returns are a key factor in determining the bonus.
+  [COVERED] Investment returns can be volatile, with increases potentially leading to higher bonuses and declines potentially reducing them.
+  [MISSING] The bonus depends on the fund's past, prevailing, and projected future investment returns.
+  [MISSING] The fund's performance is affected by mortality and morbidity experience.
+  [MISSING] The fund's performance is affected by lapse and surrender rates.
+  [MISSING] The fund's performance is affected by business risks, such as demographic changes, product design, and marketing practices.
+  [MISSING] The fund's performance is affected by overall expense experience.
+  [COVERED] AIA applies 'smoothing' to provide more stable returns.
+  [MISSING] Smoothing involves spreading profits from good years to maintain bonus payouts during years with poorer performance.
+  [MISSING] The level of bonuses is decided by assessing current fund performance and the expected future outlook.
+  [MISSING] Terminal Bonus scales are usually reviewed annually.
+  [MISSING] Terminal Bonus scales can be adjusted at any time, particularly during adverse financial conditions.
+  [MISSING] Final declared bonuses are recommended by the Appointed Actuary.
+  [MISSING] Final declared bonuses are approved by AIA Singapore’s Board of Directors.
+  faithfulness           : 0.80 - The actual output successfully identifies the terminal bonus as a non-guaranteed, discretionary benefit and covers key factors like investment performance, smoothing, and the role of the participating fund. However, it misses specific details found in the expected output, such as the influence of mortality/morbidity experience, lapse rates, and the formal governance process involving the Appointed Actuary and the Board of Directors.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is perfectly supported by nodes in the retrieval context, specifically nodes 5, 7, 8, and 9, which comprehensively cover the bonus nature, performance factors, smoothing mechanisms, and approval processes.
+  ContextualPrecisionMetric : 0.34 - The score is 0.34 because the retrieval system failed to prioritize relevant information, placing five irrelevant nodes at ranks 1 through 5 that 'do not explain the factors determining the Terminal Bonus'. While relevant nodes containing details on 'key factors affecting the performance', 'non-guaranteed discretionary bonus' definitions, and 'Determination Of Terminal Bonuses' were eventually retrieved, their low ranking significantly penalized the precision score.
+  honesty                : 0.90 - The response accurately identifies the Terminal Bonus as a non-guaranteed discretionary benefit and correctly highlights the role of investment performance and smoothing. It maintains factual integrity by emphasizing that illustrated rates are not guarantees. While it provides a comprehensive explanation, it stops slightly short of explicitly stating its identity as an AI, though it otherwise adheres strictly to the policy terms and avoids sales-driven language.
+  helpfulness            : 0.90 - The response accurately identifies the factors influencing the Terminal Bonus for the AIA Smart Flexi Growth plan, such as investment performance, bonus philosophy, and policy duration. It is well-structured and directly addresses the user's query. The only minor shortcoming is a slight redundancy in the 'Policy Termination' and 'Policy Duration' bullet points, which repeat the same information regarding when the bonus is payable.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance concepts into accessible language and correctly identifies the factors influencing the Terminal Bonus. It structures the information logically, reducing cognitive load. However, it fails to provide a clear, actionable next step; instead of offering a link to a claim form, a portal, or a direct connection to an agent, it ends with a vague question that requires the user to provide more information, failing to resolve the user's need.
+
+[15/30] I was reading about the "Income Drawdown Facility" for the AIA Guaranteed Protect Plus (IV) plan. How does it work if I choose the 100% utilization option for my retirement?
+  Answer : The Income Drawdown Facility within the AIA Guaranteed Protect Plus (IV) plan offers a way to receive income for 10 years by surrendering a portion of your GPP (IV) Accumulator component's Insured Amo...
+  intent_coverage        : 0.93 - Covered 13/14 points (93%):
+  [COVERED] Under the 100% utilization option for the Income Drawdown Facility, AIA surrenders an amount equivalent to 10% of the Insured Amount of the GPP (IV) Accumulator component annually.
+  [COVERED] The surrendered cash value is paid to the policyholder as an annual payout for a period of 10 years.
+  [COVERED] The policy and any attached supplementary agreements will be terminated at the end of the 10-year payout period.
+  [COVERED] Annual payouts begin from the policy anniversary immediately following AIA's acceptance of the request.
+  [COVERED] With every annual payout, the Insured Amount of the GPP (IV) Accumulator component is reduced by the surrendered amount.
+  [COVERED] Annual payouts cannot be deposited with AIA to accumulate interest.
+  [COVERED] If the reduced GPP (IV) Accumulator Insured Amount drops below the Insured Amount of any attached supplementary agreements, the coverage for those supplementary agreements will be reduced to an amount determined by AIA.
+  [COVERED] The Income Drawdown Facility can only be utilized once during the Availability Period.
+  [COVERED] The Availability Period starts from the later of the Expiry Date of the GPP (IV) Booster component or the end of the premium payment term.
+  [COVERED] The Availability Period ends on the policy anniversary immediately following the insured's 85th birthday.
+  [COVERED] Requests must be submitted at least 6 months before the policy anniversary on which payouts are to begin.
+  [COVERED] Once AIA accepts the request, the decision is irreversible.
+  [COVERED] Changes to the 100% utilization ratio or the first payout date are not permitted after acceptance.
+  [MISSING] The Income Drawdown Facility can be cancelled at any time, but it cannot be used again if cancelled.
+  faithfulness           : 1.00 - The actual output accurately captures all essential key points from the expected output, including the 10% annual payout mechanism, the 10-year duration, the eventual termination of the policy, the impact on supplementary agreements, the availability period, and the irreversibility of the decision. It contains no factual contradictions and provides a comprehensive explanation of the 100% utilization option.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is perfectly supported by the nodes in the retrieval context, providing a comprehensive and accurate explanation of the Income Drawdown Facility.
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because all relevant nodes (ranks 1-4) are perfectly positioned at the top of the retrieval list, effectively preceding all irrelevant nodes (ranks 5-16). It is fantastic to see such a precise and well-ordered retrieval!
+  honesty                : 0.80 - The response accurately details the mechanics and constraints of the Income Drawdown Facility, including the impact on policy termination and insured amounts. It correctly identifies missing information regarding specific death benefit impacts and directs the user to a Supplementary Illustration. However, it fails to explicitly state its identity as an AI or provide a formal disclaimer that the information provided is for educational purposes and not legally binding, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.80 - The response effectively translates complex policy mechanics into clear, structured points that directly address the 100% utilization scenario. It avoids jargon and provides specific details regarding the impact on the Insured Amount and policy termination. While it provides excellent context, it falls slightly short on the final step; it suggests reviewing a Supplementary Illustration but does not provide a direct link to a request form or a clear path to contact an agent to initiate that process, requiring the user to perform additional research to obtain the document.
+  helpfulness            : 1.00 - The response accurately explains the mechanics of the 100% utilization option for the Income Drawdown Facility, including the payout structure, policy termination, and critical constraints. It directly addresses the user's query with clear, actionable information and provides necessary context regarding the impact on the policy and supplementary agreements.
+
+[16/30] I’m considering the 10-year AIA Secure Flexi Term (R&C) plan. How does the guaranteed renewal period change as I reach my 90s?
+  Answer : The AIA Secure Flexi Term (R&C) plan offers a guaranteed renewal period that changes as you get older, particularly as you approach and enter your 90s. The renewal term is designed to shorten with inc...
+  intent_coverage        : 1.00 - Covered 9/9 points (100%):
+  [COVERED] The 10-year AIA Secure Flexi Term (R&C) plan has a maximum coverage age of the policy anniversary following the 101st birthday.
+  [COVERED] The guaranteed renewal period decreases as the policyholder progresses through their 90s.
+  [COVERED] Before age 92, the policy renews for a 10-year period.
+  [COVERED] Between ages 92 and 96, the guaranteed renewal period is 5 years.
+  [COVERED] At age 97 and above, the renewal term covers only the remaining years up to the policy anniversary following the 101st birthday.
+  [COVERED] At age 97, the guaranteed renewal period is 4 years.
+  [COVERED] At age 98, the guaranteed renewal period is 3 years.
+  [COVERED] At age 99, the guaranteed renewal period is 2 years.
+  [COVERED] At age 100, the guaranteed renewal period is 1 year.
+  faithfulness           : 1.00 - The actual output accurately captures all key points from the expected output, including the specific renewal term reductions at age 92 and age 97, and correctly lists the remaining years for ages 97 through 100. There are no factual contradictions, and the information provided is complete and well-structured.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the nodes in the retrieval context perfectly capture all the details regarding the AIA Secure Flexi Term renewal periods, ensuring every sentence in the expected output is fully supported.
+  ContextualPrecisionMetric : 0.92 - The score is 0.92 because while the majority of relevant nodes are ranked highly, the precision is slightly lowered by the presence of an irrelevant node at rank 4, which discusses 'conversion privileges, which is not relevant to the specific question about guaranteed renewal periods.' The score remains high because all relevant nodes are positioned before the bulk of the irrelevant nodes, such as those at ranks 8 through 13, which discuss 'general YRT insurance,' 'general renewable options,' 'general disadvantages,' 'general premium payment structures,' 'general definitions,' and 'general policy alterations,' all of which are not specific to the plan's renewal table.
+  honesty                : 0.60 - The response accurately details the renewal terms for the specified plan; however, it fails to explicitly identify itself as an AI or provide a disclaimer distinguishing the information from legally binding coverage. While it correctly notes that premiums are not guaranteed, it lacks a formal regulatory disclaimer, which is a requirement for maintaining factual integrity and transparency.
+  tone_and_approach      : 0.70 - The response effectively translates complex policy terms into clear, structured information that directly answers the user's query about renewal periods in their 90s. It avoids jargon and minimizes cognitive load through a logical breakdown. However, it fails to provide a clear, actionable next step, such as a link to a premium calculator or a contact option for an agent, which is required by the evaluation criteria.
+  helpfulness            : 1.00 - The response directly addresses the user's query regarding the renewal structure of the AIA Secure Flexi Term (R&C) plan. It provides a clear, logically ordered breakdown of how the renewal terms shorten as the policyholder reaches their 90s, fulfilling the informational requirement accurately and concisely without unnecessary filler.
+
+[17/30] How does the "Smoothing of Bonuses" (or Dividends) mechanism work, and what is its primary objective for policyholders over the long term?
+  Answer : The "smoothing of bonuses" mechanism in participating insurance policies is designed to provide policyholders with more stable and predictable returns over the long term, rather than exposing them to ...
+  intent_coverage        : 1.00 - Covered 6/6 points (100%):
+  [COVERED] The smoothing of bonuses or dividends mechanism spreads profits and losses from the participating fund from one year to the next.
+  [COVERED] During good years, the insurer does not distribute all profits to policyholders through declared bonuses or dividends.
+  [COVERED] During poor years, profits held back from good years are used to maintain or increase returns distributed to policyholders.
+  [COVERED] The primary objective of the mechanism is to provide stability in returns to policyholders over the long term.
+  [COVERED] The mechanism shields policyholders from short-term market volatility.
+  [COVERED] The long-term cost of the smoothing practice is intended to remain broadly neutral across different generations of policyholders.
+  faithfulness           : 1.00 - The actual output accurately captures all core points from the expected output, including the mechanism of retaining profits during good years to support payouts during poor years. It correctly identifies the primary objective as providing long-term stability and shielding policyholders from market volatility, while also incorporating the concept of intergenerational fairness.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the retrieval context (nodes 2 and 3) perfectly captures all the details regarding the smoothing mechanism, its operational process during good and poor years, and its primary objective of ensuring long-term return stability for policyholders. Great job!
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because all relevant nodes are perfectly ranked at the top, providing comprehensive explanations of the smoothing mechanism and its objectives before any irrelevant nodes appear.
+  honesty                : 0.60 - The response provides a clear and accurate explanation of the bonus smoothing mechanism. However, it fails to explicitly identify itself as an AI and does not include a disclaimer distinguishing the information provided from legally binding coverage or specific policy guarantees, which is a requirement for regulatory compliance and transparency.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance jargon into clear, plain language and logically structures the information to minimize cognitive load. It accurately identifies the user's intent regarding the mechanism and objectives of bonus smoothing. However, it fails to provide a clear, actionable next step as required by the evaluation steps; the concluding question is conversational rather than a functional link or transition to a specific resource or agent.
+  helpfulness            : 1.00 - The response accurately explains the mechanism of bonus smoothing and its primary objective. It follows a logical structure, uses clear headings, and addresses all parts of the user's query without unnecessary filler, adhering to the requested informational tone.
+
+[18/30] If I sign up for the AIA Smart Flexi Rewards plan but realize a few days later it's not for me, can I cancel it and get a full refund?
+  Answer : If you decide to cancel your AIA Smart Flexi Rewards plan shortly after purchasing it, you generally have a **free-look period** during which you can receive a full refund of your premiums.  Here's wh...
+  intent_coverage        : 0.67 - Covered 6/9 points (67%):
+  [COVERED] The AIA Smart Flexi Rewards plan can be cancelled.
+  [COVERED] Refunds upon cancellation may be subject to deductions.
+  [COVERED] There is a 14-day free-look period to review policy documents and cancel the policy.
+  [COVERED] If cancelled during the free-look period, AIA refunds premiums paid.
+  [COVERED] Refunds are subject to deductions for medical fees and other expenses incurred by the insurer.
+  [MISSING] Medical fees and expenses include costs for medical check-ups and medical reports.
+  [MISSING] For electronic copies, the free-look period starts when the policyholder receives an SMS or email notification that documents are ready on the customer portal.
+  [MISSING] For policies sent by post, the free-look period starts 7 days from the date the policy was posted.
+  [COVERED] For policies delivered by hand, the free-look period starts 7 days from the date the policy was given to the postal/courier company or the insurance representative.
+  faithfulness           : 0.80 - The actual output correctly identifies the 14-day free-look period and the possibility of a refund. It captures the essential fact that deductions for medical fees may apply. However, it misses the specific details regarding the start date of the free-look period for electronic delivery and the specific timeline for postal delivery, which were included in the expected output.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is perfectly supported by the nodes in the retrieval context, with nodes 1, 5, and 6 providing comprehensive details on the cancellation policy, the free-look period, and the specific start date conditions.
+  honesty                : 0.80 - The response accurately explains the free-look period and refund conditions, including necessary caveats regarding medical fees and investment-linked adjustments. It maintains factual integrity and avoids sales-driven language. However, it fails to explicitly identify itself as an AI or include a formal disclaimer that the information provided does not constitute a legally binding guarantee, which is a requirement of the evaluation steps.
+  ContextualPrecisionMetric : 0.59 - The score is 0.59 because while the first node is highly relevant, the retrieval process failed to prioritize the other two relevant nodes (ranked 6th and 7th) over the irrelevant nodes ranked 2nd through 5th. Specifically, the nodes ranked 2nd, 3rd, 4th, and 5th, which discuss 'investment returns', 'policy termination', 'general disclaimers', and 'performance data', should have been ranked lower than the nodes at rank 6 and 7, which provide the essential '14-day free-look period' and 'refund policy' details.
+  helpfulness            : 1.00 - The response directly addresses the user's query regarding cancellation and refunds for the AIA Smart Flexi Rewards plan. It accurately explains the free-look period, provides necessary conditions for the refund, and offers actionable steps for cancellation, all while maintaining a helpful and professional tone.
+  tone_and_approach      : 0.80 - The response effectively translates the 'free-look period' jargon into plain language and accurately addresses the user's intent regarding cancellation and refunds. It provides specific policy details, including the 14-day window and potential deductions. However, it falls short on the final step by failing to provide a direct, actionable link to a cancellation form or a specific contact channel for a human agent, instead offering a vague suggestion to 'write to AIA'.
+
+[19/30] I'm looking at the AIA Guaranteed Protect Plus (IV). How does the 'Premium Pass Option' help me if I lose my job, and are there any types of unemployment that aren't covered?
+  Answer : The AIA Guaranteed Protect Plus (IV) offers a "Premium Pass Option" that can provide temporary relief from premium payments in the event of involuntary retrenchment.  Here's how it works and what to c...
+  intent_coverage        : 0.70 - Covered 19/27 points (70%):
+  [COVERED] The Premium Pass Option is available under the AIA Guaranteed Protect Plus (IV) policy.
+  [COVERED] The Premium Pass Option is designed to help maintain coverage during involuntary retrenchment.
+  [MISSING] To activate the option, the policyholder must be involuntarily retrenched and unable to secure full-time employment for 2 months.
+  [COVERED] Activation allows the policyholder to stop paying premiums for 12 consecutive months.
+  [COVERED] During the 12-month Premium Pass Period, the policy remains fully in force.
+  [MISSING] No interest is charged on the deferred premiums during the 12-month deferment period.
+  [MISSING] After the 12-month deferment, there is an interest-free loan to repay the deferred amount over the following 12 months.
+  [COVERED] Repayment of the deferred amount is subject to the policy having sufficient guaranteed cash value.
+  [COVERED] Repayment can be made in a lump sum or in regular instalments.
+  [COVERED] Eligibility requires the policy to have been in force for at least three years with all premiums fully paid.
+  [COVERED] The Premium Pass Option can only be exercised once during the lifetime of the policy.
+  [COVERED] The option is strictly for involuntary retrenchment from full-time employment.
+  [COVERED] The option does not apply if the individual was not a full-time employee.
+  [COVERED] The option does not apply if the individual had not worked in their last job for at least 6 consecutive months.
+  [COVERED] The option does not apply to partial, seasonal, or casual employment.
+  [COVERED] The option does not apply to self-employed individuals or independent contractors.
+  [COVERED] The option does not apply if the individual was employed by an immediate family member.
+  [COVERED] The option does not apply if the individual or their family had control over employee terminations.
+  [COVERED] The option does not apply to termination due to retirement or resignation.
+  [COVERED] The option does not apply to termination due to misconduct, negligence, unlawful behaviour, or breach of employment terms.
+  [MISSING] The option does not apply to the natural end of a fixed-term or interim contract.
+  [MISSING] The option does not apply to failure to pass a probation period.
+  [MISSING] The option does not apply to a leave of absence, whether paid or unpaid.
+  [MISSING] The option does not apply to unemployment due to disability or injury, including sickness, pregnancy, childbirth, or accidents.
+  [MISSING] The option does not apply to military discharge or service.
+  [COVERED] The option does not apply to voluntary forfeiture of income.
+  [COVERED] The option does not apply to job loss due to strikes, labour disputes, riots, or civil commotion.
+  faithfulness           : 0.90 - The actual output accurately explains the Premium Pass Option and covers the vast majority of exclusions. It correctly identifies the eligibility requirements and the nature of the benefit. The only minor discrepancy is a slight difference in the description of the repayment structure compared to the expected output, but the core information regarding the deferment and the specific types of unemployment not covered is comprehensive and well-aligned.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is perfectly supported by nodes 1 through 6 in the retrieval context. Great job capturing all the details!
+  ContextualPrecisionMetric : 0.95 - The score is 0.95 because the system successfully prioritized highly relevant information in the first four nodes, which detail the 'Premium Pass Option', its activation, and specific unemployment exclusions. The score is not higher because the fifth node, which 'provides general information about the AIA Guaranteed Protect Plus (IV) plan but does not contain specific details about the Premium Pass Option', is ranked ahead of several other relevant nodes (nodes 6 and 7), causing a slight drop in precision.
+  honesty                : 0.80 - The response accurately details the Premium Pass Option and lists specific exclusions as requested. It maintains factual integrity and avoids sales-driven language. However, it fails to explicitly state that it is an AI and does not include a formal disclaimer clarifying that the information provided is for educational purposes and does not constitute a legally binding coverage guarantee.
+  tone_and_approach      : 0.90 - The response effectively translates complex policy terms into clear, accessible language and directly addresses the user's specific questions about the Premium Pass Option and its exclusions. It provides precise, policy-specific details rather than generic information and uses a logical structure that minimizes cognitive load. While it offers a helpful transition to a human agent, it falls slightly short of a perfect score by not providing a direct link to a claim form or specific policy document page to fully resolve the user's need without further interaction.
+  helpfulness            : 1.00 - The response directly addresses the user's query about the Premium Pass Option in the AIA Guaranteed Protect Plus (IV). It clearly explains the mechanism of the benefit and provides a comprehensive list of exclusions regarding unemployment types, fulfilling all aspects of the user's request with accurate, well-structured information.
+
+[20/30] If I get totally and permanently disabled, how does the payout work for the AIA Smart Wealth Builder (II) plan, and are there any specific actions or accidents that would disqualify me from claiming?
+  Answer : If you become totally and permanently disabled (TPD) under the AIA Smart Wealth Builder (II) plan, the policy will pay out the **death benefit** as an accelerated benefit. This means the death benefit...
+  intent_coverage        : 0.50 - Covered 6/12 points (50%):
+  [MISSING] The TPD benefit is payable if the disability occurs before the policy anniversary on or immediately following the insured's 70th birthday.
+  [MISSING] The TPD benefit is paid out in one lump sum.
+  [COVERED] The TPD benefit is an accelerated benefit that pays out the death benefit of the basic policy.
+  [COVERED] The policy automatically terminates after the TPD benefit is paid in full.
+  [MISSING] The lump-sum payout is the higher of 105% of total premiums paid (including waived premiums) or 101% of the guaranteed cash value plus non-surrendered bonuses.
+  [MISSING] For single premium plans, the payout calculation uses 105% of the single premium paid.
+  [MISSING] Any amounts owed to AIA under the policy will be deducted from the final payout.
+  [COVERED] TPD claims are disqualified if caused by deliberate acts that endanger oneself, including violating the law, resisting arrest, suicide, attempted suicide, intentional self-injury, or exposing oneself to exceptional danger.
+  [COVERED] An exception to the deliberate acts exclusion is attempting to save a human life.
+  [COVERED] TPD claims are disqualified if caused by military or war service, including air, military, or naval service during war or warlike operations.
+  [COVERED] TPD claims are disqualified if caused by aviation-related activities, such as entering, operating, servicing, riding in, or ascending/descending from an aerial device.
+  [MISSING] Exceptions to the aviation exclusion include traveling on a commercial passenger airline on a regularly scheduled route or in an aircraft operated by the Republic of Singapore Air Force.
+  faithfulness           : 0.60 - The actual output correctly identifies that the TPD benefit is an accelerated death benefit and lists the general exclusions. However, it fails to mention the specific calculation method for the payout (the higher of 105% of premiums or 101% of cash value plus bonuses), which is a core component of the expected output. Additionally, it provides an incorrect age threshold for TPD coverage (65 instead of 70) and omits the specific exception for Republic of Singapore Air Force personnel regarding aviation activities.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is fully supported by the nodes in the retrieval context, covering the TPD benefit terms, payout calculations, and specific policy exclusions.
+  ContextualPrecisionMetric : 0.67 - The score is 0.67 because while the first node correctly identifies the payout structure, the second node is an irrelevant node that provides only general product information, which should have been ranked lower. Furthermore, the third node is a relevant node that correctly identifies exclusions, but the fourth and fifth nodes are irrelevant nodes that discuss unrelated benefits, further diluting the precision of the ranking.
+  honesty                : 0.70 - The response accurately details the TPD payout structure and exclusions, adhering to the policy terms. However, it fails to explicitly identify itself as an AI or provide a disclaimer distinguishing the information from legally binding contract terms, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.80 - The response effectively translates complex TPD definitions into clear, accessible language and directly addresses the user's query regarding payout mechanics and exclusions. It provides specific, policy-relevant details rather than generic advice. However, it falls short on the final evaluation step by failing to provide a direct, actionable next step, such as a link to a claim form or a contact method for a human agent, instead ending with a rhetorical question.
+  helpfulness            : 1.00 - The response accurately explains the TPD payout mechanism as an accelerated death benefit, details the age-specific definitions and ADLs, and clearly lists the exclusions and disqualifying events. It directly addresses all parts of the user's query with actionable information and maintains a professional tone.
+
+[21/30] Assuming the funds grow at 4.25%, which plan gives a better annual bonus: the 5-year payment AIA Smart Flexi Growth or the AIA Smart Goal 10? And by how much?
+  Answer : Let's compare the annual bonus projections for the AIA Smart Flexi Growth (5-Pay option) and AIA Smart Goal 10, assuming a 4.25% fund growth rate.  ### AIA Smart Flexi Growth (5-Pay Option)  *   **Rev...
+  faithfulness           : 1.00 - The actual output accurately identifies the AIA Smart Flexi Growth as the plan with the better annual bonus. It correctly cites the specific bonus rates (S$45 vs S$31) and compounding rates (4.5% vs 3.1%) found in the expected output. Furthermore, it explicitly calculates the difference of S$14 per S$1,000 insured amount, fully addressing all key points requested in the prompt.
+  intent_coverage        : 1.00 - Covered 8/8 points (100%):
+  [COVERED] The comparison assumes an illustrated investment rate of return of 4.25%.
+  [COVERED] The 5-year payment AIA Smart Flexi Growth plan provides a better annual bonus (Reversionary Bonus) than the AIA Smart Goal 10.
+  [COVERED] The illustrated annual bonus for the 5-year payment AIA Smart Flexi Growth is S$45 per S$1,000 Insured Amount.
+  [COVERED] The annual bonus for the 5-year payment AIA Smart Flexi Growth compounds at 4.5%.
+  [COVERED] The illustrated annual bonus for the AIA Smart Goal 10 is S$31 per S$1,000 Insured Amount.
+  [COVERED] The annual bonus for the AIA Smart Goal 10 compounds at 3.1%.
+  [COVERED] The 5-year payment AIA Smart Flexi Growth provides S$14 more per S$1,000 Insured Amount each year compared to the AIA Smart Goal 10.
+  [COVERED] The bonus for the 5-year payment AIA Smart Flexi Growth compounds at a 1.4% higher rate than the AIA Smart Goal 10.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all information in the expected output is perfectly supported by the data provided in node(s) in retrieval context 1 and 7. Great job capturing all the details accurately!
+  honesty                : 0.60 - The response provides a clear comparison but fails to explicitly identify itself as an AI, which is a requirement for transparency. While it correctly highlights the non-guaranteed nature of the bonuses and avoids sales-driven language, it makes a definitive comparison between two products without explicitly stating that it lacks the specific policy illustrations required to provide a legally accurate or personalized financial recommendation, potentially misleading the user into relying on these figures for a decision.
+  ContextualPrecisionMetric : 0.68 - The score is 0.68 because while the first node correctly identifies the 'Reversionary Bonus (RB) rate for the AIA Smart Flexi Growth 5-Pay plan', the precision is diluted by the placement of several irrelevant nodes. Specifically, the second node is irrelevant as it 'Provides information on the Guaranteed Maturity Amount' rather than the requested bonus figures, and the eighth node, which contains the essential 'Reversionary Bonus (RB) rate for the AIA Smart Goal 10 plan', is ranked too low, appearing after multiple irrelevant nodes that discuss 'historical expense ratios', 'asset allocation', and 'general product summary' information.
+  tone_and_approach      : 0.70 - The response effectively translates complex bonus structures into a clear comparison and addresses the user's specific query regarding the 4.25% growth scenario. It provides relevant policy details and explains the differences in compounding rates. However, it fails to provide a clear, actionable next step, such as a link to a calculator or a direct contact for a personalized illustration, leaving the user to perform further research to determine their specific total payout.
+  helpfulness            : 0.70 - The response correctly identifies that the AIA Smart Flexi Growth offers a higher illustrated bonus rate than the AIA Smart Goal 10. However, it fails to quantify the difference 'by how much' in a meaningful way, as it only provides the base rates per S$1,000 without calculating the total monetary difference or providing a comparative projection, which was a specific requirement of the prompt.
+
+[22/30] If I need a heart angioplasty, is the maximum payout different if I have the 'Critical Cover Accelerator' rider instead of the 'DIRECT - CI for Term Cover' rider?
+  Answer : When considering a heart angioplasty, the maximum payout can differ significantly between the 'Critical Cover Accelerator' rider and the 'DIRECT - CI for Term Cover' rider.  Here's a breakdown:  **Cri...
+  intent_coverage        : 1.00 - Covered 6/6 points (100%):
+  [COVERED] The maximum payout in Singapore Dollars for Angioplasty & Other Invasive Treatment for Coronary Artery is not different between the two riders.
+  [COVERED] Under the Critical Cover Accelerator rider, the maximum payout for Angioplasty & Other Invasive Treatment for Coronary Artery is S$25,000.
+  [COVERED] Under the DIRECT - CI for Term Cover rider, the maximum payout for Angioplasty & Other Invasive Treatment for Coronary Artery is S$25,000.
+  [COVERED] For both riders, the payout for this condition is calculated as 10% of the insured amount of the supplementary benefit.
+  [COVERED] The payout for this condition is subject to a maximum limit of S$25,000 for both riders.
+  [COVERED] The Critical Cover Accelerator rider specifies an alternative maximum claim limit of US$18,000 for policies denominated in US Dollars.
+  faithfulness           : 0.80 - The actual output correctly identifies the 10% calculation and the S$25,000 cap for both riders. However, it incorrectly states that the maximum payout 'can differ significantly' when the expected output clarifies that the maximum payout in Singapore Dollars is identical for both. It successfully captures the US$18,000 nuance, but the initial framing contradicts the expected conclusion regarding the equivalence of the S$25,000 limit.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the nodes in retrieval context perfectly provide all the necessary details regarding the S$25,000 payout cap, the 10% calculation method, and the US$18,000 alternative limit for both riders mentioned in the expected output. Great job capturing all the key information!
+  ContextualPrecisionMetric : 0.58 - The score is 0.58 because while the first two nodes correctly identify the payout for the 'Critical Cover Accelerator' rider, the retrieval process failed to prioritize all relevant information. Specifically, the third node (an irrelevant node stating 'This document discusses general exclusions and waiting periods for the Critical Cover Accelerator rider') is ranked higher than the ninth and tenth nodes, which contain the essential payout information for the 'DIRECT - CI for Term Cover' rider. The score is not higher because several irrelevant nodes, such as those discussing general definitions of critical illnesses (nodes 4 through 8), are interspersed before the remaining relevant nodes, negatively impacting the precision of the ranking.
+  tone_and_approach      : 0.80 - The response effectively translates complex policy terms into clear, structured comparisons and correctly identifies the user's intent regarding payout differences. It avoids jargon and minimizes cognitive load through a logical layout. However, it falls short on the final evaluation step by failing to provide a direct, actionable next step, such as a link to a claim form or a contact method for a human agent, instead ending with a question that requires further user effort.
+  honesty                : 0.70 - The output accurately compares the payout structures and limitations of both riders, including the specific S$25,000 cap and the accelerated nature of the benefits. It correctly identifies the need for specific policy details to provide a precise calculation. However, it fails to explicitly state its identity as an AI or include a formal disclaimer that the information provided is for educational purposes and not legally binding, which is a requirement of the evaluation steps.
+  helpfulness            : 1.00 - The response directly addresses the user's query by comparing the two specific riders. It provides clear, actionable information regarding the payout percentages, claim limits, and the impact on the basic policy for both options. The information is logically structured, easy to follow, and adheres to the technical requirements of the request.
+
+[23/30] I'm comparing the AIA Platinum Gift for Life Plus (II) and the AIA Smart Flexi Growth. Do they invest my premiums differently when it comes to safe bonds versus riskier assets?
+  Answer : When comparing the AIA Platinum Gift for Life Plus (II) and AIA Smart Flexi Growth, their investment strategies differ in their allocation between bonds and riskier assets.  Here's a breakdown:  **AIA...
+  intent_coverage        : 1.00 - Covered 9/9 points (100%):
+  [COVERED] The AIA Smart Flexi Growth and AIA Platinum Gift for Life Plus (II) plans invest premiums differently.
+  [COVERED] The AIA Smart Flexi Growth allocates a larger proportion of its fund to riskier assets compared to the AIA Platinum Gift for Life Plus (II).
+  [COVERED] The AIA Platinum Gift for Life Plus (II) participating fund has a target investment mix of 80% in bonds and 20% in riskier assets.
+  [COVERED] Riskier assets for the AIA Platinum Gift for Life Plus (II) include listed common stocks, private equity, alternative investments, funds, and real estate.
+  [COVERED] As of December 31, 2024, the actual investment mix of the AIA Platinum Gift for Life Plus (II) is 80% in bonds and 20% in riskier assets.
+  [COVERED] The AIA Smart Flexi Growth plan has a target investment mix of 65% in bonds and 35% in riskier assets.
+  [COVERED] As of December 31, 2024, the actual investment mix of the AIA Smart Flexi Growth is 66% in bonds and 34% in riskier assets.
+  [COVERED] The AIA Platinum Gift for Life Plus (II) leans more heavily on bonds compared to the AIA Smart Flexi Growth.
+  [COVERED] The AIA Smart Flexi Growth dedicates more premiums to riskier assets than the AIA Platinum Gift for Life Plus (II) to pursue targeted returns.
+  faithfulness           : 0.90 - The actual output accurately identifies the core differences in asset allocation between the two plans, correctly noting that the Smart Flexi Growth has a higher exposure to riskier assets compared to the Platinum Gift for Life Plus (II). It provides the specific percentages requested and maintains factual consistency with the expected output. The only minor omission is the specific reference date (December 31, 2024) for the current investment mix, which does not detract from the essential accuracy of the comparison.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by the data provided in node(s) in retrieval context 1 and 8. Excellent work capturing the precise investment allocations for both plans!
+  ContextualPrecisionMetric : 0.79 - The score is 0.79 because while the first two nodes correctly identify the asset allocation for the AIA Platinum Gift for Life Plus (II), the retrieval system placed several irrelevant nodes (ranks 3-7) before the relevant node for the AIA Smart Flexi Growth (rank 8). The score is not higher because these irrelevant nodes, which discuss 'historical performance', 'general product information', 'benefits and policy terms', 'expense ratios', and 'risk sharing', interrupted the flow of pertinent information regarding the requested asset allocations.
+  honesty                : 0.60 - The response provides a clear comparison of asset allocations and maintains factual integrity regarding the risk profiles of the two plans. However, it fails to explicitly identify itself as an AI, nor does it include a disclaimer distinguishing the provided information from legally binding coverage or premium guarantees, which is a requirement for financial product discussions.
+  tone_and_approach      : 0.80 - The response effectively translates complex investment strategies into clear, comparative language and directly addresses the user's query regarding asset allocation. It provides specific, relevant data from the policy documents rather than generic summaries. While it structures information logically to minimize cognitive load, it falls short on the final step by failing to provide a concrete, actionable next step, such as a link to a product brochure, a financial calculator, or a contact option for an advisor.
+  helpfulness            : 1.00 - The response directly addresses the user's query by comparing the asset allocation strategies of the two specific AIA products. It clearly distinguishes between the bond and risky asset percentages for each plan, explains the implications of these allocations, and maintains a logical, structured format that is easy to follow.
+
+[24/30] How much guaranteed cash back will I get each year if I buy the 5-year payment AIA Smart Flexi Rewards (II) plan?
+  Answer : The AIA Smart Flexi Rewards (II) (5-Pay) plan offers a **guaranteed yearly coupon** benefit. This coupon is paid starting from the second policy anniversary until one year before the policy maturity. ...
+  intent_coverage        : 1.00 - Covered 6/6 points (100%):
+  [COVERED] The plan is the 5-year payment AIA Smart Flexi Rewards (II) plan.
+  [COVERED] The plan provides a guaranteed yearly coupon (cash back).
+  [COVERED] The yearly coupon is equivalent to 15% of the Insured Amount.
+  [COVERED] The yearly coupon payments start from the 2nd policy anniversary.
+  [COVERED] The yearly coupon payments continue until the policy anniversary one year before the plan matures.
+  [COVERED] The Insured Amount used to calculate the cash back is equal to the Annual Premium before any large case size discounts.
+  faithfulness           : 1.00 - The actual output accurately identifies the 15% of the Insured Amount as the guaranteed yearly coupon and correctly defines the Insured Amount as the annual premium before discounts. It also includes the correct timing for the payments (starting from the 2nd policy anniversary until one year before maturity), fully aligning with all key points in the expected output.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by the information provided in node(s) in retrieval context 1 and 4, demonstrating excellent retrieval accuracy!
+  honesty                : 0.90 - The response accurately identifies the guaranteed coupon structure and distinguishes between guaranteed and non-guaranteed benefits. It correctly directs the user to their specific policy illustration for the exact Insured Amount, avoiding unsubstantiated guesses. While it provides clear information, it lacks an explicit disclaimer identifying itself as an AI, which is a minor omission regarding the evaluation criteria.
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because the first node perfectly identifies the guaranteed yearly coupon as '15% of the Insured Amount,' ensuring the only relevant information is ranked at the very top!
+  helpfulness            : 0.90 - The response accurately identifies the guaranteed cash back mechanism (15% of the Insured Amount) and explains how it is calculated. It provides all necessary context regarding the timing of the payments and correctly distinguishes between the Insured Amount and the death benefit. The only minor shortcoming is that it cannot provide a specific dollar amount without the user's policy illustration, which is handled appropriately by explaining the calculation method and asking for the missing variables.
+  tone_and_approach      : 0.80 - The response effectively translates insurance jargon by clarifying that the 'Insured Amount' is based on the annual premium rather than the death benefit. It directly addresses the user's query about the 5-year payment plan and provides relevant policy details. However, it falls short on the final evaluation step; while it asks a follow-up question, it fails to provide a direct, actionable link to a quote tool or a clear path to speak with an agent, requiring the user to perform further research to proceed.
+
+[25/30] Is there a maximum cap on what AIA will pay out for a total and permanent disability claim?
+  Answer : Yes, there are limits on the total payout for Total and Permanent Disability (TPD) claims.  Most insurers, including AIA, typically place a cap on the aggregate amount of TPD benefit they will pay acr...
+  intent_coverage        : 0.25 - Covered 1/4 points (25%):
+  [COVERED] There is a maximum cap for a total and permanent disability (TPD) claim.
+  [MISSING] The TPD benefit is subject to a per-life limit of S$7,500,000.
+  [MISSING] The maximum cap is aggregated across all other policies, riders, or supplementary benefits issued on the same life.
+  [MISSING] If policies are issued in other currencies, the company determines a conversion rate to calculate the limit.
+  faithfulness           : 0.20 - The actual output provides incorrect figures, specifically citing a S$2,000,000 aggregate limit and a S$92,000,000 limit for whole life policies, which contradicts the expected per-life limit of S$7,500,000. It fails to mention that the cap is aggregated across all policies and riders, and it omits the critical detail regarding currency conversion for policies issued in other currencies.
+  ContextualRecallMetric : 0.50 - The score is 0.50 because while nodes in retrieval context 1 and 6 confirm the existence of an aggregate TPD benefit limit, the specific S$7,500,000 cap and the details regarding currency conversion rates are not supported by the provided information.
+  ContextualPrecisionMetric : 0.00 - The score is 0.00 because all nodes in the retrieval contexts are irrelevant to the input. Specifically, the first node is irrelevant because "This document mentions that insurers place a limit on TPD benefits, but the specific figure mentioned (S$2,000,000) does not match the S$7,500,000 cap specified in the expected output," and all subsequent nodes (2 through 8) also fail to provide the requested information, resulting in no relevant nodes being ranked at all.
+  honesty                : 0.60 - The response provides helpful context regarding TPD caps but fails to explicitly identify itself as an AI or include a disclaimer that the information provided is not legally binding, which is a requirement of the evaluation steps. While it maintains a factual tone and avoids sales-driven language, it lacks the necessary regulatory disclosures and fails to clarify that specific policy terms should be verified against the user's actual contract.
+  tone_and_approach      : 0.60 - The response successfully translates insurance jargon into accessible language and provides specific, relevant figures regarding TPD caps. However, it fails to meet the requirement for a clear, actionable next step; instead of providing a link to a policy document, a claim form, or a transition to an agent, it ends with two open-ended questions that place the burden of further research back on the user.
+  helpfulness            : 0.80 - The response directly addresses the user's query regarding payout caps for TPD claims. It provides specific examples of limits and explains the factors influencing coverage. However, the figure of S$92,000,000 for Whole Life Insurance appears to be a significant factual error or typo, as such a high cap is not standard for individual TPD benefits, which undermines the accuracy of the information provided.
+
+[26/30] When exactly does the extra 'Booster' coverage on my AIA Guaranteed Protect Plus (IV) policy end?
+  Answer : The extra "Booster" coverage on your AIA Guaranteed Protect Plus (IV) policy ends on the policy anniversary that occurs on or immediately following your 65th or 75th birthday. This date is referred to...
+  intent_coverage        : 1.00 - Covered 8/8 points (100%):
+  [COVERED] The 'Booster' component of the AIA Guaranteed Protect Plus (IV) policy ends on its Expiry Date.
+  [COVERED] The Expiry Date is the policy anniversary occurring on or immediately following the Insured's 65th or 75th birthday.
+  [COVERED] The specific Expiry Date depends on whether the multiplier cutoff age of 65 or 75 was chosen.
+  [COVERED] For Death Benefits, the Booster coverage expires on the policy anniversary on or immediately following the 65th or 75th birthday.
+  [COVERED] For Total & Permanent Disability (TPD) Benefits, the Booster coverage expires on the policy anniversary on or immediately following the 65th birthday if the 65 cutoff age was chosen.
+  [COVERED] For Total & Permanent Disability (TPD) Benefits, the Booster coverage expires on the policy anniversary on or immediately following the 70th birthday if the 75 cutoff age was chosen.
+  [COVERED] Booster coverage automatically terminates earlier than the stated expiry dates if the basic policy is converted to reduced paid-up insurance.
+  [COVERED] Booster coverage automatically terminates earlier than the stated expiry dates if the basic policy is converted to extended term insurance.
+  faithfulness           : 0.60 - The actual output correctly identifies the general expiry age for the Booster component but fails to mention the specific distinction for Total & Permanent Disability (TPD) benefits. Specifically, it omits the fact that for the 75-year multiplier cutoff, the TPD booster coverage expires at age 70, which is a critical piece of information present in the expected output.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by nodes 1, 2, and 4 in the retrieval context. Great job capturing all the necessary details!
+  ContextualPrecisionMetric : 0.83 - The score is 0.83 because while the first node correctly identifies the expiry date, the third node—which also contains the relevant expiry conditions—is ranked behind an irrelevant second node that 'does not provide the specific expiry age details'. The score is not higher because several irrelevant nodes, such as the second, fourth, and fifth nodes, are interspersed among the relevant information, preventing a perfect ranking.
+  honesty                : 0.80 - The response accurately identifies the conditions for the Booster coverage expiry and includes necessary caveats regarding the multiplier cutoff age. It correctly directs the user to their policy contract for specific details. However, it fails to explicitly state its identity as an AI or clarify that the information provided is for educational purposes rather than a legally binding guarantee, which is a requirement of the evaluation steps.
+  tone_and_approach      : 0.80 - The response effectively translates policy jargon into clear language and accurately identifies the user's intent regarding the Booster coverage expiry. It provides specific, relevant details about the age-based milestones. However, it falls short on the final evaluation step by failing to provide a direct, actionable link or a seamless transition to a human agent, instead placing the burden on the user to contact AIA themselves.
+  helpfulness            : 1.00 - The response accurately identifies the user's goal regarding the Booster coverage expiry. It provides the correct technical criteria (age 65 or 75), explains the conditions for termination, and includes a helpful call to action for the user to verify their specific policy details.
+
+[27/30] What's the absolute minimum I have to pay if I want the 10-year payment plan for the AIA Smart Wealth Builder (II)?
+  Answer : The minimum premium payment for the AIA Smart Wealth Builder (II) with a 10-year payment plan is **S$3,600**.  This minimum premium is set by the product's structure. For the AIA Smart Wealth Builder ...
+  intent_coverage        : 1.00 - Covered 3/3 points (100%):
+  [COVERED] The product is the AIA Smart Wealth Builder (II).
+  [COVERED] The premium payment option is 10 years.
+  [COVERED] The minimum premium is $3,600.
+  faithfulness           : 1.00 - The actual output accurately identifies the minimum premium for the 10-year payment plan as S$3,600, which aligns perfectly with the expected output. It also provides additional helpful context regarding other payment terms without introducing any factual contradictions.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because the retrieval context perfectly captures the required information, with node 1 accurately confirming the $3,600 minimum premium for the 10-year payment plan.
+  ContextualPrecisionMetric : 1.00 - The score is 1.00 because the first node perfectly identifies that 'The minimum premium for a 10-year payment plan is $3,600,' and all subsequent irrelevant nodes are correctly ranked lower, ensuring the most accurate information is prioritized!
+  honesty                : 0.40 - The response fails to identify itself as an AI and does not include a disclaimer distinguishing between general information and legally binding coverage. While it provides the requested premium figure, it lacks the necessary regulatory disclosures and fails to mention that premium requirements can be subject to underwriting or specific policy conditions, potentially misleading the user by presenting the figures as absolute.
+  tone_and_approach      : 0.80 - The response directly answers the user's specific query about the 10-year payment plan with the correct figure. It uses plain language to explain the impact of premium levels on policy performance. While it provides relevant policy details, it falls slightly short on the final step by offering a follow-up question rather than providing a direct, actionable link to a quote tool or a contact method for a human agent to finalize the process.
+  helpfulness            : 1.00 - The response directly answers the user's specific question regarding the minimum premium for the 10-year plan. It provides the requested figure clearly, includes helpful context regarding other payment options for comparison, and maintains a professional tone without unnecessary filler.
+
+[28/30] What exactly is an endowment policy, and how does it work?
+  Answer : An endowment policy is a type of life insurance that combines insurance protection with a savings component. It is designed to pay out a death benefit if the insured person dies during the policy term...
+  helpfulness            : 1.00 - The response accurately defines an endowment policy and explains its mechanics clearly. It addresses the user's intent by breaking down the dual-purpose nature, premium structure, and benefit types. The information is logically ordered, actionable, and includes relevant context regarding policy types and tax implications, fulfilling all requirements without unnecessary filler.
+  tone_and_approach      : 0.70 - The response effectively translates complex insurance concepts into plain language and provides a clear, structured explanation of how endowment policies function. It successfully identifies the user's intent to understand the product mechanics. However, it fails to provide a clear, actionable next step, such as a link to a product comparison tool, a quote generator, or a contact option for a human advisor, which leaves the user without a direct path to resolve their potential interest in the policy.
+  honesty                : 0.60 - The response provides a clear and accurate educational overview of endowment policies. However, it fails to explicitly identify itself as an AI or include a disclaimer stating that the information provided does not constitute legally binding financial or insurance advice, which is a requirement for regulatory compliance and transparency.
+  ContextualPrecisionMetric : 0.70 - The score is 0.70 because, while the majority of relevant nodes are present, the first node is an irrelevant introductory sentence that should have been ranked lower than the subsequent relevant nodes. Additionally, several irrelevant nodes regarding tax relief, claims, and general life insurance were interspersed among the relevant content, preventing a perfect score.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are perfectly supported by the corresponding node(s) in retrieval context, demonstrating excellent alignment and comprehensive information retrieval!
+  faithfulness           : 0.80 - The actual output accurately defines an endowment policy and covers the core mechanics, including premiums, maturity/death benefits, and participating vs. non-participating structures. It is well-structured and factually correct. However, it misses some of the specific details found in the expected output, such as the inclusion of Total and Permanent Disability (TPD) coverage, the mention of non-forfeiture options like automatic premium loans, and the discussion of specific variations like Anticipated Endowment Insurance and practical applications like education funding.
+  intent_coverage        : 0.52 - Covered 13/25 points (52%):
+  [COVERED] An endowment policy is a type of life insurance that provides both financial protection and a savings element.
+  [MISSING] Endowment policies combine characteristics of term insurance and permanent whole life insurance.
+  [COVERED] Like term insurance, endowment policies provide coverage for a specific, stated period of time.
+  [MISSING] Like whole life insurance, endowment policies feature level death benefits and a cash value that increases over the policy duration.
+  [COVERED] Endowment policies are structured around a fixed term, ranging from 10 to 40 years or more.
+  [COVERED] Endowment policies can be set to mature when the insured reaches a specific age, such as 55, 60, or 65.
+  [COVERED] If the insured survives to the end of the term, the policy reaches maturity, insurance coverage ceases, and the insurer pays the maturity value.
+  [COVERED] The policy benefit is paid out as a maturity value if the insured survives the term.
+  [COVERED] The policy benefit is paid out as a death benefit if the insured passes away before the term expires.
+  [MISSING] Endowment policies typically cover Total and Permanent Disability (TPD).
+  [MISSING] TPD benefits are paid as a lump sum or in installments if the insured becomes disabled.
+  [COVERED] Premiums for endowment insurance are generally higher than those for term or whole life insurance due to the savings and investment element.
+  [COVERED] Premiums are typically paid as a fixed amount on a regular basis, though single lump-sum payments are permitted.
+  [MISSING] The policy builds up cash value quickly, which is available if the policy is surrendered early.
+  [COVERED] Cash value allows the owner to take out policy loans.
+  [MISSING] Cash value allows the owner to utilize non-forfeiture options, such as an automatic premium loan, to prevent the policy from lapsing.
+  [COVERED] Participating policies allow the owner to share in the insurer's profits through accumulated bonuses added to benefits.
+  [COVERED] Non-participating policies do not accrue bonuses and pay out the originally stated sum assured.
+  [MISSING] Anticipated Endowment Insurance is a variation that distributes cash payments (a percentage of the sum assured) at regular intervals.
+  [MISSING] In Anticipated Endowment Insurance, receiving cash payments does not reduce the death benefit.
+  [MISSING] In Anticipated Endowment Insurance, the full sum assured plus bonuses are paid if the insured dies.
+  [MISSING] Policy owners can leave cash payments from Anticipated Endowment Insurance with the insurer to accumulate interest.
+  [COVERED] Endowment policies are used to guarantee a specific amount of assets will be available at a target date.
+  [MISSING] Endowment policies are used for education funding, such as saving for university fees.
+  [MISSING] Endowment policies are used for retirement planning or large purchases like buying a house.
+
+[29/30] What are the biggest disadvantages of endowment insurance?
+  Answer : Endowment insurance policies, while offering a blend of insurance protection and savings, come with several potential disadvantages that are important to consider.  Here are some of the key drawbacks:...
+  helpfulness            : 1.00 - The response directly addresses the user's request by identifying the primary disadvantages of endowment insurance. It provides clear, actionable, and logically ordered points, supported by specific examples from the AIA Smart Flexi Growth product to illustrate concepts like fees, returns, and surrender penalties. The tone is professional, and it adheres to all implicit constraints by providing a comprehensive and relevant answer without unnecessary filler.
+  tone_and_approach      : 0.80 - The response effectively translates complex insurance concepts into plain language and provides specific, grounded examples using the AIA Smart Flexi Growth policy to illustrate drawbacks like fees and returns. It successfully identifies the user's intent to understand the downsides of endowment plans. However, it falls short on the final evaluation step by failing to provide a clear, actionable next step, such as a link to a financial calculator or a direct contact option for a human advisor, instead ending with open-ended questions.
+  honesty                : 0.70 - The response provides a detailed and accurate analysis of the disadvantages of endowment insurance, correctly citing specific product data to illustrate points like surrender penalties and non-guaranteed bonuses. However, it fails to explicitly identify itself as an AI or include a disclaimer distinguishing the provided information from legally binding financial advice, which is a requirement for regulatory compliance and transparency.
+  ContextualPrecisionMetric : 0.20 - The score is 0.20 because the relevant nodes were ranked poorly, appearing at positions 8, 10, and 11. The score is not higher because the first seven nodes were irrelevant, including node 1 which discusses 'non-guaranteed nature of bonuses', node 2 which provides 'historical performance data', node 3 regarding 'asset allocation', node 4 about 'bonus structures', node 5 concerning 'bonus declarations', node 6 which is an 'empty header', and node 7 which only mentions 'suitability'. These irrelevant nodes should have been ranked lower than the relevant nodes that correctly identified that 'premium is usually higher' and 'the return of the endowment policy is not extra ordinary'.
+  ContextualRecallMetric : 0.62 - The score is 0.62 because while nodes in the retrieval context (7, 8, 10, and 11) successfully support the details regarding premium costs, investment returns, and maturity terms, the context fails to provide information regarding the lack of policy flexibility and the associated administrative costs mentioned in the second sentence of the expected output.
+  faithfulness           : 0.60 - The actual output effectively covers the disadvantages of low returns, lack of flexibility, and potential capital loss. However, it misses key points from the expected output, specifically the higher premium costs compared to term/whole life insurance and the fact that coverage ceases entirely upon maturity, unlike whole life policies. While the actual output provides detailed examples, it fails to address these essential structural disadvantages.
+  intent_coverage        : 0.28 - Covered 5/18 points (28%):
+  [COVERED] Endowment insurance policies have significant disadvantages that should be evaluated.
+  [MISSING] Premiums for endowment insurance are generally higher than those for Term Insurance.
+  [MISSING] Premiums for endowment insurance are generally higher than those for Whole Life Insurance.
+  [MISSING] Higher premiums are due to the policy's high savings and investment element.
+  [MISSING] The savings and investment element is designed to build up cash value quickly.
+  [MISSING] Endowment policies lack the flexibility found in Investment-Linked Life Insurance Policies (ILPs).
+  [MISSING] Modifying premium levels or the sum assured in an endowment policy requires complicated alteration calculations by the insurer.
+  [MISSING] The administrative process for altering endowment policies is expensive.
+  [MISSING] Administrative costs for policy alterations are reflected in the premiums charged to the policy owner.
+  [COVERED] Endowment policies can be used as a vehicle for savings.
+  [MISSING] Endowment policies can be used to ring-fence assets against creditors if trust-nominated.
+  [COVERED] The investment returns generated by endowment policies are generally not extraordinary.
+  [COVERED] Endowment policies provide coverage only for a specified duration.
+  [COVERED] Endowment policies have a fixed maturity date.
+  [MISSING] Unlike Whole Life Insurance, endowment policies do not offer lifetime protection.
+  [MISSING] Once the maturity date is reached, insurance protection ceases.
+  [MISSING] Once the maturity date is reached, the maturity value is paid out.
+  [MISSING] Once the maturity date is reached, the policy terminates.
+
+[30/30] Are endowment policies mainly for savings or insurance protection?
+  Answer : Endowment policies are designed to serve a dual purpose: they combine **insurance protection** with a **savings** or investment element.  Here's a breakdown of how they function:  *   **Insurance Prot...
+  helpfulness            : 1.00 - The response directly addresses the user's question by clarifying that endowment policies serve both savings and insurance purposes. It provides a clear, logically structured breakdown of how these components function, compares the product to alternatives, and includes actionable considerations for the user, fully satisfying the intent of the inquiry.
+  tone_and_approach      : 0.80 - The response effectively translates complex insurance concepts into clear, accessible language and logically structures the information to minimize cognitive load. It accurately identifies the user's intent to understand the dual nature of endowment policies. However, it falls short on the final evaluation step by failing to provide a direct, actionable next step—such as a link to a quote tool or a contact method for an advisor—instead ending with a reflective question that requires further effort from the user.
+  honesty                : 0.60 - The response provides a clear and accurate educational overview of endowment policies. However, it fails to explicitly identify itself as an AI and does not include a disclaimer distinguishing the information from legally binding advice or specific policy guarantees, which is a requirement for regulatory compliance and transparency.
+  ContextualPrecisionMetric : 0.88 - The score is 0.88 because while the majority of relevant nodes are ranked highly, the precision is hindered by the placement of irrelevant nodes at rank 4, 8, 11, 12, 13, 14, and 15. Specifically, the node at rank 4 is merely a 'section header and does not provide substantive information', the node at rank 8 'focuses on Whole Life Insurance', and the nodes at ranks 11-13 discuss 'ILPs', all of which should have been ranked lower than the relevant nodes that correctly identify endowment policies as a 'combination of insurance protection and a savings element'.
+  ContextualRecallMetric : 1.00 - The score is 1.00 because all sentences in the expected output are fully supported by the nodes in the retrieval context, which provide comprehensive details on the dual nature, insurance and investment components, and common applications of endowment policies.
+  faithfulness           : 0.90 - The actual output accurately identifies that endowment policies serve a dual purpose of insurance and savings. It covers all essential facts, including the payout structure for death versus survival and the higher premium costs. It is only missing the specific mention of Total and Permanent Disability (TPD) coverage, which is a minor detail compared to the core explanation of the policy's function.
+  intent_coverage        : 0.83 - Covered 10/12 points (83%):
+  [COVERED] Endowment policies provide a combination of insurance protection and a savings or investment element.
+  [COVERED] Endowment policies guarantee a payout regardless of whether the insured survives the policy term.
+  [COVERED] Endowment policies provide life insurance coverage for a stated amount over a specific period of time.
+  [MISSING] If the insured dies or suffers total and permanent disability (TPD) during the policy term, the insurer pays out the death or TPD benefit.
+  [COVERED] The death or TPD benefit protects dependants against the financial effects of premature death.
+  [COVERED] If the insured survives to the end of the policy term, the policy matures and pays out a maturity value equal to the death benefit.
+  [COVERED] Premiums for endowment policies are generally higher than those for Term and Whole Life Insurance due to the fast build-up of cash value and high savings/investment element.
+  [COVERED] Endowment policies are frequently used to meet specific financial goals.
+  [COVERED] Endowment policies are commonly used to accumulate funds for children's university education.
+  [COVERED] Endowment policies can be arranged to mature at retirement age to provide retirement income, funds for investment, or to purchase an annuity.
+  [MISSING] Endowment policies are popular with individuals past the midpoint of their careers for retirement planning.
+  [COVERED] Endowment policies are used to accumulate funds for major purchases, such as buying a house.
+
+----------------------------------------------------------------
+Summary
+  honesty                avg=0.687  pass=17/30
+  intent_coverage        avg=0.761  pass=19/30
+  faithfulness           avg=0.857  pass=25/30
+  ContextualRecallMetric avg=0.946  pass=27/30
+  ContextualPrecisionMetric avg=0.726  pass=18/30
+  tone_and_approach      avg=0.737  pass=27/30
+  helpfulness            avg=0.953  pass=29/30
+
+Langfuse: Datasets -> insurance_chatbot_evals -> Runs -> structured_reasoning_20260530v2
