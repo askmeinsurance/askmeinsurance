@@ -5,11 +5,12 @@ from typing import Any
 from uuid import UUID
 
 from langchain_core.messages import AIMessage, HumanMessage
-from langfuse import get_client
+from langfuse import get_client, observe
 from langfuse._client.propagation import propagate_attributes
 from langfuse.langchain import CallbackHandler
 
 from app.core.config import Settings, get_settings
+from app.core.guardrails import get_guardrails
 from app.schemas.chat import ChatEvent
 from app.services.message_service import MessageService, message_service
 from app.agent.graph import get_compiled_graph
@@ -62,6 +63,32 @@ class LangGraphService:
         if len(rendered) > excerpt_chars:
             rendered = f"{rendered[:excerpt_chars]}..."
         return rendered
+
+    @observe(as_type="span")
+    async def _run_input_guard(self, message: str):
+        result = await get_guardrails().a_guard_input(message)
+        get_client().update_current_span(output={
+            "breached": result.breached,
+            "verdicts": [
+                {"guard": v.name, "level": v.safety_level, "score": v.score,
+                 "latency": v.latency, "reason": v.reason}
+                for v in result.verdicts
+            ],
+        })
+        return result
+
+    @observe(as_type="span")
+    async def _run_output_guard(self, message: str, answer: str):
+        result = await get_guardrails().a_guard_output(input=message, output=answer)
+        get_client().update_current_span(output={
+            "breached": result.breached,
+            "verdicts": [
+                {"guard": v.name, "level": v.safety_level, "score": v.score,
+                 "latency": v.latency, "reason": v.reason}
+                for v in result.verdicts
+            ],
+        })
+        return result
 
     async def stream_chat(
         self,
@@ -124,6 +151,14 @@ class LangGraphService:
                     session_id=str(conversation_id) if conversation_id else None,
                     user_id=str(user.user_id) if user else None,
                 ):
+                    if get_guardrails() is not None:
+                        input_result = await self._run_input_guard(message)
+                        if input_result.breached:
+                            logger.warning("input guardrail breached: correlation=%s", correlation)
+                            yield ChatEvent(event="chunk", data={"text": "I'm unable to help with that request."})
+                            yield ChatEvent(event="done", data={"reason": "guardrail_input_blocked"})
+                            return
+
                     input_payload = {
                         "messages": [HumanMessage(content=message)],
                         "conversation_history": history,
@@ -161,6 +196,11 @@ class LangGraphService:
                 if final_messages
                 else "No response generated."
             )
+            if get_guardrails() is not None:
+                output_result = await self._run_output_guard(message, answer)
+                if output_result.breached:
+                    logger.warning("output guardrail breached: correlation=%s", correlation)
+                    answer = "I'm unable to provide that information."
             duration_ms = (time.perf_counter() - started_at) * 1000
             logger.info(
                 "langgraph invoke completed: duration_ms=%.2f route=%s last_node=%s correlation=%s",
