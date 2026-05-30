@@ -50,31 +50,45 @@ flowchart TD
 
 ### Resolve abbreviations
 
-Users refer to insurance products by shorthand ("GPP", "SFRII") and use Singapore-specific terms like "CI" for critical illness or "SA" for sum assured. Without resolving these first, intent extraction and retrieval both fail on the abbreviated form.
+**What:** Scans the user's latest message against a product registry and resolves any shorthand to its full form — "GPP" becomes "Guaranteed Protect Plus", "CI" becomes "critical illness".
+
+**Why:** Singapore insurance users routinely abbreviate product names and industry terms. Without this step, the intent extraction LLM sees an unfamiliar token and either misreads it or ignores it, which means the retrieval that follows targets the wrong thing.
 
 ### Identify intent
 
-The raw user message is condensed into a single self-contained phrase that anchors every subsequent step. This step also flags whether the user named a specific product, which determines whether the workflow takes the name-match path or skips straight to intent expansion. Short follow-up messages like "what about exclusions?" inherit product context from earlier in the conversation.
+**What:** Condenses the full conversation into a single self-contained 10-20 word phrase. Also flags whether the user named a specific product, which determines the routing path downstream.
+
+**Why:** Every subsequent step — expansion, decomposition, retrieval — operates on this phrase, not the raw message. A short follow-up like "what about exclusions?" is ambiguous on its own; anchoring it to a condensed intent that carries conversation context keeps the whole workflow coherent across turns.
 
 ### Name match (conditional)
 
-When a product name is detected, this step resolves it to exact policy IDs in the product catalog before retrieval begins. Different payment variants of the same product (5Pay, 10Pay, Single Premium) are stored as separate entries, so matching them correctly matters.
+**What:** Resolves the product name the user mentioned to exact policy IDs in the product catalog. Only runs when a product name was detected in the previous step.
+
+**Why:** Different payment variants of the same product (5Pay, 10Pay, Single Premium) are stored as separate entries in the vector store. Without resolving to the right policy ID first, retrieval pulls chunks from the wrong variant and the answer is factually off.
 
 ### Intent expansion
 
-The condensed intent captures what the user asked. This step generates 2-3 complementary angles that would make the final answer more complete. If a user asks about guaranteed cash back, the expansion adds non-guaranteed bonuses, break-even analysis, and how bonus declarations work. Each expanded query is tagged by source type (textbook concept or product fact) so retrieval goes to the right place.
+**What:** Takes the condensed intent and generates 2-3 complementary angles the user didn't explicitly ask for. Each expanded query is tagged by source type (textbook or product) so retrieval knows where to look.
+
+**Why:** The user's literal question is rarely the full picture of what they need. Someone asking about guaranteed cash back probably also needs to understand non-guaranteed bonuses and what the break-even point looks like. This step is where the answer starts becoming holistic rather than just technically correct.
 
 ### Intent decomposition
 
-The enriched intent set is flattened into atomic retrieval targets. Each one is self-contained (no pronouns, no cross-references) and covers exactly one thing to look up. Treating each sub-intent as its own retrieval unit, rather than issuing one blended query, is what makes the retrieved context broad enough to support a complete answer.
+**What:** Flattens the original intent and all expanded queries into a flat list of atomic retrieval targets. Each entry is self-contained — no pronouns, no cross-references, one thing to look up.
+
+**Why:** A blended query like "guaranteed cash back and how bonuses work and break-even" will retrieve chunks that partially match each part but fully match none. Breaking it into atomic units means each retrieval call has a precise target, and the combined context covers the full picture.
 
 ### Query expansion + RAG
 
-Each atomic intent is rephrased to match how the source documents were written. Textbook queries become conceptual ("How does X work?"); product queries become feature-specific ("AIA Smart Flexi Rewards II 5Pay guaranteed cash benefit payout schedule"). Retrieval then runs in parallel against two Qdrant collections: the insurance textbook and the product summary store.
+**What:** Rephrases each atomic intent to match the vocabulary of its target collection. Textbook queries become conceptual ("How does X work?"); product queries become feature-specific. Retrieval then runs in parallel against two Qdrant collections: the insurance textbook and the product summary store.
+
+**Why:** Semantic search works best when the query sounds like the documents it's searching. A business-language intent phrase and a product brochure phrase are semantically distant even when they mean the same thing. Rephrasing closes that gap.
 
 ### Synthesis
 
-The final answer is generated from retrieved evidence, conversation history, and the original intent. The synthesis prompt asks for completeness (what the product does and does not do), multiple angles, and plain language with jargon defined on first use. The same prompt runs in the naive RAG baseline, so the only variable between the two approaches is what gets passed to it.
+**What:** Generates the final answer from retrieved evidence, conversation history, and the original intent. Same synthesis prompt used in the naive RAG baseline.
+
+**Why:** Using the same prompt as naive RAG is intentional — it isolates the variable. If the agentic workflow scores higher on helpfulness, the difference comes from what gets passed to synthesis, not how synthesis is prompted.
 
 
 ## Evals
@@ -91,6 +105,20 @@ Evaluation uses [DeepEval](https://github.com/confident-ai/deepeval) with Gemini
 | Contextual precision / recall | Whether retrieved chunks are relevant and complete |
 
 The same suite runs against the naive RAG baseline. The primary claim of this project lives or dies by the Helpfulness delta between the two.
+
+### Why not AnswerRelevancyMetric
+
+DeepEval's `AnswerRelevancyMetric` scores answers using this ratio:
+
+```
+relevant statements / total statements
+```
+
+It decomposes the actual output into atomic statements, then checks each one against the original input query. If the statement addresses the query, it's relevant. If not, it drags the score down.
+
+That formula actively punishes the behaviour this workflow is designed to produce. If the base answer covers A+B+C and the workflow adds D+E (non-guaranteed bonuses, break-even analysis), D and E get classified as irrelevant to the original query and lower the score. A minimal answer that only covers A+B+C would score higher than a richer one that covers everything plus more.
+
+The custom `IntentCoverageMetric` flips the direction. Instead of starting from the actual output and asking "is this relevant?", it starts from the expected output (a base answer written for the exact intent) and asks "is this covered?". It decomposes the base answer into atomic coverage points, then binary-checks each one in the actual output. Score = covered points / total points. Extra content in the actual output is ignored — it neither helps nor hurts. What matters is whether the original intent was fully addressed.
 
 
 ## Observability and guardrails
