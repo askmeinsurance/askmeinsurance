@@ -100,3 +100,10 @@ conversation_title:
   timeout_seconds: 30
   max_output_tokens: 50
   temperature: 0.9
+
+guardrails:
+  model: openrouter|google/gemini-2.0-flash-lite-001
+  thinking_budget: 0
+  timeout_seconds: 10
+  max_output_tokens: 512
+  temperature: 0

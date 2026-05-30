@@ -10,6 +10,7 @@ from langfuse._client.propagation import propagate_attributes
 from langfuse.langchain import CallbackHandler
 
 from app.core.config import Settings, get_settings
+from app.core.guardrails import get_guardrails
 from app.schemas.chat import ChatEvent
 from app.services.message_service import MessageService, message_service
 from app.agent.graph import get_compiled_graph
@@ -124,6 +125,26 @@ class LangGraphService:
                     session_id=str(conversation_id) if conversation_id else None,
                     user_id=str(user.user_id) if user else None,
                 ):
+                    guardrails = get_guardrails()
+                    if guardrails is not None:
+                        with lf.start_as_current_observation(
+                            name="guardrail_input", as_type="span", input=message
+                        ) as gs:
+                            input_result = await guardrails.a_guard_input(message)
+                            gs.update(output={
+                                "breached": input_result.breached,
+                                "verdicts": [
+                                    {"guard": v.name, "level": v.safety_level, "score": v.score,
+                                     "latency": v.latency, "reason": v.reason}
+                                    for v in input_result.verdicts
+                                ],
+                            })
+                        if input_result.breached:
+                            logger.warning("input guardrail breached: correlation=%s", correlation)
+                            yield ChatEvent(event="chunk", data={"text": "I'm unable to help with that request."})
+                            yield ChatEvent(event="done", data={"reason": "guardrail_input_blocked"})
+                            return
+
                     input_payload = {
                         "messages": [HumanMessage(content=message)],
                         "conversation_history": history,
@@ -161,6 +182,16 @@ class LangGraphService:
                 if final_messages
                 else "No response generated."
             )
+            if guardrails is not None:
+                output_result = await guardrails.a_guard_output(input=message, output=answer)
+                for v in output_result.verdicts:
+                    logger.info(
+                        "guardrail_output verdict: guard=%s level=%s score=%s latency=%.3fs reason=%s correlation=%s",
+                        v.name, v.safety_level, v.score, v.latency, v.reason, correlation,
+                    )
+                if output_result.breached:
+                    logger.warning("output guardrail breached: correlation=%s", correlation)
+                    answer = "I'm unable to provide that information."
             duration_ms = (time.perf_counter() - started_at) * 1000
             logger.info(
                 "langgraph invoke completed: duration_ms=%.2f route=%s last_node=%s correlation=%s",

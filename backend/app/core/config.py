@@ -56,6 +56,10 @@ class Settings(BaseSettings):
     textbook_score_threshold: float = Field(default=0.0, ge=0.0, le=1.0)
     product_summary_score_threshold: float = Field(default=0.0, ge=0.0, le=1.0)
 
+    # Guardrails
+    guardrails_enabled: bool = Field(default=False)
+    guardrails_sample_rate: float = Field(default=1.0, ge=0.0, le=1.0)
+
     # Observability
     langfuse_public_key: str | None = Field(default=None)
     langfuse_secret_key: str | None = Field(default=None)
