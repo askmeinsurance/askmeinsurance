@@ -2,7 +2,8 @@
 
 import asyncio
 import uuid
-from typing import Any
+from dataclasses import dataclass
+from typing import Any, Awaitable, Callable
 
 from deepeval.test_case import LLMTestCase
 from langchain_core.messages import HumanMessage
@@ -10,7 +11,7 @@ from langfuse import Langfuse, get_client
 from langfuse._client.propagation import propagate_attributes
 from langfuse.langchain import CallbackHandler
 
-from eval_utils.config import DATASET_NAME, RunConfig, parse_run_config
+from eval_utils.config import DATASET_NAME, EvalFlow, RunConfig, parse_run_config
 from eval_utils.dataset_loader import EvalCase, load_manual_evals
 from eval_utils.langfuse_reporter import (
     ensure_dataset,
@@ -25,6 +26,12 @@ from eval_utils.metrics import GeminiJudge, MetricConfig, build_metrics
 from eval_utils.models import EvalResult, ScoreMap
 from eval_utils.reporting import collect_metric_names, print_summary, save_log, truncate
 from eval_utils.retrieval import extract_retrieval_context, summarize_retrieval_hits
+
+
+@dataclass(frozen=True)
+class FlowRuntime:
+    flow: EvalFlow
+    invoke: Callable[[EvalCase, str], Awaitable[tuple[dict[str, Any], str]]]
 
 
 def select_active_metrics(
@@ -46,7 +53,7 @@ async def main(argv: list[str] | None = None) -> None:
 async def run_evaluations(config: RunConfig) -> None:
     all_cases = load_manual_evals()
     cases = all_cases[:config.limit] if config.limit else all_cases
-    _print_run_header(config.run_name, cases)
+    _print_run_header(config, cases)
 
     langfuse_client = get_langfuse_client()
     ensure_dataset(langfuse_client, DATASET_NAME)
@@ -55,11 +62,11 @@ async def run_evaluations(config: RunConfig) -> None:
     if processed_ids:
         print(f"Resuming '{config.run_name}' - skipping {len(processed_ids)} already-processed case(s)")
 
-    graph = await _get_graph()
+    runtime = await _get_flow_runtime(config)
     metrics_map = build_metrics(GeminiJudge())
     results = await _evaluate_cases(
         cases,
-        graph,
+        runtime,
         config.run_name,
         langfuse_client,
         question_to_item_id,
@@ -80,16 +87,15 @@ async def run_evaluations(config: RunConfig) -> None:
 
 
 async def evaluate_case(
-    graph: Any,
+    runtime: FlowRuntime,
     case: EvalCase,
     run_name: str,
     langfuse_client: Langfuse,
     dataset_item_id: str,
     metrics_map: dict[str, MetricConfig],
 ) -> EvalResult:
-    result, trace_id = await _invoke_graph(graph, case, run_name)
-    messages = result.get("messages", [])
-    answer = messages[-1].content if messages else ""
+    result, trace_id = await runtime.invoke(case, run_name)
+    answer = _extract_answer(result, runtime.flow)
     retrieval_context = extract_retrieval_context(result)
     _print_retrieval_summary(result, retrieval_context)
 
@@ -118,9 +124,26 @@ async def _get_graph() -> Any:
     return await get_graph()
 
 
+async def _get_flow_runtime(config: RunConfig) -> FlowRuntime:
+    if config.flow == "naive_rag":
+        run_naive_rag = _get_run_naive_rag()
+
+        async def invoke(case: EvalCase, run_name: str) -> tuple[dict[str, Any], str]:
+            return await _invoke_naive_rag(run_naive_rag, case, run_name, config.top_k)
+
+        return FlowRuntime(flow="naive_rag", invoke=invoke)
+
+    graph = await _get_graph()
+
+    async def invoke(case: EvalCase, run_name: str) -> tuple[dict[str, Any], str]:
+        return await _invoke_graph(graph, case, run_name)
+
+    return FlowRuntime(flow="simple_workflow", invoke=invoke)
+
+
 async def _evaluate_cases(
     cases: list[EvalCase],
-    graph: Any,
+    runtime: FlowRuntime,
     run_name: str,
     langfuse_client: Langfuse,
     question_to_item_id: dict[str, str],
@@ -135,32 +158,71 @@ async def _evaluate_cases(
             continue
 
         print(f"\n[{index}/{len(cases)}] {truncate(case.question)}")
-        result = await evaluate_case(graph, case, run_name, langfuse_client, item_id, metrics_map)
+        result = await evaluate_case(runtime, case, run_name, langfuse_client, item_id, metrics_map)
         results.append(result)
         score_parts = [f"{name}={score:.2f}" for name, (score, _) in result.scores.items()]
         print(f"  {' | '.join(score_parts)}")
     return results
 
 
-async def _invoke_graph(graph: Any, case: EvalCase, run_name: str) -> tuple[dict, str]:
-    trace_id = uuid.uuid4().hex
+async def _invoke_graph(graph: Any, case: EvalCase, run_name: str) -> tuple[dict[str, Any], str]:
     handler = CallbackHandler()
+    return await _run_observed(
+        observation_name="eval_chatbot",
+        run_name=run_name,
+        invoke=lambda: graph.ainvoke(
+            {
+                "messages": [HumanMessage(content=case.question)],
+                "conversation_history": [],
+            },
+            config={"callbacks": [handler]},
+        ),
+    )
+
+
+async def _invoke_naive_rag(
+    run_naive_rag: Callable[[str, int], dict[str, Any]],
+    case: EvalCase,
+    run_name: str,
+    top_k: int,
+) -> tuple[dict[str, Any], str]:
+    return await _run_observed(
+        observation_name="eval_naive_rag",
+        run_name=run_name,
+        invoke=lambda: asyncio.to_thread(run_naive_rag, case.question, top_k),
+    )
+
+
+async def _run_observed(
+    observation_name: str,
+    run_name: str,
+    invoke: Callable[[], Awaitable[dict[str, Any]]],
+) -> tuple[dict[str, Any], str]:
+    trace_id = uuid.uuid4().hex
     langfuse_context = get_client()
 
     with langfuse_context.start_as_current_observation(
-        name="eval_chatbot",
+        name=observation_name,
         as_type="span",
         trace_context={"trace_id": trace_id},
     ):
         with propagate_attributes(session_id=f"eval_{run_name}", user_id="eval_system"):
-            result = await graph.ainvoke(
-                {
-                    "messages": [HumanMessage(content=case.question)],
-                    "conversation_history": [],
-                },
-                config={"callbacks": [handler]},
-            )
+            result = await invoke()
     return result, trace_id
+
+
+def _get_run_naive_rag() -> Callable[[str, int], dict[str, Any]]:
+    from naive_rag.naive_rag_demo import run_naive_rag
+
+    return run_naive_rag
+
+
+def _extract_answer(result: dict[str, Any], flow: EvalFlow) -> str:
+    if flow == "naive_rag":
+        return result.get("answer", "")
+
+    messages = result.get("messages", [])
+    return messages[-1].content if messages else ""
 
 
 async def _measure_metrics(metrics: list, test_case: Any) -> None:
@@ -195,9 +257,12 @@ def _merge_prior_results(
     return prior_results + results
 
 
-def _print_run_header(run_name: str, cases: list[EvalCase]) -> None:
+def _print_run_header(config: RunConfig, cases: list[EvalCase]) -> None:
     with_expected = sum(1 for case in cases if case.expected_output)
-    print(f"Run  : {run_name}")
+    print(f"Run  : {config.run_name}")
+    print(f"Flow : {config.flow}")
+    if config.flow == "naive_rag":
+        print(f"Top K: {config.top_k}")
     print(f"Cases: {len(cases)} total  ({with_expected} with expected output)")
 
 
