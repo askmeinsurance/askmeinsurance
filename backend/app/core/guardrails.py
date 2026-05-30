@@ -1,34 +1,27 @@
 import logging
 
+import anyio
 from deepeval.models.base_model import DeepEvalBaseLLM
 from deepteam import Guardrails
 from deepteam.guardrails import (
     IllegalGuard,
     PrivacyGuard,
     PromptInjectionGuard,
-    TopicalGuard,
-    ToxicityGuard,
+    ToxicityGuard
 )
+from deepteam.guardrails.guards.base_guard import BaseGuard, GuardType
+from langchain_core.messages import HumanMessage, SystemMessage
+from langfuse import observe
 
-from app.agent.services.llm_service import get_llm
+from app.agent.prompts.prompts import SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM
+from app.agent.services.llm_service import ainvoke_structured_with_fallback, get_llm
+from app.agent.tools.product_registry import get_product_names
+from app.agent.workflows.simple_workflow_v2 import AbbreviationResolution
 from app.core.config import get_settings
 
 logger = logging.getLogger("askmeinsurance.guardrails")
 
 _guardrails: Guardrails | None = None
-
-INSURANCE_TOPICS = [
-    "insurance",
-    "life insurance",
-    "health insurance",
-    "motor insurance",
-    "travel insurance",
-    "policy",
-    "premiums",
-    "claims",
-    "coverage",
-    "benefits",
-]
 
 
 class OpenRouterEvalLLM(DeepEvalBaseLLM):
@@ -51,6 +44,65 @@ class OpenRouterEvalLLM(DeepEvalBaseLLM):
         return res.content
 
 
+@observe(as_type="span")
+async def _resolve_abbreviation(user_message: str) -> str | None:
+    product_names = get_product_names()
+    product_name_list = [d["policy_name"] for d in product_names if "policy_name" in d]
+    product_list_str = "\n".join(product_name_list)
+    with anyio.fail_after(15):
+        result = await ainvoke_structured_with_fallback(
+            agent_name="simplev2_resolve_abbreviation",
+            schema_model=AbbreviationResolution,
+            timeout_seconds=15,
+            config=None,
+            messages=[
+                SystemMessage(content=SIMPLEV2_RESOLVE_ABBREVIATION_SYSTEM),
+                HumanMessage(content=f"User message: {user_message}\n\nProduct names:\n{product_list_str}"),
+            ],
+        )
+    return result.abbreviation_context
+
+
+class InsuranceTopicalGuard(BaseGuard):
+    def __init__(self, model=None):
+        super().__init__(model=model)
+        self.guard_type = GuardType.INPUT
+
+    @property
+    def __name__(self):
+        return "Insurance Topical Guard"
+
+    def _build_guard_prompt(self, input: str, abbreviation_context: str | None) -> str:
+        enriched = input
+        if abbreviation_context:
+            enriched = f"{input}\n\n[Abbreviation context] {abbreviation_context}"
+        return (
+            "You are a topic adherence expert for a Singapore insurance Q&A assistant.\n\n"
+            "Determine if the user's message is related to insurance (policies, premiums, claims, coverage, products, benefits, etc.).\n\n"
+            "Mark as:\n"
+            '- "safe" if the message is about insurance or is a general greeting/clarification\n'
+            '- "unsafe" if the message is clearly unrelated to insurance\n'
+            '- "borderline" if ambiguous\n\n'
+            f"Input to analyze: {enriched}\n\n"
+            'Respond in JSON format: {"safety_level": "safe"/"unsafe"/"borderline", "reason": "explanation"}'
+        )
+
+    def guard_input(self, input: str) -> str:
+        guard_prompt = self._build_guard_prompt(input, None)
+        return self._guard(guard_prompt=guard_prompt)
+
+    async def a_guard_input(self, input: str) -> str:
+        abbreviation_context = await _resolve_abbreviation(input)
+        guard_prompt = self._build_guard_prompt(input, abbreviation_context)
+        return await self.a_guard(guard_prompt=guard_prompt)
+
+    def guard_output(self, input: str, output: str) -> str:
+        return "safe"
+
+    async def a_guard_output(self, input: str, output: str) -> str:
+        return "safe"
+
+
 def get_guardrails() -> Guardrails | None:
     return _guardrails
 
@@ -70,7 +122,7 @@ def init_guardrails() -> bool:
         input_guards=[
             PromptInjectionGuard(model=eval_llm),
             IllegalGuard(model=eval_llm),
-            TopicalGuard(allowed_topics=INSURANCE_TOPICS, model=eval_llm),
+            InsuranceTopicalGuard(model=eval_llm),
         ],
         output_guards=[
             ToxicityGuard(model=eval_llm),
