@@ -1,9 +1,12 @@
 """Evaluation runner for the insurance chatbot.
 
 Usage:
-    python run_evals.py
-    python run_evals.py --run-name "v2-synthesis-prompt"
-    python run_evals.py --run-name "v3-classifier" --limit 5
+    uv run python run_evals.py
+    uv run python run_evals.py --flow simple_workflow
+    uv run python run_evals.py --flow naive_rag
+    uv run python run_evals.py --run-name "v2-synthesis-prompt"
+    uv run python run_evals.py --flow naive_rag --run-name "baseline_20260530" --top-k 10
+    uv run python run_evals.py --flow simple_workflow --run-name "structured_reasoning_20260530"
 """
 
 import asyncio

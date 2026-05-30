@@ -1,0 +1,17 @@
+[project]
+name = "insurance-ingestion-pipeline"
+version = "0.1.0"
+description = "Generic ingestion pipeline for insurance PDFs using MinerU and chunk prep for vector storage"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "google-genai>=1.38.0",
+  "python-dotenv>=1.0.1",
+  "qdrant-client>=1.15.1",
+  "requests>=2.32.3",
+  "tenacity>=9.1.2",
+  "urllib3>=2.2.2",
+]
+
+[tool.uv]
+package = false

@@ -38,3 +38,29 @@ def test_summarize_retrieval_hits_counts_deduped_sources():
         "query_textbook": 1,
         "query_product_summary": 1,
     }
+
+
+def test_extract_retrieval_context_supports_naive_rag_output():
+    result = {
+        "hits": [
+            {"text": "a"},
+            {"text": "a"},
+            {"text": "b"},
+            {"text": ""},
+            {},
+        ]
+    }
+
+    assert extract_retrieval_context(result) == ["a", "b"]
+
+
+def test_summarize_retrieval_hits_supports_naive_rag_output():
+    result = {
+        "hits": [
+            {"text": "a"},
+            {"text": "a"},
+            {"text": "b"},
+        ]
+    }
+
+    assert summarize_retrieval_hits(result) == {"naive_rag_hits": 2}

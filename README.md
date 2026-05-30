@@ -1,171 +1,180 @@
 # askmeinsurance
 
-An AI-powered insurance Q&A assistant that routes queries through a multi-agent pipeline to deliver accurate, product-specific answers. Ask about any insurance product or general insurance concept — the system selects the right retrieval strategy and synthesises an answer grounded in both a product registry and an insurance textbook corpus.
+AskMeInsurance is an AI chatbot for life insurance questions. It's built around a multi-step reasoning workflow with one testable claim: given the same synthesis prompt, structured agentic retrieval produces more helpful answers than single-pass naive RAG. That claim is tested by evals. The demo can be accessed [here](askmeinsurance.io)
 
-## Screenshots
+![New chat](assets/new_chat.png)
 
-| Start | Chat | Chat + Canvas |
-|---|---|---|
-| ![Start screen](frontend/example_screens/chat_start_screen.png) | ![Chat](frontend/example_screens/chat_without_canvas.png) | ![Canvas](frontend/example_screens/chat_with_elements_on_canvas_sidebar_shown.png) |
+## Reference links
+- [Experiments](EXPERIMENTS.md)
+- [Evals](evals/README.md)
+- [Document ingestion](document_ingestion/ingestion_pipeline/README.md)
 
-## Architecture
 
-Incoming chat messages are streamed through a LangGraph state machine. A router node classifies each query and dispatches to one of two subgraphs.
+## Problem Statement
 
-**Request flow**
+Insurance questions aren't straightforward lookups. When someone asks "tell me about product X", they want to know what it covers, what it excludes, how it compares to alternatives, and whether it makes sense for their situation. A [naive RAG](evals/naive_rag/naive_rag_demo.py) system retrieves chunks closest to the literal query and synthesizes from those. For specific factual questions that works. For open-ended questions it falls short, because the user's stated words only capture part of what they actually need.
+
+**My hypothesis:** a multi-step workflow that reasons about intent and retrieves across multiple angles will score higher on helpfulness than single-pass retrieval, given the same synthesis prompt.
+
+The hypothesis holds. Across 30 test cases, the structured workflow outperformed naive RAG on every metric except Honesty (-0.07), with the largest gains in contextual recall (+0.46), intent coverage (+0.35), and faithfulness (+0.35). → [See full eval results](evals/README.md#results-30-test-cases)
+
+
+## Structured Reasoning-Driven workflow
 
 ```mermaid
 flowchart TD
-    A["POST /api/v1/chat/stream"] --> B[ChatService]
-    B --> C[LangGraphService]
-    C --> D{Router Node\nLLM classifier}
-    D -->|structured Q&A| E[simple_workflow]
-    D -->|open-ended / multi-step| F[general_agent]
+    A["User Query + Conversation"] --> Sub1
+
+    subgraph Sub1 ["Preprocess"]
+        B[Resolve Abbreviations] --> C[Identify Intent]
+    end
+
+    C -->|product name detected| NM[Name Match]
+    C -->|concept only| D[Intent Expansion]
+    NM --> D
+    D --> E[Intent Decomposition]
+    E --> F[Query Expansion + RAG]
+    F --> L[Synthesis]
+    L --> R[User Response]
 ```
 
-**simple_workflow** — used for direct insurance questions
+
+<details>
+<summary><strong>Resolve abbreviations</strong></summary>
+
+>>**What:**  
+Scans the user's latest message against a product registry and resolves any shorthand to its full form — "GPP" becomes "Guaranteed Protect Plus", "CI" becomes "critical illness".
+
+>>>**Why:**  
+Singapore insurance users routinely abbreviate product names and industry terms. Without this step, the intent extraction LLM sees an unfamiliar token and either misreads it or ignores it, which means the retrieval that follows targets the wrong thing.
+</details>
+
+<details>
+<summary><strong>Identify intent</strong></summary>
+
+>>**What:**  
+Condenses the full conversation into a single self-contained 10-20 word phrase. Also flags whether the user named a specific product, which determines the routing path downstream.
+
+>>>**Why:**  
+Every subsequent step — expansion, decomposition, retrieval — operates on this phrase, not the raw message. A short follow-up like "what about exclusions?" is ambiguous on its own; anchoring it to a condensed intent that carries conversation context keeps the whole workflow coherent across turns.
+</details>
+
+
+<details>
+<summary><strong>Name match (conditional)</strong></summary>
+
+>>**What:**  
+Resolves the product name the user mentioned to exact policy IDs in the product catalog. Only runs when a product name was detected in the previous step.
+
+>>>**Why:**  
+Different payment variants of the same product (5Pay, 10Pay, Single Premium) are stored as separate entries in the vector store. Without resolving to the right policy ID first, retrieval pulls chunks from the wrong variant and the answer is factually off.
+</details>
+
+<details>
+<summary><strong>Intent expansion</strong></summary>
+
+>>**What:**  
+Takes the condensed intent and generates 2-3 complementary angles the user didn't explicitly ask for. Each expanded query is tagged by source type (textbook or product) so retrieval knows where to look.
+
+>>>**Why:**  
+The user's literal question is rarely the full picture of what they need. Someone asking about guaranteed cash back probably also needs to understand non-guaranteed bonuses and what the break-even point looks like. This step is where the answer starts becoming holistic rather than just technically correct.
+</details>
+
+<details>
+<summary><strong>Intent decomposition</strong></summary>
+
+>>**What:**  
+Flattens the original intent and all expanded queries into a flat list of atomic retrieval targets. Each entry is self-contained — no pronouns, no cross-references, one thing to look up.
+
+>>>**Why:**  
+A blended query like "guaranteed cash back and how bonuses work and break-even" will retrieve chunks that partially match each part but fully match none. Breaking it into atomic units means each retrieval call has a precise target, and the combined context covers the full picture.
+</details>
+
+<details>
+<summary><strong>Query expansion + RAG</strong></summary>
+
+>>**What:**  
+Rephrases each atomic intent to match the vocabulary of its target collection. Textbook queries become conceptual ("How does X work?"); product queries become feature-specific. Retrieval then runs in parallel against two Qdrant collections:
+
+- `insurance_text_book` — a Singapore life insurance textbook covering 17 chapters of foundational concepts: risk, policy types, underwriting, claims, regulatory frameworks, and industry terminology
+- `product_summary` — product summaries for 30 AIA life insurance products across endowment, term, and whole life categories, covering benefits, exclusions, premiums, riders, and surrender values
+
+>>>**Why:**  
+The two collections are written in fundamentally different styles. The textbook is written like an educational reference — definitional, conceptual, chapter-structured. The product summaries are written like policy documents — benefit tables, exclusion clauses, payout conditions. A user's intent phrase sits in neither style; it's conversational. Sending the same query to both collections would underperform in both. Rephrasing each intent into the vocabulary of its target collection closes the semantic gap between how users ask and how documents are written.
+</details>
+
+<details>
+<summary><strong>Synthesis</strong></summary>
+
+>>**What:**  
+Generates the final answer from retrieved evidence, conversation history, and the original intent. Same synthesis prompt used in the naive RAG baseline.
+
+>>>**Why:**  
+Using the same prompt as naive RAG is intentional — it isolates the variable. If the agentic workflow scores higher on helpfulness, the difference comes from what gets passed to synthesis, not how synthesis is prompted.
+</details>
+
+
+## System Architecture
 
 ```mermaid
 flowchart TD
-    A[resolve_abbreviation] --> B[identify_intent]
-    B --> C[intent_extension]
-    C --> D[intents_decomposition]
-    D --> E{product name detected?}
-    E -->|yes| F[name_match\nresolve mention → policy IDs]
-    E -->|no| G[query_expansion]
-    F --> G
-    G --> H[synthesise\nparallel Qdrant retrieval]
-```
-
-**general_agent** — used for open-ended or multi-step questions
-
-```mermaid
-flowchart TD
-    A[classify] --> B[plan]
-    B --> C[execute tools]
-    C -->|not done, max 5 iterations| B
-    C -->|done| D[synthesise]
+    A[Browser] -->|chat message| B[FastAPI Backend]
+    B --> C[Input Guards]
+    C --> D[LangGraph Agent]
+    D --> E[Qdrant vector search]
+    E --> D
+    D --> F[Output Guards]
+    F -->|streamed response| A
+    B <--> G[Supabase conversation history]
+    D --- H[Langfuse tracing]
 ```
 
 ## Tech Stack
 
-| Layer | Technology | Purpose |
+| Layer | Technology | Notes |
 |---|---|---|
-| Backend | FastAPI + LangGraph | API server + stateful agent orchestration |
-| LLM | Gemini 2.5 Flash Lite via OpenRouter | Primary reasoning model across all agents |
-| Vector DB | Qdrant | Semantic search over insurance textbook + product summaries |
+| Backend | FastAPI + LangGraph | API server and stateful agent orchestration |
+| LLM | Gemini 2.5 Flash Lite via OpenRouter | Used across all workflow nodes |
+| Vector DB | Qdrant | Two collections: insurance textbook and product summaries |
+| Auth + DB | Supabase | RS256 JWT auth, conversation and message persistence |
 | Observability | Langfuse | Distributed tracing across all LangGraph node executions |
-| Auth + DB | Supabase | RS256 JWT auth + conversation/message persistence |
-| Frontend | React 19 + TypeScript + Vite | Chat UI with streaming SSE support |
+| Guardrails | deepteam | Input and output safety guards |
+| Evals | DeepEval  | LLM-as-judge evaluation framework |
+| Frontend | React 19 + TypeScript + Vite | Chat UI with SSE streaming support |
 | Styling | Tailwind CSS v4 | |
-| Canvas | Excalidraw | In-chat architecture diagram visualizations |
 
-## Key Design Decisions
 
-**Config-driven model selection.** `app/agent/config.yaml` maps every agent to its model, timeout, temperature, and structured-output mode. No model names or timeouts appear in Python — swapping a model means editing one YAML line.
+## Observability and guardrails
 
-**Structured output with JSON fallback.** `ainvoke_structured_with_fallback()` in `llm_service.py` first attempts native structured output. When the provider (e.g. OpenRouter) returns plain text instead of a function-call schema, it strips markdown fences, bracket-parses the first JSON object, and validates through Pydantic. This handles the inconsistent structured-output support across OpenRouter-proxied models without duplicating prompts.
+### Observability
 
-**Conditional workflow routing.** After intent decomposition, the graph checks whether any sub-intent targets a product (`source_type in ("product", "both")`). If yes, it routes through `name_match` to resolve the user's mention to actual policy IDs before retrieval. If not, it skips directly to `query_expansion`, avoiding an unnecessary LLM call on concept-only questions.
+All LangGraph node executions are captured via Langfuse's `CallbackHandler` without manual instrumentation. Each user message produces one trace scoped to its conversation and user. Guardrail verdicts (guard name, safety level, score, latency, reason) are logged as named spans on the same trace. Eval runs post scores back to Langfuse dataset runs, so benchmark results are tied directly to the traces that produced them.
+
+### Guardrails
+
+Input and output guards run on every request via the `deepteam` library (`backend/app/core/guardrails.py`).
+
+Input guards (before the graph runs):
+- `PromptInjectionGuard`
+- `InsuranceTopicalGuard` (custom) — the built-in topical guard has no knowledge of Singapore insurance shorthand, so a query like "tell me about AIA" could be misclassified as off-topic. This guard does three things: resolves abbreviations first ("AIA" → "AIA Insurance"), checks whether the message is insurance-related, and passes through messages whose intent is conversational (greetings, clarifications) even if they contain no insurance keywords
+
+Output guards (after the graph responds):
+- `ToxicityGuard`, `PrivacyGuard`, `IllegalGuard`
+
+An input breach rejects the request before the graph runs. An output breach replaces the answer with a fallback. Both are configurable via `GUARDRAILS_ENABLED` and `GUARDRAILS_SAMPLE_RATE`.
+
+
+
 
 ## Local Setup
+### Docker compose
 
-**Prerequisites:** Python 3.11+, `uv`, Node 22+
-
-```bash
-# Backend
-cp backend/example.env backend/.env  # fill in OPENROUTER_API_KEY, QDRANT_URL, SUPABASE_* keys
-cd backend
-uv run uvicorn app.main:app --reload  # http://localhost:8000
-
-# Frontend (separate terminal)
-cp frontend/sample.env frontend/.env
-cd frontend
-npm install
-npm run dev                           # http://localhost:5173
 ```
-
-Set `AUTH_ENABLED=false` in `backend/.env` for local dev without Supabase auth.
-
-## Docker
-
-The app can also run locally in a production-like Docker setup: FastAPI is served by Uvicorn and the built Vite frontend is served by Nginx.
-
-```bash
 cp backend/example.env backend/.env
 # fill backend/.env with the required backend secrets
 
-docker compose up --build
+docker compose --env-file frontend/.env up --build -d
 ```
 
-Open the frontend at `http://localhost:5173`. The backend is exposed at `http://localhost:8000`, with a public health check at `http://localhost:8000/health`.
 
-For local Docker builds, frontend browser-safe values are passed as build args. By default, Compose sets `VITE_BACKEND_BASE_URL=http://localhost:8000`. If Supabase auth is needed locally, export these before building:
 
-```bash
-export VITE_SUPABASE_URL="..."
-export VITE_SUPABASE_ANON_KEY="..."
-docker compose up --build
-```
-
-## Railway Deployment
-
-Deploy this repo as two Railway services from the same GitHub repository.
-
-**Backend service**
-
-- Root directory: repo root (`/`)
-- Builder: Dockerfile
-- Dockerfile path / `RAILWAY_DOCKERFILE_PATH`: `backend/Dockerfile`
-- Public networking: enabled
-- Start command: use the Dockerfile default command
-- Health check path: `/health`
-
-Set backend runtime variables in Railway:
-
-```env
-APP_ENV=prod
-APP_DEBUG=false
-AUTH_ENABLED=true
-CORS_ALLOWED_ORIGINS=https://<frontend-railway-domain>
-SUPABASE_URL=...
-SUPABASE_ANON_KEY=...
-SUPABASE_SERVICE_ROLE_KEY=...
-SUPABASE_JWT_SECRET=...
-OPENAI_API_KEY=...
-GEMINI_API_KEY=...
-OPENROUTER_API_KEY=...
-QDRANT_URL=...
-QDRANT_API_KEY=...
-LANGFUSE_PUBLIC_KEY=...
-LANGFUSE_SECRET_KEY=...
-LANGFUSE_HOST=...
-```
-
-Railway injects `PORT` automatically; the backend Dockerfile binds to `${PORT:-8000}`.
-
-**Frontend service**
-
-- Root directory: repo root (`/`)
-- Builder: Dockerfile
-- Dockerfile path / `RAILWAY_DOCKERFILE_PATH`: `frontend/Dockerfile`
-- Public networking: enabled
-
-Set frontend build-time variables in Railway:
-
-```env
-VITE_BACKEND_BASE_URL=https://<backend-railway-domain>
-VITE_SUPABASE_URL=...
-VITE_SUPABASE_ANON_KEY=...
-```
-
-Only `VITE_*` values are embedded into the browser bundle. Keep backend secrets, service-role keys, JWT secrets, LLM keys, Qdrant keys, and Langfuse secret keys on the backend service only.
-
-## Evals
-
-Offline evaluation scripts under `evals/` import backend code directly (no running server needed). See [`evals/README.md`](evals/README.md) for setup.
-
-```bash
-cd evals
-uv run python run_evals.py --limit 5
-```

@@ -6,7 +6,7 @@ before importing this module (done at the top of run_evals.py).
 
 import asyncio
 
-from app.src.graph import get_compiled_graph
+from app.agent.graph import get_compiled_graph
 
 _graph = None
 _graph_lock = asyncio.Lock()
