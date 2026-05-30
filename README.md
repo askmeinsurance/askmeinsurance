@@ -1,6 +1,6 @@
 # askmeinsurance
 
-AskMeInsurance is an AI chatbot for life insurance questions. It's built around a multi-step reasoning workflow with one testable claim: given the same synthesis prompt, structured agentic retrieval produces more helpful answers than single-pass naive RAG. That claim is tested by evals. The demo can be accessed [here](askmeinsurance.io)
+AskMeInsurance is an AI chatbot for life insurance questions. It's built around a multi-step reasoning workflow with one testable claim: given the same synthesis prompt, structured agentic retrieval produces more helpful answers than single-pass naive RAG. That claim is tested by evals. The demo can be accessed [here](https://askmeinsurance.io)
 
 ![New chat](assets/new_chat.png)
 
@@ -16,7 +16,7 @@ Insurance questions aren't straightforward lookups. When someone asks "tell me a
 
 **My hypothesis:** a multi-step workflow that reasons about intent and retrieves across multiple angles will score higher on helpfulness than single-pass retrieval, given the same synthesis prompt.
 
-The hypothesis holds. Across 30 test cases, the structured workflow outperformed naive RAG on every metric except Honesty (-0.07), with the largest gains in contextual recall (+0.46), intent coverage (+0.35), and faithfulness (+0.35). → [See full eval results](evals/README.md#results-30-test-cases)
+The hypothesis holds. Across 30 test cases, the structured workflow outperformed naive RAG on every metric except Honesty (-0.07), with the largest gains in contextual recall (+0.46), intent coverage (+0.35), and faithfulness (+0.35). → [See full eval results](evals/README.md#naive-rag-vs-structured-reasoning-workflow-eval-results-30-test-cases)
 
 
 ## Structured Reasoning-Driven workflow
