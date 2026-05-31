@@ -174,6 +174,9 @@ An input breach rejects the request before the graph runs. An output breach repl
 cp backend/example.env backend/.env
 # fill backend/.env with the required backend secrets
 
+cp frontend/example.env frontend/.env
+# fill frontend/.env with the required backend secrets
+
 docker compose --env-file frontend/.env up --build -d
 ```
 
