@@ -671,12 +671,13 @@ Cases  : 30 total  (30 with scores)
 
 ----------------------------------------------------------------
 Summary
+  intent_coverage        avg=0.407  pass=7/30
   helpfulness            avg=0.893  pass=28/30
   tone_and_approach      avg=0.613  pass=17/30
   honesty                avg=0.757  pass=21/30
   ContextualPrecisionMetric avg=0.374  pass=11/30
   ContextualRecallMetric avg=0.488  pass=12/30
   faithfulness           avg=0.507  pass=14/30
-  intent_coverage        avg=0.407  pass=7/30
+  
 
 Langfuse: Datasets -> insurance_chatbot_evals -> Runs -> baseline_20260530

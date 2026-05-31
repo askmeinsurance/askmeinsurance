@@ -91,7 +91,7 @@ def _format_log(
 
 
 def _format_case(index: int, total_cases: int, result: EvalResult) -> list[str]:
-    answer_preview = truncate(result.answer.replace("\n", " "), limit=200)
+    answer_preview = result.answer.replace("\n", " ")
     lines = [f"\n[{index}/{total_cases}] {result.question}", f"  Answer : {answer_preview}"]
     for metric_name, (score, reason) in result.scores.items():
         reason_text = f" - {reason}" if reason else ""
