@@ -50,6 +50,7 @@ def search_similar(
     hits = client.query_points(
         collection_name=collection,
         query=vector,
+        using="dense",
         limit=top_k,
         with_payload=True,
     ).points
