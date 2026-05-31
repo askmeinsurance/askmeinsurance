@@ -4,7 +4,9 @@ from typing_extensions import TypedDict
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 
-from app.agent.utils.misc import get_embeddings, get_qdrant_client
+from qdrant_client.models import Fusion, FusionQuery, Prefetch, SparseVector
+
+from app.agent.utils.misc import get_bm25_model, get_embeddings, get_qdrant_client
 from app.core.config import get_settings
 
 COLLECTION = "insurance_text_book2"
@@ -82,12 +84,21 @@ def query_textbook(
 
     def _retrieve_one(one_query: str):
         query_vector = embeddings.embed_query(one_query)
+        bm25 = get_bm25_model()
+        sparse_result = list(bm25.embed([one_query]))[0]
+        sparse_vec = SparseVector(
+            indices=sparse_result.indices.tolist(),
+            values=sparse_result.values.tolist(),
+        )
         return client.query_points(
             collection_name=COLLECTION,
-            query=query_vector,
+            prefetch=[
+                Prefetch(query=query_vector, using="dense", limit=top_k * 3),
+                Prefetch(query=sparse_vec, using="bm25", limit=top_k * 3),
+            ],
+            query=FusionQuery(fusion=Fusion.RRF),
             limit=top_k,
             with_payload=True,
-            score_threshold=score_threshold or None,
         ).points
 
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:

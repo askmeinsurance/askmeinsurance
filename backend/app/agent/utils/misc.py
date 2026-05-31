@@ -1,6 +1,9 @@
+from fastembed import SparseTextEmbedding
 from qdrant_client import QdrantClient
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from app.core.config import get_settings
+
+_bm25: SparseTextEmbedding | None = None
 
 
 def get_google_api_key() -> str:
@@ -24,5 +27,12 @@ def get_embeddings() -> GoogleGenerativeAIEmbeddings:
         google_api_key=get_google_api_key(),
         output_dimensionality=s.embedding_dimension,
     )
+
+
+def get_bm25_model() -> SparseTextEmbedding:
+    global _bm25
+    if _bm25 is None:
+        _bm25 = SparseTextEmbedding(model_name="Qdrant/bm25")
+    return _bm25
 
 
