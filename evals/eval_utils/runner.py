@@ -181,15 +181,16 @@ async def _invoke_graph(graph: Any, case: EvalCase, run_name: str) -> tuple[dict
 
 
 async def _invoke_naive_rag(
-    run_naive_rag: Callable[[str, int], dict[str, Any]],
+    run_naive_rag: Callable[[str, int, list | None], dict[str, Any]],
     case: EvalCase,
     run_name: str,
     top_k: int,
 ) -> tuple[dict[str, Any], str]:
+    handler = CallbackHandler()
     return await _run_observed(
         observation_name="eval_naive_rag",
         run_name=run_name,
-        invoke=lambda: asyncio.to_thread(run_naive_rag, case.question, top_k),
+        invoke=lambda: asyncio.to_thread(run_naive_rag, case.question, top_k, [handler]),
     )
 
 
