@@ -46,7 +46,8 @@ EMBEDDING_DIMENSION = int(os.getenv("EMBEDDING_DIMENSION", "1536"))
 GENERATION_MODEL = os.getenv("GENERATION_MODEL", "gemini-2.5-flash-lite")
 SYNTHESIS_TEMPERATURE = float(os.getenv("SYNTHESIS_TEMPERATURE", "0"))
 COLLECTION_NAME = os.getenv("QDRANT_COLLECTION", "product_summary")
-TOP_K = int(os.getenv("TOP_K", "5"))
+TEXTBOOK_COLLECTION_NAME = os.getenv("QDRANT_TEXTBOOK_COLLECTION", "insurance_text_book2")
+TOP_K = int(os.getenv("TOP_K", "10"))
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 QDRANT_URL = os.getenv("QDRANT_URL")
@@ -65,7 +66,8 @@ class NaiveRagState(TypedDict, total=False):
     user_query: str
     top_k: int
     query_vector: list[float]
-    hits: list[dict]
+    product_hits: list[dict]
+    concept_hits: list[dict]
     answer: str
 
 
@@ -81,11 +83,12 @@ def embed_query(query: str) -> list[float]:
     return response.embeddings[0].values
 
 
-def search_qdrant(query_vector: list[float], top_k: int = TOP_K) -> list[dict]:
+def search_qdrant(query_vector: list[float], top_k: int = TOP_K, collection_name: str = COLLECTION_NAME) -> list[dict]:
     try:
         points = qdrant_client.query_points(
-            collection_name=COLLECTION_NAME,
+            collection_name=collection_name,
             query=query_vector,
+            using="dense",
             limit=top_k,
             with_payload=True,
         ).points
@@ -121,14 +124,17 @@ def format_retrieval_hits(hits: list[dict]) -> str:
     return json.dumps(hits, indent=2, ensure_ascii=False)
 
 
-def build_synthesis_prompt(user_query: str, hits: list[dict]) -> str:
+def build_synthesis_prompt(user_query: str, product_hits: list[dict], concept_hits: list[dict]) -> str:
     user_question_json = json.dumps(
         [{"role": "user", "content": user_query}],
         indent=2,
         ensure_ascii=False,
     )
     retrieval_angles_json = json.dumps(
-        [{"intent_description": user_query, "source_type": "textbook"}],
+        [
+            {"intent_description": user_query, "source_type": "product"},
+            {"intent_description": user_query, "source_type": "textbook"},
+        ],
         indent=2,
         ensure_ascii=False,
     )
@@ -137,13 +143,13 @@ def build_synthesis_prompt(user_query: str, hits: list[dict]) -> str:
         f"User question:\n{user_question_json}\n\n"
         f"Condensed intent:\n{user_query}\n\n"
         f"Retrieval angles used:\n{retrieval_angles_json}\n\n"
-        "Product evidence:\n[]\n\n"
-        f"Concept evidence:\n{format_retrieval_hits(hits)}"
+        f"Product evidence:\n{format_retrieval_hits(product_hits)}\n\n"
+        f"Concept evidence:\n{format_retrieval_hits(concept_hits)}"
     )
 
 
-def synthesize_answer(user_query: str, hits: list[dict]) -> str:
-    user_message = build_synthesis_prompt(user_query, hits)
+def synthesize_answer(user_query: str, product_hits: list[dict], concept_hits: list[dict]) -> str:
+    user_message = build_synthesis_prompt(user_query, product_hits, concept_hits)
     response = genai_client.models.generate_content(
         model=GENERATION_MODEL,
         config=types.GenerateContentConfig(
@@ -160,11 +166,11 @@ def embed_query_node(state: NaiveRagState) -> NaiveRagState:
 
 
 def retrieve_qdrant_node(state: NaiveRagState) -> NaiveRagState:
+    vec = state["query_vector"]
+    k = state.get("top_k", TOP_K)
     return {
-        "hits": search_qdrant(
-            state["query_vector"],
-            top_k=state.get("top_k", TOP_K),
-        )
+        "product_hits": search_qdrant(vec, k, COLLECTION_NAME),
+        "concept_hits": search_qdrant(vec, k, TEXTBOOK_COLLECTION_NAME),
     }
 
 
@@ -172,7 +178,8 @@ def synthesize_answer_node(state: NaiveRagState) -> NaiveRagState:
     return {
         "answer": synthesize_answer(
             state["user_query"],
-            state.get("hits", []),
+            state.get("product_hits", []),
+            state.get("concept_hits", []),
         )
     }
 
@@ -199,7 +206,8 @@ def run_naive_rag(user_query: str, top_k: int = TOP_K, callbacks: list | None = 
     )
     return {
         "query": final_state["user_query"],
-        "hits": final_state.get("hits", []),
+        "product_hits": final_state.get("product_hits", []),
+        "concept_hits": final_state.get("concept_hits", []),
         "answer": final_state.get("answer", ""),
     }
 
@@ -231,7 +239,8 @@ def main() -> None:
             "embedding_model": EMBEDDING_MODEL,
             "embedding_dimension": EMBEDDING_DIMENSION,
             "generation_model": GENERATION_MODEL,
-            "collection_name": COLLECTION_NAME,
+            "product_collection": COLLECTION_NAME,
+            "textbook_collection": TEXTBOOK_COLLECTION_NAME,
             "top_k": args.top_k,
             "synthesis_temperature": SYNTHESIS_TEMPERATURE,
         }
@@ -242,8 +251,16 @@ def main() -> None:
     print("Query:\n")
     print(result["query"])
 
-    print("\nTop hits:\n")
-    for index, hit in enumerate(result["hits"], start=1):
+    print("\nProduct hits:\n")
+    for index, hit in enumerate(result["product_hits"], start=1):
+        print(f"[{index}] score={hit['score']:.6f} chunk_id={hit['chunk_id']}")
+        print(f"header={hit['header']!r} chapter={hit['chapter']!r}")
+        snippet = (hit.get("text") or "").replace("\n", " ")
+        print(snippet[:280] + ("..." if len(snippet) > 280 else ""))
+        print()
+
+    print("\nConcept hits (textbook):\n")
+    for index, hit in enumerate(result["concept_hits"], start=1):
         print(f"[{index}] score={hit['score']:.6f} chunk_id={hit['chunk_id']}")
         print(f"header={hit['header']!r} chapter={hit['chapter']!r}")
         snippet = (hit.get("text") or "").replace("\n", " ")

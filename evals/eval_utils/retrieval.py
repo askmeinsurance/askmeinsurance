@@ -24,7 +24,8 @@ def _collect_retrieval(result: dict) -> tuple[list[str], dict[str, int]]:
     hits: dict[str, int] = {}
 
     sources = itertools.chain(
-        _iter_naive_rag_hits(result.get("hits", [])),
+        _iter_naive_rag_hits(result.get("product_hits", [])),
+        _iter_naive_rag_hits(result.get("concept_hits", [])),
         _iter_execution_chunks(result),
         _iter_product_chunks(result.get("product_chunks", [])),
         _iter_textbook_chunks(result.get("concept_chunks") or {}),
