@@ -4,22 +4,12 @@ Evaluation uses [DeepEval](https://github.com/confident-ai/deepeval) with Gemini
 
 ## Hypothesis
 
-The hypothesis is stated in the [Problem Statement](../README.md#problem-statement): given the same synthesis prompt, structured agentic retrieval produces more helpful answers than single-pass naive RAG. The evals exist to test that claim.
+The hypothesis is stated in the [Problem Statement](../README.md#problem-statement): naive RAG systematically fails to provide complete information on insurance questions, because it retrieves against the user's literal words rather than the full scope of what they need to know. The evals exist to test that claim.
 
 **naive_rag/** is a minimal straight-retrieval pipeline — embed the query, pull top-K chunks from Qdrant, synthesise with Gemini. It deliberately uses the same synthesis system prompt as the main workflow (`SIMPLEV2_SYNTHESIS_SYSTEM`) so any score difference is attributable to the agent architecture, not prompting.
 
 
-## Why standard metrics fall short
-
-The workflow is built to go beyond the literal question. The `intent_extension` and `intents_decomposition` steps expand the original query into related angles — edge cases, exclusions, related riders, calculation methods — that a knowledgeable advisor would include even if the user didn't ask. That's the behaviour being tested: does structured retrieval cover the original intent more completely than naive RAG?
-
-Two standard DeepEval metrics can't measure this fairly.
-
-**AnswerRelevancyMetric** scores by `relevant statements / total statements`. It decomposes the actual output into atomic statements and checks each one against the original query. Anything that doesn't address the query counts as irrelevant and drags the score down. That formula penalises the extra depth the workflow is designed to produce. A terse answer covering only what was asked would outscore a richer one that covers that plus more.
-
-**Helpfulness** has a different problem. Naive RAG frequently just says "I don't have that information, please contact AIA directly." The judge reads that as transparent and appropriately calibrated, and scores it close to a correct answer. A metric that can't tell the difference between answering and not answering isn't useful for comparing retrieval architectures.
-
-## The custom IntentCoverageMetric
+## The custom IntentCoverageMetric using G-Eval
 
 IntentCoverage measures in the opposite direction. Instead of starting from the actual output and asking "is this relevant?", it starts from the expected output and asks "is this covered?"
 
@@ -39,19 +29,19 @@ The scoring:
 
 Extra content in the actual output is ignored. Tone and confidence don't factor in. The only question is whether the original intent was fully addressed.
 
-Base answers were generated using NotebookLM — all product PDFs were loaded in, each question was asked, and the response was manually copied as the `base_answer`. NotebookLM grounds its answers strictly in uploaded documents, which makes the base answers more reliable than asking a general-purpose LLM from memory. There are limitations to NotebookLM, but in this project we treat it as the reference dataset.
+Base answers were generated using NotebookLM — all product PDFs were loaded in, each question was asked, and the response was manually copied as the `base_answer`. NotebookLM grounds its answers strictly in uploaded documents, which makes the base answers more reliable than asking a general-purpose LLM from memory. It generates a sufficient baseline reference dataset that can be used for evaluation. The ideal eval dataset should be obtained from Financial Consultants. There are limitations to NotebookLM, but for the scope of this project we treat it as the reference dataset.
 
 ## Results (30 test cases)
 
-> These results are the quantitative proof for the hypothesis stated in the [Problem Statement](../README.md#problem-statement).
+> These results show naive RAG's completeness failure across 30 test cases. The hypothesis — that naive RAG fails to surface complete information on insurance questions — is stated in the [Problem Statement](../README.md#problem-statement).
 
 | Metric | Naive RAG | Structured workflow | Delta |
 |---|---|---|---|
+| Intent coverage | 0.407 | 0.761 | +0.354 |
 | Helpfulness | 0.893 | 0.953 | +0.060 |
 | Tone & approach | 0.613 | 0.737 | +0.123 |
 | Honesty | 0.757 | 0.687 | -0.070 |
 | Faithfulness | 0.507 | 0.857 | +0.350 |
-| Intent coverage | 0.407 | 0.761 | +0.354 |
 | Contextual precision | 0.374 | 0.726 | +0.352 |
 | Contextual recall | 0.488 | 0.946 | +0.457 |
 
@@ -59,19 +49,19 @@ Raw logs: [`naive_rag_results.txt`](../assets/naive_rag_results.txt) | [`structu
 
 **Findings:**
 
-The intent coverage gap (0.41 → 0.76) is the main result. It's the metric designed to test the hypothesis, and it shows the structured workflow covers the original intent nearly twice as completely as naive RAG.
+The intent coverage gap (0.41 → 0.76) is the primary result. It directly measures whether the actual answer contains all the facts the user needed, and it shows naive RAG covers the original intent less than half as completely as the structured workflow.
 
-The helpfulness gap (+0.06) looks small by comparison. That's the point. Naive RAG scored 0.893 partly because the judge rewards a well-worded refusal almost as highly as a correct answer. The structured workflow scored 0.953, but for a different reason: it actually answered. The +0.06 gap understates how different the two systems are in practice.
+Contextual recall (0.49 → 0.95) tells the same story at the retrieval layer. Naive RAG frequently misses the relevant product documents entirely — when the context doesn't contain the right chunks, the model either guesses or refuses, and intent coverage falls in both cases.
 
-The retrieval metrics tell the same story. Contextual recall went from 0.49 to 0.95. The structured workflow retrieves nearly everything needed to answer; naive RAG frequently misses the relevant product documents entirely. When the context doesn't contain the right chunks, the model either guesses or refuses. Intent coverage falls in both cases.
+The helpfulness gap (+0.06) looks small by comparison, and it is intentionally deprioritized here. Naive RAG scored 0.893 partly because the judge rewards a well-worded refusal ("I don't have that information, please contact AIA") almost as highly as a correct answer. Helpfulness can't distinguish between answering and not answering, so a small helpfulness delta coexists with a large completeness gap. The structured workflow scored 0.953 because it actually answered — not because it sounded better.
 
 Honesty dropped slightly (-0.07). Naive RAG hedged constantly. The structured workflow commits to answers, and occasionally the judge reads that commitment as less calibrated, even when the answer is correct.
 
-The hypothesis holds. The structured workflow covers the original intent more completely, and the metrics that actually measure coverage show it clearly.
+The hypothesis holds. Naive RAG fails to provide complete information, and the metrics that actually measure coverage show it clearly.
 
 ## Examples: Naive RAG vs Structured Workflow
 
-Three representative cases from the 30-case eval run, chosen to show how the two approaches diverge on product-specific questions.
+Three representative cases from the 30-case eval run. These aren't just cases where naive RAG scored lower — they're cases where it gave dangerously incomplete information that could lead a user to believe they have coverage they don't, or miss critical conditions before filing a claim.
 
 ---
 
