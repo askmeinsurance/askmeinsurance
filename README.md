@@ -1,22 +1,23 @@
 # askmeinsurance
 
-AskMeInsurance is an AI chatbot for life insurance questions. It's built around a multi-step reasoning workflow with one testable claim: given the same synthesis prompt, structured agentic retrieval produces more helpful answers than single-pass naive RAG. That claim is tested by evals. The demo can be accessed [here](askmeinsurance.io)
+AskMeInsurance is an AI chatbot for life insurance questions. It's built around a multi-step reasoning workflow with one testable claim: naive RAG fails to provide complete information on insurance questions — covering all policy details, exclusions, and conditions a user needs, not just what their literal words asked for. That claim is tested by evals. The demo can be accessed [here](https://askmeinsurance.io)
 
 ![New chat](assets/new_chat.png)
+
+## Problem Statement
+
+Insurance questions aren't straightforward lookups. When someone asks "tell me about product X", they want to know what it covers, what it excludes, how it compares to alternatives, and whether it makes sense for their situation. A [naive RAG](EXPERIMENTS.md#naive-rag-baseline) system retrieves chunks closest to the literal query and synthesizes from those. For specific factual questions that works. For open-ended questions it falls short, because the user's stated words only capture part of what they actually need.
+
+In most domains, an incomplete answer is just less useful. In insurance, it actively misleads. If a user asks about life insurance benefits, but omits the corresponding exclusions, the user files a claim assuming they're covered — and gets denied. Incompleteness isn't a quality problem; it's a trust and compliance problem.
+
+**My hypothesis:** naive RAG systematically fails to surface complete information on insurance questions, because it retrieves against the user's literal words rather than the full scope of what they need to know. A multi-step workflow that reasons about intent and retrieves across multiple angles will cover the original intent more completely.
+
+The hypothesis holds. Across 30 test cases, intent coverage went from 0.41 to 0.76 (+0.35) and contextual recall from 0.49 to 0.95 (+0.46) — the structured workflow retrieves nearly everything needed to answer, while naive RAG frequently misses the relevant product documents entirely. Helpfulness also improved (+0.06), but that gap understates the real difference: the judge partially rewards well-worded refusals ("I don't have that information, please contact AIA") almost as highly as correct answers, so a small helpfulness delta can coexist with a large completeness gap. → [See full eval results](evals/README.md#results-30-test-cases)
 
 ## Reference links
 - [Experiments](EXPERIMENTS.md)
 - [Evals](evals/README.md)
 - [Document ingestion](document_ingestion/ingestion_pipeline/README.md)
-
-
-## Problem Statement
-
-Insurance questions aren't straightforward lookups. When someone asks "tell me about product X", they want to know what it covers, what it excludes, how it compares to alternatives, and whether it makes sense for their situation. A [naive RAG](evals/naive_rag/naive_rag_demo.py) system retrieves chunks closest to the literal query and synthesizes from those. For specific factual questions that works. For open-ended questions it falls short, because the user's stated words only capture part of what they actually need.
-
-**My hypothesis:** a multi-step workflow that reasons about intent and retrieves across multiple angles will score higher on helpfulness than single-pass retrieval, given the same synthesis prompt.
-
-The hypothesis holds. Across 30 test cases, the structured workflow outperformed naive RAG on every metric except Honesty (-0.07), with the largest gains in contextual recall (+0.46), intent coverage (+0.35), and faithfulness (+0.35). → [See full eval results](evals/README.md#results-30-test-cases)
 
 
 ## Structured Reasoning-Driven workflow
@@ -172,6 +173,9 @@ An input breach rejects the request before the graph runs. An output breach repl
 ```
 cp backend/example.env backend/.env
 # fill backend/.env with the required backend secrets
+
+cp frontend/example.env frontend/.env
+# fill frontend/.env with the required backend secrets
 
 docker compose --env-file frontend/.env up --build -d
 ```

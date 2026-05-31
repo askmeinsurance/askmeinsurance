@@ -192,12 +192,10 @@ def build_naive_rag_graph():
 naive_rag_graph = build_naive_rag_graph()
 
 
-def run_naive_rag(user_query: str, top_k: int = TOP_K) -> dict:
+def run_naive_rag(user_query: str, top_k: int = TOP_K, callbacks: list | None = None) -> dict:
     final_state = naive_rag_graph.invoke(
-        {
-            "user_query": user_query,
-            "top_k": top_k,
-        }
+        {"user_query": user_query, "top_k": top_k},
+        config={"callbacks": callbacks or []},
     )
     return {
         "query": final_state["user_query"],
