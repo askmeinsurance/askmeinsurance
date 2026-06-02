@@ -12,7 +12,7 @@ In most domains, an incomplete answer is just less useful. In insurance, it acti
 
 **My hypothesis:** naive RAG systematically fails to surface complete information on insurance questions, because it retrieves against the user's literal words rather than the full scope of what they need to know. A multi-step workflow that reasons about intent and retrieves across multiple angles will cover the original intent more completely.
 
-The hypothesis holds. Across 30 test cases, intent coverage went from 0.41 to 0.76 (+0.35) and contextual recall from 0.49 to 0.95 (+0.46) — the structured workflow retrieves nearly everything needed to answer, while naive RAG frequently misses the relevant product documents entirely. Helpfulness also improved (+0.06), but that gap understates the real difference: the judge partially rewards well-worded refusals ("I don't have that information, please contact AIA") almost as highly as correct answers, so a small helpfulness delta can coexist with a large completeness gap. → [See full eval results](evals/README.md#results-30-test-cases)
+The hypothesis holds. Across 30 test cases, intent coverage went from 0.41 to 0.74 (+0.33) and contextual recall from 0.49 to 0.91 (+0.42) — the structured workflow retrieves nearly everything needed to answer, while naive RAG frequently misses the relevant product documents entirely. Helpfulness also improved (+0.06), but that gap understates the real difference: the judge partially rewards well-worded refusals ("I don't have that information, please contact AIA") almost as highly as correct answers, so a small helpfulness delta can coexist with a large completeness gap. → [See full eval results](evals/README.md#results-30-test-cases)
 
 ## Reference links
 - [Experiments](EXPERIMENTS.md)

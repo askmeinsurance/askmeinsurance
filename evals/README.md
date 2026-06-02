@@ -37,25 +37,25 @@ Base answers were generated using NotebookLM — all product PDFs were loaded in
 
 | Metric | Naive RAG | Structured workflow | Delta |
 |---|---|---|---|
-| Intent coverage | 0.407 | 0.761 | +0.354 |
-| Helpfulness | 0.893 | 0.953 | +0.060 |
-| Tone & approach | 0.613 | 0.737 | +0.123 |
-| Honesty | 0.757 | 0.687 | -0.070 |
-| Faithfulness | 0.507 | 0.857 | +0.350 |
-| Contextual precision | 0.374 | 0.726 | +0.352 |
-| Contextual recall | 0.488 | 0.946 | +0.457 |
+| Intent coverage | 0.412 | 0.743 | +0.331 |
+| Helpfulness | 0.867 | 0.960 | +0.093 |
+| Tone & approach | 0.630 | 0.733 | +0.103 |
+| Honesty | 0.730 | 0.703 | -0.027 |
+| Faithfulness | 0.500 | 0.847 | +0.347 |
+| Contextual precision | 0.417 | 0.652 | +0.235 |
+| Contextual recall | 0.491 | 0.909 | +0.418 |
 
 Raw logs: [`naive_rag_results.txt`](../assets/naive_rag_results.txt) | [`structured_reasoning_results.txt`](../assets/structured_reasoning_results.txt)
 
 **Findings:**
 
-The intent coverage gap (0.41 → 0.76) is the primary result. It directly measures whether the actual answer contains all the facts the user needed, and it shows naive RAG covers the original intent less than half as completely as the structured workflow.
+The intent coverage gap (0.41 → 0.74) is the primary result. It directly measures whether the actual answer contains all the facts the user needed, and it shows naive RAG covers the original intent less than half as completely as the structured workflow.
 
-Contextual recall (0.49 → 0.95) tells the same story at the retrieval layer. Naive RAG frequently misses the relevant product documents entirely — when the context doesn't contain the right chunks, the model either guesses or refuses, and intent coverage falls in both cases.
+Contextual recall (0.49 → 0.91) tells the same story at the retrieval layer. Naive RAG frequently misses the relevant product documents entirely — when the context doesn't contain the right chunks, the model either guesses or refuses, and intent coverage falls in both cases.
 
-The helpfulness gap (+0.06) looks small by comparison, and it is intentionally deprioritized here. Naive RAG scored 0.893 partly because the judge rewards a well-worded refusal ("I don't have that information, please contact AIA") almost as highly as a correct answer. Helpfulness can't distinguish between answering and not answering, so a small helpfulness delta coexists with a large completeness gap. The structured workflow scored 0.953 because it actually answered — not because it sounded better.
+The helpfulness gap (+0.09) looks small by comparison, and it is intentionally deprioritized here. Naive RAG scored 0.867 partly because the judge rewards a well-worded refusal ("I don't have that information, please contact AIA") almost as highly as a correct answer. Helpfulness can't distinguish between answering and not answering, so a small helpfulness delta coexists with a large completeness gap. The structured workflow scored 0.960 because it actually answered — not because it sounded better.
 
-Honesty dropped slightly (-0.07). Naive RAG hedged constantly. The structured workflow commits to answers, and occasionally the judge reads that commitment as less calibrated, even when the answer is correct.
+Honesty dropped slightly (-0.03). Naive RAG hedged constantly. The structured workflow commits to answers, and occasionally the judge reads that commitment as less calibrated, even when the answer is correct.
 
 The hypothesis holds. Naive RAG fails to provide complete information, and the metrics that actually measure coverage show it clearly.
 
@@ -71,16 +71,16 @@ Three representative cases from the 30-case eval run. These aren't just cases wh
 
 | Metric | Naive RAG | Structured |
 |---|---|---|
-| Intent coverage | 0/8 (0%) | 8/8 (100%) |
-| Faithfulness | 0.00 | 1.00 |
-| Contextual precision | 0.00 | 0.68 |
+| Intent coverage | 1/8 (12%) | 8/8 (100%) |
+| Faithfulness | 0.00 | 0.80 |
+| Contextual precision | 0.00 | 0.78 |
 | Contextual recall | 0.00 | 1.00 |
 
 **Naive RAG:**
-> "I cannot directly compare the annual bonuses for the AIA Smart Flexi Growth (5-year payment) and AIA Smart Goal 10 plans based on the information provided. The evidence discusses how **reversionary bo[...]"
+> "The provided information does not contain specific details about the AIA Smart Flexi Growth (5-year payment) or AIA Smart Goal 10 plans that would allow for a direct comparison of their annual bonuses under a 4.25% growth rate[...]"
 
 **Structured workflow:**
-> "Let's compare the annual bonus projections for the AIA Smart Flexi Growth (5-Pay option) and AIA Smart Goal 10, assuming a 4.25% fund growth rate. ### AIA Smart Flexi Growth (5-Pay Option) * **Rev[...]"
+> "When comparing the AIA Smart Flexi Growth (5-Pay option) and AIA Smart Goal 10 plans, the AIA Smart Flexi Growth 5-Pay plan shows a higher illustrated annual Reversionary Bonus (RB) rate at an assumed investment rate of return of 4.25%[...]"
 
 Naive RAG retrieved general textbook content on how reversionary bonuses work, but none of the chunks contained the product-specific illustrated rates. The structured workflow's name-matching and parallel product retrieval steps found the right product documents.
 
@@ -93,15 +93,15 @@ Naive RAG retrieved general textbook content on how reversionary bonuses work, b
 | Metric | Naive RAG | Structured |
 |---|---|---|
 | Intent coverage | 0/9 (0%) | 9/9 (100%) |
-| Faithfulness | 0.10 | 1.00 |
-| Contextual precision | 0.00 | 0.92 |
+| Faithfulness | 0.00 | 1.00 |
+| Contextual precision | 0.00 | 0.57 |
 | Contextual recall | 0.00 | 1.00 |
 
 **Naive RAG:**
-> "The AIA Secure Flexi Term (R&C) plan is a 10-year term insurance policy. For term insurance policies with a renewable option, the ability to renew is typically limited by a specified age. Based on ge[...]"
+> "The AIA Secure Flexi Term (R&C) plan, like many term insurance policies with a renewable option, typically has limitations on how long you can renew the policy[...]"
 
 **Structured workflow:**
-> "The AIA Secure Flexi Term (R&C) plan offers a guaranteed renewal period that changes as you get older, particularly as you approach and enter your 90s. The renewal term is designed to shorten with inc[...]"
+> "The AIA Secure Flexi Term (R&C) plan allows for successive renewals up to the insured's 101st birthday. However, the duration of the guaranteed renewal period changes as you get older[...]"
 
 Naive RAG retrieved general content on renewable term insurance but nothing specific to this product. Its answer was not only incomplete — the claim that renewal "would likely not extend past the 80s or early 90s" is factually wrong for a plan that covers to age 101.
 
@@ -109,22 +109,22 @@ Naive RAG retrieved general content on renewable term insurance but nothing spec
 
 ### Example 3: Simple product-specific fact
 
-**Question:** Exactly how many years do I have to pay premiums if I sign up for the AIA Life Dividends plan?
+**Question:** How much guaranteed cash back will I get each year if I buy the 5-year payment AIA Smart Flexi Rewards (II) plan?
 
 | Metric | Naive RAG | Structured |
 |---|---|---|
-| Intent coverage | 0/1 (0%) | 1/1 (100%) |
+| Intent coverage | 1/6 (17%) | 6/6 (100%) |
 | Faithfulness | 0.20 | 1.00 |
-| Contextual precision | 0.00 | 1.00 |
+| Contextual precision | 0.00 | 0.83 |
 | Contextual recall | 0.00 | 1.00 |
 
 **Naive RAG:**
-> "The AIA Life Dividends plan is a type of Whole Life Insurance. For this kind of policy, premiums can be structured in a few ways: * **Ordinary Whole Life Insurance:** Premiums are typically paid th[...]"
+> "I cannot provide specific details about the guaranteed cash back amounts for the AIA Smart Flexi Rewards (II) plan with a 5-year payment term. The information I have access to does not contain product-specific payout schedules[...]"
 
 **Structured workflow:**
-> "The AIA Life Dividends plan has a **limited premium payment term of 10 years**. This means you will pay premiums for 10 years, and then your policy will continue to provide coverage for your entire li[...]"
+> "The AIA Smart Flexi Rewards (II) (5-Pay) plan offers a **guaranteed yearly coupon** benefit. This coupon is equivalent to **15% of the Insured Amount** and is payable starting from the 2nd policy anniversary until one year before the policy maturity[...]"
 
-Naive RAG retrieved general textbook content on whole life premium structures instead of the product document. Its answer talks about "a few ways" premiums can work — accurate in general, but completely wrong for this specific plan. The structured workflow's name-match step retrieved the AIA Life Dividends product summary and answered in the first sentence.
+Naive RAG retrieved general textbook content on cash dividend structures instead of the product document. The structured workflow's name-match step retrieved the AIA Smart Flexi Rewards product summary and answered with the exact percentage in the first sentence.
 
 ---
 

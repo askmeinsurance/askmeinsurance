@@ -47,8 +47,8 @@ class Settings(BaseSettings):
     qdrant_api_key: str | None = Field(default=None)
 
     # Embeddings
-    embedding_model: str = Field(default="models/text-embedding-004")
-    embedding_dimension: int = Field(default=768)
+    embedding_model: str = Field(default="gemini-embedding-001")
+    embedding_dimension: int = Field(default=1536)
 
     # Retrieval tuning
     textbook_top_k: int = Field(default=5, ge=1, le=15)

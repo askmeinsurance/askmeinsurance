@@ -14,7 +14,8 @@ import requests
 from dotenv import load_dotenv
 from google import genai
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, PayloadSchemaType, PointStruct, VectorParams
+from fastembed import SparseTextEmbedding
+from qdrant_client.models import Distance, PayloadSchemaType, PointStruct, SparseVector, SparseVectorParams, VectorParams
 
 from utils import create_gemini_client_from_env, default_embedding_dir, default_metadata_dir, find_jsonl_files, load_jsonl, save_json_atomic
 
@@ -31,12 +32,13 @@ TERMINAL_STATES = {
     "JOB_STATE_EXPIRED",
 }
 
-DEFAULT_COLLECTION = "product_summary_test"
+DEFAULT_COLLECTION = "product_summary"
 DEFAULT_BATCH_SIZE = 64
 DEFAULT_POLL_INTERVAL_SECONDS = 5
 DEFAULT_POLL_TIMEOUT_SECONDS = 900
 
 _UUID_NAMESPACE = uuid.NAMESPACE_DNS
+_bm25_model = SparseTextEmbedding(model_name="Qdrant/bm25")
 
 
 def default_collection() -> str:
@@ -297,12 +299,29 @@ def build_embedding_output(
     }
 
 
+def _needs_recreation(client: QdrantClient, collection: str) -> bool:
+    """Returns True if the collection exists but lacks the expected named dense+sparse config."""
+    info = client.get_collection(collection)
+    vectors_config = info.config.params.vectors
+    sparse_config = info.config.params.sparse_vectors
+    has_named_dense = isinstance(vectors_config, dict) and "dense" in vectors_config
+    has_sparse = sparse_config is not None and "bm25" in sparse_config
+    return not (has_named_dense and has_sparse)
+
+
 def ensure_collection(client: QdrantClient, collection: str) -> None:
     existing = {c.name for c in client.get_collections().collections}
-    if collection not in existing:
+    if collection in existing:
+        if _needs_recreation(client, collection):
+            logger.info("Collection %s has outdated vector config — deleting and recreating", collection)
+            client.delete_collection(collection)
+        else:
+            logger.info("Collection %s already has correct config, skipping creation", collection)
+    if collection not in {c.name for c in client.get_collections().collections}:
         client.create_collection(
             collection_name=collection,
-            vectors_config=VectorParams(size=DIMENSION, distance=Distance.COSINE),
+            vectors_config={"dense": VectorParams(size=DIMENSION, distance=Distance.COSINE)},
+            sparse_vectors_config={"bm25": SparseVectorParams()},
         )
         logger.info("Created Qdrant collection %s", collection)
 
@@ -387,13 +406,21 @@ def upsert_embeddings(client: QdrantClient, collection: str, embedding_rows: lis
 
     upserted = 0
     for batch in _batched(valid_rows, batch_size):
+        texts = [row["payload"]["text"] for row in batch]
+        sparse_results = list(_bm25_model.embed(texts))
         points = [
             PointStruct(
                 id=_chunk_id_to_point_id(row["chunk_id"]),
-                vector=row["embedding"],
+                vector={
+                    "dense": row["embedding"],
+                    "bm25": SparseVector(
+                        indices=sr.indices.tolist(),
+                        values=sr.values.tolist(),
+                    ),
+                },
                 payload=row["payload"],
             )
-            for row in batch
+            for row, sr in zip(batch, sparse_results)
         ]
         client.upsert(collection_name=collection, points=points, timeout=120)
         upserted += len(points)

@@ -3,9 +3,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
-from qdrant_client.models import FieldCondition, Filter, MatchValue
+from qdrant_client.models import FieldCondition, Filter, Fusion, FusionQuery, MatchValue, Prefetch, SparseVector
 
-from app.agent.utils.misc import get_embeddings, get_qdrant_client
+from app.agent.utils.misc import get_bm25_model, get_embeddings, get_qdrant_client
 from app.core.config import get_settings
 
 COLLECTION = "product_summary"
@@ -67,13 +67,21 @@ def query_product_summary(
                 must=[FieldCondition(key="policy_id", match=MatchValue(value=one_policy_id))]
             )
         query_vector = embeddings.embed_query(one_query)
+        bm25 = get_bm25_model()
+        sparse_result = list(bm25.embed([one_query]))[0]
+        sparse_vec = SparseVector(
+            indices=sparse_result.indices.tolist(),
+            values=sparse_result.values.tolist(),
+        )
         return client.query_points(
             collection_name=COLLECTION,
-            query=query_vector,
+            prefetch=[
+                Prefetch(query=query_vector, using="dense", limit=top_k * 3, filter=qdrant_filter),
+                Prefetch(query=sparse_vec, using="bm25", limit=top_k * 3, filter=qdrant_filter),
+            ],
+            query=FusionQuery(fusion=Fusion.RRF),
             limit=top_k,
             with_payload=True,
-            query_filter=qdrant_filter,
-            score_threshold=score_threshold or None,
         ).points
 
     with ThreadPoolExecutor(max_workers=len(normalized_queries)) as executor:
